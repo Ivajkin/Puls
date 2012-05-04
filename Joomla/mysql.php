@@ -48,7 +48,7 @@ $mainframe->triggerEvent('onAfterInitialise');
 
 ///////////// Configure this ////////////////////////
 
-$hostname     = 'www.puls.byethost5.com';
+$hostname     = 'sql109.byethost5.com';
 $username     = 'b5_10620585';
 $password     = 'kre8stuff';
 $database     = 'b5_10620585_joomla';
