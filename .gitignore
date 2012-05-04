@@ -1,0 +1,6 @@
+administrator/cache/*
+administrator/components/com_cache/*
+cache/*
+installation/*
+logs/*
+tmp/*
