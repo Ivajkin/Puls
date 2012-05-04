@@ -1,0 +1,274 @@
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#wdb_right-left-right .moduletable_menu .menu,
+#wdb_left-left-right .moduletable_menu .menu,
+#wdb_left-left-only .moduletable_menu .menu,
+#wdb_right-right-only .moduletable_menu .menu {
+	margin: -10px;
+}
+#wdb_right-left-right .moduletable_menu .menu li a:link,
+#wdb_right-left-right .moduletable_menu .menu li a:visited,
+#wdb_left-left-right .moduletable_menu .menu li a:link,
+#wdb_left-left-right .moduletable_menu .menu li a:visited,
+#wdb_left-left-only .moduletable_menu .menu li a:link,
+#wdb_left-left-only .moduletable_menu .menu li a:visited,
+#wdb_right-right-only .moduletable_menu .menu li a:link,
+#wdb_right-right-only .moduletable_menu .menu li a:visited {
+	padding: 5px 10px 5px 10px;
+	background-image: url(../images/dark/menu.jpg);
+	background-position: bottom;
+	display: block;
+}
+#wdb_right-left-right .moduletable_menu .menu li a:hover,
+#wdb_left-left-right .moduletable_menu .menu li a:hover,
+#wdb_left-left-only .moduletable_menu .menu li a:hover,
+#wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/dark/menu_hover.jpg);
+	background-position: bottom;
+}
+.moduletable_login form p {
+	margin: 0px 0px 10px 0px;
+}
+.moduletable_login {
+	padding: 10px;
+	border-top: 1px solid #1B1B1B;
+	background-image: url(../images/dark/login_bg.jpg);
+	background-position: bottom right;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style2 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style2 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style2 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style2 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style2 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style2 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style2 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style2 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/light/menu.jpg);
+}
+#style2 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style2 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style2 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style2 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/light/menu_hover.jpg);
+}
+#style2 .moduletable_login {
+	background-image: url(../images/light/login_bg.jpg);
+	border-top: 1px solid #dfdfdf;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style3 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style3 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style3 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style3 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style3 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style3 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style3 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style3 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/green/toolbar.jpg);
+}
+#style3 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style3 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style3 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style3 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/green/toolbar_hover.jpg);
+}
+#style3 .moduletable_login {
+	background-image: url(../images/green/login_bg.jpg);
+	border-top: 1px solid #86a977;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style4 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style4 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style4 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style4 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style4 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style4 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style4 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style4 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/blue/toolbar.jpg);
+}
+#style4 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style4 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style4 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style4 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/blue/toolbar_hover.jpg);
+}
+#style4 .moduletable_login {
+	background-image: url(../images/blue/login_bg.jpg);
+	border-top: 1px solid #3681c1;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style5 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style5 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style5 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style5 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style5 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style5 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style5 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style5 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/brown/toolbar_hover.jpg);
+}
+#style5 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style5 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style5 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style5 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/brown/toolbar.jpg);
+}
+#style5 .moduletable_login {
+	background-image: url(../images/brown/login_bg.jpg);
+	border-top: 1px solid #eed5b7;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style6 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style6 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style6 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style6 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style6 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style6 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style6 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style6 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/yellow/toolbar_hover.jpg);
+}
+#style6 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style6 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style6 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style6 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/yellow/toolbar.jpg);
+}
+#style6 .moduletable_login {
+	background-image: url(../images/yellow/login_bg.jpg);
+	border-top: 1px solid #eed5b7;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style7 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style7 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style7 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style7 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style7 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style7 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style7 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style7 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/orange/toolbar_hover.jpg);
+}
+#style7 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style7 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style7 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style7 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/orange/toolbar.jpg);
+}
+#style7 .moduletable_login {
+	background-image: url(../images/orange/login_bg.jpg);
+	border-top: 1px solid #fbc891;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style8 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style8 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style8 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style8 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style8 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style8 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style8 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style8 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/red/toolbar_hover.jpg);
+}
+#style8 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style8 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style8 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style8 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/red/toolbar.jpg);
+}
+#style8 .moduletable_login {
+	background-image: url(../images/red/login_bg.jpg);
+	border-top: 1px solid #80080b;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style9 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style9 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style9 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style9 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style9 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style9 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style9 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style9 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/violet/toolbar_hover.jpg);
+}
+#style9 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style9 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style9 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style9 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/violet/toolbar.jpg);
+}
+#style9 .moduletable_login {
+	background-image: url(../images/violet/login_bg.jpg);
+	border-top: 1px solid #7743a8;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style10 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style10 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style10 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style10 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style10 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style10 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style10 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style10 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/pink/toolbar.jpg);
+}
+#style10 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style10 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style10 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style10 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/pink/toolbar_hover.jpg);
+}
+#style10 .moduletable_login {
+	background-image: url(../images/pink/login_bg.jpg);
+	border-top: 1px solid #f0c0d5;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style11 #wdb_right-left-right .moduletable_menu .menu li a:link,
+#style11 #wdb_right-left-right .moduletable_menu .menu li a:visited,
+#style11 #wdb_left-left-right .moduletable_menu .menu li a:link,
+#style11 #wdb_left-left-right .moduletable_menu .menu li a:visited,
+#style11 #wdb_left-left-only .moduletable_menu .menu li a:link,
+#style11 #wdb_left-left-only .moduletable_menu .menu li a:visited,
+#style11 #wdb_right-right-only .moduletable_menu .menu li a:link,
+#style11 #wdb_right-right-only .moduletable_menu .menu li a:visited {
+	background-image: url(../images/light/menu.jpg);
+}
+#style11 #wdb_right-left-right .moduletable_menu .menu li a:hover,
+#style11 #wdb_left-left-right .moduletable_menu .menu li a:hover,
+#style11 #wdb_left-left-only .moduletable_menu .menu li a:hover,
+#style11 #wdb_right-right-only .moduletable_menu .menu li a:hover {
+	background-image: url(../images/light/menu_hover.jpg);
+}
+#style11 .moduletable_login {
+	background-image: url(../images/light/login_bg.jpg);
+	border-top: 1px solid #dfdfdf;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+img.image {
+	margin: -10px;
+}

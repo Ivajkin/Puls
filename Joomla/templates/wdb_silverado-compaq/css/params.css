@@ -1,0 +1,1960 @@
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+.ff1,
+.ff1 .inputbox,
+.ff1 input.button {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.ff2,
+.ff2 .inputbox,
+.ff2 input.button {
+	font-family: "Times New Roman", Times, serif;
+}
+.ff3,
+.ff3 .inputbox,
+.ff3 input.button {
+	font-family: "Courier New", Courier, monospace;
+}
+.ff4,
+.ff4 .inputbox,
+.ff4 input.button {
+	font-family: "Georgia", Times New Roman, Times, serif;
+}
+.ff5,
+.ff5 .inputbox,
+.ff5 input.button {
+	font-family: "Verdana", Arial, Helvetica, sans-serif;
+}
+.ff6,
+.ff6 .inputbox,
+.ff6 input.button {
+	font-family: "Geneva", Arial, Helvetica, sans-serif;
+}
+.ff7,
+.ff7 .inputbox,
+.ff7 input.button {
+	font-family: "Book Antiqua";
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style2 {
+	background-color: #F0F0F0;
+}
+/*********** links ***********/
+#style2 #wdb_topcenter a:link,
+#style2 #wdb_topcenter a:visited,
+#style2 #wdb_topright a:link,
+#style2 #wdb_topright a:visited,
+#style2 #wdb_topmenu a:link,
+#style2 #wdb_topmenu a:visited {
+	color: #464646;
+}
+#style2 #wdb_toolbar .menu a:link,
+#style2 #wdb_toolbar .menu a:visited {
+	color: #FFFFFF;
+}
+#style2 #wdb_toolbar .menu li.active a,
+#style2 #wdb_toolbar .menu li.active a:hover,
+#style2 #wdb_toolbar .menu li.active a:active,
+#style2 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/light/toolbar_current.jpg);
+	color: #FFFFFF;
+}
+#style2 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/light/toolbar_hover.jpg);
+}
+#style2 #wdb_toolbar .menu li li a:link,
+#style2 #wdb_toolbar .menu li li a:visited {
+	color: #464646;
+}
+#style2 #wdb_toolbar .menu ul {
+	background-color: #e4e4e4;
+}
+#style2 #wdb_toolbar ul.menu li li:hover {
+	background-color: #D7D7D7;
+	background-image: url(none);
+}
+#style2 #wdb_toolbar ul.menu li.active li a,
+#style2 #wdb_toolbar ul.menu li.active li a:hover,
+#style2 #wdb_toolbar ul.menu li.active li a:active,
+#style2 #wdb_toolbar ul.menu li.active li a:focus {
+	background: none !important;
+	color: #464646;
+}
+#style2 #wdb_toolbar .menu ul ul {
+	background-color: #D4D4D4;
+}
+#style2 #wdb_design a:link,
+#style2 #wdb_design a:visited {
+}
+#style2 #wdb_right-left-right a:link,
+#style2 #wdb_right-left-right a:visited,
+#style2 #wdb_left-left-right a:link,
+#style2 #wdb_left-left-right a:visited,
+#style2 #wdb_left-left-only a:link,
+#style2 #wdb_left-left-only a:visited,
+#style2 #wdb_right-right-only a:link,
+#style2 #wdb_right-right-only a:visited {
+	color: #464646;
+}
+#style2 #wdb_adscorner a:link,
+#style2 #wdb_adscorner a:visited,
+#style2 #wdb_header a:link,
+#style2 #wdb_header a:visited {
+	color: #464646;
+}
+#style2 #wdb_right-left-right .moduletable .menu li a:link,
+#style2 #wdb_right-left-right .moduletable .menu li a:visited,
+#style2 #wdb_left-left-right .moduletable .menu li a:link,
+#style2 #wdb_left-left-right .moduletable .menu li a:visited,
+#style2 #wdb_left-left-only .moduletable .menu li a:link,
+#style2 #wdb_left-left-only .moduletable .menu li a:visited,
+#style2 #wdb_right-right-only .moduletable .menu li a:link,
+#style2 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/light/simple_menu.jpg);
+}
+#style2 #wdb_right-left-right .moduletable .menu li a:hover,
+#style2 #wdb_left-left-right .moduletable .menu li a:hover,
+#style2 #wdb_left-left-only .moduletable .menu li a:hover,
+#style2 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/light/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style2 #wdb_top-line {
+	background-color: #E1E1E1;
+}
+#style2 #wdb_header-line {
+	background-color: #FFFFFF;
+}
+#style2 #wdb_toolbar-line {
+	background-image: url(../images/light/toolbar_bg.jpg);
+}
+/********* Structure *********/
+#style2 #wdb_toolbar-structure {
+	background-image: url(../images/light/toolbar.jpg);
+	width: 978px;
+	height: 40px;
+	margin: 0 auto;
+}
+/******** Backgrounds ********/
+#style2 #wdb_banner-bg {
+	border-top: 4px solid #dfdfdf;
+	border-left: 4px solid #dfdfdf;
+	border-right: 4px solid #dfdfdf;
+}
+#style2 #wdb_footer-bg {
+	border-bottom: 4px solid #dfdfdf;
+	border-left: 4px solid #dfdfdf;
+	border-right: 4px solid #dfdfdf;
+}
+#style2 #wdb_copy-bg {
+	border-bottom: 4px solid #dfdfdf;
+	border-left: 4px solid #dfdfdf;
+	border-right: 4px solid #dfdfdf;
+	background-image: url(../images/light/toolbar.jpg);
+}
+/********** Modules **********/
+#style2 #wdb_logo {
+	background-image: url(../images/light/logo.jpg);
+}
+#style2 #wdb_search {
+	background-image: url(../images/light/search_bg.jpg);
+}
+#style2 #wdb_right-right-only,
+#style2 #wdb_left-left-only,
+#style2 #wdb_left-left-right,
+#style2 #wdb_right-left-right {
+	color: #464646;
+}
+#style2 #wdb_copy,
+#style2 #wdb_design {
+	color: #FFFFFF;
+}
+#style2 #wdb_topright,
+#style2 #wdb_topcenter,
+#style2 #wdb_topmenu,
+#style2 #wdb_adscorner,
+#style2 #wdb_header {
+	color: #464646;
+}
+#style2 input.button {
+	border: 1px solid #838383;
+	background-image: url(../images/dark/button.jpg);
+	color: #FFFFFF;
+}
+/********* Frontpage *********/
+#style2 #wdb_body-right-only {
+	border: 4px solid #dfdfdf;
+	background-image: url(../images/light/right_only.jpg);
+}
+#style2 #wdb_body-left-only {
+	border: 4px solid #dfdfdf;
+	background-image: url(../images/light/left_only.jpg);
+}
+#style2 #wdb_body-left-right {
+	border: 4px solid #dfdfdf;
+	background-image: url(../images/light/left_right.jpg);
+}
+#style2 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #dfdfdf;
+}
+/******** Moduletable ********/
+#style2 #wdb_right-left-right .moduletable,
+#style2 #wdb_right-left-right .moduletable_menu,
+#style2 #wdb_left-left-right .moduletable,
+#style2 #wdb_left-left-right .moduletable_menu,
+#style2 #wdb_left-left-only .moduletable,
+#style2 #wdb_left-left-only .moduletable_menu,
+#style2 #wdb_right-right-only .moduletable,
+#style2 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #dfdfdf;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style3 {
+	background-color: #A0BD93;
+}
+/*********** links ***********/
+#style3 #wdb_toolbar .menu a:link,
+#style3 #wdb_toolbar .menu a:visited {
+	color: #FFFFFF;
+}
+#style3 #wdb_toolbar .menu li.active a,
+#style3 #wdb_toolbar .menu li.active a:hover,
+#style3 #wdb_toolbar .menu li.active a:active,
+#style3 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/green/toolbar_current.jpg);
+	color: #FFFFFF;
+}
+#style3 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/green/toolbar_hover.jpg);
+}
+#style3 #wdb_toolbar .menu ul {
+	background-color: #6C955B;
+}
+#style3 #wdb_toolbar .menu ul ul {
+	background-color: #92B483;
+}
+#style3 #wdb_right-left-right .moduletable .menu li a:link,
+#style3 #wdb_right-left-right .moduletable .menu li a:visited,
+#style3 #wdb_left-left-right .moduletable .menu li a:link,
+#style3 #wdb_left-left-right .moduletable .menu li a:visited,
+#style3 #wdb_left-left-only .moduletable .menu li a:link,
+#style3 #wdb_left-left-only .moduletable .menu li a:visited,
+#style3 #wdb_right-right-only .moduletable .menu li a:link,
+#style3 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/green/simple_menu.jpg);
+}
+#style3 #wdb_right-left-right .moduletable .menu li a:hover,
+#style3 #wdb_left-left-right .moduletable .menu li a:hover,
+#style3 #wdb_left-left-only .moduletable .menu li a:hover,
+#style3 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/green/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style3 #wdb_top-line {
+	background-color: #78976a;
+}
+#style3 #wdb_header-line {
+	background-color: #89AD7A;
+}
+#style3 #wdb_toolbar-line {
+	background-image: url(../images/green/toolbar_bg.jpg);
+}
+/********* Structure *********/
+#style3 #wdb_toolbar-structure {
+	background-image: url(../images/green/toolbar.jpg);
+}
+/******** Backgrounds ********/
+#style3 #wdb_copy-bg {
+	border-bottom: 4px solid #86a977;
+	border-left: 4px solid #86a977;
+	border-right: 4px solid #86a977;
+	background-image: url(../images/green/toolbar.jpg);
+}
+#style3 #wdb_banner-bg {
+	border-top: 4px solid #86a977;
+	border-left: 4px solid #86a977;
+	border-right: 4px solid #86a977;
+}
+#style3 #wdb_footer-bg {
+	border-bottom: 4px solid #86a977;
+	border-left: 4px solid #86a977;
+	border-right: 4px solid #86a977;
+}
+/********** Modules **********/
+#style3 #wdb_logo {
+	background-image: url(../images/green/logo.jpg);
+}
+#style3 #wdb_search {
+	background-image: url(../images/green/search_bg.jpg);
+}
+/********* Frontpage *********/
+#style3 #wdb_body-right-only {
+	border: 4px solid #86a977;
+	background-image: url(../images/green/right_only.jpg);
+}
+#style3 #wdb_body-left-only {
+	border: 4px solid #86a977;
+	background-image: url(../images/green/left_only.jpg);
+}
+#style3 #wdb_body-left-right {
+	border: 4px solid #86a977;
+	background-image: url(../images/green/left_right.jpg);
+}
+#style3 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #86a977;
+}
+/******** Moduletable ********/
+#style3 #wdb_right-left-right .moduletable,
+#style3 #wdb_right-left-right .moduletable_menu,
+#style3 #wdb_left-left-right .moduletable,
+#style3 #wdb_left-left-right .moduletable_menu,
+#style3 #wdb_left-left-only .moduletable,
+#style3 #wdb_left-left-only .moduletable_menu,
+#style3 #wdb_right-right-only .moduletable,
+#style3 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #86a977;
+}
+/*********** input ***********/
+#style3 #wdb_search .inputbox {
+	border: 2px solid #ffffff;
+	background-color: #E8F0E8;
+}
+#style3 input.button {
+	border: 1px solid #ffffff;
+	background-image: url(../images/green/button.jpg);
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style4 {
+	background-color: #3b8ed5;
+}
+/*********** links ***********/
+#style4 #wdb_toolbar .menu a:link,
+#style4 #wdb_toolbar .menu a:visited {
+	color: #FFFFFF;
+}
+#style4 #wdb_toolbar .menu li.active a,
+#style4 #wdb_toolbar .menu li.active a:hover,
+#style4 #wdb_toolbar .menu li.active a:active,
+#style4 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/blue/toolbar_current.jpg);
+	color: #FFFFFF;
+}
+#style4 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/blue/toolbar_hover.jpg);
+}
+#style4 #wdb_toolbar .menu ul {
+	background-color: #3376B3;
+}
+#style4 #wdb_toolbar .menu ul ul {
+	background-color: #2B6395;
+}
+#style4 #wdb_right-left-right .moduletable .menu li a:link,
+#style4 #wdb_right-left-right .moduletable .menu li a:visited,
+#style4 #wdb_left-left-right .moduletable .menu li a:link,
+#style4 #wdb_left-left-right .moduletable .menu li a:visited,
+#style4 #wdb_left-left-only .moduletable .menu li a:link,
+#style4 #wdb_left-left-only .moduletable .menu li a:visited,
+#style4 #wdb_right-right-only .moduletable .menu li a:link,
+#style4 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/blue/simple_menu.jpg);
+}
+#style4 #wdb_right-left-right .moduletable .menu li a:hover,
+#style4 #wdb_left-left-right .moduletable .menu li a:hover,
+#style4 #wdb_left-left-only .moduletable .menu li a:hover,
+#style4 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/blue/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style4 #wdb_top-line {
+	background-color: #2b689c;
+}
+#style4 #wdb_header-line {
+	background-color: #3279b5;
+}
+#style4 #wdb_toolbar-line {
+	background-image: url(../images/blue/toolbar_bg.jpg);
+}
+/********* Structure *********/
+#style4 #wdb_toolbar-structure {
+	background-image: url(../images/blue/toolbar.jpg);
+}
+/********** Modules **********/
+#style4 #wdb_logo {
+	background-image: url(../images/blue/logo.jpg);
+}
+#style4 #wdb_search {
+	background-image: url(../images/blue/search_bg.jpg);
+}
+/********* Frontpage *********/
+#style4 #wdb_body-right-only {
+	border: 4px solid #3681c1;
+	background-image: url(../images/blue/right_only.jpg);
+}
+#style4 #wdb_body-left-only {
+	border: 4px solid #3681c1;
+	background-image: url(../images/blue/left_only.jpg);
+}
+#style4 #wdb_body-left-right {
+	border: 4px solid #3681c1;
+	background-image: url(../images/blue/left_right.jpg);
+}
+#style4 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #3681c1;
+}
+/******** Backgrounds ********/
+#style4 #wdb_copy-bg {
+	border-bottom: 4px solid #3681c1;
+	border-left: 4px solid #3681c1;
+	border-right: 4px solid #3681c1;
+	background-image: url(../images/blue/toolbar.jpg);
+}
+#style4 #wdb_banner-bg {
+	border-top: 4px solid #3681c1;
+	border-left: 4px solid #3681c1;
+	border-right: 4px solid #3681c1;
+}
+#style4 #wdb_footer-bg {
+	border-bottom: 4px solid #3681c1;
+	border-left: 4px solid #3681c1;
+	border-right: 4px solid #3681c1;
+}
+/******** Moduletable ********/
+#style4 #wdb_right-left-right .moduletable,
+#style4 #wdb_right-left-right .moduletable_menu,
+#style4 #wdb_left-left-right .moduletable,
+#style4 #wdb_left-left-right .moduletable_menu,
+#style4 #wdb_left-left-only .moduletable,
+#style4 #wdb_left-left-only .moduletable_menu,
+#style4 #wdb_right-right-only .moduletable,
+#style4 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #3681c1;
+}
+/*********** input ***********/
+#style4 #wdb_search .inputbox {
+	border: 2px solid #2d699d;
+}
+#style4 input.button {
+	border: 1px solid #24537d;
+	background-image: url(../images/blue/button.jpg);
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style5 {
+	background-color: #ffe4c4;
+}
+/*********** Lines ***********/
+#style5 #wdb_top-line {
+	background-color: #cdb79e;
+}
+#style5 #wdb_header-line {
+	background-color: #eed5b7;
+}
+#style5 #wdb_toolbar-line {
+	background-image: url(../images/brown/toolbar_bg.jpg);
+}
+/********* Structure *********/
+#style5 #wdb_toolbar-structure {
+	background-image: url(../images/brown/toolbar.jpg);
+}
+/******** Backgrounds ********/
+#style5 #wdb_copy-bg {
+	border-bottom: 4px solid #eed5b7;
+	border-left: 4px solid #eed5b7;
+	border-right: 4px solid #eed5b7;
+	background-image: url(../images/brown/toolbar.jpg);
+}
+#style5 #wdb_banner-bg {
+	border-top: 4px solid #eed5b7;
+	border-left: 4px solid #eed5b7;
+	border-right: 4px solid #eed5b7;
+}
+#style5 #wdb_footer-bg {
+	border-bottom: 4px solid #eed5b7;
+	border-left: 4px solid #eed5b7;
+	border-right: 4px solid #eed5b7;
+}
+/********** Modules **********/
+#style5 #wdb_logo {
+	background-image: url(../images/brown/logo.jpg);
+}
+#style5 #wdb_search {
+	background-image: url(../images/brown/search_bg.jpg);
+}
+#style5 #wdb_right-right-only,
+#style5 #wdb_left-left-only,
+#style5 #wdb_left-left-right,
+#style5 #wdb_right-left-right {
+	color: #464646;
+}
+#style5 #wdb_adscorner,
+#style5 #wdb_header,
+#style5 #wdb_copy,
+#style5 #wdb_design {
+	color: #464646;
+}
+/********* Frontpage *********/
+#style5 #wdb_body-right-only {
+	border: 4px solid #eed5b7;
+	background-image: url(../images/brown/right_only.jpg);
+}
+#style5 #wdb_body-left-only {
+	border: 4px solid #eed5b7;
+	background-image: url(../images/brown/left_only.jpg);
+}
+#style5 #wdb_body-left-right {
+	border: 4px solid #eed5b7;
+	background-image: url(../images/brown/left_right.jpg);
+}
+#style5 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #eed5b7;
+}
+/******** Moduletable ********/
+#style5 #wdb_right-left-right .moduletable,
+#style5 #wdb_right-left-right .moduletable_menu,
+#style5 #wdb_left-left-right .moduletable,
+#style5 #wdb_left-left-right .moduletable_menu,
+#style5 #wdb_left-left-only .moduletable,
+#style5 #wdb_left-left-only .moduletable_menu,
+#style5 #wdb_right-right-only .moduletable,
+#style5 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #eed5b7;
+}
+/*********** links ***********/
+#style5 #wdb_topcenter a:link,
+#style5 #wdb_topcenter a:visited,
+#style5 #wdb_topright a:link,
+#style5 #wdb_topright a:visited,
+#style5 #wdb_topmenu a:link,
+#style5 #wdb_topmenu a:visited {
+	color: #464646;
+}
+#style5 #wdb_toolbar .menu a:link,
+#style5 #wdb_toolbar .menu a:visited {
+	color: #464646;
+}
+#style5 #wdb_toolbar .menu li.active a,
+#style5 #wdb_toolbar .menu li.active a:hover,
+#style5 #wdb_toolbar .menu li.active a:active,
+#style5 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/brown/toolbar_current.jpg);
+	color: #464646;
+}
+#style5 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/brown/toolbar_hover.jpg);
+}
+#style5 #wdb_toolbar .menu ul {
+	background-color: #dfc6ac;
+}
+#style5 #wdb_toolbar .menu ul ul {
+	background-color: #E0D0AB;
+}
+#style5 #wdb_design a:link,
+#style5 #wdb_design a:visited {
+	color: #464646;
+}
+#style5 #wdb_adscorner a:link,
+#style5 #wdb_adscorner a:visited,
+#style5 #wdb_header a:link,
+#style5 #wdb_header a:visited {
+	color: #464646;
+}
+#style5 #wdb_right-left-right a:link,
+#style5 #wdb_right-left-right a:visited,
+#style5 #wdb_left-left-right a:link,
+#style5 #wdb_left-left-right a:visited,
+#style5 #wdb_left-left-only a:link,
+#style5 #wdb_left-left-only a:visited,
+#style5 #wdb_right-right-only a:link,
+#style5 #wdb_right-right-only a:visited {
+	color: #464646;
+}
+#style5 #wdb_right-left-right .moduletable .menu li a:link,
+#style5 #wdb_right-left-right .moduletable .menu li a:visited,
+#style5 #wdb_left-left-right .moduletable .menu li a:link,
+#style5 #wdb_left-left-right .moduletable .menu li a:visited,
+#style5 #wdb_left-left-only .moduletable .menu li a:link,
+#style5 #wdb_left-left-only .moduletable .menu li a:visited,
+#style5 #wdb_right-right-only .moduletable .menu li a:link,
+#style5 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/brown/simple_menu.jpg);
+}
+#style5 #wdb_right-left-right .moduletable .menu li a:hover,
+#style5 #wdb_left-left-right .moduletable .menu li a:hover,
+#style5 #wdb_left-left-only .moduletable .menu li a:hover,
+#style5 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/brown/simple_menu_hover.jpg);
+}
+/*********** input ***********/
+#style5 #wdb_search .inputbox {
+	border: 2px solid #ffd09a;
+}
+#style5 input.button {
+	border: 1px solid #ffd09a;
+	background-image: url(../images/brown/button.jpg);
+	color: #464646;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style6 {
+	background-color: #f4e887;
+}
+/*********** links ***********/
+#style6 #wdb_topcenter a:link,
+#style6 #wdb_topcenter a:visited,
+#style6 #wdb_topright a:link,
+#style6 #wdb_topright a:visited,
+#style6 #wdb_topmenu a:link,
+#style6 #wdb_topmenu a:visited {
+	color: #464646;
+}
+#style6 #wdb_toolbar .menu a:link,
+#style6 #wdb_toolbar .menu a:visited {
+	color: #464646;
+}
+#style6 #wdb_toolbar .menu li.active a,
+#style6 #wdb_toolbar .menu li.active a:hover,
+#style6 #wdb_toolbar .menu li.active a:active,
+#style6 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/yellow/toolbar_current.jpg);
+	color: #464646;
+}
+#style6 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/yellow/toolbar_hover.jpg);
+}
+#style6 #wdb_toolbar .menu ul {
+	background-color: #d9cc64;
+}
+#style6 #wdb_toolbar .menu ul ul {
+	background-color: #D2C54D;
+}
+#style6 #wdb_adscorner a:link,
+#style6 #wdb_adscorner a:visited,
+#style6 #wdb_design a:link,
+#style6 #wdb_design a:visited,
+#style6 #wdb_header a:link,
+#style6 #wdb_header a:visited,
+#style6 #wdb_right-left-right a:link,
+#style6 #wdb_right-left-right a:visited,
+#style6 #wdb_left-left-right a:link,
+#style6 #wdb_left-left-right a:visited,
+#style6 #wdb_left-left-only a:link,
+#style6 #wdb_left-left-only a:visited,
+#style6 #wdb_right-right-only a:link,
+#style6 #wdb_right-right-only a:visited {
+	color: #464646;
+}
+#style6 #wdb_right-left-right .moduletable .menu li a:link,
+#style6 #wdb_right-left-right .moduletable .menu li a:visited,
+#style6 #wdb_left-left-right .moduletable .menu li a:link,
+#style6 #wdb_left-left-right .moduletable .menu li a:visited,
+#style6 #wdb_left-left-only .moduletable .menu li a:link,
+#style6 #wdb_left-left-only .moduletable .menu li a:visited,
+#style6 #wdb_right-right-only .moduletable .menu li a:link,
+#style6 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/yellow/simple_menu.jpg);
+}
+#style6 #wdb_right-left-right .moduletable .menu li a:hover,
+#style6 #wdb_left-left-right .moduletable .menu li a:hover,
+#style6 #wdb_left-left-only .moduletable .menu li a:hover,
+#style6 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/yellow/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style6 #wdb_top-line {
+	background-color: #f4da00;
+}
+#style6 #wdb_header-line {
+	background-color: #f4e671;
+}
+#style6 #wdb_toolbar-line {
+	background-image: url(../images/yellow/toolbar_bg.jpg);
+}
+/********** Modules **********/
+#style6 #wdb_logo {
+	background-image: url(../images/yellow/logo.jpg);
+}
+#style6 #wdb_search {
+	background-image: url(../images/yellow/search_bg.jpg);
+}
+#style6 #wdb_right-right-only,
+#style6 #wdb_left-left-only,
+#style6 #wdb_left-left-right,
+#style6 #wdb_right-left-right {
+	color: #464646;
+}
+#style6 #wdb_topright,
+#style6 #wdb_topcenter,
+#style6 #wdb_topmenu,
+#style6 #wdb_adscorner,
+#style6 #wdb_header,
+#style6 #wdb_copy,
+#style6 #wdb_design {
+	color: #464646;
+}
+/******** Backgrounds ********/
+#style6 #wdb_copy-bg {
+	border-bottom: 4px solid #e6d75c;
+	border-left: 4px solid #e6d75c;
+	border-right: 4px solid #e6d75c;
+	background-image: url(../images/yellow/toolbar.jpg);
+}
+#style6 #wdb_banner-bg {
+	border-top: 4px solid #e6d75c;
+	border-left: 4px solid #e6d75c;
+	border-right: 4px solid #e6d75c;
+}
+#style6 #wdb_footer-bg {
+	border-bottom: 4px solid #e6d75c;
+	border-left: 4px solid #e6d75c;
+	border-right: 4px solid #e6d75c;
+}
+/********* Structure *********/
+#style6 #wdb_toolbar-structure {
+	background-image: url(../images/yellow/toolbar.jpg);
+}
+/********* Frontpage *********/
+#style6 #wdb_body-right-only {
+	border: 4px solid #e6d75c;
+	background-image: url(../images/yellow/right_only.jpg);
+}
+#style6 #wdb_body-left-only {
+	border: 4px solid #e6d75c;
+	background-image: url(../images/yellow/left_only.jpg);
+}
+#style6 #wdb_body-left-right {
+	border: 4px solid #e6d75c;
+	background-image: url(../images/yellow/left_right.jpg);
+}
+#style6 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #e6d75c;
+}
+/******** Moduletable ********/
+#style6 #wdb_right-left-right .moduletable,
+#style6 #wdb_right-left-right .moduletable_menu,
+#style6 #wdb_left-left-right .moduletable,
+#style6 #wdb_left-left-right .moduletable_menu,
+#style6 #wdb_left-left-only .moduletable,
+#style6 #wdb_left-left-only .moduletable_menu,
+#style6 #wdb_right-right-only .moduletable,
+#style6 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #e6d75c;
+}
+/*********** input ***********/
+#style6 #wdb_search .inputbox {
+	border: 2px solid #f5efbe;
+}
+#style6 input.button {
+	border: 1px solid #f5efbe;
+	background-image: url(../images/yellow/button.jpg);
+	color: #464646;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style7 {
+	background-color: #fbaf5d;
+}
+/*********** links ***********/
+#style7 #wdb_toolbar .menu li.active a,
+#style7 #wdb_toolbar .menu li.active a:hover,
+#style7 #wdb_toolbar .menu li.active a:active,
+#style7 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/orange/toolbar_current.jpg);
+	color: #FFFFFF;
+}
+#style7 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/orange/toolbar_hover.jpg);
+}
+#style7 #wdb_toolbar .menu ul {
+	background-color: #FFAE55;
+}
+#style7 #wdb_toolbar .menu ul ul {
+	background-color: #FF8E11;
+}
+#style7 #wdb_right-left-right .moduletable .menu li a:link,
+#style7 #wdb_right-left-right .moduletable .menu li a:visited,
+#style7 #wdb_left-left-right .moduletable .menu li a:link,
+#style7 #wdb_left-left-right .moduletable .menu li a:visited,
+#style7 #wdb_left-left-only .moduletable .menu li a:link,
+#style7 #wdb_left-left-only .moduletable .menu li a:visited,
+#style7 #wdb_right-right-only .moduletable .menu li a:link,
+#style7 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/orange/simple_menu.jpg);
+}
+#style7 #wdb_right-left-right .moduletable .menu li a:hover,
+#style7 #wdb_left-left-right .moduletable .menu li a:hover,
+#style7 #wdb_left-left-only .moduletable .menu li a:hover,
+#style7 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/orange/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style7 #wdb_top-line {
+	background-color: #e77d00;
+}
+#style7 #wdb_header-line {
+	background-color: #f7941d;
+}
+#style7 #wdb_toolbar-line {
+	background-image: url(../images/orange/toolbar_bg.jpg);
+}
+/********** Modules **********/
+#style7 #wdb_logo {
+	background-image: url(../images/orange/logo.jpg);
+}
+#style7 #wdb_search {
+	background-image: url(../images/orange/search_bg.jpg);
+}
+/******** Backgrounds ********/
+#style7 #wdb_copy-bg {
+	border-bottom: 4px solid #fbc891;
+	border-left: 4px solid #fbc891;
+	border-right: 4px solid #fbc891;
+	background-image: url(../images/orange/toolbar.jpg);
+}
+#style7 #wdb_banner-bg {
+	border-top: 4px solid #fbc891;
+	border-left: 4px solid #fbc891;
+	border-right: 4px solid #fbc891;
+}
+#style7 #wdb_footer-bg {
+	border-bottom: 4px solid #fbc891;
+	border-left: 4px solid #fbc891;
+	border-right: 4px solid #fbc891;
+}
+/********* Structure *********/
+#style7 #wdb_toolbar-structure {
+	background-image: url(../images/orange/toolbar.jpg);
+}
+/********* Frontpage *********/
+#style7 #wdb_body-right-only {
+	border: 4px solid #fbc891;
+	background-image: url(../images/orange/right_only.jpg);
+}
+#style7 #wdb_body-left-only {
+	border: 4px solid #fbc891;
+	background-image: url(../images/orange/left_only.jpg);
+}
+#style7 #wdb_body-left-right {
+	border: 4px solid #fbc891;
+	background-image: url(../images/orange/left_right.jpg);
+}
+#style7 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #fbc891;
+}
+/******** Moduletable ********/
+#style7 #wdb_right-left-right .moduletable,
+#style7 #wdb_right-left-right .moduletable_menu,
+#style7 #wdb_left-left-right .moduletable,
+#style7 #wdb_left-left-right .moduletable_menu,
+#style7 #wdb_left-left-only .moduletable,
+#style7 #wdb_left-left-only .moduletable_menu,
+#style7 #wdb_right-right-only .moduletable,
+#style7 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #fbc891;
+}
+/*********** input ***********/
+#style7 #wdb_search .inputbox {
+	border: 2px solid #ffc17b;
+}
+#style7 input.button {
+	border: 1px solid #ffc17b;
+	background-image: url(../images/orange/button.jpg);
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style8 {
+	background-color: #CC0D12;
+}
+/*********** links ***********/
+#style8 #wdb_toolbar .menu li.active a,
+#style8 #wdb_toolbar .menu li.active a:hover,
+#style8 #wdb_toolbar .menu li.active a:active,
+#style8 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/red/toolbar_current.jpg);
+	color: #FFFFFF;
+}
+#style8 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/red/toolbar_hover.jpg);
+}
+#style8 #wdb_toolbar .menu ul {
+	background-color: #da0000;
+}
+#style8 #wdb_toolbar .menu ul ul {
+	background-color: #bd0000;
+}
+#style8 #wdb_right-left-right .moduletable .menu li a:link,
+#style8 #wdb_right-left-right .moduletable .menu li a:visited,
+#style8 #wdb_left-left-right .moduletable .menu li a:link,
+#style8 #wdb_left-left-right .moduletable .menu li a:visited,
+#style8 #wdb_left-left-only .moduletable .menu li a:link,
+#style8 #wdb_left-left-only .moduletable .menu li a:visited,
+#style8 #wdb_right-right-only .moduletable .menu li a:link,
+#style8 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/red/simple_menu.jpg);
+}
+#style8 #wdb_right-left-right .moduletable .menu li a:hover,
+#style8 #wdb_left-left-right .moduletable .menu li a:hover,
+#style8 #wdb_left-left-only .moduletable .menu li a:hover,
+#style8 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/red/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style8 #wdb_top-line {
+	background-color: #790000;
+}
+#style8 #wdb_header-line {
+	background-color: #9d0a0e;
+}
+#style8 #wdb_toolbar-line {
+	background-image: url(../images/red/toolbar_bg.jpg);
+}
+/********** Modules **********/
+#style8 #wdb_logo {
+	background-image: url(../images/red/logo.jpg);
+}
+#style8 #wdb_search {
+	background-image: url(../images/red/search_bg.jpg);
+}
+/******** Backgrounds ********/
+#style8 #wdb_copy-bg {
+	border-bottom: 4px solid #80080b;
+	border-left: 4px solid #80080b;
+	border-right: 4px solid #80080b;
+	background-image: url(../images/red/toolbar.jpg);
+}
+#style8 #wdb_banner-bg {
+	border-top: 4px solid #80080b;
+	border-left: 4px solid #80080b;
+	border-right: 4px solid #80080b;
+}
+#style8 #wdb_footer-bg {
+	border-bottom: 4px solid #80080b;
+	border-left: 4px solid #80080b;
+	border-right: 4px solid #80080b;
+}
+/********* Structure *********/
+#style8 #wdb_toolbar-structure {
+	background-image: url(../images/red/toolbar.jpg);
+}
+/********* Frontpage *********/
+#style8 #wdb_body-right-only {
+	border: 4px solid #80080b;
+	background-image: url(../images/red/right_only.jpg);
+}
+#style8 #wdb_body-left-only {
+	border: 4px solid #80080b;
+	background-image: url(../images/red/left_only.jpg);
+}
+#style8 #wdb_body-left-right {
+	border: 4px solid #80080b;
+	background-image: url(../images/red/left_right.jpg);
+}
+#style8 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #80080b;
+}
+/******** Moduletable ********/
+#style8 #wdb_right-left-right .moduletable,
+#style8 #wdb_right-left-right .moduletable_menu,
+#style8 #wdb_left-left-right .moduletable,
+#style8 #wdb_left-left-right .moduletable_menu,
+#style8 #wdb_left-left-only .moduletable,
+#style8 #wdb_left-left-only .moduletable_menu,
+#style8 #wdb_right-right-only .moduletable,
+#style8 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #80080b;
+}
+/*********** input ***********/
+#style8 #wdb_search .inputbox {
+	border: 2px solid #9d5052;
+}
+#style8 input.button {
+	border: 1px solid #9d5052;
+	background-image: url(../images/red/button.jpg);
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style9 {
+	background-color: #8560a8;
+}
+/*********** links ***********/
+#style9 #wdb_toolbar .menu li.active a,
+#style9 #wdb_toolbar .menu li.active a:hover,
+#style9 #wdb_toolbar .menu li.active a:active,
+#style9 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/violet/toolbar_current.jpg);
+	color: #FFFFFF;
+}
+#style9 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/violet/toolbar_hover.jpg);
+}
+#style9 #wdb_toolbar .menu ul {
+	background-color: #570a91;
+}
+#style9 #wdb_toolbar .menu ul ul {
+	background-color: #4a087b;
+}
+#style9 #wdb_right-left-right .moduletable .menu li a:link,
+#style9 #wdb_right-left-right .moduletable .menu li a:visited,
+#style9 #wdb_left-left-right .moduletable .menu li a:link,
+#style9 #wdb_left-left-right .moduletable .menu li a:visited,
+#style9 #wdb_left-left-only .moduletable .menu li a:link,
+#style9 #wdb_left-left-only .moduletable .menu li a:visited,
+#style9 #wdb_right-right-only .moduletable .menu li a:link,
+#style9 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/violet/simple_menu.jpg);
+}
+#style9 #wdb_right-left-right .moduletable .menu li a:hover,
+#style9 #wdb_left-left-right .moduletable .menu li a:hover,
+#style9 #wdb_left-left-only .moduletable .menu li a:hover,
+#style9 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/violet/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style9 #wdb_top-line {
+	background-color: #8560a8;
+}
+#style9 #wdb_header-line {
+	background-color: #662d91;
+}
+#style9 #wdb_toolbar-line {
+	background-image: url(../images/violet/toolbar_bg.jpg);
+}
+/********** Modules **********/
+#style9 #wdb_logo {
+	background-image: url(../images/violet/logo.jpg);
+}
+#style9 #wdb_search {
+	background-image: url(../images/violet/search_bg.jpg);
+}
+/******** Backgrounds ********/
+#style9 #wdb_copy-bg {
+	border-bottom: 4px solid #7743a8;
+	border-left: 4px solid #7743a8;
+	border-right: 4px solid #7743a8;
+	background-image: url(../images/violet/toolbar.jpg);
+}
+#style9 #wdb_banner-bg {
+	border-top: 4px solid #7743a8;
+	border-left: 4px solid #7743a8;
+	border-right: 4px solid #7743a8;
+}
+#style9 #wdb_footer-bg {
+	border-bottom: 4px solid #7743a8;
+	border-left: 4px solid #7743a8;
+	border-right: 4px solid #7743a8;
+}
+/********* Structure *********/
+#style9 #wdb_toolbar-structure {
+	background-image: url(../images/violet/toolbar.jpg);
+}
+/********* Frontpage *********/
+#style9 #wdb_body-right-only {
+	border: 4px solid #7743a8;
+	background-image: url(../images/violet/right_only.jpg);
+}
+#style9 #wdb_body-left-only {
+	border: 4px solid #7743a8;
+	background-image: url(../images/violet/left_only.jpg);
+}
+#style9 #wdb_body-left-right {
+	border: 4px solid #7743a8;
+	background-image: url(../images/violet/left_right.jpg);
+}
+#style9 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #7743a8;
+}
+/******** Moduletable ********/
+#style9 #wdb_right-left-right .moduletable,
+#style9 #wdb_right-left-right .moduletable_menu,
+#style9 #wdb_left-left-right .moduletable,
+#style9 #wdb_left-left-right .moduletable_menu,
+#style9 #wdb_left-left-only .moduletable,
+#style9 #wdb_left-left-only .moduletable_menu,
+#style9 #wdb_right-right-only .moduletable,
+#style9 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #7743a8;
+}
+/*********** input ***********/
+#style9 #wdb_search .inputbox {
+	border: 2px solid #ce8eff;
+}
+#style9 input.button {
+	border: 1px solid #ce8eff;
+	background-image: url(../images/violet/button.jpg);
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style10 {
+	background-color: #f49ac1;
+}
+/*********** links ***********/
+#style10 #wdb_toolbar .menu li.active a,
+#style10 #wdb_toolbar .menu li.active a:hover,
+#style10 #wdb_toolbar .menu li.active a:active,
+#style10 #wdb_toolbar .menu li.active a:focus {
+	background-image: url(../images/pink/toolbar_current.jpg);
+	color: #FFFFFF;
+}
+#style10 #wdb_toolbar ul.menu li:hover {
+	background-image: url(../images/pink/toolbar_hover.jpg);
+}
+#style10 #wdb_toolbar .menu ul {
+	background-color: #b45f83;
+}
+#style10 #wdb_toolbar .menu ul ul {
+	background-color: #CE97AE;
+}
+#style10 #wdb_right-left-right .moduletable .menu li a:link,
+#style10 #wdb_right-left-right .moduletable .menu li a:visited,
+#style10 #wdb_left-left-right .moduletable .menu li a:link,
+#style10 #wdb_left-left-right .moduletable .menu li a:visited,
+#style10 #wdb_left-left-only .moduletable .menu li a:link,
+#style10 #wdb_left-left-only .moduletable .menu li a:visited,
+#style10 #wdb_right-right-only .moduletable .menu li a:link,
+#style10 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/pink/simple_menu.jpg);
+}
+#style10 #wdb_right-left-right .moduletable .menu li a:hover,
+#style10 #wdb_left-left-right .moduletable .menu li a:hover,
+#style10 #wdb_left-left-only .moduletable .menu li a:hover,
+#style10 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/pink/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style10 #wdb_top-line {
+	background-color: #ED5A99;
+}
+#style10 #wdb_header-line {
+	background-color: #F079AC;
+}
+#style10 #wdb_toolbar-line {
+	background-image: url(../images/pink/toolbar_bg.jpg);
+}
+/********* Structure *********/
+#style10 #wdb_toolbar-structure {
+	background-image: url(../images/pink/toolbar.jpg);
+}
+/********** Modules **********/
+#style10 #wdb_logo {
+	background-image: url(../images/pink/logo.jpg);
+}
+#style10 #wdb_search {
+	background-image: url(../images/pink/search_bg.jpg);
+}
+/******** Backgrounds ********/
+#style10 #wdb_copy-bg {
+	border-bottom: 4px solid #f0c0d5;
+	border-left: 4px solid #f0c0d5;
+	border-right: 4px solid #f0c0d5;
+	background-image: url(../images/pink/toolbar.jpg);
+}
+#style10 #wdb_banner-bg {
+	border-top: 4px solid #f0c0d5;
+	border-left: 4px solid #f0c0d5;
+	border-right: 4px solid #f0c0d5;
+}
+#style10 #wdb_footer-bg {
+	border-bottom: 4px solid #f0c0d5;
+	border-left: 4px solid #f0c0d5;
+	border-right: 4px solid #f0c0d5;
+}
+/********* Frontpage *********/
+#style10 #wdb_body-right-only {
+	border: 4px solid #f0c0d5;
+	background-image: url(../images/pink/right_only.jpg);
+}
+#style10 #wdb_body-left-only {
+	border: 4px solid #f0c0d5;
+	background-image: url(../images/pink/left_only.jpg);
+}
+#style10 #wdb_body-left-right {
+	border: 4px solid #f0c0d5;
+	background-image: url(../images/pink/left_right.jpg);
+}
+#style10 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #f0c0d5;
+}
+/******** Moduletable ********/
+#style10 #wdb_right-left-right .moduletable,
+#style10 #wdb_right-left-right .moduletable_menu,
+#style10 #wdb_left-left-right .moduletable,
+#style10 #wdb_left-left-right .moduletable_menu,
+#style10 #wdb_left-left-only .moduletable,
+#style10 #wdb_left-left-only .moduletable_menu,
+#style10 #wdb_right-right-only .moduletable,
+#style10 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #f0c0d5;
+}
+/*********** input ***********/
+#style10 #wdb_search .inputbox {
+	border: 2px solid #efb0cb;
+}
+#style10 input.button {
+	border: 1px solid #efb0cb;
+	background-image: url(../images/pink/button.jpg);
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style11 {
+	background-color: #F0F0F0;
+}
+/*********** links ***********/
+#style11 #wdb_right-left-right a:link,
+#style11 #wdb_right-left-right a:visited,
+#style11 #wdb_left-left-right a:link,
+#style11 #wdb_left-left-right a:visited,
+#style11 #wdb_left-left-only a:link,
+#style11 #wdb_left-left-only a:visited,
+#style11 #wdb_right-right-only a:link,
+#style11 #wdb_right-right-only a:visited {
+	color: #464646;
+}
+#style11 #wdb_right-left-right .moduletable .menu li a:link,
+#style11 #wdb_right-left-right .moduletable .menu li a:visited,
+#style11 #wdb_left-left-right .moduletable .menu li a:link,
+#style11 #wdb_left-left-right .moduletable .menu li a:visited,
+#style11 #wdb_left-left-only .moduletable .menu li a:link,
+#style11 #wdb_left-left-only .moduletable .menu li a:visited,
+#style11 #wdb_right-right-only .moduletable .menu li a:link,
+#style11 #wdb_right-right-only .moduletable .menu li a:visited {
+	background-image: url(../images/light/simple_menu.jpg);
+}
+#style11 #wdb_right-left-right .moduletable .menu li a:hover,
+#style11 #wdb_left-left-right .moduletable .menu li a:hover,
+#style11 #wdb_left-left-only .moduletable .menu li a:hover,
+#style11 #wdb_right-right-only .moduletable .menu li a:hover {
+	background-image: url(../images/light/simple_menu_hover.jpg);
+}
+/*********** Lines ***********/
+#style11 #wdb_top-line {
+	background-color: #2b689c;
+}
+#style11 #wdb_header-line {
+	background-color: #3279b5;
+}
+#style11 #wdb_toolbar-line {
+	background-image: url(../images/preset1/toolbar_bg.jpg);
+}
+/******** Backgrounds ********/
+#style11 #wdb_banner-bg {
+	border-top: 4px solid #dfdfdf;
+	border-left: 4px solid #dfdfdf;
+	border-right: 4px solid #dfdfdf;
+}
+#style11 #wdb_footer-bg {
+	border-bottom: 4px solid #dfdfdf;
+	border-left: 4px solid #dfdfdf;
+	border-right: 4px solid #dfdfdf;
+}
+#style11 #wdb_copy-bg {
+	border-bottom: 4px solid #dfdfdf;
+	border-left: 4px solid #dfdfdf;
+	border-right: 4px solid #dfdfdf;
+	background-image: url(../images/light/toolbar.jpg);
+}
+/********* Structure *********/
+#style11 #wdb_toolbar-structure {
+	background-image: url(../images/light/toolbar.jpg);
+}
+/********** Modules **********/
+#style11 #wdb_logo {
+	background-image: url(../images/blue/logo.jpg);
+}
+#style11 #wdb_search {
+	background-image: url(../images/light/search_bg.jpg);
+}
+#style11 #wdb_right-right-only,
+#style11 #wdb_left-left-only,
+#style11 #wdb_left-left-right,
+#style11 #wdb_right-left-right {
+	color: #464646;
+}
+/********* Frontpage *********/
+#style11 #wdb_body-right-only {
+	border: 4px solid #dfdfdf;
+	background-image: url(../images/light/right_only.jpg);
+}
+#style11 #wdb_body-left-only {
+	border: 4px solid #dfdfdf;
+	background-image: url(../images/light/left_only.jpg);
+}
+#style11 #wdb_body-left-right {
+	border: 4px solid #dfdfdf;
+	background-image: url(../images/light/left_right.jpg);
+}
+#style11 #wdb_body-wide {
+	width: 970px;
+	border: 4px solid #dfdfdf;
+}
+/******** Moduletable ********/
+#style11 #wdb_right-left-right .moduletable,
+#style11 #wdb_right-left-right .moduletable_menu,
+#style11 #wdb_left-left-right .moduletable,
+#style11 #wdb_left-left-right .moduletable_menu,
+#style11 #wdb_left-left-only .moduletable,
+#style11 #wdb_left-left-only .moduletable_menu,
+#style11 #wdb_right-right-only .moduletable,
+#style11 #wdb_right-right-only .moduletable_menu {
+	border-top: 1px solid #dfdfdf;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style12 .wdb_footer a:link,
+#style12 .wdb_footer a:visited,
+#style12 .wdb_user a:link,
+#style12 .wdb_user a:visited,
+#style12 #wdb_message a:link,
+#style12 #wdb_message a:visited {
+	color: #FFFFFF;
+}
+/********* Frontpage *********/
+#style12 #wdb_body-right-only {
+	background-image: url(../images/allblack/right_only.jpg);
+}
+#style12 #wdb_body-left-only {
+	background-image: url(../images/allblack/left_only.jpg);
+}
+#style12 #wdb_body-left-right {
+	background-image: url(../images/allblack/left_right.jpg);
+}
+#style12 #wdb_body-wide {
+	width: 970px;
+	background-color: #232323;
+}
+/******** Backgrounds ********/
+#style12 #wdb_footer-bg {
+	background-color: #232323;
+}
+/********** Message **********/
+#style12 .wdb_footer,
+#style12 .wdb_user,
+#style12 #wdb_message {
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+.border .blog-featured .readmore,
+.border .blog .readmore,
+.border .readon {
+	border: 1px dotted #b6b6b6;
+	padding: 3px 5px 3px 5px;
+}
+.border .pagenav-next,
+.border .pagenav-prev,
+.border .pagenav {
+	border: 1px dotted #b6b6b6;
+	padding: 3px 5px 3px 5px;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+.color .blog-featured .readmore,
+.color .blog .readmore,
+.color .readon {
+	border: 2px solid #707070;
+	padding: 3px 5px 3px 5px;
+	background-color: #0d0d0d;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+.color .pagenav-next,
+.color .pagenav-prev,
+.color .pagenav {
+	border: 2px solid #707070;
+	padding: 3px 5px 3px 5px;
+	background-color: #0d0d0d;
+	color: #FFFFFF;
+	font-size: 11px;
+}
+#style1 .color ul.pagenav a:link,
+#style1 .color ul.pagenav a:visited,
+#style11 .color ul.pagenav a:link,
+#style11 .color ul.pagenav a:visited,
+#wdb_center-wide .color .readmore a:link,
+#wdb_center-wide .color .readmore a:visited,
+#wdb_center-left-right .color .readmore a:link,
+#wdb_center-left-right .color .readmore a:visited,
+#wdb_center-left-only .color .readmore a:link,
+#wdb_center-left-only .color .readmore a:visited,
+#wdb_center-right-only .color .readmore a:link,
+#wdb_center-right-only .color .readmore a:visited,
+#wdb_center-wide .color a.pagenav:link,
+#wdb_center-wide .color a.pagenav:visited,
+#wdb_center-left-right .color a.pagenav:link,
+#wdb_center-left-right .color a.pagenav:visited,
+#wdb_center-left-only .color a.pagenav:link,
+#wdb_center-left-only .color a.pagenav:visited,
+#wdb_center-right-only .color a.pagenav:link,
+#wdb_center-right-only .color a.pagenav:visited,
+#wdb_center-wide .color a.readon:link,
+#wdb_center-wide .color a.readon:visited,
+#wdb_center-left-right .color a.readon:link,
+#wdb_center-left-right .color a.readon:visited,
+#wdb_center-left-only .color a.readon:link,
+#wdb_center-left-only .color a.readon:visited,
+#wdb_center-right-only .color a.readon:link,
+#wdb_center-right-only .color a.readon:visited {
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style2 .color .blog-featured .readmore,
+#style2 .color .blog .readmore,
+#style2 .color .readon {
+	border: 2px solid #aeaeae;
+	padding: 3px 5px 3px 5px;
+	background-color: #E2E2E2;
+	font-size: 11px;
+}
+#style2 .color .pagenav-next,
+#style2 .color .pagenav-prev,
+#style2 .color .pagenav {
+	border: 2px solid #aeaeae;
+	padding: 3px 5px 3px 5px;
+	background-color: #E2E2E2;
+	color: #464646;
+	font-size: 11px;
+}
+#style2 #wdb_center-wide .color .readmore a:link,
+#style2 #wdb_center-wide .color .readmore a:visited,
+#style2 #wdb_center-left-right .color .readmore a:link,
+#style2 #wdb_center-left-right .color .readmore a:visited,
+#style2 #wdb_center-left-only .color .readmore a:link,
+#style2 #wdb_center-left-only .color .readmore a:visited,
+#style2 #wdb_center-right-only .color .readmore a:link,
+#style2 #wdb_center-right-only .color .readmore a:visited,
+#style2 #wdb_center-wide .color a.pagenav:link,
+#style2 #wdb_center-wide .color a.pagenav:visited,
+#style2 #wdb_center-left-right .color a.pagenav:link,
+#style2 #wdb_center-left-right .color a.pagenav:visited,
+#style2 #wdb_center-left-only .color a.pagenav:link,
+#style2 #wdb_center-left-only .color a.pagenav:visited,
+#style2 #wdb_center-right-only .color a.pagenav:link,
+#style2 #wdb_center-right-only .color a.pagenav:visited,
+#style2 #wdb_center-wide .color a.readon:link,
+#style2 #wdb_center-wide .color a.readon:visited,
+#style2 #wdb_center-left-right .color a.readon:link,
+#style2 #wdb_center-left-right .color a.readon:visited,
+#style2 #wdb_center-left-only .color a.readon:link,
+#style2 #wdb_center-left-only .color a.readon:visited,
+#style2 #wdb_center-right-only .color a.readon:link,
+#style2 #wdb_center-right-only .color a.readon:visited {
+	color: #464646;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style3 .color .blog-featured .readmore,
+#style3 .color .blog .readmore,
+#style3 .color .readon {
+	border: 2px solid #86a977;
+	padding: 3px 5px 3px 5px;
+	background-color: #97be87;
+	font-size: 11px;
+}
+#style3 .color .pagenav-next,
+#style3 .color .pagenav-prev,
+#style3 .color .pagenav {
+	border: 2px solid #86a977;
+	padding: 3px 5px 3px 5px;
+	background-color: #97be87;
+	color: #FFFFFF;
+	font-size: 11px;
+}
+#style3 .color ul.pagenav a:link,
+#style3 .color ul.pagenav a:visited,
+#style3 #wdb_center-wide .color .readmore a:link,
+#style3 #wdb_center-wide .color .readmore a:visited,
+#style3 #wdb_center-left-right .color .readmore a:link,
+#style3 #wdb_center-left-right .color .readmore a:visited,
+#style3 #wdb_center-left-only .color .readmore a:link,
+#style3 #wdb_center-left-only .color .readmore a:visited,
+#style3 #wdb_center-right-only .color .readmore a:link,
+#style3 #wdb_center-right-only .color .readmore a:visited,
+#style3 #wdb_center-wide .color a.pagenav:link,
+#style3 #wdb_center-wide .color a.pagenav:visited,
+#style3 #wdb_center-left-right .color a.pagenav:link,
+#style3 #wdb_center-left-right .color a.pagenav:visited,
+#style3 #wdb_center-left-only .color a.pagenav:link,
+#style3 #wdb_center-left-only .color a.pagenav:visited,
+#style3 #wdb_center-right-only .color a.pagenav:link,
+#style3 #wdb_center-right-only .color a.pagenav:visited,
+#style3 #wdb_center-wide .color a.readon:link,
+#style3 #wdb_center-wide .color a.readon:visited,
+#style3 #wdb_center-left-right .color a.readon:link,
+#style3 #wdb_center-left-right .color a.readon:visited,
+#style3 #wdb_center-left-only .color a.readon:link,
+#style3 #wdb_center-left-only .color a.readon:visited,
+#style3 #wdb_center-right-only .color a.readon:link,
+#style3 #wdb_center-right-only .color a.readon:visited {
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style4 .color .blog-featured .readmore,
+#style4 .color .blog .readmore,
+#style4 .color .readon {
+	border: 2px solid #3681c1;
+	padding: 3px 5px 3px 5px;
+	background-color: #3274ae;
+	font-size: 11px;
+}
+#style4 .color .pagenav-next,
+#style4 .color .pagenav-prev,
+#style4 .color .pagenav {
+	border: 2px solid #3681c1;
+	padding: 3px 5px 3px 5px;
+	background-color: #3274ae;
+	color: #FFFFFF;
+	font-size: 11px;
+}
+#style4 .color ul.pagenav a:link,
+#style4 .color ul.pagenav a:visited,
+#style4 #wdb_center-wide .color .readmore a:link,
+#style4 #wdb_center-wide .color .readmore a:visited,
+#style4 #wdb_center-left-right .color .readmore a:link,
+#style4 #wdb_center-left-right .color .readmore a:visited,
+#style4 #wdb_center-left-only .color .readmore a:link,
+#style4 #wdb_center-left-only .color .readmore a:visited,
+#style4 #wdb_center-right-only .color .readmore a:link,
+#style4 #wdb_center-right-only .color .readmore a:visited,
+#style4 #wdb_center-wide .color a.pagenav:link,
+#style4 #wdb_center-wide .color a.pagenav:visited,
+#style4 #wdb_center-left-right .color a.pagenav:link,
+#style4 #wdb_center-left-right .color a.pagenav:visited,
+#style4 #wdb_center-left-only .color a.pagenav:link,
+#style4 #wdb_center-left-only .color a.pagenav:visited,
+#style4 #wdb_center-right-only .color a.pagenav:link,
+#style4 #wdb_center-right-only .color a.pagenav:visited,
+#style4 #wdb_center-wide .color a.readon:link,
+#style4 #wdb_center-wide .color a.readon:visited,
+#style4 #wdb_center-left-right .color a.readon:link,
+#style4 #wdb_center-left-right .color a.readon:visited,
+#style4 #wdb_center-left-only .color a.readon:link,
+#style4 #wdb_center-left-only .color a.readon:visited,
+#style4 #wdb_center-right-only .color a.readon:link,
+#style4 #wdb_center-right-only .color a.readon:visited {
+	color: #FFFFFF;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style5 .color .blog-featured .readmore,
+#style5 .color .blog .readmore,
+#style5 .color .readon {
+	border: 2px solid #eed5b7;
+	padding: 3px 5px 3px 5px;
+	background-color: #eec99d;
+	font-size: 11px;
+}
+#style5 .color .pagenav-next,
+#style5 .color .pagenav-prev,
+#style5 .color .pagenav {
+	border: 2px solid #eed5b7;
+	padding: 3px 5px 3px 5px;
+	background-color: #eec99d;
+	color: #464646;
+	font-size: 11px;
+}
+#style5 #wdb_center-wide .color .readmore a:link,
+#style5 #wdb_center-wide .color .readmore a:visited,
+#style5 #wdb_center-left-right .color .readmore a:link,
+#style5 #wdb_center-left-right .color .readmore a:visited,
+#style5 #wdb_center-left-only .color .readmore a:link,
+#style5 #wdb_center-left-only .color .readmore a:visited,
+#style5 #wdb_center-right-only .color .readmore a:link,
+#style5 #wdb_center-right-only .color .readmore a:visited,
+#style5 #wdb_center-wide .color a.pagenav:link,
+#style5 #wdb_center-wide .color a.pagenav:visited,
+#style5 #wdb_center-left-right .color a.pagenav:link,
+#style5 #wdb_center-left-right .color a.pagenav:visited,
+#style5 #wdb_center-left-only .color a.pagenav:link,
+#style5 #wdb_center-left-only .color a.pagenav:visited,
+#style5 #wdb_center-right-only .color a.pagenav:link,
+#style5 #wdb_center-right-only .color a.pagenav:visited,
+#style5 #wdb_center-wide .color a.readon:link,
+#style5 #wdb_center-wide .color a.readon:visited,
+#style5 #wdb_center-left-right .color a.readon:link,
+#style5 #wdb_center-left-right .color a.readon:visited,
+#style5 #wdb_center-left-only .color a.readon:link,
+#style5 #wdb_center-left-only .color a.readon:visited,
+#style5 #wdb_center-right-only .color a.readon:link,
+#style5 #wdb_center-right-only .color a.readon:visited {
+	color: #464646;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style6 .color .blog-featured .readmore,
+#style6 .color .blog .readmore,
+#style6 .color .readon {
+	border: 2px solid #e6d75c;
+	padding: 3px 5px 3px 5px;
+	background-color: #f5e671;
+	font-size: 11px;
+}
+#style6 .color .pagenav-next,
+#style6 .color .pagenav-prev,
+#style6 .color .pagenav {
+	border: 2px solid #e6d75c;
+	padding: 3px 5px 3px 5px;
+	background-color: #f5e671;
+	color: #464646;
+	font-size: 11px;
+}
+#style6 #wdb_center-wide .color .readmore a:link,
+#style6 #wdb_center-wide .color .readmore a:visited,
+#style6 #wdb_center-left-right .color .readmore a:link,
+#style6 #wdb_center-left-right .color .readmore a:visited,
+#style6 #wdb_center-left-only .color .readmore a:link,
+#style6 #wdb_center-left-only .color .readmore a:visited,
+#style6 #wdb_center-right-only .color .readmore a:link,
+#style6 #wdb_center-right-only .color .readmore a:visited,
+#style6 #wdb_center-wide .color a.pagenav:link,
+#style6 #wdb_center-wide .color a.pagenav:visited,
+#style6 #wdb_center-left-right .color a.pagenav:link,
+#style6 #wdb_center-left-right .color a.pagenav:visited,
+#style6 #wdb_center-left-only .color a.pagenav:link,
+#style6 #wdb_center-left-only .color a.pagenav:visited,
+#style6 #wdb_center-right-only .color a.pagenav:link,
+#style6 #wdb_center-right-only .color a.pagenav:visited,
+#style6 #wdb_center-wide .color a.readon:link,
+#style6 #wdb_center-wide .color a.readon:visited,
+#style6 #wdb_center-left-right .color a.readon:link,
+#style6 #wdb_center-left-right .color a.readon:visited,
+#style6 #wdb_center-left-only .color a.readon:link,
+#style6 #wdb_center-left-only .color a.readon:visited,
+#style6 #wdb_center-right-only .color a.readon:link,
+#style6 #wdb_center-right-only .color a.readon:visited {
+	color: #464646;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style7 .color .blog-featured .readmore,
+#style7 .color .blog .readmore,
+#style7 .color .readon {
+	border: 2px solid #fbc891;
+	padding: 3px 5px 3px 5px;
+	background-color: #f7941d;
+	font-size: 11px;
+}
+#style7 .color .pagenav-next,
+#style7 .color .pagenav-prev,
+#style7 .color .pagenav {
+	border: 2px solid #fbc891;
+	padding: 3px 5px 3px 5px;
+	background-color: #f7941d;
+	color: #ffffff;
+	font-size: 11px;
+}
+#style7 .color ul.pagenav a:link,
+#style7 .color ul.pagenav a:visited,
+#style7 #wdb_center-wide .color .readmore a:link,
+#style7 #wdb_center-wide .color .readmore a:visited,
+#style7 #wdb_center-left-right .color .readmore a:link,
+#style7 #wdb_center-left-right .color .readmore a:visited,
+#style7 #wdb_center-left-only .color .readmore a:link,
+#style7 #wdb_center-left-only .color .readmore a:visited,
+#style7 #wdb_center-right-only .color .readmore a:link,
+#style7 #wdb_center-right-only .color .readmore a:visited,
+#style7 #wdb_center-wide .color a.pagenav:link,
+#style7 #wdb_center-wide .color a.pagenav:visited,
+#style7 #wdb_center-left-right .color a.pagenav:link,
+#style7 #wdb_center-left-right .color a.pagenav:visited,
+#style7 #wdb_center-left-only .color a.pagenav:link,
+#style7 #wdb_center-left-only .color a.pagenav:visited,
+#style7 #wdb_center-right-only .color a.pagenav:link,
+#style7 #wdb_center-right-only .color a.pagenav:visited,
+#style7 #wdb_center-wide .color a.readon:link,
+#style7 #wdb_center-wide .color a.readon:visited,
+#style7 #wdb_center-left-right .color a.readon:link,
+#style7 #wdb_center-left-right .color a.readon:visited,
+#style7 #wdb_center-left-only .color a.readon:link,
+#style7 #wdb_center-left-only .color a.readon:visited,
+#style7 #wdb_center-right-only .color a.readon:link,
+#style7 #wdb_center-right-only .color a.readon:visited {
+	color: #ffffff;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style8 .color .blog-featured .readmore,
+#style8 .color .blog .readmore,
+#style8 .color .readon {
+	border: 2px solid #80080b;
+	padding: 3px 5px 3px 5px;
+	background-color: #9c0a0d;
+	font-size: 11px;
+}
+#style8 .color .pagenav-next,
+#style8 .color .pagenav-prev,
+#style8 .color .pagenav {
+	border: 2px solid #80080b;
+	padding: 3px 5px 3px 5px;
+	background-color: #9c0a0d;
+	color: #ffffff;
+	font-size: 11px;
+}
+#style8 .color ul.pagenav a:link,
+#style8 .color ul.pagenav a:visited,
+#style8 #wdb_center-wide .color .readmore a:link,
+#style8 #wdb_center-wide .color .readmore a:visited,
+#style8 #wdb_center-left-right .color .readmore a:link,
+#style8 #wdb_center-left-right .color .readmore a:visited,
+#style8 #wdb_center-left-only .color .readmore a:link,
+#style8 #wdb_center-left-only .color .readmore a:visited,
+#style8 #wdb_center-right-only .color .readmore a:link,
+#style8 #wdb_center-right-only .color .readmore a:visited,
+#style8 #wdb_center-wide .color a.pagenav:link,
+#style8 #wdb_center-wide .color a.pagenav:visited,
+#style8 #wdb_center-left-right .color a.pagenav:link,
+#style8 #wdb_center-left-right .color a.pagenav:visited,
+#style8 #wdb_center-left-only .color a.pagenav:link,
+#style8 #wdb_center-left-only .color a.pagenav:visited,
+#style8 #wdb_center-right-only .color a.pagenav:link,
+#style8 #wdb_center-right-only .color a.pagenav:visited,
+#style8 #wdb_center-wide .color a.readon:link,
+#style8 #wdb_center-wide .color a.readon:visited,
+#style8 #wdb_center-left-right .color a.readon:link,
+#style8 #wdb_center-left-right .color a.readon:visited,
+#style8 #wdb_center-left-only .color a.readon:link,
+#style8 #wdb_center-left-only .color a.readon:visited,
+#style8 #wdb_center-right-only .color a.readon:link,
+#style8 #wdb_center-right-only .color a.readon:visited {
+	color: #ffffff;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style9 .color .blog-featured .readmore,
+#style9 .color .blog .readmore,
+#style9 .color .readon {
+	border: 2px solid #7743a8;
+	padding: 3px 5px 3px 5px;
+	background-color: #662e91;
+	font-size: 11px;
+}
+#style9 .color .pagenav-next,
+#style9 .color .pagenav-prev,
+#style9 .color .pagenav {
+	border: 2px solid #7743a8;
+	padding: 3px 5px 3px 5px;
+	background-color: #662e91;
+	color: #ffffff;
+	font-size: 11px;
+}
+#style9 .color ul.pagenav a:link,
+#style9 .color ul.pagenav a:visited,
+#style9 #wdb_center-wide .color .readmore a:link,
+#style9 #wdb_center-wide .color .readmore a:visited,
+#style9 #wdb_center-left-right .color .readmore a:link,
+#style9 #wdb_center-left-right .color .readmore a:visited,
+#style9 #wdb_center-left-only .color .readmore a:link,
+#style9 #wdb_center-left-only .color .readmore a:visited,
+#style9 #wdb_center-right-only .color .readmore a:link,
+#style9 #wdb_center-right-only .color .readmore a:visited,
+#style9 #wdb_center-wide .color a.pagenav:link,
+#style9 #wdb_center-wide .color a.pagenav:visited,
+#style9 #wdb_center-left-right .color a.pagenav:link,
+#style9 #wdb_center-left-right .color a.pagenav:visited,
+#style9 #wdb_center-left-only .color a.pagenav:link,
+#style9 #wdb_center-left-only .color a.pagenav:visited,
+#style9 #wdb_center-right-only .color a.pagenav:link,
+#style9 #wdb_center-right-only .color a.pagenav:visited,
+#style9 #wdb_center-wide .color a.readon:link,
+#style9 #wdb_center-wide .color a.readon:visited,
+#style9 #wdb_center-left-right .color a.readon:link,
+#style9 #wdb_center-left-right .color a.readon:visited,
+#style9 #wdb_center-left-only .color a.readon:link,
+#style9 #wdb_center-left-only .color a.readon:visited,
+#style9 #wdb_center-right-only .color a.readon:link,
+#style9 #wdb_center-right-only .color a.readon:visited {
+	color: #ffffff;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style10 .color .blog-featured .readmore,
+#style10 .color .blog .readmore,
+#style10 .color .readon {
+	border: 2px solid #f0c0d5;
+	padding: 3px 5px 3px 5px;
+	background-color: #ef79ab;
+	font-size: 11px;
+}
+#style10 .color .pagenav-next,
+#style10 .color .pagenav-prev,
+#style10 .color .pagenav {
+	border: 2px solid #f0c0d5;
+	padding: 3px 5px 3px 5px;
+	background-color: #ef79ab;
+	color: #ffffff;
+	font-size: 11px;
+}
+#style10 .color ul.pagenav a:link,
+#style10 .color ul.pagenav a:visited,
+#style10 #wdb_center-wide .color .readmore a:link,
+#style10 #wdb_center-wide .color .readmore a:visited,
+#style10 #wdb_center-left-right .color .readmore a:link,
+#style10 #wdb_center-left-right .color .readmore a:visited,
+#style10 #wdb_center-left-only .color .readmore a:link,
+#style10 #wdb_center-left-only .color .readmore a:visited,
+#style10 #wdb_center-right-only .color .readmore a:link,
+#style10 #wdb_center-right-only .color .readmore a:visited,
+#style10 #wdb_center-wide .color a.pagenav:link,
+#style10 #wdb_center-wide .color a.pagenav:visited,
+#style10 #wdb_center-left-right .color a.pagenav:link,
+#style10 #wdb_center-left-right .color a.pagenav:visited,
+#style10 #wdb_center-left-only .color a.pagenav:link,
+#style10 #wdb_center-left-only .color a.pagenav:visited,
+#style10 #wdb_center-right-only .color a.pagenav:link,
+#style10 #wdb_center-right-only .color a.pagenav:visited,
+#style10 #wdb_center-wide .color a.readon:link,
+#style10 #wdb_center-wide .color a.readon:visited,
+#style10 #wdb_center-left-right .color a.readon:link,
+#style10 #wdb_center-left-right .color a.readon:visited,
+#style10 #wdb_center-left-only .color a.readon:link,
+#style10 #wdb_center-left-only .color a.readon:visited,
+#style10 #wdb_center-right-only .color a.readon:link,
+#style10 #wdb_center-right-only .color a.readon:visited {
+	color: #ffffff;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style11 .color .blog-featured .readmore,
+#style11 .color .blog .readmore,
+#style11 .color .readon {
+	border: 2px solid #aeaeae;
+	padding: 3px 5px 3px 5px;
+	background-color: #E2E2E2;
+	font-size: 11px;
+}
+#style11 .color .pagenav-next,
+#style11 .color .pagenav-prev,
+#style11 .color .pagenav {
+	border: 2px solid #aeaeae;
+	padding: 3px 5px 3px 5px;
+	background-color: #E2E2E2;
+	color: #464646;
+	font-size: 11px;
+}
+#style11 .color ul.pagenav a:link,
+#style11 .color ul.pagenav a:visited,
+#style11 #wdb_center-wide .color .readmore a:link,
+#style11 #wdb_center-wide .color .readmore a:visited,
+#style11 #wdb_center-left-right .color .readmore a:link,
+#style11 #wdb_center-left-right .color .readmore a:visited,
+#style11 #wdb_center-left-only .color .readmore a:link,
+#style11 #wdb_center-left-only .color .readmore a:visited,
+#style11 #wdb_center-right-only .color .readmore a:link,
+#style11 #wdb_center-right-only .color .readmore a:visited,
+#style11 #wdb_center-wide .color a.pagenav:link,
+#style11 #wdb_center-wide .color a.pagenav:visited,
+#style11 #wdb_center-left-right .color a.pagenav:link,
+#style11 #wdb_center-left-right .color a.pagenav:visited,
+#style11 #wdb_center-left-only .color a.pagenav:link,
+#style11 #wdb_center-left-only .color a.pagenav:visited,
+#style11 #wdb_center-right-only .color a.pagenav:link,
+#style11 #wdb_center-right-only .color a.pagenav:visited,
+#style11 #wdb_center-wide .color a.readon:link,
+#style11 #wdb_center-wide .color a.readon:visited,
+#style11 #wdb_center-left-right .color a.readon:link,
+#style11 #wdb_center-left-right .color a.readon:visited,
+#style11 #wdb_center-left-only .color a.readon:link,
+#style11 #wdb_center-left-only .color a.readon:visited,
+#style11 #wdb_center-right-only .color a.readon:link,
+#style11 #wdb_center-right-only .color a.readon:visited {
+	color: #464646;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style12 .color .blog-featured .readmore,
+#style12 .color .blog .readmore,
+#style12 .color .readon {
+	border: 2px solid #383838;
+	padding: 3px 5px 3px 5px;
+	background-color: #0d0d0d;
+	font-size: 11px;
+}
+#style12 .color .pagenav-next,
+#style12 .color .pagenav-prev,
+#style12 .color .pagenav {
+	border: 2px solid #383838;
+	padding: 3px 5px 3px 5px;
+	background-color: #0d0d0d;
+	color: #ffffff;
+	font-size: 11px;
+}
+#style12 #wdb_center-wide .color a.pagenav:link,
+#style12 #wdb_center-wide .color a.pagenav:visited,
+#style12 #wdb_center-left-right .color a.pagenav:link,
+#style12 #wdb_center-left-right .color a.pagenav:visited,
+#style12 #wdb_center-left-only .color a.pagenav:link,
+#style12 #wdb_center-left-only .color a.pagenav:visited,
+#style12 #wdb_center-right-only .color a.pagenav:link,
+#style12 #wdb_center-right-only .color a.pagenav:visited,
+#style12 #wdb_center-wide .color a.readon:link,
+#style12 #wdb_center-wide .color a.readon:visited,
+#style12 #wdb_center-left-right .color a.readon:link,
+#style12 #wdb_center-left-right .color a.readon:visited,
+#style12 #wdb_center-left-only .color a.readon:link,
+#style12 #wdb_center-left-only .color a.readon:visited,
+#style12 #wdb_center-right-only .color a.readon:link,
+#style12 #wdb_center-right-only .color a.readon:visited {
+	color: #ffffff;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#style2 .color ul.pagenav,
+#style3 .color ul.pagenav,
+#style4 .color ul.pagenav,
+#style5 .color ul.pagenav,
+#style6 .color ul.pagenav,
+#style7 .color ul.pagenav,
+#style8 .color ul.pagenav,
+#style9 .color ul.pagenav,
+#style10 .color ul.pagenav,
+#style11 .color ul.pagenav,
+#style12 .color ul.pagenav,
+.color ul.pagenav,
+.border ul.pagenav {
+	border: none;
+	padding: 0px;
+	background-color: none;
+}

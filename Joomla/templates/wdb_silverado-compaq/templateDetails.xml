@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>WDB_SilveRado-Compaq</name>
+	<version>1.7.0</version>
+	<creationDate>December 2010</creationDate>
+	<author>Efren Pedro Jr</author>
+	<authorEmail>jadecomputerworks@yahoo.com</authorEmail>
+	<authorUrl>http://webdesignbuilders.net</authorUrl>
+	<copyright>WebDesignBuilders</copyright>
+	<license>GPL</license>
+	<description>WDB_Template</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>function.php</filename>
+		<filename>params.ini</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+		<folder>images</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</files>
+	<positions>
+		<position>topmenu</position>
+		<position>topright</position>
+		<position>topcenter</position>
+		<position>header</position>
+		<position>adscorner</position>
+		<position>toolbar</position>
+		<position>right</position>
+		<position>left</position>
+		<position>search</position>
+		<position>banner</position>
+		<position>banner2</position>
+		<position>banner3</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>user5</position>
+		<position>user6</position>
+		<position>user7</position>
+		<position>user8</position>
+		<position>user9</position>
+		<position>footer1</position>
+		<position>footer2</position>
+		<position>footer3</position>
+		<position>footer4</position>
+		<position>footer5</position>
+	</positions>
+	<params>
+		<param type="spacer" default="BASIC CONFIGURATION " />
+		<param name="fontfamily" type="list" default="ff1" label="FONT">
+			<option value="ff1"> ARIAL</option>
+			<option value="ff2"> TIMES NEW ROMAN</option>
+			<option value="ff3"> COURIER NEW</option>
+			<option value="ff4"> GEORGIA</option>
+			<option value="ff5"> VERDANA</option>
+			<option value="ff6"> GENEVA</option>
+			<option value="ff7"> BOOK ANTIQUA</option>
+		</param>
+		<param name="menutype" type="list" default="moomenu" label="TOOLBAR">
+			<option value="suckerfish"> SUCKER FISH</option>
+			<option value="moomenu"> MOO MENU</option>
+		</param>
+		<param type="spacer" default="PRESET STYLES " />
+		<param name="presetstyle" type="list" default="style1" label="BACKGROUND">
+			<option value="style1"> DARK</option>
+			<option value="style2"> LIGHT</option>
+			<option value="style3"> GREEN</option>
+			<option value="style4"> BLUE</option>
+			<option value="style5"> BROWN</option>
+			<option value="style6"> YELLOW</option>
+			<option value="style7"> ORANGE</option>
+			<option value="style8"> RED</option>
+			<option value="style9"> VIOLET</option>
+			<option value="style10"> PINK</option>
+			<option value="style11"> PRESET</option>
+			<option value="style12"> ALL BLACK</option>
+		</param>
+		<param name="readmore" type="list" default="none" label="READ MORE">
+			<option value="none"> NONE</option>
+			<option value="border"> BORDERED</option>
+			<option value="color"> COLORED</option>
+		</param>
+		<param name="bannercolor" type="text" default="#FFFFFF" label=" BANNER BG">
+		</param>
+		<param name="bannerfontcolor" type="text" default="#464646" label=" BANNER COLOR">
+		</param>
+		<param type="spacer" default="OTHER CONFIGURATION " />
+		<param name="designby" type="list" default="design" label="DESIGN BY">
+			<option value="design"> SHOW</option>
+			<option value="none"> HIDE</option>
+		</param>
+		<param name="copy" type="text" default="December 2010 Silverado Template" label=" COPYRIGHT">
+		</param>
+		<param name="googlekey" type="text" default="" label=" GOOGLE VERIFY">
+		</param>
+		<param name="yahookey" type="text" default="" label=" YAHOO KEY">
+		</param>
+		<param name="sponsor" type="list" default="sponsor-line" label="SPONSOR BY">
+			<option value="sponsor-line"> SHOW</option>
+			<option value="none"> HIDE</option>
+		</param>
+	</params>
+	<config>
+	<fields name="params">
+	<fieldset name="Basic" label="BASIC ">
+		<field name="fontfamily" type="list" default="ff1" label="FONT">
+			<option value="ff1"> ARIAL</option>
+			<option value="ff2"> TIMES NEW ROMAN</option>
+			<option value="ff3"> COURIER NEW</option>
+			<option value="ff4"> GEORGIA</option>
+			<option value="ff5"> VERDANA</option>
+			<option value="ff6"> GENEVA</option>
+			<option value="ff7"> BOOK ANTIQUA</option>
+		</field>
+		<field name="menutype" type="list" default="mootools" label="TOOLBAR">
+			<option value="suckerfish"> SUCKER FISH</option>
+			<option value="mootools"> MOO MENU</option>
+		</field>
+	</fieldset>
+	<fieldset name="Styles" label="PRESET STYLES ">
+		<field name="presetstyle" type="list" default="style1" label="BACKGROUND">
+			<option value="style1"> DARK</option>
+			<option value="style2"> LIGHT</option>
+			<option value="style3"> GREEN</option>
+			<option value="style4"> BLUE</option>
+			<option value="style5"> BROWN</option>
+			<option value="style6"> YELLOW</option>
+			<option value="style7"> ORANGE</option>
+			<option value="style8"> RED</option>
+			<option value="style9"> VIOLET</option>
+			<option value="style10"> PINK</option>
+			<option value="style11"> PRESET</option>
+			<option value="style12"> ALL BLACK</option>
+		</field>
+		<field name="readmore" type="list" default="none" label="READ MORE">
+			<option value="none"> NONE</option>
+			<option value="border"> BORDERED</option>
+			<option value="color"> COLORED</option>
+		</field>
+		<field name="bannercolor" type="text" default="#FFFFFF" label=" BANNER BG">
+		</field>
+		<field name="bannerfontcolor" type="text" default="#464646" label=" BANNER COLOR">
+		</field>
+	</fieldset>
+	<fieldset name="Others" label="OTHER CONFIG ">
+		<field name="designby" type="list" default="design" label="DESIGN BY">
+			<option value="design"> SHOW</option>
+			<option value="none"> HIDE</option>
+		</field>
+		<field name="copy" type="text" default="December 2010 Silverado Template" label=" COPYRIGHT">
+		</field>
+		<field name="googlekey" type="text" default="" label=" GOOGLE VERIFY">
+		</field>
+		<field name="yahookey" type="text" default="" label=" YAHOO KEY">
+		</field>
+		
+		<field name="sponsor" type="list" default="sponsor-line" label="SPONSOR BY">
+			<option value="sponsor-line"> SHOW</option>
+			<option value="none"> HIDE</option>
+		</field>
+	</fieldset>
+	</fields>
+	</config>
+</install>

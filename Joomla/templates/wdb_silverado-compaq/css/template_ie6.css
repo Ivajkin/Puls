@@ -1,0 +1,16 @@
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+
+input.button {
+	padding: 3px 2px 3px 2px;
+}
+/*****************************/
+/****** Property of WDB ******/
+/*****************************/
+#jshop_module_cart {
+	width: 140px;
+}
+#jshop_module_cart td {
+	text-align: right;
+}
