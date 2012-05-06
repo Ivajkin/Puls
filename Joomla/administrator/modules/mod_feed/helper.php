@@ -1,54 +1,59 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
+* @version		$Id: helper.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
 
-// No direct access.
-defined('_JEXEC') or die;
+/** ensure this file is being included by a parent file */
+defined('_JEXEC') or die( 'Restricted access' );
 
-/**
- * @package		Joomla.Administrator
- * @subpackage	mod_feed
- */
-abstract class modFeedHelper
+class modFeedHelper
 {
-	public static function render($params)
+	function render($params)
 	{
 		// module params
 		$rssurl				= $params->get('rssurl', '');
 		$rssitems			= $params->get('rssitems', 5);
-		$rssdesc			= $params->get('rssdesc', 1);
+		$rssdesc				= $params->get('rssdesc', 1);
 		$rssimage			= $params->get('rssimage', 1);
-		$rssitemdesc		= $params->get('rssitemdesc', 1);
+		$rssitemdesc			= $params->get('rssitemdesc', 1);
 		$words				= $params->def('word_count', 0);
 		$rsstitle			= $params->get('rsstitle', 1);
 		$rssrtl				= $params->get('rssrtl', 0);
-		$moduleclass_sfx	= $params->get('moduleclass_sfx', '');
+		$moduleclass_sfx		= $params->get('moduleclass_sfx', '');
 
-		$filter = JFilterInput::getInstance();
-
-		// get RSS parsed object
-		$cache_time = 0;
+		//  get RSS parsed object
+		$options = array();
+		$options['rssUrl'] 		= $rssurl;
 		if ($params->get('cache')) {
-			$cache_time  = $params->get('cache_time', 15) * 60;
+			$options['cache_time']  = $params->get('cache_time', 15) ;
+			$options['cache_time']	*= 60;
+		} else {
+			$options['cache_time'] = null;
 		}
 
-		$rssDoc = JFactory::getFeedParser($rssurl, $cache_time);
+		$rssDoc =& JFactory::getXMLparser('RSS', $options);
 
 		if ($rssDoc != false)
 		{
 			// channel header and link
-			$channel['title'] = $filter->clean($rssDoc->get_title());
-			$channel['link'] = $filter->clean($rssDoc->get_link());
-			$channel['description'] = $filter->clean($rssDoc->get_description());
+			$channel['title'] = $rssDoc->get_title();
+			$channel['link'] = $rssDoc->get_link();
+			$channel['description'] = $rssDoc->get_description();
 
 			// channel image if exists
 			$image['url'] = $rssDoc->get_image_url();
 			$image['title'] = $rssDoc->get_image_title();
 
 			//image handling
-			$iUrl	= isset($image['url']) ? $image['url'] : null;
+			$iUrl 	= isset($image['url']) ? $image['url'] : null;
 			$iTitle = isset($image['title']) ? $image['title'] : null;
 
 			// items
@@ -57,16 +62,16 @@ abstract class modFeedHelper
 			// feed elements
 			$items = array_slice($items, 0, $rssitems);
 			?>
-			<table cellpadding="0" cellspacing="0" class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
+			<table cellpadding="0" cellspacing="0" class="moduletable<?php echo $params->get('moduleclass_sfx'); ?>">
 			<?php
 			// feed description
-			if (!is_null($channel['title']) && $rsstitle) {
+			if (!is_null( $channel['title'] ) && $rsstitle) {
 			?>
 				<tr>
 				<td>
 					<strong>
-						<a href="<?php echo htmlspecialchars(str_replace('&', '&amp;', $channel['link'])); ?>" target="_blank">
-						<?php echo htmlspecialchars($channel['title']); ?></a>
+						<a href="<?php echo str_replace( '&', '&amp;', $channel['link']); ?>" target="_blank">
+						<?php echo $channel['title']; ?></a>
 					</strong>
 				</td>
 				</tr>
@@ -89,13 +94,13 @@ abstract class modFeedHelper
 			?>
 				<tr>
 					<td align="center">
-						<img src="<?php echo htmlspecialchars($iUrl); ?>" alt="<?php echo htmlspecialchars(@$iTitle); ?>"/>
+						<img src="<?php echo $iUrl; ?>" alt="<?php echo @$iTitle; ?>"/>
 					</td>
 				</tr>
 			<?php
 			}
 
-			$actualItems = count($items);
+			$actualItems = count( $items );
 			$setItems = $rssitems;
 
 			if ($setItems > $actualItems) {
@@ -106,7 +111,7 @@ abstract class modFeedHelper
 			?>
 			<tr>
 			<td>
-				<ul class="newsfeed<?php echo htmlspecialchars($moduleclass_sfx); ?>"  >
+				<ul class="newsfeed<?php echo $moduleclass_sfx; ?>"  >
 				<?php
 				for ($j = 0; $j < $totalItems; $j ++)
 				{
@@ -115,10 +120,10 @@ abstract class modFeedHelper
 					?>
 					<li>
 					<?php
-					if (!is_null($currItem->get_link())) {
+					if ( !is_null( $currItem->get_link() ) ) {
 					?>
-						<a href="<?php echo htmlspecialchars($currItem->get_link()); ?>" target="_child">
-						<?php echo htmlspecialchars($currItem->get_title()); ?></a>
+						<a href="<?php echo $currItem->get_link(); ?>" target="_child">
+						<?php echo $currItem->get_title(); ?></a>
 					<?php
 					}
 
@@ -126,7 +131,7 @@ abstract class modFeedHelper
 					if ($rssitemdesc)
 					{
 						// item description
-						$text = $filter->clean(html_entity_decode($currItem->get_description(), ENT_COMPAT, 'UTF-8'));
+						$text = html_entity_decode($currItem->get_description());
 						$text = str_replace('&apos;', "'", $text);
 
 						// word limit check
@@ -143,7 +148,7 @@ abstract class modFeedHelper
 							}
 						}
 						?>
-						<div style="text-align: <?php echo $rssrtl ? 'right': 'left'; ?> !important">
+						<div style="text-align: <?php echo $rssrtl ? 'right': 'left'; ?> ! important">
 							<?php echo $text; ?>
 						</div>
 						<?php

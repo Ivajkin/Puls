@@ -1,175 +1,142 @@
 <?php
 /**
- * @package		Joomla.Administrator
- * @subpackage	com_installer
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @version		$Id: extension.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla
+ * @subpackage	Installer
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant to the
+ * GNU General Public License, and as distributed it includes or is derivative
+ * of works licensed under the GNU General Public License or other free or open
+ * source software licenses. See COPYRIGHT.php for copyright notices and
+ * details.
  */
 
-// No direct access
-defined('_JEXEC') or die;
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die( 'Restricted access' );
 
-// Import library dependencies
-jimport('joomla.application.component.modellist');
+jimport( 'joomla.application.component.model' );
 
 /**
  * Extension Manager Abstract Extension Model
  *
  * @abstract
- * @package		Joomla.Administrator
- * @subpackage	com_installer
+ * @package		Joomla
+ * @subpackage	Installer
  * @since		1.5
  */
-class InstallerModel extends JModelList
+class InstallerModel extends JModel
 {
-	/**
-	 * Constructor.
-	 *
-	 * @param	array	An optional associative array of configuration settings.
-	 * @see		JController
-	 * @since	1.6
-	 */
-	public function __construct($config = array())
-	{
-		if (empty($config['filter_fields'])) {
-			$config['filter_fields'] = array(
-				'name',
-				'client_id',
-				'enabled',
-				'type',
-				'folder',
-				'extension_id',
-			);
-		}
+	/** @var array Array of installed components */
+	var $_items = array();
 
-		parent::__construct($config);
+	/** @var object JPagination object */
+	var $_pagination = null;
+
+	/**
+	 * Overridden constructor
+	 * @access	protected
+	 */
+	function __construct()
+	{
+		global $mainframe;
+
+		// Call the parent constructor
+		parent::__construct();
+
+		// Set state variables from the request
+		$this->setState('pagination.limit',	$mainframe->getUserStateFromRequest('global.list.limit', 'limit', $mainframe->getCfg('list_limit'), 'int'));
+		$this->setState('pagination.offset',$mainframe->getUserStateFromRequest('com_installer.limitstart.'.$this->_type, 'limitstart', 0, 'int'));
+		$this->setState('pagination.total',	0);
+	}
+
+	function &getItems()
+	{
+		if (empty($this->_items)) {
+			// Load the items
+			$this->_loadItems();
+		}
+		return $this->_items;
+	}
+
+	function &getPagination()
+	{
+		if (empty($this->_pagination)) {
+			// Make sure items are loaded for a proper total
+			if (empty($this->_items)) {
+				// Load the items
+				$this->_loadItems();
+			}
+			// Load the pagination object
+			jimport('joomla.html.pagination');
+			$this->_pagination = new JPagination($this->_state->get('pagination.total'), $this->_state->get('pagination.offset'), $this->_state->get('pagination.limit'));
+		}
+		return $this->_pagination;
 	}
 
 	/**
-	 * Returns an object list
+	 * Remove (uninstall) an extension
 	 *
-	 * @param	string The query
-	 * @param	int Offset
-	 * @param	int The number of records
-	 * @return	array
+	 * @static
+	 * @param	array	An array of identifiers
+	 * @return	boolean	True on success
+	 * @since 1.0
 	 */
-	protected function _getList($query, $limitstart = 0, $limit = 0)
+	function remove($eid=array())
 	{
-		$ordering	= $this->getState('list.ordering');
-		$search		= $this->getState('filter.search');
-		// Replace slashes so preg_match will work
-		$search 	= str_replace('/', ' ', $search);
-		$db			= $this->getDbo();
+		global $mainframe;
 
-		if ($ordering == 'name' || (!empty($search) && stripos($search, 'id:') !== 0)) {
-			$db->setQuery($query);
-			$result = $db->loadObjectList();
-			$lang = JFactory::getLanguage();
-			$this->translate($result);
-			if (!empty($search)) {
-				foreach($result as $i=>$item) {
-					if (!preg_match("/$search/i", $item->name)) {
-						unset($result[$i]);
-					}
-				}
+		// Initialize variables
+		$failed = array ();
+
+		/*
+		 * Ensure eid is an array of extension ids in the form id => client_id
+		 * TODO: If it isn't an array do we want to set an error and fail?
+		 */
+		if (!is_array($eid)) {
+			$eid = array($eid => 0);
+		}
+
+		// Get a database connector
+		$db =& JFactory::getDBO();
+
+		// Get an installer object for the extension type
+		jimport('joomla.installer.installer');
+		$installer = & JInstaller::getInstance();
+
+		// Uninstall the chosen extensions
+		foreach ($eid as $id => $clientId)
+		{
+			$id		= trim( $id );
+			$result	= $installer->uninstall($this->_type, $id, $clientId );
+
+			// Build an array of extensions that failed to uninstall
+			if ($result === false) {
+				$failed[] = $id;
 			}
-			JArrayHelper::sortObjects($result, $this->getState('list.ordering'), $this->getState('list.direction') == 'desc' ? -1 : 1, true, $lang->getLocale());
-			$total = count($result);
-			$this->cache[$this->getStoreId('getTotal')] = $total;
-			if ($total < $limitstart) {
-				$limitstart = 0;
-				$this->setState('list.start', 0);
-			}
-			return array_slice($result, $limitstart, $limit ? $limit : null);
+		}
+
+		if (count($failed)) {
+			// There was an error in uninstalling the package
+			$msg = JText::sprintf('UNINSTALLEXT', JText::_($this->_type), JText::_('Error'));
+			$result = false;
 		} else {
-			$query->order($db->quoteName($ordering) . ' ' . $this->getState('list.direction'));
-			$result = parent::_getList($query, $limitstart, $limit);
-			$this->translate($result);
-			return $result;
+			// Package uninstalled sucessfully
+			$msg = JText::sprintf('UNINSTALLEXT', JText::_($this->_type), JText::_('Success'));
+			$result = true;
 		}
+
+		$mainframe->enqueueMessage($msg);
+		$this->setState('action', 'remove');
+		$this->setState('name', $installer->get('name'));
+		$this->setState('message', $installer->message);
+		$this->setState('extension.message', $installer->get('extension.message'));
+
+		return $result;
 	}
 
-	/**
-	 * Translate a list of objects
-	 *
-	 * @param	array The array of objects
-	 * @return	array The array of translated objects
-	 */
-	private function translate(&$items)
+	function _loadItems()
 	{
-		$lang = JFactory::getLanguage();
-		foreach($items as &$item) {
-			if (strlen($item->manifest_cache)) {
-				$data = json_decode($item->manifest_cache);
-				if ($data) {
-					foreach($data as $key => $value) {
-						if ($key == 'type') {
-							// ignore the type field
-							continue;
-						}
-						$item->$key = $value;
-					}
-				}
-			}
-			$item->author_info = @$item->authorEmail .'<br />'. @$item->authorUrl;
-			$item->client = $item->client_id ? JText::_('JADMINISTRATOR') : JText::_('JSITE');
-			$path = $item->client_id ? JPATH_ADMINISTRATOR : JPATH_SITE;
-			switch ($item->type) {
-				case 'component':
-					$extension = $item->element;
-					$source = JPATH_ADMINISTRATOR . '/components/' . $extension;
-						$lang->load("$extension.sys", JPATH_ADMINISTRATOR, null, false, false)
-					||	$lang->load("$extension.sys", $source, null, false, false)
-					||	$lang->load("$extension.sys", JPATH_ADMINISTRATOR, $lang->getDefault(), false, false)
-					||	$lang->load("$extension.sys", $source, $lang->getDefault(), false, false);
-				break;
-				case 'file':
-					$extension = 'files_' . $item->element;
-						$lang->load("$extension.sys", JPATH_SITE, null, false, false)
-					||	$lang->load("$extension.sys", JPATH_SITE, $lang->getDefault(), false, false);
-				break;
-				case 'library':
-					$extension = 'lib_' . $item->element;
-						$lang->load("$extension.sys", JPATH_SITE, null, false, false)
-					||	$lang->load("$extension.sys", JPATH_SITE, $lang->getDefault(), false, false);
-				break;
-				case 'module':
-					$extension = $item->element;
-					$source = $path . '/modules/' . $extension;
-						$lang->load("$extension.sys", $path, null, false, false)
-					||	$lang->load("$extension.sys", $source, null, false, false)
-					||	$lang->load("$extension.sys", $path, $lang->getDefault(), false, false)
-					||	$lang->load("$extension.sys", $source, $lang->getDefault(), false, false);
-				break;
-				case 'package':
-					$extension = $item->element;
-						$lang->load("$extension.sys", JPATH_SITE, null, false, false)
-					||	$lang->load("$extension.sys", JPATH_SITE, $lang->getDefault(), false, false);
-				break;
-				case 'plugin':
-					$extension = 'plg_' . $item->folder . '_' . $item->element;
-					$source = JPATH_PLUGINS . '/' . $item->folder . '/' . $item->element;
-						$lang->load("$extension.sys", JPATH_ADMINISTRATOR, null, false, false)
-					||	$lang->load("$extension.sys", $source, null, false, false)
-					||	$lang->load("$extension.sys", JPATH_ADMINISTRATOR, $lang->getDefault(), false, false)
-					||	$lang->load("$extension.sys", $source, $lang->getDefault(), false, false);
-				break;
-				case 'template':
-					$extension = 'tpl_' . $item->element;
-					$source = $path . '/templates/' . $item->element;
-						$lang->load("$extension.sys", $path, null, false, false)
-					||	$lang->load("$extension.sys", $source, null, false, false)
-					||	$lang->load("$extension.sys", $path, $lang->getDefault(), false, false)
-					||	$lang->load("$extension.sys", $source, $lang->getDefault(), false, false);
-				break;
-			}
-			if (!in_array($item->type, array('language', 'template', 'library'))) {
-				$item->name = JText::_($item->name);
-			}
-			settype($item->description, 'string');
-			if (!in_array($item->type, array('language'))) {
-				$item->description = JText::_($item->description);
-			}
-		}
+		return JError::raiseError( 500, JText::_('Method Not Implemented'));
 	}
 }

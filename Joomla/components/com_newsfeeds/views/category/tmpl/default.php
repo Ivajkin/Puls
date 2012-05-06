@@ -1,45 +1,23 @@
-<?php
-/**
- * @package		Joomla.Site
- * @subpackage	com_newsfeeds
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
-
-// no direct access
-defined('_JEXEC') or die;
-
-$pageClass = $this->params->get('pageclass_sfx');
-?>
-<div class="newsfeed-category<?php echo $this->pageclass_sfx;?>">
-<?php if ($this->params->get('show_page_heading', 1)) : ?>
-<h1>
-	<?php echo $this->escape($this->params->get('page_heading')); ?>
-</h1>
-<?php endif; ?>
-<?php if($this->params->get('show_category_title', 1)) : ?>
-<h2>
-	<?php echo JHtml::_('content.prepare', $this->category->title, '', 'com_newsfeeds.category'); ?>
-</h2>
-<?php endif; ?>
-<?php if ($this->params->get('show_description', 1) || $this->params->def('show_description_image', 1)) : ?>
-	<div class="category-desc">
-	<?php if ($this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
-		<img src="<?php echo $this->category->getParams()->get('image'); ?>"/>
-	<?php endif; ?>
-	<?php if ($this->params->get('show_description') && $this->category->description) : ?>
-		<?php echo JHtml::_('content.prepare', $this->category->description, '', 'com_newsfeeds.category'); ?>
-	<?php endif; ?>
-	<div class="clr"></div>
-	</div>
+<?php // no direct access
+defined('_JEXEC') or die('Restricted access'); ?>
+<?php if ( $this->params->get( 'show_page_title', 1 ) ) : ?>
+	<div class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>"><?php echo $this->escape($this->params->get('page_title')); ?></div>
 <?php endif; ?>
 
-<?php echo $this->loadTemplate('items'); ?>
-
-<?php if (!empty($this->children[$this->category->id])&& $this->maxLevel != 0) : ?>
-<div class="cat-children">
-	<h3><?php echo JText::_('JGLOBAL_SUBCATEGORIES') ; ?></h3>
-	<?php echo $this->loadTemplate('children'); ?>
-</div>
+<table width="100%" cellpadding="4" cellspacing="0" border="0" align="center" class="contentpane<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+<?php if ( @$this->image || @$this->category->description ) : ?>
+<tr>
+	<td valign="top" class="contentdescription<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+	<?php
+		if ( isset($this->image) ) :  echo $this->image; endif;
+		echo $this->category->description;
+	?>
+	</td>
+</tr>
 <?php endif; ?>
-</div>
+<tr>
+	<td width="60%" colspan="2">
+	<?php echo $this->loadTemplate('items'); ?>
+	</td>
+</tr>
+</table>

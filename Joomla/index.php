@@ -1,54 +1,88 @@
 <?php
 /**
- * @package		Joomla.Site
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+* @version		$Id: index.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
+
+// Set flag that this is a parent file
+define( '_JEXEC', 1 );
+
+define('JPATH_BASE', dirname(__FILE__) );
+
+define( 'DS', DIRECTORY_SEPARATOR );
+
+require_once ( JPATH_BASE .DS.'includes'.DS.'defines.php' );
+require_once ( JPATH_BASE .DS.'includes'.DS.'framework.php' );
+
+JDEBUG ? $_PROFILER->mark( 'afterLoad' ) : null;
+
+/**
+ * CREATE THE APPLICATION
+ *
+ * NOTE :
  */
+$mainframe =& JFactory::getApplication('site');
 
-// Set flag that this is a parent file.
-define('_JEXEC', 1);
-define('DS', DIRECTORY_SEPARATOR);
+/**
+ * INITIALISE THE APPLICATION
+ *
+ * NOTE :
+ */
+// set the language
+$mainframe->initialise();
 
-if (file_exists(dirname(__FILE__) . '/defines.php')) {
-	include_once dirname(__FILE__) . '/defines.php';
-}
+JPluginHelper::importPlugin('system');
 
-if (!defined('_JDEFINES')) {
-	define('JPATH_BASE', dirname(__FILE__));
-	require_once JPATH_BASE.'/includes/defines.php';
-}
-
-require_once JPATH_BASE.'/includes/framework.php';
-
-// Mark afterLoad in the profiler.
-JDEBUG ? $_PROFILER->mark('afterLoad') : null;
-
-// Instantiate the application.
-$app = JFactory::getApplication('site');
-
-// Initialise the application.
-$app->initialise();
-
-// Mark afterIntialise in the profiler.
+// trigger the onAfterInitialise events
 JDEBUG ? $_PROFILER->mark('afterInitialise') : null;
+$mainframe->triggerEvent('onAfterInitialise');
 
-// Route the application.
-$app->route();
+/**
+ * ROUTE THE APPLICATION
+ *
+ * NOTE :
+ */
+$mainframe->route();
 
-// Mark afterRoute in the profiler.
+// authorization
+$Itemid = JRequest::getInt( 'Itemid');
+$mainframe->authorize($Itemid);
+
+// trigger the onAfterRoute events
 JDEBUG ? $_PROFILER->mark('afterRoute') : null;
+$mainframe->triggerEvent('onAfterRoute');
 
-// Dispatch the application.
-$app->dispatch();
+/**
+ * DISPATCH THE APPLICATION
+ *
+ * NOTE :
+ */
+$option = JRequest::getCmd('option');
+$mainframe->dispatch($option);
 
-// Mark afterDispatch in the profiler.
+// trigger the onAfterDispatch events
 JDEBUG ? $_PROFILER->mark('afterDispatch') : null;
+$mainframe->triggerEvent('onAfterDispatch');
 
-// Render the application.
-$app->render();
+/**
+ * RENDER  THE APPLICATION
+ *
+ * NOTE :
+ */
+$mainframe->render();
 
-// Mark afterRender in the profiler.
+// trigger the onAfterRender events
 JDEBUG ? $_PROFILER->mark('afterRender') : null;
+$mainframe->triggerEvent('onAfterRender');
 
-// Return the response.
-echo $app;
+/**
+ * RETURN THE RESPONSE
+ */
+echo JResponse::toString($mainframe->getCfg('gzip'));

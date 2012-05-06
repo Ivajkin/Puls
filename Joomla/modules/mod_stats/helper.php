@@ -1,120 +1,110 @@
 <?php
 /**
- * @package		Joomla.Site
- * @subpackage	mod_stats
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
+* @version		$Id: helper.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
 
 // no direct access
-defined('_JEXEC') or die;
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
-/**
- * @package		Joomla.Site
- * @subpackage	mod_stats
- * @since		1.5
- */
 class modStatsHelper
 {
-	static function &getList(&$params)
+	function &getList( &$params )
 	{
-		$app	= JFactory::getApplication();
-		$db		= JFactory::getDbo();
-		$rows	= array();
-		$query	= $db->getQuery(true);
+		global $mainframe;
 
-		$serverinfo = $params->get('serverinfo');
-		$siteinfo	= $params->get('siteinfo');
-		$counter	= $params->get('counter');
-		$increase	= $params->get('increase');
+		$db =& JFactory::getDBO();
+		$rows = array();
+
+		$serverinfo 		= $params->get( 'serverinfo' );
+		$siteinfo 			= $params->get( 'siteinfo' );
+		$counter 			= $params->get( 'counter' );
+		$increase 			= $params->get( 'increase' );
 
 		$i = 0;
-		if ($serverinfo) {
-			$rows[$i] = new stdClass;
-			$rows[$i]->title	= JText::_('MOD_STATS_OS');
-			$rows[$i]->data		= substr(php_uname(), 0, 7);
+		if ( $serverinfo )
+		{
+			$rows[$i]->title 	= JText::_( 'OS' );
+			$rows[$i]->data 	= substr( php_uname(), 0, 7 );
 			$i++;
-
-			$rows[$i] = new stdClass;
-			$rows[$i]->title	= JText::_('MOD_STATS_PHP');
-			$rows[$i]->data	= phpversion();
+			$rows[$i]->title 	= JText::_( 'PHP' );
+			$rows[$i]->data 	= phpversion();
 			$i++;
-
-			$rows[$i] = new stdClass;
-			$rows[$i]->title	= JText::_('MOD_STATS_MYSQL');
-			$rows[$i]->data	= $db->getVersion();
+			$rows[$i]->title 	= JText::_( 'MySQL' );
+			$rows[$i]->data 	= $db->getVersion();
 			$i++;
-
-			$rows[$i] = new stdClass;
-			$rows[$i]->title	= JTEXT::_('MOD_STATS_TIME');
-			$rows[$i]->data	= JHtml::_('date', 'now', 'H:i');
+			$rows[$i]->title 	= JText::_( 'Time' );
+			$rows[$i]->data 	= JHTML::_('date', 'now', '%H:%M');
 			$i++;
-
-			$rows[$i] = new stdClass;
-			$rows[$i]->title	= JText::_('MOD_STATS_CACHING');
-			$rows[$i]->data	= $app->getCfg('caching') ? JText::_('JENABLED'):JText::_('JDISABLED');
+			$rows[$i]->title 	= JText::_( 'Caching' );
+			$rows[$i]->data 	=  $mainframe->getCfg('caching') ? JText::_( 'Enabled' ):JText::_( 'Disabled' );
 			$i++;
-
-			$rows[$i] = new stdClass;
-			$rows[$i]->title	= JText::_('MOD_STATS_GZIP');
-			$rows[$i]->data	= $app->getCfg('gzip') ? JText::_('JENABLED'):JText::_('JDISABLED');
+			$rows[$i]->title 	= JText::_( 'GZip' );
+			$rows[$i]->data 	= $mainframe->getCfg('gzip') ? JText::_( 'Enabled' ):JText::_( 'Disabled' );
 			$i++;
 		}
 
-		if ($siteinfo) {
-			$query->select('COUNT(id) AS count_users');
-			$query->from('#__users');
-			$db->setQuery($query);
-			$users = $db->loadResult();
+		if ( $siteinfo )
+		{
+			$query = 'SELECT COUNT( id ) AS count_users'
+			. ' FROM #__users'
+			;
+			$db->setQuery( $query );
+			$members = $db->loadResult();
 
-			$query->clear();
-			$query->select('COUNT(id) AS count_items');
-			$query->from('#__content');
-			$query->where('state = 1');
-			$db->setQuery($query);
+			$query = 'SELECT COUNT( id ) AS count_items'
+			. ' FROM #__content'
+			. ' WHERE state = "1"'
+			;
+			$db->setQuery( $query );
 			$items = $db->loadResult();
 
-			$query->clear();
-			$query->select('COUNT(id) AS count_links ');
-			$query->from('#__weblinks');
-			$query->where('state = 1');
-			$db->setQuery($query);
+			$query = 'SELECT COUNT( id ) AS count_links'
+			. ' FROM #__weblinks'
+			. ' WHERE published = "1"'
+			;
+			$db->setQuery( $query );
 			$links = $db->loadResult();
 
-			if ($users) {
-				$rows[$i] = new stdClass;
-				$rows[$i]->title	= JText::_('MOD_STATS_USERS');
-				$rows[$i]->data	= $users;
+			if ( $members ) {
+				$rows[$i]->title 	= JText::_( 'Members' );
+				$rows[$i]->data 	= $members;
 				$i++;
 			}
 
-			if ($items) {
-				$rows[$i] = new stdClass;
-				$rows[$i]->title	= JText::_('MOD_STATS_ARTICLES');
-				$rows[$i]->data	= $items;
+			if ( $items ) {
+				$rows[$i]->title 	= JText::_( 'Content' );
+				$rows[$i]->data 	= $items;
 				$i++;
 			}
 
-			if ($links) {
-				$rows[$i] = new stdClass;
-				$rows[$i]->title	= JText::_('MOD_STATS_WEBLINKS');
-				$rows[$i]->data	= $links;
+			if ( $links ) {
+				$rows[$i]->title 	= JText::_( 'Web Links' );
+				$rows[$i]->data 	= $links;
 				$i++;
 			}
+
 		}
 
-		if ($counter) {
-			$query->clear();
-			$query->select('SUM(hits) AS count_hits');
-			$query->from('#__content');
-			$query->where('state = 1');
-			$db->setQuery($query);
+		if( $counter )
+		{
+			$query = 'SELECT SUM( hits ) AS count_hits'
+			. ' FROM #__content'
+			. ' WHERE state = "1"'
+			;
+			$db->setQuery( $query );
 			$hits = $db->loadResult();
 
-			if ($hits) {
-				$rows[$i] = new stdClass;
-				$rows[$i]->title	= JText::_('MOD_STATS_ARTICLES_VIEW_HITS');
-				$rows[$i]->data	= $hits + $increase;
+			if ( $hits ) {
+				$rows[$i]->title 	= JText::_( 'Content View Hits' );
+				$rows[$i]->data 	= $hits + $increase;
 				$i++;
 			}
 		}

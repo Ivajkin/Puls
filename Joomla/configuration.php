@@ -1,61 +1,70 @@
 <?php
 class JConfig {
-	public $offline = '0';
-	public $offline_message = 'This site is down for maintenance.<br /> Please check back again soon.';
-	public $display_offline_message = '1';
-	public $offline_image = '';
-	public $sitename = 'Pulse';
-	public $editor = 'tinymce';
-	public $captcha = '0';
-	public $list_limit = '20';
-	public $access = '1';
-	public $debug = '0';
-	public $debug_lang = '0';
-	public $dbtype = 'mysql';
-	public $host = 'sql109.byethost5.com';
-	public $user = 'b5_10620585';
-	public $password = 'kre8stuf';
-	public $db = 'b5_10620585_joomla';
-	public $dbprefix = 'joomla_';
-	public $live_site = '';
-	public $secret = 'I0L7huhaIJJTBbAB';
-	public $gzip = '0';
-	public $error_reporting = 'default';
-	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&amp;keyref=Help{major}{minor}:{keyref}';
-	public $ftp_host = 'ftp.byethost5.com';
-	public $ftp_port = '21';
-	public $ftp_user = '';
-	public $ftp_pass = '';
-	public $ftp_root = '';
-	public $ftp_enable = '0';
-	public $offset = 'UTC';
-	public $offset_user = 'UTC';
-	public $mailer = 'mail';
-	public $mailfrom = 'cahbkooo91@mail.ru';
-	public $fromname = 'Pulse';
-	public $sendmail = '/usr/sbin/sendmail';
-	public $smtpauth = '0';
-	public $smtpuser = '';
-	public $smtppass = '';
-	public $smtphost = 'http://www.puls.byethost5.com';
-	public $smtpsecure = 'none';
-	public $smtpport = '25';
-	public $caching = '0';
-	public $cache_handler = 'file';
-	public $cachetime = '15';
-	public $MetaDesc = '';
-	public $MetaKeys = '';
-	public $MetaTitle = '1';
-	public $MetaAuthor = '1';
-	public $MetaVersion = '0';
-	public $robots = '';
-	public $sef = '1';
-	public $sef_rewrite = '0';
-	public $sef_suffix = '0';
-	public $unicodeslugs = '0';
-	public $feed_limit = '10';
-	public $log_path = 'C:\\Program Files (x86)\\EasyPHP-5.3.9\\www\\Joomla/logs';
-	public $tmp_path = 'C:\\Program Files (x86)\\EasyPHP-5.3.9\\www\\Joomla/tmp';
-	public $lifetime = '15';
-	public $session_handler = 'database';
+/* Site Settings */
+var $offline = '0';
+var $offline_message = 'В настоящее время сайт закрыт на техническое обслуживание.<br />Пожалуйста, зайдите позже.';
+var $sitename = 'Joomla!';
+var $editor = 'tinymce';
+var $list_limit = '20';
+var $legacy = '0';
+/* Debug Settings */
+var $debug = '0';
+var $debug_lang = '0';
+/* Database Settings */
+var $dbtype = 'mysql';
+var $host = 'localhost';
+var $user = 'root';
+var $password = '';
+var $db = 'joomla';
+var $dbprefix = 'jos_';
+/* Server Settings */
+var $live_site = '';
+var $secret = 'MS4D067Y5UV8171M';
+var $gzip = '0';
+var $error_reporting = '-1';
+var $helpurl = 'http://help.joomla.org';
+var $xmlrpc_server = '0';
+var $ftp_host = '127.0.0.1';
+var $ftp_port = '21';
+var $ftp_user = '';
+var $ftp_pass = '';
+var $ftp_root = '';
+var $ftp_enable = '0';
+var $force_ssl = '0';
+/* Locale Settings */
+var $offset = '0';
+var $offset_user = '0';
+/* Mail Settings */
+var $mailer = 'mail';
+var $mailfrom = 'cahbkooo91@mail.ru';
+var $fromname = 'Joomla!';
+var $sendmail = '/usr/sbin/sendmail';
+var $smtpauth = '0';
+var $smtpsecure = 'none';
+var $smtpport = '25';
+var $smtpuser = '';
+var $smtppass = '';
+var $smtphost = 'localhost';
+/* Cache Settings */
+var $caching = '0';
+var $cachetime = '15';
+var $cache_handler = 'file';
+/* Meta Settings */
+var $MetaDesc = 'Joomla! - the dynamic portal engine and content management system';
+var $MetaKeys = 'joomla, Joomla';
+var $MetaTitle = '1';
+var $MetaAuthor = '1';
+/* SEO Settings */
+var $sef           = '0';
+var $sef_rewrite   = '0';
+var $sef_suffix    = '0';
+/* Feed Settings */
+var $feed_limit   = 10;
+var $feed_email   = 'author';
+var $log_path = 'C:\\Program Files (x86)\\EasyPHP-5.3.9\\www\\Joomla\\logs';
+var $tmp_path = 'C:\\Program Files (x86)\\EasyPHP-5.3.9\\www\\Joomla\\tmp';
+/* Session Setting */
+var $lifetime = '15';
+var $session_handler = 'database';
 }
+?>

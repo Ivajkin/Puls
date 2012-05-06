@@ -1,31 +1,38 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  Document
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
- */
+* @version		$Id: raw.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla.Framework
+* @subpackage	Document
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
 
-defined('JPATH_PLATFORM') or die;
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 /**
  * DocumentRAW class, provides an easy interface to parse and display raw output
  *
- * @package     Joomla.Platform
- * @subpackage  Document
- * @since       11.1
+ * @package		Joomla.Framework
+ * @subpackage	Document
+ * @since		1.5
  */
-class JDocumentRaw extends JDocument
+
+class JDocumentRAW extends JDocument
 {
+
 	/**
-	 * Class constructor
+	 * Class constructore
 	 *
-	 * @param   array  $options  Associative array of options
-	 *
-	 * @since   11.1
+	 * @access protected
+	 * @param	array	$options Associative array of options
 	 */
-	public function __construct($options = array())
+	function __construct($options = array())
 	{
 		parent::__construct($options);
 
@@ -39,14 +46,12 @@ class JDocumentRaw extends JDocument
 	/**
 	 * Render the document.
 	 *
-	 * @param   boolean  $cache   If true, cache the output
-	 * @param   array    $params  Associative array of attributes
-	 *
-	 * @return  The rendered data
-	 *
-	 * @since   11.1
+	 * @access public
+	 * @param boolean 	$cache		If true, cache the output
+	 * @param array		$params		Associative array of attributes
+	 * @return 	The rendered data
 	 */
-	public function render($cache = false, $params = array())
+	function render( $cache = false, $params = array())
 	{
 		parent::render();
 		return $this->getBuffer();

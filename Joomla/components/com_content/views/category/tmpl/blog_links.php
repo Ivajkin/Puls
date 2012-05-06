@@ -1,27 +1,13 @@
-<?php
-/**
- * @package		Joomla.Site
- * @subpackage	com_content
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
-
-// no direct access
-defined('_JEXEC') or die;
-?>
-
-
-<div class="items-more">
-
-<h3><?php echo JText::_('COM_CONTENT_MORE_ARTICLES'); ?></h3>
-<ol>
-<?php
-	foreach ($this->link_items as &$item) :
-?>
+<?php // no direct access
+defined('_JEXEC') or die('Restricted access'); ?>
+<div>
+	<strong><?php echo JText::_( 'More Articles...' ); ?></strong>
+</div>
+<ul>
+<?php foreach ($this->links as $link) : ?>
 	<li>
-		<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid)); ?>">
-			<?php echo $item->title; ?></a>
+			<a class="blogsection" href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($link->slug, $link->catslug, $link->sectionid)); ?>">
+			<?php echo $this->escape($link->title); ?></a>
 	</li>
 <?php endforeach; ?>
-</ol>
-</div>
+</ul>

@@ -1,35 +1,45 @@
 <?php
 /**
- * @package		Joomla.Site
- * @subpackage	mod_whosonline
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
+* @version		$Id: helper.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
 
 // no direct access
-defined('_JEXEC') or die;
+defined('_JEXEC') or die('Restricted access');
 
-class modWhosonlineHelper
-{
+class modWhosonlineHelper {
+
 	// show online count
-	static function getOnlineCount() {
-		$db		= JFactory::getDbo();
-		// calculate number of guests and users
-		$result	= array();
+	function getOnlineCount() {
+	    $db		  =& JFactory::getDBO();
+		$sessions = null;
+		// calculate number of guests and members
+		$result      = array();
 		$user_array  = 0;
 		$guest_array = 0;
-		$query	= $db->getQuery(true);
-		$query->select('guest, usertype, client_id');
-		$query->from('#__session');
-		$query->where('client_id = 0');
+
+		$query = 'SELECT guest, usertype, client_id' .
+					' FROM #__session' .
+					' WHERE client_id = 0';
 		$db->setQuery($query);
-		$sessions = (array) $db->loadObjectList();
+		$sessions = $db->loadObjectList();
+
+		if ($db->getErrorNum()) {
+			JError::raiseWarning( 500, $db->stderr() );
+		}
 
 		if (count($sessions)) {
-			foreach ($sessions as $session) {
-				// if guest increase guest count by 1
+		    foreach ($sessions as $session) {
+			    // if guest increase guest count by 1
 				if ($session->guest == 1 && !$session->usertype) {
-					$guest_array ++;
+				    $guest_array ++;
 				}
 				// if member increase member count by 1
 				if ($session->guest == 0) {
@@ -45,28 +55,21 @@ class modWhosonlineHelper
 	}
 
 	// show online member names
-	static function getOnlineUserNames($params) {
-		$db		= JFactory::getDbo();
-		$query	= $db->getQuery(true);
-		$query->select('a.username, a.time, a.userid, a.usertype, a.client_id');
-		$query->from('#__session AS a');
-		$query->where('a.userid != 0');
-		$query->where('a.client_id = 0');
-		$query->group('a.userid');
-		$user = JFactory::getUser();
-		if (!$user->authorise('core.admin') && $params->get('filter_groups', 0) == 1)
-		{
-			$groups = $user->getAuthorisedGroups();
-			if (empty($groups))
-			{
-				return array();
-			}
-			$query->leftJoin('#__user_usergroup_map AS m ON m.user_id = a.userid');
-			$query->leftJoin('#__usergroups AS ug ON ug.id = m.group_id');
-			$query->where('ug.id in (' . implode(',', $groups) . ')');
-			$query->where('ug.id <> 1');
-		}
+	function getOnlineMemberNames() {
+	    $db		=& JFactory::getDBO();
+		$result	= null;
+
+		$query = 'SELECT DISTINCT a.username' .
+				 ' FROM #__session AS a' .
+				 ' WHERE client_id = 0' .
+				 ' AND a.guest = 0';
 		$db->setQuery($query);
-		return (array) $db->loadObjectList();
+		$result = $db->loadObjectList();
+
+		if ($db->getErrorNum()) {
+			JError::raiseWarning( 500, $db->stderr() );
+		}
+
+		return $result;
 	}
 }

@@ -1,1443 +1,534 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  Database
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
+ * @version		$Id: table.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla.Framework
+ * @subpackage	Table
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See COPYRIGHT.php for copyright notices and details.
  */
 
-defined('JPATH_PLATFORM') or die;
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 /**
  * Abstract Table class
  *
- * Parent class to all tables.
+ * Parent classes to all tables.
  *
- * @package     Joomla.Platform
- * @subpackage  Table
- * @link        http://docs.joomla.org/JTable
- * @since       11.1
- * @tutorial	Joomla.Platform/jtable.cls
+ * @abstract
+ * @package 	Joomla.Framework
+ * @subpackage	Table
+ * @since		1.0
+ * @tutorial	Joomla.Framework/jtable.cls
  */
-abstract class JTable extends JObject
+class JTable extends JObject
 {
 	/**
-	 * Name of the database table to model.
+	 * Name of the table in the db schema relating to child class
 	 *
-	 * @var    string
-	 * @since  11.1
+	 * @var 	string
+	 * @access	protected
 	 */
-	protected $_tbl = '';
+	var $_tbl		= '';
 
 	/**
-	 * Name of the primary key field in the table.
+	 * Name of the primary key field in the table
 	 *
-	 * @var    string
-	 * @since  11.1
+	 * @var		string
+	 * @access	protected
 	 */
-	protected $_tbl_key = '';
+	var $_tbl_key	= '';
 
 	/**
-	 * JDatabase connector object.
+	 * Database connector
 	 *
-	 * @var    JDatabase
-	 * @since  11.1
+	 * @var		JDatabase
+	 * @access	protected
 	 */
-	protected $_db;
+	var $_db		= null;
 
 	/**
-	 * Should rows be tracked as ACL assets?
+	 * Object constructor to set table and key field
 	 *
-	 * @var    boolean
-	 * @since  11.1
+	 * Can be overloaded/supplemented by the child class
+	 *
+	 * @access protected
+	 * @param string $table name of the table in the db schema relating to child class
+	 * @param string $key name of the primary key field in the table
+	 * @param object $db JDatabase object
 	 */
-	protected $_trackAssets = false;
-
-	/**
-	 * The rules associated with this record.
-	 *
-	 * @var    JAccessRules  A JAccessRules object.
-	 * @since  11.1
-	 */
-	protected $_rules;
-
-	/**
-	 * Indicator that the tables have been locked.
-	 *
-	 * @var    boolean
-	 * @since  11.1
-	 */
-	protected $_locked = false;
-
-	/**
-	 * Object constructor to set table and key fields.  In most cases this will
-	 * be overridden by child classes to explicitly set the table and key fields
-	 * for a particular database table.
-	 *
-	 * @param   string     $table  Name of the table to model.
-	 * @param   string     $key    Name of the primary key field in the table.
-	 * @param   JDatabase  &$db    JDatabase connector object.
-	 *
-	 * @since   11.1
-	 */
-	public function __construct($table, $key, &$db)
+	function __construct( $table, $key, &$db )
 	{
-		// Set internal variables.
-		$this->_tbl = $table;
-		$this->_tbl_key = $key;
-		$this->_db = &$db;
-
-		// Initialise the table properties.
-		if ($fields = $this->getFields())
-		{
-			foreach ($fields as $name => $v)
-			{
-				// Add the field if it is not already present.
-				if (!property_exists($this, $name))
-				{
-					$this->$name = null;
-				}
-			}
-		}
-
-		// If we are tracking assets, make sure an access field exists and initially set the default.
-		if (property_exists($this, 'asset_id'))
-		{
-			$this->_trackAssets = true;
-		}
-
-		// If the access property exists, set the default.
-		if (property_exists($this, 'access'))
-		{
-			$this->access = (int) JFactory::getConfig()->get('access');
-		}
+		$this->_tbl		= $table;
+		$this->_tbl_key	= $key;
+		$this->_db		=& $db;
 	}
 
 	/**
-	 * Get the columns from database table.
+	 * Returns a reference to the a Table object, always creating it
 	 *
-	 * @return  mixed  An array of the field names, or false if an error occurs.
-	 *
-	 * @since   11.1
-	 */
-	public function getFields()
+	 * @param type 		$type 	 The table type to instantiate
+	 * @param string 	$prefix	 A prefix for the table class name. Optional.
+	 * @param array		$options Configuration array for model. Optional.
+	 * @return database A database object
+	 * @since 1.5
+	*/
+	function &getInstance( $type, $prefix = 'JTable', $config = array() )
 	{
-		static $cache = null;
+		$false = false;
 
-		if ($cache === null)
-		{
-			// Lookup the fields for this table only once.
-			$name = $this->_tbl;
-			$fields = $this->_db->getTableColumns($name, false);
-
-			if (empty($fields))
-			{
-				$e = new JException(JText::_('JLIB_DATABASE_ERROR_COLUMNS_NOT_FOUND'));
-				$this->setError($e);
-				return false;
-			}
-			$cache = $fields;
-		}
-
-		return $cache;
-	}
-
-	/**
-	 * Static method to get an instance of a JTable class if it can be found in
-	 * the table include paths.  To add include paths for searching for JTable
-	 * classes @see JTable::addIncludePath().
-	 *
-	 * @param   string  $type    The type (name) of the JTable class to get an instance of.
-	 * @param   string  $prefix  An optional prefix for the table class name.
-	 * @param   array   $config  An optional array of configuration values for the JTable object.
-	 *
-	 * @return  mixed    A JTable object if found or boolean false if one could not be found.
-	 *
-	 * @link	http://docs.joomla.org/JTable/getInstance
-	 * @since   11.1
-	 */
-	public static function getInstance($type, $prefix = 'JTable', $config = array())
-	{
-		// Sanitize and prepare the table class name.
 		$type = preg_replace('/[^A-Z0-9_\.-]/i', '', $type);
-		$tableClass = $prefix . ucfirst($type);
+		$tableClass = $prefix.ucfirst($type);
 
-		// Only try to load the class if it doesn't already exist.
-		if (!class_exists($tableClass))
+		if (!class_exists( $tableClass ))
 		{
-			// Search for the class file in the JTable include paths.
 			jimport('joomla.filesystem.path');
-
-			if ($path = JPath::find(JTable::addIncludePath(), strtolower($type) . '.php'))
+			if($path = JPath::find(JTable::addIncludePath(), strtolower($type).'.php'))
 			{
-				// Import the class file.
-				include_once $path;
+				require_once $path;
 
-				// If we were unable to load the proper class, raise a warning and return false.
-				if (!class_exists($tableClass))
+				if (!class_exists( $tableClass ))
 				{
-					JError::raiseWarning(0, JText::sprintf('JLIB_DATABASE_ERROR_CLASS_NOT_FOUND_IN_FILE', $tableClass));
-					return false;
+					JError::raiseWarning( 0, 'Table class ' . $tableClass . ' not found in file.' );
+					return $false;
 				}
 			}
 			else
 			{
-				// If we were unable to find the class file in the JTable include paths, raise a warning and return false.
-				JError::raiseWarning(0, JText::sprintf('JLIB_DATABASE_ERROR_NOT_SUPPORTED_FILE_NOT_FOUND', $type));
-				return false;
+				JError::raiseWarning( 0, 'Table ' . $type . ' not supported. File not found.' );
+				return $false;
 			}
 		}
 
-		// If a database object was passed in the configuration array use it, otherwise get the global one from JFactory.
-		$db = isset($config['dbo']) ? $config['dbo'] : JFactory::getDbo();
-
-		// Instantiate a new table class and return it.
-		return new $tableClass($db);
-	}
-
-	/**
-	 * Add a filesystem path where JTable should search for table class files.
-	 * You may either pass a string or an array of paths.
-	 *
-	 * @param   mixed  $path  A filesystem path or array of filesystem paths to add.
-	 *
-	 * @return  array  An array of filesystem paths to find JTable classes in.
-	 *
-	 * @link    http://docs.joomla.org/JTable/addIncludePath
-	 * @since   11.1
-	 */
-	public static function addIncludePath($path = null)
-	{
-		// Declare the internal paths as a static variable.
-		static $_paths;
-
-		// If the internal paths have not been initialised, do so with the base table path.
-		if (!isset($_paths))
-		{
-			$_paths = array(dirname(__FILE__) . '/table');
+		//Make sure we are returning a DBO object
+		if (array_key_exists('dbo', $config))  {
+			$db =& $config['dbo'];
+		} else {
+			$db = & JFactory::getDBO();
 		}
 
-		// Convert the passed path(s) to add to an array.
-		settype($path, 'array');
+		$instance = new $tableClass($db);
+		//$instance->setDBO($db);
 
-		// If we have new paths to add, do so.
-		if (!empty($path) && !in_array($path, $_paths))
-		{
-			// Check and add each individual new path.
-			foreach ($path as $dir)
-			{
-				// Sanitize path.
-				$dir = trim($dir);
-
-				// Add to the front of the list so that custom paths are searched first.
-				array_unshift($_paths, $dir);
-			}
-		}
-
-		return $_paths;
+		return $instance;
 	}
 
 	/**
-	 * Method to compute the default name of the asset.
-	 * The default name is in the form table_name.id
-	 * where id is the value of the primary key of the table.
+	 * Get the internal database object
 	 *
-	 * @return  string
-	 *
-	 * @since   11.1
+	 * @return object A JDatabase based object
 	 */
-	protected function _getAssetName()
-	{
-		$k = $this->_tbl_key;
-		return $this->_tbl . '.' . (int) $this->$k;
-	}
-
-	/**
-	 * Method to return the title to use for the asset table.  In
-	 * tracking the assets a title is kept for each asset so that there is some
-	 * context available in a unified access manager.  Usually this would just
-	 * return $this->title or $this->name or whatever is being used for the
-	 * primary name of the row. If this method is not overridden, the asset name is used.
-	 *
-	 * @return  string  The string to use as the title in the asset table.
-	 *
-	 * @link    http://docs.joomla.org/JTable/getAssetTitle
-	 * @since   11.1
-	 */
-	protected function _getAssetTitle()
-	{
-		return $this->_getAssetName();
-	}
-
-	/**
-	 * Method to get the parent asset under which to register this one.
-	 * By default, all assets are registered to the ROOT node with ID 1.
-	 * The extended class can define a table and id to lookup.  If the
-	 * asset does not exist it will be created.
-	 *
-	 * @param   JTable   $table  A JTable object for the asset parent.
-	 * @param   integer  $id     Id to look up
-	 *
-	 * @return  integer
-	 *
-	 * @since   11.1
-	 */
-	protected function _getAssetParentId($table = null, $id = null)
-	{
-		// For simple cases, parent to the asset root.
-		if (empty($table) || empty($id))
-		{
-			return 1;
-		}
-
-		return 1;
-	}
-
-	/**
-	 * Method to get the database table name for the class.
-	 *
-	 * @return  string  The name of the database table being modeled.
-	 *
-	 * @since   11.1
-	 *
-	 * @link    http://docs.joomla.org/JTable/getTableName
-	 */
-	public function getTableName()
-	{
-		return $this->_tbl;
-	}
-
-	/**
-	 * Method to get the primary key field name for the table.
-	 *
-	 * @return  string  The name of the primary key for the table.
-	 *
-	 * @link    http://docs.joomla.org/JTable/getKeyName
-	 * @since   11.1
-	 */
-	public function getKeyName()
-	{
-		return $this->_tbl_key;
-	}
-
-	/**
-	 * Method to get the JDatabase connector object.
-	 *
-	 * @return  JDatabase  The internal database connector object.
-	 *
-	 * @link    http://docs.joomla.org/JTable/getDBO
-	 * @since   11.1
-	 */
-	public function getDbo()
+	function &getDBO()
 	{
 		return $this->_db;
 	}
 
 	/**
-	 * Method to set the JDatabase connector object.
+	 * Set the internal database object
 	 *
-	 * @param   object  &$db  A JDatabase connector object to be used by the table object.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/setDBO
-	 * @since   11.1
+	 * @param	object	$db	A JDatabase based object
+	 * @return	void
 	 */
-	public function setDBO(&$db)
+	function setDBO(&$db)
 	{
-		// Make sure the new database object is a JDatabase.
-		if (!($db instanceof JDatabase))
-		{
-			return false;
-		}
-
-		$this->_db = &$db;
-
-		return true;
+		$this->_db =& $db;
 	}
 
 	/**
-	 * Method to set rules for the record.
+	 * Gets the internal table name for the object
 	 *
-	 * @param   mixed  $input  A JAccessRules object, JSON string, or array.
-	 *
-	 * @return  void
-	 *
-	 * @since   11.1
+	 * @return string
+	 * @since 1.5
 	 */
-	public function setRules($input)
+	function getTableName()
 	{
-		if ($input instanceof JAccessRules)
-		{
-			$this->_rules = $input;
-		}
-		else
-		{
-			$this->_rules = new JAccessRules($input);
-		}
+		return $this->_tbl;
 	}
 
 	/**
-	 * Method to get the rules for the record.
+	 * Gets the internal primary key name
 	 *
-	 * @return  JAccessRules object
-	 *
-	 * @since   11.1
+	 * @return string
+	 * @since 1.5
 	 */
-	public function getRules()
+	function getKeyName()
 	{
-		return $this->_rules;
+		return $this->_tbl_key;
 	}
 
 	/**
-	 * Method to reset class properties to the defaults set in the class
-	 * definition. It will ignore the primary key as well as any private class
-	 * properties.
-	 *
-	 * @return  void
-	 *
-	 * @link    http://docs.joomla.org/JTable/reset
-	 * @since   11.1
+	 * Resets the default properties
+	 * @return	void
 	 */
-	public function reset()
+	function reset()
 	{
-		// Get the default values for the class from the table.
-		foreach ($this->getFields() as $k => $v)
+		$k = $this->_tbl_key;
+		foreach ($this->getProperties() as $name => $value)
 		{
-			// If the property is not the primary key or private, reset it.
-			if ($k != $this->_tbl_key && (strpos($k, '_') !== 0))
+			if($name != $k)
 			{
-				$this->$k = $v->Default;
+				$this->$name	= $value;
 			}
 		}
 	}
 
 	/**
-	 * Method to bind an associative array or object to the JTable instance.This
-	 * method only binds properties that are publicly accessible and optionally
-	 * takes an array of properties to ignore when binding.
+	 * Binds a named array/hash to this object
 	 *
-	 * @param   mixed  $src     An associative array or object to bind to the JTable instance.
-	 * @param   mixed  $ignore  An optional array or space separated list of properties to ignore while binding.
+	 * Can be overloaded/supplemented by the child class
 	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/bind
-	 * @since   11.1
+	 * @access	public
+	 * @param	$from	mixed	An associative array or object
+	 * @param	$ignore	mixed	An array or space separated list of fields not to bind
+	 * @return	boolean
 	 */
-	public function bind($src, $ignore = array())
+	function bind( $from, $ignore=array() )
 	{
-		// If the source value is not an array or object return false.
-		if (!is_object($src) && !is_array($src))
+		$fromArray	= is_array( $from );
+		$fromObject	= is_object( $from );
+
+		if (!$fromArray && !$fromObject)
 		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_BIND_FAILED_INVALID_SOURCE_ARGUMENT', get_class($this)));
-			$this->setError($e);
+			$this->setError( get_class( $this ).'::bind failed. Invalid from argument' );
 			return false;
 		}
-
-		// If the source value is an object, get its accessible properties.
-		if (is_object($src))
-		{
-			$src = get_object_vars($src);
+		if (!is_array( $ignore )) {
+			$ignore = explode( ' ', $ignore );
 		}
-
-		// If the ignore value is a string, explode it over spaces.
-		if (!is_array($ignore))
-		{
-			$ignore = explode(' ', $ignore);
-		}
-
-		// Bind the source value, excluding the ignored fields.
 		foreach ($this->getProperties() as $k => $v)
 		{
-			// Only process fields not in the ignore array.
-			if (!in_array($k, $ignore))
+			// internal attributes of an object are ignored
+			if (!in_array( $k, $ignore ))
 			{
-				if (isset($src[$k]))
-				{
-					$this->$k = $src[$k];
+				if ($fromArray && isset( $from[$k] )) {
+					$this->$k = $from[$k];
+				} else if ($fromObject && isset( $from->$k )) {
+					$this->$k = $from->$k;
 				}
 			}
 		}
-
 		return true;
 	}
 
 	/**
-	 * Method to load a row from the database by primary key and bind the fields
-	 * to the JTable instance properties.
+	 * Loads a row from the database and binds the fields to the object properties
 	 *
-	 * @param   mixed    $keys   An optional primary key value to load the row by, or an array of fields to match.  If not
-	 * set the instance property value is used.
-	 * @param   boolean  $reset  True to reset the default values before loading the new row.
-	 *
-	 * @return  boolean  True if successful. False if row not found or on error (internal error state set in that case).
-	 *
-	 * @link    http://docs.joomla.org/JTable/load
-	 * @since   11.1
+	 * @access	public
+	 * @param	mixed	Optional primary key.  If not specifed, the value of current key is used
+	 * @return	boolean	True if successful
 	 */
-	public function load($keys = null, $reset = true)
+	function load( $oid=null )
 	{
-		if (empty($keys))
-		{
-			// If empty, use the value of the current key
-			$keyName = $this->_tbl_key;
-			$keyValue = $this->$keyName;
-
-			// If empty primary key there's is no need to load anything
-			if (empty($keyValue))
-			{
-				return true;
-			}
-
-			$keys = array($keyName => $keyValue);
-		}
-		elseif (!is_array($keys))
-		{
-			// Load by primary key.
-			$keys = array($this->_tbl_key => $keys);
-		}
-
-		if ($reset)
-		{
-			$this->reset();
-		}
-
-		// Initialise the query.
-		$query = $this->_db->getQuery(true);
-		$query->select('*');
-		$query->from($this->_tbl);
-		$fields = array_keys($this->getProperties());
-
-		foreach ($keys as $field => $value)
-		{
-			// Check that $field is in the table.
-			if (!in_array($field, $fields))
-			{
-				$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_CLASS_IS_MISSING_FIELD', get_class($this), $field));
-				$this->setError($e);
-				return false;
-			}
-			// Add the search tuple to the query.
-			$query->where($this->_db->quoteName($field) . ' = ' . $this->_db->quote($value));
-		}
-
-		$this->_db->setQuery($query);
-
-		try
-		{
-			$row = $this->_db->loadAssoc();
-		}
-		catch (JDatabaseException $e)
-		{
-			$je = new JException($e->getMessage());
-			$this->setError($je);
-			return false;
-		}
-
-		// Legacy error handling switch based on the JError::$legacy switch.
-		// @deprecated  12.1
-		if (JError::$legacy && $this->_db->getErrorNum())
-		{
-			$e = new JException($this->_db->getErrorMsg());
-			$this->setError($e);
-			return false;
-		}
-
-		// Check that we have a result.
-		if (empty($row))
-		{
-			$e = new JException(JText::_('JLIB_DATABASE_ERROR_EMPTY_ROW_RETURNED'));
-			$this->setError($e);
-			return false;
-		}
-
-		// Bind the object with the row and return.
-		return $this->bind($row);
-	}
-
-	/**
-	 * Method to perform sanity checks on the JTable instance properties to ensure
-	 * they are safe to store in the database.  Child classes should override this
-	 * method to make sure the data they are storing in the database is safe and
-	 * as expected before storage.
-	 *
-	 * @return  boolean  True if the instance is sane and able to be stored in the database.
-	 *
-	 * @link    http://docs.joomla.org/JTable/check
-	 * @since   11.1
-	 */
-	public function check()
-	{
-		return true;
-	}
-
-	/**
-	 * Method to store a row in the database from the JTable instance properties.
-	 * If a primary key value is set the row with that primary key value will be
-	 * updated with the instance property values.  If no primary key value is set
-	 * a new row will be inserted into the database with the properties from the
-	 * JTable instance.
-	 *
-	 * @param   boolean  $updateNulls  True to update fields even if they are null.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link	http://docs.joomla.org/JTable/store
-	 * @since   11.1
-	 */
-	public function store($updateNulls = false)
-	{
-		// Initialise variables.
 		$k = $this->_tbl_key;
 
-		// The asset id field is managed privately by this class.
-		if ($this->_trackAssets)
-		{
-			unset($this->asset_id);
+		if ($oid !== null) {
+			$this->$k = $oid;
 		}
 
-		// If a primary key exists update the object, otherwise insert it.
-		if ($this->$k)
-		{
-			$stored = $this->_db->updateObject($this->_tbl, $this, $this->_tbl_key, $updateNulls);
+		$oid = $this->$k;
+
+		if ($oid === null) {
+			return false;
+		}
+		$this->reset();
+
+		$db =& $this->getDBO();
+
+		$query = 'SELECT *'
+		. ' FROM '.$this->_tbl
+		. ' WHERE '.$this->_tbl_key.' = '.$db->Quote($oid);
+		$db->setQuery( $query );
+
+		if ($result = $db->loadAssoc( )) {
+			return $this->bind($result);
 		}
 		else
 		{
-			$stored = $this->_db->insertObject($this->_tbl, $this, $this->_tbl_key);
-		}
-
-		// If the store failed return false.
-		if (!$stored)
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_STORE_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
+			$this->setError( $db->getErrorMsg() );
 			return false;
 		}
+	}
 
-		// If the table is not set to track assets return true.
-		if (!$this->_trackAssets)
+	/**
+	 * Generic check method
+	 *
+	 * Can be overloaded/supplemented by the child class
+	 *
+	 * @access public
+	 * @return boolean True if the object is ok
+	 */
+	function check()
+	{
+		return true;
+	}
+
+	/**
+	 * Inserts a new row if id is zero or updates an existing row in the database table
+	 *
+	 * Can be overloaded/supplemented by the child class
+	 *
+	 * @access public
+	 * @param boolean If false, null object variables are not updated
+	 * @return null|string null if successful otherwise returns and error message
+	 */
+	function store( $updateNulls=false )
+	{
+		$k = $this->_tbl_key;
+
+		if( $this->$k)
+		{
+			$ret = $this->_db->updateObject( $this->_tbl, $this, $this->_tbl_key, $updateNulls );
+		}
+		else
+		{
+			$ret = $this->_db->insertObject( $this->_tbl, $this, $this->_tbl_key );
+		}
+		if( !$ret )
+		{
+			$this->setError(get_class( $this ).'::store failed - '.$this->_db->getErrorMsg());
+			return false;
+		}
+		else
 		{
 			return true;
 		}
-
-		if ($this->_locked)
-		{
-			$this->_unlock();
-		}
-
-		//
-		// Asset Tracking
-		//
-
-		$parentId = $this->_getAssetParentId();
-		$name = $this->_getAssetName();
-		$title = $this->_getAssetTitle();
-
-		$asset = JTable::getInstance('Asset', 'JTable', array('dbo' => $this->getDbo()));
-		$asset->loadByName($name);
-
-		// Re-inject the asset id.
-		$this->asset_id = $asset->id;
-
-		// Check for an error.
-		if ($error = $asset->getError())
-		{
-			$this->setError($error);
-			return false;
-		}
-
-		// Specify how a new or moved node asset is inserted into the tree.
-		if (empty($this->asset_id) || $asset->parent_id != $parentId)
-		{
-			$asset->setLocation($parentId, 'last-child');
-		}
-
-		// Prepare the asset to be stored.
-		$asset->parent_id = $parentId;
-		$asset->name = $name;
-		$asset->title = $title;
-
-		if ($this->_rules instanceof JAccessRules)
-		{
-			$asset->rules = (string) $this->_rules;
-		}
-
-		if (!$asset->check() || !$asset->store($updateNulls))
-		{
-			$this->setError($asset->getError());
-			return false;
-		}
-
-		if (empty($this->asset_id))
-		{
-			// Update the asset_id field in this table.
-			$this->asset_id = (int) $asset->id;
-
-			$query = $this->_db->getQuery(true);
-			$query->update($this->_db->quoteName($this->_tbl));
-			$query->set('asset_id = ' . (int) $this->asset_id);
-			$query->where($this->_db->quoteName($k) . ' = ' . (int) $this->$k);
-			$this->_db->setQuery($query);
-
-			if (!$this->_db->query())
-			{
-				$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_STORE_FAILED_UPDATE_ASSET_ID', $this->_db->getErrorMsg()));
-				$this->setError($e);
-				return false;
-			}
-		}
-
-		return true;
 	}
 
 	/**
-	 * Method to provide a shortcut to binding, checking and storing a JTable
-	 * instance to the database table.  The method will check a row in once the
-	 * data has been stored and if an ordering filter is present will attempt to
-	 * reorder the table rows based on the filter.  The ordering filter is an instance
-	 * property name.  The rows that will be reordered are those whose value matches
-	 * the JTable instance for the property specified.
+	 * Description
 	 *
-	 * @param   mixed   $src             An associative array or object to bind to the JTable instance.
-	 * @param   string  $orderingFilter  Filter for the order updating
-	 * @param   mixed   $ignore          An optional array or space separated list of properties
-	 * to ignore while binding.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link	http://docs.joomla.org/JTable/save
-	 * @since   11.1
+	 * @access public
+	 * @param $dirn
+	 * @param $where
 	 */
-	public function save($src, $orderingFilter = '', $ignore = '')
+	function move( $dirn, $where='' )
 	{
-		// Attempt to bind the source to the instance.
-		if (!$this->bind($src, $ignore))
+		if (!in_array( 'ordering',  array_keys($this->getProperties())))
 		{
+			$this->setError( get_class( $this ).' does not support ordering' );
 			return false;
 		}
 
-		// Run any sanity checks on the instance and verify that it is ready for storage.
-		if (!$this->check())
-		{
-			return false;
-		}
-
-		// Attempt to store the properties to the database table.
-		if (!$this->store())
-		{
-			return false;
-		}
-
-		// Attempt to check the row in, just in case it was checked out.
-		if (!$this->checkin())
-		{
-			return false;
-		}
-
-		// If an ordering filter is set, attempt reorder the rows in the table based on the filter and value.
-		if ($orderingFilter)
-		{
-			$filterValue = $this->$orderingFilter;
-			$this->reorder($orderingFilter ? $this->_db->quoteName($orderingFilter) . ' = ' . $this->_db->Quote($filterValue) : '');
-		}
-
-		// Set the error to empty and return true.
-		$this->setError('');
-
-		return true;
-	}
-
-	/**
-	 * Method to delete a row from the database table by primary key value.
-	 *
-	 * @param   mixed  $pk  An optional primary key value to delete.  If not set the instance property value is used.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link	http://docs.joomla.org/JTable/delete
-	 * @since   11.1
-	 */
-	public function delete($pk = null)
-	{
-		// Initialise variables.
-		$k = $this->_tbl_key;
-		$pk = (is_null($pk)) ? $this->$k : $pk;
-
-		// If no primary key is given, return false.
-		if ($pk === null)
-		{
-			$e = new JException(JText::_('JLIB_DATABASE_ERROR_NULL_PRIMARY_KEY'));
-			$this->setError($e);
-			return false;
-		}
-
-		// If tracking assets, remove the asset first.
-		if ($this->_trackAssets)
-		{
-			// Get and the asset name.
-			$this->$k = $pk;
-			$name = $this->_getAssetName();
-			$asset = JTable::getInstance('Asset');
-
-			if ($asset->loadByName($name))
-			{
-				if (!$asset->delete())
-				{
-					$this->setError($asset->getError());
-					return false;
-				}
-			}
-			else
-			{
-				$this->setError($asset->getError());
-				return false;
-			}
-		}
-
-		// Delete the row by primary key.
-		$query = $this->_db->getQuery(true);
-		$query->delete();
-		$query->from($this->_tbl);
-		$query->where($this->_tbl_key . ' = ' . $this->_db->quote($pk));
-		$this->_db->setQuery($query);
-
-		// Check for a database error.
-		if (!$this->_db->query())
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_DELETE_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
-	 * Method to check a row out if the necessary properties/fields exist.  To
-	 * prevent race conditions while editing rows in a database, a row can be
-	 * checked out if the fields 'checked_out' and 'checked_out_time' are available.
-	 * While a row is checked out, any attempt to store the row by a user other
-	 * than the one who checked the row out should be held until the row is checked
-	 * in again.
-	 *
-	 * @param   integer  $userId  The Id of the user checking out the row.
-	 * @param   mixed    $pk      An optional primary key value to check out.  If not set
-	 * the instance property value is used.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/checkOut
-	 * @since   11.1
-	 */
-	public function checkOut($userId, $pk = null)
-	{
-		// If there is no checked_out or checked_out_time field, just return true.
-		if (!property_exists($this, 'checked_out') || !property_exists($this, 'checked_out_time'))
-		{
-			return true;
-		}
-
-		// Initialise variables.
-		$k = $this->_tbl_key;
-		$pk = (is_null($pk)) ? $this->$k : $pk;
-
-		// If no primary key is given, return false.
-		if ($pk === null)
-		{
-			$e = new JException(JText::_('JLIB_DATABASE_ERROR_NULL_PRIMARY_KEY'));
-			$this->setError($e);
-			return false;
-		}
-
-		// Get the current time in MySQL format.
-		$time = JFactory::getDate()->toSql();
-
-		// Check the row out by primary key.
-		$query = $this->_db->getQuery(true);
-		$query->update($this->_tbl);
-		$query->set($this->_db->quoteName('checked_out') . ' = ' . (int) $userId);
-		$query->set($this->_db->quoteName('checked_out_time') . ' = ' . $this->_db->quote($time));
-		$query->where($this->_tbl_key . ' = ' . $this->_db->quote($pk));
-		$this->_db->setQuery($query);
-
-		if (!$this->_db->query())
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_CHECKOUT_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
-			return false;
-		}
-
-		// Set table values in the object.
-		$this->checked_out = (int) $userId;
-		$this->checked_out_time = $time;
-
-		return true;
-	}
-
-	/**
-	 * Method to check a row in if the necessary properties/fields exist.  Checking
-	 * a row in will allow other users the ability to edit the row.
-	 *
-	 * @param   mixed  $pk  An optional primary key value to check out.  If not set the instance property value is used.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/checkIn
-	 * @since   11.1
-	 */
-	public function checkIn($pk = null)
-	{
-		// If there is no checked_out or checked_out_time field, just return true.
-		if (!property_exists($this, 'checked_out') || !property_exists($this, 'checked_out_time'))
-		{
-			return true;
-		}
-
-		// Initialise variables.
-		$k = $this->_tbl_key;
-		$pk = (is_null($pk)) ? $this->$k : $pk;
-
-		// If no primary key is given, return false.
-		if ($pk === null)
-		{
-			$e = new JException(JText::_('JLIB_DATABASE_ERROR_NULL_PRIMARY_KEY'));
-			$this->setError($e);
-			return false;
-		}
-
-		// Check the row in by primary key.
-		$query = $this->_db->getQuery(true);
-		$query->update($this->_tbl);
-		$query->set($this->_db->quoteName('checked_out') . ' = 0');
-		$query->set($this->_db->quoteName('checked_out_time') . ' = ' . $this->_db->quote($this->_db->getNullDate()));
-		$query->where($this->_tbl_key . ' = ' . $this->_db->quote($pk));
-		$this->_db->setQuery($query);
-
-		// Check for a database error.
-		if (!$this->_db->query())
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_CHECKIN_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
-			return false;
-		}
-
-		// Set table values in the object.
-		$this->checked_out = 0;
-		$this->checked_out_time = '';
-
-		return true;
-	}
-
-	/**
-	 * Method to increment the hits for a row if the necessary property/field exists.
-	 *
-	 * @param   mixed  $pk  An optional primary key value to increment. If not set the instance property value is used.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/hit
-	 * @since   11.1
-	 */
-	public function hit($pk = null)
-	{
-		// If there is no hits field, just return true.
-		if (!property_exists($this, 'hits'))
-		{
-			return true;
-		}
-
-		// Initialise variables.
-		$k = $this->_tbl_key;
-		$pk = (is_null($pk)) ? $this->$k : $pk;
-
-		// If no primary key is given, return false.
-		if ($pk === null)
-		{
-			return false;
-		}
-
-		// Check the row in by primary key.
-		$query = $this->_db->getQuery(true);
-		$query->update($this->_tbl);
-		$query->set($this->_db->quoteName('hits') . ' = (' . $this->_db->quoteName('hits') . ' + 1)');
-		$query->where($this->_tbl_key . ' = ' . $this->_db->quote($pk));
-		$this->_db->setQuery($query);
-
-		// Check for a database error.
-		if (!$this->_db->query())
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_HIT_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
-			return false;
-		}
-
-		// Set table values in the object.
-		$this->hits++;
-
-		return true;
-	}
-
-	/**
-	 * Method to determine if a row is checked out and therefore uneditable by
-	 * a user. If the row is checked out by the same user, then it is considered
-	 * not checked out -- as the user can still edit it.
-	 *
-	 * @param   integer  $with     The userid to preform the match with, if an item is checked
-	 * out by this user the function will return false.
-	 * @param   integer  $against  The userid to perform the match against when the function
-	 * is used as a static function.
-	 *
-	 * @return  boolean  True if checked out.
-	 *
-	 * @link    http://docs.joomla.org/JTable/isCheckedOut
-	 * @since   11.1
-	 * @todo    This either needs to be static or not.
-	 */
-	public function isCheckedOut($with = 0, $against = null)
-	{
-		// Handle the non-static case.
-		if (isset($this) && ($this instanceof JTable) && is_null($against))
-		{
-			$against = $this->get('checked_out');
-		}
-
-		// The item is not checked out or is checked out by the same user.
-		if (!$against || ($against == $with))
-		{
-			return false;
-		}
-
-		$db = JFactory::getDBO();
-		$db->setQuery('SELECT COUNT(userid)' . ' FROM ' . $db->quoteName('#__session') . ' WHERE ' . $db->quoteName('userid') . ' = ' . (int) $against);
-		$checkedOut = (boolean) $db->loadResult();
-
-		// If a session exists for the user then it is checked out.
-		return $checkedOut;
-	}
-
-	/**
-	 * Method to get the next ordering value for a group of rows defined by an SQL WHERE clause.
-	 * This is useful for placing a new item last in a group of items in the table.
-	 *
-	 * @param   string  $where  WHERE clause to use for selecting the MAX(ordering) for the table.
-	 *
-	 * @return  mixed  Boolean false an failure or the next ordering value as an integer.
-	 *
-	 * @link    http://docs.joomla.org/JTable/getNextOrder
-	 * @since   11.1
-	 */
-	public function getNextOrder($where = '')
-	{
-		// If there is no ordering field set an error and return false.
-		if (!property_exists($this, 'ordering'))
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_CLASS_DOES_NOT_SUPPORT_ORDERING', get_class($this)));
-			$this->setError($e);
-			return false;
-		}
-
-		// Get the largest ordering value for a given where clause.
-		$query = $this->_db->getQuery(true);
-		$query->select('MAX(ordering)');
-		$query->from($this->_tbl);
-
-		if ($where)
-		{
-			$query->where($where);
-		}
-
-		$this->_db->setQuery($query);
-		$max = (int) $this->_db->loadResult();
-
-		// Check for a database error.
-		if ($this->_db->getErrorNum())
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_GET_NEXT_ORDER_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
-
-			return false;
-		}
-
-		// Return the largest ordering value + 1.
-		return ($max + 1);
-	}
-
-	/**
-	 * Method to compact the ordering values of rows in a group of rows
-	 * defined by an SQL WHERE clause.
-	 *
-	 * @param   string  $where  WHERE clause to use for limiting the selection of rows to compact the ordering values.
-	 *
-	 * @return  mixed  Boolean true on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/reorder
-	 * @since   11.1
-	 */
-	public function reorder($where = '')
-	{
-		// If there is no ordering field set an error and return false.
-		if (!property_exists($this, 'ordering'))
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_CLASS_DOES_NOT_SUPPORT_ORDERING', get_class($this)));
-			$this->setError($e);
-			return false;
-		}
-
-		// Initialise variables.
 		$k = $this->_tbl_key;
 
-		// Get the primary keys and ordering values for the selection.
-		$query = $this->_db->getQuery(true);
-		$query->select($this->_tbl_key . ', ordering');
-		$query->from($this->_tbl);
-		$query->where('ordering >= 0');
-		$query->order('ordering');
+		$sql = "SELECT $this->_tbl_key, ordering FROM $this->_tbl";
 
-		// Setup the extra where and ordering clause data.
-		if ($where)
+		if ($dirn < 0)
 		{
-			$query->where($where);
+			$sql .= ' WHERE ordering < '.(int) $this->ordering;
+			$sql .= ($where ? ' AND '.$where : '');
+			$sql .= ' ORDER BY ordering DESC';
+		}
+		else if ($dirn > 0)
+		{
+			$sql .= ' WHERE ordering > '.(int) $this->ordering;
+			$sql .= ($where ? ' AND '. $where : '');
+			$sql .= ' ORDER BY ordering';
+		}
+		else
+		{
+			$sql .= ' WHERE ordering = '.(int) $this->ordering;
+			$sql .= ($where ? ' AND '.$where : '');
+			$sql .= ' ORDER BY ordering';
 		}
 
-		$this->_db->setQuery($query);
-		$rows = $this->_db->loadObjectList();
+		$this->_db->setQuery( $sql, 0, 1 );
 
-		// Check for a database error.
-		if ($this->_db->getErrorNum())
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_REORDER_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
 
-			return false;
-		}
-
-		// Compact the ordering values.
-		foreach ($rows as $i => $row)
-		{
-			// Make sure the ordering is a positive integer.
-			if ($row->ordering >= 0)
-			{
-				// Only update rows that are necessary.
-				if ($row->ordering != $i + 1)
-				{
-					// Update the row ordering field.
-					$query = $this->_db->getQuery(true);
-					$query->update($this->_tbl);
-					$query->set('ordering = ' . ($i + 1));
-					$query->where($this->_tbl_key . ' = ' . $this->_db->quote($row->$k));
-					$this->_db->setQuery($query);
-
-					// Check for a database error.
-					if (!$this->_db->query())
-					{
-						$e = new JException(
-							JText::sprintf('JLIB_DATABASE_ERROR_REORDER_UPDATE_ROW_FAILED', get_class($this), $i, $this->_db->getErrorMsg())
-						);
-						$this->setError($e);
-
-						return false;
-					}
-				}
-			}
-		}
-
-		return true;
-	}
-
-	/**
-	 * Method to move a row in the ordering sequence of a group of rows defined by an SQL WHERE clause.
-	 * Negative numbers move the row up in the sequence and positive numbers move it down.
-	 *
-	 * @param   integer  $delta  The direction and magnitude to move the row in the ordering sequence.
-	 * @param   string   $where  WHERE clause to use for limiting the selection of rows to compact the
-	 * ordering values.
-	 *
-	 * @return  mixed    Boolean true on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/move
-	 * @since   11.1
-	 */
-	public function move($delta, $where = '')
-	{
-		// If there is no ordering field set an error and return false.
-		if (!property_exists($this, 'ordering'))
-		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_CLASS_DOES_NOT_SUPPORT_ORDERING', get_class($this)));
-			$this->setError($e);
-			return false;
-		}
-
-		// If the change is none, do nothing.
-		if (empty($delta))
-		{
-			return true;
-		}
-
-		// Initialise variables.
-		$k = $this->_tbl_key;
 		$row = null;
-		$query = $this->_db->getQuery(true);
-
-		// Select the primary key and ordering values from the table.
-		$query->select($this->_tbl_key . ', ordering');
-		$query->from($this->_tbl);
-
-		// If the movement delta is negative move the row up.
-		if ($delta < 0)
-		{
-			$query->where('ordering < ' . (int) $this->ordering);
-			$query->order('ordering DESC');
-		}
-		// If the movement delta is positive move the row down.
-		elseif ($delta > 0)
-		{
-			$query->where('ordering > ' . (int) $this->ordering);
-			$query->order('ordering ASC');
-		}
-
-		// Add the custom WHERE clause if set.
-		if ($where)
-		{
-			$query->where($where);
-		}
-
-		// Select the first row with the criteria.
-		$this->_db->setQuery($query, 0, 1);
 		$row = $this->_db->loadObject();
-
-		// If a row is found, move the item.
-		if (!empty($row))
+		if (isset($row))
 		{
-			// Update the ordering field for this instance to the row's ordering value.
-			$query = $this->_db->getQuery(true);
-			$query->update($this->_tbl);
-			$query->set('ordering = ' . (int) $row->ordering);
-			$query->where($this->_tbl_key . ' = ' . $this->_db->quote($this->$k));
-			$this->_db->setQuery($query);
+			$query = 'UPDATE '. $this->_tbl
+			. ' SET ordering = '. (int) $row->ordering
+			. ' WHERE '. $this->_tbl_key .' = '. $this->_db->Quote($this->$k)
+			;
+			$this->_db->setQuery( $query );
 
-			// Check for a database error.
 			if (!$this->_db->query())
 			{
-				$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_MOVE_FAILED', get_class($this), $this->_db->getErrorMsg()));
-				$this->setError($e);
-
-				return false;
+				$err = $this->_db->getErrorMsg();
+				JError::raiseError( 500, $err );
 			}
 
-			// Update the ordering field for the row to this instance's ordering value.
-			$query = $this->_db->getQuery(true);
-			$query->update($this->_tbl);
-			$query->set('ordering = ' . (int) $this->ordering);
-			$query->where($this->_tbl_key . ' = ' . $this->_db->quote($row->$k));
-			$this->_db->setQuery($query);
+			$query = 'UPDATE '.$this->_tbl
+			. ' SET ordering = '.(int) $this->ordering
+			. ' WHERE '.$this->_tbl_key.' = '.$this->_db->Quote($row->$k)
+			;
+			$this->_db->setQuery( $query );
 
-			// Check for a database error.
 			if (!$this->_db->query())
 			{
-				$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_MOVE_FAILED', get_class($this), $this->_db->getErrorMsg()));
-				$this->setError($e);
-
-				return false;
+				$err = $this->_db->getErrorMsg();
+				JError::raiseError( 500, $err );
 			}
 
-			// Update the instance value.
 			$this->ordering = $row->ordering;
 		}
 		else
 		{
-			// Update the ordering field for this instance.
-			$query = $this->_db->getQuery(true);
-			$query->update($this->_tbl);
-			$query->set('ordering = ' . (int) $this->ordering);
-			$query->where($this->_tbl_key . ' = ' . $this->_db->quote($this->$k));
-			$this->_db->setQuery($query);
+			$query = 'UPDATE '. $this->_tbl
+			. ' SET ordering = '.(int) $this->ordering
+			. ' WHERE '. $this->_tbl_key .' = '. $this->_db->Quote($this->$k)
+			;
+			$this->_db->setQuery( $query );
 
-			// Check for a database error.
 			if (!$this->_db->query())
 			{
-				$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_MOVE_FAILED', get_class($this), $this->_db->getErrorMsg()));
-				$this->setError($e);
-
-				return false;
+				$err = $this->_db->getErrorMsg();
+				JError::raiseError( 500, $err );
 			}
 		}
-
 		return true;
 	}
 
 	/**
-	 * Method to set the publishing state for a row or list of rows in the database
-	 * table.  The method respects checked out rows by other users and will attempt
-	 * to checkin rows that it can after adjustments are made.
+	 * Returns the ordering value to place a new item last in its group
 	 *
-	 * @param   mixed    $pks     An optional array of primary key values to update.  If not set the instance property value is used.
-	 * @param   integer  $state   The publishing state. eg. [0 = unpublished, 1 = published]
-	 * @param   integer  $userId  The user id of the user performing the operation.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @link    http://docs.joomla.org/JTable/publish
-	 * @since   11.1
+	 * @access public
+	 * @param string query WHERE clause for selecting MAX(ordering).
 	 */
-	public function publish($pks = null, $state = 1, $userId = 0)
+	function getNextOrder ( $where='' )
 	{
-		// Initialise variables.
-		$k = $this->_tbl_key;
-
-		// Sanitize input.
-		JArrayHelper::toInteger($pks);
-		$userId = (int) $userId;
-		$state = (int) $state;
-
-		// If there are no primary keys set check to see if the instance key is set.
-		if (empty($pks))
+		if (!in_array( 'ordering', array_keys($this->getProperties()) ))
 		{
-			if ($this->$k)
-			{
-				$pks = array($this->$k);
-			}
-			// Nothing to set publishing state on, return false.
-			else
-			{
-				$e = new JException(JText::_('JLIB_DATABASE_ERROR_NO_ROWS_SELECTED'));
-				$this->setError($e);
-
-				return false;
-			}
+			$this->setError( get_class( $this ).' does not support ordering' );
+			return false;
 		}
 
-		// Update the publishing state for rows with the given primary keys.
-		$query = $this->_db->getQuery(true);
-		$query->update($this->_tbl);
-		$query->set('published = ' . (int) $state);
+		$query = 'SELECT MAX(ordering)' .
+				' FROM ' . $this->_tbl .
+				($where ? ' WHERE '.$where : '');
 
-		// Determine if there is checkin support for the table.
-		if (property_exists($this, 'checked_out') || property_exists($this, 'checked_out_time'))
+		$this->_db->setQuery( $query );
+		$maxord = $this->_db->loadResult();
+
+		if ($this->_db->getErrorNum())
 		{
-			$query->where('(checked_out = 0 OR checked_out = ' . (int) $userId . ')');
-			$checkin = true;
+			$this->setError($this->_db->getErrorMsg());
+			return false;
+		}
+		return $maxord + 1;
+	}
+
+	/**
+	 * Compacts the ordering sequence of the selected records
+	 *
+	 * @access public
+	 * @param string Additional where query to limit ordering to a particular subset of records
+	 */
+	function reorder( $where='' )
+	{
+		$k = $this->_tbl_key;
+
+		if (!in_array( 'ordering', array_keys($this->getProperties() ) ))
+		{
+			$this->setError( get_class( $this ).' does not support ordering');
+			return false;
+		}
+
+		if ($this->_tbl == '#__content_frontpage')
+		{
+			$order2 = ", content_id DESC";
 		}
 		else
 		{
-			$checkin = false;
+			$order2 = "";
 		}
 
-		// Build the WHERE clause for the primary keys.
-		$query->where($k . ' = ' . implode(' OR ' . $k . ' = ', $pks));
-
-		$this->_db->setQuery($query);
-
-		// Check for a database error.
-		if (!$this->_db->query())
+		$query = 'SELECT '.$this->_tbl_key.', ordering'
+		. ' FROM '. $this->_tbl
+		. ' WHERE ordering >= 0' . ( $where ? ' AND '. $where : '' )
+		. ' ORDER BY ordering'.$order2
+		;
+		$this->_db->setQuery( $query );
+		if (!($orders = $this->_db->loadObjectList()))
 		{
-			$e = new JException(JText::sprintf('JLIB_DATABASE_ERROR_PUBLISH_FAILED', get_class($this), $this->_db->getErrorMsg()));
-			$this->setError($e);
-
+			$this->setError($this->_db->getErrorMsg());
 			return false;
 		}
-
-		// If checkin is supported and all rows were adjusted, check them in.
-		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
+		// compact the ordering numbers
+		for ($i=0, $n=count( $orders ); $i < $n; $i++)
 		{
-			// Checkin the rows.
-			foreach ($pks as $pk)
+			if ($orders[$i]->ordering >= 0)
 			{
-				$this->checkin($pk);
+				if ($orders[$i]->ordering != $i+1)
+				{
+					$orders[$i]->ordering = $i+1;
+					$query = 'UPDATE '.$this->_tbl
+					. ' SET ordering = '. (int) $orders[$i]->ordering
+					. ' WHERE '. $k .' = '. $this->_db->Quote($orders[$i]->$k)
+					;
+					$this->_db->setQuery( $query);
+					$this->_db->query();
+				}
 			}
 		}
 
-		// If the JTable instance value is in the list of primary keys that were set, set the instance.
-		if (in_array($this->$k, $pks))
-		{
-			$this->published = $state;
-		}
-
-		$this->setError('');
-		return true;
+	return true;
 	}
 
 	/**
-	 * Generic check for whether dependencies exist for this object in the database schema
+	 * Generic check for whether dependancies exist for this object in the db schema
 	 *
-	 * Can be overloaded/supplemented by the child class
+	 * can be overloaded/supplemented by the child class
 	 *
-	 * @param   mixed  $pk     An optional primary key value check the row for.  If not
-	 * set the instance property value is used.
-	 * @param   array  $joins  An optional array to compiles standard joins formatted like:
-	 * [label => 'Label', name => 'table name' , idfield => 'field', joinfield => 'field']
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @deprecated    12.1
-	 * @link    http://docs.joomla.org/JTable/canDelete
-	 * @since   11.1
+	 * @access public
+	 * @param string $msg Error message returned
+	 * @param int Optional key index
+	 * @param array Optional array to compiles standard joins: format [label=>'Label',name=>'table name',idfield=>'field',joinfield=>'field']
+	 * @return true|false
 	 */
-	public function canDelete($pk = null, $joins = null)
+	function canDelete( $oid=null, $joins=null )
 	{
-		// Deprecation warning.
-		JLog::add('JTable::canDelete() is deprecated.', JLog::WARNING, 'deprecated');
-
-		// Initialise variables.
 		$k = $this->_tbl_key;
-		$pk = (is_null($pk)) ? $this->$k : $pk;
-
-		// If no primary key is given, return false.
-		if ($pk === null)
-		{
-			return false;
+		if ($oid) {
+			$this->$k = intval( $oid );
 		}
 
-		if (is_array($joins))
+		if (is_array( $joins ))
 		{
-			// Get a query object.
-			$query = $this->_db->getQuery(true);
-
-			// Setup the basic query.
-			$query->select($this->_db->quoteName($this->_tbl_key));
-			$query->from($this->_db->quoteName($this->_tbl));
-			$query->where($this->_db->quoteName($this->_tbl_key) . ' = ' . $this->_db->quote($this->$k));
-			$query->group($this->_db->quoteName($this->_tbl_key));
-
-			// For each join add the select and join clauses to the query object.
-			foreach ($joins as $table)
+			$select = "$k";
+			$join = "";
+			foreach( $joins as $table )
 			{
-				$query->select('COUNT(DISTINCT ' . $table['idfield'] . ') AS ' . $table['idfield']);
-				$query->join('LEFT', $table['name'] . ' ON ' . $table['joinfield'] . ' = ' . $k);
+				$select .= ', COUNT(DISTINCT '.$table['idfield'].') AS '.$table['idfield'];
+				$join .= ' LEFT JOIN '.$table['name'].' ON '.$table['joinfield'].' = '.$k;
 			}
 
-			// Get the row object from the query.
-			$this->_db->setQuery((string) $query, 0, 1);
-			$row = $this->_db->loadObject();
+			$query = 'SELECT '. $select
+			. ' FROM '. $this->_tbl
+			. $join
+			. ' WHERE '. $k .' = '. $this->_db->Quote($this->$k)
+			. ' GROUP BY '. $k
+			;
+			$this->_db->setQuery( $query );
 
-			// Check for a database error.
-			if ($this->_db->getErrorNum())
+			if (!$obj = $this->_db->loadObject())
 			{
 				$this->setError($this->_db->getErrorMsg());
-
 				return false;
 			}
-
 			$msg = array();
 			$i = 0;
-
-			foreach ($joins as $table)
+			foreach( $joins as $table )
 			{
 				$k = $table['idfield'] . $i;
-
-				if ($row->$k)
+				if ($obj->$k)
 				{
-					$msg[] = JText::_($table['label']);
+					$msg[] = JText::_( $table['label'] );
 				}
-
 				$i++;
 			}
 
-			if (count($msg))
+			if (count( $msg ))
 			{
-				$this->setError("noDeleteRecord" . ": " . implode(', ', $msg));
-
+				$this->setError("noDeleteRecord" . ": " . implode( ', ', $msg ));
 				return false;
 			}
 			else
@@ -1450,75 +541,322 @@ abstract class JTable extends JObject
 	}
 
 	/**
-	 * Method to export the JTable instance properties to an XML string.
+	 * Default delete method
 	 *
-	 * @param   boolean  $mapKeysToText  True to map foreign keys to text values.
+	 * can be overloaded/supplemented by the child class
 	 *
-	 * @return  string   XML string representation of the instance.
-	 *
-	 * @deprecated    12.1
-	 * @link    http://docs.joomla.org/JTable/toXML
-	 * @since   11.1
+	 * @access public
+	 * @return true if successful otherwise returns and error message
 	 */
-	public function toXML($mapKeysToText = false)
+	function delete( $oid=null )
 	{
-		// Deprecation warning.
-		JLog::add('JTable::toXML() is deprecated.', JLog::WARNING, 'deprecated');
+		//if (!$this->canDelete( $msg ))
+		//{
+		//	return $msg;
+		//}
 
-		// Initialise variables.
-		$xml = array();
-		$map = $mapKeysToText ? ' mapkeystotext="true"' : '';
+		$k = $this->_tbl_key;
+		if ($oid) {
+			$this->$k = intval( $oid );
+		}
 
-		// Open root node.
-		$xml[] = '<record table="' . $this->_tbl . '"' . $map . '>';
+		$query = 'DELETE FROM '.$this->_db->nameQuote( $this->_tbl ).
+				' WHERE '.$this->_tbl_key.' = '. $this->_db->Quote($this->$k);
+		$this->_db->setQuery( $query );
 
-		// Get the publicly accessible instance properties.
-		foreach (get_object_vars($this) as $k => $v)
+		if ($this->_db->query())
 		{
-			// If the value is null or non-scalar, or the field is internal ignore it.
-			if (!is_scalar($v) || ($v === null) || ($k[0] == '_'))
+			return true;
+		}
+		else
+		{
+			$this->setError($this->_db->getErrorMsg());
+			return false;
+		}
+	}
+
+	/**
+	 * Checks out a row
+	 *
+	 * @access public
+	 * @param	integer	The id of the user
+	 * @param 	mixed	The primary key value for the row
+	 * @return	boolean	True if successful, or if checkout is not supported
+	 */
+	function checkout( $who, $oid = null )
+	{
+		if (!in_array( 'checked_out', array_keys($this->getProperties()) )) {
+			return true;
+		}
+
+		$k = $this->_tbl_key;
+		if ($oid !== null) {
+			$this->$k = $oid;
+		}
+
+		$date =& JFactory::getDate();
+		$time = $date->toMysql();
+
+		$query = 'UPDATE '.$this->_db->nameQuote( $this->_tbl ) .
+			' SET checked_out = '.(int)$who.', checked_out_time = '.$this->_db->Quote($time) .
+			' WHERE '.$this->_tbl_key.' = '. $this->_db->Quote($this->$k);
+		$this->_db->setQuery( $query );
+
+		$this->checked_out = $who;
+		$this->checked_out_time = $time;
+
+		return $this->_db->query();
+	}
+
+	/**
+	 * Checks in a row
+	 *
+	 * @access	public
+	 * @param	mixed	The primary key value for the row
+	 * @return	boolean	True if successful, or if checkout is not supported
+	 */
+	function checkin( $oid=null )
+	{
+		if (!(
+			in_array( 'checked_out', array_keys($this->getProperties()) ) ||
+	 		in_array( 'checked_out_time', array_keys($this->getProperties()) )
+		)) {
+			return true;
+		}
+
+		$k = $this->_tbl_key;
+
+		if ($oid !== null) {
+			$this->$k = $oid;
+		}
+
+		if ($this->$k == NULL) {
+			return false;
+		}
+
+		$query = 'UPDATE '.$this->_db->nameQuote( $this->_tbl ).
+				' SET checked_out = 0, checked_out_time = '.$this->_db->Quote($this->_db->getNullDate()) .
+				' WHERE '.$this->_tbl_key.' = '. $this->_db->Quote($this->$k);
+		$this->_db->setQuery( $query );
+
+		$this->checked_out = 0;
+		$this->checked_out_time = '';
+
+		return $this->_db->query();
+	}
+
+	/**
+	 * Description
+	 *
+	 * @access public
+	 * @param $oid
+	 * @param $log
+	 */
+	function hit( $oid=null, $log=false )
+	{
+		if (!in_array( 'hits', array_keys($this->getProperties()) )) {
+			return;
+		}
+
+		$k = $this->_tbl_key;
+
+		if ($oid !== null) {
+			$this->$k = intval( $oid );
+		}
+
+		$query = 'UPDATE '. $this->_tbl
+		. ' SET hits = ( hits + 1 )'
+		. ' WHERE '. $this->_tbl_key .'='. $this->_db->Quote($this->$k);
+		$this->_db->setQuery( $query );
+		$this->_db->query();
+		$this->hits++;
+	}
+
+	/**
+	 * Check if an item is checked out
+	 *
+	 * This function can be used as a static function too, when you do so you need to also provide the
+	 * a value for the $against parameter.
+	 *
+	 * @static
+	 * @access public
+	 * @param integer  $with  	The userid to preform the match with, if an item is checked out
+	 * 				  			by this user the function will return false
+	 * @param integer  $against 	The userid to perform the match against when the function is used as
+	 * 							a static function.
+	 * @return boolean
+	 */
+	function isCheckedOut( $with = 0, $against = null)
+	{
+		if(isset($this) && is_a($this, 'JTable') && is_null($against)) {
+			$against = $this->get( 'checked_out' );
+		}
+
+		//item is not checked out, or being checked out by the same user
+		if (!$against || $against == $with) {
+			return  false;
+		}
+
+		$session =& JTable::getInstance('session');
+		return $session->exists($against);
+	}
+
+	/**
+	 * Generic save function
+	 *
+	 * @access	public
+	 * @param	array	Source array for binding to class vars
+	 * @param	string	Filter for the order updating
+	 * @param	mixed	An array or space separated list of fields not to bind
+	 * @returns TRUE if completely successful, FALSE if partially or not succesful.
+	 */
+	function save( $source, $order_filter='', $ignore='' )
+	{
+		if (!$this->bind( $source, $ignore )) {
+			return false;
+		}
+		if (!$this->check()) {
+			return false;
+		}
+		if (!$this->store()) {
+			return false;
+		}
+		if (!$this->checkin()) {
+			return false;
+		}
+		if ($order_filter)
+		{
+			$filter_value = $this->$order_filter;
+			$this->reorder( $order_filter ? $this->_db->nameQuote( $order_filter ).' = '.$this->_db->Quote( $filter_value ) : '' );
+		}
+		$this->setError('');
+		return true;
+	}
+
+	/**
+	 * Generic Publish/Unpublish function
+	 *
+	 * @access public
+	 * @param array An array of id numbers
+	 * @param integer 0 if unpublishing, 1 if publishing
+	 * @param integer The id of the user performnig the operation
+	 * @since 1.0.4
+	 */
+	function publish( $cid=null, $publish=1, $user_id=0 )
+	{
+		JArrayHelper::toInteger( $cid );
+		$user_id	= (int) $user_id;
+		$publish	= (int) $publish;
+		$k			= $this->_tbl_key;
+
+		if (count( $cid ) < 1)
+		{
+			if ($this->$k) {
+				$cid = array( $this->$k );
+			} else {
+				$this->setError("No items selected.");
+				return false;
+			}
+		}
+
+		$cids = $k . '=' . implode( ' OR ' . $k . '=', $cid );
+
+		$query = 'UPDATE '. $this->_tbl
+		. ' SET published = ' . (int) $publish
+		. ' WHERE ('.$cids.')'
+		;
+
+		$checkin = in_array( 'checked_out', array_keys($this->getProperties()) );
+		if ($checkin)
+		{
+			$query .= ' AND (checked_out = 0 OR checked_out = '.(int) $user_id.')';
+		}
+
+		$this->_db->setQuery( $query );
+		if (!$this->_db->query())
+		{
+			$this->setError($this->_db->getErrorMsg());
+			return false;
+		}
+
+		if (count( $cid ) == 1 && $checkin)
+		{
+			if ($this->_db->getAffectedRows() == 1) {
+				$this->checkin( $cid[0] );
+				if ($this->$k == $cid[0]) {
+					$this->published = $publish;
+				}
+			}
+		}
+		$this->setError('');
+		return true;
+	}
+
+	/**
+	 * Export item list to xml
+	 *
+	 * @access public
+	 * @param boolean Map foreign keys to text values
+	 */
+	function toXML( $mapKeysToText=false )
+	{
+		$xml = '<record table="' . $this->_tbl . '"';
+
+		if ($mapKeysToText)
+		{
+			$xml .= ' mapkeystotext="true"';
+		}
+		$xml .= '>';
+		foreach (get_object_vars( $this ) as $k => $v)
+		{
+			if (is_array($v) or is_object($v) or $v === NULL)
 			{
 				continue;
 			}
+			if ($k[0] == '_')
+			{ // internal field
+				continue;
+			}
+			$xml .= '<' . $k . '><![CDATA[' . $v . ']]></' . $k . '>';
+		}
+		$xml .= '</record>';
 
-			$xml[] = '	<' . $k . '><![CDATA[' . $v . ']]></' . $k . '>';
+		return $xml;
+	}
+
+	/**
+	 * Add a directory where JTable should search for table types. You may
+	 * either pass a string or an array of directories.
+	 *
+	 * @access	public
+	 * @param	string	A path to search.
+	 * @return	array	An array with directory elements
+	 * @since 1.5
+	 */
+	function addIncludePath( $path=null )
+	{
+		static $paths;
+
+		if (!isset($paths)) {
+			$paths = array( dirname( __FILE__ ).DS.'table' );
 		}
 
-		// Close root node.
-		$xml[] = '</record>';
+		// just force path to array
+		settype($path, 'array');
 
-		// Return the XML array imploded over new lines.
-		return implode("\n", $xml);
-	}
+		if (!empty( $path ) && !in_array( $path, $paths ))
+		{
+			// loop through the path directories
+			foreach ($path as $dir)
+			{
+				// no surrounding spaces allowed!
+				$dir = trim($dir);
 
-	/**
-	 * Method to lock the database table for writing.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @since   11.1
-	 * @throws  JDatabaseException
-	 */
-	protected function _lock()
-	{
-		$this->_db->lockTable($this->_tbl);
-		$this->_locked = true;
-
-		return true;
-	}
-
-	/**
-	 * Method to unlock the database table for writing.
-	 *
-	 * @return  boolean  True on success.
-	 *
-	 * @since   11.1
-	 */
-	protected function _unlock()
-	{
-		$this->_db->unlockTables();
-		$this->_locked = false;
-
-		return true;
+				// add to the top of the search dirs
+				// so that custom paths are searched before core paths
+				array_unshift($paths, $dir);
+			}
+		}
+		return $paths;
 	}
 }

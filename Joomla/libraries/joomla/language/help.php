@@ -1,171 +1,117 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  Language
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
- */
-
-defined('JPATH_PLATFORM') or die;
-
+* @version		$Id: help.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla.Framework
+* @subpackage	Language
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
+defined('JPATH_BASE') or die();
 /**
  * Help system class
  *
- * @package     Joomla.Platform
- * @subpackage  Language
- * @since       11.1
+ * @package 		Joomla.Framework
+ * @subpackage	Language
+ * @since		1.5
  */
 class JHelp
 {
-	/**
-	 * Create a URL for a given help key reference
-	 *
-	 * @param   string   $ref           The name of the help screen (its key reference)
-	 * @param   boolean  $useComponent  Use the help file in the component directory
-	 * @param   string   $override      Use this URL instead of any other
-	 * @param   string   $component     Name of component (or null for current component)
-	 *
-	 * @return  string
-	 *
-	 * @since   11.1
-	 */
-	public static function createURL($ref, $useComponent = false, $override = null, $component = null)
-	{
-		$local = false;
-		$app = JFactory::getApplication();
 
-		if (is_null($component))
+	/**
+	* Create an URL for a giving help file reference
+	*
+	* @param string The name of the popup file (excluding the file extension for an xml file)
+	* @param boolean Use the help file in the component directory
+	*/
+	function createURL($ref, $useComponent = false)
+	{
+		global $mainframe, $option;
+
+		$user			=& JFactory::getUser();
+		$userHelpUrl	= $user->getParam( 'helpsite' );
+		$globalHelpUrl 	= $mainframe->getCfg('helpurl');
+		$lang			=& JFactory::getLanguage();
+
+		if ($useComponent)
 		{
-			$component = JApplicationHelper::getComponentName();
+			if (!preg_match( '#\.html$#i', $ref )) {
+				$ref = $ref . '.html';
+			}
+
+			$url = 'components/' . $option. '/help';
+			$tag =  $lang->getTag();
+
+			// Check if the file exists within a different language!
+			if( $lang->getTag() != 'en-GB' ) {
+				$localeURL = JPATH_BASE.DS.$url.DS.$tag.DS.$ref;
+				jimport( 'joomla.filesystem.file' );
+				if( !JFile::exists( $localeURL ) ) {
+					$tag = 'en-GB';
+				}
+			}
+			return $url.'/'.$tag.'/'.$ref;
 		}
 
-		//  Determine the location of the help file.  At this stage the URL
-		//  can contain substitution codes that will be replaced later.
 
-		if ($override)
+		if ( $userHelpUrl )
 		{
-			$url = $override;
+			// Online help site as defined in GC
+			$version = new JVersion();
+			$ref .= $version->getHelpVersion();
+			$url = $userHelpUrl . '/index2.php?option=com_content&amp;task=findkey&amp;tmpl=component&amp;keyref=' . urlencode( $ref );
+		}
+		else if ( $globalHelpUrl )
+		{
+			// Online help site as defined in GC
+			$version = new JVersion();
+			$ref .= $version->getHelpVersion();
+			$url = $globalHelpUrl . '/index2.php?option=com_content&amp;task=findkey&amp;tmpl=component;1&amp;keyref=' . urlencode( $ref );
 		}
 		else
 		{
-			// Get the user help URL.
-			$user = JFactory::getUser();
-			$url = $user->getParam('helpsite');
+			// Included html help files
+			$helpURL = 'help/' .$lang->getTag() .'/';
 
-			// If user hasn't specified a help URL, then get the global one.
-			if ($url == '')
-			{
-				$url = $app->getCfg('helpurl');
+			if (!preg_match( '#\.html$#i', $ref )) {
+				$ref = $ref . '.html';
 			}
 
-			// Component help URL overrides user and global.
-			if ($useComponent)
-			{
-				// Look for help URL in component parameters.
-				$params = JComponentHelper::getParams($component);
-				$url = $params->get('helpURL');
-
-				if ($url == '')
-				{
-					$local = true;
-					$url = 'components/{component}/help/{language}/{keyref}';
+			// Check if the file exists within a different language!
+			if( $lang->getTag() != 'en-GB' ) {
+				$localeURL = JPATH_BASE . $helpURL .$ref;
+				jimport( 'joomla.filesystem.file' );
+				if( !JFile::exists( $localeURL ) ) {
+					$helpURL = 'help/en-GB/';
 				}
 			}
-
-			// Set up a local help URL.
-			if (!$url)
-			{
-				$local = true;
-				$url = 'help/{language}/{keyref}';
-			}
+			$url = $helpURL . $ref;
 		}
-
-		// If the URL is local then make sure we have a valid file extension on the URL.
-		if ($local)
-		{
-			if (!preg_match('#\.html$|\.xml$#i', $ref))
-			{
-				$url .= '.html';
-			}
-		}
-
-		/*
-		 *  Replace substitution codes in the URL.
-		 */
-		$lang = JFactory::getLanguage();
-		$version = new JVersion;
-		$jver = explode('.', $version->getShortVersion());
-		$jlang = explode('-', $lang->getTag());
-
-		$debug = $lang->setDebug(false);
-		$keyref = JText::_($ref);
-		$lang->setDebug($debug);
-
-		// Replace substitution codes in help URL.
-		$search = array('{app}', // Application name (eg. 'Administrator')
-			'{component}', // Component name (eg. 'com_content')
-			'{keyref}', // Help screen key reference
-			'{language}', // Full language code (eg. 'en-GB')
-			'{langcode}', // Short language code (eg. 'en')
-			'{langregion}', // Region code (eg. 'GB')
-			'{major}', // Joomla major version number
-			'{minor}', // Joomla minor version number
-			'{maintenance}'// Joomla maintenance version number
-		);
-
-		$replace = array($app->getName(), // {app}
-			$component, // {component}
-			$keyref, // {keyref}
-			$lang->getTag(), // {language}
-			$jlang[0], // {langcode}
-			$jlang[1], // {langregion}
-			$jver[0], // {major}
-			$jver[1], // {minor}
-			$jver[2]// {maintenance}
-		);
-
-		// If the help file is local then check it exists.
-		// If it doesn't then fallback to English.
-		if ($local)
-		{
-			$try = str_replace($search, $replace, $url);
-			jimport('joomla.filesystem.file');
-
-			if (!JFile::exists(JPATH_BASE . '/' . $try))
-			{
-				$replace[3] = 'en-GB';
-				$replace[4] = 'en';
-				$replace[5] = 'GB';
-			}
-		}
-
-		$url = str_replace($search, $replace, $url);
 
 		return $url;
 	}
 
 	/**
-	 * Builds a list of the help sites which can be used in a select option.
+	 * Builds a list of the help sites which can be used in a select option
 	 *
-	 * @param   string  $pathToXml  Path to an XML file.
-	 * @param   string  $selected   Language tag to select (if exists).
-	 *
-	 * @return  array  An array of arrays (text, value, selected).
-	 *
-	 * @since   11.1
+	 * @param string	Path to an xml file
+	 * @param string	Language tag to select (if exists)
+	 * @param array	An array of arrays ( text, value, selected )
 	 */
-	public static function createSiteList($pathToXml, $selected = null)
+	function createSiteList($pathToXml, $selected = null)
 	{
-		$list = array();
-		$xml = false;
-
-		if (!empty($pathToXml))
-		{
-			$xml = JFactory::getXML($pathToXml);
+		$list	= array ();
+		$xml	=& JFactory::getXMLParser('Simple');
+		$data	= null;
+		if( !empty( $pathToXml ) ) {
+			$data = file_get_contents($pathToXml);
 		}
 
-		if (!$xml)
+		if(empty($data))
 		{
 			$option['text'] = 'English (GB) help.joomla.org';
 			$option['value'] = 'http://help.joomla.org';
@@ -173,14 +119,24 @@ class JHelp
 		}
 		else
 		{
-			$option = array();
-
-			foreach ($xml->sites->site as $site)
+			if($xml->loadString($data))
 			{
-				$option['text'] = (string) $site;
-				$option['value'] = (string) $site->attributes()->url;
+				// Are there any languages??
+				$elmSites = & $xml->document->sites[0];
 
-				$list[] = $option;
+				if (is_object($elmSites)) {
+
+					$option = array ();
+					$sites = $elmSites->children();
+					foreach ($sites as $site)
+					{
+						$text				= $site->data();
+						$url				= $site->attributes('url');
+						$option['text']		= $text;
+						$option['value']	= $url;
+						$list[]				= $option;
+					}
+				}
 			}
 		}
 

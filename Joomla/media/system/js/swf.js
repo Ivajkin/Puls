@@ -1,22 +1,278 @@
 /*
-		MIT License
+Script: Swiff.Base.js
+	Contains <Swiff>, <Swiff.getVersion>, <Swiff.remote>
 
- @author		Harald Kirschner <http://digitarald.de>
- @author		Valerio Proietti, <http://mad4milk.net>
- @copyright	Authors
+Author:
+	Valerio Proietti, <http://mad4milk.net>
+	enhanced by Harald Kirschner <http://digitarald.de>
+
+Credits:
+	Flash detection 'borrowed' from SWFObject.
+
+License:
+	MIT-style license.
 */
-Swiff.Uploader=new Class({Extends:Swiff,Implements:Events,options:{path:"Swiff.Uploader.swf",target:null,zIndex:9999,callBacks:null,params:{wMode:"opaque",menu:"false",allowScriptAccess:"always"},typeFilter:null,multiple:!0,queued:!0,verbose:!1,height:30,width:100,passStatus:null,url:null,method:null,data:null,mergeData:!0,fieldName:null,fileSizeMin:1,fileSizeMax:null,allowDuplicates:!1,timeLimit:Browser.Platform.linux?0:30,policyFile:null,buttonImage:null,fileListMax:0,fileListSizeMax:0,instantStart:!1,
-appendCookieData:!1,fileClass:null},initialize:function(a){this.addEvent("load",this.initializeSwiff,!0).addEvent("select",this.processFiles,!0).addEvent("complete",this.update,!0).addEvent("fileRemove",function(a){this.fileList.erase(a)}.bind(this),!0);this.setOptions(a);this.options.callBacks&&Hash.each(this.options.callBacks,function(a,b){this.addEvent(b,a)},this);this.options.callBacks={fireCallback:this.fireCallback.bind(this)};a=this.options.path;a.contains("?")||(a+="?noCache="+Date.now);this.options.container=
-this.box=(new Element("span",{"class":"swiff-uploader-box"})).inject(document.id(this.options.container)||document.body);if(this.target=document.id(this.options.target)){var b=window.getScroll();this.box.setStyles({position:"absolute",visibility:"visible",zIndex:this.options.zIndex,overflow:"hidden",height:1,width:1,top:b.y,left:b.x});this.parent(a,{params:{wMode:"transparent"},height:"100%",width:"100%"});this.target.addEvent("mouseenter",this.reposition.bind(this,[]));this.addEvents({buttonEnter:this.targetRelay.bind(this,
-["mouseenter"]),buttonLeave:this.targetRelay.bind(this,["mouseleave"]),buttonDown:this.targetRelay.bind(this,["mousedown"]),buttonDisable:this.targetRelay.bind(this,["disable"])});this.reposition();window.addEvent("resize",this.reposition.bind(this,[]))}else this.parent(a);this.inject(this.box);this.fileList=[];this.size=this.uploading=this.bytesLoaded=this.percentLoaded=0;9>Browser.Plugins.Flash.version?this.fireEvent("fail",["flash"]):this.verifyLoad.delay(1E3,this)},verifyLoad:function(){this.loaded||
-(this.object.parentNode?"none"==this.object.style.display?this.fireEvent("fail",["hidden"]):this.object.offsetWidth||this.fireEvent("fail",["empty"]):this.fireEvent("fail",["disabled"]))},fireCallback:function(a,b){if("file"==a.substr(0,4)){1<b.length&&this.update(b[1]);var e=b[0],d=this.findFile(e.id);this.fireEvent(a,d||e,5);if(d){var f=a.replace(/^file([A-Z])/,function(a,b){return b.toLowerCase()});d.update(e).fireEvent(f,[e],10)}}else this.fireEvent(a,b,5)},update:function(a){Object.append(this,
-a);this.fireEvent("queue",[this],10);return this},findFile:function(a){for(var b=0;b<this.fileList.length;b++)if(this.fileList[b].id==a)return this.fileList[b];return null},initializeSwiff:function(){this.remote("xInitialize",{typeFilter:this.options.typeFilter,multiple:this.options.multiple,queued:this.options.queued,verbose:this.options.verbose,width:this.options.width,height:this.options.height,passStatus:this.options.passStatus,url:this.options.url,method:this.options.method,data:this.options.data,
-mergeData:this.options.mergeData,fieldName:this.options.fieldName,fileSizeMin:this.options.fileSizeMin,fileSizeMax:this.options.fileSizeMax,allowDuplicates:this.options.allowDuplicates,timeLimit:this.options.timeLimit,policyFile:this.options.policyFile,buttonImage:this.options.buttonImage});this.loaded=!0;this.appendCookieData()},targetRelay:function(a){this.target&&this.target.fireEvent(a)},reposition:function(a){a=a||this.target&&this.target.offsetHeight?this.target.getCoordinates(this.box.getOffsetParent()):
-{top:window.getScrollTop(),left:0,width:40,height:40};this.box.setStyles(a);this.fireEvent("reposition",[a,this.box,this.target])},setOptions:function(a){a&&(a.url&&(a.url=Swiff.Uploader.qualifyPath(a.url)),a.buttonImage&&(a.buttonImage=Swiff.Uploader.qualifyPath(a.buttonImage)),this.parent(a),this.loaded&&this.remote("xSetOptions",a));return this},setEnabled:function(a){this.remote("xSetEnabled",a)},start:function(){this.fireEvent("beforeStart");this.remote("xStart")},stop:function(){this.fireEvent("beforeStop");
-this.remote("xStop")},remove:function(){this.fireEvent("beforeRemove");this.remote("xRemove")},fileStart:function(a){this.remote("xFileStart",a.id)},fileStop:function(a){this.remote("xFileStop",a.id)},fileRemove:function(a){this.remote("xFileRemove",a.id)},fileRequeue:function(a){this.remote("xFileRequeue",a.id)},appendCookieData:function(){var a=this.options.appendCookieData;if(a){var b={};document.cookie.split(/;\s*/).each(function(a){a=a.split("=");2==a.length&&(b[decodeURIComponent(a[0])]=decodeURIComponent(a[1]))});
-var e=this.options.data||{};"string"==$type(a)?e[a]=b:Object.append(e,b);this.setOptions({data:e})}},processFiles:function(a,b,e){var d=this.options.fileClass||Swiff.Uploader.File,f=[],c=[];a&&(a.each(function(a){var b=new d(this,a);b.validate()?(this.size+=a.size,this.fileList.push(b),c.push(b),b.render()):(b.remove.delay(10,b),f.push(b))},this),this.fireEvent("selectSuccess",[c],10));if(b||f.length)f.extend(b?b.map(function(a){return new d(this,a)},this):[]).each(function(a){a.invalidate().render()}),
-this.fireEvent("selectFail",[f],10);this.update(e);this.options.instantStart&&c.length&&this.start()}});
-Object.append(Swiff.Uploader,{STATUS_QUEUED:0,STATUS_RUNNING:1,STATUS_ERROR:2,STATUS_COMPLETE:3,STATUS_STOPPED:4,log:function(){window.console&&console.info&&console.info.apply(console,arguments)},unitLabels:{b:[{min:1,unit:"B"},{min:1024,unit:"kB"},{min:1048576,unit:"MB"},{min:1073741824,unit:"GB"}],s:[{min:1,unit:"s"},{min:60,unit:"m"},{min:3600,unit:"h"},{min:86400,unit:"d"}]},formatUnit:function(a,b,e){var d=Swiff.Uploader.unitLabels["bps"==b?"b":b],f="bps"==b?"/s":"",c;c=d.length;var g;if(1>
-a)return"0 "+d[0].unit+f;if("s"==b){f=[];for(c-=1;0<=c;c--)if(g=Math.floor(a/d[c].min))if(f.push(g+" "+d[c].unit),a-=g*d[c].min,!a)break;return!1===e?f:f.join(e||", ")}for(c-=1;0<=c&&!(g=d[c].min,a>=g);c--);return(a/g).toFixed(1)+" "+d[c].unit+f}});Swiff.Uploader.qualifyPath=function(){var a;return function(b){(a||(a=new Element("a"))).href=b;return a.href}}();
-Swiff.Uploader.File=new Class({Implements:Events,initialize:function(a,b){this.base=a;this.update(b)},update:function(a){return Object.append(this,a)},validate:function(){var a=this.base.options;if(a.fileListMax&&this.base.fileList.length>=a.fileListMax)return this.validationError="fileListMax",!1;return a.fileListSizeMax&&this.base.size+this.size>a.fileListSizeMax?(this.validationError="fileListSizeMax",!1):!0},invalidate:function(){this.invalid=!0;this.base.fireEvent("fileInvalid",this,10);return this.fireEvent("invalid",
-this,10)},render:function(){return this},setOptions:function(a){a&&(a.url&&(a.url=Swiff.Uploader.qualifyPath(a.url)),this.base.remote("xFileSetOptions",this.id,a),this.options=$merge(this.options,a));return this},start:function(){this.base.fileStart(this);return this},stop:function(){this.base.fileStop(this);return this},remove:function(){this.base.fileRemove(this);return this},requeue:function(){this.base.fileRequeue(this)}});
+
+/*
+Function: Swiff
+	creates a flash object with supplied parameters.
+
+Arguments:
+	source - the swf path.
+	properties - an object with key/value pairs. all options are optional. see below.
+	where - the $(element) to inject the flash object.
+
+Properties:
+	width - int, the width of the flash object. defaults to 0.
+	height - int, the height of the flash object. defaults to 0.
+	id - string, the id of the flash object. defaults to 'Swiff-Object-num_of_object_inserted'.
+	wmode - string, transparent or opaque.
+	bgcolor - string, hex value for the movie background color.
+	vars - an object of variables (functions, anything) you want to pass to your flash movie
+
+Returns:
+	the object element, to be injected somewhere.
+	Important: the $ function on the OBJECT element wont extend it, will just target the movie by its id/reference. So its not possible to use the <Element> methods on it.
+	This is why it has to be injected using $('myFlashContainer').adopt(myObj) instead of $(myObj).injectInside('myFlashContainer');
+
+Example:
+	(start code)
+	var obj = new Swiff('myMovie.swf', {
+		width: 500,
+		height: 400,
+		id: 'myBeautifulMovie',
+		wmode: 'opaque',
+		bgcolor: '#ff3300',
+		vars: {
+			onLoad: myOnloadFunc,
+			myVariable: myJsVar,
+			myVariableString: 'hello'
+		}
+	});
+	$('myElement').adopt(obj);
+	(end)
+*/
+
+var Swiff = function(source, props){
+	if (!Swiff.fixed) Swiff.fix();
+	var instance = Swiff.nextInstance();
+	Swiff.vars[instance] = {};
+	props = $merge({
+		width: 1,
+		height: 1,
+		id: instance,
+		wmode: 'transparent',
+		bgcolor: '#ffffff',
+		allowScriptAccess: 'sameDomain',
+		callBacks: {'onLoad': Class.empty},
+		params: false
+	}, props || {});
+	var append = [];
+	for (var p in props.callBacks){
+		Swiff.vars[instance][p] = props.callBacks[p];
+		append.push(p + '=Swiff.vars.' + instance + '.' + p);
+	}
+	if (props.params) append.push(Object.toQueryString(props.params));
+	var swf = source + '?' + append.join('&');
+	return new Element('div').setHTML(
+		'<object width="', props.width, '" height="', props.height, '" id="', props.id, '" type="application/x-shockwave-flash" data="', swf, '">'
+			,'<param name="allowScriptAccess" value="', props.allowScriptAccess, '" />'
+			,'<param name="movie" value="', swf, '" />'
+			,'<param name="bgcolor" value="', props.bgcolor, '" />'
+			,'<param name="scale" value="noscale" />'
+			,'<param name="salign" value="lt" />'
+			,'<param name="wmode" value="', props.wmode, '" />'
+		,'</object>').firstChild;
+};
+
+Swiff.extend = $extend;
+
+Swiff.extend({
+
+	count: 0,
+
+	callBacks: {},
+
+	vars: {},
+
+	nextInstance: function(){
+		return 'Swiff' + Swiff.count++;
+	},
+
+	//from swfObject, fixes bugs in ie+fp9
+	fix: function(){
+		Swiff.fixed = true;
+		window.addEvent('beforeunload', function(){
+			__flash_unloadHandler = __flash_savedUnloadHandler = Class.empty;
+		});
+		if (!window.ie) return;
+		window.addEvent('unload', function(){
+			$each(document.getElementsByTagName("object"), function(swf){
+				swf.style.display = 'none';
+				for (var p in swf){
+					if (typeof swf[p] == 'function') swf[p] = Class.empty;
+				}
+			});
+		});
+	},
+
+	/*
+	Function: Swiff.getVersion
+		gets the major version of the flash player installed.
+
+	Returns:
+		a number representing the flash version installed, or 0 if no player is installed.
+	*/
+
+	getVersion: function(){
+		if (!Swiff.pluginVersion) {
+			var x;
+			if(navigator.plugins && navigator.mimeTypes.length){
+				x = navigator.plugins["Shockwave Flash"];
+				if(x && x.description) x = x.description;
+			} else if (window.ie){
+				try {
+					x = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+					x = x.GetVariable("$version");
+				} catch(e){}
+			}
+			Swiff.pluginVersion = ($type(x) == 'string') ? parseInt(x.match(/\d+/)[0]) : 0;
+		}
+		return Swiff.pluginVersion;
+	},
+
+	/*
+	Function: Swiff.remote
+		Calls an ActionScript function from javascript. Requires ExternalInterface.
+
+	Returns:
+		Whatever the ActionScript Returns
+	*/
+
+	remote: function(obj, fn){
+		var rs = obj.CallFunction("<invoke name=\"" + fn + "\" returntype=\"javascript\">" + __flash__argumentsToXML(arguments, 2) + "</invoke>");
+		return eval(rs);
+	}
+
+});
+
+/*
+Script: Swiff.Uploader.js
+	Contains <Swiff.Uploader>
+
+Author:
+	Valerio Proietti, <http://mad4milk.net>,
+	Harald Kirschner, <http://digitarald.de>
+
+License:
+	MIT-style license.
+*/
+
+/*
+Class: Swiff.Uploader
+	creates an uploader instance. Requires an existing Swiff.Uploader.swf instance.
+
+Arguments:
+	callBacks - an object, containing key/value pairs, representing the possible callbacks. See below.
+	onLoaded - Callback when the swf is initialized
+	options - types, multiple, queued, swf, url, container
+
+callBacks:
+	onOpen - a function to fire when the user opens a file.
+	onProgress - a function to fire when the file is uploading. passes the name, the current uploaded size and the full size.
+	onSelect - a function to fire when the user selects a file.
+	onComplete - a function to fire when the file finishes uploading
+	onError - a function to fire when there is an error.
+	onCancel - a function to fire when the user cancels the file uploading.
+*/
+
+Swiff.Uploader = new Class({
+
+	options: {
+		types: false,
+		multiple: true,
+		queued: true,
+		swf: null,
+		url: null,
+		container: null
+	},
+
+	callBacks: {
+		onOpen: Class.empty,
+		onProgress: Class.empty,
+		onSelect: Class.empty,
+		onComplete: Class.empty,
+		onError: Class.empty,
+		onCancel: Class.empty
+	},
+
+	initialize: function(callBacks, onLoaded, options){
+		if (Swiff.getVersion() < 8) return false;
+		this.setOptions(options);
+		this.onLoaded = onLoaded;
+		var calls = $extend($merge(this.callBacks), callBacks || {});
+		for (p in calls) calls[p] = calls[p].bind(this);
+		this.instance = Swiff.nextInstance();
+		Swiff.callBacks[this.instance] = calls;
+		this.object = Swiff.Uploader.register(this.loaded.bind(this), this.options.swf, this.options.container);
+		return this;
+	},
+
+	loaded: function(){
+		Swiff.remote(this.object, 'create', this.instance, this.options.types, this.options.multiple, this.options.queued, this.options.url);
+		this.onLoaded.delay(10);
+	},
+
+	browse: function(){
+		Swiff.remote(this.object, 'browse', this.instance);
+	},
+
+	send: function(url){
+		Swiff.remote(this.object, 'upload', this.instance, url);
+	},
+
+	remove: function(name, size){
+		Swiff.remote(this.object, 'remove', this.instance, name, size);
+	},
+
+	fileIndex: function(name, size){
+		return Swiff.remote(this.object, 'fileIndex', this.instance, name, size);
+	},
+
+	fileList: function(){
+		return Swiff.remote(this.object, 'filelist', this.instance);
+	}
+
+});
+
+Swiff.Uploader.implement(new Options);
+
+Swiff.Uploader.extend = $extend;
+
+Swiff.Uploader.extend({
+
+	swf: 'Swiff.Uploader.swf',
+
+	callBacks: [],
+
+	register: function(callBack, url, container){
+		if (!Swiff.Uploader.object || !Swiff.Uploader.loaded) {
+			Swiff.Uploader.callBacks.push(callBack);
+			if (!Swiff.Uploader.object) {
+				Swiff.Uploader.object = new Swiff(url || Swiff.Uploader.swf, {callBacks: {'onLoad': Swiff.Uploader.onLoad}});
+				(container || document.body).appendChild(Swiff.Uploader.object);
+			}
+		}
+		else callBack.delay(10);
+		return Swiff.Uploader.object;
+	},
+
+	onLoad: function(){
+		Swiff.Uploader.loaded = true;
+		Swiff.Uploader.callBacks.each(function(fn){
+			fn.delay(10);
+		});
+		Swiff.Uploader.callBacks.length = 0;
+	}
+
+});

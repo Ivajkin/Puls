@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params>
+		<param name="product_id" type="text" default="" label="Product  ID" description="A product ID" />
+		<param name="category_id" type="text" default="" label="Category ID" description="A category ID" />
+		<param name="flypage" type="text" default="" label="Flypage" description="The filename of a flypage to used when a category is chosen" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="page" type="text" default="" label="Page" description="A shop page to display (e.g. shop.browse, account.index)" />
+	</params>
+</config>

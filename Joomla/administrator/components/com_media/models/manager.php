@@ -1,42 +1,46 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @version		$Id: manager.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla
+ * @subpackage	Content
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant to the
+ * GNU General Public License, and as distributed it includes or is derivative
+ * of works licensed under the GNU General Public License or other free or open
+ * source software licenses. See COPYRIGHT.php for copyright notices and
+ * details.
  */
 
-// No direct access
-defined('_JEXEC') or die;
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die( 'Restricted access' );
 
 jimport('joomla.application.component.model');
 
 /**
- * Media Component Manager Model
+ * Weblinks Component Weblink Model
  *
- * @package		Joomla.Administrator
- * @subpackage	com_media
+ * @package		Joomla
+ * @subpackage	Content
  * @since 1.5
  */
 class MediaModelManager extends JModel
 {
 
-	function getState($property = null, $default = null)
+	function getState($property = null)
 	{
 		static $set;
 
 		if (!$set) {
-			$folder = JRequest::getVar('folder', '', '', 'path');
+			$folder = JRequest::getVar( 'folder', '', '', 'path' );
 			$this->setState('folder', $folder);
-
-			$fieldid = JRequest::getCmd('fieldid', '');
-			$this->setState('field.id', $fieldid);
 
 			$parent = str_replace("\\", "/", dirname($folder));
 			$parent = ($parent == '.') ? null : $parent;
 			$this->setState('parent', $parent);
 			$set = true;
 		}
-
-		return parent::getState($property, $default);
+		return parent::getState($property);
 	}
 
 	/**
@@ -47,30 +51,31 @@ class MediaModelManager extends JModel
 	 */
 	function getFolderList($base = null)
 	{
+		global $mainframe;
+
 		// Get some paths from the request
 		if (empty($base)) {
 			$base = COM_MEDIA_BASE;
 		}
-		//corrections for windows paths
-		$base = str_replace(DS, '/', $base);
-		$com_media_base_uni = str_replace(DS, '/', COM_MEDIA_BASE);
 
 		// Get the list of folders
 		jimport('joomla.filesystem.folder');
 		$folders = JFolder::folders($base, '.', true, true);
 
-		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('COM_MEDIA_INSERT_IMAGE'));
+		// Load appropriate language files
+		$lang = & JFactory::getLanguage();
+		$lang->load(JRequest::getCmd( 'option' ), JPATH_ADMINISTRATOR);
+
+		$document =& JFactory::getDocument();
+		$document->setTitle(JText::_('Insert Image'));
 
 		// Build the array of select options for the folder list
-		$options[] = JHtml::_('select.option', "", "/");
-
-		foreach ($folders as $folder)
-		{
-			$folder		= str_replace($com_media_base_uni, "", str_replace(DS, '/', $folder));
+		$options[] = JHTML::_('select.option', "","/");
+		foreach ($folders as $folder) {
+			$folder 	= str_replace(COM_MEDIA_BASE, "", $folder);
 			$value		= substr($folder, 1);
-			$text		= str_replace(DS, "/", $folder);
-			$options[]	= JHtml::_('select.option', $value, $text);
+			$text	 	= str_replace(DS, "/", $folder);
+			$options[] 	= JHTML::_('select.option', $value, $text);
 		}
 
 		// Sort the folder list array
@@ -78,14 +83,8 @@ class MediaModelManager extends JModel
 			sort($options);
 		}
 
-		// Get asset and author id (use integer filter)
-		$input = JFactory::getApplication()->input;
-		$asset = $input->get('asset', 0, 'integer');
-		$author = $input->get('author', 0, 'integer');
-
 		// Create the drop-down folder select list
-		$list = JHtml::_('select.genericlist',  $options, 'folderlist', 'class="inputbox" size="1" onchange="ImageManager.setFolder(this.options[this.selectedIndex].value, "'.$asset.'","'.$author.'")" ', 'value', 'text', $base);
-
+		$list = JHTML::_('select.genericlist',  $options, 'folderlist', "class=\"inputbox\" size=\"1\" onchange=\"ImageManager.setFolder(this.options[this.selectedIndex].value)\" ", 'value', 'text', $base);
 		return $list;
 	}
 
@@ -95,7 +94,6 @@ class MediaModelManager extends JModel
 		if (empty($base)) {
 			$base = COM_MEDIA_BASE;
 		}
-
 		$mediaBase = str_replace(DS, '/', COM_MEDIA_BASE.'/');
 
 		// Get the list of folders
@@ -103,7 +101,6 @@ class MediaModelManager extends JModel
 		$folders = JFolder::folders($base, '.', true, true);
 
 		$tree = array();
-
 		foreach ($folders as $folder)
 		{
 			$folder		= str_replace(DS, '/', $folder);
@@ -114,25 +111,22 @@ class MediaModelManager extends JModel
 			$node		= (object) array('name' => $name, 'relative' => $relative, 'absolute' => $absolute);
 
 			$tmp = &$tree;
-			for ($i=0, $n=count($path); $i<$n; $i++)
+			for ($i=0,$n=count($path); $i<$n; $i++)
 			{
 				if (!isset($tmp['children'])) {
 					$tmp['children'] = array();
 				}
-
 				if ($i == $n-1) {
 					// We need to place the node
 					$tmp['children'][$relative] = array('data' =>$node, 'children' => array());
 					break;
 				}
-
 				if (array_key_exists($key = implode('/', array_slice($path, 0, $i+1)), $tmp['children'])) {
 					$tmp = &$tmp['children'][$key];
 				}
 			}
 		}
-		$tree['data'] = (object) array('name' => JText::_('COM_MEDIA_MEDIA'), 'relative' => '', 'absolute' => $base);
-
+		$tree['data'] = (object) array('name' => JText::_('Media'), 'relative' => '', 'absolute' => $base);
 		return $tree;
 	}
 }

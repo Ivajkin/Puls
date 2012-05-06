@@ -1,36 +1,40 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  Session
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
- */
+* @version		$Id:apc.php 6961 2007-03-15 16:06:53Z tcp $
+* @package		Joomla.Framework
+* @subpackage	Session
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
 
-defined('JPATH_PLATFORM') or die;
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 /**
  * XCache session storage handler
  *
- * @package     Joomla.Platform
- * @subpackage  Cache
- * @since       11.1
+ * @package		Joomla.Framework
+ * @subpackage	Cache
+ * @since		1.5
  */
 class JSessionStorageXcache extends JSessionStorage
 {
 	/**
-	 * Constructor
-	 *
-	 * @param   array  $options  Optional parameters.
-	 *
-	 * @since   11.1
-	 */
-	public function __construct($options = array())
+	* Constructor
+	*
+	* @access protected
+	* @param array $options optional parameters
+	*/
+	function __construct( $options = array() )
 	{
-		if (!$this->test())
-		{
-			return JError::raiseError(404, JText::_('JLIB_SESSION_XCACHE_EXTENSION_NOT_AVAILABLE'));
-		}
+		if (!$this->test()) {
+            return JError::raiseError(404, "The xcache extension isn't available");
+        }
 
 		parent::__construct($options);
 	}
@@ -38,14 +42,12 @@ class JSessionStorageXcache extends JSessionStorage
 	/**
 	 * Open the SessionHandler backend.
 	 *
-	 * @param   string  $save_path     The path to the session object.
-	 * @param   string  $session_name  The name of the session.
-	 *
-	 * @return  boolean  True on success, false otherwise.
-	 *
-	 * @since   11.1
+	 * @access public
+	 * @param string $save_path     The path to the session object.
+	 * @param string $session_name  The name of the session.
+	 * @return boolean  True on success, false otherwise.
 	 */
-	public function open($save_path, $session_name)
+	function open($save_path, $session_name)
 	{
 		return true;
 	}
@@ -53,66 +55,61 @@ class JSessionStorageXcache extends JSessionStorage
 	/**
 	 * Close the SessionHandler backend.
 	 *
+	 * @access public
 	 * @return boolean  True on success, false otherwise.
 	 */
-	public function close()
+	function close()
 	{
 		return true;
 	}
 
-	/**
-	 * Read the data for a particular session identifier from the SessionHandler backend.
-	 *
-	 * @param   string  $id  The session identifier.
-	 *
-	 * @return  string  The session data.
-	 *
-	 * @since   11.1
-	 */
-	public function read($id)
+ 	/**
+ 	 * Read the data for a particular session identifier from the
+ 	 * SessionHandler backend.
+ 	 *
+ 	 * @access public
+ 	 * @param string $id  The session identifier.
+ 	 * @return string  The session data.
+ 	 */
+	function read($id)
 	{
-		$sess_id = 'sess_' . $id;
+		$sess_id = 'sess_'.$id;
 
-		// Check if id exists
-		if (!xcache_isset($sess_id))
-		{
+		//check if id exists
+		if( !xcache_isset( $sess_id ) ){
 			return;
 		}
 
-		return (string) xcache_get($sess_id);
+		return (string)xcache_get($sess_id);
 	}
 
 	/**
 	 * Write session data to the SessionHandler backend.
 	 *
-	 * @param   string  $id            The session identifier.
-	 * @param   string  $session_data  The session data.
-	 *
-	 * @return  boolean  True on success, false otherwise.
-	 *
-	 * @since   11.1
+	 * @access public
+	 * @param string $id            The session identifier.
+	 * @param string $session_data  The session data.
+	 * @return boolean  True on success, false otherwise.
 	 */
-	public function write($id, $session_data)
+	function write($id, $session_data)
 	{
-		$sess_id = 'sess_' . $id;
-		return xcache_set($sess_id, $session_data, ini_get("session.gc_maxlifetime"));
+		$sess_id = 'sess_'.$id;
+		return xcache_set($sess_id, $session_data, ini_get("session.gc_maxlifetime")  );
 	}
 
 	/**
-	 * Destroy the data for a particular session identifier in the SessionHandler backend.
-	 *
-	 * @param   string  $id  The session identifier.
-	 *
-	 * @return  boolean  True on success, false otherwise.
-	 *
-	 * @since   11.1
-	 */
-	public function destroy($id)
+	  * Destroy the data for a particular session identifier in the
+	  * SessionHandler backend.
+	  *
+	  * @access public
+	  * @param string $id  The session identifier.
+	  * @return boolean  True on success, false otherwise.
+	  */
+	function destroy($id)
 	{
-		$sess_id = 'sess_' . $id;
+		$sess_id = 'sess_'.$id;
 
-		if (!xcache_isset($sess_id))
-		{
+		if( !xcache_isset( $sess_id ) ){
 			return true;
 		}
 
@@ -122,13 +119,11 @@ class JSessionStorageXcache extends JSessionStorage
 	/**
 	 * Garbage collect stale sessions from the SessionHandler backend.
 	 *
-	 * @param   integer  $maxlifetime  The maximum age of a session.
-	 *
-	 * @return  boolean  True on success, false otherwise.
-	 *
-	 * @since   11.1
+	 * @access public
+	 * @param integer $maxlifetime  The maximum age of a session.
+	 * @return boolean  True on success, false otherwise.
 	 */
-	public function gc($maxlifetime = null)
+	function gc($maxlifetime)
 	{
 		return true;
 	}
@@ -136,10 +131,11 @@ class JSessionStorageXcache extends JSessionStorage
 	/**
 	 * Test to see if the SessionHandler is available.
 	 *
+	 * @static
+	 * @access public
 	 * @return boolean  True on success, false otherwise.
 	 */
-	static public function test()
-	{
+	function test() {
 		return (extension_loaded('xcache'));
 	}
 }

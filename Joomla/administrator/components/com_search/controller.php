@@ -1,45 +1,46 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @version		$Id: controller.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla
+ * @subpackage	Search
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant to the
+ * GNU General Public License, and as distributed it includes or is derivative
+ * of works licensed under the GNU General Public License or other free or open
+ * source software licenses. See COPYRIGHT.php for copyright notices and
+ * details.
  */
 
-// No direct access.
-defined('_JEXEC') or die;
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die( 'Restricted access' );
 
 jimport('joomla.application.component.controller');
 
 /**
- * Search master display controller.
- *
- * @package		Joomla.Administrator
- * @subpackage	com_search
- * @since		1.6
+ * @package		Joomla
+ * @subpackage	Search
  */
 class SearchController extends JController
 {
 	/**
-	 * @var		string	The default view.
-	 * @since	1.6
+	 * Show Search Statistics
 	 */
-	protected $default_view = 'searches';
+	function display()
+	{
+		$model	=& $this->getModel( 'Search' );
+		$view   =& $this->getView( 'Search' );
+		$view->setModel( $model, true );
+		$view->display();
+	}
 
 	/**
-	 * Method to display a view.
-	 *
-	 * @param	boolean			If true, the view output will be cached
-	 * @param	array			An array of safe url parameters and their variable types, for valid values see {@link JFilterInput::clean()}.
-	 *
-	 * @return	JController		This object to support chaining.
-	 * @since	1.5
+	 * Reset Statistics
 	 */
-	public function display($cachable = false, $urlparams = false)
+	function reset()
 	{
-		require_once JPATH_COMPONENT.'/helpers/search.php';
-
-		// Load the submenu.
-		SearchHelper::addSubmenu(JRequest::getCmd('view', 'searches'));
-
-		parent::display();
+		$model	=& $this->getModel( 'Search' );
+		$model->reset();
+		$this->setRedirect('index.php?option=com_search');
 	}
 }

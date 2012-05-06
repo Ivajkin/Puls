@@ -1,35 +1,38 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  HTML
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
+ * @version		$Id: form.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla.Framework
+ * @subpackage	HTML
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See COPYRIGHT.php for copyright notices and details.
  */
-
-defined('JPATH_PLATFORM') or die;
-
+defined('JPATH_BASE') or die();
 /**
  * Utility class for form elements
  *
- * @package     Joomla.Platform
- * @subpackage  HTML
- * @since       11.1
+ * @static
+ * @package 	Joomla.Framework
+ * @subpackage	HTML
+ * @version		1.5
  */
-abstract class JHtmlForm
+class JHTMLForm
 {
 	/**
 	 * Displays a hidden token field to reduce the risk of CSRF exploits
 	 *
-	 * Use in conjunction with JRequest::checkToken
+	 * Use in conjuction with JRequest::checkToken
 	 *
-	 * @return  string  A hidden input field with a token
-	 *
-	 * @see     JRequest::checkToken
-	 * @since   11.1
+	 * @static
+	 * @return	void
+	 * @since	1.5
 	 */
-	public static function token()
+	function token()
 	{
-		return '<input type="hidden" name="' . JSession::getFormToken() . '" value="1" />';
+		return '<input type="hidden" name="'.JUtility::getToken().'" value="1" />';
 	}
 }

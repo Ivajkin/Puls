@@ -1,415 +1,306 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  HTML
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
+ * @version		$Id: pane.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla.Framework
+ * @subpackage	HTML
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See COPYRIGHT.php for copyright notices and details.
  */
 
-defined('JPATH_PLATFORM') or die;
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 /**
  * JPane abstract class
  *
- * @package     Joomla.Platform
- * @subpackage  HTML
- * @since       11.1
- * @deprecated  12.1    Use JHtml::_ static helpers
+ * @abstract
+ * @package		Joomla.Framework
+ * @subpackage	HTML
+ * @since		1.5
  */
-abstract class JPane extends JObject
+class JPane extends JObject
 {
-	public $useCookies = false;
+
+	var $useCookies = false;
 
 	/**
-	 * Returns a JPanel object.
-	 *
-	 * @param   string  $behavior  The behavior to use.
-	 * @param   array   $params    Associative array of values.
-	 *
-	 * @return  object
-	 *
-	 * @deprecated    12.1
-	 * @since   11.1
-	 *
-	 */
-	public static function getInstance($behavior = 'Tabs', $params = array())
+	* Constructor
+	*
+ 	* @param	array	$params		Associative array of values
+	*/
+	function __construct( $params = array() )
 	{
-		// Deprecation warning.
-		JLog::add('JPane::getInstance is deprecated.', JLog::WARNING, 'deprecated');
+	}
 
-		$classname = 'JPane' . $behavior;
+	/**
+	 * Returns a reference to a JPanel object
+	 *
+	 * @param	string 	$behavior   The behavior to use
+	 * @param	boolean	$useCookies Use cookies to remember the state of the panel
+	 * @param	array 	$params		Associative array of values
+	 * @return	object
+	 */
+	function &getInstance( $behavior = 'Tabs', $params = array())
+	{
+		$classname = 'JPane'.$behavior;
 		$instance = new $classname($params);
 
 		return $instance;
 	}
 
 	/**
-	 * Creates a pane and creates the javascript object for it.
+	 * Creates a pane and creates the javascript object for it
 	 *
-	 * @param   string  $id  The pane identifier.
-	 *
-	 * @return  string
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * @abstract
+	 * @param	string	The pane identifier
 	 */
-	abstract public function startPane($id);
+	function startPane( $id )
+	{
+		return;
+	}
 
 	/**
-	 * Ends the pane.
+	 * Ends the pane
 	 *
-	 * @since   11.1
-	 *
-	 * @return  string
-	 *
-	 * @deprecated    12.1
+	 * @abstract
 	 */
-	abstract public function endPane();
+	function endPane()
+	{
+		return;
+	}
 
 	/**
-	 * Creates a panel with title text and starts that panel.
+	 * Creates a panel with title text and starts that panel
 	 *
-	 * @param   string  $text  The panel name and/or title.
-	 * @param   string  $id    The panel identifer.
-	 *
-	 * @return  string
-	 *
-	 * @deprecated  12.1
-	 * @since   11.1
+	 * @abstract
+	 * @param	string	$text The panel name and/or title
+	 * @param	string	$id The panel identifer
 	 */
-	abstract public function startPanel($text, $id);
+	function startPanel( $text, $id )
+	{
+		return;
+	}
 
 	/**
-	 * Ends a panel.
+	 * Ends a panel
 	 *
-	 * @return  string
-	 *
-	 * @since   11.1
-	 * @deprecated    12.1
+	 * @abstract
 	 */
-	abstract public function endPanel();
+	function endPanel()
+	{
+		return;
+	}
 
 	/**
-	 * Load the javascript behavior and attach it to the document.
+	 * Load the javascript behavior and attach it to the document
 	 *
-	 * @return  void
-	 *
-	 * @deprecated    12.1
-	 * @since   11.1
+	 * @abstract
 	 */
-	abstract protected function _loadBehavior();
+	function _loadBehavior()
+	{
+		return;
+	}
 }
 
 /**
- * JPanelTabs class to to draw parameter panes.
+ * JPanelTabs class to to draw parameter panes
  *
- * @package     Joomla.Platform
- * @subpackage  HTML
- * @since       11.1
- * @deprecated  Use JHtml::_ static helpers
+ * @package		Joomla.Framework
+ * @subpackage	HTML
+ * @since		1.5
  */
 class JPaneTabs extends JPane
 {
 	/**
-	 * Constructor.
+	 * Constructor
 	 *
-	 * @param   array  $params  Associative array of values
-	 *
-	 * @since   11.1
+	 * @param	array 	$params		Associative array of values
 	 */
-	public function __construct($params = array())
+	function __construct( $params = array() )
 	{
-		// Deprecation warning.
-		JLog::add('JPaneTabs is deprecated.', JLog::WARNING, 'deprecated');
-
 		static $loaded = false;
 
 		parent::__construct($params);
 
-		if (!$loaded)
-		{
+		if (!$loaded) {
 			$this->_loadBehavior($params);
 			$loaded = true;
 		}
 	}
 
 	/**
-	 * Creates a pane and creates the javascript object for it.
+	 * Creates a pane and creates the javascript object for it
 	 *
-	 * @param   string  $id  The pane identifier.
-	 *
-	 * @return  string  HTML to start the pane dl
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * @param string The pane identifier
 	 */
-	public function startPane($id)
+	function startPane( $id )
 	{
-
-		// Deprecation warning.
-		JLog::add('JPane::startPane is deprecated.', JLog::WARNING, 'deprecated');
-
-		return '<dl class="tabs" id="' . $id . '">';
+		return '<dl class="tabs" id="'.$id.'">';
 	}
 
 	/**
-	 * Ends the pane.
-	 *
-	 * @return  string  HTML to end the pane dl
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * Ends the pane
 	 */
-	public function endPane()
+	function endPane()
 	{
-		// Deprecation warning.
-		JLog::add('JPaneTabs::endPane is deprecated.', JLog::WARNING, 'deprecated');
-
 		return "</dl>";
 	}
 
 	/**
-	 * Creates a tab panel with title text and starts that panel.
+	 * Creates a tab panel with title text and starts that panel
 	 *
-	 * @param   string  $text  The name of the tab
-	 * @param   string  $id    The tab identifier
-	 *
-	 * @return  string  HTML for the dt tag.
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * @param	string	$text	The name of the tab
+	 * @param	string	$id		The tab identifier
 	 */
-	public function startPanel($text, $id)
+	function startPanel( $text, $id )
 	{
-		// Deprecation warning.
-		JLog::add('JPaneTabs::startPanel is deprecated.', JLog::WARNING, 'deprecated');
-
-		return '<dt class="' . $id . '"><span>' . $text . '</span></dt><dd>';
+		return '<dt id="'.$id.'"><span>'.$text.'</span></dt><dd>';
 	}
 
 	/**
-	 * Ends a tab page.
-	 *
-	 * @return  string   HTML for the dd tag.
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * Ends a tab page
 	 */
-	public function endPanel()
+	function endPanel()
 	{
-		// Deprecation warning.
-		JLog::add('JPaneTabs::endPanel is deprecated.', JLog::WARNING, 'deprecated');
-
 		return "</dd>";
 	}
 
 	/**
-	 * Load the javascript behavior and attach it to the document.
+	 * Load the javascript behavior and attach it to the document
 	 *
-	 * @param   array  $params  Associative array of values
-	 *
-	 * @return  void
-	 *
-	 * @since   11.1
-	 * @deprecated    12.1
+	 * @param	array 	$params		Associative array of values
 	 */
-	protected function _loadBehavior($params = array())
+	function _loadBehavior($params = array())
 	{
-		// Deprecation warning.
-		JLog::add('JPaneTabs::_loadBehavior is deprecated.', JLog::WARNING, 'deprecated');
-
 		// Include mootools framework
-		JHtml::_('behavior.framework', true);
+		JHTML::_('behavior.mootools');
 
-		$document = JFactory::getDocument();
+		$document =& JFactory::getDocument();
 
 		$options = '{';
-		$opt['onActive'] = (isset($params['onActive'])) ? $params['onActive'] : null;
-		$opt['onBackground'] = (isset($params['onBackground'])) ? $params['onBackground'] : null;
-		$opt['display'] = (isset($params['startOffset'])) ? (int) $params['startOffset'] : null;
+		$opt['onActive']		= (isset($params['onActive'])) ? $params['onActive'] : null ;
+		$opt['onBackground'] = (isset($params['onBackground'])) ? $params['onBackground'] : null ;
+		$opt['display']		= (isset($params['startOffset'])) ? (int)$params['startOffset'] : null ;
 		foreach ($opt as $k => $v)
 		{
-			if ($v)
-			{
-				$options .= $k . ': ' . $v . ',';
+			if ($v) {
+				$options .= $k.': '.$v.',';
 			}
 		}
-		if (substr($options, -1) == ',')
-		{
+		if (substr($options, -1) == ',') {
 			$options = substr($options, 0, -1);
 		}
 		$options .= '}';
 
-		$js = '	window.addEvent(\'domready\', function(){ $$(\'dl.tabs\').each(function(tabs){ new JTabs(tabs, ' . $options . '); }); });';
+		$js = '		window.addEvent(\'domready\', function(){ $$(\'dl.tabs\').each(function(tabs){ new JTabs(tabs, '.$options.'); }); });';
 
-		$document->addScriptDeclaration($js);
-		JHtml::_('script', 'system/tabs.js', false, true);
+		$document->addScriptDeclaration( $js );
+		$document->addScript( JURI::root(true). '/media/system/js/tabs.js' );
 	}
 }
 
 /**
- * JPanelSliders class to to draw parameter panes.
+ * JPanelSliders class to to draw parameter panes
  *
- * @package     Joomla.Platform
- * @subpackage  HTML
- * @since       11.1
- *
- * @deprecated  Use JHtml::_ static helpers
+ * @package		Joomla.Framework
+ * @subpackage	HTML
+ * @since		1.5
  */
 class JPaneSliders extends JPane
 {
 	/**
-	 * Constructor.
+	 * Constructor
 	 *
-	 * @param   array  $params  Associative array of values.
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * @param int useCookies, if set to 1 cookie will hold last used tab between page refreshes
 	 */
-	public function __construct($params = array())
+	function __construct( $params = array() )
 	{
-		// Deprecation warning.
-		JLog::add('JPanelSliders::__construct is deprecated.', JLog::WARNING, 'deprecated');
-
 		static $loaded = false;
 
 		parent::__construct($params);
 
-		if (!$loaded)
-		{
+		if(!$loaded) {
 			$this->_loadBehavior($params);
 			$loaded = true;
 		}
 	}
 
 	/**
-	 * Creates a pane and creates the javascript object for it.
+	 * Creates a pane and creates the javascript object for it
 	 *
-	 * @param   string  $id  The pane identifier.
-	 *
-	 * @return  string  HTML to start the slider div.
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * @param string The pane identifier
 	 */
-	public function startPane($id)
+	function startPane( $id )
 	{
-		// Deprecation warning.
-		JLog::add('JPaneSliders::startPane is deprecated.', JLog::WARNING, 'deprecated');
-
-		return '<div id="' . $id . '" class="pane-sliders">';
+		return '<div id="'.$id.'" class="pane-sliders">';
 	}
 
-	/**
-	 * Ends the pane.
-	 *
-	 * @return  string  HTML to end the slider div.
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+    /**
+	 * Ends the pane
 	 */
-	public function endPane()
-	{
-		// Deprecation warning.
-		JLog::add('JPaneSliders::endPane is deprecated.', JLog::WARNING, 'deprecated');
-
+	function endPane() {
 		return '</div>';
 	}
 
 	/**
-	 * Creates a tab panel with title text and starts that panel.
+	 * Creates a tab panel with title text and starts that panel
 	 *
-	 * @param   string  $text  The name of the tab.
-	 * @param   string  $id    The tab identifier.
-	 *
-	 * @return  string  HTML to start the tab panel div.
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * @param	string	$text - The name of the tab
+	 * @param	string	$id - The tab identifier
 	 */
-	public function startPanel($text, $id)
+	function startPanel( $text, $id )
 	{
-		// Deprecation warning.
-		JLog::add('JPaneSliders::startPanel is deprecated.', JLog::WARNING, 'deprecated');
-
-		return '<div class="panel">' . '<h3 class="pane-toggler title" id="' . $id . '"><a href="javascript:void(0);"><span>' . $text
-			. '</span></a></h3>' . '<div class="pane-slider content">';
+		return '<div class="panel">'
+			.'<h3 class="jpane-toggler title" id="'.$id.'"><span>'.$text.'</span></h3>'
+			.'<div class="jpane-slider content">';
 	}
 
 	/**
-	 * Ends a tab page.
-	 *
-	 * @return  string  HTML to end the tab divs.
-	 *
-	 * @since   11.1
-	 *
-	 * @deprecated    12.1
+	 * Ends a tab page
 	 */
-	public function endPanel()
+	function endPanel()
 	{
-		// Deprecation warning.
-		JLog::add('JPaneSliders::endPanel is deprecated.', JLog::WARNING, 'deprecated');
-
 		return '</div></div>';
 	}
 
 	/**
-	 * Load the javascript behavior and attach it to the document.
+	 * Load the javascript behavior and attach it to the document
 	 *
-	 * @param   array  $params  Associative array of values.
-	 *
-	 * @return  void
-	 *
-	 * @since 11.1
-	 *
-	 * @deprecated    12.1
+	 * @param	array 	$params		Associative array of values
 	 */
-	protected function _loadBehavior($params = array())
+	function _loadBehavior($params = array())
 	{
-		// Deprecation warning.
-		JLog::add('JPaneSliders::_loadBehavior is deprecated.', JLog::WARNING, 'deprecated');
+		// Include mootools framework
+		JHTML::_('behavior.mootools');
 
-		// Include mootools framework.
-		JHtml::_('behavior.framework', true);
-
-		$document = JFactory::getDocument();
+		$document =& JFactory::getDocument();
 
 		$options = '{';
-		$opt['onActive'] = 'function(toggler, i) { toggler.addClass(\'pane-toggler-down\');' .
-			' toggler.removeClass(\'pane-toggler\');i.addClass(\'pane-down\');i.removeClass(\'pane-hide\'); }';
-		$opt['onBackground'] = 'function(toggler, i) { toggler.addClass(\'pane-toggler\');' .
-			' toggler.removeClass(\'pane-toggler-down\');i.addClass(\'pane-hide\');i.removeClass(\'pane-down\'); }';
-		$opt['duration'] = (isset($params['duration'])) ? (int) $params['duration'] : 300;
-		$opt['display'] = (isset($params['startOffset']) && ($params['startTransition'])) ? (int) $params['startOffset'] : null;
-		$opt['show'] = (isset($params['startOffset']) && (!$params['startTransition'])) ? (int) $params['startOffset'] : null;
-		$opt['opacity'] = (isset($params['opacityTransition']) && ($params['opacityTransition'])) ? 'true' : 'false';
-		$opt['alwaysHide'] = (isset($params['allowAllClose']) && (!$params['allowAllClose'])) ? 'false' : 'true';
+		$opt['onActive']	 = 'function(toggler, i) { toggler.addClass(\'jpane-toggler-down\'); toggler.removeClass(\'jpane-toggler\'); }';
+		$opt['onBackground'] = 'function(toggler, i) { toggler.addClass(\'jpane-toggler\'); toggler.removeClass(\'jpane-toggler-down\'); }';
+		$opt['duration']	 = (isset($params['duration'])) ? (int)$params['duration'] : 300;
+		$opt['display']		 = (isset($params['startOffset']) && ($params['startTransition'])) ? (int)$params['startOffset'] : null ;
+		$opt['show']		 = (isset($params['startOffset']) && (!$params['startTransition'])) ? (int)$params['startOffset'] : null ;
+		$opt['opacity']		 = (isset($params['opacityTransition']) && ($params['opacityTransition'])) ? 'true' : 'false' ;
+		$opt['alwaysHide']	 = (isset($params['allowAllClose']) && ($params['allowAllClose'])) ? 'true' : null ;
 		foreach ($opt as $k => $v)
 		{
-			if ($v)
-			{
-				$options .= $k . ': ' . $v . ',';
+			if ($v) {
+				$options .= $k.': '.$v.',';
 			}
 		}
-		if (substr($options, -1) == ',')
-		{
+		if (substr($options, -1) == ',') {
 			$options = substr($options, 0, -1);
 		}
 		$options .= '}';
 
-		$js = '	window.addEvent(\'domready\', function(){ new Fx.Accordion($$(\'.panel h3.pane-toggler\'), $$(\'.panel div.pane-slider\'), '
-			. $options . '); });';
+		$js = '		window.addEvent(\'domready\', function(){ new Accordion($$(\'.panel h3.jpane-toggler\'), $$(\'.panel div.jpane-slider\'), '.$options.'); });';
 
-		$document->addScriptDeclaration($js);
+		$document->addScriptDeclaration( $js );
 	}
 }

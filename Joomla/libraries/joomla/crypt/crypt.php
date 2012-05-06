@@ -1,13 +1,14 @@
 <?php
 /**
+ * @version     $Id: crypt.php 22952 2012-03-27 00:40:16Z dextercowley $
  * @package     Joomla.Platform
  * @subpackage  Crypt
  *
- * @copyright   Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-defined('JPATH_PLATFORM') or die;
+defined('JPATH_BASE') or die();
 
 /**
  * JCrypt is a Joomla Platform class for handling basic encryption/decryption of data.
@@ -26,9 +27,10 @@ class JCrypt
 	 * @return  string  Random binary data
 	 *
 	 * @since  12.1
+	 * @note   This method requires PHP 5
 	 */
-	public static function genRandomBytes($length = 16)
-	{
+    function genRandomBytes($length = 16)
+    {
 		$sslStr = '';
 		/*
 		 * if a secure randomness generator exists and we don't

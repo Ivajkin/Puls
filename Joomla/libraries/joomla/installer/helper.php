@@ -1,13 +1,19 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  Installer
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
+ * @version		$Id: helper.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla.Framework
+ * @subpackage	Installer
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See COPYRIGHT.php for copyright notices and details.
  */
 
-defined('JPATH_PLATFORM') or die;
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 jimport('joomla.filesystem.file');
 jimport('joomla.filesystem.folder');
@@ -17,73 +23,65 @@ jimport('joomla.filesystem.path');
 /**
  * Installer helper class
  *
- * @package     Joomla.Platform
- * @subpackage  Installer
- * @since       11.1
+ * @static
+ * @package		Joomla.Framework
+ * @subpackage	Installer
+ * @since		1.5
  */
-abstract class JInstallerHelper
+class JInstallerHelper
 {
 	/**
 	 * Downloads a package
 	 *
-	 * @param   string  $url     URL of file to download
-	 * @param   string  $target  Download target filename [optional]
-	 *
-	 * @return  mixed  Path to downloaded package or boolean false on failure
-	 *
-	 * @since   11.1
+	 * @static
+	 * @param string URL of file to download
+	 * @param string Download target filename [optional]
+	 * @return mixed Path to downloaded package or boolean false on failure
+	 * @since 1.5
 	 */
-	public static function downloadPackage($url, $target = false)
+	function downloadPackage($url, $target = false)
 	{
-		$config = JFactory::getConfig();
+		$config =& JFactory::getConfig();
 
 		// Capture PHP errors
 		$php_errormsg = 'Error Unknown';
-		$track_errors = ini_get('track_errors');
 		ini_set('track_errors', true);
 
 		// Set user agent
-		$version = new JVersion;
-		ini_set('user_agent', $version->getUserAgent('Installer'));
+		ini_set('user_agent', "Joomla! 1.5 Installer");
 
 		// Open the remote server socket for reading
 		$inputHandle = @ fopen($url, "r");
-		$error = strstr($php_errormsg, 'failed to open stream:');
-		if (!$inputHandle)
-		{
-			JError::raiseWarning(42, JText::sprintf('JLIB_INSTALLER_ERROR_DOWNLOAD_SERVER_CONNECT', $error));
+		$error = strstr($php_errormsg,'failed to open stream:');
+		if (!$inputHandle) {
+			JError::raiseWarning(42, JText::_('SERVER_CONNECT_FAILED').', '.$error);
 			return false;
 		}
 
 		$meta_data = stream_get_meta_data($inputHandle);
 		foreach ($meta_data['wrapper_data'] as $wrapper_data)
 		{
-			if (substr($wrapper_data, 0, strlen("Content-Disposition")) == "Content-Disposition")
-			{
-				$contentfilename = explode("\"", $wrapper_data);
+			if (substr($wrapper_data, 0, strlen("Content-Disposition")) == "Content-Disposition") {
+				$contentfilename = explode ("\"", $wrapper_data);
 				$target = $contentfilename[1];
 			}
 		}
 
 		// Set the target path if not given
-		if (!$target)
-		{
-			$target = $config->get('tmp_path') . '/' . self::getFilenameFromURL($url);
-		}
-		else
-		{
-			$target = $config->get('tmp_path') . '/' . basename($target);
+		if (!$target) {
+			$target = $config->getValue('config.tmp_path').DS.JInstallerHelper::getFilenameFromURL($url);
+		} else {
+			$target = $config->getValue('config.tmp_path').DS.basename($target);
 		}
 
-		// Initialise contents buffer
+		// Initialize contents buffer
 		$contents = null;
 
 		while (!feof($inputHandle))
 		{
 			$contents .= fread($inputHandle, 4096);
-			if ($contents === false)
-			{
-				JError::raiseWarning(44, JText::sprintf('JLIB_INSTALLER_ERROR_FAILED_READING_NETWORK_RESOURCES', $php_errormsg));
+			if ($contents == false) {
+				JError::raiseWarning(44, 'Failed reading network resource: '.$php_errormsg);
 				return false;
 			}
 		}
@@ -94,12 +92,6 @@ abstract class JInstallerHelper
 		// Close file pointer resource
 		fclose($inputHandle);
 
-		// Restore error tracking to what it was before
-		ini_set('track_errors', $track_errors);
-
-		// bump the max execution time because not using built in php zip libs are slow
-		@set_time_limit(ini_get('max_execution_time'));
-
 		// Return the name of the downloaded package
 		return basename($target);
 	}
@@ -108,13 +100,12 @@ abstract class JInstallerHelper
 	 * Unpacks a file and verifies it as a Joomla element package
 	 * Supports .gz .tar .tar.gz and .zip
 	 *
-	 * @param   string  $p_filename  The uploaded package filename or install directory
-	 *
-	 * @return  array  Two elements: extractdir and packagefile
-	 *
-	 * @since   11.1
+	 * @static
+	 * @param string $p_filename The uploaded package filename or install directory
+	 * @return Array Two elements - extractdir and packagefile
+	 * @since 1.5
 	 */
-	public static function unpack($p_filename)
+	function unpack($p_filename)
 	{
 		// Path to the archive
 		$archivename = $p_filename;
@@ -123,19 +114,19 @@ abstract class JInstallerHelper
 		$tmpdir = uniqid('install_');
 
 		// Clean the paths to use for archive extraction
-		$extractdir = JPath::clean(dirname($p_filename) . '/' . $tmpdir);
+		$extractdir = JPath::clean(dirname($p_filename).DS.$tmpdir);
 		$archivename = JPath::clean($archivename);
 
-		// Do the unpacking of the archive
-		$result = JArchive::extract($archivename, $extractdir);
+		// do the unpacking of the archive
+		$result = JArchive::extract( $archivename, $extractdir);
 
-		if ($result === false)
-		{
+		if ( $result === false ) {
 			return false;
 		}
 
+
 		/*
-		 * Let's set the extraction directory and package file in the result array so we can
+		 * Lets set the extraction directory and package file in the result array so we can
 		 * cleanup everything properly later on.
 		 */
 		$retval['extractdir'] = $extractdir;
@@ -152,9 +143,9 @@ abstract class JInstallerHelper
 
 		if (count($dirList) == 1)
 		{
-			if (JFolder::exists($extractdir . '/' . $dirList[0]))
+			if (JFolder::exists($extractdir.DS.$dirList[0]))
 			{
-				$extractdir = JPath::clean($extractdir . '/' . $dirList[0]);
+				$extractdir = JPath::clean($extractdir.DS.$dirList[0]);
 			}
 		}
 
@@ -168,11 +159,10 @@ abstract class JInstallerHelper
 		 * Get the extension type and return the directory/type array on success or
 		 * false on fail.
 		 */
-		if ($retval['type'] = self::detectType($extractdir))
+		if ($retval['type'] = JInstallerHelper::detectType($extractdir))
 		{
 			return $retval;
-		}
-		else
+		} else
 		{
 			return false;
 		}
@@ -181,61 +171,65 @@ abstract class JInstallerHelper
 	/**
 	 * Method to detect the extension type from a package directory
 	 *
-	 * @param   string  $p_dir  Path to package directory
-	 *
-	 * @return  mixed  Extension type string or boolean false on fail
-	 *
-	 * @since   11.1
+	 * @static
+	 * @param string $p_dir Path to package directory
+	 * @return mixed Extension type string or boolean false on fail
+	 * @since 1.5
 	 */
-	public static function detectType($p_dir)
+	function detectType($p_dir)
 	{
-		// Search the install dir for an XML file
+		// Search the install dir for an xml file
 		$files = JFolder::files($p_dir, '\.xml$', 1, true);
 
-		if (!count($files))
+		if (count($files) > 0)
 		{
-			JError::raiseWarning(1, JText::_('JLIB_INSTALLER_ERROR_NOTFINDXMLSETUPFILE'));
+
+			foreach ($files as $file)
+			{
+				$xmlDoc = & JFactory::getXMLParser();
+				$xmlDoc->resolveErrors(true);
+
+				if (!$xmlDoc->loadXML($file, false, true))
+				{
+					// Free up memory from DOMIT parser
+					unset ($xmlDoc);
+					continue;
+				}
+				$root = & $xmlDoc->documentElement;
+				if (!is_object($root) || ($root->getTagName() != "install" && $root->getTagName() != 'mosinstall'))
+				{
+					unset($xmlDoc);
+					continue;
+				}
+
+				$type = $root->getAttribute('type');
+				// Free up memory from DOMIT parser
+				unset ($xmlDoc);
+				return $type;
+			}
+
+			JError::raiseWarning(1, JText::_('ERRORNOTFINDJOOMLAXMLSETUPFILE'));
+			// Free up memory from DOMIT parser
+			unset ($xmlDoc);
+			return false;
+		} else
+		{
+			JError::raiseWarning(1, JText::_('ERRORNOTFINDXMLSETUPFILE'));
 			return false;
 		}
-
-		foreach ($files as $file)
-		{
-			if (!$xml = JFactory::getXML($file))
-			{
-				continue;
-			}
-
-			if ($xml->getName() != 'install' && $xml->getName() != 'extension')
-			{
-				unset($xml);
-				continue;
-			}
-
-			$type = (string) $xml->attributes()->type;
-			// Free up memory
-			unset($xml);
-			return $type;
-		}
-
-		JError::raiseWarning(1, JText::_('JLIB_INSTALLER_ERROR_NOTFINDJOOMLAXMLSETUPFILE'));
-		// Free up memory.
-		unset($xml);
-		return false;
 	}
 
 	/**
 	 * Gets a file name out of a url
 	 *
-	 * @param   string  $url  URL to get name from
-	 *
-	 * @return  mixed   String filename or boolean false if failed
-	 *
-	 * @since   11.1
+	 * @static
+	 * @param string $url URL to get name from
+	 * @return mixed String filename or boolean false if failed
+	 * @since 1.5
 	 */
-	public static function getFilenameFromURL($url)
+	function getFilenameFromURL($url)
 	{
-		if (is_string($url))
-		{
+		if (is_string($url)) {
 			$parts = explode('/', $url);
 			return $parts[count($parts) - 1];
 		}
@@ -245,48 +239,39 @@ abstract class JInstallerHelper
 	/**
 	 * Clean up temporary uploaded package and unpacked extension
 	 *
-	 * @param   string  $package    Path to the uploaded package file
-	 * @param   string  $resultdir  Path to the unpacked extension
-	 *
-	 * @return  boolean  True on success
-	 *
-	 * @since   11.1
+	 * @static
+	 * @param string $package Path to the uploaded package file
+	 * @param string $resultdir Path to the unpacked extension
+	 * @return boolean True on success
+	 * @since 1.5
 	 */
-	public static function cleanupInstall($package, $resultdir)
+	function cleanupInstall($package, $resultdir)
 	{
-		$config = JFactory::getConfig();
+		$config =& JFactory::getConfig();
 
 		// Does the unpacked extension directory exist?
-		if (is_dir($resultdir))
-		{
+		if (is_dir($resultdir)) {
 			JFolder::delete($resultdir);
 		}
 
 		// Is the package file a valid file?
-		if (is_file($package))
-		{
+		if (is_file($package)) {
 			JFile::delete($package);
-		}
-		elseif (is_file(JPath::clean($config->get('tmp_path') . '/' . $package)))
-		{
+		} elseif (is_file(JPath::clean($config->getValue('config.tmp_path').DS.$package))) {
 			// It might also be just a base filename
-			JFile::delete(JPath::clean($config->get('tmp_path') . '/' . $package));
+			JFile::delete(JPath::clean($config->getValue('config.tmp_path').DS.$package));
 		}
 	}
 
 	/**
-	 * Splits contents of a sql file into array of discreet queries.
-	 * Queries need to be delimited with end of statement marker ';'
-	 *
-	 * @param   string  $sql  The SQL statement.
-	 *
-	 * @return  array  Array of queries
-	 *
-	 * @since   11.1
+	 * Splits contents of a sql file into array of discreet queries
+	 * queries need to be delimited with end of statement marker ';'
+	 * @param string
+	 * @return array
 	 */
-	public static function splitSql($sql)
+	function splitSql($sql)
 	{
-		$db = JFactory::getDbo();
+		$db =& JFactory::getDBO();
 		return $db->splitSql($sql);
 	}
 }

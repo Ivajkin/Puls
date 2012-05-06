@@ -1,63 +1,50 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  HTML
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
- */
+* @version		$Id: menu.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla.Framework
+* @subpackage	Parameter
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
 
-defined('JPATH_PLATFORM') or die;
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 /**
  * Renders a menu element
  *
- * @package     Joomla.Platform
- * @subpackage  Parameter
- * @since       11.1
- * @deprecated  Use JFormMenu instead
+ * @package 	Joomla.Framework
+ * @subpackage		Parameter
+ * @since		1.5
  */
+
 class JElementMenu extends JElement
 {
 	/**
-	 * Element name
-	 *
-	 * @var    string
-	 */
-	protected $_name = 'Menu';
+	* Element name
+	*
+	* @access	protected
+	* @var		string
+	*/
+	var	$_name = 'Menu';
 
-	/**
-	 * Fetch a html for a list of menus
-	 *
-	 * @param   string       $name          Element name
-	 * @param   string       $value         Element value
-	 * @param   JXMLElement  &$node         JXMLElement node object containing the settings for the element
-	 * @param   string       $control_name  Control name
-	 *
-	 * @return  string
-	 *
-	 * @deprecated    12.1  Use JFormFieldMenu::getOptions instead
-	 * @since   11.1
-	 */
-	public function fetchElement($name, $value, &$node, $control_name)
+	function fetchElement($name, $value, &$node, $control_name)
 	{
-		// Deprecation warning.
-		JLog::add('JElementMenu::fetchElement() is deprecated.', JLog::WARNING, 'deprecated');
+		$db =& JFactory::getDBO();
 
-		require_once JPATH_ADMINISTRATOR . '/components/com_menus/helpers/menus.php';
-		$menuTypes = MenusHelper::getMenuTypes();
+		require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_menus'.DS.'helpers'.DS.'helper.php' );
+		$menuTypes 	= MenusHelper::getMenuTypes();
 
-		foreach ($menuTypes as $menutype)
-		{
-			$options[] = JHtml::_('select.option', $menutype, $menutype);
+		foreach ($menuTypes as $menutype) {
+			$options[] = JHTML::_('select.option', $menutype, $menutype);
 		}
-		array_unshift($options, JHtml::_('select.option', '', JText::_('JOPTION_SELECT_MENU')));
+		array_unshift($options, JHTML::_('select.option', '', '- '.JText::_('Select Menu').' -'));
 
-		return JHtml::_(
-			'select.genericlist',
-			$options,
-			$control_name . '[' . $name . ']',
-			array('id' => $control_name . $name, 'list.attr' => 'class="inputbox"', 'list.select' => $value)
-		);
+		return JHTML::_('select.genericlist',  $options, ''.$control_name.'['.$name.']', 'class="inputbox"', 'value', 'text', $value, $control_name.$name);
 	}
 }

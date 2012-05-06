@@ -1,28 +1,32 @@
 <?php
 /**
- * @package		Joomla.Site
- * @subpackage	com_banners
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @version		$Id: router.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla
+ * @subpackage	Banners
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant to the
+ * GNU General Public License, and as distributed it includes or is derivative
+ * of works licensed under the GNU General Public License or other free or open
+ * source software licenses. See COPYRIGHT.php for copyright notices and
+ * details.
  */
-
-defined('_JEXEC') or die;
 
 /**
  * @param	array	A named array
  * @return	array
  */
-function BannersBuildRoute(&$query)
+function BannersBuildRoute( &$query )
 {
 	$segments = array();
 
 	if (isset($query['task'])) {
 		$segments[] = $query['task'];
-		unset($query['task']);
+		unset( $query['task'] );
 	}
-	if (isset($query['id'])) {
-		$segments[] = $query['id'];
-		unset($query['id']);
+	if (isset($query['bid'])) {
+		$segments[] = $query['bid'];
+		unset( $query['bid'] );
 	}
 
 	return $segments;
@@ -34,11 +38,11 @@ function BannersBuildRoute(&$query)
  *
  * Formats:
  *
- * index.php?/banners/task/id/Itemid
+ * index.php?/banners/task/bid/Itemid
  *
- * index.php?/banners/id/Itemid
+ * index.php?/banners/bid/Itemid
  */
-function BannersParseRoute($segments)
+function BannersParseRoute( $segments )
 {
 	$vars = array();
 
@@ -48,9 +52,9 @@ function BannersParseRoute($segments)
 	if ($count)
 	{
 		$count--;
-		$segment = array_shift($segments);
-		if (is_numeric($segment)) {
-			$vars['id'] = $segment;
+		$segment = array_shift( $segments );
+		if (is_numeric( $segment )) {
+			$vars['bid'] = $segment;
 		} else {
 			$vars['task'] = $segment;
 		}
@@ -59,9 +63,9 @@ function BannersParseRoute($segments)
 	if ($count)
 	{
 		$count--;
-		$segment = array_shift($segments) ;
-		if (is_numeric($segment)) {
-			$vars['id'] = $segment;
+		$segment = array_shift( $segments) ;
+		if (is_numeric( $segment )) {
+			$vars['bid'] = $segment;
 		}
 	}
 

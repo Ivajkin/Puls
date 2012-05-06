@@ -1,243 +1,281 @@
 <?php
 /**
- * @package     Joomla.Platform
- * @subpackage  Registry
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
+ * @version		$Id: ini.php 14401 2010-01-26 14:10:00Z louis $
+ * @package		Joomla.Framework
+ * @subpackage	Registry
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See COPYRIGHT.php for copyright notices and details.
  */
 
-defined('JPATH_PLATFORM') or die;
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 /**
- * INI format handler for JRegistry.
+ * INI format handler for JRegistry
  *
- * @package     Joomla.Platform
- * @subpackage  Registry
- * @since       11.1
+ * @package 	Joomla.Framework
+ * @subpackage		Registry
+ * @since		1.5
  */
 class JRegistryFormatINI extends JRegistryFormat
 {
-	protected static $cache = array();
-
 	/**
 	 * Converts an object into an INI formatted string
-	 * -	Unfortunately, there is no way to have ini values nested further than two
-	 * levels deep.  Therefore we will only go through the first two levels of
-	 * the object.
+	 * 	-	Unfortunately, there is no way to have ini values nested further than two
+	 * 		levels deep.  Therefore we will only go through the first two levels of
+	 * 		the object.
 	 *
-	 * @param   object  $object   Data source object.
-	 * @param   array   $options  Options used by the formatter.
-	 *
-	 * @return  string  INI formatted string.
-	 *
-	 * @since   11.1
+	 * @access public
+	 * @param object $object Data Source Object
+	 * @param array  $param  Parameters used by the formatter
+	 * @return string INI Formatted String
 	 */
-	public function objectToString($object, $options = array())
+	function objectToString( &$object, $params )
 	{
-		// Initialize variables.
-		$local = array();
-		$global = array();
 
-		// Iterate over the object to set the properties.
-		foreach (get_object_vars($object) as $key => $value)
+		// Initialize variables
+		$retval = '';
+		$prepend = '';
+
+		// First handle groups (or first level key/value pairs)
+		foreach (get_object_vars( $object ) as $key => $level1)
 		{
-			// If the value is an object then we need to put it in a local section.
-			if (is_object($value))
+			if (is_object($level1))
 			{
-				// Add the section line.
-				$local[] = '';
-				$local[] = '[' . $key . ']';
-
-				// Add the properties for this section.
-				foreach (get_object_vars($value) as $k => $v)
+				// This field is an object, so we treat it as a section
+				$retval .= "[".$key."]\n";
+				foreach (get_object_vars($level1) as $key => $level2)
 				{
-					$local[] = $k . '=' . $this->getValueAsINI($v);
+					if (!is_object($level2) && !is_array($level2))
+					{
+						// Join lines
+						$level2		= str_replace('|', '\|', $level2);
+						$level2		= str_replace(array("\r\n", "\n"), '\\n', $level2);
+						$retval		.= $key."=".$level2."\n";
+					}
 				}
+				$retval .= "\n";
+			}
+			elseif (is_array($level1))
+			{
+				foreach ($level1 as $k1 => $v1)
+				{
+					// Escape any pipe characters before storing
+					$level1[$k1]	= str_replace('|', '\|', $v1);
+					$level1[$k1]	= str_replace(array("\r\n", "\n"), '\\n', $v1);
+				}
+
+				// Implode the array to store
+				$prepend	.= $key."=".implode('|', $level1)."\n";
 			}
 			else
 			{
-				// Not in a section so add the property to the global array.
-				$global[] = $key . '=' . $this->getValueAsINI($value);
+				// Join lines
+				$level1		= str_replace('|', '\|', $level1);
+				$level1		= str_replace(array("\r\n", "\n"), '\\n', $level1);
+				$prepend	.= $key."=".$level1."\n";
 			}
 		}
 
-		return implode("\n", array_merge($global, $local));
+		return $prepend."\n".$retval;
 	}
 
 	/**
-	 * Parse an INI formatted string and convert it into an object.
+	 * Parse an .ini string, based on phpDocumentor phpDocumentor_parse_ini_file function
 	 *
-	 * @param   string  $data     INI formatted string to convert.
-	 * @param   mixed   $options  An array of options used by the formatter, or a boolean setting to process sections.
-	 *
-	 * @return  object   Data object.
-	 *
-	 * @since   11.1
+	 * @access public
+	 * @param mixed The INI string or array of lines
+	 * @param boolean add an associative index for each section [in brackets]
+	 * @return object Data Object
 	 */
-	public function stringToObject($data, $options = array())
+	function &stringToObject( $data, $process_sections = false )
 	{
-		// Initialise options.
-		if (is_array($options))
+		static $inistocache;
+
+		if (!isset( $inistocache )) {
+			$inistocache = array();
+		}
+
+		if (is_string($data))
 		{
-			$sections = (isset($options['processSections'])) ? $options['processSections'] : false;
+			$lines = explode("\n", $data);
+			$hash = md5($data);
 		}
 		else
 		{
-			// Backward compatibility for 1.5 usage.
-			//@deprecated
-			$sections = (boolean) $options;
+			if (is_array($data)) {
+				$lines = $data;
+			} else {
+				$lines = array ();
+			}
+			$hash = md5(implode("\n",$lines));
 		}
 
-		// Check the memory cache for already processed strings.
-		$hash = md5($data . ':' . (int) $sections);
-		if (isset(self::$cache[$hash]))
-		{
-			return self::$cache[$hash];
+		if(array_key_exists($hash, $inistocache)) {
+			return $inistocache[$hash];
 		}
 
-		// If no lines present just return the object.
-		if (empty($data))
-		{
-			return new stdClass;
+		$obj = new stdClass();
+
+		$sec_name = '';
+		$unparsed = 0;
+		if (!$lines) {
+			return $obj;
 		}
 
-		// Initialize variables.
-		$obj = new stdClass;
-		$section = false;
-		$lines = explode("\n", $data);
-
-		// Process the lines.
 		foreach ($lines as $line)
 		{
-			// Trim any unnecessary whitespace.
+			// ignore comments
+			if ($line && $line{0} == ';') {
+				continue;
+			}
+
 			$line = trim($line);
 
-			// Ignore empty lines and comments.
-			if (empty($line) || ($line{0} == ';'))
-			{
+			if ($line == '') {
 				continue;
 			}
 
-			if ($sections)
+			$lineLen = strlen($line);
+			if ($line && $line{0} == '[' && $line{$lineLen-1} == ']')
 			{
-				$length = strlen($line);
-
-				// If we are processing sections and the line is a section add the object and continue.
-				if (($line[0] == '[') && ($line[$length - 1] == ']'))
-				{
-					$section = substr($line, 1, $length - 2);
-					$obj->$section = new stdClass;
-					continue;
+				$sec_name = substr($line, 1, $lineLen - 2);
+				if ($process_sections) {
+					$obj-> $sec_name = new stdClass();
 				}
-			}
-			elseif ($line{0} == '[')
-			{
-				continue;
-			}
-
-			// Check that an equal sign exists and is not the first character of the line.
-			if (!strpos($line, '='))
-			{
-				// Maybe throw exception?
-				continue;
-			}
-
-			// Get the key and value for the line.
-			list ($key, $value) = explode('=', $line, 2);
-
-			// Validate the key.
-			if (preg_match('/[^A-Z0-9_]/i', $key))
-			{
-				// Maybe throw exception?
-				continue;
-			}
-
-			// If the value is quoted then we assume it is a string.
-			$length = strlen($value);
-			if ($length && ($value[0] == '"') && ($value[$length - 1] == '"'))
-			{
-				// Strip the quotes and Convert the new line characters.
-				$value = stripcslashes(substr($value, 1, ($length - 2)));
-				$value = str_replace('\n', "\n", $value);
 			}
 			else
 			{
-				// If the value is not quoted, we assume it is not a string.
+				if ($pos = strpos($line, '='))
+				{
+					$property = trim(substr($line, 0, $pos));
 
-				// If the value is 'false' assume boolean false.
-				if ($value == 'false')
-				{
-					$value = false;
-				}
-				// If the value is 'true' assume boolean true.
-				elseif ($value == 'true')
-				{
-					$value = true;
-				}
-				// If the value is numeric than it is either a float or int.
-				elseif (is_numeric($value))
-				{
-					// If there is a period then we assume a float.
-					if (strpos($value, '.') !== false)
+					// property is assumed to be ascii
+					if ($property && $property{0} == '"')
 					{
-						$value = (float) $value;
+						$propLen = strlen( $property );
+						if ($property{$propLen-1} == '"') {
+							$property = stripcslashes(substr($property, 1, $propLen - 2));
+						}
+					}
+					// AJE: 2006-11-06 Fixes problem where you want leading spaces
+					// for some parameters, eg, class suffix
+					// $value = trim(substr($line, $pos +1));
+					$value = substr($line, $pos +1);
+
+					if (strpos($value, '|') !== false && preg_match('#(?<!\\\)\|#', $value))
+					{
+						$newlines = explode('\n', $value);
+						$values = array();
+						foreach($newlines as $newlinekey=>$newline) {
+
+							// Explode the value if it is serialized as an arry of value1|value2|value3
+							$parts	= preg_split('/(?<!\\\)\|/', $newline);
+							$array	= (strcmp($parts[0], $newline) === 0) ? false : true;
+							$parts	= str_replace('\|', '|', $parts);
+
+							foreach ($parts as $key => $value)
+							{
+								if ($value == 'false') {
+									$value = false;
+								}
+								else if ($value == 'true') {
+									$value = true;
+								}
+								else if ($value && $value{0} == '"')
+								{
+									$valueLen = strlen( $value );
+									if ($value{$valueLen-1} == '"') {
+										$value = stripcslashes(substr($value, 1, $valueLen - 2));
+									}
+								}
+								if(!isset($values[$newlinekey])) $values[$newlinekey] = array();
+								$values[$newlinekey][] = str_replace('\n', "\n", $value);
+							}
+
+							if (!$array) {
+								$values[$newlinekey] = $values[$newlinekey][0];
+							}
+						}
+
+						if ($process_sections)
+						{
+							if ($sec_name != '') {
+								$obj->$sec_name->$property = $values[$newlinekey];
+							} else {
+								$obj->$property = $values[$newlinekey];
+							}
+						}
+						else
+						{
+							$obj->$property = $values[$newlinekey];
+						}
 					}
 					else
 					{
-						$value = (int) $value;
+						//unescape the \|
+						$value = str_replace('\|', '|', $value);
+
+						if ($value == 'false') {
+							$value = false;
+						}
+						else if ($value == 'true') {
+							$value = true;
+						}
+						else if ($value && $value{0} == '"')
+						{
+							$valueLen = strlen( $value );
+							if ($value{$valueLen-1} == '"') {
+								$value = stripcslashes(substr($value, 1, $valueLen - 2));
+							}
+						}
+
+						if ($process_sections)
+						{
+							$value = str_replace('\n', "\n", $value);
+							if ($sec_name != '') {
+								$obj->$sec_name->$property = $value;
+							} else {
+								$obj->$property = $value;
+							}
+						}
+						else
+						{
+							$obj->$property = str_replace('\n', "\n", $value);
+						}
+					}
+				}
+				else
+				{
+					if ($line && $line{0} == ';') {
+						continue;
+					}
+					if ($process_sections)
+					{
+						$property = '__invalid'.$unparsed ++.'__';
+						if ($process_sections)
+						{
+							if ($sec_name != '') {
+								$obj->$sec_name->$property = trim($line);
+							} else {
+								$obj->$property = trim($line);
+							}
+						}
+						else
+						{
+							$obj->$property = trim($line);
+						}
 					}
 				}
 			}
-
-			// If a section is set add the key/value to the section, otherwise top level.
-			if ($section)
-			{
-				$obj->$section->$key = $value;
-			}
-			else
-			{
-				$obj->$key = $value;
-			}
 		}
 
-		// Cache the string to save cpu cycles -- thus the world :)
-		self::$cache[$hash] = clone ($obj);
-
+		$inistocache[$hash] = clone($obj);
 		return $obj;
-	}
-
-	/**
-	 * Method to get a value in an INI format.
-	 *
-	 * @param   mixed  $value  The value to convert to INI format.
-	 *
-	 * @return  string  The value in INI format.
-	 *
-	 * @since   11.1
-	 */
-	protected function getValueAsINI($value)
-	{
-		// Initialize variables.
-		$string = '';
-
-		switch (gettype($value))
-		{
-			case 'integer':
-			case 'double':
-				$string = $value;
-				break;
-
-			case 'boolean':
-				$string = $value ? 'true' : 'false';
-				break;
-
-			case 'string':
-				// Sanitize any CRLF characters..
-				$string = '"' . str_replace(array("\r\n", "\n"), '\\n', $value) . '"';
-				break;
-		}
-
-		return $string;
 	}
 }

@@ -1,54 +1,49 @@
+<?php // no direct access
+defined('_JEXEC') or die('Restricted access'); ?>
+<div style="direction: <?php echo $rssrtl ? 'rtl' :'ltr'; ?>; text-align: <?php echo $rssrtl ? 'right' :'left'; ?> ! important">
 <?php
-/**
- * @package		Joomla.Site
- * @subpackage	mod_feed
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
-
-// no direct access
-defined('_JEXEC') or die;
-?>
-
-<?php
-if ($feed != false)
+if( $feed != false )
 {
 	//image handling
-	$iUrl	= isset($feed->image->url)	? $feed->image->url	: null;
+	$iUrl 	= isset($feed->image->url)   ? $feed->image->url   : null;
 	$iTitle = isset($feed->image->title) ? $feed->image->title : null;
 	?>
-	<div style="direction: <?php echo $rssrtl ? 'rtl' :'ltr'; ?>; text-align: <?php echo $rssrtl ? 'right' :'left'; ?> ! important"  class="feed<?php echo $moduleclass_sfx; ?>">
+	<table cellpadding="0" cellspacing="0" class="moduletable<?php echo $params->get('moduleclass_sfx'); ?>">
 	<?php
 	// feed description
-	if (!is_null($feed->title) && $params->get('rsstitle', 1)) {
+	if (!is_null( $feed->title ) && $params->get('rsstitle', 1)) {
 		?>
-
-				<h4>
-					<a href="<?php echo str_replace('&', '&amp', $feed->link); ?>" target="_blank">
-					<?php echo $feed->title; ?></a>
-				</h4>
-
+		<tr>
+			<td>
+				<strong>
+					<a href="<?php echo str_replace( '&', '&amp', $feed->link ); ?>" target="_blank">
+						<?php echo $feed->title; ?></a>
+				</strong>
+			</td>
+		</tr>
 		<?php
 	}
 
 	// feed description
 	if ($params->get('rssdesc', 1)) {
 	?>
-		<?php echo $feed->description; ?>
-
+		<tr>
+			<td><?php echo $feed->description; ?></td>
+		</tr>
 		<?php
 	}
 
 	// feed image
 	if ($params->get('rssimage', 1) && $iUrl) {
 	?>
-		<img src="<?php echo $iUrl; ?>" alt="<?php echo @$iTitle; ?>"/>
-
+		<tr>
+			<td><img src="<?php echo $iUrl; ?>" alt="<?php echo @$iTitle; ?>"/></td>
+		</tr>
 	<?php
 	}
 
-	$actualItems = count($feed->items);
-	$setItems	= $params->get('rssitems', 5);
+	$actualItems = count( $feed->items );
+	$setItems    = $params->get('rssitems', 5);
 
 	if ($setItems > $actualItems) {
 		$totalItems = $actualItems;
@@ -56,8 +51,9 @@ if ($feed != false)
 		$totalItems = $setItems;
 	}
 	?>
-
-			<ul class="newsfeed<?php echo $params->get('moduleclass_sfx'); ?>">
+	<tr>
+		<td>
+			<ul class="newsfeed<?php echo $params->get( 'moduleclass_sfx'); ?>"  >
 			<?php
 			$words = $params->def('word_count', 0);
 			for ($j = 0; $j < $totalItems; $j ++)
@@ -65,26 +61,12 @@ if ($feed != false)
 				$currItem = & $feed->items[$j];
 				// item title
 				?>
-				<li class="newsfeed-item">
-					<?php	if (!is_null($currItem->get_link())) {
-					?>
-				<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))
-
-					{ echo '<h5 class="feed-link">';}
-				else
-				{
-				echo '<h4 class="feed-link">';
-				}
+				<li>
+				<?php
+				if ( !is_null( $currItem->get_link() ) ) {
 				?>
-
-				<a href="<?php echo $currItem->get_link(); ?>" target="_blank">
+					<a href="<?php echo $currItem->get_link(); ?>" target="_blank">
 					<?php echo $currItem->get_title(); ?></a>
-					<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))
-
-					{ echo '</h5>';}
-						else
-						{ echo '</h4>';}
-				?>
 				<?php
 				}
 
@@ -94,7 +76,7 @@ if ($feed != false)
 					// item description
 					$text = $currItem->get_description();
 					$text = str_replace('&apos;', "'", $text);
-					$text=strip_tags($text);
+
 					// word limit check
 					if ($words)
 					{
@@ -110,9 +92,9 @@ if ($feed != false)
 						}
 					}
 					?>
-
-						<p><?php echo $text; ?></p>
-
+					<div style="text-align: <?php echo $params->get('rssrtl', 0) ? 'right': 'left'; ?> ! important" class="newsfeed_item<?php echo $params->get( 'moduleclass_sfx'); ?>"  >
+						<?php echo $text; ?>
+					</div>
 					<?php
 				}
 				?>
@@ -121,6 +103,8 @@ if ($feed != false)
 			}
 			?>
 			</ul>
-
-	</div>
+		</td>
+		</tr>
+	</table>
 <?php } ?>
+</div>

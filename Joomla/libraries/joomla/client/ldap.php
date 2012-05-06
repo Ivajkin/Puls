@@ -1,123 +1,87 @@
 <?php
-/**
- * @package     Joomla.Platform
- * @subpackage  Client
- *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
- */
 
-defined('JPATH_PLATFORM') or die;
+/**
+* @version		$Id: ldap.php 14401 2010-01-26 14:10:00Z louis $
+* @package		Joomla.Framework
+* @subpackage	Client
+* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* Joomla! is free software and parts of it may contain or be derived from the
+* GNU General Public License or other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
 
 /**
  * LDAP client class
  *
- * @package     Joomla.Platform
- * @subpackage  Client
- * @since       11.1
+ * @package		Joomla.Framework
+ * @subpackage	Client
+ * @since		1.5
  */
+
+// no direct access
+defined('_JEXEC') or die('Restricted access');
+
 class JLDAP extends JObject
 {
-	/**
-	 * @var    string  Hostname of LDAP server
-	 * @since  11.1
-	 */
-	public $host = null;
+	/** @var string Hostname of LDAP server
+		@access public */
+	var $host = null;
+	/** @var bool Authorization Method to use
+		@access public */
+	var $auth_method = null;
+	/** @var int Port of LDAP server
+		@access public */
+	var $port = null;
+	/** @var string Base DN (e.g. o=MyDir)
+		@access public */
+	var $base_dn = null;
+	/** @var string User DN (e.g. cn=Users,o=MyDir)
+		@access public */
+	var $users_dn = null;
+	/** @var string Search String
+		@access public */
+	var $search_string = null;
+	/** @var boolean Use LDAP Version 3
+		@access public */
+	var $use_ldapV3 = null;
+	/** @var boolean No referrals (server transfers)
+		@access public */
+	var $no_referrals = null;
+	/** @var boolean Negotiate TLS (encrypted communications)
+		@access public */
+	var $negotiate_tls = null;
 
-	/**
-	 * @var    bool  Authorization Method to use
-	 * @since  11.1
-	 */
-	public $auth_method = null;
+	/** @var string Username to connect to server
+		@access public */
+	var $username = null;
+	/** @var string Password to connect to server
+		@access public */
+	var $password = null;
 
-	/**
-	 * @var    int  Port of LDAP server
-	 * @since  11.1
-	 */
-	public $port = null;
-
-	/**
-	 * @var    string  Base DN (e.g. o=MyDir)
-	 * @since  11.1
-	 */
-	public $base_dn = null;
-
-	/**
-	 * @var    string  User DN (e.g. cn=Users,o=MyDir)
-	 * @since  11.1
-	 */
-	public $users_dn = null;
-
-	/**
-	 * @var    string  Search String
-	 * @since  11.1
-	 */
-	public $search_string = null;
-
-	/**
-	 * @var    boolean  Use LDAP Version 3
-	 * @since  11.1
-	 */
-	public $use_ldapV3 = null;
-
-	/**
-	 * @var    boolean  No referrals (server transfers)
-	 * @since  11.1
-	 */
-	public $no_referrals = null;
-
-	/**
-	 * @var    boolean  Negotiate TLS (encrypted communications)
-	 * @since  11.1
-	 */
-	public $negotiate_tls = null;
-
-	/**
-	 * @var    string  Username to connect to server
-	 * @since  11.1
-	 */
-	public $username = null;
-
-	/**
-	 *
-	 * @var    string  Password to connect to server
-	 * @since  11.1
-	 */
-	public $password = null;
-
-	/**
-	 * @var    mixed  LDAP Resource Identifier
-	 * @since  11.1
-	 */
-	private $_resource = null;
-
-	/**
-	 *
-	 * @var    string  Current DN
-	 * @since  11.1
-	 */
-	private $_dn = null;
+	/** @var mixed LDAP Resource Identifier
+		@access private */
+	var $_resource = null;
+	/** @var string Current DN
+		@access private */
+	var $_dn = null;
 
 	/**
 	 * Constructor
 	 *
-	 * @param   object  $configObj  An object of configuration variables
-	 *
-	 * @since   11.1
+	 * @param object An object of configuration variables
+	 * @access public
 	 */
-	public function __construct($configObj = null)
+	function __construct($configObj = null)
 	{
 		if (is_object($configObj))
 		{
 			$vars = get_class_vars(get_class($this));
 			foreach (array_keys($vars) as $var)
 			{
-				if (substr($var, 0, 1) != '_')
-				{
-					$param = $configObj->get($var);
-					if ($param)
-					{
-						$this->$var = $param;
+				if (substr($var, 0, 1) != '_') {
+					if ($param = $configObj->get($var)) {
+						$this-> $var = $param;
 					}
 				}
 			}
@@ -126,104 +90,73 @@ class JLDAP extends JObject
 
 	/**
 	 * Connect to server
-	 *
-	 * @return  boolean  True if successful
-	 *
-	 * @since   11.1
+	 * @return boolean True if successful
+	 * @access public
 	 */
-	public function connect()
+	function connect()
 	{
-		if ($this->host == '')
-		{
+		if ($this->host == '') {
 			return false;
 		}
 		$this->_resource = @ ldap_connect($this->host, $this->port);
 		if ($this->_resource)
 		{
-			if ($this->use_ldapV3)
-			{
-				if (!@ldap_set_option($this->_resource, LDAP_OPT_PROTOCOL_VERSION, 3))
-				{
+			if ($this->use_ldapV3) {
+				if (!@ldap_set_option($this->_resource, LDAP_OPT_PROTOCOL_VERSION, 3)) {
 					return false;
 				}
 			}
-			if (!@ldap_set_option($this->_resource, LDAP_OPT_REFERRALS, intval($this->no_referrals)))
-			{
+			if (!@ldap_set_option($this->_resource, LDAP_OPT_REFERRALS, intval($this->no_referrals))) {
 				return false;
 			}
-			if ($this->negotiate_tls)
-			{
-				if (!@ldap_start_tls($this->_resource))
-				{
+			if ($this->negotiate_tls) {
+				if (!@ldap_start_tls($this->_resource)) {
 					return false;
 				}
 			}
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
 
 	/**
 	 * Close the connection
-	 *
-	 * @return  void
-	 *
-	 * @since   11.1
+	 * @access public
 	 */
-	public function close()
-	{
+	function close() {
 		@ ldap_close($this->_resource);
 	}
 
 	/**
 	 * Sets the DN with some template replacements
 	 *
-	 * @param   string  $username  The username
-	 * @param   string  $nosub     ...
-	 *
-	 * @return  void
-	 *
-	 * @since   11.1
+	 * @param string The username
+	 * @access public
 	 */
-	public function setDN($username, $nosub = 0)
+	function setDN($username,$nosub = 0)
 	{
-		if ($this->users_dn == '' || $nosub)
-		{
+		if ($this->users_dn == '' || $nosub) {
 			$this->_dn = $username;
-		}
-		elseif (strlen($username))
-		{
+		} else if(strlen($username)) {
 			$this->_dn = str_replace('[username]', $username, $this->users_dn);
-		}
-		else
-		{
+		} else {
 			$this->_dn = '';
 		}
 	}
 
 	/**
-	 * Get the DN
-	 *
-	 * @return  string  The current dn
-	 *
-	 * @since   11.1
+	 * @return string The current dn
+	 * @access public
 	 */
-	public function getDN()
-	{
+	function getDN() {
 		return $this->_dn;
 	}
 
 	/**
-	 * Anonymously binds to LDAP directory
-	 *
-	 * @return  array
-	 *
-	 * @since   11.1
+	 * Anonymously Binds to LDAP Directory
 	 */
-	public function anonymous_bind()
+	function anonymous_bind()
 	{
 		$bindResult = @ldap_bind($this->_resource);
 		return $bindResult;
@@ -232,68 +165,54 @@ class JLDAP extends JObject
 	/**
 	 * Binds to the LDAP directory
 	 *
-	 * @param   string  $username  The username
-	 * @param   string  $password  The password
-	 * @param   string  $nosub     ...
-	 *
-	 * @return  boolean
-	 *
-	 * @since   11.1
+	 * @param string The username
+	 * @param string The password
+	 * @return boolean Result
+	 * @access public
 	 */
-	public function bind($username = null, $password = null, $nosub = 0)
+	function bind($username = null, $password = null, $nosub = 0)
 	{
-		if (is_null($username))
-		{
+		if (is_null($username)) {
 			$username = $this->username;
 		}
-		if (is_null($password))
-		{
+		if (is_null($password)) {
 			$password = $this->password;
 		}
-		$this->setDN($username, $nosub);
-		//if (strlen($this->getDN()))
+		$this->setDN($username,$nosub);
+		//if(strlen($this->getDN()))
 		$bindResult = @ldap_bind($this->_resource, $this->getDN(), $password);
 		return $bindResult;
 	}
 
 	/**
-	 * Perform an LDAP search using comma separated search strings
+	 * Perform an LDAP search using comma seperated search strings
 	 *
-	 * @param   string  $search  search string of search values
-	 *
-	 * @return  array  Search results
-	 *
-	 * @since    11.1
+	 * @param string search string of search values
 	 */
-	public function simple_search($search)
+	function simple_search($search)
 	{
 		$results = explode(';', $search);
-		foreach ($results as $key => $result)
-		{
-			$results[$key] = '(' . $result . ')';
+		foreach($results as $key=>$result) {
+			$results[$key] = '('.$result.')';
 		}
 		return $this->search($results);
 	}
 
+
 	/**
 	 * Perform an LDAP search
 	 *
-	 * @param   array   $filters     Search Filters (array of strings)
-	 * @param   string  $dnoverride  DN Override
-	 *
-	 * @return  array  Multidimensional array of results
-	 *
-	 * @since   11.1
+	 * @param array Search Filters (array of strings)
+	 * @param string DN Override
+	 * @return array Multidimensional array of results
+	 * @access public
 	 */
-	public function search($filters, $dnoverride = null)
+	function search($filters, $dnoverride = null)
 	{
-		$attributes = array();
-		if ($dnoverride)
-		{
+		$attributes = array ();
+		if ($dnoverride) {
 			$dn = $dnoverride;
-		}
-		else
-		{
+		} else {
 			$dn = $this->base_dn;
 		}
 
@@ -306,26 +225,21 @@ class JLDAP extends JObject
 			{
 				for ($i = 0; $i < $count; $i++)
 				{
-					$attributes[$i] = array();
-					if (!$i)
-					{
+					$attributes[$i] = Array ();
+					if (!$i) {
 						$firstentry = @ldap_first_entry($resource, $search_result);
-					}
-					else
-					{
+					} else {
 						$firstentry = @ldap_next_entry($resource, $firstentry);
 					}
-					// Load user-specified attributes
-					$attributes_array = @ldap_get_attributes($resource, $firstentry);
-					// Ldap returns an array of arrays, fit this into attributes result array
+					$attributes_array = @ldap_get_attributes($resource, $firstentry); // load user-specified attributes
+					// ldap returns an array of arrays, fit this into attributes result array
 					foreach ($attributes_array as $ki => $ai)
 					{
 						if (is_array($ai))
 						{
 							$subcount = $ai['count'];
-							$attributes[$i][$ki] = array();
-							for ($k = 0; $k < $subcount; $k++)
-							{
+							$attributes[$i][$ki] = Array ();
+							for ($k = 0; $k < $subcount; $k++) {
 								$attributes[$i][$ki][$k] = $ai[$k];
 							}
 						}
@@ -340,45 +254,35 @@ class JLDAP extends JObject
 	/**
 	 * Replace an entry and return a true or false result
 	 *
-	 * @param   string  $dn         The DN which contains the attribute you want to replace
-	 * @param   string  $attribute  The attribute values you want to replace
-	 *
-	 * @return  mixed  result of comparison (true, false, -1 on error)
-	 *
-	 * @since   11.1
+	 * @param string dn The DN which contains the attribute you want to replace
+	 * @param string attribute The attribute values you want to replace
+	 * @return mixed result of comparison (true, false, -1 on error)
 	 */
 
-	public function replace($dn, $attribute)
-	{
+	function replace($dn, $attribute) {
 		return @ldap_mod_replace($this->_resource, $dn, $attribute);
 	}
+
 
 	/**
 	 * Modifies an entry and return a true or false result
 	 *
-	 * @param   string  $dn         The DN which contains the attribute you want to modify
-	 * @param   string  $attribute  The attribute values you want to modify
-	 *
-	 * @return  mixed  result of comparison (true, false, -1 on error)
-	 *
-	 * @since   11.1
+	 * @param string dn The DN which contains the attribute you want to modify
+	 * @param string attribute The attribute values you want to modify
+	 * @return mixed result of comparison (true, false, -1 on error)
 	 */
-	public function modify($dn, $attribute)
-	{
+	function modify($dn, $attribute) {
 		return @ldap_modify($this->_resource, $dn, $attribute);
 	}
 
 	/**
 	 * Removes attribute value from given dn and return a true or false result
 	 *
-	 * @param   string  $dn         The DN which contains the attribute you want to remove
-	 * @param   string  $attribute  The attribute values you want to remove
-	 *
-	 * @return  mixed  result of comparison (true, false, -1 on error)
-	 *
-	 * @since   11.1
+	 * @param string dn The DN which contains the attribute you want to remove
+	 * @param string attribute The attribute values you want to remove
+	 * @return mixed result of comparison (true, false, -1 on error)
 	 */
-	public function remove($dn, $attribute)
+	function remove($dn, $attribute)
 	{
 		$resource = $this->_resource;
 		return @ldap_mod_del($resource, $dn, $attribute);
@@ -387,41 +291,33 @@ class JLDAP extends JObject
 	/**
 	 * Compare an entry and return a true or false result
 	 *
-	 * @param   string  $dn         The DN which contains the attribute you want to compare
-	 * @param   string  $attribute  The attribute whose value you want to compare
-	 * @param   string  $value      The value you want to check against the LDAP attribute
-	 *
-	 * @return  mixed  result of comparison (true, false, -1 on error)
-	 *
-	 * @since   11.1
+	 * @param string dn The DN which contains the attribute you want to compare
+	 * @param string attribute The attribute whose value you want to compare
+	 * @param string value The value you want to check against the LDAP attribute
+	 * @return mixed result of comparison (true, false, -1 on error)
+	 * @access public
 	 */
-	public function compare($dn, $attribute, $value)
-	{
+	function compare($dn, $attribute, $value) {
 		return @ldap_compare($this->_resource, $dn, $attribute, $value);
 	}
 
 	/**
 	 * Read all or specified attributes of given dn
 	 *
-	 * @param   string  $dn         The DN of the object you want to read
-	 * @param   string  $attribute  The attribute values you want to read (Optional)
-	 *
-	 * @return  mixed  array of attributes or -1 on error
-	 *
-	 * @since   11.1
+	 * @param string dn The DN of the object you want to read
+	 * @param string attribute The attribute values you want to read (Optional)
+	 * @return array of attributes or -1 on error
+	 * @access public
 	 */
-	public function read($dn, $attribute = array())
+	function read($dn, $attribute = array())
 	{
-		$base = substr($dn, strpos($dn, ',') + 1);
-		$cn = substr($dn, 0, strpos($dn, ','));
+		$base = substr($dn,strpos($dn,',')+1);
+		$cn = substr($dn,0,strpos($dn,','));
 		$result = @ldap_read($this->_resource, $base, $cn);
 
-		if ($result)
-		{
+		if ($result) {
 			return @ldap_get_entries($this->_resource, $result);
-		}
-		else
-		{
+		} else {
 			return $result;
 		}
 	}
@@ -429,25 +325,22 @@ class JLDAP extends JObject
 	/**
 	 * Deletes a given DN from the tree
 	 *
-	 * @param   string  $dn  The DN of the object you want to delete
-	 *
-	 * @return  boolean  Result of operation
+	 * @param string dn The DN of the object you want to delete
+	 * @return bool result of operation
+	 * @access public
 	 */
-	public function delete($dn)
-	{
+	function delete($dn) {
 		return @ldap_delete($this->_resource, $dn);
 	}
 
 	/**
 	 * Create a new DN
 	 *
-	 * @param   string  $dn       The DN where you want to put the object
-	 * @param   array   $entries  An array of arrays describing the object to add
-	 *
-	 * @return  boolean  Result of operation
+	 * @param string dn The DN where you want to put the object
+	 * @param array entries An array of arrays describing the object to add
+	 * @return bool result of operation
 	 */
-	public function create($dn, $entries)
-	{
+	function create($dn, $entries) {
 		return @ldap_add($this->_resource, $dn, $entries);
 	}
 
@@ -455,64 +348,51 @@ class JLDAP extends JObject
 	 * Add an attribute to the given DN
 	 * Note: DN has to exist already
 	 *
-	 * @param   string  $dn     The DN of the entry to add the attribute
-	 * @param   array   $entry  An array of arrays with attributes to add
-	 *
-	 * @return  boolean   Result of operation
+	 * @param string dn The DN of the entry to add the attribute
+	 * @param array entry An array of arrays with attributes to add
+	 * @return bool Result of operation
 	 */
-	public function add($dn, $entry)
-	{
+	function add($dn, $entry) {
 		return @ldap_mod_add($this->_resource, $dn, $entry);
 	}
 
 	/**
 	 * Rename the entry
 	 *
-	 * @param   string   $dn           The DN of the entry at the moment
-	 * @param   string   $newdn        The DN of the entry should be (only cn=newvalue)
-	 * @param   string   $newparent    The full DN of the parent (null by default)
-	 * @param   boolean  $deleteolddn  Delete the old values (default)
-	 *
-	 * @return  boolean  Result of operation
-	 *
-	 * @since   11.1
+	 * @param string dn The DN of the entry at the moment
+	 * @param string newdn The DN of the entry should be (only cn=newvalue)
+	 * @param string newparent The full DN of the parent (null by default)
+	 * @param bool deleteolddn Delete the old values (default)
+	 * @return bool Result of operation
 	 */
-	public function rename($dn, $newdn, $newparent, $deleteolddn)
-	{
+	function rename($dn, $newdn, $newparent, $deleteolddn) {
 		return @ldap_rename($this->_resource, $dn, $newdn, $newparent, $deleteolddn);
 	}
 
 	/**
 	 * Returns the error message
 	 *
-	 * @return  string   error message
-	 *
-	 * @since   11.1
+	 * @return string error message
 	 */
-	public function getErrorMsg()
-	{
+	function getErrorMsg() {
 		return @ldap_error($this->_resource);
 	}
 
 	/**
 	 * Converts a dot notation IP address to net address (e.g. for Netware, etc)
 	 *
-	 * @param   string  $ip  IP Address (e.g. xxx.xxx.xxx.xxx)
-	 *
-	 * @return  string  Net address
-	 *
-	 * @since   11.1
+	 * @param string IP Address (e.g. xxx.xxx.xxx.xxx)
+	 * @return string Net address
+	 * @access public
 	 */
-	public function ipToNetAddress($ip)
+	function ipToNetAddress($ip)
 	{
 		$parts = explode('.', $ip);
 		$address = '1#';
 
-		foreach ($parts as $int)
-		{
+		foreach ($parts as $int) {
 			$tmp = dechex($int);
-			if (strlen($tmp) != 2)
-			{
+			if (strlen($tmp) != 2) {
 				$tmp = '0' . $tmp;
 			}
 			$address .= '\\' . $tmp;
@@ -521,42 +401,34 @@ class JLDAP extends JObject
 	}
 
 	/**
-	 * Extract readable network address from the LDAP encoded networkAddress attribute.
-	 *
+	 * extract readable network address from the LDAP encoded networkAddress attribute.
+	 * @author Jay Burrell, Systems & Networks, Mississippi State University
 	 * Please keep this document block and author attribution in place.
 	 *
-	 * Novell Docs, see: http://developer.novell.com/ndk/doc/ndslib/schm_enu/data/sdk5624.html#sdk5624
-	 * for Address types: http://developer.novell.com/ndk/doc/ndslib/index.html?page=/ndk/doc/ndslib/schm_enu/data/sdk4170.html
-	 * LDAP Format, String:
-	 * taggedData = uint32String "#" octetstring
-	 * byte 0 = uint32String = Address Type: 0= IPX Address; 1 = IP Address
-	 * byte 1 = char = "#" - separator
-	 * byte 2+ = octetstring - the ordinal value of the address
-	 * Note: with eDirectory 8.6.2, the IP address (type 1) returns
-	 * correctly, however, an IPX address does not seem to.  eDir 8.7 may correct this.
-	 * Enhancement made by Merijn van de Schoot:
-	 * If addresstype is 8 (UDP) or 9 (TCP) do some additional parsing like still returning the IP address
-	 *
-	 * @param   string  $networkaddress  The network address
-	 *
-	 * @return  array
-	 *
-	 * @author  Jay Burrell, Systems & Networks, Mississippi State University
-	 * @since   11.1
+	 *  Novell Docs, see: http://developer.novell.com/ndk/doc/ndslib/schm_enu/data/sdk5624.html#sdk5624
+	 *  for Address types: http://developer.novell.com/ndk/doc/ndslib/index.html?page=/ndk/doc/ndslib/schm_enu/data/sdk4170.html
+	 *  LDAP Format, String:
+	 *	 taggedData = uint32String "#" octetstring
+	 *	 byte 0 = uint32String = Address Type: 0= IPX Address; 1 = IP Address
+	 *	 byte 1 = char = "#" - separator
+	 *	 byte 2+ = octetstring - the ordinal value of the address
+	 *   Note: with eDirectory 8.6.2, the IP address (type 1) returns
+	 *				 correctly, however, an IPX address does not seem to.  eDir 8.7 may correct this.
+	 *  Enhancement made by Merijn van de Schoot:
+	 *	 If addresstype is 8 (UDP) or 9 (TCP) do some additional parsing like still returning the IP address
 	 */
-	public function LDAPNetAddr($networkaddress)
+	function LDAPNetAddr($networkaddress)
 	{
 		$addr = "";
 		$addrtype = intval(substr($networkaddress, 0, 1));
 		$networkaddress = substr($networkaddress, 2); // throw away bytes 0 and 1 which should be the addrtype and the "#" separator
 
-		if (($addrtype == 8) || ($addrtype = 9))
-		{
+		if (($addrtype == 8) || ($addrtype = 9)) {
 			// TODO 1.6: If UDP or TCP, (TODO fill addrport and) strip portnumber information from address
-			$networkaddress = substr($networkaddress, (strlen($networkaddress) - 4));
+			$networkaddress = substr($networkaddress, (strlen($networkaddress)-4));
 		}
 
-		$addrtypes = array(
+		$addrtypes = array (
 			'IPX',
 			'IP',
 			'SDLC',
@@ -571,7 +443,8 @@ class JLDAP extends JObject
 			'TCP6',
 			'Reserved (12)',
 			'URL',
-			'Count');
+			'Count'
+		);
 		$len = strlen($networkaddress);
 		if ($len > 0)
 		{
@@ -579,45 +452,34 @@ class JLDAP extends JObject
 			{
 				$byte = substr($networkaddress, $i, 1);
 				$addr .= ord($byte);
-				if (($addrtype == 1) || ($addrtype == 8) || ($addrtype = 9))
-				{
-					// dot separate IP addresses...
+				if ( ($addrtype == 1) || ($addrtype == 8) || ($addrtype = 9) ) { // dot separate IP addresses...
 					$addr .= ".";
 				}
 			}
-			if (($addrtype == 1) || ($addrtype == 8) || ($addrtype = 9))
-			{
-				// strip last period from end of $addr
+			if ( ($addrtype == 1) || ($addrtype == 8) || ($addrtype = 9) ) { // strip last period from end of $addr
 				$addr = substr($addr, 0, strlen($addr) - 1);
 			}
+		} else {
+			$addr .= "address not available.";
 		}
-		else
-		{
-			$addr .= JText::_('JLIB_CLIENT_ERROR_LDAP_ADDRESS_NOT_AVAILABLE');
-		}
-		return array('protocol' => $addrtypes[$addrtype], 'address' => $addr);
+		return Array('protocol'=>$addrtypes[$addrtype], 'address'=>$addr);
 	}
 
 	/**
 	 * Generates a LDAP compatible password
 	 *
-	 * @param   string  $password  Clear text password to encrypt
-	 * @param   string  $type      Type of password hash, either md5 or SHA
-	 *
-	 * @return  string   Encrypted password
-	 *
-	 * @since   11.1
+	 * @param string password Clear text password to encrypt
+	 * @param string type Type of password hash, either md5 or SHA
+	 * @return string encrypted password
 	 */
-	public function generatePassword($password, $type = 'md5')
-	{
+	function generatePassword($password, $type='md5') {
 		$userpassword = '';
-		switch (strtolower($type))
-		{
+		switch(strtolower($type)) {
 			case 'sha':
-				$userpassword = '{SHA}' . base64_encode(pack('H*', sha1($password)));
+				$userpassword = '{SHA}' . base64_encode( pack( 'H*', sha1( $password ) ) );
 			case 'md5':
 			default:
-				$userpassword = '{MD5}' . base64_encode(pack('H*', md5($password)));
+				$userpassword = '{MD5}' . base64_encode( pack( 'H*', md5( $password ) ) );
 				break;
 		}
 		return $userpassword;
