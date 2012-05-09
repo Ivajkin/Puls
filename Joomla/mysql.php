@@ -50,8 +50,8 @@ $mainframe->triggerEvent('onAfterInitialise');
 
 $hostname     = 'sql109.byethost5.com';
 $username     = 'b5_10620585';
-$password     = 'kre8stuff';
-$database     = 'b5_10620585_joomla';
+$password     = 'kre8stuf';
+$database     = 'b5_10620585_jos';
 
 ///////////// End Configure ////////////////////////
 

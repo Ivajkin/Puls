@@ -12,11 +12,11 @@ var $debug = '0';
 var $debug_lang = '0';
 /* Database Settings */
 var $dbtype = 'mysql';
-var $host = 'localhost';
-var $user = 'root';
-var $password = '';
-var $db = 'joomla';
-var $dbprefix = 'jos_';
+var $host = 'sql109.byethost5.com';
+var $user = 'b5_10620585';
+var $password = 'kre8stuf';
+var $db = 'b5_10620585_jos';
+var $dbprefix = 'joomla_';
 /* Server Settings */
 var $live_site = '';
 var $secret = 'MS4D067Y5UV8171M';
@@ -24,7 +24,7 @@ var $gzip = '0';
 var $error_reporting = '-1';
 var $helpurl = 'http://help.joomla.org';
 var $xmlrpc_server = '0';
-var $ftp_host = '127.0.0.1';
+var $ftp_host = 'ftp.byethost5.com';
 var $ftp_port = '21';
 var $ftp_user = '';
 var $ftp_pass = '';
