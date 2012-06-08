@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JCOMMENTS_COMMENTS_VIEW_DEFAULT_TITLE">
+		<message><![CDATA[COM_JCOMMENTS_COMMENTS_VIEW_DEFAULT_DESC]]></message>
+	</layout>
+	<fields name="params" addfieldpath="/administrator/components/com_jcomments/fields">
+		<fieldset name="params" label="COM_JCOMMENTS_BASIC_OPTIONS_FIELDSET_LABEL">
+			<field 
+				name="object_group" 
+				type="jcommentsobjectgroup"
+				size="1" 
+				default="com_jcomments" 
+				label="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_GROUP_LABEL" 
+				description="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_GROUP_DESC" />
+
+			<field 
+				name="object_id"
+				type="text"
+				size="25"
+				default="1"
+				label="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_ID_LABEL"
+				description="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_ID_DESC" />
+		</fieldset>
+	</fields>
+	<state>
+		<name><![CDATA[COM_JCOMMENTS_COMMENTS_VIEW_DEFAULT_TITLE]]></name>
+		<description><![CDATA[COM_JCOMMENTS_COMMENTS_VIEW_DEFAULT_DESC]]></description>
+		<params addpath="/administrator/components/com_jcomments/elements">
+			<param 
+				name="object_group" 
+				type="jcommentsobjectgroup" 
+				size="1" 
+				default="com_jcomments" 
+				label="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_GROUP_LABEL" 
+				description="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_GROUP_DESC" />
+
+			<param
+				name="object_id" 
+				type="text" 
+				size="25"
+				default="1"
+				label="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_ID_LABEL"
+				description="COM_JCOMMENTS_COMMENTS_VIEW_OBJECT_ID_DESC" />
+
+			<param name="spacer" type="spacer" default="" label="Meta" description="" />
+			<param 
+				name="description"
+				type="textarea"
+				rows="5"
+				cols="30"
+				default=""
+				label="Description"
+				description="" />
+
+			<param
+				name="keywords"
+				type="textarea"
+				rows="5"
+				cols="30"
+				default=""
+				label="Keywords"
+				description="" />
+		</params>
+	</state>
+</metadata>

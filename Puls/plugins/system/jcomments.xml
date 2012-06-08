@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system" method="upgrade">
+	<name>System - JComments</name>
+	<creationDate>20/02/2012</creationDate>
+	<author>smart</author>
+	<copyright>Copyright 2006-2012 JoomlaTune.ru All rights reserved!</copyright>
+	<authorEmail>smart@joomlatune.ru</authorEmail>
+	<authorUrl>http://www.joomlatune.ru</authorUrl>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<version>1.0</version>
+	<description>PLG_SYSTEM_JCOMMENTS_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="jcomments">jcomments.php</filename>
+	</files>
+	<params>
+		<param name="disable_template_css" type="list" default="0" label="PLG_SYSTEM_JCOMMENTS_FIELD_DISABLETEMPLATECSS_LABEL" description="PLG_SYSTEM_JCOMMENTS_FIELD_DISABLETEMPLATECSS_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="disable_error_reporting" type="list" default="0" label="PLG_SYSTEM_JCOMMENTS_FIELD_DISABLEERRORREPORTING_LABEL" description="PLG_SYSTEM_JCOMMENTS_FIELD_DISABLEERRORREPORTING_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="clear_rss" type="list" default="0" label="PLG_SYSTEM_JCOMMENTS_FIELD_CLEARTAGS_LABEL" description="PLG_SYSTEM_JCOMMENTS_FIELD_CLEARTAGS_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</install>

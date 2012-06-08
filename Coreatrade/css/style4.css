@@ -1,0 +1,115 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 -2011 IceTheme. All Rights Reserved
+  
+  License:
+  Copyrighted Commercial Software 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+---------------------------------------------------------------- */
+
+/* IceMegaMenu
+------------*/	
+div.icemegamenu ul#icemegamenu li span.icemega_desc {
+	background-color:#11407F;
+	background-image: -moz-linear-gradient(#144B95, #11407F);
+	background-image: -webkit-linear-gradient(#144B95, #11407F); 
+	background-image: -o-linear-gradient(#144B95, #11407F);
+	background-image: linear-gradient(#144B95, #11407F);}
+	
+	div.icemegamenu ul#icemegamenu li span.icemega_desc:after{
+		  border-top-color: #11407F;}
+/* Promo
+------------*/	
+#promo{
+	background-image:url(../images/styles/style4/promo.jpg);
+	background-color:#00275A;
+	border-color:#1A4378;}
+	
+	#promo .inside_effect {
+		background-image:url(../images/styles/style4/promo_inside.jpg);}
+		
+		#promo .expautos_images_table div img {
+			border-color: #1A4378;}
+			
+			#promo .moduletable h3.mod-title span  {
+				color:#2B60A6;} 
+
+
+
+/* module.css
+------------*/	
+
+.col-module .col-module-suffix-style1 {
+	background-image:url(../images/styles/style4/col-module-style1.png);
+	background-color:#001c41;
+	background-position:center top;
+	background-repeat:repeat-x;
+	border-color:#00418C;}
+	
+	.col-module .col-module-suffix-style1  .col-module-header {
+		border-bottom-color:#00428D;}
+	
+	.col-module .col-module-suffix-style1 .col-module-header h3.mod-title span {
+		color:#2B60A6;}
+		
+/* Accordion
+------------*/			
+.iceaccordion h4.toggler{
+	border-color:#00418C;}
+	
+	.iceaccordion div.accordion_content .padding .iceAccordionTip{
+		border-color:#00418C;}	
+		
+	.iceaccordion-paging{
+		background-color:#001530;}
+		
+		ul.iceaccordion-numbers li{
+		background-color:#001F48;
+		border-color:#003072}
+
+
+#content {
+    border-color:#163760;}
+
+#footer {
+    background-image: url(../images/styles/style4/promo.jpg);
+    background-color:#001c41;
+    border-color:#195296;}
+	
+	#copyright{
+		border-color:#1A385B;}
+
+		a#go2top {
+			background-image: url(../images/styles/style4/go2top.png);}
+		
+/* joomla.css
+------------*/	
+
+p.readmore a {
+	background-color: #00275A;
+	background-image: linear-gradient(top, #00377E, #00275A);
+	background-image: -o-linear-gradient(top, #00377E, #00275A);
+	background-image: -moz-linear-gradient(top, #00377E, #00275A);
+	background-image: -webkit-linear-gradient(top, #00377E, #00275A);
+	background-image: -ms-linear-gradient(top, #00377E, #00275A);
+	box-shadow: inset -1px -1px 0 #13829C, inset 1px 1px 0 #13829C);
+	border-color:#004087;}
+
+
+
+/* forms.css 
+------------ */
+button,
+input.button,
+a.button,
+input[type="submit"]{
+	background-color:#00275A;
+	background-image: linear-gradient(top, #00377E, #00275A);
+	background-image: -o-linear-gradient(top, #00377E, #00275A);
+	background-image: -moz-linear-gradient(top, #00377E, #00275A);
+	background-image: -webkit-linear-gradient(top, #00377E, #00275A);
+	background-image: -ms-linear-gradient(top, #00377E, #00275A);
+	box-shadow:inset -1px -1px 0 #13829C, inset 1px 1px 0 #13829C);
+	border-color:#004087;}		

@@ -1,0 +1,20 @@
+/* Put your ie7 specific rules here.  */
+.actionButtons {margin-left: -10px;margin-top: 190px;width: 390px;}
+.templateIntro img {margin-top: -20px;}
+#subnav
+{
+	position:absolute;
+	margin-left:20px;
+	margin-top:74px;
+	width:660px
+}
+
+
+.grid1Row h3 span {line-height: 2em;top: -18px;}
+#templateshide {margin-left:39px ;top: -94px;}
+.sectionintro img {
+margin-top:-94px
+}
+
+p.freeextensions {clear: both;float: right;width: 900px;position: absolute;z-index: 1;left: 0;}
+.features.plans {padding-top: 50px;}

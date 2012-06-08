@@ -1,0 +1,291 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 - 2011 IceTheme. All Rights Reserved
+  
+  License:
+  Copyrighted Commercial Software 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+---------------------------------------------------------------- */
+
+/* ---------------------- modules.css --------------------------
+This CSS file contain the codes that Joomla uses to output its 
+modules. Normally the module positons found here are: left, right,
+bottom, promo, showcase etc.
+
+- Feel free to make changes to suit the needs to your website
+project
+---------------------------------------------------------------- */
+
+/* general styles for the modules */
+.width100 		{ width:100%}
+.width50		{ width:50%}
+.width33		{ width:33.33%}
+.width25		{ width:25%}
+.width20		{ width:20%}
+
+
+
+					 
+			
+/* -----------------
+ Footer Modules
+ used module positions are 
+ footer1, footer2, footer3 and footer4, and footer5
+---------------------------------------------------------------- */
+#footer .modules-wrap {
+	padding: 25px 0 10px 0;
+	margin-right:-20px;}
+	
+#footer .separator .moduletable {
+	position:relative;}
+	
+	#footer .moduletable {
+		margin-right:10px;
+		padding-right:10px;}
+		 
+		#footer .moduletable .moduletable-header{}
+			
+			
+			#footer .moduletable h3.mod-title {
+				color: #fff;
+				text-transform:uppercase;
+				font-size: 1.6em;
+				margin-bottom: 7px;
+				text-shadow:1px 1px 1px rgba(0,0,0,.6);
+				padding: 0;}
+			
+				#footer .moduletable h3.mod-title span  {
+					color:#d9383b;
+					letter-spacing:0;
+					text-transform:none;
+					font-family:Arial, Helvetica, sans-serif;
+					display:block;
+					font-size:13px;
+					line-height:1.6em;
+					margin-bottom:8px;
+					margin-top:-3px;} 
+										
+						
+						#footer_wrapper .moduletable img {
+							float:left;
+							padding: 5px;
+							border: 1px solid #249EAA;
+							background: rgba(31, 129, 146, .9);
+							margin:-5px 10px 10px 0}
+									
+						
+							#footer_wrapper .moduletable span.dropcap {
+								color:#fff}
+
+				
+				#footer .moduletable a,
+				#footer .moduletable a:visited,
+				#footer .moduletable a:hover {
+					color:#e6dd00}
+						
+				
+		
+	
+	
+			
+						 
+					 
+ /* -- Promo  -- 
+used on the "promo" module positions
+---------------------------------------------------------------- */
+#promo .modules-wrap {
+	position:relative;
+	margin:0 -20px 0 0}
+
+#promo .moduletable {
+	margin-right:10px;
+	padding-right:10px;}
+	
+	#promo .separator .moduletable {}
+		
+	#promo .moduletable .moduletable-header {}
+	
+		#promo .moduletable h3.mod-title {
+			color: #fff;
+			text-transform:uppercase;
+			font-size: 1.6em;
+			margin-bottom: 7px;
+			text-shadow:1px 1px 1px rgba(0,0,0,.6);
+			padding: 0;}
+			
+			#promo .moduletable h3.mod-title span  {
+				color:#d9383b;
+				letter-spacing:0;
+				text-transform:none;
+				font-family:Arial, Helvetica, sans-serif;
+				display:block;
+				font-size:13px;
+				line-height:1.6em;
+				margin-bottom:8px;
+				margin-top:-3px;} 
+				
+				#promo .moduletable p:last-child {
+					 margin-bottom:0}		
+
+
+
+/* -- Bottom  -- 
+used on the "bottom" module positions
+---------------------------------------------------------------- */
+#bottom .modules-wrap {
+	position:relative;
+	margin:0 -20px 0 0}
+
+#bottom .moduletable {
+	margin-right:10px;
+	padding-right:10px;}
+	
+	#bottom .separator .moduletable {}
+		
+	#bottom .moduletable .moduletable-header {}
+	
+		#bottom .moduletable h3.mod-title {
+			color: #fff;
+			text-transform:uppercase;
+			font-size: 1.6em;
+			margin-bottom: 7px;
+			text-shadow:1px 1px 1px rgba(0,0,0,.6);
+			padding: 0;}
+			
+			#bottom .moduletable h3.mod-title span  {
+				color:#999;
+				letter-spacing:0;
+				text-transform:none;
+				font-family:Arial, Helvetica, sans-serif;
+				display:block;
+				font-size:13px;
+				line-height:1.6em;
+				margin-bottom:8px;
+				margin-top:-3px;} 
+				
+				#bottom .moduletable p:last-child {
+					 margin-bottom:0}		
+
+
+
+					 
+					
+/* 
+Col Modules
+--------------
+The columns modules are used on the "left" and "right" positions.
+Normally they may contain suffixes which you may add through each 
+module on their paramenters so that you may have different module
+styles. 
+---------------------------------------------------------------- */
+
+/* on the "left" position */
+.col-module {
+	position:relative;
+	margin:0 0 20px;
+	padding:10px;
+	background:#353535;}	
+	 
+	.col-module .col-module-suffix- {
+		background:#191919 url(../images/col-module.png) repeat-x top;
+		padding:10px;
+		border:1px solid #3D3D3D;
+		border-top-color:#444}
+		  
+	
+	    /* with no suffix */
+		.col-module .col-module-header {
+			border-bottom:1px dashed #555;
+			margin-bottom:10px; }
+			
+				
+			 .col-module .col-module-header h3.mod-title {
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 1.6em;
+				margin-bottom: 6px;
+				text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+				padding: 0;}
+				
+				
+			
+				/* subtitles */
+				.col-module-header  h3.mod-title span {
+					color: #999;
+					display: block;
+					font-family: Arial,Helvetica,sans-serif;
+					font-size: 13px;
+					font-style: italic;
+					letter-spacing: 0;
+					line-height: 1.6em;
+					margin-bottom: 0;
+					margin-top: -1px;
+					text-shadow: none;
+					text-transform: none;} 
+				
+
+				.col-module .col-module-content {
+					clear:both;
+					position:relative;
+					margin: 0;
+					padding: 0}	
+				
+					
+				/* with "style1" suffix */
+				.col-module .col-module-suffix-style1 {
+					background:#510001 url(../images/col-module-style1.png) repeat-x top;
+					color:#fff;
+					padding:10px;
+					color:rgba(255,255,255,.7);
+					border:1px solid #8A0007;
+					border-top-color:#AB0009 }
+					
+					.col-module .col-module-suffix-style1  .col-module-header {
+						border-bottom-color:#AB0009;}
+					
+					.col-module .col-module-suffix-style1 .col-module-header h3.mod-title span {
+						color:#d9383b;}
+						
+					.col-module .col-module-suffix-style1  a,
+					.col-module .col-module-suffix-style1  a:visited,
+					.col-module .col-module-suffix-style1  a:hover {
+					color:#e6dd00}	
+				
+				
+				/* with "style2" suffix */
+				.col-module .col-module-suffix-style2 {
+					background:#EAF0F5 url(../images/col-module-style2.png) repeat-x top;
+					padding:10px;
+					color:#555;
+					border:1px solid #ffff;}
+					
+					.col-module .col-module-suffix-style2  .col-module-header {
+						border-bottom-color:#ccc;}
+					
+					.col-module .col-module-suffix-style2 .col-module-header h3.mod-title {
+						color: #555;
+						text-shadow:none;}
+				
+						.col-module .col-module-suffix-style2 .col-module-header h3.mod-title span {
+							color:#999;}
+				
+		
+				/* with "nostyle" suffix to avoid any styling on col modules */
+					
+		
+
+/* -----------------
+ Ice Modules
+ used for IceTheme Extensions like IceCaption, IceTabs etc
+----------------- */
+.ice-module {} 
+		
+	.ice-module h3.mod-title {
+		text-align:center;
+		color:#777;
+		padding-bottom:2px;}
+	
+		.ice-module h3.mod-title span {} 
+			

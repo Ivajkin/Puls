@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="search" method="upgrade">
+	<name>Search - JComments</name>
+	<creationDate>20/02/2012</creationDate>
+	<author>smart</author>
+	<copyright>Copyright 2006-2012 JoomlaTune.ru All rights reserved!</copyright>
+	<authorEmail>smart@joomlatune.ru</authorEmail>
+	<authorUrl>http://www.joomlatune.ru</authorUrl>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<version>1.0</version>
+	<description>PLG_SEARCH_JCOMMENTS_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="jcomments">jcomments.php</filename>
+	</files>
+	<params>
+		<param name="search_limit" type="text" size="5" default="50" label="PLG_SEARCH_JCOMMENTS_FIELD_SEARCHLIMIT_LABEL" description="PLG_SEARCH_JCOMMENTS_FIELD_SEARCHLIMIT_DESC"/>
+	</params>
+</install>

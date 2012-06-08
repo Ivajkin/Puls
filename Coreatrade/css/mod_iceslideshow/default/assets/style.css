@@ -1,0 +1,209 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 - 2011 IceTheme. All Rights Reserved
+  
+  License:
+  GNU General Public License version 2 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+---------------------------------------------------------------- */
+
+.ice-slideshow-default { 
+	position:relative;
+	overflow:hidden;
+	margin:0 auto;
+	padding:0; 
+	width:auto; 
+	height:auto;}
+	
+	.ice-slideshow-default li {
+		list-style-type:none!important;	}
+	
+
+
+.ice-slideshow-default .ice-main-wapper{ 
+	overflow:hidden;
+	z-index:99;
+    position:relative}
+	
+	.ice-slideshow-default .ice-main-wapper .ice-main-item { 
+		overflow:hidden;
+		padding:0px;
+		margin:0px; 
+		height:100%;
+		background:#fff;
+		width:100%;
+		position:absolute;}
+		
+		.ice-slideshow-default .ice-main-wapper .ice-main-item .ice-description {
+			position:absolute;
+			z-index:10;
+			bottom:43%;
+			width:936px;
+			left:50%;
+			margin-left:-480px;
+			color:#ccc;
+			color:rgba(255,255,255,.7);
+			background:url(images/caption.png) repeat-y right;
+			-moz-transition: all .3s ease-out;
+			-o-transition: all .3s ease-out;
+			-webkit-transition: all .3s ease-out;
+			-ms-transition: all .3s ease-out;
+			transition: all .3s ease-out;
+			padding:2px 12px 2px;
+			font-size:1.5em;}
+			
+			.ice-slideshow-default .ice-main-wapper .ice-main-item .ice-description p {
+				margin-bottom:8px}
+
+			.ice-slideshow-default .ice-main-wapper .ice-main-item h3.ice-title { 
+				clear:none;
+				font-size:2em;
+				line-height:1.3em;
+				text-transform:uppercase;
+				color:#fff;
+				margin:0}
+					
+					.ice-slideshow-default .ice-main-wapper .ice-main-item h3.ice-title a {
+						color:#fff;
+						-moz-transition: all .3s ease-out;
+						-o-transition: all .3s ease-out;
+						-webkit-transition: all .3s ease-out;
+						-ms-transition: all .3s ease-out;
+						transition: all .3s ease-out;
+						text-decoration:none;} 
+						
+						.ice-slideshow-default .ice-main-wapper .ice-main-item  h3.ice-title a:hover {
+							text-shadow:0 0 10px rgba(255,255,255,.6);}
+
+
+			.ice-slideshow-default .ice-main-wapper .ice-main-item a.button {
+				position: absolute;
+				right: 10px;
+				font-size:.9em;
+				top: 26px;}
+				
+				
+				#iceslideshow .ice-main-item img {
+					width:100%!important;
+					height:100%!important;}
+				
+				
+			
+			
+/* Navigator 
+the small rentangles that tells how many slides are */
+.ice-slideshow-default  ul.ice-navigator { 
+	position:absolute;
+	bottom:45px;
+	left:auto!important;
+	right:10px;
+	padding:0; 
+	margin:0;
+	z-index:999;
+	bottom:15px;}
+	
+	.ice-slideshow-default  ul.ice-navigator li { 
+		cursor:hand;
+		cursor:pointer;
+		list-style:none;
+		background:#999;
+		background:rgba(255,255,255,.35);
+		padding:0;
+		float:left;
+		display:block;
+		width:12px;
+		height:12px;
+		margin:0 2px!important;
+		border-radius:20px;
+		-moz-transition: all .4s ease-out;
+		-o-transition: all .4s ease-out;
+		-webkit-transition:all .4s ease-out;
+		transition: all .4s ease-out;}
+	
+		.ice-slideshow-default  ul.ice-navigator li:hover,
+		.ice-slideshow-default  ul.ice-navigator li.active {
+			background:#fff;}	 
+		
+								
+			.ice-slideshow-default .ice-navigator li span.ice-title {
+				display:none; }
+				 
+					
+					
+
+/* begin the ajax loading and display the slideshow only when all images are load */
+.ice-slideshow-default .preload {
+	height:100%;
+	width:100%;
+	background:url(images/loading.gif) no-repeat scroll 51% 50% #222;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:101}	
+		
+		
+/* a nice moving bar on the bottom of the slideshow */
+.ice-slideshow-default  .ice-proccessbar {  
+	width:100%; 
+	height:4px; 
+	position:absolute; 
+	bottom:0;
+	background:url(images/timeline.png); 
+	z-index:999;
+	border-radius:0px 10px 10px 0;  }
+	
+	
+	
+	
+/* Preview and Next buttons */
+
+
+	.ice-slideshow-default .ice-next, 
+	.ice-slideshow-default .ice-previous {
+		position:absolute;
+		background:url(images/arrows.png) no-repeat; 
+		z-index:10;
+		top:36%;
+		width:70px;
+		cursor:pointer;
+		height:120px;	
+		display:block;
+		text-indent:-999999px;
+		overflow:hidden;}
+		
+		
+		.ice-slideshow-default .ice-buttons-control {
+			opacity:0;
+			-moz-transition: all .3s ease-out;
+			-o-transition: all .3s ease-out;
+			-webkit-transition: all .3s ease-out;
+			transition: all .3s ease-out; }
+			.ice-slideshow-default:hover .ice-buttons-control {
+				opacity:1}
+		
+			
+		.ice-slideshow-default .ice-previous {	
+			background-position:0 0;
+			left:15px}
+			.ice-slideshow-default .ice-previous:hover { 
+				background-position: 0 -120px;}
+			
+		.ice-slideshow-default .ice-next {
+			left:auto;
+			right:15px;
+			background-position: 0 -240px;}
+			
+			.ice-slideshow-default .ice-next:hover {
+				background-position: 0 -360px;}
+				
+		
+		.ice-main-wapper:hover .ice-buttons-control{
+			opacity:1;}		
+			
+						
+
+
+/* Fix default joomla tool tip */
+.tip-wrap{z-index:9999999!important;}
