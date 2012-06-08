@@ -1,0 +1,282 @@
+/**
+* Gavick News Pro GK1 - CSS
+* @package Joomla!
+* @Copyright (C) 2009 Gavick.com
+* @ All rights reserved
+* @ Joomla! is Free Software
+* @ Released under GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
+* @version $Revision: 1.0.0 $
+**/
+
+h4.ta_center, p.ta_center{text-align: center;}
+h4.ta_left, p.ta_left{text-align: left;}
+h4.ta_right, p.ta_right{text-align: right;}
+p.ta_justify{text-align: justify;}
+img.i_left{display: block;float: left;}
+img.i_right{display: block;float: right;}
+img.i_center{display: block;margin: 0 auto;}
+a.readon_class{}
+a.p_left{float: left !important;}
+a.p_right{float: right !important;}
+a.p_center{margin: 0 auto !important;}
+
+div.gk_npro_mainwrap{
+	overflow: hidden;
+	color: #575757;		
+	padding-bottom: 10px;
+	background: none;
+	border: 1px solid #f5f5f5;
+}
+
+div.gk_npro_full{}
+
+div.gk_npro_full_interface{
+	overflow: hidden;
+	min-height: 21px;
+}
+
+div.gk_npro_full_interface ul{
+	list-style-type: none;
+	margin: 5px 0 0 10px;
+	padding: 0;
+	float: left;
+	width: auto;
+}
+
+div.gk_npro_full_interface ul li{
+	background: #eee;
+	cursor: pointer;
+	float: left;
+	width: 11px;
+	height: 12px;
+	margin-left: 2px;
+	padding: 0;
+	text-indent: -999em;
+	background: transparent url('../images/lite/bullet_white_inactive.png') no-repeat 0 0;
+}
+
+div.gk_npro_full_interface ul li.active{
+	background: transparent url('../images/lite/bullet_white_active.png') no-repeat 0 0;
+}
+
+div.gk_npro_interface_bg{
+	float: right;
+	width: 44px;
+	height: 18px;
+	background: transparent url('../images/lite/arrow_interface_white.png') no-repeat 0 0;
+}
+
+div.gk_npro_full_prev{
+	width: 8px;
+	height: 8px;
+	float: left;
+	margin: 3px 0 0 11px;
+	background: transparent url('../images/lite/prev.png') no-repeat 0 0;
+	text-indent: -999em;
+}
+
+div.gk_npro_full_prev:hover{
+	cursor: pointer;
+	background: transparent url('../images/lite/prev.png') no-repeat -8px 0;
+}
+
+div.gk_npro_full_next{
+	width: 8px;
+	height: 8px;
+	float: right;
+	margin: 3px 11px 0 0;
+	background: transparent url('../images/lite/next.png') no-repeat 0 0;	
+	text-indent: -999em;
+}
+
+div.gk_npro_full_next:hover{
+	cursor: pointer;
+	background: transparent url('../images/lite/next.png') no-repeat -8px 0;	
+}
+
+div.gk_npro_wrap1{
+	overflow: hidden;	
+}
+
+div.gk_npro_wrap2{}
+div.gk_npro_block_wrap{
+	float: left;
+}
+
+div.gk_npro_full_tablewrap{
+	float: left;	
+}
+
+table.gk_npro_table{}
+table.gk_npro_table tr{}
+table.gk_npro_table td{}
+
+div.gk_npro_short{}
+
+div.gk_npro_short_ulwrap{
+	float: left;	
+}
+
+div.gk_npro_short_ulwrap ul{
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+div.gk_npro_short_ulwrap ul li{
+	line-height: 120%;
+	padding: 6px;
+	margin:0 10px 5px;
+}
+
+div.gk_npro_short_ulwrap ul li.odd{}
+div.gk_npro_short_ulwrap ul li.even{
+	background: #f8f8f8;
+}
+
+div.gk_npro_short_ulwrap ul li:hover{
+	background: #444;
+	color: #fff;
+}
+
+div.gk_npro_short_ulwrap ul li:hover h4,
+div.gk_npro_short_ulwrap ul li:hover p,
+div.gk_npro_short_ulwrap ul li:hover h4 a{
+	color: #fff;	
+}
+
+div.gk_npro_short_ulwrap ul li h4,
+div.gk_npro_short_ulwrap ul li h4 a{
+	color: #666;	
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 11px;
+	margin: 0 0 3px 0;
+}
+
+div.gk_npro_short_ulwrap ul li p{
+	color: #acacac;
+	font-size: 11px;
+	margin: 0;
+}
+
+div.gk_npro_short_interface{
+	border-top: 1px solid #f5f5f5;
+	padding-top: 5px;
+	margin: 2px 10px 0;
+	clear: both;
+}
+
+h3.gk_npro_cat_header,
+h3.gk_npro_cat_header a{
+	color: #575757;
+	font-size: 14px;
+	font-style: italic;
+	margin: 2px 0 2px 0;
+	padding-left: 5px;
+}
+
+h4.gk_npro_header{}
+p.gk_npro_text{}
+img.gk_npro_image{
+	border: 1px solid #e5e5e5;
+	padding: 2px;
+	margin: 3px;
+}
+
+img.gk_npro_image_static{
+	border: 1px solid #e5e5e5;
+	padding: 2px;
+	margin: 3px;	
+}
+
+p.gk_npro_info{}
+
+/* - Dark theme - */
+
+.dark div.gk_npro_mainwrap{		
+	background: #000;
+}
+
+.dark div.gk_npro_full{
+	background: none;
+}
+
+.dark div.gk_npro_full_interface{
+	background: none;
+}
+
+.dark div.gk_npro_full_interface ul li{
+	background: #eee;
+	background: transparent url('../images/dark/bullet_black_inactive.png') no-repeat 0 0!important;
+}
+
+.dark div.gk_npro_full_interface ul li.active{
+	background: transparent url('../images/dark/bullet_black_active.png') no-repeat 0 0!important;
+}
+
+.dark div.gk_npro_interface_bg{
+	background: transparent url('../images/dark/arrow_interface_black.png') no-repeat 0 0!important;
+}
+
+.dark div.gk_npro_full_prev{
+	background: transparent url('../images/dark/prev.png') no-repeat 0 0;
+}
+
+.dark div.gk_npro_full_prev:hover{
+	background: transparent url('../images/dark/prev.png') no-repeat 0 0;
+}
+
+.dark div.gk_npro_full_next{
+	background: transparent url('../images/dark/next.png') no-repeat 0 0;
+}
+
+.dark div.gk_npro_full_next:hover{
+	background: transparent url('../images/dark/next.png') no-repeat -8px 0;
+}
+
+.dark div.gk_npro_short{
+	background:none;
+}
+
+.dark div.gk_npro_short_ulwrap ul li.odd{}
+.dark div.gk_npro_short_ulwrap ul li.even{
+	background: #292a2c!important;
+}
+
+.dark div.gk_npro_short_ulwrap ul li:hover{
+	background: #222!important;
+	color: #fff!important;
+}
+
+.dark div.gk_npro_short_ulwrap ul li:hover h4,
+.dark div.gk_npro_short_ulwrap ul li:hover p,
+.dark div.gk_npro_short_ulwrap ul li:hover h4 a{
+	color: #34a9d6!important;	
+}
+
+.dark div.gk_npro_short_ulwrap ul li h4,
+.dark div.gk_npro_short_ulwrap ul li h4 a{
+	color: #666;	
+}
+
+.dark div.gk_npro_short_ulwrap ul li p{
+	color: #acacac!important;
+}
+
+.dark div.gk_npro_short_interface{
+	border-top: 1px solid #393a3d!important;
+}
+
+.dark h3.gk_npro_cat_header,
+.dark h3.gk_npro_cat_header a{
+	color: #575757!important;
+}
+
+.dark img.gk_npro_image{
+	border: 1px solid #e5e5e5;
+}
+
+.dark img.gk_npro_image_static{
+	border: 1px solid #393a3d!important;
+}

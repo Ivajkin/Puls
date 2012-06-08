@@ -1,0 +1,22 @@
+/** menu icons **/
+.icon-16-jcomments-logo { background-image: url(icon-16-jcomments.png); } 
+.icon-16-jcomments-edit { background-image: url(icon-16-comments.png); } 
+.icon-16-jcomments-import { background-image: url(icon-16-import.png); } 
+.icon-16-jcomments-smiles { background-image: url(icon-16-smiles.png); } 
+.icon-16-jcomments-settings { background-image: url(icon-16-settings.png); }
+.icon-16-jcomments-subscriptions { background-image: url(icon-16-subscriptions.png); }
+.icon-16-jcomments-custombbcodes { background-image: url(icon-16-custombbcodes.png); }
+.icon-16-jcomments-blacklist { background-image: url(icon-16-blacklist.png); }
+
+/** toolbar icons **/
+.icon-32-refresh { background-image: url(icon-32-refresh.png); }
+
+/** header icons **/
+.icon-48-jcomments-logo { background-image: url(icon-48-jcomments.png); } 
+.icon-48-jcomments-edit { background-image: url(icon-48-jcomments.png); } 
+.icon-48-jcomments-import { background-image: url(icon-48-import.png); } 
+.icon-48-jcomments-smiles { background-image: url(icon-48-smiles.png); } 
+.icon-48-jcomments-settings { background-image: url(icon-48-settings.png); } 
+.icon-48-jcomments-subscriptions { background-image: url(icon-48-subscriptions.png); }
+.icon-48-jcomments-custombbcodes { background-image: url(icon-48-custombbcodes.png); }
+.icon-48-jcomments-blacklist { background-image: url(icon-48-blacklist.png); }

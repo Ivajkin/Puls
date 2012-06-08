@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^([^_]*)_junus\.jpg$ img.php?src=$1 [L]
+</IfModule>

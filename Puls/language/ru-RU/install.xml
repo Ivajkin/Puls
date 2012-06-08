@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<install version="1.5" client="site" type="language" method="upgrade">
+	<name>Russian (CIS)</name>
+	<tag>ru-RU</tag>
+	<version>1.5.25</version>
+	<creationDate>2011-11-18</creationDate>
+	<author>JoomlaPortal.ru</author>
+	<authorUrl>www.joomlaportal.ru</authorUrl>
+	<authorEmail>userxp@joomlaportal.ru</authorEmail>
+	<copyright>Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>Russian Front-End Language Pack for Joomla! 1.5</description>
+	<files>
+		<filename>index.html</filename>    
+		<filename>ru-RU.com_banners.ini</filename>
+		<filename>ru-RU.com_contact.ini</filename>
+		<filename>ru-RU.com_content.ini</filename>
+		<filename>ru-RU.com_frontpage.ini</filename>
+		<filename>ru-RU.com_mailto.ini</filename>
+		<filename>ru-RU.com_media.ini</filename>
+		<filename>ru-RU.com_messages.ini</filename>
+		<filename>ru-RU.com_newsfeeds.ini</filename>
+		<filename>ru-RU.com_poll.ini</filename>
+		<filename>ru-RU.com_search.ini</filename>
+		<filename>ru-RU.com_user.ini</filename>
+		<filename>ru-RU.com_weblinks.ini</filename>
+		<filename>ru-RU.com_wrapper.ini</filename>
+		<filename>ru-RU.ignore.php</filename>		
+		<filename>ru-RU.ini</filename>
+		<filename>ru-RU.mod_archive.ini</filename>
+		<filename>ru-RU.mod_banners.ini</filename>
+		<filename>ru-RU.mod_breadcrumbs.ini</filename>
+		<filename>ru-RU.mod_custom.ini</filename>
+		<filename>ru-RU.mod_feed.ini</filename>
+		<filename>ru-RU.mod_footer.ini</filename>
+		<filename>ru-RU.mod_latestnews.ini</filename>
+		<filename>ru-RU.mod_login.ini</filename>
+		<filename>ru-RU.mod_mainmenu.ini</filename>
+		<filename>ru-RU.mod_mostread.ini</filename>
+		<filename>ru-RU.mod_newsflash.ini</filename>
+		<filename>ru-RU.mod_online.ini</filename>
+		<filename>ru-RU.mod_poll.ini</filename>
+		<filename>ru-RU.mod_random_image.ini</filename>
+		<filename>ru-RU.mod_related_items.ini</filename>
+		<filename>ru-RU.mod_search.ini</filename>
+		<filename>ru-RU.mod_sections.ini</filename>
+		<filename>ru-RU.mod_stats.ini</filename>
+		<filename>ru-RU.mod_syndicate.ini</filename>
+		<filename>ru-RU.mod_whosonline.ini</filename>
+		<filename>ru-RU.mod_wrapper.ini</filename>
+		<filename>ru-RU.plg_content_pagebreak.ini</filename>
+		<filename>ru-RU.plg_content_vote.ini</filename>
+		<filename>ru-RU.plg_search_categories.ini</filename>
+		<filename>ru-RU.plg_search_contacts.ini</filename>
+		<filename>ru-RU.plg_search_content.ini</filename>
+		<filename>ru-RU.plg_search_newsfeeds.ini</filename>
+		<filename>ru-RU.plg_search_sections.ini</filename>
+		<filename>ru-RU.plg_search_weblinks.ini</filename>
+		<filename>ru-RU.plg_system_debug.ini</filename>
+		<filename>ru-RU.tpl_beez.ini</filename>
+		<filename>ru-RU.tpl_ja_purity.ini</filename>		
+		<filename>ru-RU.tpl_rhuk_milkyway.ini</filename>
+		<filename file="meta">ru-RU.xml</filename>
+	</files>
+	<params />
+</install>

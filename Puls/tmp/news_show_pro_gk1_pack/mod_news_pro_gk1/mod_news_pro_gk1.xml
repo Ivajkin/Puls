@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+        <name>News Pro GK1</name>
+        <creationDate>11/03/2009</creationDate>
+        <author>Gavick.com</author>
+        <copyright>(C) 2009 Gavick.com</copyright>
+        <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+        <authorEmail>info@gavick.com</authorEmail>
+        <authorUrl>www.gavick.com</authorUrl>
+        <version>1.0.1</version>
+        <description>NEWS PRO INSTALLED CORRECTLY</description>
+        <files>
+                <filename module="mod_news_pro_gk1">mod_news_pro_gk1.php</filename>
+                <filename module="mod_news_pro_gk1">helper.php</filename>
+                <filename module="mod_news_pro_gk1">index.html</filename>            
+				<filename module="mod_news_pro_gk1">gk_classes/date.class.php</filename>
+                <filename module="mod_news_pro_gk1">gk_classes/joomla.news.class.php</filename>
+				<filename module="mod_news_pro_gk1">gk_classes/index.html</filename>				
+                <filename module="mod_news_pro_gk1">tmpl/view.default.standard.php</filename>
+                <filename module="mod_news_pro_gk1">tmpl/view.default.category.php</filename>
+                <filename module="mod_news_pro_gk1">tmpl/view.script_style.php</filename>
+                <filename module="mod_news_pro_gk1">tmpl/layout.parts.php</filename>
+                <filename module="mod_news_pro_gk1">tmpl/index.html</filename>   
+                <filename module="mod_news_pro_gk1">images/index.html</filename>   
+                <filename module="mod_news_pro_gk1">images/lite/index.html</filename>   
+                <filename module="mod_news_pro_gk1">images/lite/arrow_interface_white.png</filename>
+                <filename module="mod_news_pro_gk1">images/lite/bullet_white_active.png</filename>
+                <filename module="mod_news_pro_gk1">images/lite/bullet_white_inactive.png</filename>
+                <filename module="mod_news_pro_gk1">images/lite/next.png</filename>
+                <filename module="mod_news_pro_gk1">images/lite/prev.png</filename>
+                <filename module="mod_news_pro_gk1">images/lite/shadow.png</filename>
+                <filename module="mod_news_pro_gk1">images/dark/index.html</filename>   
+                <filename module="mod_news_pro_gk1">images/dark/arrow_interface_black.png</filename>
+                <filename module="mod_news_pro_gk1">images/dark/bullet_black_active.png</filename>
+                <filename module="mod_news_pro_gk1">images/dark/bullet_black_inactive.png</filename>
+                <filename module="mod_news_pro_gk1">images/dark/next.png</filename>
+                <filename module="mod_news_pro_gk1">images/dark/prev.png</filename>
+                <filename module="mod_news_pro_gk1">images/dark/shadow.png</filename>
+				<filename module="mod_news_pro_gk1">images/dark/bg.png</filename>
+				<filename module="mod_news_pro_gk1">scripts/engine_standard.js</filename>
+				<filename module="mod_news_pro_gk1">scripts/engine_standard_compressed.js</filename>
+                <filename module="mod_news_pro_gk1">scripts/engine_category.js</filename>
+				<filename module="mod_news_pro_gk1">scripts/engine_category_compressed.js</filename>
+				<filename module="mod_news_pro_gk1">scripts/mootools.js</filename>
+				<filename module="mod_news_pro_gk1">scripts/index.html</filename>
+                <filename module="mod_news_pro_gk1">style/index.html</filename>
+                <filename module="mod_news_pro_gk1">style/style_standard.css</filename>
+                <filename module="mod_news_pro_gk1">style/style_category.css</filename>
+        </files>
+        
+        <languages>
+   			<language tag="en-GB">language/en-GB.mod_news_pro_gk1.ini</language>
+		</languages>
+
+        <params>
+        
+            <param type="spacer" />
+            
+                <param name="moduleclass_sfx" type="text" default="" label="MODCLASSSUFFIX" description="MODCLASSSUFFIX_DESC" />
+                
+                <param name="module_unique_id" type="text" default="newspro1" label="MODID" description="MODID_DESC" />
+                
+                <param name="width_module" type="text" default="300" size="5" label="WIDTH_MODULE" description="WIDTH_MODULE_DESC"/>
+           
+           		<param name="width_links" type="text" default="400" size="5" label="WIDTH_LINKS" description="WIDTH_LINKS_DESC"/>
+           
+        		<param name="td_padding" type="text" default="0" size="5" label="PADDING" description="PADDING_DESC"/>
+           
+		    <param type="spacer" />
+				            
+                <param name="section" type="section" default="" label="SECTION" description="SECTION_DESC" />
+                
+                <param name="category" type="category" default="" label="CATEGORY" description="CATEGORY_DESC" />
+                
+                <param name="sections" type="text" default="" label="SECTIONS" description="SECTIONS_DESC"/>
+                
+                <param name="categories" type="text" default="" label="CATEGORIES" description="CATEGORIES_DESC"/>
+                
+                <param name="ids" type="text" default="" label="IDS" description="IDS_DESC"/>
+                
+                <param name="mode" type="list" default="standard" label="MODE" description="MODE_DESC">
+                        <option value="standard">STANDARD_MODE</option>
+                        <option value="category">CATEGORY_MODE</option>
+                </param>
+                
+           <param type="spacer" />
+           
+                <param name="news_full_pages" type="text" default="3" size="5" label="NEWS_FULL_PAGES_AMOUNT" description="NEWS_FULL_PAGES_AMOUNT_DESC"/>
+                
+                <param name="news_short_pages" type="text" default="3" size="5" label="NEWS_SHORT_PAGES_AMOUNT" description="NEWS_SHORT_PAGES_AMOUNT_DESC"/>
+                
+           		<param name="news_column" type="text" default="1" size="5" label="COLUMNS" description="COLUMNS_DESC"/>
+                
+                <param name="news_rows" type="text" default="1" size="5" label="ROWS" description="ROWS_DESC"/>
+                
+                <param name="links_amount" type="text" default="6" size="5" label="LINKSAMOUNT" description="LINKSAMOUNT_DESC"/>
+                
+				<param name="news_sort_value" type="list" default="created" label="NEWS_SORT_VALUE" description="NEWS_SORT_VALUE_DESC">
+                        <option value="created">DATE</option>
+                        <option value="ordering">ORDER</option>
+                        <option value="fordering">FRONTPAGE_ORDER</option>
+                        <option value="random">RANDOM</option>
+                        <option value="hits">HITS</option>
+                </param>
+                
+                <param name="news_sort_order" type="list" default="DESC" label="NEWS_SORT_ORDER" description="NEWS_SORT_ORDER_DESC">
+                        <option value="ASC">ASC</option>
+                        <option value="DESC">DESC</option>
+                </param>
+                
+                <param name="news_frontpage" type="radio" default="1" label="FRONTPAGE" description="FRONTPAGE_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+              
+			  	<param name="unauthorized" type="radio" default="0" label="UNAUTH" description="UNAUTH_DESC">
+                		<option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="only_frontpage" type="radio" default="0" label="ONLYFRONTPAGE" description="ONLYFRONTPAGE_DESC">
+                		<option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="startposition" type="text" default="0" size="5" label="FIRST_NEWS" description="FIRST_NEWS_DESC"/>
+			    
+            <param type="spacer" />
+            
+                <param name="show_list" type="radio" default="1" label="REST_NEWS" description="REST_NEWS_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="list_position" type="radio" default="bottom" label="LIST_POSITION" description="LIST_POSITION_DESC">
+                        <option value="bottom">BOTTOM</option>
+                        <option value="left">LEFT</option>
+                        <option value="right">RIGHT</option>
+                </param>
+                
+        	<param type="spacer" />
+        	
+                <param name="news_readmore_text" type="text" default="Read more" size="20" label="READMORE" description="READMORE_DESC"/>
+                
+                <param name="news_header_link" type="radio" default="1" label="HEAD_LINK" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_image_link" type="radio" default="1" label="IMAGE_LINK" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_text_link" type="radio" default="0" label="TEXT_LINK" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_author" type="radio" default="1" label="AUTHOR" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_cats" type="radio" default="1" label="NEWS_CATEGORIES" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_date" type="radio" default="1" label="NEWS_DATE" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_more_in" type="radio" default="1" label="MOREIN" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+   				<param name="date_format" type="text" default="D, d M Y" size="10" label="DATE_FORMAT" description="DATE_FORMAT_DESC"/>   
+				   
+				<param name="username" type="list" default="0" label="AUTHORNAME" description="">
+                        <option value="0">NAME</option>
+                        <option value="1">USERNAME</option>
+                        <option value="2">ALIAS</option>
+                </param>  
+               
+			<param type="spacer" />   
+			
+				<param name="news_content_header_pos" type="list" default="1" label="HEAD_POS" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">LEFT</option>
+                        <option value="2">RIGHT</option>
+                        <option value="3">CENTER</option>
+                </param>
+                
+                <param name="news_content_image_pos" type="list" default="1" label="IMAGE_POS" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">LEFT</option>
+                        <option value="2">RIGHT</option>
+                        <option value="3">CENTER</option>
+                </param>
+                
+                <param name="news_content_text_pos" type="list" default="1" label="TEXT_POS" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">LEFT</option>
+                        <option value="2">RIGHT</option>
+                        <option value="3">CENTER</option>
+                        <option value="4">JUSTIFY</option>
+                </param>
+                
+                <param name="news_content_info_pos" type="list" default="1" label="INFO_POS" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">LEFT</option>
+                        <option value="2">RIGHT</option>
+                        <option value="3">CENTER</option>
+                </param>
+                
+                <param name="news_content_readmore_pos" type="list" default="2" label="MORE_POS" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">LEFT</option>
+                        <option value="2">RIGHT</option>
+                        <option value="3">CENTER</option>
+                        <option value="4">AFTER</option>
+                </param>
+			
+			<param type="spacer" />
+			    
+                <param name="news_header_order" type="radio" default="1" label="HEAD_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                </param>
+                
+                <param name="news_image_order" type="radio" default="2" label="IMAGE_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                </param>
+                
+                <param name="news_text_order" type="radio" default="3" label="TEXT_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                </param>
+                
+                <param name="news_info_order" type="radio" default="4" label="INFO_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                </param>
+                
+            <param type="spacer" />    
+                
+                <param name="head_nofollow" type="radio" default="1" label="HEAD_NOFOLLOW" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+
+                <param name="image_nofollow" type="radio" default="1" label="IMAGE_NOFOLLOW" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="text_nofollow" type="radio" default="1" label="TEXT_NOFOLLOW" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="info_nofollow" type="radio" default="1" label="INFO_NOFOLLOW" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+
+                <param name="list_nofollow" type="radio" default="1" label="LIST_NOFOLLOW" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="readmore_nofollow" type="radio" default="1" label="READMORE_NOFOLLOW" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="head_target" type="radio" default="1" label="HEAD_TARGET" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+
+                <param name="image_target" type="radio" default="1" label="IMAGE_TARGET" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="text_target" type="radio" default="1" label="TEXT_TARGET" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+				
+                <param name="info_target" type="radio" default="1" label="INFO_TARGET" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>				                
+
+                <param name="list_target" type="radio" default="1" label="LIST_TARGET" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="readmore_target" type="radio" default="1" label="READMORE_TARGET" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+            
+			<param type="spacer" />
+			    
+                <param name="news_limit_type" type="list" default="0" label="LIMITTYPE" description="">
+                        <option value="0">WORDS</option>
+                        <option value="1">CHARS</option>
+                </param>
+                
+                <param name="news_limit" type="text" default="30" size="5" label="MAX_AMOUNT" description=""/>
+                
+                <param name="title_limit" type="text" default="40" size="5" label="TITLE_MAX_AMOUNT" description=""/>
+                
+                <param name="list_title_limit" type="text" default="20" size="5" label="LIST_TITLE_MAX_AMOUNT" description=""/>
+                
+                <param name="list_text_limit" type="text" default="30" size="5" label="LIST_TEXT_MAX_AMOUNT" description=""/>
+                
+            <param type="spacer" />    
+                
+                <param name="clean_xhtml" type="radio" default="1" label="CLEANXHTML" description="CLEANXHTML_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+
+        <param type="spacer" />
+                
+                <param name="plugin_support" type="radio" default="0" label="PLUGIN" description="PLUGIUN_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="only_plugin" type="radio" default="0" label="PLUGIN_ONLY" description="PLUGIN_ONLY_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+				<param name="img_height" type="text" default="0" size="5" label="IMAGE_H" description="IMAGE_H_DESC"/>
+				
+                <param name="img_width" type="text" default="0" size="5" label="IMAGE_W" description="IMAGE_W_DESC"/>
+                
+                <param name="img_margin" type="text" default="3px" size="5" label="IMAGE_M" description="IMAGE_M_DESC"/>        
+                
+        </params>
+        
+        <params group="advanced">
+        
+            <param type="spacer" />
+            
+            	<param name="parse_plugins" type="list" default="0" label="PARSE" description="PARSE_DESC">
+						<option value="1">ENABLED</option>
+                        <option value="0">DISABLED</option>
+                </param>    	
+            
+                <param name="useMoo" type="list" default="2" label="USEMOO" description="USEMOO_DESC">
+                        <option value="2">AUTOMATIC</option>
+						<option value="1">FORCEENABLED</option>
+                        <option value="0">FORCEDISABLED</option>
+                </param>
+                
+                <param name="useScript" type="list" default="2" label="USEJS" description="USEJS_DESC">
+                        <option value="2">AUTOMATIC</option>
+						<option value="1">FORCEENABLED</option>
+                        <option value="0">FORCEDISABLED</option>
+                </param>
+                
+                <param name="compress_js" type="list" default="1" label="COMPRESS" description="COMPRESS_DESC">
+						<option value="1">ENABLED</option>
+                        <option value="0">DISABLED</option>
+                </param>
+        </params>
+</install>

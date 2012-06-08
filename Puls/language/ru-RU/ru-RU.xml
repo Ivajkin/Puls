@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metafile version="1.5"  client="site" >
+	<tag>ru-RU</tag>
+	<name>Russian (CIS)</name>
+	<version>1.5.25</version>
+	<creationDate>2011-11-18</creationDate>
+	<author>JoomlaPortal.ru</author>
+	<authorUrl>www.joomlaportal.ru</authorUrl>
+	<authorEmail>userxp@joomlaportal.ru</authorEmail>
+	<copyright>Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>Russian Front-End Language Pack for Joomla! 1.5</description>
+	<metadata>
+		<name>Russian (CIS)</name>
+		<tag>ru-RU</tag>
+		<rtl>0</rtl>
+		<locale>ru_RU.utf8, ru_RU.UTF-8, ru_RU, ru_RU.KOI8-R, ru_RU.CP1251, ru_RU.CP866, ru_RU.ISO8859-5, russian, ru_RU, ru, rus</locale>
+		<winCodePage>windows-1251</winCodePage>
+		<backwardLang>russian</backwardLang>
+		<pdfFontName>freesans</pdfFontName>
+	</metadata>
+	<params></params>
+</metafile>

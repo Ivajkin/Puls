@@ -1,0 +1,24 @@
+[03-Jun-2012 14:21:02] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/core5429/public_html/paradigm/Puls/configuration.php on line 7
+[03-Jun-2012 14:21:48] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/core5429/public_html/paradigm/Puls/configuration.php on line 7
+[03-Jun-2012 14:21:51] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/core5429/public_html/paradigm/Puls/configuration.php on line 7
+[03-Jun-2012 14:22:07] PHP Parse error:  syntax error, unexpected T_VAR, expecting ',' or ';' in /home2/core5429/public_html/paradigm/Puls/configuration.php on line 54
+[03-Jun-2012 20:40:28] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/administrator/components/com_virtuemart/html/shop.product_details.php on line 458
+[03-Jun-2012 21:57:06] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/administrator/components/com_virtuemart/html/shop.product_details.php on line 458
+[03-Jun-2012 21:58:43] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/administrator/components/com_virtuemart/html/shop.product_details.php on line 458
+[03-Jun-2012 21:59:59] PHP Parse error:  syntax error, unexpected T_ECHO in /home2/core5429/public_html/paradigm/Puls/administrator/components/com_virtuemart/html/shop.product_details.php on line 458
+[03-Jun-2012 22:00:08] PHP Parse error:  syntax error, unexpected T_ECHO in /home2/core5429/public_html/paradigm/Puls/administrator/components/com_virtuemart/html/shop.product_details.php on line 458
+[03-Jun-2012 22:02:26] PHP Parse error:  syntax error, unexpected T_ECHO in /home2/core5429/public_html/paradigm/Puls/administrator/components/com_virtuemart/html/shop.product_details.php on line 458
+[04-Jun-2012 14:07:16] PHP Parse error:  syntax error, unexpected T_STRING in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/product_details/flypage.tpl.php on line 22
+[04-Jun-2012 09:48:36] PHP Fatal error:  Call to a member function _() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 158
+[04-Jun-2012 09:51:40] PHP Fatal error:  Call to a member function startPane() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 147
+[04-Jun-2012 10:19:32] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 154
+[04-Jun-2012 10:20:48] PHP Fatal error:  Call to a member function _() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 162
+[04-Jun-2012 10:21:37] PHP Fatal error:  Call to a member function _() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 161
+[04-Jun-2012 10:23:02] PHP Fatal error:  Call to a member function _() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 161
+[04-Jun-2012 10:23:33] PHP Fatal error:  Call to a member function _() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 154
+[04-Jun-2012 10:23:42] PHP Fatal error:  Call to a member function _() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 154
+[04-Jun-2012 10:24:52] PHP Fatal error:  Call to a member function _() on a non-object in /home2/core5429/public_html/paradigm/Puls/templates/rhuk_milkyway/html/com_content/article/default.php on line 154
+[04-Jun-2012 16:20:27] PHP Parse error:  syntax error, unexpected '}' in /home2/core5429/public_html/paradigm/Puls/administrator/components/com_virtuemart/html/shop.product_details.php on line 373
+[05-Jun-2012 12:46:21] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/product_details/flypage.tpl.php on line 19
+[05-Jun-2012 12:46:51] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/product_details/flypage.tpl.php on line 17
+[05-Jun-2012 12:48:46] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/product_details/flypage.tpl.php on line 18
