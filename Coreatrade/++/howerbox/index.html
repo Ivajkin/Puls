@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://ogp.me/ns/fb#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+
+
+<head>
+  <!--<base href="http://www.joomlabamboo.com/joomla-extensions/hoverbox" />-->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="joomla mootools hoverbox lightbox module photo extension image gallery" />
+  
+  <meta name="author" content="Anthony Olsen" />
+  <meta name="html_title" content="Free Joomla CSS Image Gallery" />
+  <meta name="meta_robots" content="index, follow" />
+  <meta name="description" content="Hoverbox is a free Joomla extension and pure css gallery." />
+  
+  <title>Joomla Image Gallery | Free Joomla Extension | Joomlabamboo</title>
+  <!--<link href="/templates/jbnew/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+      jQuery.noConflict();
+      var paneltype = 'opacity';
+  </script>
+
+  
+<!--<link rel="shortcut icon" href="/templates/jbnew/favicon.ico" />-->
+ 
+	<style type="text/css">
+	@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Sans'), local('DroidSans'), url('http://themes.googleusercontent.com/static/fonts/droidsans/v3/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff') format('woff');
+}
+@font-face {
+  font-family: 'Varela';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Varela'), url('http://themes.googleusercontent.com/static/fonts/varela/v4/_yYHMt_E4smqfVTA22m7TQ.woff') format('woff');
+}	
+	</style>
+
+	<!--<link rel="stylesheet" href="HoverBox.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/system.css" type="text/css" />
+	<link rel="stylesheet" href="css/general.css" type="text/css" />
+	<link href="css/joomla.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="css/template_css.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="css/fonts.css" rel="stylesheet" type="text/css" media="screen" />	-->
+
+	
+	
+	<!-- Main ZGF theme file -->
+
+<link href="css/theme.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	
+	<!--[if IE 7]>
+<link href="css/ie7.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link href="css/ie6.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+
+<meta name="google-site-verification" content="8FCypJXELG_w4FXrPStp2ZgImBWIPNIm8XPAjX9Hy0Y" /> <script type="javascript">
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1111124-2']);
+  _gaq.push(['_setDomainName', 'joomlabamboo.com']);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  <script type='text/javascript'>
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1111124-2']);
+      _gaq.push(['_setCustomVar', 1, 'Page creation time and ram', '103', 3]);
+      _gaq.push(['_setCustomVar', 2, 'Logged-in user', 'anonymous', 3]);
+
+
+
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+</script></head>
+
+<body class="helvetica  " style="font-size: 78%" >
+<div id="fb-root"></div>
+<script>    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "js/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+ 
+
+<div class="features">
+<div class="featureLeft">
+<h3>Demonstration</h3>
+<p>Rollover the images below to see the full image. Click to view the image in a lightbox.</p>
+		<link rel="stylesheet" href="css/hoverBox.css" type="text/css" />
+		
+		<style type="text/css">
+		.hoverBox466 {float: left;width:100%}.hoverBox466  a img{margin-right:20px;width: 80px;height:60px}	.hoverBox466 a {width: 80px;height:60px }  .hoverBox466  a:hover img {margin-top:80px;margin-left:0px}
+		</style>
+	<link rel="stylesheet" href="prettyPhoto/prettyPhoto.css" type="text/css" />
+	<script type="text/javascript" src="prettyPhoto/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript">
+	    jQuery(document).ready(function () {
+	        jQuery('a[rel^=\'prettyOverlay\'],a[rel^=\'prettyPhoto466\']').prettyPhoto({
+	            animation_speed: 'fast',
+	            show_title: false,
+	            opacity: 0.6,
+	            allowresize: true,
+	            counter_separator_label: '/',
+	            overlay_gallery: 1,
+	            theme: 'dark_rounded'
+	        });
+	    });	  
+	</script> 
+<!-- Start Joomla Bamboo Pretty Box -->
+<!--hoverBoxLayout-->
+<div class="hoverBox hoverBox466">
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_1147215_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_1147215_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_1147215_XS.jpg" title="Fotolia_1147215_XS - " />
+    </a>
+</div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_31467_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_31467_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_31467_XS.jpg" title="Fotolia_31467_XS - " />
+    </a>
+</div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_4446837_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_4446837_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_4446837_XS.jpg" title="Fotolia_4446837_XS - " />
+    </a>
+</div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_6355435_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_6355435_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_6355435_XS.jpg" title="Fotolia_6355435_XS - " />
+    </a>
+</div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_675427_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_675427_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_675427_XS.jpg" title="Fotolia_675427_XS - " />
+    </a>
+</div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_697232_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_697232_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_697232_XS.jpg" title="Fotolia_697232_XS - " />
+    </a>
+</div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_7059891_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_7059891_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_7059891_XS.jpg" title="Fotolia_7059891_XS - " />
+    </a>
+</div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_7159470_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_7159470_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_7159470_XS.jpg" title="Fotolia_7159470_XS - " />
+</a></div>
+<div class="hoverBoxGallery466">
+    <a href="images/fotolia/Fotolia_8323460_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_8323460_XS ">
+        <img class="hoverBox" src="images/fotolia/Fotolia_8323460_XS.jpg" title="Fotolia_8323460_XS - " />
+    </a>
+</div>
+    <div class="hoverBoxGallery466">
+        <a href="images/fotolia/Fotolia_899328_XS.jpg" rel="prettyPhoto466[gallery]" title="Fotolia_899328_XS ">
+            <img class="hoverBox" src="images/fotolia/Fotolia_899328_XS.jpg" title="Fotolia_899328_XS - " />
+        </a>
+</div>
+</div>
+<div class="clear"></div>
+<!-- End Joomla Bamboo Pretty Box -->
+
+<h3>instructions</h3>
+<p>First make sure you install the module using the Joomla Installer in the administration, and then that you've published the module into the position you desire. Then you will be ready to change and configure the settings.</p>
+<p>Go into the Joomla Administrator, and find the Module Manager. Here you will see a list of all modules, and go through until you see the Hoverbox module. Click on the title and you will see the parameters that you can adjust for the module. When you need more information about a setting, roll over the text to the left and a tooltip will appear. Make sure to hit save when you are done.</p>
+</div>
+<div class="featureRight"><br />
+<h3>features</h3>
+<ul>
+<li>Display unlimited number of images from the specified folder.</li>
+<li>Resize the hover image using the JB Library plugin.</li>
+<li>Display the original image in a pretty photo lightbox.</li>
+<li>Display multiple galleries on the same page.</li>
+<li>Control the width and height of the thumbnail images.</li>
+<li>Position the gallery to the left or right in the module.</li>
+</ul>
+<br /> <br />
+<h3>Dependancies<strong> </strong></h3>
+<p><strong></strong><a href="/joomla-extensions/jb-library-plugin-a-free-joomla-jquery-plugin">JB Library Plugin</a></p>
+<p>Joomla 1.5</p>
+<p>Joomla 2.5</p>
+</div>
+</div>
+</div>
+	</div>
+<div id="fb-root"></div>
+<script>    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "js/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "jtwitter-wjs");</script>
+										</div>
+										
+
+										<div class="clear"></div>
+										
+																		</div>
+								<!-- End Main Content -->
+								
+								
+																
+																</div>
+								
+								<div class="clear"></div>
+								
+														</div>
+				</div>
+		</div>
+</div>
+
+
+
+<div class="outerWrapper footerRow">
+		<div class="container center" style="width:980px;">
+			<div class="containerBG">
+				<div class="innerContainer" style="width:940px;margin-left:20px">
+					
+					
+					
+					<div id="footer">
+					
+					
+							<div id="footerLeft" style="width:940px;margin-right: 20px">
+											<div class="moduletable">
+			
+						
+			
+						<div class="jbmoduleBody">
+			<ul class="menu"><li class="item200"><a href="/site-map-1" class="mainlevel"><span>Site Map</span></a></li><li class="item65"><a href="/support/contact-us" class="mainlevel"><span>Contact Us</span></a></li><li class="item48"><a href="/joomla-bamboo/the-joomla-bamboo-team" class="mainlevel"><span>Meet the team</span></a></li><li class="item230"><a href="/joomla-bamboo/activity-stream" class="mainlevel"><span>Activity Stream</span></a></li><li class="item235"><a href="/log-in/" class="mainlevel"><span>Login</span></a></li></ul>			</div>
+					</div>
+			<div class="moduletable">
+			
+						
+			
+						<div class="jbmoduleBody">
+			<p style="float:right">
+<a href=""><img src="" style="margin-right:10px;float:left" width="31" height="32" alt="facebook" /></a>
+<a href=""><img src="" style="margin-right:10px;float:left" width="31" height="32" alt="facebook" /></a>
+<a href=""><img src="" style="margin-right:10px;float:left" width="31" height="32" alt="facebook" /></a>
+</p>			</div>
+					</div>
+	
+							</div>
+									
+							<!-- Copyright -->				
+<div id="footerRight">
+														
+							</div>			
+					</div>
+					
+					<div class="clear"></div>
+										<div id="partners">
+										<span>Hosted by</span> <br />
+											<a class="rochen" href="http://www.rochenhost.com/joomla-hosting" target="_blank">Rochen Joomla Hosting</a>
+											
+																<div class="clear"></div><p style="font-size:10px">joomlabamboo.com is not affiliated with or endorsed by the Joomla! Project or Open Source Matters.<br />The Joomla! name and logo is used under a limited license granted by Open Source Matters<br /> the trademark holder in the United States and other countries.</p>
+											</div>
+
+					
+						
+	
+					</div> <!-- innerContainer -->
+				</div>	<!-- containerBG -->					
+		</div> <!-- Container -->
+</div>			
+
+</div>	<!-- Full Wrap -->	
+</div>
+<div class="clear"></div>
+
+		
+<script type="text/javascript">
+    WebFontConfig = {
+        google: { families: ['Varela', 'Droid Sans'] }
+    };
+    (function () {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+	
+</script>
+</body>
+</html>

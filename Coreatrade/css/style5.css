@@ -1,0 +1,102 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 -2011 IceTheme. All Rights Reserved
+  
+  License:
+  Copyrighted Commercial Software 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+---------------------------------------------------------------- */
+
+/* icemegamenu */
+div.icemegamenu ul#icemegamenu li span.icemega_desc {
+	background-color:#A0672C;
+	background-image: -moz-linear-gradient(#C88136, #A0672C);
+	background-image: -webkit-linear-gradient(#C88136, #A0672C); 
+	background-image: -o-linear-gradient(#C88136, #A0672C);
+	background-image: linear-gradientC88136C8BB36, #A0672C);
+	box-shadow:2px 2px 10px #116679}
+	
+div.icemegamenu ul#icemegamenu li span.icemega_desc:after{
+    border-top-color: #A0672C;}
+
+div.icemegamenu ul#icemegamenu > li.parent { 
+	background-image:url(../images/styles/style5/dropdown.png);}
+
+div.icemegamenu ul#icemegamenu li.active {
+	background-image:url(../images/styles/style5/active.png);}
+
+#icemegamenu ul.icesubMenu,
+#subMenusContainer ul.icesubMenu {  
+	background-image:url(../images/styles/style5/bg.jpg);
+	border-color:#32cdea;}
+	
+div#subMenusContainer a.iceMenuTitle,
+div#subMenusContainer span.separator {
+	background-image: url(../images/styles/style5/point.png)}
+	
+div#subMenusContainer li.active a.iceMenuTitle,
+div#subMenusContainer a.iceMenuTitle:hover,
+div#subMenusContainer li.active span.separator {
+	background-image:url(../images/styles/style5/point_hover.png)}
+					
+							
+/* typography.css */
+body {
+	background-image:url(../images/styles/style5/footer.png)}
+		
+	
+/* layout.css */
+#header {
+	background-color:#116679;
+	background-image: url(../images/styles/style5/header.jpg);}
+
+#topmenu {
+	background-image:url(../images/styles/style5/top_menu.png);}
+			
+#topmenu_l {
+	background-image:url(../images/styles/style5/top_menu_l.png)}	
+
+#topmenu_r {
+	background-image:url(../images/styles/style5/top_menu_r.png)}		
+				
+
+/* joomla.css */
+#mainmenu .icemegamenu {
+	border-color:#32cdea}
+
+#topmenu ul.menu li a {
+	color: #49A9BD;}
+
+		
+/* modules.css */	
+#promo .moduletable h3.mod-title{
+	color:#116679;}
+
+.col-module-suffix-style1 {
+	background:#116679;}
+				
+.col-module-suffix-style1 .col-module-bottom .col-module-header {
+	border-bottom-color: #32cdea;}					
+			
+/* icescroller */
+
+.ice-module-nav .ice-module-title	{
+    color: #116679;
+
+}
+/** IceCarrousel **/
+
+.ice-carousel .ice-navigator-outer ul.ice-navigator li span{
+	background-image:url(../images/styles/style5/dot.png);
+
+}					
+/* forms.css */
+
+	
+/* offline and error pages */
+#offline_page #header {
+	border-color:#15B5D4;}
+
+
