@@ -4,7 +4,7 @@
  */
 
 /* Import project-level system CSS */
-/*@import url(../../../media/system/css/system.css);*/
+@import url(../../../media/system/css/system.css);
 
 /* Unpublished */
 .system-unpublished, tr.system-unpublished {
