@@ -4,3 +4,5 @@ Puls/cache/*
 Puls/installation/*
 Puls/logs/*
 Puls/tmp/*
+.zip
+.tar
