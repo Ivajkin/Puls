@@ -39,11 +39,12 @@
         <script src="css/expauto/assets/js/ajaxchained.js" type="text/javascript"></script>
         <script src="css/expauto/assets/js/expsearchchained.js" type="text/javascript"></script>
         <script src="css/expauto/assets/js/expsearchtoggle.js" type="text/javascript"></script>
-
+        
         <script src="js/jquery-1.7.2.js" type="text/javascript"></script>
         <script type="text/javascript">
              var $j = jQuery.noConflict();
         </script>
+        <script src="js/jquery.jgfeed.js" type="text/javascript"></script>
         <script src="js/dproc.js" type="text/javascript"></script>
 
         <script type="text/javascript">
@@ -86,12 +87,12 @@
             }
             .mark_show
             {
-            	width: 10%;
+            	width: 8%;
             }
             .mark_show img
             {
-            	width: 80px;
-            	height: 80px;
+            	width: 60px;
+            	height: 60px;
             }
         </style>
 
@@ -126,6 +127,30 @@
 
     <body class="">
 
+    <!-- Copiny (coreatrade.copiny.com) -->
+    <script type="text/javascript" charset="utf-8">
+        var proto = (document.location.protocol == 'https:') ? 'https:' : 'http:';
+        var host = proto + '//widget.copiny.com';
+        document.write(unescape("%3Cscript src='" + host + "/static/js/widget.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        var copinyWidgetOptions = {
+            position: 'left',
+            hostcommunity: 'http://coreatrade.copiny.com',
+            newwindow: '0',
+            type: 'question',
+            color: '#ff8400',
+            border: '#ffffff',
+            round: '1',
+            title: "\u041e\u0431\u0440\u0430\u0442\u043d\u0430\u044f \u0441\u0432\u044f\u0437\u044c",
+            cache: "9ca936d041c7637244c3fb8ef4a8ea6c\/9ca936d041c7637244c3fb8ef4a8ea6c\/ejOwVXUxULV0BZFOhqouhqoWBmC2AZhtBGa7IIm4aYMpQ7CQEUQIzDYHs50B",
+            community: 5240
+        };
+        initCopinyWidget(copinyWidgetOptions);
+        CopinyWidget.showTab();
+    </script>
+<!-- Copiny (coreatrade.copiny.com) -->
+
     <!-- Accessibility -->
         <ol id="accessibility">
            <li><a href="#nav-wrapper">Skip to Menu</a></li>
@@ -146,12 +171,12 @@
                         <div class="icemegamenu">
                             <ul id="icemegamenu">
                                 <li id="iceMenu_1000" class="iceMenuLiLevel_1">
-                                    <a href="javascript:void()" class=" iceMenuTitle">
+                                    <a href="index.html" class=" iceMenuTitle">
                                         <span class="icemega_title icemega_nosubtitle">НОВОСТИ</span>
                                     </a>
                                 </li>
                                 <li id="iceMenu_2000" class="iceMenuLiLevel_1 parent">
-                                    <a href="javascript:void()" class=" iceMenuTitle">
+                                    <a href="about.html" class=" iceMenuTitle">
                                         <span class="icemega_title">О компании</span>
                                         <span class="icemega_desc">Свяжитесь с нами</span>
                                     </a>
@@ -164,30 +189,17 @@
                                                 <ul>
                                                     <li id="iceMenu_3101" class="iceMenuLiLevel_2">
                                                         <a href="javascript: getByType(0)" class=" iceMenuTitle" style="position:relative">
-                                                            <span class="icemega_title icemega_nosubtitle" style=" width: 140px; position: absolute; display:block; top= 0px; background: #000;
-                                                                opacity: 0.80; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.80); -khtml-opacity: 0.80; -moz-opacity: 0.80;">
-                                                                <b>Легковые</b></span>
-                                                            <img src="images/slideshow/image4.jpg" border="0"
-                                                                                alt="Легковые" width="140" height="90" 
-                                                            style="display:block" title="Легковые" />
-                                                            Легковые
+															<span class="icemega_title icemega_nosubtitle">Легковые</span>
                                                         </a>
                                                     </li>
                                                     <li id="iceMenu_3202" class="iceMenuLiLevel_2">
                                                         <a href="javascript: getByType(1)" class=" iceMenuTitle" style="position:relative">
-                                                            <span class="icemega_title icemega_nosubtitle" style="position: absolute; display:block; top: 0px; background: #000;
-                                                            opacity: 0.90; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.90); -khtml-opacity: 0.90; -moz-opacity: 0.90;"
-                                                            >Внедорожники</span>
-                                                            <img src="images/slideshow/image4.jpg" border="0"
-                                                                                alt="Внедорожники" width="140" height="90" 
-                                                            style="display:block" title="Легковые" />
+															<span class="icemega_title icemega_nosubtitle">Внедорожники</span>
                                                         </a>
                                                     </li>
                                                     <li id="iceMenu_3300" class="iceMenuLiLevel_2 parent">
                                                         <a class=" iceMenuTitle">
                                                             <span class="icemega_title icemega_nosubtitle">Грузовые</span>
-                                                            <img src="images/slideshow/image4.jpg" border="0"
-                                                                                alt="Грузовые" width="140" height="90" />
                                                         </a>
                                                         <ul class="icesubMenu sub_level_2" style="width: 280px">
                                                             <li>
@@ -230,8 +242,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li id="iceMenu_4000" class="iceMenuLiLevel_1 parent"><a href="/car/index.php/en/extensions"
-                                    class=" iceMenuTitle"><span class="icemega_title">Автобусы</span><span class="icemega_desc">Новые поступления</span></a>
+                                <li id="iceMenu_4000" class="iceMenuLiLevel_1 parent"><a href="javascript:void(0)"
+                                    class=" iceMenuTitle"><span class="icemega_title">Автобусы</span><!--span class="icemega_desc">Новые поступления</span>--></a>
                                     <ul class="icesubMenu sub_level_1" style="width: 560px">
                                         <li>
                                             <div style="float: left; width: 240px" class="iceCols">
@@ -269,7 +281,7 @@
                                     </ul>
                                 </li>
                                 <li id="iceMenu_5000" class="iceMenuLiLevel_1 parent"><a class=" iceMenuTitle"><span
-                                    class="icemega_title">Спецтехника</span><span class="icemega_desc">4 options</span></a>
+                                    class="icemega_title">Спецтехника</span><!--<span class="icemega_desc">4 options</span>--></a>
                                     <ul class="icesubMenu sub_level_1" style="width: 560px">
                                         <li>
                                             <div style="float: left; width: 240px" class="iceCols">
@@ -341,15 +353,15 @@
                 <!-- NAVIGATOR -->
                   <div class="ice-navigator-outer">
                         <ul class="ice-navigator">
-                                        <li class="hasTip" title="Схатит думать, пора действовать!"><div><span class="ice-title">Схатит думать, пора действовать!</span>
+                                        <li id="slide_0" class="hasTip" title=""><div><span class="ice-title"></span>
                              </div></li>
-                                         <li class="hasTip" title="Концепция Ламборджини"><div><span class="ice-title">Концепция Ламборджини</span>
+                                         <li id="slide_1" class="hasTip" title=""><div><span class="ice-title"></span>
                              </div></li>
-                                         <li class="hasTip" title="Водители авто класса люкс"><div><span class="ice-title">Водители авто класса люкс</span>
+                                         <li id="slide_2"  class="hasTip" title=""><div><span class="ice-title"></span>
                              </div></li>
-                                         <li class="hasTip" title="Икона инновации"><div><span class="ice-title">Икона инновации</span>
+                                         <li id="slide_3"  class="hasTip" title=""><div><span class="ice-title"></span>
                              </div></li>
-                                         <li class="hasTip" title="Bugatti выиграла премию EDGE Silver"><div><span class="ice-title">Bugatti выиграла премию EDGE Silver </span>
+                                         <li id="slide_4"  class="hasTip" title=""><div><span class="ice-title"></span>
                              </div></li>
                         </ul>
                   </div>
@@ -359,66 +371,66 @@
             <div class="ice-main-wapper" style="height: 480px;">
                 <div class="ice-proccessbar">
                 </div>
-                <div class="ice-main-item" style="display: block;">
+                <div id="slide_0" class="ice-main-item" style="display: block;">
                     <img src="images/slideshow/image1.jpg"
-                        title="Stop Thinking & Start Living" alt="Stop Thinking & Start Living" class="image-slide" />
+                        title="" alt="" class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            Хватить думать. Пора творить
+                            
                         </h3>
                         <p>
-                            Если Вы не знаете, или просто не в теме, мы организуем это для Вас!
+                            
                         </p>
-                        <a href="#" class="button">Подробнее</a>
+                        <a id="slide_a_0" href="javascript:void(0)" class="button">Подробнее</a>
                     </div>
                 </div>
-                <div class="ice-main-item">
+                <div  id="slide_1" class="ice-main-item">
                     <img src="images/slideshow/image2.jpg"
-                        title="The Lamborghini Concept" alt="The Lamborghini Concept" class="image-slide" />
+                        title="" alt="" class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            Концепция ламборджини
+                            
                         </h3>
                         <p>
-                            Ламборджини была представлена к премии на конкурсе "Five Diamond Engineering" Italiano</p>
-                        <a href="#" class="button">Подробнее</a>
+                            </p>
+                        <a id="slide_a_1" href="javascript:void(0)" class="button">Подробнее</a>
                     </div>
                 </div>
-                <div class="ice-main-item">
+                <div id="slide_2" class="ice-main-item">
                     <img src="images/slideshow/image3.jpg"
-                        title="THE DRIVER'S LUXURY CAR." alt="THE DRIVER'S LUXURY CAR." class="image-slide" />
+                        title="" alt="" class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            Водители авто класса "Люкс"
+                            
                         </h3>
                         <p>
-                            BMW 7ой серии.</p>
-                        <a href="#" class="button">Подробнее</a>
+                            </p>
+                        <a id="slide_a_2" href="javascript:void(0)" class="button">Подробнее</a>
                     </div>
                 </div>
-                <div class="ice-main-item">
+                <div id="slide_3" class="ice-main-item">
                     <img src="images/slideshow/image4.jpg"
-                        title="An icon of innovation" alt="An icon of innovation" class="image-slide" />
+                        title="" alt="" class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            Икона инноваций
+                            
                         </h3>
                         <p>
-                            Более девяти поколений, E-класс продолжает наследовать лидирующие позиции в дизайне</p>
-                        <a href="#" class="button">Read More</a>
+                            </p>
+                        <a id="slide_a_3" href="javascript:void(0)" class="button">Подробнее</a>
                     </div>
                 </div>
-                <div class="ice-main-item">
+                <div id="slide_4" class="ice-main-item">
                     <img src="images/slideshow/image5.jpg"
-                        title="Bugatti won an EDGE Silver Award" alt="Bugatti won an EDGE Silver Award"
+                        title="" alt=""
                         class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            Bugatti выиграла премию "EDGE Silver"
+                            
                         </h3>
                         <p>
-                            Награда в 26ом годовом дизайнерском конкурсе</p>
-                        <a href="#" class="button">Подробнее</a>
+                            </p>
+                        <a id="slide_a_4" href="javascript:void(0)" class="button">Подробнее</a>
                     </div>
                 </div>
                 <div class="ice-buttons-control">
@@ -431,7 +443,7 @@
 	    <!-- END MAIN CONTENT -->    
         </div>
      <script type="text/javascript">
- 	    window.addEvent('domready', function() {
+ 	    function slidestart() {
 			    $$('.hasTip').each(function(el) {
 				    var title = el.get('title');
 				    if (title) {
@@ -441,7 +453,7 @@
 				    }
 			    });
 		    var JTooltips = new Tips($$('.hasTip'), { fixed: false});
-	    });
+        }
      </script>
      <script type="text/javascript">
 	    var _lofmain = $('iceslideshow157');
@@ -490,11 +502,11 @@
                         
                         '<div class="mark_show separator floatleft" id="tr_mark_'+ td +'">' + 
                             '<div class="moduletable has-subtitle">' +
-                                    '<div class="moduletable-header">' +
+                                    /*'<div class="moduletable-header">' +
                                        '<div class="moduletable-header-inside">' +
                 		         '<h5 class="mod-title" align="center">'+ dbrand[td].mark +'</h5>' +
                                        '</div>' +
-                                     '</div>' +
+                                     '</div>' +*/
                                     '<div class="moduletable_content clearfix">' +
                                             '<a title="'+ dbrand[td].mark +' ('+ dbrand[td].model.length  
                                                +' авто)" href="javascript:getByMark('+ td +')">' +
@@ -510,7 +522,7 @@
      $j(document).ready( function() {
          jgetBrand( function(dbrand) { 
 //Отрисовка первой строки. Проверка на многострочность     
-             if (dbrand.length < 11)
+             if (dbrand.length < 13)
                  plot(dbrand.length, dbrand);
 //Если 2 строки, то проверка на чётность. отрисовка
               else {
@@ -525,11 +537,11 @@
                     $j('div#tr_mark_'+(td-int)).append(
                         
                             '<div class="mark_show separator floatleft" id="tr_mark_'+ td +'">' +
-                                    '<div class="moduletable-header">' +
+                                    /*'<div class="moduletable-header">' +
                                        '<div class="moduletable-header-inside">' +
                 		         '<h5 class="mod-title" align="center">'+ dbrand[td].mark +'</h5>' +
                                        '</div>' +
-                                     '</div>' +
+                                     '</div>' +*/
                                     '<div class="moduletable_content clearfix">' +
                                             '<a title="'+ dbrand[td].mark +' ('+ dbrand[td].model.length  
                                                +' авто)" href="javascript:getByMark('+ td +')">' +
@@ -683,7 +695,234 @@
                                         </div>
                                         <div class="blog">
 	                                        <h1>Последние новости</h1>
-			                                <div class="items-row cols-1 row-0">
+<div id="news">
+<script type="text/javascript">
+    //Обзор размером 2 абзаца для статьи. Формирование позиции
+    function readlitle(str) {
+        word = 700;  //количество букв в обзоре, включая html-теги
+
+        tmp = str.substr(0, word);
+        end= tmp.lastIndexOf('>');
+        start = tmp.lastIndexOf('<');
+
+        if (end == word) return word+1; 
+        if (start == word) return word;
+        if (end > start) return word+1; 
+        return start; 
+    }
+
+    function news_gen(feeds) {
+        for (var i = 0; i < feeds.entries.length; i++) {
+            var entry = feeds.entries[i];
+            // Данные статьи (фида)
+            pos = readlitle(entry.content); //alert(pos + " " + entry.content.substring(0, pos)); // полуотрезок типа [+ )-
+            $j('#news').append(
+                    '<a name="new_'+ i +'"></a>'+
+                    '<div id="news_id_' + i + '" class="items-row cols-1 row-0">' +
+		                '<div class="item column-1">' +
+                            '<h2 style="cursor: pointer">' + entry.title + '</h2>' +
+            /*'<p>' +
+            '<img src="" border="0" alt="Image" width="160" height="105" style="border: 0;" />' +
+            '</p>' +*/
+                                entry.content.substring(0, pos) +
+                                '<p id="news_id_' + i + '" class="readmore news_class_'+ i +'">'+
+				                    '<a href="javascript:void(0);">Подробнее...</a>' +
+		                        '</p>' +
+                                '<div>' +
+                                    entry.content.substring(pos) +
+                                    '<footer><author>Автор: ' + entry.author + '</author> <date>' + entry.publishedDate + '</date> <a href="' + entry.link + '">Источник</a></footer>' +
+                                    '<div class="item-separator"></div>' +
+                                    '<p id="news_id_' + i + '" class="readmore ">' +
+				                        '<a href="javascript:void(0);">Свернуть</a>' +
+		                            '</p>' +
+                                '</div>' +
+	                    '</div>' +
+						'<span class="row-separator"></span>' +
+                    '</div>'
+                );
+            //Fill front page
+            if (i == 3)
+                $j('#news').append(
+                    '<div class="items-more">' +
+                        '<div id="more_news" >' +
+                            '<h3 style="cursor: pointer; width: 30%; float: left; margin-bottom: 30px"><i>Больше новостей</i></h3>' +
+                            '<p class="readmore" id="more_news" style="width: 8%; float: left;">' +
+				                '<a name="news_expand" href="javascript:void(0);">Развернуть</a>' +
+		                    '</p>' +
+
+                        '</div>' +
+                    '<div style="clear: both"></div>' +
+                    '</div>'
+                );
+            // Fill SlideShow
+            if (i < 5) {
+                $j('li#slide_' + i).attr('title', entry.title);
+                $j('li#slide_' + i + ' span').html(entry.title);
+
+                $j('div#slide_' + i +' img').attr('title', entry.title)
+                                            .attr('alt', entry.title)
+                                            .attr('src', $j('div#news_id_' + i +' img').attr('src'));
+                $j('div#slide_' + i + ' h3').html(entry.title);
+                $j('div#slide_' + i + ' p').html(entry.contentSnippet);
+
+                 (i != 4) ?
+                    $j('#slide_a_' + i).attr('href', '#new_' + i)
+                :
+                    $j('#slide_a_' + i).attr('href', '#news_expand');
+                     
+                $j('#slide_a_' + i).click(function (index) {
+                    if (index != 4) $j('.news_class_' + index).click();
+                    else
+                        $j('div#more_news').click();
+                        $j('.news_class_' + index).click();
+                        window.location = '#new_4';
+                } .bind(this, i));
+            }
+            // entry.title, entry.link, entry.author,
+            // entry.publishedDate, entry.contentSnippet, entry.content
+        }
+        slidestart();
+    }
+
+    function news_back(feeds) {
+        for (var i = feeds.entries.length-1; i >= 0 ; i--) {
+            var entry = feeds.entries[i];
+            // Данные статьи (фида)
+            pos = readlitle(entry.content); //alert(pos + " " + entry.content.substring(0, pos)); // полуотрезок типа [+ )-
+            $j('#news').append(
+                     '<a name="new_' + i + '"></a>' +
+                    '<div id="news_id_' + i + '" class="items-row cols-1 row-0">' +
+		                '<div class="item column-1">' +
+                            '<h2 style="cursor: pointer">' + entry.title + '</h2>' +
+            /*'<p>' +
+            '<img src="" border="0" alt="Image" width="160" height="105" style="border: 0;" />' +
+            '</p>' +*/
+                                entry.content.substring(0, pos) +
+                                '<p id="news_id_' + i + '" class="readmore">' +
+				                    '<a href="javascript:void(0);">Подробнее...</a>' +
+		                        '</p>' +
+                                '<div>' +
+                                    entry.content.substring(pos) +
+                                    '<footer><author>Автор: ' + entry.author + '</author> <date>' + entry.publishedDate + '</date> <a href="' + entry.link + '">Источник</a></footer>' +
+                                    '<div class="item-separator"></div>' +
+                                    '<p id="news_id_' + i + '" class="readmore">' +
+				                        '<a href="javascript:void(0);">Свернуть</a>' +
+		                            '</p>' +
+                                '</div>' +
+	                    '</div>' +
+						'<span class="row-separator"></span>' +
+                    '</div>'
+                );
+            if (i == 3)
+                $j('#news').append(
+                    '<div class="items-more">' +
+                        '<div id="more_news" >' +
+                            '<h3 style="cursor: pointer; width: 30%; float: left; margin-bottom: 30px"><i>Больше новостей</i></h3>' +
+                            '<p class="readmore" id="more_news" style="width: 8%; float: left;">' +
+				                '<a href="javascript:void(0);">Развернуть</a>' +
+		                    '</p>' +
+
+                        '</div>' +
+                    '<div style="clear: both"></div>' +
+                    '</div>'
+                  );
+            // Fill SlideShow
+            if (i > 5) {
+                $j('li#slide_' + i).attr('title', entry.title);
+                $j('li#slide_' + i + ' span').html(entry.title);
+
+                $j('div#slide_' + i + ' img').attr('title', entry.title)
+                                            .attr('alt', entry.title)
+                                            .attr('src', $j('div#news_id_' + i + ' img').attr('src'));
+                $j('div#slide_' + i + ' h3').html(entry.title);
+                $j('div#slide_' + i + ' p').html(entry.contentSnippet);
+
+                $j('#slide_a_' + i).attr('href', '#new_' + i);
+                $j('#slide_a_' + i).click(function (index) {
+                    $j('.news_class_' + index).click();
+                } .bind(this, i));
+            }
+            // entry.title, entry.link, entry.author,
+            // entry.publishedDate, entry.contentSnippet, entry.content
+        }
+        slidestart();
+    }
+
+
+    $j.jGFeed('http://www.k-window.com/category/economics/auto/feed/',
+		function (feeds) {
+		    // Проверяем ошибки
+		    if (!feeds) {
+		        // была ошибка
+		        return false;
+		    }
+
+		    //Math.round(Math.random()) ? news_gen(feeds) : news_back(feeds);
+		    news_gen(feeds);
+
+		    $j('div.items-more').append($j('div.items-row.cols-1.row-0:gt(3)'));
+		    $j('div.items-more').append(
+		    '   <div id="less_news">' +
+                    '<h3 style="cursor: pointer; width: 30%; float: left;"><i>Меньше новостей</i></h3>' +
+                        '<p class="readmore" id="more_news" style="width: 8%; float: left;">' +
+				            '<a href="javascript:void(0);">Cвернуть</a>' +
+		                  '</p>' +
+
+                '</div>' +
+                '<div style="clear: both"></div>'
+            );
+		    $j('#news').find('img').attr('width', '160')
+                            .attr('height', '100')
+                            .css('border', '0px');
+		    $j('p.readmore + div').slideToggle();
+		    $j('div.items-more > div.items-row.cols-1.row-0').slideUp();
+		    $j('div.items-more > div:contains("Меньше новостей")').slideUp();
+
+		    //Обработка полной инфы новостей
+		    $j('p:contains("Подробнее...")').click(function () {
+		        $j(this).next().slideDown();
+		        $j(this).css('display', 'none');
+
+		        tmp = $j(this).attr('id');
+		        $j('div#' + tmp).find('img').attr('width', '300')
+                                   .attr('height', '100%');
+		    });
+		    $j('p:contains("Свернуть")').click(function () {
+		        $j('p.readmore + div').slideUp();
+		        $j('p:contains("Подробнее...")').css('display', 'inline-block');
+
+		        tmp = $j(this).attr('id');
+		        $j('div#' + tmp).find('img').attr('width', '160')
+                                            .attr('height', '100%');
+		    });
+
+		    //Обработка дополнительных новостей
+		    ok = true;
+		    $j('div#more_news').click(function () {
+		        $j('div.items-more > div.items-row.cols-1.row-0').slideToggle();
+		        $j('div#less_news').slideToggle();
+		        if (ok) {
+		            $j(this).find('i').html('Меньше новостей');
+		            $j(this).find('a').html('Свернуть');
+		            ok = !ok;
+		        }
+		        else {
+		            $j(this).find('i').html('Больше новостей');
+		            $j(this).find('a').html('Развернуть');
+		            ok = !ok;
+		        }
+		    });
+		    $j('div#less_news').click(function () {
+		        $j('div.items-more > div.items-row.cols-1.row-0').slideUp();
+		        $j(this).slideUp();
+		        $j('div#more_news').find('i').html('Больше новостей');
+		        $j('div#more_news').find('a').html('Развернуть');
+		        ok = !ok;
+		    });
+		}, 10);
+</script>
+</div>
+			                                <!--<div class="items-row cols-1 row-0">
 		                                        <div class="item column-1">
 	                                                <h2>Поддержаный Ferrari готов промчаться для Вас</h2>
                                                     <p><img src="images/slideshow/image1.jpg" border="0" alt="Image" width="160" 
@@ -732,8 +971,8 @@
                                                     <div class="item-separator"></div>
 	                                            </div>
 						                        <span class="row-separator"></span>
-				                            </div>
-                                            <div class="items-more">
+				                            </div>-->
+                                            <!--<div class="items-more">
                                                 <h3>Больше статей...</h3>
                                                 <ol>
 	                                                <li>
@@ -754,7 +993,7 @@
                                                     <li class="pagination-next"><a title="Next" href="/car/index.php/en/?start=4" class="pagenav">След.</a></li>
                                                     <li class="pagination-end"><a title="End" href="/car/index.php/en/?start=4" class="pagenav">В конец</a></li>
                                                 </ul>		
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>	
                                 </div><!-- Middle Column -->   
@@ -798,7 +1037,7 @@ timestamp: true,
 avatars: true,
 behavior: 'default'
 }
-}).render().setUser('icetheme').start();
+}).render().setUser('cometokorea').start();
 </script>
 					                            </div>
 				                            </div>   
@@ -816,7 +1055,7 @@ behavior: 'default'
 					                            </div>
                                 			</div>   
                                         </div>             
-                                    </div>                                                  
+                                    </div>   
                                 </div>
                             </div><!-- Right Column -->
                                      
@@ -877,15 +1116,16 @@ behavior: 'default'
                             </div>    
                             <div class="moduletable_content clearfix">
                                 <div class="custom"  >
-	                                <p>Ш: 214.443.4574</p>
-                                    <p>Д: 214.443.4575</p>
+	                                <p>Тел.: +7 (914) 150-54-86</p>
+                                    <p>Индекс: : 680000</p>
                                     <p>E: 
     <script type='text/javascript'>
     <!--
     var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
     var path = 'hr' + 'ef' + '=';
-    var addy86615 = '&#105;nf&#111;' + '&#64;';
-    addy86615 = addy86615 + 'm&#111;t&#111;rt&#101;mpl&#97;t&#101;' + '&#46;' + 'c&#111;m';
+    var addy86615 = '&#105;nf&#111;' + '&#64;'; 
+    //addy86615 = addy86615 + 'm&#111;t&#111;rt&#101;mpl&#97;t&#101;' + '&#46;' + 'c&#111;m'; //document.write(addy86615+'<br/>');
+    addy86615 = 'leeark@coreatrade.com';
     document.write('<a ' + path + '\'' + prefix + ':' + addy86615 + '\'>');
     document.write(addy86615);
     document.write('<\/a>');
@@ -894,7 +1134,7 @@ behavior: 'default'
     <!--
     document.write('<span style=\'display: none;\'>');
     //-->
-    </script>Этот email адрес защищён от спам-ботов. Вам необходимо включить JavaScript, чтобы умидеть его.
+    </script>Этот email адрес защищён от спам-ботов. Вам необходимо включить JavaScript, чтобы увидеть его.
     <script type='text/javascript'>
     <!--
     document.write('</');
@@ -934,9 +1174,9 @@ behavior: 'default'
                             </div>    
                             <div class="moduletable_content clearfix">
                                 <div class="custom"  >
-	                                <p>ул. Большая д.36</p> 
-                                    <p>Хабаровск, Хабаровский край</p>
-                                    <p><a href="#22">Найти на карте</a></p>
+	                                <p>ул. Дзержинского <br /> д.65 оф.1002б</p> 
+                                    <p>г. Хабаровск</p>
+                                    <p><a href="about.html">Найти на карте</a></p>
                                 </div>
                             </div>
                         </div>
@@ -960,7 +1200,8 @@ behavior: 'default'
     var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
     var path = 'hr' + 'ef' + '=';
     var addy83427 = 'c&#97;r&#101;&#101;rs' + '&#64;';
-    addy83427 = addy83427 + 'm&#111;t&#111;rt&#101;pl&#97;t&#101;' + '&#46;' + 'c&#111;m';
+    addy83427= 'leeark@coreatrade.com'
+    //addy83427 = addy83427 + 'm&#111;t&#111;rt&#101;pl&#97;t&#101;' + '&#46;' + 'c&#111;m';
     document.write('<a ' + path + '\'' + prefix + ':' + addy83427 + '\'>');
     document.write(addy83427);
     document.write('<\/a>');
@@ -991,8 +1232,9 @@ behavior: 'default'
                             </div>    
                             <div class="moduletable_content clearfix">
                                 <ul class="menu" id="socialmenu">
-                                    <li class="item-199"><a href="http://www.facebook.com" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,');return false;" ><img src="images/icon_facebook.png" alt="Facebook Fan" /><span class="image-title">Facebook Fan</span> </a></li>
-                                    <li class="item-200"><a href="http://twitter.com" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,');return false;" ><img src="images/icon_twitter.png" alt="Twitter Page" /><span class="image-title">Twitter Page</span> </a></li>
+                                   <!-- <li class="item-199"><a href="http://www.facebook.com" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,');return false;" ><img src="images/icon_facebook.png" alt="Facebook Fan" /><span class="image-title">Facebook Fan</span> </a></li>-->
+                                    <!--<li class="item-200"><a href="http://twitter.com" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,');return false;" ><img src="images/icon_twitter.png" alt="Twitter Page" /><span class="image-title">Twitter Page</span> </a></li>-->
+                                    <li class="item-201"><a href="http://vk.com/coreatrade" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,');return false;" ><img src="images/icon_vk.png" alt="Корея Трэйд Вконтакте" /><span class="image-title">Мы Вконтакте</span> </a></li>
                                 </ul>
                             </div>
                         </div>
