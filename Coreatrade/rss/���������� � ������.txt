@@ -1,1 +1,0 @@
-http://jquery-howto.blogspot.com/2009/05/google-feeds-api-jquery-plugin.html
