@@ -1,0 +1,15 @@
+#news {
+	background: #eee;
+	border: solid 1px black;
+}
+
+#news article {
+	background: #ddd;
+	border: solid 1px black;
+	margin: 2px;
+}
+
+#news article header{
+	font-weight: 700;
+	cursor: pointer;
+}

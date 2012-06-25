@@ -29,7 +29,7 @@
 
 //Нумерация: id входящий == id принимаемый. 
 //id входящий формируется в цикле.
-       getByMark= function(id, callback){         
+       getByMark= function(id){         
          jgetBrand( function(dbrand) {           
               tmp= dbrand[id];
               callback(tmp);
@@ -44,8 +44,7 @@
        getByType= function(id/*, callback*/){         
          jgetType( function(dtype) {           
               tmp= dtype[id]; //alert(tmp.type);
-
-              window.location = "index.html";
+              window.location = "list.html";
          });
        };
 ololo= function(data){alert(data.type);};

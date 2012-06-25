@@ -69,7 +69,7 @@
         <script src="js/widget_2.js"></script>
         <style type="text/css" media="screen">
             /* Select the style */
-            /*\*/@import url("css/style1.css");
+            /*\*/@import url("css/style4.css");
             /**/
             /* Right Column Parameters */
             #outer-column-container
@@ -111,6 +111,65 @@
         
         <!-- Google Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+         <link rel="stylesheet" href="css/YMaps.css" type="text/css" />
+         <script src="http://api-maps.yandex.ru/1.1/index.xml?key=AM_v5U8BAAAAZsJwcAIAAoab7ZZQJhphfn_6iYDJiFEaDEIAAAAAAAAAAAAyit4DvKbBInolbKicsXCurbppcg=="
+	        type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var map = new YMaps.Map(document.getElementById("YMapsID"));
+            map.setCenter(new YMaps.GeoPoint(135.064261, 48.478676), 17);
+
+            // кнопки и шкала масштаба располагаем как хотим
+            map.addControl(new YMaps.Zoom(),
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.TOP_LEFT, // в какой угол поставить
+			new YMaps.Size(5, 5) // сколько от него отступ в пикселах (x, y)
+		)
+	);
+
+            // Включаем масштабирование скроллингом мыши
+            map.enableScrollZoom();
+
+            // миникарта
+            map.addControl(new YMaps.MiniMap(),
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.BOTTOM_RIGHT,
+			new YMaps.Size(5, 5)
+		)
+	);
+
+            // выбор типа карты
+            map.addControl(new YMaps.TypeControl());
+
+            // линейка с расстоянием
+            map.addControl(new YMaps.ScaleLine(),
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.BOTTOM_LEFT,
+			new YMaps.Size(5, 20)
+		)
+	);
+
+            // Тулбар
+            /*map.addControl(new YMaps.ToolBar(),
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.TOP_LEFT,
+			new YMaps.Size(250, 5)
+		)
+	);*/
+
+            // Создаем метку и добавляем ее на карту
+            var placemark = new YMaps.Placemark(new YMaps.GeoPoint(135.064261, 48.478676));
+            // Установка содержимого значка метки
+            placemark.setIconContent('ООО \"Корея Трэйд\"');
+            placemark.name = 'ООО \"Корея Трэйд\"';
+            placemark.description = '680000, г. Хабаровск, ул. Дзержинского д.65 оф. 1002б.';
+            map.addOverlay(placemark);
+
+            // Открываем балун
+            //placemark.openBalloon();
+        }       
+</script>
 
         <!--[if lte IE 8]>
             <link rel="stylesheet" type="text/css" href="css/ie.css" />
@@ -175,8 +234,8 @@
                                         <span class="icemega_title icemega_nosubtitle">НОВОСТИ</span>
                                     </a>
                                 </li>
-                                <li id="iceMenu_2000" class="iceMenuLiLevel_1 parent">
-                                    <a href="about.html" class=" iceMenuTitle">
+                                <li id="iceMenu_2000" class="iceMenuLiLevel_1 parent active">
+                                    <a href="about.html" class=" iceMenuTitle icemega_active">
                                         <span class="icemega_title">О компании</span>
                                         <span class="icemega_desc">Свяжитесь с нами</span>
                                     </a>
@@ -339,346 +398,7 @@
             </div>
         </div>
     
-    <div class="view_none" id="Page_1">
-
-        <div id="iceslideshow">
-            <style type="text/css">
-
-                .ice-slideshow-default,
-                .ice-slideshow-default .ice-main-wapper {max-width:1680px}
-            </style> 
-        <div id="iceslideshow157" class="ice-slideshow-default" style="height:480px;">
-	            <div class="preload"></div>
-                <div class="ice-navigator-wrapper clearfix">
-                <!-- NAVIGATOR -->
-                  <div class="ice-navigator-outer">
-                        <ul class="ice-navigator">
-                                        <li id="slide_0" class="hasTip" title=""><div><span class="ice-title"></span>
-                             </div></li>
-                                         <li id="slide_1" class="hasTip" title=""><div><span class="ice-title"></span>
-                             </div></li>
-                                         <li id="slide_2"  class="hasTip" title=""><div><span class="ice-title"></span>
-                             </div></li>
-                                         <li id="slide_3"  class="hasTip" title=""><div><span class="ice-title"></span>
-                             </div></li>
-                                         <li id="slide_4"  class="hasTip" title=""><div><span class="ice-title"></span>
-                             </div></li>
-                        </ul>
-                  </div>
- 	            <!-- END NAVIGATOR //-->
-                </div>	    
-	    <!-- MAIN CONTENT --> 
-            <div class="ice-main-wapper" style="height: 480px;">
-                <div class="ice-proccessbar">
-                </div>
-                <div id="slide_0" class="ice-main-item" style="display: block;">
-                    <img src="images/slideshow/image1.jpg"
-                        title="" alt="" class="image-slide" />
-                    <div class="ice-description">
-                        <h3 class="ice-title">
-                            
-                        </h3>
-                        <p>
-                            
-                        </p>
-                        <a id="slide_a_0" href="javascript:void(0)" class="button">Подробнее</a>
-                    </div>
-                </div>
-                <div  id="slide_1" class="ice-main-item">
-                    <img src="images/slideshow/image2.jpg"
-                        title="" alt="" class="image-slide" />
-                    <div class="ice-description">
-                        <h3 class="ice-title">
-                            
-                        </h3>
-                        <p>
-                            </p>
-                        <a id="slide_a_1" href="javascript:void(0)" class="button">Подробнее</a>
-                    </div>
-                </div>
-                <div id="slide_2" class="ice-main-item">
-                    <img src="images/slideshow/image3.jpg"
-                        title="" alt="" class="image-slide" />
-                    <div class="ice-description">
-                        <h3 class="ice-title">
-                            
-                        </h3>
-                        <p>
-                            </p>
-                        <a id="slide_a_2" href="javascript:void(0)" class="button">Подробнее</a>
-                    </div>
-                </div>
-                <div id="slide_3" class="ice-main-item">
-                    <img src="images/slideshow/image4.jpg"
-                        title="" alt="" class="image-slide" />
-                    <div class="ice-description">
-                        <h3 class="ice-title">
-                            
-                        </h3>
-                        <p>
-                            </p>
-                        <a id="slide_a_3" href="javascript:void(0)" class="button">Подробнее</a>
-                    </div>
-                </div>
-                <div id="slide_4" class="ice-main-item">
-                    <img src="images/slideshow/image5.jpg"
-                        title="" alt=""
-                        class="image-slide" />
-                    <div class="ice-description">
-                        <h3 class="ice-title">
-                            
-                        </h3>
-                        <p>
-                            </p>
-                        <a id="slide_a_4" href="javascript:void(0)" class="button">Подробнее</a>
-                    </div>
-                </div>
-                <div class="ice-buttons-control">
-                    <div class="ice-previous">
-                        Предыдущий</div>
-                    <div class="ice-next">
-                        Последующий</div>
-                </div>
-            </div>
-	    <!-- END MAIN CONTENT -->    
-        </div>
-     <script type="text/javascript">
- 	    function slidestart() {
-			    $$('.hasTip').each(function(el) {
-				    var title = el.get('title');
-				    if (title) {
-					    var parts = title.split('::', 2);
-					    el.store('tip:title', parts[0]);
-					    el.store('tip:text', parts[1]);
-				    }
-			    });
-		    var JTooltips = new Tips($$('.hasTip'), { fixed: false});
-        }
-     </script>
-     <script type="text/javascript">
-	    var _lofmain = $('iceslideshow157');
-	    var object = new IceSlideShow(_lofmain.getElement('.ice-main-wapper'), 
-								      _lofmain.getElement('.ice-navigator-outer .ice-navigator'),
-								      _lofmain.getElement('.ice-navigator-outer'),
-								      {
-									      fxObject:{
-										    transition:Fx.Transitions.Sine.easeInOut,  
-										    duration:2200									  },
-									      fxCaptionObject:{
-										    transition:Fx.Transitions.Sine.easeInOut,  
-										    duration:1200									  },
-									      transition:Fx.Transitions.Sine.easeInOut,  
-									      slideDuration:1800,
-									      slideCaption: false,
-									      captionHeight: 80,
-									      captionOpacity: 1,
-									      mainItemSelector: 'div.ice-main-item',
-									      interval:5500,
-									      direction :'opacity', 
-									      navItemHeight:12,
-									      navItemWidth:12,
-									      navItemsDisplay:3,
-									      navPos:'top',
-									      zoom: 50,
-									      pan: 50,
-									      pansize: 100,
-									      wdirection: "left"
-								      });
-			    object.registerButtonsControl('click', {next:_lofmain.getElement('.ice-next'),previous:_lofmain.getElement('.ice-previous')});
-			    object.start(1, _lofmain.getElement('.preload'));
-    </script>
-        </div>
-	    
-         <!-- Promo -->
-        <div id="promo">
-            <div class="inside_effect" align="center">
-                <div class="wrapper" align="center">
-                    <div class="modules-wrap clearfix" id="mark_table" align="center"; style="width:100%; padding: 0px; margin: 0px">
-<script type="text/javascript">
-//Отрисовка первой строки
-     function plot(int, dbrand) {
-                for( td=0; td < int; td++) { 
-                    $j("div#mark_table").append(
-                        
-                        '<div class="mark_show separator floatleft" id="tr_mark_'+ td +'">' + 
-                            '<div class="moduletable has-subtitle">' +
-                                    /*'<div class="moduletable-header">' +
-                                       '<div class="moduletable-header-inside">' +
-                		         '<h5 class="mod-title" align="center">'+ dbrand[td].mark +'</h5>' +
-                                       '</div>' +
-                                     '</div>' +*/
-                                    '<div class="moduletable_content clearfix">' +
-                                            '<a title="'+ dbrand[td].mark +' ('+ dbrand[td].model.length  
-                                               +' авто)" href="javascript:getByMark('+ td +')">' +
-                                                   '<img src="'+ dbrand[td].img +'" alt="" />' +
-                                            '</a>' +
-                                    '</div>' +
-                            '</div>' +
-                        '</div>'
-                     );
-                }
-     }
-
-     $j(document).ready( function() {
-         jgetBrand( function(dbrand) { 
-//Отрисовка первой строки. Проверка на многострочность     
-             if (dbrand.length < 13)
-                 plot(dbrand.length, dbrand);
-//Если 2 строки, то проверка на чётность. отрисовка
-              else {
-                int= parseInt(dbrand.length/2);
-                if (dbrand.length-int-int)
-                    plot(++int, dbrand);
-                else
-                    plot(int, dbrand);               
-                for( td=int; td < dbrand.length; td++) {
-                    
-                    name= dbrand[td].mark.toLowerCase();
-                    $j('div#tr_mark_'+(td-int)).append(
-                        
-                            '<div class="mark_show separator floatleft" id="tr_mark_'+ td +'">' +
-                                    /*'<div class="moduletable-header">' +
-                                       '<div class="moduletable-header-inside">' +
-                		         '<h5 class="mod-title" align="center">'+ dbrand[td].mark +'</h5>' +
-                                       '</div>' +
-                                     '</div>' +*/
-                                    '<div class="moduletable_content clearfix">' +
-                                            '<a title="'+ dbrand[td].mark +' ('+ dbrand[td].model.length  
-                                               +' авто)" href="javascript:getByMark('+ td +')">' +
-                                                   '<img src="'+ dbrand[td].img +'" alt="" />' +
-                                            '</a>' +
-                                    '</div>' +
-                            '</div>' 
-                    );
-                }
-              }
-         });
-});
-</script>
-                        <!--<div class="mark_show separator floatleft">
-                            <div class="moduletable has-subtitle">
-                                    <div class="moduletable-header">
-                                        <div class="moduletable-header-inside">
-                		                    <h5 class="mod-title" align="center">DAEWOO</h5>
-                                        </div>    
-                                    </div>    
-                                    <div class="moduletable_content clearfix">
-                                        <div id="Div10" class="" align="center">
-                                            <a href="javascript:onclick('void')">
-                                                <img src="test.png"/>
-                                            </a>
-                                        </div>  
-                                    </div>
-                            </div>
-                            <div class="moduletable has-subtitle">
-        			                <div class="moduletable-header">
-                                        <div class="moduletable-header-inside">
-                		                    <h5 class="mod-title" align="center">DAEWOO</h5>
-                                        </div>    
-                                    </div>    
-                                    <div class="moduletable_content clearfix">
-                                        <div id="Div11" class="" align="center">
-                                            <a href="javascript:onclick('void')">
-                                                <img src="test.png"/>
-                                            </a>
-                                        </div>  
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="mark_show separator floatleft">
-                            <div class="moduletable has-subtitle">
-        			            <div class="moduletable-header">
-                                    <div class="moduletable-header-inside">
-                		                <h5 class="mod-title" align="center">DAEWOO</h5>
-                                    </div>    
-                                </div>    
-                                <div class="moduletable_content clearfix">
-                                    <div id="Div20" class="" align="center">
-                                        <a href="381.htm">
-                                            <img src="test.png" />
-                                        </a>
-                                    </div>  
-                                </div>
-		                    </div>
-                            <div class="moduletable has-subtitle">
-        			            <div class="moduletable-header">
-                                    <div class="moduletable-header-inside">
-                		                <h5 class="mod-title" align="center">DAEWOO</h5>
-                                    </div>    
-                                </div>    
-                                <div class="moduletable_content clearfix">
-                                    <div id="Div21" class="" align="center">
-                                        <a href="381.htm">
-                                            <img src="test.png" />
-                                        </a>
-                                    </div>  
-                                </div>
-		                    </div>
-                        </div>
-                        <div class="mark_show separator floatleft">
-                            <div class="moduletable has-subtitle">
-        			            <div class="moduletable-header">
-                                    <div class="moduletable-header-inside">
-                		                <h5 class="mod-title" align="center">DAEWOO</h5>
-                                    </div>    
-                                </div>    
-                                <div class="moduletable_content clearfix">
-                                    <div id="Div30" class="" align="center">
-                                        <a href="381.htm">
-                                            <img src="test.png" />
-                                        </a>
-                                    </div>  
-                                </div>
-		                    </div>
-                            <div class="moduletable has-subtitle">
-        			            <div class="moduletable-header">
-                                    <div class="moduletable-header-inside">
-                		                <h5 class="mod-title" align="center">DAEWOO</h5>
-                                    </div>    
-                                </div>    
-                                <div class="moduletable_content clearfix">
-                                    <div id="Div31" class="" align="center">
-                                        <a href="381.htm">
-                                            <img src="test.png" />
-                                        </a>
-                                    </div>  
-                                </div>
-		                    </div>
-                        </div>
-                        <div class="mark_show separator floatleft">
-                            <div class="moduletable has-subtitle">
-        			            <div class="moduletable-header">
-                                    <div class="moduletable-header-inside">
-                		                <h5 class="mod-title" align="center">DAEWOO</h5>
-                                    </div>    
-                                </div>    
-                                <div class="moduletable_content clearfix">
-                                    <div id="Div40" class="" align="center">
-                                        <a href="381.htm">
-                                            <img src="test.png" />
-                                        </a>
-                                    </div>  
-                                </div>
-		                    </div>
-                            <div class="moduletable has-subtitle">
-        			            <div class="moduletable-header">
-                                    <div class="moduletable-header-inside">
-                		                <h5 class="mod-title" align="center">DAEWOO</h5>
-                                    </div>    
-                                </div>    
-                                <div class="moduletable_content clearfix">
-                                    <div id="Div41" class="" align="center">
-                                        <a href="381.htm">
-                                            <img src="test.png" />
-                                        </a>
-                                    </div>  
-                                </div>
-		                    </div>
-                        </div>-->
-                     </div>  
-                </div> 
-            </div>    
-        </div><!-- Promo -->  
+    <div class="view_ok" id="Page_1">
 
      <!-- Content -->
 	    <div id="content">
@@ -691,309 +411,78 @@
                                 <!-- Middle Column -->   
                                 <div id="middle-column">                        
                                     <div class="inside"> 
-                                        <div id="system-message-container">
+                                        <div id="system-message-container"></div>
+                                        <div class="contact" >
+                                            <h1>
+                                                <span class="contact-name">ООО "Корея Трэйд"</span>
+                                            </h1>
+<script type="text/javascript">
+    $j(document).ready(function () {
+        $j('div.YMaps-b-balloon-content').css('width', '150px');
+    });
+</script>
+                                            <div id="YMapsID" style="width:50%;height:300px; display: block; float: left;"></div>
+                                            <!--<img src="images/contacts/contact.png" alt="" title="" style="width: 30%; float: left; margin-left: 100px" />-->
+                                            <div style="width:40%;height:400px; display:block; float:left; margin-left: 5px">
+                                                <h5 style="margin-bottom: 5px">Адрес</h5>
+                                                <p>
+                                                    <img src="images/contacts/con_address.png" alt="Corea Trade Address " title="Корея Трэйд. Адрес" />
+                                                    680000, Россия, г. Хабаровск,<br />ул. Дзержинского д.65 оф. 1002б.
+                                                </p>
+                                                <h5 style="margin-bottom: 5px">Контакты</h5>
+                                                <p>
+                                                    <img src="images/contacts/con_mobile.png" alt="Corea Trade Callback " title="Корея Трэйд. Контакты" />
+                                                    <b style="font-size: 1.2em">Тел:</b>&nbsp&nbsp +7 (914) 150-54-86 
+                                                </p>
+                                                <p>
+                                                    <img src="images/contacts/emailButton.png" alt="Corea Trade E-mail " title="Корея Трэйд. E-mail" />
+                                                    <b style="font-size: 1.2em">E-mail:</b>&nbsp&nbsp leeark@coreatrade.com
+                                                </p>
+                                            </div>
                                         </div>
                                         <div class="blog">
-	                                        <h1>Последние новости</h1>
-<div id="news">
-<script type="text/javascript">
-    //Обзор размером 2 абзаца для статьи. Формирование позиции
-    function readlitle(str) {
-        word = 700;  //количество букв в обзоре, включая html-теги
-
-        tmp = str.substr(0, word);
-        end= tmp.lastIndexOf('>');
-        start = tmp.lastIndexOf('<');
-
-        if (end == word) return word+1; 
-        if (start == word) return word;
-        if (end > start) return word+1; 
-        return start; 
-    }
-
-    function news_gen(feeds) {
-        for (var i = 0; i < feeds.entries.length; i++) {
-            var entry = feeds.entries[i];
-            // Данные статьи (фида)
-            pos = readlitle(entry.content); //alert(pos + " " + entry.content.substring(0, pos)); // полуотрезок типа [+ )-
-            $j('#news').append(
-                    '<a name="new_'+ i +'"></a>'+
-                    '<div id="news_id_' + i + '" class="items-row cols-1 row-0">' +
-		                '<div class="item column-1">' +
-                            '<h2 style="cursor: pointer">' + entry.title + '</h2>' +
-            /*'<p>' +
-            '<img src="" border="0" alt="Image" width="160" height="105" style="border: 0;" />' +
-            '</p>' +*/
-                                entry.content.substring(0, pos) +
-                                '<p id="news_id_' + i + '" class="readmore news_class_'+ i +'">'+
-				                    '<a href="javascript:void(0);">Подробнее...</a>' +
-		                        '</p>' +
-                                '<div>' +
-                                    entry.content.substring(pos) +
-                                    '<footer><author>Автор: ' + entry.author + '</author> <date>' + entry.publishedDate + '</date> <a href="' + entry.link + '">Источник</a></footer>' +
-                                    '<div class="item-separator"></div>' +
-                                    '<p id="news_id_' + i + '" class="readmore ">' +
-				                        '<a href="javascript:void(0);">Свернуть</a>' +
-		                            '</p>' +
-                                '</div>' +
-	                    '</div>' +
-						'<span class="row-separator"></span>' +
-                    '</div>'
-                );
-            //Fill front page
-            if (i == 3)
-                $j('#news').append(
-                    '<div class="items-more">' +
-                        '<div id="more_news" >' +
-                            '<h3 style="cursor: pointer; width: 30%; float: left; margin-bottom: 30px"><i>Больше новостей</i></h3>' +
-                            '<p class="readmore" id="more_news" style="width: 8%; float: left;">' +
-				                '<a name="news_expand" href="javascript:void(0);">Развернуть</a>' +
-		                    '</p>' +
-
-                        '</div>' +
-                    '<div style="clear: both"></div>' +
-                    '</div>'
-                );
-            // Fill SlideShow
-            if (i < 5) {
-                $j('li#slide_' + i).attr('title', entry.title);
-                $j('li#slide_' + i + ' span').html(entry.title);
-
-                $j('div#slide_' + i +' img').attr('title', entry.title)
-                                            .attr('alt', entry.title)
-                                            .attr('src', $j('div#news_id_' + i +' img').attr('src'));
-                $j('div#slide_' + i + ' h3').html(entry.title);
-                $j('div#slide_' + i + ' p').html(entry.contentSnippet);
-
-                 (i != 4) ?
-                    $j('#slide_a_' + i).attr('href', '#new_' + i)
-                :
-                    $j('#slide_a_' + i).attr('href', '#news_expand');
-                     
-                $j('#slide_a_' + i).click(function (index) {
-                    if (index != 4) $j('.news_class_' + index).click();
-                    else
-                        $j('div#more_news').click();
-                        $j('.news_class_' + index).click();
-                        window.location = '#new_4';
-                } .bind(this, i));
-            }
-            // entry.title, entry.link, entry.author,
-            // entry.publishedDate, entry.contentSnippet, entry.content
-        }
-        slidestart();
-    }
-
-    function news_back(feeds) {
-        for (var i = feeds.entries.length-1; i >= 0 ; i--) {
-            var entry = feeds.entries[i];
-            // Данные статьи (фида)
-            pos = readlitle(entry.content); //alert(pos + " " + entry.content.substring(0, pos)); // полуотрезок типа [+ )-
-            $j('#news').append(
-                     '<a name="new_' + i + '"></a>' +
-                    '<div id="news_id_' + i + '" class="items-row cols-1 row-0">' +
-		                '<div class="item column-1">' +
-                            '<h2 style="cursor: pointer">' + entry.title + '</h2>' +
-            /*'<p>' +
-            '<img src="" border="0" alt="Image" width="160" height="105" style="border: 0;" />' +
-            '</p>' +*/
-                                entry.content.substring(0, pos) +
-                                '<p id="news_id_' + i + '" class="readmore">' +
-				                    '<a href="javascript:void(0);">Подробнее...</a>' +
-		                        '</p>' +
-                                '<div>' +
-                                    entry.content.substring(pos) +
-                                    '<footer><author>Автор: ' + entry.author + '</author> <date>' + entry.publishedDate + '</date> <a href="' + entry.link + '">Источник</a></footer>' +
-                                    '<div class="item-separator"></div>' +
-                                    '<p id="news_id_' + i + '" class="readmore">' +
-				                        '<a href="javascript:void(0);">Свернуть</a>' +
-		                            '</p>' +
-                                '</div>' +
-	                    '</div>' +
-						'<span class="row-separator"></span>' +
-                    '</div>'
-                );
-            if (i == 3)
-                $j('#news').append(
-                    '<div class="items-more">' +
-                        '<div id="more_news" >' +
-                            '<h3 style="cursor: pointer; width: 30%; float: left; margin-bottom: 30px"><i>Больше новостей</i></h3>' +
-                            '<p class="readmore" id="more_news" style="width: 8%; float: left;">' +
-				                '<a href="javascript:void(0);">Развернуть</a>' +
-		                    '</p>' +
-
-                        '</div>' +
-                    '<div style="clear: both"></div>' +
-                    '</div>'
-                  );
-            // Fill SlideShow
-            if (i > 5) {
-                $j('li#slide_' + i).attr('title', entry.title);
-                $j('li#slide_' + i + ' span').html(entry.title);
-
-                $j('div#slide_' + i + ' img').attr('title', entry.title)
-                                            .attr('alt', entry.title)
-                                            .attr('src', $j('div#news_id_' + i + ' img').attr('src'));
-                $j('div#slide_' + i + ' h3').html(entry.title);
-                $j('div#slide_' + i + ' p').html(entry.contentSnippet);
-
-                $j('#slide_a_' + i).attr('href', '#new_' + i);
-                $j('#slide_a_' + i).click(function (index) {
-                    $j('.news_class_' + index).click();
-                } .bind(this, i));
-            }
-            // entry.title, entry.link, entry.author,
-            // entry.publishedDate, entry.contentSnippet, entry.content
-        }
-        slidestart();
-    }
-
-
-    $j.jGFeed('http://www.k-window.com/category/economics/auto/feed/',
-		function (feeds) {
-		    // Проверяем ошибки
-		    if (!feeds) {
-		        // была ошибка
-		        return false;
-		    }
-
-		    //Math.round(Math.random()) ? news_gen(feeds) : news_back(feeds);
-		    news_gen(feeds);
-
-		    $j('div.items-more').append($j('div.items-row.cols-1.row-0:gt(3)'));
-		    $j('div.items-more').append(
-		    '   <div id="less_news">' +
-                    '<h3 style="cursor: pointer; width: 30%; float: left;"><i>Меньше новостей</i></h3>' +
-                        '<p class="readmore" id="more_news" style="width: 8%; float: left;">' +
-				            '<a href="javascript:void(0);">Cвернуть</a>' +
-		                  '</p>' +
-
-                '</div>' +
-                '<div style="clear: both"></div>'
-            );
-		    $j('#news').find('img').attr('width', '160')
-                            .attr('height', '100')
-                            .css('border', '0px');
-		    $j('p.readmore + div').slideToggle();
-		    $j('div.items-more > div.items-row.cols-1.row-0').slideUp();
-		    $j('div.items-more > div:contains("Меньше новостей")').slideUp();
-
-		    //Обработка полной инфы новостей
-		    $j('p:contains("Подробнее...")').click(function () {
-		        $j(this).next().slideDown();
-		        $j(this).css('display', 'none');
-
-		        tmp = $j(this).attr('id');
-		        $j('div#' + tmp).find('img').attr('width', '300')
-                                   .attr('height', '100%');
-		    });
-		    $j('p:contains("Свернуть")').click(function () {
-		        $j('p.readmore + div').slideUp();
-		        $j('p:contains("Подробнее...")').css('display', 'inline-block');
-
-		        tmp = $j(this).attr('id');
-		        $j('div#' + tmp).find('img').attr('width', '160')
-                                            .attr('height', '100%');
-		    });
-
-		    //Обработка дополнительных новостей
-		    ok = true;
-		    $j('div#more_news').click(function () {
-		        $j('div.items-more > div.items-row.cols-1.row-0').slideToggle();
-		        $j('div#less_news').slideToggle();
-		        if (ok) {
-		            $j(this).find('i').html('Меньше новостей');
-		            $j(this).find('a').html('Свернуть');
-		            ok = !ok;
-		        }
-		        else {
-		            $j(this).find('i').html('Больше новостей');
-		            $j(this).find('a').html('Развернуть');
-		            ok = !ok;
-		        }
-		    });
-		    $j('div#less_news').click(function () {
-		        $j('div.items-more > div.items-row.cols-1.row-0').slideUp();
-		        $j(this).slideUp();
-		        $j('div#more_news').find('i').html('Больше новостей');
-		        $j('div#more_news').find('a').html('Развернуть');
-		        ok = !ok;
-		    });
-		}, 10);
-</script>
-</div>
-			                                <!--<div class="items-row cols-1 row-0">
+                                        <div class="clearfix"></div>
+	                                        <h1 style="text-align:center">О компании</h1>
+			                                <div class="items-row cols-1 row-0">
 		                                        <div class="item column-1">
-	                                                <h2>Поддержаный Ferrari готов промчаться для Вас</h2>
-                                                    <p><img src="images/slideshow/image1.jpg" border="0" alt="Image" width="160" 
-                                                            height="105" style="border: 0;" /> Добро пожаловать в понедельник, чтобы отменить ответ. Добавьте еще одну запись. При использовании этого параметра для принятия в большой машине. Более чем дети, которые были его, а затем начать здесь, и всегда будет, здесь или здесь. Завтра различных озер, конечно. Найти все здесь. Мы используем только, вот ваша жизнь, вам нужно больше. Существует всегда не больше и не больше прямо сейчас!</p>
-                                                    <p class="readmore">
-				                                        <a href="/car/index.php/en/home-english/38-preowned-ferrari-ready-for-you-at-motor">
-                                                        Подробнее...</a>
-		                                            </p>
+	                                                <!--<h2>О компании</h2>-->
+                                                    <p>
+                                                        <img src="images/contacts/foto 003.jpg" border="0" alt="Image" width="160" height="105" style="border: 0;" />
+                                                        
+
+                                                        Авто из Южной Кореи - это качество по доступной цене… а, с недавнего времени, еще и современный (порой даже экстравагантный) дизайн. В этом разделе каталога обзоры (характеристики, цены) корейских автомобилей. Отзывы владельцев корейских авто.
+<p>Авто из Южной Кореи - это качество по доступной цене… а, с недавнего времени, еще и современный (порой даже экстравагантный) дизайн. В этом разделе каталога обзоры (характеристики, цены) корейских автомобилей. Отзывы владельцев корейских авто.
+В последние годы разработчики Hyundai активно занимаются обновлением модельного ряда, и представляют миру все более смелые, и экспрессивные «струящиеся скульптуры» - обновленная концепция и основной путь развития компании. Показанный миру в конце апреля новый Hyundai i30 дал четко понять, что Хёнде (Хендай, как многие произносят) можно теперь сравнивать только с Хёнде (и тени на юмор в этом выражении нет).< /p>
+<p>Корейский автопроизводитель Hyundai представил в апреле 2012 года в Нью-Йорке третью реинкарнацию успешного кроссовера Hyundai Santa Fe, причем сразу в двух кузовных исполнениях: семиместном Hyundai Santa Fe и пятиместном Hyundai Santa Fe Sport. С 2000 года первые два поколения Санта Фе нашли более 2,56 миллионов своих приверженцев (350 000 корейских кроссоверов Santa Fe прижились в Европе). <br />
+Корейский автопроизводитель KIA весной 2012 года представил слегка обновленный КИА Соренто II. Производитель позиционирует рестайлиговый кроссовер KIA Sorento New, как модель 2013 года. Пока машины с новой внешностью доберутся до покупателей в России, на дворе действительно наступит 2013 год. </p>
+<p>На Женевском автосалоне 2011 корейский автопроизводитель SsangYong Motors представил свое виденье для замены рамного пикапа Actyon Sports в лице концепта SUT 1. Ровно год понадобился компании из страны «Утренней свежести» для подготовки серийного SsangYong New Actyon Sports, и в марте 2012 года европейские автомобилисты смогли воочию лицезреть новую версию “спортивного Актиона”.</p>
+<p>Hyundai Solaris — российский близнец мирового автомобиля Hyundai Verna, который в свою очередь является наследником известной на российском рынке модели предыдущего поколения Hyundai Accent. < /p>
+<p>Мировая премьера Hyundai Verna (российский Хундай Солярис) состоялась на Шанхайском автосалоне 2010 года. </p/>
+<p>В Поднебесной этот автомобиль продается с июля месяца 2010 года, в остальном мире он появится в продаже в начале 2011 года. В том числе и в Российской Федерации, он будет собственного производства и под оригинальным именем Solaris. Со слов производителя, именно этому имени отдали предпочтение поклонники марки в ходе национального голосования. Само слово Solaris является производным от латинского «sol», означающего «солнце». Выпуск первого автомобиля Хендай Солярис в кузове седан запланирован на январь 2011 года, на новом автозаводе Hyundai, построенном в Санкт-Петербурге. А в мае 2011 года появляется и Hyundai Solaris в кузове хэтчбек.</p>
+<p>На сегодняшний день авто из Кореи бьют рекорды продаж не только в России и странах СНГ, но и в Европе. Объясняется это не только довольно привлекательной ценой на продукцию южнокорейского автопрома, но и ее прекрасными техническими характеристиками. В частности, современное корейское авто может похвастаться такими качествами, как:</p>
+<lu>
+<li>- удобство в эксплуатации и простота в обслуживании;</li>
+ <li>- стильный и привлекательный дизайн;</li>
+ <li>- полная и современная комплектация;</li>
+ <li>- повышенный уровень комфортабельности;</li>
+ <li>- весьма продолжительный срок службы.  </li>
+ </lu><br />
+<p>Именно поэтому объемы продаж авто из Кореи с каждым годом растут, и армия их поклонников постоянно пополняется российскими автолюбителями, которые при относительно невысоких финансовых затратах получают современную, практичную и надежную машину, составляющую достойную конкуренцию продукции не только отечественных, но и европейских производителей.</p>
+<p>Безусловно, спрос рождает предложение. Однако для того, чтобы не стать жертвой мошенников и впоследствии остаться не только без авто из Кореи, но и без денег, следует отдавать предпочтение проверенным временем фирмам-поставщикам, которые обладают безупречной деловой репутацией.</p>
+Наша компания специализируется на продаже авто из Кореи на протяжении последних шести лет. За это время нашими услугами воспользовались сотни автолюбителей не только из Москвы, но и из различных регионов России. При работе с клиентами мы выбираем индивидуальный подход и учитываем любое их пожелание, при приобретении подержанной корейской иномарки на вторичном рынке. Воспользовавшись нашими услугами, вы можете рассчитывать на: 
+- приобретение авто из Кореи по доступной цене;
+- выбор интересующей вас модели и варианта комплектации;
+- отсутствие проблем с таможенным оформлением авто из Кореи, так как решение всех этих вопросов возьмут на себя наши специалисты;
+
+
+
+
+                                                    </p>
                                                     <div class="item-separator"></div>
 	                                            </div>
 						                        <span class="row-separator"></span>
 				                                </div>
-                                            <div class="items-row cols-1 row-1">
-		                                        <div class="item column-1">
-    	                                            <h2>Даже 80,000+ потентов далее, хорошая идея всегда выделяется.</h2>
-                                                    <p><img src="images/slideshow/image2.jpg" border="0" alt="Image" width="160" 
-                                                            height="105" style="border: 0;" /> Добро пожаловать в понедельник, чтобы отменить ответ. Добавьте еще одну запись. При использовании этого параметра для принятия в большой машине. Более чем дети, которые были его, а затем начать здесь, и всегда будет, здесь или здесь. Завтра различных озер, конечно. Найти все здесь. Мы используем только, вот ваша жизнь, вам нужно больше. Существует всегда не больше и не больше прямо сейчас!</p>
-		                                            <p class="readmore">
-				                                        <a href="/car/index.php/en/home-english/42-even-80-000-patents-later-a-good-idea-always-stands-out">
-					                                    Подробнее...</a>
-		                                            </p>
-                                                    <div class="item-separator"></div>
-	                                            </div>
-						                        <span class="row-separator"></span>
-				                            </div>
-						                    <div class="items-row cols-1 row-2">
-		                                        <div class="item column-1">
-	                                                <h2>2013 Mercedes-Benz SL63 AMG</h2>
-                                                    <p><img src="images/slideshow/image3.jpg" border="0" alt="Image" width="160" height="110" /> Добро пожаловать в понедельник, чтобы отменить ответ. Этот мягкий acceptrange не здесь. Мы еще раз. Пожалуйста, получите больше, но вы увидите более членов. Ваш комментарий здесь является выбор вам нужно это всегда живой.</p>
-		                                            <p class="readmore">
-				                                        <a href="/car/index.php/en/home-english/39-2013-mercedes-benz-sl63-amg">
-					                                    Подробнее...</a>
-		                                            </p>
-                                                    <div class="item-separator"></div>
-	                                            </div>
-						                        <span class="row-separator"></span>
-				                            </div>
-						                    <div class="items-row cols-1 row-3">
-		                                        <div class="item column-1">
-	                                                <h2>Загрузите 'Bondye Bel!' сингл</h2>
-                                                    <p><img src="images/slideshow/image4.jpg" border="0" alt="Image" width="160" height="110" /> Добро пожаловать в понедельник, чтобы отменить ответ. Этот мягкий acceptrange не здесь. Мы еще раз. Пожалуйста, получите больше, но вы увидите более членов. Ваш комментарий здесь является выбор вам нужно это всегда живой.</p>
-                                                    <p class="readmore">
-				                                        <a href="/car/index.php/en/home-english/43-download-the-bondye-bel-single">
-					                                    Подробнее...</a>
-		                                            </p>
-                                                    <div class="item-separator"></div>
-	                                            </div>
-						                        <span class="row-separator"></span>
-				                            </div>-->
-                                            <!--<div class="items-more">
-                                                <h3>Больше статей...</h3>
-                                                <ol>
-	                                                <li>
-		                                                <a href="/car/index.php/en/home-english/44-maserati-trademarks-levante-name-for-new-small-sedan">
-			                                                Maserati под торговой маркой Levante -- имя для нового малого седана</a></li>
-	                                                <li>
-		                                                <a href="/car/index.php/en/home-english/45-landscape-project-at-the-grayslake-campus">
-			                                                Пейзаж проект в кампусе Grayslake</a>
-	                                                </li>
-                                                </ol>
-                                            </div>
-		                                    <div class="pagination">
-												<p class="counter">Страница 1 из 2</p>
-								                <ul>
-                                                    <li class="pagination-start"><span class="pagenav">В начало</span></li>
-                                                    <li class="pagination-prev"><span class="pagenav">Пред.</span></li>
-                                                    <li><span class="pagenav">1</span></li><li><a title="2" href="/car/index.php/en/?start=4" class="pagenav">2</a></li>
-                                                    <li class="pagination-next"><a title="Next" href="/car/index.php/en/?start=4" class="pagenav">След.</a></li>
-                                                    <li class="pagination-end"><a title="End" href="/car/index.php/en/?start=4" class="pagenav">В конец</a></li>
-                                                </ul>		
-                                            </div>-->
+                                            
                                         </div>
                                     </div>	
                                 </div><!-- Middle Column -->   
