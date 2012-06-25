@@ -28,8 +28,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <?php endif; ?>
 <tr>
 	<td colspan="2">
-	<br /><br />
-	<form action="<?php echo JRoute::_( 'index.php' );?>" method="post" name="emailForm" id="emailForm" class="form-validate">
+	<br /><br /><!--<?php echo JRoute::_( 'index.php' );?>-->
+	<form action="http://coreatrade.com/paradigm/Puls/index.php" method="post" name="emailForm" id="emailForm" class="form-validate">
 		<div class="contact_email<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 			<label for="contact_name">
 				&nbsp;<?php echo JText::_( 'Ваше имя' );?>:

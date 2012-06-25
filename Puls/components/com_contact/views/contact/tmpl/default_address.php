@@ -10,8 +10,29 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
       <div style="width: 450px; text-align: right;">
         <a href="http://api.yandex.ru/maps/tools/constructor/?lang=ru-RU" target="_blank" style="color: #1A3DC1; font: 13px Arial,Helvetica,sans-serif;"></a>
       </div>
-      <script type="text/javascript">function fid_133855381901717710237(ymaps) {var map = new ymaps.Map("ymaps-map-id_133855381901717710237", {center: [135.10086478012192, 48.49599184745651], zoom: 16, type: "yandex#map"});map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"]));};</script>
-      <script type="text/javascript" src="http://api-maps.yandex.ru/2.0/?coordorder=longlat&load=package.full&wizard=constructor&lang=ru-RU&onload=fid_133855381901717710237"></script>
+<script type="text/javascript" src="http://api-maps.yandex.ru/2.0/?coordorder=longlat&load=package.full&wizard=constructor&lang=ru-RU&onload=fid_133855381901717710237"></script>
+<script type="text/javascript">
+     function fid_133855381901717710237(ymaps) {
+        var map = new ymaps.Map("ymaps-map-id_133855381901717710237",
+           {center: [135.10086478012192, 48.49599184745651], zoom: 16, 
+           type: "yandex#map"}
+        );
+        map.controls
+                 .add("zoomControl")
+                 .add("mapTools")
+                 .add(new ymaps.control.TypeSelector(
+             ["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"])
+        );
+        // создает метку в заданной геоточке
+        var placemark  = new ymaps.Placemark(new ymaps.GeoPoint(135.10086478012192, 48.49599184745651));
+        placemark.setIconContent("Название  точки");
+        // устанавливает содержимое балуна
+        //placemark.name =  "Заголовок балуна";
+        //placemark.description  = "Описание балуна";
+        // добавляет метку на карту
+        map.addOverlay(placemark);
+};
+</script>
     </td>
     <td width="50">
     </td>

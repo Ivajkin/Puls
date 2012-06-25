@@ -50,7 +50,7 @@ define( 'PAGEPATH', ADMINPATH.'html/' );
 define( 'IMAGEPATH', $mosConfig_absolute_path.'/components/com_virtuemart/shop_image/' );
 
 define('PSHOP_IS_OFFLINE', '');
-define('PSHOP_OFFLINE_MESSAGE', 'Our Shop is currently down for maintenance. Please check back again soon.');
+define('PSHOP_OFFLINE_MESSAGE', 'Наш сайт обновляется. Пожалуйста, возвращайтесь позднее.');
 define('USE_AS_CATALOGUE', '');
 define('VM_TABLEPREFIX', 'vm');
 define('VM_PRICE_SHOW_PACKAGING_PRICELABEL', '1');
@@ -125,14 +125,14 @@ define('PSHOP_SHOW_OUT_OF_STOCK_PRODUCTS', '1');
 define('VM_CURRENCY_CONVERTER_MODULE', 'convertECB');
 define('VM_CONTENT_PLUGINS_ENABLE', '1');
 define('VM_ENABLE_COOKIE_CHECK', '1');
-define('VM_FEED_ENABLED', '');
-define('VM_FEED_CACHE', '');
+define('VM_FEED_ENABLED', '1');
+define('VM_FEED_CACHE', '1');
 define('VM_FEED_CACHETIME', '3600');
 define('VM_FEED_TITLE', 'Latest Products from {storename}');
 define('VM_FEED_TITLE_CATEGORIES', '{storename} - Latest Products from Category: {catname}');
-define('VM_FEED_SHOW_IMAGES', '');
+define('VM_FEED_SHOW_IMAGES', '1');
 define('VM_FEED_SHOW_PRICES', '');
-define('VM_FEED_SHOW_DESCRIPTION', '');
+define('VM_FEED_SHOW_DESCRIPTION', '1');
 define('VM_FEED_DESCRIPTION_TYPE', 'product_s_desc');
 define('VM_FEED_LIMITTEXT', '1');
 define('VM_FEED_MAX_TEXT_LENGTH', '250');
@@ -148,7 +148,7 @@ define('VM_LOGFILE_FORMAT', '%{timestamp} %{ident} [%{priority}] [%{remoteip}] [
 
 /* OrderByFields */
 global $VM_BROWSE_ORDERBY_FIELDS;
-$VM_BROWSE_ORDERBY_FIELDS = array( 'product_name','product_price','product_cdate' );
+$VM_BROWSE_ORDERBY_FIELDS = array( 'product_name','product_price','product_cdate','product_sku' );
 
 /* Shop Modules that run with https only*/
 global $VM_MODULES_FORCE_HTTPS;

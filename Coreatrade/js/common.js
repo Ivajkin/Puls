@@ -467,7 +467,7 @@ function makeRequest(url, callback) {
 	}
 	httpRequest.onreadystatechange = function() {
 		parseHttpRequest(httpRequest, callback);
-	};
+};
 	httpRequest.open('GET', url, true);
 	httpRequest.send('');
 }

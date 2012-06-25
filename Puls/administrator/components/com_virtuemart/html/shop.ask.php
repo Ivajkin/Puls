@@ -66,6 +66,7 @@ $pathway_item->name = $db_product->f('product_name');
 
 $page_pathway[] = $pathway_item;
 $pathway_item = new stdClass();
+$subject = substr( $VM_LANG->PHPSHOP_PRODUCT_CALL.": ". $db_product->f('product_name'), 0, 150 );
 $pathway_item->name = $pagetitle;
 $page_pathway[] = $pathway_item;
 $vm_mainframe->vmAppendPathway( $page_pathway );

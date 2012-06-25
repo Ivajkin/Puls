@@ -31,7 +31,7 @@ if ( $set == 0 ) { // This is the enquiry form!
 	<label for="contact_mail"><?php echo $VM_LANG->_('EMAIL_PROMPT') ?></label>
 	<br /><input type="text" id="contact_mail" name="email" size="80" label="Your email" class="inputbox" value="<?php echo $email ?>"/><br /><br />
 	<label for="contact_text"><?php echo $VM_LANG->_('MESSAGE_PROMPT') ?></label><br />
-	<textarea rows="10" cols="60" name="text" id="contact_text" class="inputbox"><?php echo utf8_decode($subject) ?></textarea><br />
+	<textarea rows="10" cols="60" name="text" id="contact_text" class="inputbox">  <?php echo $subject ?></textarea><br />
 	
 	<input type="button" name="send" value="<?php echo $VM_LANG->_('SEND_BUTTON') ?>" class="button" onclick="validateEnquiryForm()" />	
 	

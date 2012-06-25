@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>JU News Ultra J!1.5</name>
+	<author>Joomla! Ukraine</author>
+	<creationDate>02.06.2010</creationDate>
+	<copyright>This module is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 License.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>denys@joomla-ua.org</authorEmail>
+	<authorUrl>www.joomla-ua.org</authorUrl>
+	<version>1.5</version>
+	<description>DESCLATESTNEWS</description>
+
+	<files>
+		<filename module="mod_junewsultra">mod_junewsultra.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>elements/index.html</filename>
+        <filename>elements/about.php</filename>
+        <filename>elements/jutabs.php</filename>
+        <filename>elements/multisection.php</filename>
+        <filename>elements/multicategory.php</filename>
+        <filename>assets/index.html</filename>
+        <filename>assets/multilist.js</filename>
+        <filename writable="yes">tmpl/index.html</filename>
+        <filename writable="yes">tmpl/default.php</filename>
+        <filename writable="yes">img/index.html</filename>
+        <filename>img/.htaccess</filename>
+        <filename>img/img.php</filename>
+		<filename>img/phpthumb.bmp.php</filename>
+		<filename>img/phpthumb.class.php</filename>
+		<filename>img/phpThumb.config.php</filename>
+        <filename>img/phpthumb.filters.php</filename>
+        <filename>img/phpthumb.functions.php</filename>
+        <filename>img/phpthumb.gif.php</filename>
+        <filename>img/phpthumb.unsharp.php</filename>
+        <filename writable="yes">img/cache/index.html</filename>
+        <filename writable="yes">img/cache/source/index.html</filename>
+        <filename writable="yes">js/index.html</filename>
+	</files>
+
+  	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_junewsultra.ini</language>
+        <language tag="uk-UA">language/uk-UA/uk-UA.mod_junewsultra.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.mod_junewsultra.ini</language>
+	</languages>
+
+    <media destination="mod_junewsultra" folder="media">
+		<filename>index.html</filename>
+		<filename>notfoundimage.png</filename>
+	</media>
+
+	<params addpath="/modules/mod_junewsultra/elements/">
+    		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+	    	<param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+		    	<option value="1">Use global</option>
+			    <option value="0">No caching</option>
+    		</param>
+	    	<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+
+
+        <param name="" type="jutabs" description="ARTICLE" />
+    		<param name="count" type="text" default="5" label="Count" description="The number of items to display (default 5)" />
+    		<param name="ordering" type="list" default="created_desc" label="Ordering" description="Ordering options">
+                <option value="title">Title Alphabetical</option>
+                <option value="title_desc">Title Reverse Alphabetical</option>
+                <option value="created_desc">By date (newest first)</option>
+                <option value="created">By date (oldest first)</option>
+                <option value="modified_desc">By date (modified)</option>
+                <option value="ordering">Ordering (forward)</option>
+                <option value="ordering_desc">Ordering (reverse)</option>
+                <option value="id">By ID (ascending)</option>
+                <option value="id_desc">By ID (descending)</option>
+                <option value="hits">By Popular</option>
+                <option value="rand">By Random</option>
+    	  	</param>
+
+            <param name="selekt_secid_catid" type="list" default="1" label="Method choice category" description="Method choice category for display">
+    			<option value="1">Select from the list</option>
+    			<option value="0">Writh ID (with a comma)</option>
+            </param>
+            <param name="secid_text" type="text" default="" label="Section ID" description="Selects News from a specific Secion" />
+            <param name="catid_text" type="text" default="" label="Category ID" description="Selects News from a specific Category" />
+            <param name="secid_select" type="mos_section" hide_none="5" hide_default="2" default="" label="Section" description="Selects Secion" />
+            <param name="catid_select" type="mos_category" hide_none="5" hide_default="2" default="" label="Category" description="Selects Category" />
+
+    		<param name="user_id" type="list" default="0" label="Authors" description="A filter for the authors">
+    			<option value="0">Anyone</option>
+    			<option value="by_me">Added or modified by me</option>
+    			<option value="not_me">Not added or modified by me</option>
+    	  	</param>
+
+    		<param name="show_frontpage" type="list" default="2" label="Frontpage Items Only" description="PARAMFRONTPAGEITEMS">
+    			<option value="1">Only Frontpage Items</option>
+    			<option value="2">Frontpage Items with all Articles</option>
+    			<option value="0">Hide Frontpage Articles</option>
+    		</param>
+
+        <param name="" type="jutabs" description="TEMPLATE" />
+
+            <param name="template" type="filelist" default="default.php" label="Template" directory="/modules/mod_junewsultra/tmpl" filter="\.php$" hide_none="1" hide_default="1" description="Select your template from list. You'll create template and upload to modules/mod_junewsultra/tmpl folder" />
+
+        <param name="@spacer" type="spacer" default="" label=""	description="" />
+            <param name="clear_tag" type="radio" default="1" label="Clear tag in Introtext." description="">
+                <option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+            <param name="show_intro" type="radio" default="1" label="Show/Hide intro text" description="">
+                <option value="0">Hide</option>
+    			<option value="1">Show</option>
+            </param>
+            <param name="li" type="radio" default="1" label="Limit introtex" description="If YES - limit introtex. If NO - show full introtext">
+                <option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+            <param name="lmttext" type="list" default="1" label="Limit introtext" description="Select metod for limit introtext. If you select Clear tag, please select Words limit metode!!!">
+    			<option value="1">Words limit</option>
+    			<option value="0">Characters limit</option>
+            </param>
+            <param name="introtext_limit" type="text" default="10" label="Number limit" description="Number of words/characters to be applied to displayed intro text. Leave blank not to impose a limit (if selected Words limit)." />
+
+            <param name="avtor" type="radio" default="1" label="Display author" description="">
+            	<option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+
+            <param name="read_more" type="radio" default="1" label="Read more" description="">
+            	<option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+
+            <param name="rmtext" type="text" default="Read more..." label="Read more text" description="" />
+
+        <param name="@spacer" type="spacer" default="" label=""	description="" />
+            <param name="showDate" type="radio" default="1" label="Show date" description="Show/Hide date">
+    			<option value="0">Hide</option>
+    			<option value="1">Show</option>
+    		</param>
+            <param name="@spacer" type="spacer" default="More format parameter string: http://www.php.net/manual/en/function.strftime.php" label="" description="" />
+            <param name="data_format" type="text" default="%d.%m.%Y" label="Date format" description="" />
+
+            <param name="@spacer" type="spacer" default="DISPLAY UNIQUM DATE FOR CALICON" label="" description="" />
+
+            <param name="df_d" type="text" default="%d" label="Date format for day" description="" />
+            <param name="df_m" type="text" default="%m" label="Date format for mounth" description="" />
+            <param name="df_y" type="text" default="%Y" label="Date format for year" description="" />
+
+        <param name="@spacer" type="spacer" default="" label=""	description="" />
+            <param name="showsec" type="radio" default="1" label="Show Section" description="">
+    			<option value="0">Hide</option>
+    			<option value="1">Show</option>
+    		</param>
+            <param name="showseclink" type="radio" default="1" label="Link for Section" description="">
+    			<option value="0">No</option>
+    			<option value="1">Yes</option>
+    		</param>
+            <param name="showcat" type="radio" default="1" label="Show Category" description="">
+    			<option value="0">Hide</option>
+    			<option value="1">Show</option>
+    		</param>
+            <param name="showcatlink" type="radio" default="1" label="Link for Category" description="">
+    			<option value="0">No</option>
+    			<option value="1">Yes</option>
+    		</param>
+
+        <param name="@spacer" type="spacer" default="" label=""	description="" />
+            <param name="showHits" type="radio" default="1" label="Show Hits" description="">
+    			<option value="0">Hide</option>
+    			<option value="1">Show</option>
+    		</param>
+
+
+        <param name="" type="jutabs" description="IMAGE" />
+
+            <param name="pik" type="radio" default="1" label="Display image" description="">
+            	<option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+
+            <param name="imglink" type="radio" default="1" label="Link for image" description="">
+            	<option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+
+    	    <param name="dgmtips" type="radio" default="1" label="Display Title for image" description="">
+    			<option value="0">No</option>
+    			<option value="1">Yes</option>
+        	</param>
+
+            <param name="thumb_width" type="list" default="1" label="Create thrumb" description="Select metod for show and created image">
+    			<option value="1">Create thrumb image</option>
+    			<option value="0">Standart HTML resize image</option>
+            </param>
+
+            <param name="imageWidth" type="text" default="50" label="Image width" description="" />
+
+            <param name="imageHeight" type="text" default="" label="Image height" description="" />
+
+            <param name="thumb_filter" type="radio" default="0" label="Aplly filter to image" description="Work only is select Create thrumb image">
+            	<option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+
+            <param name="thumb_filter_color" type="list" default="0" label="Grayscale vs. sepia" description="Work only is select Create thrumb image">
+            	<option value="0">Grayscale</option>
+    			<option value="1">Sepia</option>
+            </param>
+
+            <param name="Zoom_Crop" type="radio" default="0" label="Aplly Zoom-Crop" description="">
+            	<option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+
+            <param name="noimage" type="imagelist" default="" hide_default="1" hide_none="1" label="Default image if not found picture in content" directory="/media/mod_junewsultra/" description="Upload your image to 'media/mod_junewsultra/'" />
+            <!--
+            <param name="moreparam" type="text" default="" label="Param for thrumbs" description="" />
+            -->
+
+
+        <param name="" type="jutabs" description="JCOMMENTS INTEGRATION" />
+            <param name="" type="spacer" default="&lt;a target=&quot;_blank&quot; href=&quot;http://www.joomla-ua.org/play?www.joomlatune.com/jcomments.html&quot;&gt;About JComments &gt;&gt;&gt;&lt;/a&gt;&lt;br/&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://www.joomla-ua.org/play?www.joomlatune.com/jcomments-downloads.html&quot;&gt;Download JComments &gt;&gt;&gt;&lt;/a&gt;" label=" " description="" />
+
+            <param name="JC" type="radio" default="0" label="Show comments" description="">
+                <option value="0">No</option>
+    			<option value="1">Yes</option>
+            </param>
+
+
+
+        <param name="" type="jutabs" description="OTHER" />
+
+            <param name="all_in" type="radio" default="0" label="All in section/category..." description="Show/Hide fll in section/category.">
+                <option value="0">Hide</option>
+    			<option value="1">Show</option>
+        	</param>
+
+            <param name="text_all_in" type="text" default="All in section/category..." label="Write All in section/category... or other" description="" />
+
+            <param name="link_all_in" type="text" default="" label="Your link in section/category" description="Write your corect link in section/category" />
+
+            <param name="class_all_in" type="text" default="" label="CSS class for All in section/category" description="Name of CSS class for All in section/category" />
+
+        <param name="" type="jutabs" description="License" />
+            <param name="copy" type="radio" default="1" label="Use link to developer site" description="">
+                <option value="0">No</option>
+    			<option value="1">Yes</option>
+        	</param>
+            <param name="" type="about" />
+
+	</params>
+
+
+</install>

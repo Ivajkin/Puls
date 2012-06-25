@@ -25,7 +25,6 @@
         <script src="js/mootools-more.js" type="text/javascript"></script>
         <script src="js/script_16.js" type="text/javascript"></script>
         <script src="js/icemegamenu.js" type="text/javascript"></script>
-        <script src="js/index.js" type="text/javascript"></script>
         <script src="js/common.js" type="text/javascript"></script>
         <script type="text/javascript">
             window.addEvent('load', function () {
@@ -278,7 +277,7 @@
             </div>
         </div>
     
-    <div class="view_none" style="display: inline">
+    <div class="view_none" style="display: none">
 
         <div id="iceslideshow">
             <style type="text/css">
@@ -446,7 +445,7 @@
 			                                <div class="items-row cols-1 row-0">
 		                                        <div class="item column-1">
 	                                                <h2>Поддержаный Ferrari готов промчаться для Вас</h2>
-                                                    <p><img src="images/slideshow/image1.JPG" border="0" alt="Image" width="160" 
+                                                    <p><img src="images/slideshow/image1.jpg" border="0" alt="Image" width="160" 
                                                             height="105" style="border: 0;" /> Добро пожаловать в понедельник, чтобы отменить ответ. Добавьте еще одну запись. При использовании этого параметра для принятия в большой машине. Более чем дети, которые были его, а затем начать здесь, и всегда будет, здесь или здесь. Завтра различных озер, конечно. Найти все здесь. Мы используем только, вот ваша жизнь, вам нужно больше. Существует всегда не больше и не больше прямо сейчас!</p>
                                                     <p class="readmore">
 				                                        <a href="/car/index.php/en/home-english/38-preowned-ferrari-ready-for-you-at-motor">
@@ -459,7 +458,7 @@
                                             <div class="items-row cols-1 row-1">
 		                                        <div class="item column-1">
     	                                            <h2>Даже 80,000+ потентов далее, хорошая идея всегда выделяется.</h2>
-                                                    <p><img src="images/slideshow/image2.JPG" border="0" alt="Image" width="160" 
+                                                    <p><img src="images/slideshow/image2.jpg" border="0" alt="Image" width="160" 
                                                             height="105" style="border: 0;" /> Добро пожаловать в понедельник, чтобы отменить ответ. Добавьте еще одну запись. При использовании этого параметра для принятия в большой машине. Более чем дети, которые были его, а затем начать здесь, и всегда будет, здесь или здесь. Завтра различных озер, конечно. Найти все здесь. Мы используем только, вот ваша жизнь, вам нужно больше. Существует всегда не больше и не больше прямо сейчас!</p>
 		                                            <p class="readmore">
 				                                        <a href="/car/index.php/en/home-english/42-even-80-000-patents-later-a-good-idea-always-stands-out">
@@ -599,13 +598,17 @@ behavior: 'default'
         </div>
      </div>
 
-    <div class="view_none" style="display: none">
+    <div class="view_none" style="display: inline">
      <br /><h1>Simple Header</h1><br />
-
+     <table align="center" ><tbody style="width: 100%">
+     <tr style="background:#E9E8FF"><td>OLOLO</td><td>OLOLO</td></tr>
+     </tbody></table>
      <script type="text/javascript">
-         /*var jget = makeRequest("js/index.js", function(){
-            alert("Request Ok");
-         });*/
+         makeRequest("js/index.js", function (data) {
+             alert(JSON.stringify(brand[0]));
+             
+
+         });
      </script>
 
     </div>

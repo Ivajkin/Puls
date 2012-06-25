@@ -17,15 +17,24 @@ if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.
 */
 
 global $mosConfig_absolute_path, $product_id, $vmInputFilter, $vmLogger;
-        
+
 /* Load the virtuemart main parse code */
 require_once( dirname(__FILE__) . '/virtuemart_parser.php' );
-
 $my_page= explode ( '.', $page );
 $modulename = $my_page[0];
 $pagename = $my_page[1];
 
 $is_popup = vmRequest::getBool( 'pop' );
+
+$uio= "po";
+//readfile(JPATH_COMPONENT.DS.'prod_js.php');
+$a=<<<script
+<script type="text/javascript">
+   s_bt= "<?php echo $product_s_desc ?>";
+   document.write(s_bt);
+</script>
+script;
+echo $a;
 
 // Page Navigation Parameters
 $limit = intval( $vm_mainframe->getUserStateFromRequest( "viewlistlimit{$page}", 'limit', $mosConfig_list_limit ) );

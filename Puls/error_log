@@ -22,3 +22,18 @@
 [05-Jun-2012 12:46:21] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/product_details/flypage.tpl.php on line 19
 [05-Jun-2012 12:46:51] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/product_details/flypage.tpl.php on line 17
 [05-Jun-2012 12:48:46] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/product_details/flypage.tpl.php on line 18
+[17-Jun-2012 11:39:51] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/themes/default/templates/pages/shop.ask.tpl.php on line 34
+[19-Jun-2012 05:31:06] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 21
+[19-Jun-2012 05:31:33] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 21
+[19-Jun-2012 05:32:12] PHP Parse error:  syntax error, unexpected '<' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 21
+[19-Jun-2012 11:00:08] PHP Warning:  file_get_contents(prod_js.php): failed to open stream: No such file or directory in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 29
+[19-Jun-2012 11:00:40] PHP Warning:  file_get_contents(prod_js.php): failed to open stream: No such file or directory in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 29
+[19-Jun-2012 11:00:48] PHP Warning:  file_get_contents(prod_js.php): failed to open stream: No such file or directory in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 29
+[19-Jun-2012 11:04:23] PHP Warning:  file_get_contents(prod_js.php): failed to open stream: No such file or directory in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 29
+[19-Jun-2012 11:06:29] PHP Warning:  file_get_contents(prod_js.php): failed to open stream: No such file or directory in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 29
+[19-Jun-2012 06:07:57] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 29
+[19-Jun-2012 06:10:00] PHP Parse error:  syntax error, unexpected ';' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 31
+[19-Jun-2012 06:10:06] PHP Parse error:  syntax error, unexpected ';' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 31
+[19-Jun-2012 06:10:19] PHP Parse error:  syntax error, unexpected ';' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 31
+[19-Jun-2012 06:10:33] PHP Parse error:  syntax error, unexpected ';' in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 31
+[19-Jun-2012 11:11:52] PHP Warning:  file_get_contents(0): failed to open stream: No such file or directory in /home2/core5429/public_html/paradigm/Puls/components/com_virtuemart/virtuemart.php on line 29

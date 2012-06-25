@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5.2" type="plugin" group="system" method="upgrade">
+    <name>System - Virtuemart Multiupload</name>
+    <author>Markus Harmsen</author>
+    <creationDate>Juni 2010</creationDate>
+    <copyright>Copyright (C) 2010</copyright>
+    <license>GPL - http://www.gnu.org/copyleft/gpl.html</license>
+    <authorEmail>markus.harmsen@rwth-aachen.de</authorEmail>
+    <authorUrl>http://marjust.hopto.org</authorUrl>
+    <version>1.2</version>
+    <description>
+    <![CDATA[
+        <h3>Upload multible images to one virtuemart product at once</h3>
+        <p>This plugin has been tested with Firefox 3.6, Internet Explorer 8 and <strong>Flash Player 10.1</strong></p>
+        <br />
+        <p>If uploading fails try to install the latest Flash Player. If the error still exists, you may have to use a patch due the <a href="http://www.swfupload.org/forum/generaldiscussion/383">Flash cookie bug</a>.</p>
+        <p>Insert the following code into <strong>libraries/joomla/session/session.php</strong> in function <strong>_start</strong>(line 415) before the line <strong>session_start();</strong></p>
+        <pre>
+            /* Flash cookie fix */
+            $sn = session_name();
+            if(isset($_COOKIE[$sn]) && isset($_POST[$sn])) {
+              $_COOKIE[$sn] = $_POST[$sn];
+              session_id($_POST[$sn]);
+            }
+            /* /Flash cookie fix */
+        </pre>
+        <p>Please enable this plugin, otherwise it won't work!</p>
+        <p>Navigate to <i>Extensions-&gt;Plugin Manager-&gt;System - Virtuemart Multiupload</i> and enable it.</p>
+    ]]>
+    </description>
+    
+    <files>
+        <filename plugin="virtuemart_multiupload">virtuemart_multiupload.php</filename>
+        <folder>virtuemart_multiupload</folder>
+    </files>
+</install>
