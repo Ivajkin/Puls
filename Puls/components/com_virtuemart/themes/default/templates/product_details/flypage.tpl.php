@@ -11,7 +11,7 @@ mm_showMyFileName(__FILE__);
           <?php echo $addtocart; ?>               
     </div>
 </div>
-<div style="clear: both">
+<div style="clear: both"></div>
 <hr align="left" width="500" size="2" color="#afdfef" />
 <div align="top" style="position: relative">   
         <div style="width: 25%; display: block; float: left;">
@@ -52,6 +52,6 @@ mm_showMyFileName(__FILE__);
         ?>
        </div>
 </div>
-<div style="clear: both">
+<div style="clear: both"></div>
 <!--</tr>
 </table>-->

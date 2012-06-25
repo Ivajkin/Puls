@@ -23,13 +23,14 @@ require_once (CLASSPATH."ps_product.php");
 $ps_product = new ps_product;
 require_once (CLASSPATH."ps_product_category.php");
 $ps_product_category = new ps_product_category;
+require_once (CLASSPATH."ps_product.php");
 require_once (CLASSPATH."ps_product_files.php");
 require_once (CLASSPATH."ps_reviews.php");
 require_once (CLASSPATH."imageTools.class.php");
 require_once (CLASSPATH."PEAR/Table.php");
 require_once(CLASSPATH . 'ps_product_attribute.php' );
-$ps_product_attribute = new ps_product_attribute;
 
+$ps_product_attribute = new ps_product_attribute;
 $Itemid = $sess->getShopItemid();
 $keyword1 = $vmInputFilter->safeSQL( urldecode(vmGet( $_REQUEST, 'keyword1', null )));
 $keyword2 = $vmInputFilter->safeSQL( urldecode(vmGet( $_REQUEST, 'keyword2', null )));
@@ -113,6 +114,7 @@ else {
 		$tpl->set( 'categories', $category_childs );
 		$navigation_childlist = $tpl->fetch( 'common/categoryChildlist.tpl.php');
 		$tpl->set( 'navigation_childlist', $navigation_childlist );
+                //$tpl->set( 'product_type', $db_browse->f('product_type') );
 
 		// Set up the CMS pathway
 		$category_list = array_reverse( $ps_product_category->get_navigation_list($category_id) );
@@ -325,6 +327,8 @@ else {
 		// i is the index for the array holding all products, we need to show. to allow sorting by discounted price,
 		// we need to use the price as first part of the index name!
 		$i = $product_price_raw['product_price'] . '_' . ++$counter;
+$products[$i]['product_id'] = $db_browse->f('product_id');
+$products[$i]['product_description'] = $db_browse->f('product_description');
 
         if( $db_browse->f("product_thumb_image") ) {
             $product_thumb_image = $db_browse->f("product_thumb_image");
@@ -445,6 +449,8 @@ else {
 		$products[$i]['product_details'] = $product_details;
 		$products[$i]['product_rating'] = $product_rating;
 		$products[$i]['product_price'] = $product_price;
+                $products[$i]['product_price'] = $product_price;
+                $products[$i]['product_price'] = $product_price;
 		$products[$i]['product_price_raw'] = $product_price_raw;
 		$products[$i]['product_sku'] = $db_browse->f("product_sku");
 		$products[$i]['product_weight'] = $db_browse->f("product_weight");

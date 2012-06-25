@@ -863,7 +863,7 @@ class vm_ps_order_edit {
             $product_price = $product_price /($my_taxrate+1);
          }		
 		
-			// Update order
+                        // Update order
 			$q = "UPDATE #__{vm}_orders ";
 			$q .= "SET order_tax = (order_tax + ".$tax_change." ), ";
 			$q .= "order_total = (order_total + ".$price_change." ), ";

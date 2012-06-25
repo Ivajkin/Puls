@@ -425,8 +425,8 @@ Array.prototype.strict_contains = function(element) {
  */
 var parseHttpRequest;
 function makeRequest(url, callback) {
-	assert(window.helper.is('String', url), 'url должна быть строкой: ' + JSON.stringify(url));
-	assert(!/undefined/.test(url), 'url не должен содержать подстроку "undefined"');
+	//assert(window.helper.is('String', url), 'url должна быть строкой: ' + JSON.stringify(url));
+	//assert(!/undefined/.test(url), 'url не должен содержать подстроку "undefined"');
 	
 	/*var url = url.split('?');
 	var request = new Request( url[0], {
@@ -482,6 +482,25 @@ parseHttpRequest = function(httpRequest, callback) {
 		}
 	}
 }
+
+/*******************************************/
+
+function getBrand(callback) {
+     makeRequest("js/dbrand.js", function (tmp) {          
+     var db_brand= eval( tmp);
+     callback(db_brand);
+})};
+function getType(callback) {
+     makeRequest("js/dtype.js", function (tmp) {
+     var db_type= eval( tmp);
+     callback(db_type);
+})};         
+function getData(callback) {
+     makeRequest("js/ddata.js", function (tmp) {
+     var db_data= eval( tmp);
+     callback(db_data);
+})}; 
+
 
 /*
  * Get cookie by specified offset.
@@ -1472,5 +1491,4 @@ if(!Array.prototype.filter) {
  * Функция - заглушка.
  */
 var doNothing = function() {};
-
 

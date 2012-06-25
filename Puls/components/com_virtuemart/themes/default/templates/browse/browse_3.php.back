@@ -1,24 +1,9 @@
 <?php if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' );
 mm_showMyFileName(__FILE__);
-?>
-
-
-<?php
-$prod_com_path = $mosConfig_absolute_path . '/components/com_virtuemart/prod_com.php';
-  if (file_exists($prod_com_path)) {
-    require_once($prod_com_path);
-    /*echo $pr_com_count.' '.$product_id;
-    $output= '';
-    $output .= '<div >'.$product_reviews.'<br>'.$product_reviewform.'</div>';
-    echo $output;*/
-}
  ?>
-
  <div class="browseProductContainer" style="padding:0; margin:0; border:0;)">
   <h2>
-    <a style="font-size:16px; font-weight:bold;" href="javascript:void(0)" >
-      <?php echo $product_name ?>
-    </a>
+  <a style="font-size:16px; font-weight:bold;" href="<?php echo $product_flypage ?>"><?php echo $product_name ?></a>
   </h2>
   <p >Стоимость: <?php echo $product_price ?></p>
   <div style="float:left;width:90%" >

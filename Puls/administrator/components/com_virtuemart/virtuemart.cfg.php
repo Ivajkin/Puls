@@ -95,7 +95,7 @@ define('_SHOW_PRICES', '1');
 define('ORDER_MAIL_HTML', '1');
 define('HOMEPAGE', 'shop.index');
 define('CATEGORY_TEMPLATE', 'managed');
-define('FLYPAGE', 'flypage.tpl');
+define('FLYPAGE', 'flypage.tpl'); // ../browse/browse_3.php
 define('PRODUCTS_PER_ROW', '1');
 define('ERRORPAGE', 'shop.error');
 define('NO_IMAGE', 'noimage.gif');

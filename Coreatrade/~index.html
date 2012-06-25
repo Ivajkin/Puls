@@ -19,18 +19,35 @@
         <link rel="stylesheet" href="css/template_languages.css" type="text/css" />
         <link rel="stylesheet" href="css/mod_icemegamenu/css/default_icemegamenu.css" type="text/css" />
         <link rel="stylesheet" href="css/costum.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/expauto/assets/css/expautospro.css" type="text/css" />
+  <link rel="stylesheet" href="css/expauto/skins/explist/default/css/default.css" type="text/css" />
+  <link rel="stylesheet" href="css/expauto/mod_expautospro_mortgage.css" type="text/css" />
+  <link rel="stylesheet" href="css/expauto/mod_expautospro_stats.css" type="text/css" />
+  <link rel="stylesheet" href="css/expauto/mod_expautospro_categories.css" type="text/css" />
+  <link rel="stylesheet" href="css/expauto/mod_expautospro_listfilter.css" type="text/css" />
+  <link rel="stylesheet" href="css/expauto/mod_expautospro_keyword.css" type="text/css" />
+
         <script src="js/mootools-core.js" type="text/javascript"></script>
         <script src="js/core.js" type="text/javascript"></script>
         <script src="js/caption.js" type="text/javascript"></script>
         <script src="js/mootools-more.js" type="text/javascript"></script>
-        <script src="js/script_16.js" type="text/javascript"></script>
+        <script src="js/iceslideshow.js" type="text/javascript"></script>
         <script src="js/icemegamenu.js" type="text/javascript"></script>
         <script src="js/common.js" type="text/javascript"></script>
+        
+  <script src="js/icecarousel.js" type="text/javascript"></script>
+  <script src="css/expauto/assets/js/ajaxrequest.js" type="text/javascript"></script>
+  <script src="css/expauto/assets/js/ajaxchained.js" type="text/javascript"></script>
+  <script src="css/expauto/assets/js/expsearchchained.js" type="text/javascript"></script>
+  <script src="css/expauto/assets/js/expsearchtoggle.js" type="text/javascript"></script>
+
         <script src="js/jquery-1.7.2.js" type="text/javascript"></script>
         <script type="text/javascript">
              var $j = jQuery.noConflict();
         </script>
         <script src="js/dproc.js" type="text/javascript"></script>
+
         <script type="text/javascript">
             window.addEvent('load', function () {
                 new JCaption('img.caption');
@@ -69,11 +86,20 @@
             {
                 padding-right: 15px;
             }
+            .mark_show
+            {
+            	width: 10%;
+            }
+            .mark_show img
+            {
+            	width: 80px;
+            	height: 80px;
+            }
         </style>
 
 	<!-- Show/Hide-->
 	<script type="text/javascript">
-	    var itPage=0;
+	    var itPage=1;
             $j(document).ready( function() {
                 $j("#Page_" + itPage).css('display', "inline");
             });
@@ -101,6 +127,14 @@
     </head>
 
     <body class="">
+
+    <!-- Accessibility -->
+        <ol id="accessibility">
+           <li><a href="#nav-wrapper">Skip to Menu</a></li>
+           <li><a href="#content">Skip to Content</a></li>
+           <li><a href="#footer" >Skip to Footer</a></li>
+        </ol><!-- Accessibility -->
+
         <!-- Header -->	
         <div id="header">
             <div id="header_inside" class="clearfix">
@@ -113,25 +147,25 @@
                     <div id="mainmenu">
                         <div class="icemegamenu">
                             <ul id="icemegamenu">
-                                <li id="iceMenu_101" class="iceMenuLiLevel_1">
-                                    <a href="http://coreatrade.com/" class=" iceMenuTitle">
+                                <li id="iceMenu_1000" class="iceMenuLiLevel_1">
+                                    <a href="javascript:void()" class=" iceMenuTitle">
                                         <span class="icemega_title icemega_nosubtitle">НОВОСТИ</span>
                                     </a>
                                 </li>
-                                <li id="iceMenu_115" class="iceMenuLiLevel_1 parent">
-                                    <a href="/car/index.php/en/features" class=" iceMenuTitle">
+                                <li id="iceMenu_2000" class="iceMenuLiLevel_1 parent">
+                                    <a href="javascript:void()" class=" iceMenuTitle">
                                         <span class="icemega_title">О компании</span>
                                         <span class="icemega_desc">Свяжитесь с нами</span>
                                     </a>
                                 </li>
-                                <li id="iceMenu_116" class="iceMenuLiLevel_1 parent"><a class=" iceMenuTitle"><span
+                                <li id="iceMenu_3000" class="iceMenuLiLevel_1 parent"><a class=" iceMenuTitle"><span
                                     class="icemega_title icemega_nosubtitle">Автомобили</span></a>
                                     <ul class="icesubMenu sub_level_1" style="width: 560px">
                                         <li>
                                             <div style="float: left; width: 240px" class="iceCols">
                                                 <ul>
-                                                    <li id="iceMenu_119" class="iceMenuLiLevel_2">
-                                                        <a href="/car/index.php/en/features/module-variations" class=" iceMenuTitle" style="position:relative">
+                                                    <li id="iceMenu_3101" class="iceMenuLiLevel_2">
+                                                        <a href="javascript: getByType(0)" class=" iceMenuTitle" style="position:relative">
                                                             <span class="icemega_title icemega_nosubtitle" style=" width: 140px; position: absolute; display:block; top= 0px; background: #000;
                                                                 opacity: 0.80; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.80); -khtml-opacity: 0.80; -moz-opacity: 0.80;">
                                                                 <b>Легковые</b></span>
@@ -141,33 +175,33 @@
                                                             Легковые
                                                         </a>
                                                     </li>
-                                                    <li id="iceMenu_120" class="iceMenuLiLevel_2">
-                                                        <a href="/car/index.php/en/features/module-positions" class=" iceMenuTitle" style="position:relative">
+                                                    <li id="iceMenu_3202" class="iceMenuLiLevel_2">
+                                                        <a href="javascript: getByType(1)" class=" iceMenuTitle" style="position:relative">
                                                             <span class="icemega_title icemega_nosubtitle" style="position: absolute; display:block; top: 0px; background: #000;
                                                             opacity: 0.90; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.90); -khtml-opacity: 0.90; -moz-opacity: 0.90;"
                                                             >Внедорожники</span>
                                                             <img src="images/slideshow/image4.jpg" border="0"
-                                                                                alt="Легковые" width="140" height="90" 
+                                                                                alt="Внедорожники" width="140" height="90" 
                                                             style="display:block" title="Легковые" />
                                                         </a>
                                                     </li>
-                                                    <li id="iceMenu_124" class="iceMenuLiLevel_2 parent">
+                                                    <li id="iceMenu_3300" class="iceMenuLiLevel_2 parent">
                                                         <a class=" iceMenuTitle">
                                                             <span class="icemega_title icemega_nosubtitle">Грузовые</span>
                                                             <img src="images/slideshow/image4.jpg" border="0"
-                                                                                alt="Легковые" width="140" height="90" />
+                                                                                alt="Грузовые" width="140" height="90" />
                                                         </a>
                                                         <ul class="icesubMenu sub_level_2" style="width: 280px">
                                                             <li>
                                                                 <div style="float: left; width: 280px" class="iceCols">
                                                                     <ul>
-                                                                        <li id="iceMenu_125" class="iceMenuLiLevel_3">
-                                                                            <a href="/car/?tmpl=offline" class=" iceMenuTitle">
-                                                                                <span class="icemega_title icemega_nosubtitle">Минигрузовики</span>
+                                                                        <li id="iceMenu_3303" class="iceMenuLiLevel_3">
+                                                                            <a href="javascript: getByType(2)" class=" iceMenuTitle">
+                                                                                <span class="icemega_title icemega_nosubtitle">Малогрузные</span>
                                                                             </a>
                                                                         </li>
-                                                                        <li id="iceMenu_126" class="iceMenuLiLevel_3">
-                                                                            <a href="/car/index.php/404" class=" iceMenuTitle">
+                                                                        <li id="iceMenu_3304" class="iceMenuLiLevel_3">
+                                                                            <a href="javascript: getByType(3)" class=" iceMenuTitle">
                                                                                 <span class="icemega_title icemega_nosubtitle">Большегрузные</span>
                                                                             </a>
                                                                         </li>
@@ -180,13 +214,13 @@
                                             </div>
                                             <div style="float: left; width: 320px" class="iceCols">
                                                 <ul>
-                                                    <li id="iceMenu_127" class="iceMenuLiLevel_2">
+                                                    <li id="iceMenu_0" class="iceMenuLiLevel_2">
                                                         <div class="icemega_cover_module" style="width: 280px">
                                                             <div class="icemega_modulewrap" style="width: auto;">
                                                                 <span class="iceModuleTile">Лучшие автомобили!</span>
                                                                 <div class="custom">
                                                                     <p>
-                                                                        <img src="images/best_cars.JPG" border="0" alt="Designed with Love"
+                                                                        <img src="images/best_cars.jpg" border="0" alt="Designed with Love"
                                                                             width="65" height="65" />
                                                                         Все автомобили собраны в одном месте. Авто из Южной Кореи - это качество по доступной цене… а, с недавнего времени, еще и современный (порой даже экстравагантный) дизайн. В этом разделе каталога обзоры (характеристики, цены) корейских автомобилей. Отзывы владельцев корейских авто.</p>
                                                                 </div>
@@ -198,19 +232,19 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li id="iceMenu_117" class="iceMenuLiLevel_1 parent"><a href="/car/index.php/en/extensions"
+                                <li id="iceMenu_4000" class="iceMenuLiLevel_1 parent"><a href="/car/index.php/en/extensions"
                                     class=" iceMenuTitle"><span class="icemega_title">Автобусы</span><span class="icemega_desc">Free</span></a>
                                     <ul class="icesubMenu sub_level_1" style="width: 560px">
                                         <li>
                                             <div style="float: left; width: 240px" class="iceCols">
                                                 <ul>
-                                                    <li id="Li5" class="iceMenuLiLevel_2">
-                                                        <a href="/car/index.php/en/features/typography" class=" iceMenuTitle">
+                                                    <li id="iceMenu_4006" class="iceMenuLiLevel_2">
+                                                        <a href="javascript: getByType(5)" class=" iceMenuTitle">
                                                             <span class="icemega_title icemega_nosubtitle">Микроавтобусы</span>
                                                         </a>
                                                     </li>
-                                                    <li id="Li6" class="iceMenuLiLevel_2">
-                                                        <a href="/car/index.php/en/features/template-styles-en" class=" iceMenuTitle">
+                                                    <li id="iceMenu_4005" class="iceMenuLiLevel_2">
+                                                        <a href="javascript: getByType(4)" class=" iceMenuTitle">
                                                             <span class="icemega_title icemega_nosubtitle">Автобусы</span>
                                                         </a>
                                                     </li>
@@ -218,13 +252,13 @@
                                             </div>
                                             <div style="float: left; width: 320px" class="iceCols">
                                                 <ul>
-                                                    <li id="Li13" class="iceMenuLiLevel_2">
+                                                    <li id="iceMenu_0" class="iceMenuLiLevel_2">
                                                         <div class="icemega_cover_module" style="width: 280px">
                                                             <div class="icemega_modulewrap" style="width: auto;">
                                                                 <span class="iceModuleTile">Лучшие автомобили!</span>
                                                                 <div class="custom">
                                                                     <p>
-                                                                        <img src="images/best_cars.JPG" border="0" alt="Designed with Love"
+                                                                        <img src="images/best_cars.jpg" border="0" alt="Designed with Love"
                                                                             width="65" height="65" />
                                                                         Все автомобили собраны в одном месте. Авто из Южной Кореи - это качество по доступной цене… а, с недавнего времени, еще и современный (порой даже экстравагантный) дизайн. В этом разделе каталога обзоры (характеристики, цены) корейских автомобилей. Отзывы владельцев корейских авто.</p>
                                                                 </div>
@@ -236,19 +270,19 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li id="iceMenu_118" class="iceMenuLiLevel_1 parent"><a class=" iceMenuTitle"><span
+                                <li id="iceMenu_5000" class="iceMenuLiLevel_1 parent"><a class=" iceMenuTitle"><span
                                     class="icemega_title">Спецтехника</span><span class="icemega_desc">4 options</span></a>
                                     <ul class="icesubMenu sub_level_1" style="width: 560px">
                                         <li>
                                             <div style="float: left; width: 240px" class="iceCols">
                                                 <ul>
-                                                    <li id="Li1" class="iceMenuLiLevel_2">
-                                                        <a href="/car/index.php/en/features/typography" class=" iceMenuTitle">
+                                                    <li id="iceMenu_5007" class="iceMenuLiLevel_2">
+                                                        <a href="javascript: getByType(6)" class=" iceMenuTitle">
                                                             <span class="icemega_title icemega_nosubtitle">Сельхозтехника</span>
                                                         </a>
                                                     </li>
-                                                    <li id="Li2" class="iceMenuLiLevel_2">
-                                                        <a href="/car/index.php/en/features/template-styles-en" class=" iceMenuTitle">
+                                                    <li id="iceMenu_5008" class="iceMenuLiLevel_2">
+                                                        <a href="javascript: getByType(7)" class=" iceMenuTitle">
                                                             <span class="icemega_title icemega_nosubtitle">Спецтехника</span>
                                                         </a>
                                                     </li>
@@ -256,13 +290,13 @@
                                             </div>
                                             <div style="float: left; width: 320px" class="iceCols">
                                                 <ul>
-                                                    <li id="Li3" class="iceMenuLiLevel_2">
+                                                    <li id="iceMenu_0" class="iceMenuLiLevel_2">
                                                         <div class="icemega_cover_module" style="width: 280px">
                                                             <div class="icemega_modulewrap" style="width: auto;">
                                                                 <span class="iceModuleTile">Лучшие автомобили!</span>
                                                                 <div class="custom">
                                                                     <p>
-                                                                        <img src="images/best_cars.JPG" border="0" alt="Designed with Love"
+                                                                        <img src="images/best_cars.jpg" border="0" alt="Designed with Love"
                                                                             width="65" height="65" />
                                                                         Все автомобили собраны в одном месте. Авто из Южной Кореи - это качество по доступной цене… а, с недавнего времени, еще и современный (порой даже экстравагантный) дизайн. В этом разделе каталога обзоры (характеристики, цены) корейских автомобилей. Отзывы владельцев корейских авто.</p>
                                                                 </div>
@@ -295,7 +329,7 @@
             </div>
         </div>
     
-    <div class="view_none" id="Page_1" style="display: inline">
+    <div class="view_none" id="Page_1">
 
         <div id="iceslideshow">
             <style type="text/css">
@@ -444,204 +478,198 @@
 			    object.start(1, _lofmain.getElement('.preload'));
     </script>
         </div>
-
-                      <!-- Promo -->
+	    
+         <!-- Promo -->
         <div id="promo">
-            <div class="inside_effect">
-                <div class="wrapper">
-                    <div class="modules-wrap clearfix">
-                        <div class="width25 separator floatleft">
+            <div class="inside_effect" align="center">
+                <div class="wrapper" align="center">
+                    <div class="modules-wrap clearfix" id="mark_table" align="center"; style="width:100%; padding: 0px; margin: 0px">
+<script type="text/javascript">
+//Отрисовка первой строки
+     function plot(int, dbrand) {
+                for( td=0; td < int; td++) { 
+                    $j("div#mark_table").append(
+                        
+                        '<div class="mark_show separator floatleft" id="tr_mark_'+ td +'">' + 
+                            '<div class="moduletable has-subtitle">' +
+                                    '<div class="moduletable-header">' +
+                                       '<div class="moduletable-header-inside">' +
+                		         '<h5 class="mod-title" align="center">'+ dbrand[td].mark +'</h5>' +
+                                       '</div>' +
+                                     '</div>' +
+                                    '<div class="moduletable_content clearfix">' +
+                                            '<a title="'+ dbrand[td].mark +' ('+ dbrand[td].model.length  
+                                               +' авто)" href="javascript:getByMark('+ td +')">' +
+                                                   '<img src="'+ dbrand[td].img +'" alt="" />' +
+                                            '</a>' +
+                                    '</div>' +
+                            '</div>' +
+                        '</div>'
+                     );
+                }
+     }
+
+     $j(document).ready( function() {
+         jgetBrand( function(dbrand) { 
+//Отрисовка первой строки. Проверка на многострочность     
+             if (dbrand.length < 11)
+                 plot(dbrand.length, dbrand);
+//Если 2 строки, то проверка на чётность. отрисовка
+              else {
+                int= parseInt(dbrand.length/2);
+                if (dbrand.length-int-int)
+                    plot(++int, dbrand);
+                else
+                    plot(int, dbrand);               
+                for( td=int; td < dbrand.length; td++) {
+                    
+                    name= dbrand[td].mark.toLowerCase();
+                    $j('div#tr_mark_'+(td-int)).append(
+                        
+                            '<div class="mark_show separator floatleft" id="tr_mark_'+ td +'">' +
+                                    '<div class="moduletable-header">' +
+                                       '<div class="moduletable-header-inside">' +
+                		         '<h5 class="mod-title" align="center">'+ dbrand[td].mark +'</h5>' +
+                                       '</div>' +
+                                     '</div>' +
+                                    '<div class="moduletable_content clearfix">' +
+                                            '<a title="'+ dbrand[td].mark +' ('+ dbrand[td].model.length  
+                                               +' авто)" href="javascript:getByMark('+ td +')">' +
+                                                   '<img src="'+ dbrand[td].img +'" alt="" />' +
+                                            '</a>' +
+                                    '</div>' +
+                            '</div>' 
+                    );
+                }
+              }
+         });
+});
+</script>
+                        <!--<div class="mark_show separator floatleft">
                             <div class="moduletable has-subtitle">
-                                <div class="">
-        			            	<div class="moduletable-header">
-                                    	<div class="moduletable-header-inside">
-                		                    <h3 class="mod-title">Latest New Car <span> ready to buy your new car?</span> </h3>
+                                    <div class="moduletable-header">
+                                        <div class="moduletable-header-inside">
+                		                    <h5 class="mod-title" align="center">DAEWOO</h5>
                                         </div>    
                                     </div>    
                                     <div class="moduletable_content clearfix">
-			                            <style type="text/css">
-                                            #modexpimagessumo204 table.expautos_images_table td.expautos_images_images a{
-                                                color:#000;
-                                            }   
-                                            #modexpimagessumo204 table.expautos_images_table td.expautos_images_images a:hover{
-                                                color: #0055BB;
-                                            }
-                                            .modexpimagessumo .modexpimg_block_left{
-                                                width: 170px;
-                                            }
-                                        </style>
-                                        <div id="modexpimagessumo204" class="modexpimagessumo expimagessumo">
-                                            <table class="expautos_images_table">
-                                                <tbody>
-                                                    <tr class="expautos_images_tr">
-                                                        <td valign="top" width="300" class="expautos_images_images ">
-                                                            <a href="381.htm">
-                                                                <div class="modimg  modexpimg modexpimgsumoleft">
-                                                                    <img src="2_1337329277.jpg" />
-                                                                    <br />
-                                                                </div>
-                                                            </a>
-                                                            <div class="modexpimg_block_left">
-                                                                <div class="expautos_images_text_title">BMW 2010 7 Series</div>
-                                                                    <div class="expautos_images_text">Year: 2013</div>
-                                                                    <div class="expautos_images_text"> Fuel: petrol</div>
-                                                                    <div class="expautos_images_text">Mileage: 120000km</div>
-                                                                    <div class="expautos_images_price">Price: $ 120,000 USD</div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div id="Div10" class="" align="center">
+                                            <a href="javascript:onclick('void')">
+                                                <img src="test.png"/>
+                                            </a>
                                         </div>  
                                     </div>
-                                </div>
-		                    </div>
-                        </div>
-                        <div class="width25 separator floatleft">
+                            </div>
                             <div class="moduletable has-subtitle">
-                                <div class="">
-        			            	<div class="moduletable-header">
-                                	    <div class="moduletable-header-inside">
-                		                    <h3 class="mod-title">Latest Used Car <span> find this car in perfect condition!</span> </h3>
+        			                <div class="moduletable-header">
+                                        <div class="moduletable-header-inside">
+                		                    <h5 class="mod-title" align="center">DAEWOO</h5>
                                         </div>    
                                     </div>    
                                     <div class="moduletable_content clearfix">
-			                            <style type="text/css">
-                                            #modexpimagessumo243 table.expautos_images_table td.expautos_images_images a{
-                                                color:#000;
-                                            }
-                                            #modexpimagessumo243 table.expautos_images_table td.expautos_images_images a:hover{
-                                                color: #0055BB;
-                                            }
-                                            .modexpimagessumo .modexpimg_block_left{
-                                                width: 170px;
-                                            }
-                                        </style>
-                                        <div id="modexpimagessumo243" class="modexpimagessumo expimagessumo">
-                                            <table class="expautos_images_table">
-                                             <tbody>
-                                                <tr class="expautos_images_tr">
-                                                    <td valign="top" width="300" class="expautos_images_images top">
-                                                        <a href="379.htm" >
-                                                            <div class="modimg top modexpimg modexpimgsumoleft">
-                                                                <img src="3_1337335613.jpg" />
-                                                                <br />
-                                                            </div>
-                                                        </a>
-                                                        <div class="modexpimg_block_left">
-                                                            <div class="expautos_images_text_title">BMW X5</div>
-                                                            <div class="expautos_images_text">Year: 1996</div>
-                                                            <div class="expautos_images_text">Fuel: diesel</div>
-                                                            <div class="expautos_images_text">ileage: 70000km</div>
-                                                            <div class="expautos_images_price">Price: $ 15,000 USD</div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                        </div>     
+                                        <div id="Div11" class="" align="center">
+                                            <a href="javascript:onclick('void')">
+                                                <img src="test.png"/>
+                                            </a>
+                                        </div>  
                                     </div>
-                                </div>
-                    		</div>
+                            </div>
                         </div>
-                        <div class="width25 separator floatleft">
+                        <div class="mark_show separator floatleft">
                             <div class="moduletable has-subtitle">
-                                <div class="">
-        			            	<div class="moduletable-header">
-                                    	<div class="moduletable-header-inside">
-                		                    <h3 class="mod-title">Special Car <span> we something to amaze you!</span> </h3>
-                                        </div>    
+        			            <div class="moduletable-header">
+                                    <div class="moduletable-header-inside">
+                		                <h5 class="mod-title" align="center">DAEWOO</h5>
                                     </div>    
-                                    <div class="moduletable_content clearfix">
-			                        <style type="text/css">
-                                        #modexpimagessumo244 table.expautos_images_table td.expautos_images_images a{
-                                            color:#000;
-                                        }
-                                        #modexpimagessumo244 table.expautos_images_table td.expautos_images_images a:hover{
-                                            color: #0055BB;
-                                        }
-                                        .modexpimagessumo .modexpimg_block_left{
-                                            width: 170px;
-                                        }
-                                        </style>
-                                        <div id="modexpimagessumo244" class="modexpimagessumo expimagessumo">
-                                            <table class="expautos_images_table">
-                                                <tbody>
-                                                    <tr class="expautos_images_tr">
-                                                        <td valign="top" width="300" class="expautos_images_images special">
-                                                            <a href="8.htm">
-                                                                <div class="modimg special modexpimg modexpimgsumoleft">
-                                                                    <span></span><img src="2_1337335328.jpg" />
-                                                                    <br />
-                                                                 </div>
-                                                            </a>
-                                                            <div class="modexpimg_block_left">
-                                                                <div class="expautos_images_text_title">Audi A4</div>
-                                                                <div class="expautos_images_text">Year: 2002</div>
-                                                                <div class="expautos_images_text">Fuel: diesel</div>
-                                                                <div class="expautos_images_text">Mileage: 189000km</div>
-                                                                <div class="expautos_images_price">Price: $ 13,900 USD</div>
-                                                             </div>
-                                                        </td>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                                </div>    
+                                <div class="moduletable_content clearfix">
+                                    <div id="Div20" class="" align="center">
+                                        <a href="381.htm">
+                                            <img src="test.png" />
+                                        </a>
+                                    </div>  
+                                </div>
+		                    </div>
+                            <div class="moduletable has-subtitle">
+        			            <div class="moduletable-header">
+                                    <div class="moduletable-header-inside">
+                		                <h5 class="mod-title" align="center">DAEWOO</h5>
+                                    </div>    
+                                </div>    
+                                <div class="moduletable_content clearfix">
+                                    <div id="Div21" class="" align="center">
+                                        <a href="381.htm">
+                                            <img src="test.png" />
+                                        </a>
+                                    </div>  
                                 </div>
 		                    </div>
                         </div>
-                       <div class="width25 floatleft">
+                        <div class="mark_show separator floatleft">
                             <div class="moduletable has-subtitle">
-                                <div class="">
-		        	            	<div class="moduletable-header">
-                                    	<div class="moduletable-header-inside">
-                		                    <h3 class="mod-title">Featured Car <span> you cant find better than this!</span> </h3>
-                                        </div>    
+        			            <div class="moduletable-header">
+                                    <div class="moduletable-header-inside">
+                		                <h5 class="mod-title" align="center">DAEWOO</h5>
                                     </div>    
-                                    <div class="moduletable_content clearfix">
-                                        <style type="text/css">
-                                            #modexpimagessumo245 table.expautos_images_table td.expautos_images_images a{
-                                                color:#000;
-                                            }
-                                            #modexpimagessumo245 table.expautos_images_table td.expautos_images_images a:hover{
-                                                color: #0055BB;
-                                            }
-                                            .modexpimagessumo .modexpimg_block_left{
-                                                width: 170px;
-                                            }
-                                        </style>
-                                        <div id="modexpimagessumo245" class="modexpimagessumo expimagessumo">
-                                                                                                                            <table class="expautos_images_table">
-                                            <tbody>
-                                                <tr class="expautos_images_tr">
-                                                    <td valign="top" width="300" class="expautos_images_images top">
-                                                        <a href="379.htm" tppabs="http://demo.icetheme.com/it_motor/index.php/en/expautos/detail/1-used-cars/5-bmw/61-X5/379">
-                                                            <div class="modimg top modexpimg modexpimgsumoleft">
-                                                                <img src="3_1337335613.jpg" tppabs="http://cdn.demo.icetheme.com/it_motor/media/com_expautospro/images/thumbs/3_1337335613.jpg" />
-                                                                <br />
-                                                            </div>
-                                                        </a>
-                                                        <div class="modexpimg_block_left">
-                                                            <div class="expautos_images_text_title">BMW X5</div>
-                                                                <div class="expautos_images_text">Year: 1998</div>
-                                                                <div class="expautos_images_text">uel: diesel</div>
-                                                                <div class="expautos_images_text">Mileage: 70000km</div>
-                                                                <div class="expautos_images_price">rice: $ 15,000 USD</div>
-                                                            </div>
-                                                    </td>
-                                               </tr>
-                                            </tbody>
-                                        </table>
-                                        </div>
-                                    </div>
+                                </div>    
+                                <div class="moduletable_content clearfix">
+                                    <div id="Div30" class="" align="center">
+                                        <a href="381.htm">
+                                            <img src="test.png" />
+                                        </a>
+                                    </div>  
                                 </div>
 		                    </div>
-                       </div>
+                            <div class="moduletable has-subtitle">
+        			            <div class="moduletable-header">
+                                    <div class="moduletable-header-inside">
+                		                <h5 class="mod-title" align="center">DAEWOO</h5>
+                                    </div>    
+                                </div>    
+                                <div class="moduletable_content clearfix">
+                                    <div id="Div31" class="" align="center">
+                                        <a href="381.htm">
+                                            <img src="test.png" />
+                                        </a>
+                                    </div>  
+                                </div>
+		                    </div>
+                        </div>
+                        <div class="mark_show separator floatleft">
+                            <div class="moduletable has-subtitle">
+        			            <div class="moduletable-header">
+                                    <div class="moduletable-header-inside">
+                		                <h5 class="mod-title" align="center">DAEWOO</h5>
+                                    </div>    
+                                </div>    
+                                <div class="moduletable_content clearfix">
+                                    <div id="Div40" class="" align="center">
+                                        <a href="381.htm">
+                                            <img src="test.png" />
+                                        </a>
+                                    </div>  
+                                </div>
+		                    </div>
+                            <div class="moduletable has-subtitle">
+        			            <div class="moduletable-header">
+                                    <div class="moduletable-header-inside">
+                		                <h5 class="mod-title" align="center">DAEWOO</h5>
+                                    </div>    
+                                </div>    
+                                <div class="moduletable_content clearfix">
+                                    <div id="Div41" class="" align="center">
+                                        <a href="381.htm">
+                                            <img src="test.png" />
+                                        </a>
+                                    </div>  
+                                </div>
+		                    </div>
+                        </div>-->
                      </div>  
                 </div> 
             </div>    
         </div><!-- Promo -->  
-	    
+
      <!-- Content -->
 	    <div id="content">
            <div class="wrapper">
@@ -815,10 +843,10 @@ behavior: 'default'
 
     <div class="view_none" id="Page_0">
      <!--<br /><h1>Simple Header</h1><br />-->
-     <script type="text/javascript">
+     <!--<script type="text/javascript">
      
      //window.addEvent('domready', function() {});
-     jgetBrand( function(tmp) {
+     /*jgetBrand( function(tmp) {
         $j(document).ready( function() {
            $j("#Page_"+itPage).append(
                 '<table border="0" align="center" cellspacing="10" cellpadding="10"' +
@@ -833,8 +861,8 @@ behavior: 'default'
                              '<tr style="background: #f0f0ff"><td>'+ 
                              (tr+td) +'</td><td>'+ (tr*td) +'</td></tr>');
         });
-    });
-     </script>
+    });*/
+     </script>-->
 
     </div>
         <!-- Footer Wrapper -->
