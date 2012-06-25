@@ -1,6 +1,6 @@
-administrator/cache/*
-administrator/components/com_cache/*
-cache/*
-installation/*
-logs/*
-tmp/*
+Puls/administrator/cache/*
+Puls/administrator/components/com_cache/*
+Puls/cache/*
+Puls/installation/*
+Puls/logs/*
+Puls/tmp/*
