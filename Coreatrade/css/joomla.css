@@ -1,0 +1,1391 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 - 2011 IceTheme. All Rights Reserved
+  
+  License:
+  Copyrighted Commercial Software 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+  
+---------------------------------------------------------------- */
+
+
+/* ---------------------- joomla.css --------------------------
+This CSS file contains all the stylesheets that are needed
+by Joomla Core elements like components (content, contact,
+user, etc), or by modules (login, breadcrumbs, etc).
+
+/* Note 
+--------
+Also remember you dont need to worry about the size of this 
+CSS file when you see all this comments. The IceSpeed plugin 
+that we provide inside the template package will strip all 
+of this comments plus it will comprees all the CSS in you
+site. For more information on how to use IceSpeed please view 
+the Installation Guide in PDF inside the template package.
+---------------------------------------------------------------- */
+
+
+
+
+/* Joomla Content
+------------------
+Below you will find all the CSS codes that are needed to style 
+the Joomla Section, Category, Article and other 
+elements related to those parts like the pagination, readmore etc
+---------------------------------------------------------------- */
+
+/* The content description is used on the begging of each section
+or catgory to display the page title and the page description */
+.contentdescription {
+	margin-bottom:2.75em}
+
+
+/* Blog Structure (Leadings, Rows, Columns etc)
+This is used to correctly separete the content into
+rows and columns in blogs and blog featured content */		
+.cols-2,
+.cols-3,
+.cols-4 {
+	clear:both;
+	margin:0 -1.5% }
+	
+		
+	.cols-2 .column-1,
+	.cols-2 .column-2 {
+		width:47%;
+		position:relative;
+		margin:0 1.5%;
+		float:left }	
+	
+	.cols-3 .column-1,
+	.cols-3 .column-2,
+	.cols-3 .column-3 {
+		position:relative;
+		width:30.33%;
+		margin:0 1.5%;
+		float:left }	
+		
+	.cols-4 .column-1,
+	.cols-4 .column-2,
+	.cols-4 .column-3,
+	.cols-4 .column-4 {
+		position:relative;
+		width:22%;
+		margin:0 1.5%;
+		float:left }	
+
+
+		
+			
+/* Page Heading 
+that you may enable through the menu item */	
+div.blog h1,
+div.componentheading {
+	border-bottom:1px dotted #555;
+	padding-bottom:2px;
+	font-size:2.25em;
+	text-align:right;
+	margin-bottom:12px;
+	color:#999;}
+			
+			
+/* Category Blog / Featured Blog */
+.blog-featured,
+.blog { }
+
+	.blog-featured .items-leading,
+	.blog .items-leading {
+		margin-bottom:2.75em; }
+	
+		.blog-featured .items-leading .leading,
+		.blog .items-leading .leading {
+			position:relative;
+			border-bottom:1px dotted #DEDEDE;
+			padding-bottom:1.5em;
+			margin-bottom:1.5em }
+			
+	
+		.blog-featured .items-leading h2,
+		.blog .items-leading h2 {
+			font-size:2.25em;
+			margin-bottom:2px;
+			position:relative;}
+			
+			.blog-featured .cols-2 h2,
+			.blog .cols-2 h2 {
+				line-height:1.7em;
+				margin-bottom:6px;
+				font-size:1.4em;}
+				
+				.blog-featured .cols-3 h2,
+				.blog .cols-3 h2 {
+					font-size:1.35em;}
+					
+					.blog-featured h2 a,
+					.blog h2 a {color:#666;}
+			
+			.blog .cols-1 h2 {
+				font-size:1.75em;
+				margin-bottom:5px} 
+		
+		
+		.items-row {
+			margin-bottom:2.5em;
+			position:relative;
+			overflow:hidden;}
+			
+			.blog-featured .items-row:last-child,
+			.blog .items-row:last-child {
+				border:none;
+				padding-bottom:15px;
+				margin-bottom:0}
+				
+			
+		.blog-featured img, 
+		.blog img{
+			float:left;
+			margin:8px 15px 10px 0;
+			padding:4px;}
+			
+			
+
+/* Category List */
+.category-list { }
+
+
+	.category-list fieldset.filters {
+		margin:0;
+		border:none;
+		padding:0;}
+		
+	.category-list .display-limit {
+		float:right;
+		margin-bottom:12px;}
+	
+
+	.category-list .cat-items {} 
+		
+	.category-list .cat-children {
+		overflow:hidden}
+		
+		.category-list .cat-children  {
+			margin-bottom:8px;
+			padding-bottom:3px;
+			border-bottom:1px dotted rgba(255,255,255,.3);}
+			
+			.category-list .cat-children ul {
+			list-style-type:none;
+			padding:0;
+			margin:0;}
+			
+			.category-list .cat-children ul li span.item-title {
+				font-size:1.4em;
+				display:block;
+				margin-bottom:3px;}
+			
+			.category-list .cat-children .category-desc img {
+					float:left;
+					margin:5px 10px 10px 0;
+					background:#eee;
+					padding:5px;
+					border:1px solid #E0EBBB;}
+
+
+	
+			
+/* Archived Articles */
+div.archive ul#archive-items {
+	list-style-type:none;
+	margin:0 0 15px;
+	padding:0}
+	
+
+
+/* list of All Categories */
+div.categories-list {
+	overflow:hidden;}
+	
+	div.categories-list ul { 
+		list-style-type:none;
+		padding-left:3em;}
+		
+		div.categories-list > ul {
+			padding-left:0;} 
+		
+		div.categories-list ul span.item-title {
+			font-size:1.4em;
+			display:block;
+			margin-bottom:5px;}
+			
+		div.categories-list div.category-desc p {
+			margin-bottom:4px}	
+			
+			div.categories-list ul li {}
+		
+		div.categories-list ul .category-desc img {
+			float:left;
+			margin:5px 10px 10px 0} 
+			
+		div.categories-list  dl {
+			color:#777;
+			margin-bottom:2em; }
+		
+			div.categories-list  dl dt {
+				display:inline; }
+			
+			div.categories-list  dl dd {
+				display:inline; margin-left:2px;}
+				
+		 
+
+/* Article Page */
+.item-page {
+	position:relative; }
+
+	.item-page h2 {
+		line-height:1.35em;
+		font-size:2.5em;}
+
+
+	.item-page img {
+		float:left;
+		margin:5px 10px 10px 0;
+		background:#eee;
+		padding:5px;
+		border:1px solid #E0EBBB;}
+
+
+
+/* Buttonheading 
+is used to render the CSS for the icons like print, email */
+ul.actions {
+	float:right;
+	margin:0;
+	padding:0;
+	
+	list-style-type:none;}
+	ul.actions li {
+		float:left;
+		padding:0;}
+		ul.actions li img {
+			background:none;
+			padding:0;
+			border:none;
+			margin:0 0 0 2px;}
+			ul.actions li a:hover img {}
+			
+			
+			
+			
+		
+		
+/* The code below is used to render the published date, 
+last updated date and the author name on each category,
+section or article */	
+dl.article-info {
+		overflow: hidden;
+		margin-top:0;
+		margin-bottom:1em;}
+	
+	dl.article-info dt.article-info-term {
+		display:none}
+	
+	dl.article-info dd {
+		float:left;
+		font-family:Verdana, Geneva, sans-serif;
+		color:#999;
+		font-size:.9em;
+		margin-left:0;
+		padding:0;
+		font-style:italic;
+		margin-right:1.75em;}
+	
+
+/*  -- Voting -- 
+Now in Joomla 1.6 the voting system is built into the core*/
+span.content_rating {
+	color:#666;
+	margin-bottom:-18px;
+	display:block;}
+	
+	span.content_rating img {
+		padding:0;
+		float:none;
+		background:none;
+		border:none;
+		margin:0 0 -3px 2px } 
+	
+div.content_vote {
+	padding-bottom:10px;
+	color:#666;
+	display:block;}
+	
+	div.content_vote input {
+		margin-bottom:-2px}
+	
+	div.content_vote input.button {
+		margin-bottom:0;
+		margin-left:10px;}	
+	
+
+/* -- Pagenav -- 
+used below each article to navigate from one artcile to another */
+ul.pagenav {
+	display:block;
+	list-style-type:none;
+	padding:4px 0 0;
+	margin:10px 0 0;
+	border-top:1px dotted #ccc;}	 
+	ul.pagenav li {
+		display:inline}
+		
+	ul.pagenav li.pagenav-prev {
+		float:left;
+		margin-bottom:5px}
+	
+	ul.pagenav li.pagenav-next {
+		float:right;
+		margin-bottom:5px} 
+			
+
+
+/* Items More */
+div.items-more {
+	clear:both;
+	position:relative;
+	overflow:hidden;
+	border-top:1px dotted #555;
+	padding-top:15px}
+
+
+
+
+/* Readmore
+The readmore code is used to make readmore links for each article
+on the Section and Category view
+Check forms.css to change the styles */
+p.readmore {
+	margin-bottom:1em}
+		
+	p.readmore a {
+		background-color: #510001;
+		background-image: linear-gradient(top, #7B0003, #510001);
+		background-image: -o-linear-gradient(top, #7B0003, #510001);
+		background-image: -moz-linear-gradient(top, #7B0003, #510001);
+		background-image: -webkit-linear-gradient(top, #7B0003, #510001);
+		background-image: -ms-linear-gradient(top, #7B0003, #510001);
+		box-shadow: inset -1px -1px 0 #13829C, inset 1px 1px 0 #13829C);
+		border: 1px solid #A30009;
+		display:inline-block;
+		color:#fff;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, .9);
+		padding:1px 10px 2px; 
+		cursor:pointer;
+		font-size:1em;
+		margin:0 .25em;
+		white-space:nowrap;
+		text-decoration:none;
+		-moz-transition: padding .3s ease-out;
+		-o-transition: padding .3s ease-out;
+		-webkit-transition: padding .3s ease-out;
+		transition: padding .3s ease-out;
+		background-position:95% 30%;
+		background-repeat:no-repeat;}
+		
+		p.readmore a:hover {
+			box-shadow:0 0 12px #000;
+			padding-right:26px;
+			background-image:url(../images/readmore.png);}
+				
+		p.readmore a:focus {}	
+	
+
+/* Pagination makes a unested list of links on the end of each 
+cateogry/section but it may be used by other extensions as well
+for the same reason, so be careful as this other extensions 
+may use their own code to display the pagination */
+div.pagination  {
+	position:relative;
+	overflow:hidden;
+	padding-top:15px}
+	
+	
+div.pagination ul {	
+	clear:both;	
+	list-style-type:none; 
+	margin:0 auto .75em; 
+	text-align:center;}	
+	
+	div.pagination ul li {
+		display:inline;}
+		 
+		  div.pagination ul li span.pagenav,
+		  div.pagination ul li a.pagenav {
+			  display:inline-block;
+			  margin:0 3px;
+			  padding:1px 8px 0px;
+			  background: #2E2E2E;
+			  color:#888;
+			  text-shadow:1px 1px 1px #000;
+			  border: 1px solid #3D3D3D; }
+			  
+			  
+		 div.pagination ul li a.pagenav{
+			 border-color:#4A4A4A;
+			 background:#383838;
+			 text-shadow:none;
+			 color:#fff;}
+			
+			 div.pagination ul li a.pagenav:hover {
+				 background:#3D3D3D;
+				 text-decoration:none;}
+		 
+	div.pagination p.counter  { 
+		margin:0 auto 10px; 
+		text-align:center; 
+		color:#999} 
+
+
+
+
+
+
+/* Sliders and Tabs 
+are used by Joomla to output the content throught tabs or sliders
+for examplet this is used on the contact us page but also it may
+be used by other external components to output their content.  */
+/* Sliders */
+.pane-sliders {
+	border: 1px solid #E8E7DE;
+	border-bottom:none;}
+
+	.pane-sliders div.pane1 { }
+	
+	
+	.pane-sliders div.panel h3.pane-toggler,
+	.pane-sliders div.panel h3.pane-toggler-down {
+		background:#E8E7DE ;
+		border-bottom: 1px solid #E8E7DE;
+		-moz-box-shadow: 0 1px 0 #fff;
+		-webkit-box-shadow: 0 1px 0 #fff;
+		box-shadow: 0 1px 0 #fff;
+		margin-top:1px;
+		font-size:1.3em;}
+		.pane-sliders div.panel h3.pane-toggler a,
+		.pane-sliders div.panel h3.pane-toggler-down a { 
+			display:block;
+			color:#777;
+			padding:4px 10px;
+			text-decoration:none;}
+			.pane-sliders div.panel h3.pane-toggler a:hover,
+			.pane-sliders div.panel h3.pane-toggler-down a:hover,
+			.pane-sliders div.panel h3.pane-toggler-down a {
+				color:#444} 
+				
+	
+		.pane-sliders div.panel h3.pane-toggler-down {
+			border-bottom:none;
+			position:relative;
+			background:#DEDCCF;}
+			
+				.pane-sliders div.panel h3.pane-toggler-down:after {
+				  content:"";
+				  border-style: dashed;
+				  border-color: transparent;
+				  border-width: 0.6em;
+				  display: -moz-inline-box;
+				  display: inline-block;
+				  /* Use font-size to control the size of the arrow. */
+				  height: 0;
+				  line-height: 0;
+				  position: relative;
+				  vertical-align: middle;
+				  width: 0;
+				  border-top-width: .7em;
+				  border-top-style: solid;
+				  border-top-color: #D4D1C0;
+				  position:absolute;
+				  bottom:-18px;
+				  left:11px;}
+			
+
+	.pane-sliders div.panel div.pane-down {
+		border-bottom:1px solid #e6e6e6!important;
+		padding:20px 10px!important;}
+
+
+
+/* Tabs */
+dl.tabs {
+    float: left;
+    margin: 0;
+    z-index: 50;
+    clear:both;
+	width:100%;}
+
+	dl.tabs dt {
+		padding:0;
+		float: left;
+		margin-right: 10px;
+		font-size:.8em;
+		border-radius:3px;
+		border:1px solid #E8E7DE;
+		background:#fff;
+		-webkit-transition:all .4s ease-out;
+		-moz-transition:all .4s ease-out;
+		-o-transition:all .4s ease-out; 
+		transition:all .4s ease-out;}
+		
+		dl.tabs dt h3 {
+			font-size:1.5em}
+			
+			dl.tabs dt a {
+				color:#777;
+				display:block;
+				float:left;
+				padding: 5px 10px;
+				text-decoration:none;}
+				dl.tabs dt a:hover,
+				dl.tabs dt.open a {
+					color:#222;}
+		
+		dl.tabs dt.open {
+			background:#DEDCCF;
+			border-color:#DEDCCF;
+			position:relative;
+			z-index: 100;}
+			dl.tabs dt.open a {
+				color:#555}
+
+
+		div.current {
+			clear: both;
+			border-top:none;
+			padding: 20px 0 10px;}
+
+		div.current dd {
+			padding: 0;
+			margin: 0;}
+			
+			
+			dl.tabs dt.open:after {
+			  content:"";
+			  border-style: dashed;
+			  border-color: transparent;
+			  border-width: 0.8em;
+			  display: -moz-inline-box;
+			  display: inline-block;
+			  /* Use font-size to control the size of the arrow. */
+			  height: 0;
+			  line-height: 0;
+			  position: relative;
+			  vertical-align: middle;
+			  width: 0;
+			  border-top-width: .8em;
+			  border-top-style: solid;
+			  border-top-color: #DEDCCF;
+			  position:absolute;
+			  bottom:-16px;
+			  left:11px;}
+
+
+
+
+
+
+/* Contact Us
+Some fixes use on the com_contact component */
+div.contact { }
+
+	div.contact h2 {
+		margin-bottom:7px; }
+		
+		
+div.contact-form { }
+
+	div.contact-form  p.form-required { font-weight:bold; }
+	
+	div.contact-form div.contact-email div {
+		padding:0 0 14px}
+
+			
+				div.contact-form label#jform_contact_email_copy-lbl {}
+					
+	
+	div.contact-form dt {
+		float:left;
+		clear:both;}
+		
+		div.contact-form dt, 
+		div.contact-form dd {
+			padding-top:.5em;
+			padding-bottom:.5em}
+	
+	div.contact-form button {
+		margin-top:5px}
+	
+		
+	div.contact img { float:left; margin:0 10px 10px 0}
+	
+	div.contact div.contact-image img {float:right; margin:0 0 10px 10px}
+	
+	
+
+	
+	
+	
+	
+
+/* com_users
+used on the Registration, Proflie or login pages  */
+div.registration,
+div.login,
+div.profile-edit,
+div.edit,
+div.profile { }
+
+	div.registration dt,
+	div.profile-edit dt,
+	div.edit dt,
+	div.profile dt,
+	div.registration dd,
+	div.login dd,
+	div.profile-edit dd,
+	div.edit dd,
+	div.profile dd,
+	div.contact-form dd  {
+		display:inline-block;
+		margin-left:.75em;
+		float:left }
+
+	div.registration dt,
+	div.profile-edit dt,
+	div.edit dt,
+	div.profile dt,
+	div.contact-form dt   {
+		clear:both;
+		width:160px;
+		text-align:right;
+		margin-bottom:1.5em;}
+
+		
+		div.registration dt span.spacer { text-align:left; display:block; color:#999}
+
+		div.profile-edit span.optional { font-size:.9em; color:#999; font-weight:normal; }
+		
+	
+	div.login {}	
+	
+		div.login .login-fields {
+			padding-bottom:14px}
+			
+			div.login .login-fields label {
+				width:140px;
+				display:block;
+				float:left;}
+		
+
+
+	
+		div.edit #editor-xtd-buttons { padding:0}
+		
+		div.edit .button2-left { margin:15px 10px 0 0}
+
+
+	div.edit .form-note {
+		background:#eee;
+		clear:both;
+		display:block;
+		margin:20px -1.4em -41px;
+		padding:10px}
+		div.edit .form-note p {
+			margin-bottom:0}
+			
+	div.edit img {
+		float: right;
+		margin: 3px 0 0 5px;}
+
+
+/* com_users
+used on the Registration, Proflie or login pages  */
+	div.edit  label { 
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+	text-align: right;
+	width: 160px;
+	}
+
+	div.edit .formelm, .formelm-buttons { 
+		margin-bottom:1.5em;
+	
+	}
+	div.edit fieldset  { 
+		margin-bottom:2.5em;
+	
+	}
+	div.edit .formelm-area textarea{
+	margin-bottom:1em;
+	
+	}
+	div.edit span#jform_description_parent{
+	float:left;
+	
+	}
+	div.edit #editor-xtd-buttons{
+		clear:both;}
+
+
+/* category module */
+ul.category-module {
+	padding:0;
+	margin:0;
+	padding-left:1.5em;
+	margin-bottom:1em;}
+	
+	ul.category-module li {
+		padding:7px 0}
+	
+		ul.category-module li h4 {
+			font-size:1.1em;}
+			
+		ul.category-module li span.mod-articles-category-category,
+		ul.category-module li span.mod-articles-category-date,
+		ul.category-module li span.mod-articles-category-writtenby { 
+			color:#999;
+			font-size:.9em;
+			font-family:Arial, Helvetica, sans-serif; }
+			
+		ul.category-module li span.mod-articles-category-writtenby  {
+			padding-right:18px;}	
+
+
+
+
+/* com newsfeeds */
+div.newsfeed {}
+
+	div.newsfeed {}
+
+
+	div.newsfeed div.feed-items {
+		margin-top:30px}
+		
+		div.newsfeed div.feed-items img {
+			float:left;
+			margin:5px 10px 10px 0}
+	
+/* mod feed */
+div.feed {}
+	
+	div.feed ul {
+		list-style-type:none;
+		padding:0;
+		margin:0}
+		
+		div.feed ul li h4.feed-link {
+			font-size:1.3em;
+			padding-bottom:5px}
+
+ 
+/* mod_latestnews and mod_mostread */
+ul.latestnews,
+ul.mostreadmod { margin:.5em 0 0; padding-right:0; padding-left:1.5em; }
+
+ul.latestnews li,
+ul.mostreadmod  li { color:#999; margin-bottom:.7em}
+
+
+/* mod_login */
+form#login-form {
+	padding-top:.75em;
+	margin-top:0;}
+	
+	form#login-form div.pretext {
+		margin-bottom:5px}
+	form#login-form div.posttext {
+		margin-top:10px}
+	
+	form#login-form fieldset {
+		border:none;
+		padding:0;
+		margin:0 0 12px}
+	
+		form#login-form fieldset label {
+			display:none;}
+	
+		form#login-form fieldset p {
+			margin-bottom:1em;}
+
+		form#login-form p .inputbox {
+			width:90%;}
+		
+			form#login-form p .inputbox:hover,
+			form#login-form p .inputbox:focus {} 
+			
+			
+	
+		form#login-form input.button {}	 
+	
+	form#login-form p#form-login-remember {
+		padding:.25em .25em 0 0;
+		float:right;}
+		form#login-form p#form-login-remember label {
+			display:inline;}
+		form#login-form p#form-login-remember .inputbox {
+			width:auto}		
+		
+	form#login-form ul {
+		clear:both;
+		padding:0 0 0 .5em;
+		list-style-type:none;
+		margin:0}
+		form#login-form ul li {
+			padding:.1em 0}
+		
+		
+	form#login-form p {
+	margin:0 0 15px; }
+
+	form#login-form button{ 
+		margin: 0 0 0 10px}
+		
+	form#login-form p.form-login-register a {
+		font-size:1.3em;
+		display:block;
+		background:#EBF3FA;
+		border:1px solid #DEDEDE;
+		box-shadow:inset -1px -1px 0 #fff, inset 1px 1px 0 #fff;
+		text-align:center;
+		margin:20px 12px 25px;
+		color:#777!important;
+		text-shadow:1px 1px 1px #fff;
+		padding:5px 0;}	
+		
+		form#login-form p.form-login-register a:hover {
+			color:#333!important;}
+	
+		
+			
+/* mod_search
+
+----disabled---- used instead the new smart search... see below
+---------------*/
+.search {
+	margin:10px 0 0 0;}
+	
+	.search label { display:none;}
+	
+	.search .inputbox {
+		padding:4px 8px;
+		background:#fff;
+		border:1px solid #E0E0CE;
+		width:250px;
+		-webkit-transition:all .4s ease-out;
+		-moz-transition:all .4s ease-out;
+		-o-transition:all .4s ease-out; 
+		transition:all .4s ease-out;}
+			
+		.search .inputbox:hover,
+		.search .inputbox:focus {
+			box-shadow:none;
+			border-color:#D6D6BE;
+			color:#444;} 
+
+   .search input.button{
+	    margin-left:-77px;
+	    padding:4px 12px 6px!important;
+	    border:none;
+	    color:#fff!important;
+		background-color:#295482;
+		background-image: linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -o-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -moz-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -webkit-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -ms-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);}
+		
+	.search input.button:hover{
+	   border:none;
+	   box-shadow:none;}
+			  
+/* mod smart_search */
+#search {
+    clear: right;
+    float: right;
+    margin:10px 22px 20px 0;}
+	
+	#search input{
+	   padding:5px;
+	   border-radius:7px;}
+	   
+		#search input:hover,
+		#search input:focus{
+		    box-shadow:none;}
+		   
+   	#search button{
+	    margin-left:-55px;
+	    border-radius:7px;
+		color:#fff!important;
+	    padding:4px 12px 6px;
+		border:1px solid #295482;
+		background-color:#295482;
+		background-image: linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -o-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -moz-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -webkit-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);
+		background-image: -ms-linear-gradient(bottom, rgb(41,84,130) 10%, rgb(61,105,147) 70%);}
+	
+	#search .finder label,
+	#search .finder br  {
+		display:none}
+		
+	
+	#search .finder input.inputbox {
+		background: url("../images/search_button.png") no-repeat scroll 100% 3px #FFFFFF;
+		border: 5px solid #2694A6;
+		color: #999999;
+		margin-right: 0;
+		margin-top: 10px;
+		width: 205px;}
+		
+		#search .finder input.inputbox:hover,
+		#search .finder input.inputbox:focus {
+			color:#555}
+		
+		
+	ul.autocompleter-choices  {
+		background:#EAE9E0;
+		border:1px solid #C7C3AC;}		
+	
+	
+	
+/* com_search
+---------------*/
+form#searchForm {}
+
+	form#searchForm div.searchintro {
+		padding:.4em 1em;
+		border:1px solid #fff;
+		margin-bottom: 1.5em;
+		color: #514721;
+		background:#FFF6BF;
+		-moz-box-shadow: 0 0 8px #877736;
+		-webkit-box-shadow: 0 0 8px 877736;
+		box-shadow: 0 0 8px #877736;}
+		form#searchForm div.searchintro p {
+			margin:0}
+	
+		
+	form#searchForm .ordering-box {
+		padding-top:15px}
+
+	form#searchForm label {
+		width:auto; padding-right:10px;}
+		
+	form#searchForm .form-limit { float:left; padding-top:20px}
+	
+	form#searchForm .counter { float:right; padding-top:25px}
+	
+		
+	dl.search-results {
+		clear:both;}
+		
+	dl.search-results .result-title { padding-top:25px; font-size:1.3em;}
+	
+	dl.search-results dd { margin-left:0}
+		
+
+
+/* com_smartsearch 
+------------------*/
+
+.finder #search-form fieldset.word {}
+
+	.finder #search-form #advanced-search-toggle {
+		border:1px dotted #ccc;
+		background:#F5F5F5;
+		padding:3px 12px;
+		display:inline-block}
+		
+		
+		.finder #search-form ul#finder-filter-select-list {
+			list-style-type:none!important; }
+			
+			.finder #search-form ul#finder-filter-select-list li {
+				padding:7px 0}
+				
+				.finder #search-form ul#finder-filter-select-list li label {
+					width:160px;
+					display:inline-block;
+					text-align:right;
+					padding-right:10px;}
+					
+	
+	
+/* mod_breadcrumbs
+used to make the default joomla breadcrumbs so that your users may easily 
+find their way to the site structure. Reccomended for site with lots of 
+content and menu items.
+----------------------*/
+#breadcrumbs {
+	border-bottom:1px solid #000;
+	padding-bottom:15px;
+	margin-bottom:30px;
+	box-shadow: 0 1px 0 #333;
+	margin-top:-10px;}
+
+.navigate {
+	border-bottom:1px solid #000;
+	padding-bottom:15px;
+	margin-bottom:30px;
+	box-shadow: 0 1px 0 #333;
+	margin-top:-10px;}
+	
+.breadcrumbs {
+	padding:0;
+	position:relative;
+	overflow:hidden;
+	margin: 0;}
+	
+	.breadcrumbs ol {
+		list-style-type:none;
+		float:left;
+		width:100%;
+		margin:0;	
+		padding:0;}
+		.breadcrumbs ol li { 
+			float:left;
+			color:#fff;
+			color:rgba(255, 255, 255, 0.7);
+			background:url(../images/breadcrumbs_arrow.png) no-repeat 100% 42%;
+			padding:0 22px 0 0;
+			margin-right:8px;}
+			.breadcrumbs ol li a {
+				display:block;
+				margin:0;
+				color:#E6DD00}
+				.breadcrumbs ol li a:hover {}
+
+		.breadcrumbs ol li.lastitem {
+			background:none;
+			padding:0}
+
+		
+		.breadcrumbs ol li:first-child a {
+			background:url(../images/breadcrumbs_home.png) no-repeat bottom;
+			height:22px;
+			width:22px;
+			margin-top:-2px;
+			margin-left:0;
+			text-indent:-9999em;}
+			.breadcrumbs ol li:first-child a span {
+				background:url(../images/breadcrumbs_home.png) no-repeat top;
+				height:22px;
+				width:22px;
+				display:block;
+				-webkit-transition:all .4s ease-out;
+				-moz-transition:all .4s ease-out;
+				-o-transition:all .4s ease-out; 
+				transition:all .4s ease-out;}
+				
+					.breadcrumbs ol li:first-child a:hover span {
+						opacity:0;}
+			
+			
+
+
+/* -- Lnnguage Switcher --
+Now in Joomla 1.6 we have by default the language switcher option
+and we use the code below to docorate the module */
+#language {
+	position:absolute;
+	right:12px;
+	opacity:.6;
+	top:10px;
+	-moz-transition: all .6s ease-out;
+	-o-transition: all .3s ease-out;
+	-webkit-transition: all .6s ease-out;
+	transition: all .3s ease-out;}
+	
+	#language:hover {
+		opacity:1}
+	
+	#language ul {
+		padding:8px 5px 0;
+		margin:0;
+		background:rgba(0,0,0,.75);
+		border:1px solid #444;
+		list-style-type:none;}
+		#language ul li {
+			text-align:center;
+			margin:0}	
+			
+			#language ul li a {
+				display:block;
+				margin: 0 0 8px;
+				padding:0;
+				-moz-transition: all .6s ease-out;
+				-o-transition: all .3s ease-out;
+				-webkit-transition: all .6s ease-out;
+				transition: all .3s ease-out;}	
+			
+			#language ul li a:hover {
+				 -webkit-transform: scale(1.15)}
+
+	
+				#language ul li img {
+					margin:0;
+					float:none}
+					
+					#language ul li.lang-active a {}
+
+			
+/* ToolTips 
+the default Joomla tooltips CSS code. You may find this on the registration page,
+login etc but also it may be used by other external Component/Modules */
+.tip-wrap {
+	z-index:99}
+	
+.tip {
+	padding:.4em .8em ;
+	margin-bottom: 2em;
+	font-weight:normal;
+	background: #3D3D3D;
+	color:#ccc;
+	border: 1px solid rgba(255, 255, 255, .3);}
+	.tip .tip-title {
+		font-family:Lora, Arial, Helvetica, sans-serif;
+		color: #fff;
+		font-weight:normal;
+		text-shadow:1px 1px 1px rgba(0,0,0,.6);
+		padding-bottom:3px;
+		font-size:1.3em}
+ 
+ 
+ 
+ 
+
+
+
+
+/* System Messages 
+This is used by Joomla to output errors, notices or other messages
+but also it may be used by other external Component/Modules.
+Also note that the decoration for this CSS is as well on this file
+media/system/css/system.css
+be careuful when editing this code
+----------------------*/
+dl#system-message {}
+	
+	
+	dl#system-message dd {}
+		
+		
+	dt.error,
+	dd.error {}
+
+	#system-message dd ul {
+		background-position:4px 45%;
+		margin-right:0}
+		
+		#system-message dd.warning ul,
+		#system-message dd.error ul {}
+		
+	dt.notice,
+	dd.notice {}
+		
+
+/* wrapper page */
+iframe.wrapper {
+	width:100%}
+
+
+
+/* Menus
+------------------------------
+List of CSS codes that can not be categorized above but they may
+be need by Joomla to operate normally. This codes may be used 
+rarely but we reccomend to keep them and to be careful when you
+try to change them
+---------------------------------------------------------------- */
+
+/* MainMenu 
+Only the wrapper part is here the rest of the codes that
+generates the mainmenu can be found on 
+templates/this_template/html/mod_iceemegamenu/css/default_icemegamenu.css  
+---------------*/
+#mainmenu {
+	float:right;
+    margin:40px 0 0;}
+		
+	
+	#mainmenu .icemegamenu {
+		height: 40px;
+		position:relative;}
+		
+		#mainmenu .icemegamenu:before {
+
+				top: 0px;
+				content: "";
+				display: inline-block;
+				height: 20px;
+				line-height: 0;
+				position: absolute;
+				vertical-align: middle;
+				width: 100%;}		
+
+		
+/* TopMenu 
+---------------*/
+#topmenu ul.menu { 
+	margin:0 ;
+	padding:0;}
+	#topmenu ul.menu li {
+		display:inline;
+		float:left;
+		padding:2px 0 0 24px;
+		margin:0;
+		font-size:.9em;
+		list-style-type:none;}
+		#topmenu ul.menu li a {
+			display: block;
+			padding: 0;
+			color: #5DABB5;}
+			
+			#topmenu ul.menu li.active a,
+			#topmenu ul.menu li a:hover {}
+			
+		#topmenu ul.menu li a img {
+			float:none;
+			margin:0px 8px -4px 0}
+			
+		#topmenu ul.menu li:last-child {
+			border:none;
+			padding-right:0;}
+			
+
+
+	
+/* Right Columns Menus
+used to display the current menu that is 
+also on the dropdown 
+-----------------------------------------*/
+.col-module-content ul.menu,
+.col-module-content ul.menu ul { 
+	margin:0;
+	padding:0 0 1px;}
+	.col-module-content ul.menu li {
+		padding:0;
+		margin:0;
+		list-style-type:none;}
+		.col-module-content ul.menu li a {
+			color:#999;
+			border-bottom:1px dotted #555;
+			display:block;
+			font-size:1.1em;
+			position:relative;
+			background:url(../images/menu_point.png) no-repeat center left;
+			padding:.35em 10px .35em 17px;}
+			.col-module-content ul.menu li a:hover,
+			.col-module-content ul.menu li.current a {
+				text-decoration:none;
+				color:#fff;}
+				
+				.col-module-content ul.menu li.current a {
+					background:url(../images/menu_point_hover.png)  no-repeat center left;}
+				
+			
+		
+
+		.col-module-content ul.menu li.deeper {
+			background:none;}
+			.col-module-content ul.menu li.deeper span.separator {
+				font-size:1.3em;
+				color:#fff;
+				padding:.4em .5em .4em;
+				display:block;
+				background:rgba(255,255,255,.07);
+				margin-top:10px;
+				text-shadow:1px 1px 1px #000}
+		
+		
+		
+		.col-module-content ul.menu li li:last-child {
+			border:none;}
+		
+		
+
+
+/* FooterMenus
+---------------*/
+#footer ul.menu {
+	padding-left:.75em;
+	margin-bottom:.5em}
+	
+	#footer ul.menu li {
+		padding:.25em 0;
+		list-style-type:none}
+		
+		#footer ul.menu li a {
+			display:block;
+			padding:0;
+			text-decoration:none;}
+			#footer ul.menu li a:hover,
+			#footer ul.menu li.current a {text-decoration:underline;}
+		
+		
+		/* Footer menu with suffix  "socialmenu"
+		on the last menu with the social icons */
+		#footer ul#socialmenu {
+			padding-left:.5em;
+			list-style-type:none;}
+			#footer ul#socialmenu li {
+				padding:6ox 0;
+				background:none;}
+				#footer ul#socialmenu li a {
+					padding:0;}
+			
+				#footer ul#socialmenu li img {
+					margin:0 10px -2px 0;
+					-webkit-transition:opacity .4s ease-out;
+					-moz-transition:opacity .4s ease-out;
+					-o-transition:opacity .4s ease-out; 
+					transition:opacity .4s ease-out;}
+					
+					#footer ul#socialmenu li a:hover img {
+						opacity:1;}
+						
+								
+			
+/* Copyright Menu 
+---------------*/
+#copyrightmenu {
+    float: right;
+    padding-top: 11px;}
+	
+#copyrightmenu ul.menu { 
+	margin:2px 0 5px 0;
+	padding:0;}
+	#copyrightmenu ul.menu li {
+		display:inline;
+		float:left;
+		padding:0 0 0 25px;
+		margin:0;
+		font-size:.9em;
+		list-style-type:none;}
+		#copyrightmenu ul.menu li a {
+			color:#fff;
+			border-bottom:1px dashed rgba(255,255,255,.4);}
+			#copyrightmenu ul.menu li a:hover {
+				text-decoration:none;
+				border-bottom-color:rgba(255,255,255,.8);}
+		
+		#copyrightmenu ul.menu li a img {
+			float:none;
+			margin:0px 8px -4px 0}
+			
+		#copyrightmenu ul.menu li:last-child {
+			border:none;
+			padding-right:0;}			

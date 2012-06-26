@@ -1,0 +1,115 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 -2011 IceTheme. All Rights Reserved
+  
+  License:
+  Copyrighted Commercial Software 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+---------------------------------------------------------------- */
+
+/* IceMegaMenu
+------------*/	
+div.icemegamenu ul#icemegamenu li span.icemega_desc {
+	background-color:#520F36;
+	background-image: -moz-linear-gradient(#7E1752, #520F36);
+	background-image: -webkit-linear-gradient(#7E1752, #520F36); 
+	background-image: -o-linear-gradient(#7E1752, #520F36);
+	background-image: linear-gradient(#7E1752, #520F36);}
+	
+	div.icemegamenu ul#icemegamenu li span.icemega_desc:after{
+		  border-top-color: #520F36;}
+/* Promo
+------------*/	
+#promo{
+	background-image:url(../images/styles/style2/promo.jpg);
+	background-color:#00275A;
+	border-color:#7D1B58;}
+	
+	#promo .inside_effect {
+		background-image:url(../images/styles/style2/promo_inside.jpg);}
+		
+		#promo .expautos_images_table div img {
+			border-color: #7D1B58;}
+			
+			#promo .moduletable h3.mod-title span  {
+				color:#952770;} 
+
+
+
+/* module.css
+------------*/	
+
+.col-module .col-module-suffix-style1 {
+	background-image:url(../images/styles/style2/col-module-style1.png);
+	background-color:#45002A;
+	background-position:center top;
+	background-repeat:repeat-x;
+	border-color:#770051;}
+	
+	.col-module .col-module-suffix-style1  .col-module-header {
+		border-bottom-color:#930065;}
+	
+	.col-module .col-module-suffix-style1 .col-module-header h3.mod-title span {
+		color:#952770;}
+		
+/* Accordion
+------------*/			
+.iceaccordion h4.toggler{
+	border-color:#930065;}
+	
+	.iceaccordion div.accordion_content .padding .iceAccordionTip{
+		border-color:#930065;}	
+		
+	.iceaccordion-paging{
+		background-color:#32001F;}
+		
+		ul.iceaccordion-numbers li{
+		background-color:#4D002E;
+		border-color:#790048}
+
+
+#content {
+    border-color:#791C58;}
+
+#footer {
+    background-image: url(../images/styles/style2/promo.jpg);
+    background-color:#001c41;
+    border-color:#B21E80;}
+	
+	#copyright{
+		border-color:#5F1B47;}
+
+		a#go2top {
+			background-image: url(../images/styles/style2/go2top.png);}
+		
+/* joomla.css
+------------*/	
+
+p.readmore a {
+	background-color:#3C0B28;
+	background-image: linear-gradient(top, #681344, #3C0B28);
+	background-image: -o-linear-gradient(top, #681344, #3C0B28);
+	background-image: -moz-linear-gradient(top, #681344, #3C0B28);
+	background-image: -webkit-linear-gradient(top, #681344, #3C0B28);
+	background-image: -ms-linear-gradient(top, #681344, #3C0B28);
+	box-shadow:inset -1px -1px 0 #26139C, inset 1px 1px 0 #26139C);
+	border-color:#8D0061;}
+
+
+
+/* forms.css 
+------------ */
+button,
+input.button,
+a.button,
+input[type="submit"]{
+	background-color:#3C0B28;
+	background-image: linear-gradient(top, #681344, #3C0B28);
+	background-image: -o-linear-gradient(top, #681344, #3C0B28);
+	background-image: -moz-linear-gradient(top, #681344, #3C0B28);
+	background-image: -webkit-linear-gradient(top, #681344, #3C0B28);
+	background-image: -ms-linear-gradient(top, #681344, #3C0B28);
+	box-shadow:inset -1px -1px 0 #26139C, inset 1px 1px 0 #3C0B28);
+	border-color:#8D0061;}		

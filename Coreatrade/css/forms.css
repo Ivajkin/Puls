@@ -1,0 +1,167 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 IceTheme. All Rights Reserved
+  
+  License:
+  Copyrighted Commercial Software 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+---------------------------------------------------------------- */
+
+/* General Forsm Styles */
+label { 
+	font-weight: normal;}
+
+fieldset { 
+	padding:1.4em;
+	margin: 1em 0 1.5em .2em;
+	border:1px dotted #444;}
+	
+legend  { 
+	font-size:1.5em;
+	color:#ccc;
+	border:1px dotted #444;
+	padding:0.3em 1em 0.4em}
+
+
+/* Text fields */
+.inputbox,
+input[type="text"],
+input[type="email"],
+input[type="password"]  {
+	color:#fff;
+	border-radius:5px;
+	color:#777;
+	background:#111;
+	border:1px solid #333;
+	margin:0 0.25em 0 0;
+	padding:4px 7px;
+	-moz-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	-webkit-transition: all .4s ease-in;
+	transition: all .4s ease-in;}
+	.inputbox:hover,
+	.inputbox:focus,
+	input[type="text"]:hover,
+	input[type="text"]:focus,
+	input[type="email"]:hover,
+	input[type="email"]:focus,
+	input[type="password"]:hover,
+	input[type="password"]:focus  {
+		color:#ccc;
+		border-color:#555;
+		box-shadow:0 0 10px #555;}
+
+	/* inside the columns modules because they have a dark background color  */
+
+		
+		
+textarea {
+	border-radius:5px;
+	color:#777;
+	background:#111;
+	border:1px solid #333;
+	margin:0 0.25em 0 0;
+	padding:3px 5px;
+	-moz-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	-webkit-transition: all .4s ease-in;
+	transition: all .4s ease-in; }
+	textarea:hover,
+	textarea:focus { 
+		color:#ccc;
+		border-color:#555;
+		box-shadow:0 0 10px #555;}
+
+
+select {
+	color:#ccc;
+	background:#111;
+	padding:4px 2px 4px 7px!important;
+	border:1px solid #333!important;
+	outline:none;}
+	select option {
+		color:#ccc;
+		background:#111;}
+	select:focus { }
+
+/* Other */
+form p img {
+	float:none;
+	margin:0;
+	vertical-align:middle}
+
+
+
+/* Success, Notice and Error Form Messages */
+div.success,
+p.success,
+div.notice,
+p.notice,
+div.error,
+p.error { 
+	padding:.6em 1em 0.6em 3.4em;
+	border:1px solid #fff;
+	margin-bottom: 2em;}
+	div.success,
+	p.success { 
+		color: #264409;
+		background:#E6EFC2 url(../images/typo_success.png) no-repeat 10px center;
+		border:1px solid #CEE086;}
+	div.notice,
+	p.notice { 
+		color: #514721;
+		background:#FFF6BF url(../images/typo_note.png) no-repeat 10px center;
+		border:1px solid #FFDE24;}
+	div.error,
+	p.error { 
+		color: #8A1F11;
+		background:#FBE3E4 url(../images/typo_error.png) no-repeat 10px center;
+		border:1px solid #F5B7B8;}
+/* Buttons 
+------------ */
+button,
+input.button,
+a.button,
+input[type="submit"]{
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:#510001;
+	background-image: linear-gradient(top, #7B0003, #510001);
+	background-image: -o-linear-gradient(top, #7B0003, #510001);
+	background-image: -moz-linear-gradient(top, #7B0003, #510001);
+	background-image: -webkit-linear-gradient(top, #7B0003, #510001);
+	background-image: -ms-linear-gradient(top, #7B0003, #510001);
+	box-shadow:inset -1px -1px 0 #13829C, inset 1px 1px 0 #13829C);
+	border:1px solid #A30009;
+	border-radius:5px;
+	color:#fff!important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.9);
+	display:inline-block;
+	padding:3px 12px 5px; 
+	cursor:pointer;
+	font-size:1.1em;
+	margin:0 .25em;
+	white-space:nowrap;
+	text-decoration:none;
+	-moz-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out; }
+	
+	button:hover,
+	input.button:hover,
+	a.button:hover,
+	input[type="submit"]:hover {
+		box-shadow:0 0 12px #000}
+		
+		button:focus,
+		input.button:focus,
+		a.button:focus,
+		input[type="submit"]:focus { }
+	
+
+	
+		/* on jomsocial pages */
+		#community-wrap input.button {
+			margin-top:20px}

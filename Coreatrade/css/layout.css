@@ -1,0 +1,515 @@
+/*---------------------------------------------------------------- 
+  Copyright:
+  Copyright (C) 2008 - 2011 IceTheme. All Rights Reserved
+  
+  License:
+  Copyrighted Commercial Software 
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+  
+---------------------------------------------------------------- */
+
+
+/* ---------------------- layout.css --------------------------
+This CSS file contains the stylesheets that are needed to 
+style the layout and the overwall design of the template.
+You will find here all the styles to edit the header, columns,
+etc. 
+* This is the file that you need mostly to edit to change the look
+of your website.
+* Also, notice that to make different colors variations for the 
+template a part of the styles found here need be changed 
+through the styleX.css file (where "X" is the style number that 
+you have chossen through the teplate paramters.
+
+
+/* Note 
+--------
+Also remember you dont need to worry about the size of this 
+CSS file when you see all this comments. The IceSpeed plugin 
+that we provide inside the template package will strip all 
+of this comments plus it will comprees all the CSS in you
+site. For more information on how to use IceSpeed please view 
+the Installation Guide in PDF inside the template package.
+---------------------------------------------------------------- */
+
+
+
+/* 
+Accessibility Feature
+----------------------
+Used in case if the user hase disabled the stylesheets and wants
+to skip to the main parts of the website
+---------------------------------------------------------------- */
+#accessibility{
+	display:none;}
+	
+	
+	
+/* 
+Site Main Wrapping
+------------------
+We use media queries technology to make your website looks great 
+on almost all screen resolutions. Below its the widest width 
+(1200px).
+Please notice that the queries.css stylesheet the width for the 
+wrapper changes according to the screen resolution of your users.
+
+PLEASE BE CAREFUL WHEN WORKING WITH THE .wrapper property.
+---------------------------------------------------------------- */
+.wrapper  { width:960px; margin:0 auto;}
+
+
+
+		
+/* Header 
+----------------*/
+#header {
+	background:#222222 url(../images/header.jpg) repeat-x center top;
+	position: relative;}
+
+	#header_inside {
+		background:url(../images/header_effect.jpg) repeat-x center bottom;}
+	
+/* Logo
+------------*/	
+#logo{
+	float:left;
+	padding:21px 0 20px;
+	position:relative}
+
+
+	
+/* Promo
+contain the CSS for the promo module positions
+------------*/	
+#promo{
+	background:#510001 url(../images/promo.jpg) repeat-x top;
+	clear:both;
+	color:#fff;
+	color:rgba(255,255,255,.7);
+	border-bottom:1px solid #8D1F21;}
+	
+	#promo .inside_effect {
+		padding:45px 0 30px;
+		background:url(../images/promo_inside.jpg) repeat-x top;}
+	
+	
+
+/* Bottom
+contain the CSS for the bottom module positions
+------------*/	
+#bottom {}
+	
+	#bottom .wrapper {
+		margin-top:0;
+		border-top:1px solid #333;
+		padding-top:20px;
+		box-shadow: 0 -1px 0 #000;}
+	
+		
+
+#icecarousel {
+	margin-top:0;}
+	
+	
+
+#car-logos {
+	border-top: 1px solid #333;
+	padding-top: 25px;
+	margin-top:30px;
+	margin-bottom:-5px;
+	box-shadow: 0 -1px 0 #000;}	
+	
+
+
+/* -- Content --
+Contain the CSS for the main and important part of the template
+------------*/
+#content {
+	background:url(../images/content.png) repeat-x top;
+	border-bottom:10px solid #881F22;
+	padding:40px 0;
+	clear:both;}
+	
+			
+		
+		/* Main Column Separator 
+		This code separate the "left" and "right" module position from the content. */	
+		#columns-container {
+			clear:both;
+			position:relative;
+			margin:0;}
+			
+			#outer-column-container {
+				position:relative;
+				padding-bottom:10px;
+				border-style:solid;
+				border-color:transparent;
+				margin:0;
+				min-height:350px;}
+				
+				#inner-column-container{
+					width: 100%;
+					position:relative;
+					border-right:1px solid transparent;
+					border-left:1px solid transparent;
+					margin-left:-1px;}
+											   
+					#source-order-container{
+						float: left;
+						margin:0;
+						width: 100%;}
+		
+		
+							#middle-column{
+								float: right;
+								width: 100%;}			   
+								
+							#left-column{
+								float: left;}
+								
+							#right-column{
+								float: left;}
+								
+								.clear-columns { clear: both;}
+								
+								.inside { margin:0;  }
+							
+							
+								#middle-column .inside {}	
+								
+		   
+			
+
+
+	
+
+/* Banner position */
+#banner{
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	margin-bottom:25px;
+	display:block;}
+	
+	/* on the colusmns*/
+	#left-column .bannergroup,
+	#right-column .bannergroup {
+		padding:10px 0}
+	
+
+
+/* -- IceSlideshow --
+ contain the CSS to wrap the IceSlideshow module.
+------------*/	
+#iceslideshow {}
+
+
+
+
+
+/* -- Footer --
+this wrap the footer module position plus the copyright and 
+other elements that you may find on the footer
+------------*/
+#footer {
+	position:relative;
+	background:#510001 url(../images/promo.jpg) repeat-x top;
+	clear:both;
+	color:#fff;
+	border-top:1px solid #B11D23;
+	color:rgba(255,255,255,.7);}
+	
+	#footer .inside_effect {
+		padding:45px 0 30px;
+		background:url(../images/promo_inside.jpg) repeat-x top;}
+	
+	#footer .moduletable p {
+		margin:4px 0}
+	
+
+/*  -- Copyright -- 
+this contains the codes for the footer module position and 
+icetheme copyright logo or also the "go to top" link 
+---------------*/
+#copyright {
+	border-top:1px solid #802528;
+	padding-top:20px;
+	box-shadow: 0 -1px 0 #100000;
+    clear: both;
+    margin: 0;
+	min-height:50px;
+    overflow: hidden;
+    padding: 5px 0 6px;
+    position: relative;}
+	
+	#copyright .wrapper {
+		position:relative;}
+
+
+	
+	div#copytext { float:left; padding-top:12px; }
+	
+		div#copytext .footer2 { display:none; }
+	
+		
+	div#icelogo { float:left; padding:12px 20px 0 0;}
+		div#icelogo p { margin:0;}
+			div#icelogo p a {
+				display:block;
+				float:left;
+				background:url(../images/icetheme.png) no-repeat;
+				width:120px;
+				height:20px;
+				margin:0 auto;
+				opacity:.4;
+				-webkit-transition:all .5s ease-out;
+				-moz-transition:all .5s ease-out;
+				-o-transition:all .5s ease-out; 
+				transition:all .5s ease-out;}
+				div#icelogo p a:hover {
+					opacity:1;}
+					div#icelogo p a span { display:none}
+
+
+
+	/* Go to Top */
+	a#go2top {
+		background:#D6D6BE url(../images/go2top.png) no-repeat top;
+		bottom: 12px;
+		right: 18px;
+		opacity:0;
+		width: 40px;
+		height: 32px;
+		padding:0;
+		position: absolute;
+		-webkit-transition:all .5s ease-out;
+		-moz-transition:all .5s ease-out;
+		-o-transition:all .5s ease-out; 
+		transition:all .5s ease-out;}
+		
+		a#go2top:hover {
+			background-position:bottom;}
+			
+		a#go2top span {
+			display:none}
+
+			#footer:hover a#go2top {
+				opacity:1}
+
+
+
+
+
+/* Miscellaneous CSS
+------------------------------
+List of CSS codes that can not be categorized above but they may
+be need by Joomla to operate normally. This codes may be used 
+rarely but we reccomend to keep them and to be careful when you
+try to change them
+---------------------------------------------------------------- */
+		
+/* Template Styles custom code */
+ul.ice-template-style {
+	margin:0;
+	padding:0;
+	float:left}
+	ul.ice-template-style li {
+		float:left;
+		margin:0 .5em .5em!important;
+		padding:0!important;
+		list-style-type:none;}
+		
+	ul.ice-template-style li span {
+		display:block;
+		padding:0 0 .3em;
+		font-size:1.4em}	
+
+
+
+/* Articles category module on the "right" position */
+#right-column ul.category-module li {
+	margin-bottom:1em}
+	
+	#right-column ul.category-module li h4 {
+		font-size:1.1em;
+		line-height:1.7em}
+		
+		#right-column ul.category-module li span.mod-articles-category-category {
+			float:left;
+			padding-right:10px;}
+
+
+/* 
+Extensions Overwrites
+----------------------
+Below you will find the CSS codes for the extensions that we
+provide along with this template. Note that almost all the
+extensions found here have their own CSS file on their 
+respective folders. Also note that all the CSS codes here
+overwrite the CSS code on the module folders. That's why we have
+userd the !important feature many times below.
+---------------------------------------------------------------- */
+
+/* IceScroller Mod */
+#icescroller {
+	float:left;
+	padding-top:14px;}
+
+
+/* Exp Autos component */
+
+
+/* Exp Autos modules */
+#keyword {
+	background:#383838;
+	margin:0 0 40px;
+	padding:15px 0;
+	text-align:center;
+	border:1px solid #4A4A4A}
+	
+	#keyword form fieldset {
+		padding:0;
+		border:none;
+		float:left;
+		margin:0}
+		
+	#keyword .moduletable {
+		width:480px;
+		margin:0 auto;}
+		
+	#keyword h3 {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:1.25em;
+		line-height:1.7em;
+		margin:0 10px 0 0;
+		float:left}
+			
+	#keyword #modexpkeyword p {
+		margin:0;
+		float:left;}
+		
+		#keyword #modexpkeyword .inputbox {
+			background:#222;
+			padding:4px 8px 5px;
+			border-color:#555}
+	
+	#keyword #modexpkeyword .button {
+		float:left;
+		margin-left:6px;}
+		
+		
+		
+.modexpgoogleads fieldset.expgoogleads_fieldset,
+#modexpidsearch fieldset,
+.modexpautospro_listfilter fieldset.expsutospro_search_fieldset,
+.modexpautospro_search fieldset.expsutospro_search_fieldset,
+.modexpautospro_search_vert fieldset.expsutospro_search_fieldset {
+	border:none!important}	
+
+.modexpgoogleads p.expdoubleads span.expdoubleads_first {
+	margin-bottom:20px!important}	
+	
+	
+#modexpidsearch p {
+	margin-bottom:12px!important}	
+	
+	
+.modexpimages table.expautos_images_table,
+#mod_expmodshortlist table.expautos_shortlist_table,
+.modexpimagessumo table.expautos_images_table {
+	border-spacing:0!important}
+	
+	.modexpimages tr.expautos_images_tr td {
+		text-align:center;
+		padding-bottom:20px!important;}	
+	
+	.modexpimages table.expautos_images_table td.expautos_images_images a {
+		color: #408EDA!important}	
+		
+	.expautos_images_table .modimg {
+		float:none!important;
+		width:120px;
+		text-align:center;
+		margin: 0 auto;}	
+		
+	.expautos_images_table div span {
+		left:8px!important;
+		top:-2px!important}	
+		
+	.expautos_images_table div img {
+		margin-bottom:10px;}	
+		
+		
+.modexpautospro_listfilter fieldset.expsutospro_search_fieldset ul,
+.modexpautospro_search_vert fieldset.expsutospro_search_fieldset ul {
+	padding:0;
+	margin:0}	
+	
+	.modexpautospro_listfilter li,
+	.modexpautospro_search_vert fieldset.expsutospro_search_fieldset ul li {
+		margin-bottom:10px!important}	
+		
+	.modexpautospro_search_vert li input {
+		width:auto!important}
+		
+		
+#expmodshortlist h3 {
+	font-size:1.2em;
+	margin-bottom:5px}
+	
+	#mod_expmodshortlist table.expautos_shortlist_table td.expautos_shortlist_images a {
+		color: #408EDA!important;}			
+		
+		
+.modexpimagessumo .expautos_images_text_title {
+	padding: 2px 8px!important;
+	margin-bottom:5px!important;
+	text-align:center;
+	width:90%!important;
+	background: #383838!important;
+	border-top: 1px solid #4A4A4A!important;
+	border-bottom: 1px solid #4A4A4A!important;}
+	
+	.modexpimagessumo .expautos_images_table div span {
+		left:0px!important}
+		
+	.modexpimagessumo .expautos_images_price {
+		margin-bottom:28px;}
+		
+	.modexpimagessumo .expautos_images_table div.modexpimg span.newdate {
+		margin-top:-15px!important;
+		margin-right:20px!important}	
+		
+		
+	#promo .expautos_images_table td {
+		text-align:center }	
+		
+		#promo .modexpimagessumo .expautos_images_text_title {
+			background:none!important;
+			border:none!important;
+			color:#fff;
+			font-size:1.2em!important;}
+			
+		#promo .modexpimagessumo .expautos_images_price {
+			margin-bottom:0;}
+			
+		#promo .modexpimagessumo .modexpimg_block_left {
+			width:100%!important;
+			margin:0!important;
+			text-align:center!important}
+			
+		#promo .modexpimagessumo .expautos_images_table .modimg {
+			margin-top:4px}	
+			
+		#promo .expautos_images_table div img {
+			padding:8px;
+			border-color:#8D1F21}
+			
+	
+	#modexpstats hr {
+		border:none;
+		margin:6px 0 0}
+				

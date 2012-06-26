@@ -1,0 +1,40 @@
+
+/****************************************************************************************\
+ **   @name		EXP Autos  2.0                                                  **
+ **   @package          Joomla 1.6                                                      **
+ **   @author		EXP TEAM::Alexey Kurguz (Grusha)                                **
+ **   @copyright	Copyright (C) 2005 - 2011  EXP TEAM::Alexey Kurguz (Grusha)     **
+ **   @link             http://www.feellove.eu                                          **
+ **   @license		Commercial License                                              **
+ \****************************************************************************************/
+
+
+.modexpautospro_listfilter .expdisplay_none{
+    display: none;
+}
+
+.modexpautospro_listfilter fieldset.expsutospro_search_fieldset{
+    padding: 0;
+    margin: 0;
+}
+
+.modexpautospro_listfilter li{
+    float: left;
+}
+
+.modexpautospro_listfilter li label {  
+    display: block;
+    font-weight: bold;
+}
+
+.modexpautospro_listfilter li select {  
+    width:200px;
+}
+
+.modexpautospro_listfilter li input {  
+    width:200px;
+}
+
+.modexpautospro_listfilter .expvert_clear{
+    clear: both;
+}

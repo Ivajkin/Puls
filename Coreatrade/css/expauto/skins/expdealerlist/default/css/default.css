@@ -1,0 +1,299 @@
+
+/****************************************************************************************\
+ **   @name		EXP Autos  2.0                                                  **
+ **   @package          Joomla 1.6                                                      **
+ **   @author		EXP TEAM::Alexey Kurguz (Grusha)                                **
+ **   @copyright	Copyright (C) 2005 - 2011  EXP TEAM::Alexey Kurguz (Grusha)     **
+ **   @link             http://www.feellove.eu                                          **
+ **   @license		Commercial License                                              **
+ \****************************************************************************************/
+
+
+#expautospro table.explist{
+    border-spacing: 2px;
+    border-collapse: separate;
+    width: 100%;
+}
+
+#expautospro table.explist th {
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: gray;
+    background-color: #444;
+    color: #FFF;
+    text-align: center;
+}
+
+#expautospro table.explist th a{
+    text-decoration: underline;
+    color: #FFF;
+}#expautospro table.explist th a:hover{
+    color: #EAEAEA;
+}
+
+#expautospro table td{
+    border: none;
+    text-align: center;
+}
+
+#expautospro table tr{
+    border: none;
+}
+
+#expautospro .photo {
+    position: relative;
+    float: left;
+}
+
+#expautospro div.commercial span {
+    width: 58px;
+    height: 55px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(../images/commercial.png) no-repeat;
+}
+
+#expautospro div.top span {
+    width: 58px;
+    height: 55px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(../images/top.png) no-repeat;
+}
+
+#expautospro div.special span {
+    width: 58px;
+    height: 55px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(../images/special.png) no-repeat;
+}
+
+#expautospro div.solid span {
+    width: 58px;
+    height: 55px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(../images/solid.html) no-repeat;
+}
+
+#expautospro div.expimgcount span.newdate {
+    width: 25px;
+    height: 11px;
+    float:right;
+    margin: 1px 0 0 0;
+    text-indent:-8008px;
+    background: url(../images/newdate.png) no-repeat right;
+}
+
+#expautospro div.expimgcount span.expreserved {
+    width: 45px;
+    height: 11px;
+    float:right;
+    margin: 1px 0 0 0;
+    text-indent:-8008px;
+    background: url(../images/reserved.html) no-repeat right;
+}
+
+.expimgcount {
+    clear: both;
+    text-align: left;
+    font-size: 10px;
+}
+
+.explistrow1{
+    background: #EEE;
+}
+
+.explistrow0{
+}
+
+#expautospro table tr.commercial td {
+    border-bottom: 1px solid #006699;
+    border-top: 1px solid #006699;
+}
+
+#expautospro table tr.top td {
+    border-bottom: 1px solid #006600;
+    border-top: 1px solid #006600;
+}
+
+#expautospro table tr.special td {
+    border-bottom: 1px solid #CC0000;
+    border-top: 1px solid #CC0000;
+}
+
+#expautospro table tr.solid td {
+    border-bottom: 1px solid #FF9900;
+    border-top: 1px solid #FF9900;
+}
+
+table.explist th.expautos_th_left{
+    text-align:left;
+}
+
+.expautos_list_markmod{
+    text-align:left;
+    margin: 0 10px;
+}
+
+.expautos_list_markmod_bottom{
+    text-align:left;
+    margin: 0 10px;    
+}
+
+#expautospro table tr.expautoslist_bottom{
+    height: 30px;
+}
+
+#expautospro table tr.expautoslist_bottom td{
+    border-bottom: 1px solid #CCC;
+}
+
+.exp_autos_list_userinfo{
+    padding:0 0 20px 0;
+}
+
+.exp_autos_list_userinfo_left{
+}
+
+.expautos_user_ullist{
+}
+
+.expautos_user_ullist li{
+    list-style:none;
+}
+
+.expautos_user_lilist{
+}
+
+.expautos_user_lispanlist{
+}
+
+.expautos_user_lilist .expautos_user_lispanlist{
+    font-weight:bold;
+}
+
+ul.expautos_user_ullist li.expuser_otherinfo {
+}
+
+ul.expautos_user_ullist li.expuser_otherinfo{
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div.expautos_list_dealer_info{
+    text-align: left;
+    margin: 2px 5px;
+}
+
+p.expautos_dealer_contact{
+}
+
+div.expautos_dealer_contact_all{
+    text-align: left;
+    margin: 2px 3px;  
+}
+
+
+
+/*********** Module Position Middle ************/
+.expautos_list_markmod_modules{
+   float:left;
+   margin: 0 10px;
+}
+/*********** End Module Position Middle ************/
+
+/*********** Pagination ****************/
+
+/* Limit Box */
+#explimitbox{
+    margin: 10px 0 0px 0px;
+    text-align: left;
+}
+/* End Limit Box */
+
+
+/* Page Links */
+
+div#exppagelinks{
+    margin: 10px 0 0px 0px;
+}
+
+div#exppagelinks ul{
+    margin:0; 
+    padding:0;
+}
+
+div#exppagelinks ul li{
+    border:0; 
+    margin:0; 
+    padding:0;
+    font-size:11px;
+    list-style:none;
+    margin-right:2px;
+}
+
+div#exppagelinks ul li a{
+    border:solid 1px #444;
+    margin-right:2px;
+}
+
+div#exppagelinks ul li span.pagenav {
+    border:solid 1px #DEDEDE;
+    color:#888888;
+    display:block;;
+    float:left;
+    font-weight:bold;
+    margin-right:2px;
+    padding:3px 4px;
+}
+
+div#exppagelinks ul li.pagination-start a,
+div#exppagelinks ul li.pagination-prev a,
+div#exppagelinks ul li.pagination-next a,
+div#exppagelinks ul li.pagination-end a {
+    font-weight:bold;
+}
+
+div#exppagelinks a:link,
+div#exppagelinks a:visited {
+    color:#FFF;
+    background-color: #444;
+    display:block;
+    float:left;
+    padding:3px 6px;
+    text-decoration:none;
+}
+
+div#exppagelinks a:hover{
+    border:solid 1px #444;
+    background-color: #606060;
+}
+
+div#exppagelinks .limit{
+    float: left;
+}
+
+div#exppagelinks .counter {
+    clear: both;
+    margin: 10px 0 0 0;
+}
+/* End Page Links */
+
+/* Page Counter */
+#exppagescounter{
+    margin: 10px 0 10px 0px;
+    text-align: left;
+}
+/* End Page Counter */
+/***************** End Pagination ********************/
