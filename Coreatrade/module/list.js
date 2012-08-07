@@ -1,11 +1,13 @@
-window.addEvent('domready', function() {
+window.addEvent('domready', function () {
+    jgetData(function (dData) {
+
 	dData.forEach(function(car) {
 		$j("tbody#list").append('<tr class="explistrow0&#32;top">' +
 										'<td width="100px">' +
 											'<div class="photo top">' +
 												'<a href="more.html">' +
 													'<span></span>' +
-													'<img src="' + car.image_url + '" />' +
+													'<img src="' + car.image[0] + '" />' +
 												'</a>' +
 											'</div>' +
 											'<div class="expimgcount">' +
@@ -23,6 +25,8 @@ window.addEvent('domready', function() {
 										'</td>' +
 									'</tr>');
 	});
+    
+    });
 });
 
 /*
