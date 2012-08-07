@@ -1,4 +1,11 @@
-window.addEvent('domready', function() {
+window.addEvent('domready', function () {
+    jgetData(function (dData) {
+
+	dData.forEach(function(car) {
+		
+		
+		
+		window.addEvent('domready', function() {
 	dData.forEach(function(car) {
 		$j("tbody#list").append('<tr class="explistrow0&#32;top">' +
 										'<td width="100px">' +
