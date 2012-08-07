@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <title>Форма добавления автомобилей</title>
+    
+        <style type="text/css">
+            .table 
+            {
+                display:block;
+                font-weight:bold;
+            	float:left;
+            }
+            .left 
+            {
+            	width:15%;
+            	font-size:1.2em;
+            }
+            .middle
+            {
+            	width: 10%;
+            }
+            .right 
+            {
+            	width: 60%;
+            }
+            .newrow 
+            {
+            	clear:both;
+            }
+            h1 
+            {
+            	font-size:2em;
+            }
+            h2 
+            {
+            	font-size:1.7em;
+            }
+        </style>
+    
+    </head>
+    <body style="padding: 40px">
+        <h1>Форма добавления автомобилей</h1>
+        <form action="todb.php" method='post'   style="padding-bottom:40px">
+            <h2>Основная информация</h2>
+            <div class="table left">Название<br />(для заголовка)</div>
+            <div class="table right">
+                <input type="text" name="name"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Тип</div>
+            <div class="table right">
+                <select name="type" size=1>
+                    <option value=0>Легковая</option>
+                    <option value=1 selected>Внедорожник</option>
+                    <option value=2>Малогрузная</option>
+                    <option value=3>Большегрузная</option>
+                    <option value=4>Автобус</option>
+                    <option value=5>Микроавтобус</option>
+                    <option value=6>Сельхозтехника</option>
+                    <option value=7>Спецтехника</option>
+                </select>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Марка</div>
+            <div class="table right">
+                <select name="mark" size=1>
+                    <option value=0>Chevrolet</option>
+                    <option value=1 selected>Daewoo</option>
+                    <option value=2>Honda</option>
+                    <option value=3>Hyundai</option>
+                    <option value=4>KIA</option>
+                    <option value=5>SsangYong</option>
+                    <option value=6>Toyota</option>
+                </select>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Модель</div>
+            <div class="table right">
+                <input type="text" name="model"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Цена (р.)</div>
+            <div class="table right">
+                <input type="text" name="price"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Цвет</div>
+            <div class="table right">
+                <input type="text" name="color"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Год</div>
+            <div class="table right">
+                <input type="number" name="year" min="1910" max="2032" />
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Объём (в литрах)</div>
+            <div class="table right">
+                <input type="text" name="vvv"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Топливо</div>
+            <div class="table right">
+                <input type="text" name="fuel"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Привод</div>
+            <div class="table right">
+                <input type="text" name="drive"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Каробка передач</div>
+            <div class="table right">
+                <input type="text" name="kpp"/>
+            </div>
+            <div class="newrow"></div>
+            
+            <h2>Комплектация</h2>
+            <div style="padding-bottom: 10px">Пожалуйста вводите каждый компонент с новой строчки</div>
+            <textarea name="complect" cols="60" rows="33">
+Пример:
+ABS
+Airbag д/водителя
+Airbag д/пассажира
+Бортовой компьютер
+ГУР
+Иммобилайзер
+Климат-контроль
+Круиз-контроль
+Обогрев сидений
+Центральный замок
+Airbag боковые
+Airbag оконные
+ESP	Handsfree
+Датчик дождя
+Камера заднего хода
+Корректор фар
+Ксеноновые фары
+Обогрев зеркал
+Панорамный люк
+Парктроник
+Подлокотник передний
+Противотуманные фары
+Разд. спинка задн. сидений
+Регул. сид. пасс. по высоте
+Электроантенна
+Электрозеркала
+Магнитола: с MP3
+Салон: кожа
+Электростёкла: все
+Регулировка руля: в 2 пл.</textarea>
+            <div style="padding:10px"></div>
+            <input type="submit" value="Сохранить данные" />
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Очистить форму" />	
+        </form>
+    </body>
+</html>
