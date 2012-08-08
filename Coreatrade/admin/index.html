@@ -7,29 +7,29 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>Корея Трейд - лучшие автобусы из Кореи</title>
         <link href="images/1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-        <link rel="stylesheet" href="css/system.css" type="text/css" />
-        <link rel="stylesheet" href="css/general.css" type="text/css" />
-        <link rel="stylesheet" href="css/reset.css" type="text/css" />
-        <link rel="stylesheet" href="css/typography.css" type="text/css" />
-        <link rel="stylesheet" href="css/forms.css" type="text/css" />
-        <link rel="stylesheet" href="css/modules.css" type="text/css" />
-        <link rel="stylesheet" href="css/joomla.css" type="text/css" />
-        <link rel="stylesheet" href="css/layout.css" type="text/css" />
-        <link rel="stylesheet" href="css/mod_iceslideshow/default/assets/style.css" type="text/css" />
-        <link rel="stylesheet" href="css/template_languages.css" type="text/css" />
-        <link rel="stylesheet" href="css/mod_icemegamenu/css/default_icemegamenu.css" type="text/css" />
-     <link rel="stylesheet" href="css/costum.css" type="text/css" />
-        <link rel="stylesheet" href="css/expauto/assets/css/expautospro.css" type="text/css" />
-        <link rel="stylesheet" href="css/expauto/skins/explist/default/css/default.css" type="text/css" />
-        <link rel="stylesheet" href="css/expauto/mod_expautospro_mortgage.css" type="text/css" />
-        <link rel="stylesheet" href="css/expauto/mod_expautospro_stats.css" type="text/css" />
-        <link rel="stylesheet" href="css/expauto/mod_expautospro_categories.css" type="text/css" />
-        <link rel="stylesheet" href="css/expauto/mod_expautospro_listfilter.css" type="text/css" />
-        <link rel="stylesheet" href="css/expauto/mod_expautospro_keyword.css" type="text/css" />
+        <link rel="stylesheet" href="../css/system.css" type="text/css" />
+        <link rel="stylesheet" href="../css/general.css" type="text/css" />
+        <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../css/typography.css" type="text/css" />
+        <link rel="stylesheet" href="../css/forms.css" type="text/css" />
+        <link rel="stylesheet" href="../css/modules.css" type="text/css" />
+        <link rel="stylesheet" href="../css/joomla.css" type="text/css" />
+        <link rel="stylesheet" href="../css/layout.css" type="text/css" />
+        <link rel="stylesheet" href="../css/mod_iceslideshow/default/assets/style.css" type="text/css" />
+        <link rel="stylesheet" href="../css/template_languages.css" type="text/css" />
+        <link rel="stylesheet" href="../css/mod_icemegamenu/css/default_icemegamenu.css" type="text/css" />
+     <link rel="stylesheet" type="text/css" href="uploadify.css" />
+        <link rel="stylesheet" href="../css/expauto/assets/css/expautospro.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/skins/explist/default/css/default.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_mortgage.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_stats.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_categories.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_listfilter.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_keyword.css" type="text/css" />
 
         <style type="text/css" media="screen">
             /* Select the style */
-            /*\*/@import url("css/style1.css");
+            /*\*/@import url("../css/style1.css");
             /**/
             /* Right Column Parameters */
             #outer-column-container
@@ -62,7 +62,7 @@
             }
             .left 
             {
-            	width:25%;
+            	width:45%;
             	font-size:1.2em;
             }
             .middle
@@ -71,7 +71,7 @@
             }
             .right 
             {
-            	width: 60%;
+            	width: 50%;
             }
             .newrow 
             {
@@ -84,8 +84,22 @@
             h2 
             {
             	font-size:1.7em;
+                padding-bottom:10px;
+                padding-top:20px;
             }
         </style>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#file_upload').uploadify({
+            'swf'      : 'uploadify.swf',
+            'uploader' : 'uploadify.php'
+            // Your options here
+        });
+    });
+    </script>
 
         <!-- Google Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
@@ -104,7 +118,6 @@
 
     <body class="">
 
-    <div class="view view_ok"> 
      <!-- Content -->
 	    <div id="content">
            <div class="wrapper">
@@ -119,8 +132,10 @@
                                         <div id="system-message-container">
                                         </div>
                                         <div class="blog">
-	                                        <h1>Форма добавления автомобилей</h1>
-        <form action="todb.php" method='post'   style="padding-bottom:40px">
+      <h1>Форма добавления автомобилей</h1>
+      <div class="table middle"></div>
+      <div style="display: block; float: left; width:50%">
+        <form action="todb.php" method='post' enctype="multipart/form-data" style="padding-bottom:40px">
             <h2>Основная информация</h2>
             <div class="table left">Название<br />(для заголовка)</div>
             <div class="table right">
@@ -171,7 +186,7 @@
             <div class="newrow"></div>
             <div class="table left">Год</div>
             <div class="table right">
-                <input type="text" name="year"/>
+                <input type="text" name="year" />
             </div>
             <div class="newrow"></div>
             <div class="table left">Объём (в литрах)</div>
@@ -194,7 +209,30 @@
                 <input type="text" name="kpp"/>
             </div>
             <div class="newrow"></div>
-            
+            <div class="table left">Мощность (кВт)</div>
+            <div class="table right">
+                <input type="text" name="power"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Двери (кол-во)</div>
+            <div class="table right">
+                <input type="text" name="door"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Сиденья (кол-во)</div>
+            <div class="table right">
+                <input type="text" name="seat"/>
+            </div>
+            <div class="newrow"></div>
+
+           <!--<h2>Изображения</h2>
+            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне всех автомобилей</div>
+            <div class="table right">
+                <input type="file" name="imgfile" id="file_upload" multiple="multiple" accept="image/*" />
+            </div>
+            <div class="newrow"></div>-->
+
+
             <h2>Комплектация</h2>
             <div style="padding-bottom: 10px">Пожалуйста вводите каждый компонент с новой строчки</div>
             <textarea name="complect" cols="60" rows="33">
@@ -233,6 +271,17 @@ ESP	Handsfree
             <input type="submit" value="Сохранить данные" />
             &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Очистить форму" />	
         </form>
+      </div>
+        <div style="display: block; float: left; width: 50%">
+            <h2>Изображения</h2>
+            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне автомобилей</div>
+            <div class="table right" style="width: 50%" >
+                <input type="file" name="file_upload" id="file_upload" />               
+                <!--<input type="file" name="imgfile" id="file_upload" accept="image/*" />-->
+            
+            <div class="newrow"></div>
+       </div>
+       <div class="newrow"></div>
                                         </div>
                                     </div>	
                                 </div><!-- Middle Column -->   
@@ -248,13 +297,12 @@ ESP	Handsfree
                 <div class="wrapper">
                     <div id="car-logos">
                         <div class="custom"  >
-                            <img src="images/car_logos.jpg" border="0" alt="Car Logos" width="960" height="74" />
+                            <img src="../images/car_logos.jpg" border="0" alt="Car Logos" width="960" height="74" />
                         </div>
                     </div>                                             
                 </div>                                   
             </div><!-- Bottom -->      
         </div>
-     </div>
     
     </body>
 </html>

@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Форма добавления автомобилей</title>
-    
+
+        <link rel="stylesheet" type="text/css" href="uploadify.css" />
         <style type="text/css">
             .table 
             {
@@ -11,7 +12,7 @@
             }
             .left 
             {
-            	width:15%;
+            	width:45%;
             	font-size:1.2em;
             }
             .middle
@@ -20,7 +21,7 @@
             }
             .right 
             {
-            	width: 60%;
+            	width: 50%;
             }
             .newrow 
             {
@@ -36,10 +37,23 @@
             }
         </style>
     
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#file_upload').uploadify({
+            'swf'      : 'uploadify.swf',
+            'uploader' : 'uploadify.php'
+            // Your options here
+        });
+    });
+    </script> 
     </head>
+
     <body style="padding: 40px">
-        <h1>Форма добавления автомобилей</h1>
-        <form action="todb.php" method='post'   style="padding-bottom:40px">
+      <h1>Форма добавления автомобилей</h1>
+      <div style="display: block; float: left; width:35%">
+        <form action="todb.php" method='post' enctype="multipart/form-data" style="padding-bottom:40px">
             <h2>Основная информация</h2>
             <div class="table left">Название<br />(для заголовка)</div>
             <div class="table right">
@@ -90,7 +104,7 @@
             <div class="newrow"></div>
             <div class="table left">Год</div>
             <div class="table right">
-                <input type="number" name="year" min="1910" max="2032" />
+                <input type="text" name="year" />
             </div>
             <div class="newrow"></div>
             <div class="table left">Объём (в литрах)</div>
@@ -113,10 +127,33 @@
                 <input type="text" name="kpp"/>
             </div>
             <div class="newrow"></div>
-            
+            <div class="table left">Мощность (кВт)</div>
+            <div class="table right">
+                <input type="text" name="power"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Двери (кол-во)</div>
+            <div class="table right">
+                <input type="text" name="door"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Сиденья (кол-во)</div>
+            <div class="table right">
+                <input type="text" name="seat"/>
+            </div>
+            <div class="newrow"></div>
+
+           <!--<h2>Изображения</h2>
+            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне всех автомобилей</div>
+            <div class="table right">
+                <input type="file" name="imgfile" id="file_upload" multiple="multiple" accept="image/*" />
+            </div>
+            <div class="newrow"></div>-->
+
+
             <h2>Комплектация</h2>
             <div style="padding-bottom: 10px">Пожалуйста вводите каждый компонент с новой строчки</div>
-            <textarea name="complect" cols="60" rows="33">
+            <textarea name="complect" cols="60" rows="30">
 Пример:
 ABS
 Airbag д/водителя
@@ -152,5 +189,16 @@ ESP	Handsfree
             <input type="submit" value="Сохранить данные" />
             &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Очистить форму" />	
         </form>
+      </div>
+        <div style="display: block; float: left; width: 40%">
+            <h2>Изображения</h2>
+            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне автомобилей</div>
+            <div class="table right">
+                <input type="file" name="file_upload" id="file_upload" />               
+                <!--<input type="file" name="imgfile" id="file_upload" accept="image/*" />-->
+            
+            <div class="newrow"></div>
+       </div>
+       <div class="newrow"></div>
     </body>
 </html>
