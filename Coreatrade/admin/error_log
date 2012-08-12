@@ -1,0 +1,13 @@
+[12-Aug-2012 03:55:08 UTC] PHP Parse error:  syntax error, unexpected '}' in /home2/core5429/public_html/admin/delFromDB.php on line 75
+[12-Aug-2012 03:55:54 UTC] PHP Fatal error:  Function name must be a string in /home2/core5429/public_html/admin/delFromDB.php on line 60
+[12-Aug-2012 03:57:13 UTC] PHP Fatal error:  Function name must be a string in /home2/core5429/public_html/admin/delFromDB.php on line 60
+[12-Aug-2012 04:03:26 UTC] PHP Fatal error:  Call to undefined function delFromArray() in /home2/core5429/public_html/admin/delFromDB.php on line 51
+[12-Aug-2012 04:04:48 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home2/core5429/public_html/admin/delFromDB.php on line 21
+[12-Aug-2012 04:26:53 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/core5429/public_html/admin/delFromDB.php on line 27
+[12-Aug-2012 04:26:53 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/core5429/public_html/admin/delFromDB.php on line 27
+[12-Aug-2012 04:28:30 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home2/core5429/public_html/admin/delFromDB.php on line 10
+[12-Aug-2012 04:52:34 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home2/core5429/public_html/admin/delFromDB.php on line 52
+[12-Aug-2012 04:57:05 UTC] PHP Parse error:  syntax error, unexpected '.' in /home2/core5429/public_html/admin/delFromDB.php on line 23
+[12-Aug-2012 05:54:00 UTC] PHP Warning:  file_get_contents(filename): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/editDB.php on line 15
+[12-Aug-2012 05:54:00 UTC] PHP Fatal error:  Call to undefined function counr() in /home2/core5429/public_html/admin/editDB.php on line 17
+[12-Aug-2012 05:55:32 UTC] PHP Fatal error:  Call to undefined function counr() in /home2/core5429/public_html/admin/editDB.php on line 17

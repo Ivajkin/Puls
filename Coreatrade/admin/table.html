@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr" >
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+        <!--<base href="http://coreatrade.com" />-->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Корея Трейд - лучшие автобусы из Кореи</title>
+        <link href="images/1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+        <link rel="stylesheet" href="../css/system.css" type="text/css" />
+        <link rel="stylesheet" href="../css/general.css" type="text/css" />
+        <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../css/typography.css" type="text/css" />
+        <link rel="stylesheet" href="../css/forms.css" type="text/css" />
+        <link rel="stylesheet" href="../css/modules.css" type="text/css" />
+        <link rel="stylesheet" href="../css/joomla.css" type="text/css" />
+        <link rel="stylesheet" href="../css/layout.css" type="text/css" />
+        <link rel="stylesheet" href="../css/mod_iceslideshow/default/assets/style.css" type="text/css" />
+        <link rel="stylesheet" href="../css/template_languages.css" type="text/css" />
+        <link rel="stylesheet" href="../css/mod_icemegamenu/css/default_icemegamenu.css" type="text/css" />
+     	<link rel="stylesheet" type="text/css" href="uploadify.css" />
+        <link rel="stylesheet" href="../css/expauto/assets/css/expautospro.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/skins/explist/default/css/default.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_mortgage.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_stats.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_categories.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_listfilter.css" type="text/css" />
+        <link rel="stylesheet" href="../css/expauto/mod_expautospro_keyword.css" type="text/css" />
+     
+        <style type="text/css" media="screen">
+            /* Select the style */
+            /*\*/@import url("../css/style1.css");
+            /**/
+            /* Right Column Parameters */
+            #outer-column-container
+            {
+                border-right-width: 220px;
+            }
+            #right-column
+            {
+                margin-right: -220px;
+                width: 220px;
+            }
+            #middle-column .inside
+            {
+                padding-right: 15px;
+            }
+            .mark_show
+            {
+            	width: 8%;
+            }
+            .mark_show img
+            {
+            	width: 60px;
+            	height: 60px;
+            }
+            .table 
+            {
+                display:block;
+                font-weight:bold;
+            	float:left;
+            }
+            .left 
+            {
+            	width:45%;
+            	font-size:1.2em;
+            }
+            .middle
+            {
+            	width: 10%;
+            }
+            .right 
+            {
+            	width: 50%;
+            }
+            .newrow 
+            {
+            	clear:both;
+            }
+            h1 
+            {
+            	font-size:2em;
+            }
+            h2 
+            {
+            	font-size:1.7em;
+                padding-bottom:10px;
+                padding-top:20px;
+            }
+        </style>
+        <script src="../js/jquery-1.7.2.js" type="text/javascript"></script>
+	<script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
+	<script src="../js/dproc.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var $j = jQuery.noConflict();
+		$j(function() {
+			$j('#file_upload').uploadify({
+			    'swf'      : 'uploadify.swf',
+			    'uploader' : 'uploadify.php'
+			    // Your options here
+			});
+		});
+		function updateTable(filter){
+			$j("tbody#Table").empty();
+			jgetData ( function (car) {
+				for (i = 0; i < car.length; i++){
+					if(filter && filter-1 != car[i].mark)
+						continue;
+					$j("tbody#Table").append('<tr class="explistrow0&#32;top">' +
+					'<td>' + '<span></span>' +
+						'<img width="130px" heigth="auto" src="../' + car[i].img[0]+ '" />' +
+					'<div class="expimgcount">' + car[i].img.length + ' изобр' + '</div>' +
+					'</td>' +
+					'<td>' + '&nbsp' + car[i].name + '&nbsp'+ '</td>' +
+					'<td>' + '&nbsp' + car[i].year + '&nbsp' + '</td>' + 
+					'<td>' + '&nbsp' + car[i].price + 'р.' + '</td>' +
+					'<td>' + '<form method="POST" action = "delFromDB.php"><button value="'+i+'" name="delete">Удалить</button></form>' + 
+					'<form method="GET" action = "edit.html"><button value="'+i+'" name="button">Изменить</button></form>' + '</td>' +
+					'</tr>');
+				}
+			});
+		}
+	</script>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" type="text/css" href="css/ie.css" />
+        <![endif]-->
+
+        <!--[if lte IE 9]>
+            <style type="text/css" media="screen">
+                #left-column  .col-module h3.mod-title span:after {
+                border-width: 0.82em;
+            </style>	
+        <![endif]-->
+
+    </head>
+
+    <body class="">
+
+     <!-- Content -->
+	    <div id="content">
+           <div class="wrapper">
+                <!-- Columns Container -->    
+                <div id="columns-container">
+                    <div id="outer-column-container">
+                        <div id="inner-column-container" class="clearfix">
+                            <div id="source-order-container">
+                                <!-- Middle Column -->   
+                                <div id="middle-column">                        
+                                    <div class="inside"> 
+                                        <div id="system-message-container"></div>
+                                        <div class="blog">
+					  <h1>Список всех автомобилей в базе</h1>
+					  
+					    <div class="table left">Марка
+					    <select id = "BrandOut" name="Brand" size=1 onchange='updateTable(parseInt($j("#BrandOut").attr("value")));'>
+				                    <script type="text/javascript">
+				                    	$j("#BrandOut").append("<option value='0'>Все</option>");
+							$j(document).ready(function() {
+							 // Handler for .ready() called.
+								jgetBrand ( function (data) {
+								for (i = 1; i < data.length+1; i++)
+									$j("#BrandOut").append("<option value='" + i + "'>" + data[i-1].mark  + "</option>");
+								});
+							});
+						    </script>
+				                </select>
+				            </div>
+				            <div class="table right">
+				                <form action="index.html">
+				                	<button>Добавить новую</button>
+				                </form>
+				            </div>
+				            <div class="newrow"></div>
+				            <div id="expskins_module"></div>
+					    <div class="expautospro_clear"></div>
+				            <div align="center" id = "expautospro">
+					    <table class="explist">
+						<thead>
+							<tr>
+								<th>Изображение</th>
+								<th>Марка/Модель</th>
+								<th>Год</th>
+								<th>Цена</th>
+								<th>Функции</th>
+							</tr>
+						</thead>
+						<tbody id = "Table">
+					            	<script type="text/javascript">
+								$j(document).ready(function() {
+								//alert($j("#BrandOut").attr("value"));
+								 // Handler for .ready() called.
+									updateTable(0);
+								});
+							</script>
+				               </tbody>
+				          </table>
+				          </div>
+					  <!--table will be here-->
+					  
+					  <div class="newrow"></div>
+                                        </div>
+                                    </div>	
+                                </div><!-- Middle Column -->   
+                            </div><!-- Source Order Container -->
+                            <div class="clear-columns"></div>
+                        </div>
+                    </div>           
+                </div><!-- Columns Container -->         
+            </div><!-- Content Main -->
+            
+            <!-- Bottom -->
+            <div id="bottom" class="clearfix">
+                <div class="wrapper">
+                    <div id="car-logos">
+                        <div class="custom"  >
+                            <img src="../images/car_logos.jpg" border="0" alt="Car Logos" width="960" height="74" />
+                        </div>
+                    </div>                                             
+                </div>                                   
+            </div><!-- Bottom -->      
+        </div>
+    </body>
+</html>

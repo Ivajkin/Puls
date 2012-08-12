@@ -42,13 +42,19 @@ $kpp = utf8($_POST['kpp']);
 $drive = utf8($_POST['drive']);
 $door = utf8($_POST['door']); 
 $seat = utf8($_POST['seat']);
-$img = utf8(file_get_contents('img_temp.txt'));
+if (file_exists('img_temp.txt')) {
+   $imgstr = utf8(file_get_contents('img_temp.txt'));
+   $imgstr = rtrim($imgstr);
+   $img= explode( "\r\n" ,$imgstr);
+   unlink('img_temp.txt');
+} 
+else $img= 0;
 $complect = utf8($_POST['complect']);
-
+;
 $data= array(
-    "name" => $name, 
-    "type" => $type, 
-    "mark" => $mark, 
+    "name" => $name,
+    "type" => $type,
+    "mark" => $mark,  
     "model" => $model, 
     "price" => $price,
     "color" => $color,
@@ -60,17 +66,34 @@ $data= array(
     "drive" => $drive,
     "door" => $door,
     "seat" => $seat,
-    "img" => explode ( "\r\n" ,$img),
+    "img" => $img,
     "complect" => $complect);
 
-unlink('img_temp.txt');
 //$value = mb_check_encoding($value, 'UTF-8') ? $value : utf8_encode($value);
 
+//to Ddata
 $inp = file_get_contents('../js/ddata.js');
 $tempArray = json_decode($inp);
+$car_id = count($tempArray);  
+        
 $tempArray[]= $data;
+
 $jsonData = json_encode($tempArray);
 file_put_contents('../js/ddata.js', $jsonData);
+
+//to DType
+$dtypefile = file_get_contents('../js/dtype.js');
+$dtype = json_decode($dtypefile );            
+array_push($dtype[ intval($type)]->model, $car_id);
+$jsonData = json_encode($dtype);
+file_put_contents('../js/dtype.js', $jsonData);
+
+//to DBrand
+$dbrandfile = file_get_contents('../js/dbrand.js');
+$dbrand = json_decode($dbrandfile );
+array_push($dbrand[ intval($mark)]->model, $car_id);
+$jsonData = json_encode($dbrand);
+file_put_contents('../js/dbrand.js', $jsonData);
 
 /*var_dump($_FILES['imgfile']['name']);
 var_dump($_FILES['imgfile']['type']);
