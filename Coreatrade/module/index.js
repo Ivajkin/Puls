@@ -227,7 +227,7 @@ function makeTwitterWidget() {
 
 // Загружаем тело страницы index
 function loadHome() {
-	makeRequest('index.body.html', function(index_body_html) {
+	makeRequest('home.body.html', function(index_body_html) {
 		$j('#main-window').append(index_body_html);
 
 		loadNews();
