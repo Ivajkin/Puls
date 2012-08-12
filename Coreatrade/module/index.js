@@ -225,10 +225,17 @@ function makeTwitterWidget() {
 	}).render().setUser('cometokorea').start();
 }
 
+function loadBodyPage(pageName, callback) {
+	makeRequest(pageName + '.body.html', function(body_html) {
+		$j('#main-window').empty();
+		$j('#main-window').append(body_html);
+		callback();
+	});
+}
+
 // Загружаем тело страницы index
 function loadHome() {
-	makeRequest('home.body.html', function(index_body_html) {
-		$j('#main-window').append(index_body_html);
+	loadBodyPage('home', function() {
 
 		loadNews();
 
@@ -338,5 +345,14 @@ function loadHome() {
 	});
 };
 
+// Загружаем тело страницы about, "О компании"
+function loadAbout() {
+	loadBodyPage('about', function() {
+		makeTwitterWidget();
+	});
+}
+
 // Загружаем тело страницы по нажатию
 $j("button").click(loadHome);
+$j("#home-button").click(loadHome);
+$j("#about-button").click(loadAbout);

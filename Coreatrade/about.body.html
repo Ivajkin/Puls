@@ -1,0 +1,280 @@
+﻿<style type="text/css" media="screen">
+	/* Select the style */
+	/*\*/
+	@import url("css/style4.css");
+	/**/
+	/* Right Column Parameters */
+	#outer-column-container {
+		border-right-width: 220px;
+	}
+	#right-column {
+		margin-right: -220px;
+		width: 220px;
+	}
+	#middle-column .inside {
+		padding-right: 15px;
+	}
+	.mark_show {
+		width: 8%;
+	}
+	.mark_show img {
+		width: 60px;
+		height: 60px;
+	}
+</style>
+
+<link rel="stylesheet" href="css/YMaps.css" type="text/css" />
+<script src="http://api-maps.yandex.ru/1.1/index.xml?key=AM_v5U8BAAAAZsJwcAIAAoab7ZZQJhphfn_6iYDJiFEaDEIAAAAAAAAAAAAyit4DvKbBInolbKicsXCurbppcg=="
+type="text/javascript"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		var map = new YMaps.Map(document.getElementById("YMapsID"));
+		map.setCenter(new YMaps.GeoPoint(135.064261, 48.478676), 17);
+
+		// кнопки и шкала масштаба располагаем как хотим
+		map.addControl(new YMaps.Zoom(), new YMaps.ControlPosition(YMaps.ControlPosition.TOP_LEFT, // в какой угол поставить
+		new YMaps.Size(5, 5) // сколько от него отступ в пикселах (x, y)
+		));
+
+		// Включаем масштабирование скроллингом мыши
+		map.enableScrollZoom();
+
+		// миникарта
+		map.addControl(new YMaps.MiniMap(), new YMaps.ControlPosition(YMaps.ControlPosition.BOTTOM_RIGHT, new YMaps.Size(5, 5)));
+
+		// выбор типа карты
+		map.addControl(new YMaps.TypeControl());
+
+		// линейка с расстоянием
+		map.addControl(new YMaps.ScaleLine(), new YMaps.ControlPosition(YMaps.ControlPosition.BOTTOM_LEFT, new YMaps.Size(5, 20)));
+
+		// Тулбар
+		/*map.addControl(new YMaps.ToolBar(),
+		new YMaps.ControlPosition(
+		YMaps.ControlPosition.TOP_LEFT,
+		new YMaps.Size(250, 5)
+		)
+		);*/
+
+		// Создаем метку и добавляем ее на карту
+		var placemark = new YMaps.Placemark(new YMaps.GeoPoint(135.064261, 48.478676));
+		// Установка содержимого значка метки
+		placemark.setIconContent('ООО \"Корея Трэйд\"');
+		placemark.name = 'ООО \"Корея Трэйд\"';
+		placemark.description = '680000, г. Хабаровск, ул. Дзержинского д.65 оф. 1002б.';
+		map.addOverlay(placemark);
+
+		// Открываем балун
+		//placemark.openBalloon();
+	}
+</script>
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie.css" />
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+#left-column  .col-module h3.mod-title span:after {
+border-width: 0.82em;
+</style>
+<![endif]-->
+
+<div class="view_ok" id="Page_1">
+
+	<!-- Content -->
+	<div id="content">
+		<div class="wrapper">
+			<!-- Columns Container -->
+			<div id="columns-container">
+				<div id="outer-column-container">
+					<div id="inner-column-container" class="clearfix">
+						<div id="source-order-container">
+							<!-- Middle Column -->
+							<div id="middle-column">
+								<div class="inside">
+									<div id="system-message-container"></div>
+									<div class="contact" >
+										<h1><span class="contact-name">ООО "Корея Трэйд"</span></h1>
+										<script type="text/javascript">
+											$j(document).ready(function() {
+												$j('div.YMaps-b-balloon-content').css('width', '150px');
+											});
+										</script>
+										<div id="YMapsID" style="width:50%;height:300px; display: block; float: left;"></div>
+										<!--<img src="images/contacts/contact.png" alt="" title="" style="width: 30%; float: left; margin-left: 100px" />-->
+										<div style="width:40%;height:400px; display:block; float:left; margin-left: 5px">
+											<h5 style="margin-bottom: 5px">Адрес</h5>
+											<p>
+												<img src="images/contacts/con_address.png" alt="Corea Trade Address " title="Корея Трэйд. Адрес" />
+												680000, Россия, г. Хабаровск,
+												<br />
+												ул. Дзержинского д.65 оф. 1002б.
+											</p>
+											<h5 style="margin-bottom: 5px">Контакты</h5>
+											<p>
+												<img src="images/contacts/con_mobile.png" alt="Corea Trade Callback " title="Корея Трэйд. Контакты" />
+												<b style="font-size: 1.2em">Тел:</b>&nbsp&nbsp +7 (914) 150-54-86
+											</p>
+											<p>
+												<img src="images/contacts/emailButton.png" alt="Corea Trade E-mail " title="Корея Трэйд. E-mail" />
+												<b style="font-size: 1.2em">E-mail:</b>&nbsp&nbsp leeark@coreatrade.com
+											</p>
+										</div>
+									</div>
+									<div class="blog">
+										<div class="clearfix"></div>
+										<h1 style="text-align:center">О компании</h1>
+										<div class="items-row cols-1 row-0">
+											<div class="item column-1">
+												<!--<h2>О компании</h2>-->
+												<p>
+													<img src="images/contacts/foto 003.jpg" border="0" alt="Image" width="160" height="105" style="border: 0;" />
+
+													Авто из Южной Кореи - это качество по доступной цене… а, с недавнего времени, еще и современный (порой даже экстравагантный) дизайн. В этом разделе каталога обзоры (характеристики, цены) корейских автомобилей. Отзывы владельцев корейских авто.
+												<p>
+													В последние годы разработчики Hyundai активно занимаются обновлением модельного ряда, и представляют миру все более смелые, и экспрессивные «струящиеся скульптуры» - обновленная концепция и основной путь развития компании. Показанный миру в конце апреля новый Hyundai i30 дал четко понять, что Хёнде (Хендай, как многие произносят) можно теперь сравнивать только с Хёнде (и тени на юмор в этом выражении нет).
+												</p>
+												<p>
+													Корейский автопроизводитель Hyundai представил в апреле 2012 года в Нью-Йорке третью реинкарнацию успешного кроссовера Hyundai Santa Fe, причем сразу в двух кузовных исполнениях: семиместном Hyundai Santa Fe и пятиместном Hyundai Santa Fe Sport. С 2000 года первые два поколения Санта Фе нашли более 2,56 миллионов своих приверженцев (350 000 корейских кроссоверов Santa Fe прижились в Европе).
+													<br />
+													Корейский автопроизводитель KIA весной 2012 года представил слегка обновленный КИА Соренто II. Производитель позиционирует рестайлиговый кроссовер KIA Sorento New, как модель 2013 года. Пока машины с новой внешностью доберутся до покупателей в России, на дворе действительно наступит 2013 год.
+												</p>
+												<p>
+													На Женевском автосалоне 2011 корейский автопроизводитель SsangYong Motors представил свое виденье для замены рамного пикапа Actyon Sports в лице концепта SUT 1. Ровно год понадобился компании из страны «Утренней свежести» для подготовки серийного SsangYong New Actyon Sports, и в марте 2012 года европейские автомобилисты смогли воочию лицезреть новую версию “спортивного Актиона”.
+												</p>
+												<p>
+													Hyundai Solaris — российский близнец мирового автомобиля Hyundai Verna, который в свою очередь является наследником известной на российском рынке модели предыдущего поколения Hyundai Accent.
+												</p>
+												<p>
+													Мировая премьера Hyundai Verna (российский Хундай Солярис) состоялась на Шанхайском автосалоне 2010 года.
+												<p>
+													В Поднебесной этот автомобиль продается с июля месяца 2010 года, в остальном мире он появится в продаже в начале 2011 года. В том числе и в Российской Федерации, он будет собственного производства и под оригинальным именем Solaris. Со слов производителя, именно этому имени отдали предпочтение поклонники марки в ходе национального голосования. Само слово Solaris является производным от латинского «sol», означающего «солнце». Выпуск первого автомобиля Хендай Солярис в кузове седан запланирован на январь 2011 года, на новом автозаводе Hyundai, построенном в Санкт-Петербурге. А в мае 2011 года появляется и Hyundai Solaris в кузове хэтчбек.
+												</p>
+												<p>
+													На сегодняшний день авто из Кореи бьют рекорды продаж не только в России и странах СНГ, но и в Европе. Объясняется это не только довольно привлекательной ценой на продукцию южнокорейского автопрома, но и ее прекрасными техническими характеристиками. В частности, современное корейское авто может похвастаться такими качествами, как:
+												</p>
+												<ul>
+													<li>
+														- удобство в эксплуатации и простота в обслуживании;
+													</li>
+													<li>
+														- стильный и привлекательный дизайн;
+													</li>
+													<li>
+														- полная и современная комплектация;
+													</li>
+													<li>
+														- повышенный уровень комфортабельности;
+													</li>
+													<li>
+														- весьма продолжительный срок службы.
+													</li>
+												</ul>
+												<br />
+												<p>
+													Именно поэтому объемы продаж авто из Кореи с каждым годом растут, и армия их поклонников постоянно пополняется российскими автолюбителями, которые при относительно невысоких финансовых затратах получают современную, практичную и надежную машину, составляющую достойную конкуренцию продукции не только отечественных, но и европейских производителей.
+												</p>
+												<p>
+													Безусловно, спрос рождает предложение. Однако для того, чтобы не стать жертвой мошенников и впоследствии остаться не только без авто из Кореи, но и без денег, следует отдавать предпочтение проверенным временем фирмам-поставщикам, которые обладают безупречной деловой репутацией.
+												</p>
+												Наша компания специализируется на продаже авто из Кореи на протяжении последних шести лет. За это время нашими услугами воспользовались сотни автолюбителей не только из Москвы, но и из различных регионов России. При работе с клиентами мы выбираем индивидуальный подход и учитываем любое их пожелание, при приобретении подержанной корейской иномарки на вторичном рынке. Воспользовавшись нашими услугами, вы можете рассчитывать на:
+												- приобретение авто из Кореи по доступной цене;
+												- выбор интересующей вас модели и варианта комплектации;
+												- отсутствие проблем с таможенным оформлением авто из Кореи, так как решение всех этих вопросов возьмут на себя наши специалисты;
+
+												</p>
+												<div class="item-separator"></div>
+											</div>
+											<span class="row-separator"></span>
+										</div>
+
+									</div>
+								</div>
+							</div><!-- Middle Column -->
+						</div><!-- Source Order Container -->
+
+						
+								<!-- Right Column -->
+								<div id="right-column">
+									<div class="inside">
+										<div class="col-module ">
+											<div class="col-module-suffix-">
+												<div class="col-module-bottom">
+													<div class="col-module-header">
+														<h3 class="mod-title">Свежие твиты</h3>
+													</div>
+													<div id="twitter-widget-placeholder" class="col-module-content clearfix">
+														
+														<!--<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+														<script>
+															new TWTR.Widget({
+																version : 2,
+																type : 'profile',
+																rpp : 3,
+																interval : 6000,
+																width : 180,
+																height : 300,
+																theme : {
+																	shell : {
+																		background : '#353535',
+																		color : '#ffffff'
+																	},
+																	tweets : {
+																		background : '#353535',
+																		color : '#ffffff',
+																		links : '#408EDA'
+																	}
+																},
+																features : {
+																	scrollbar : false,
+																	loop : true,
+																	live : true,
+																	hashtags : true,
+																	timestamp : true,
+																	avatars : true,
+																	behavior : 'default'
+																}
+															}).render().setUser('cometokorea').start();
+														</script>-->
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="col-module ">
+											<div class="col-module-suffix-style1">
+												<div class="col-module-bottom">
+													<div class="col-module-header">
+														<h3 class="mod-title">Кто онлайн</h3>
+													</div>
+													<div class="col-module-content clearfix">
+														<p>
+															Один гость и ни одного пользователя на сайте
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- Right Column -->
+
+						<div class="clear-columns"></div>
+					</div>
+				</div>
+			</div><!-- Columns Container -->
+		</div><!-- Content Main -->
+
+		<!-- Bottom -->
+		<div id="bottom" class="clearfix">
+			<div class="wrapper">
+				<div id="car-logos">
+					<div class="custom"  >
+						<img src="images/car_logos.jpg" border="0" alt="Car Logos" width="960" height="74" />
+					</div>
+				</div>
+			</div>
+		</div><!-- Bottom -->
+	</div>
+</div>
+
