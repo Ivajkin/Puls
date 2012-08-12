@@ -24,50 +24,8 @@
 </style>
 
 <link rel="stylesheet" href="css/YMaps.css" type="text/css" />
-<script src="http://api-maps.yandex.ru/1.1/index.xml?key=AM_v5U8BAAAAZsJwcAIAAoab7ZZQJhphfn_6iYDJiFEaDEIAAAAAAAAAAAAyit4DvKbBInolbKicsXCurbppcg=="
-type="text/javascript"></script>
-<script type="text/javascript">
-	window.onload = function() {
-		var map = new YMaps.Map(document.getElementById("YMapsID"));
-		map.setCenter(new YMaps.GeoPoint(135.064261, 48.478676), 17);
-
-		// кнопки и шкала масштаба располагаем как хотим
-		map.addControl(new YMaps.Zoom(), new YMaps.ControlPosition(YMaps.ControlPosition.TOP_LEFT, // в какой угол поставить
-		new YMaps.Size(5, 5) // сколько от него отступ в пикселах (x, y)
-		));
-
-		// Включаем масштабирование скроллингом мыши
-		map.enableScrollZoom();
-
-		// миникарта
-		map.addControl(new YMaps.MiniMap(), new YMaps.ControlPosition(YMaps.ControlPosition.BOTTOM_RIGHT, new YMaps.Size(5, 5)));
-
-		// выбор типа карты
-		map.addControl(new YMaps.TypeControl());
-
-		// линейка с расстоянием
-		map.addControl(new YMaps.ScaleLine(), new YMaps.ControlPosition(YMaps.ControlPosition.BOTTOM_LEFT, new YMaps.Size(5, 20)));
-
-		// Тулбар
-		/*map.addControl(new YMaps.ToolBar(),
-		new YMaps.ControlPosition(
-		YMaps.ControlPosition.TOP_LEFT,
-		new YMaps.Size(250, 5)
-		)
-		);*/
-
-		// Создаем метку и добавляем ее на карту
-		var placemark = new YMaps.Placemark(new YMaps.GeoPoint(135.064261, 48.478676));
-		// Установка содержимого значка метки
-		placemark.setIconContent('ООО \"Корея Трэйд\"');
-		placemark.name = 'ООО \"Корея Трэйд\"';
-		placemark.description = '680000, г. Хабаровск, ул. Дзержинского д.65 оф. 1002б.';
-		map.addOverlay(placemark);
-
-		// Открываем балун
-		//placemark.openBalloon();
-	}
-</script>
+<!--<script src="http://api-maps.yandex.ru/1.1/index.xml?key=AM_v5U8BAAAAZsJwcAIAAoab7ZZQJhphfn_6iYDJiFEaDEIAAAAAAAAAAAAyit4DvKbBInolbKicsXCurbppcg=="
+type="text/javascript"></script>-->
 
 <!--[if lte IE 8]>
 <link rel="stylesheet" type="text/css" href="css/ie.css" />

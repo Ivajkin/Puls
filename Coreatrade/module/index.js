@@ -2,41 +2,41 @@
 function onLoad() {
 	/*new JCaption('img.caption');
 
-	$$('.hasTip').each(function(el) {
-		var title = el.get('title');
-		if (title) {
-			var parts = title.split('::', 2);
-			el.store('tip:title', parts[0]);
-			el.store('tip:text', parts[1]);
-		}
-	});
-	var JTooltips = new Tips($$('.hasTip'), {
-		maxTitleChars : 50,
-		fixed : false
-	});
+	 $$('.hasTip').each(function(el) {
+	 var title = el.get('title');
+	 if (title) {
+	 var parts = title.split('::', 2);
+	 el.store('tip:title', parts[0]);
+	 el.store('tip:text', parts[1]);
+	 }
+	 });
+	 var JTooltips = new Tips($$('.hasTip'), {
+	 maxTitleChars : 50,
+	 fixed : false
+	 });
 
-	if ($('item-127') != null) {
-		$('item-127').setStyle('display', 'none');
-	}
-	if ($('item-147') != null) {
-		$('item-147').setStyle('display', 'none');
-	}
-*/
+	 if ($('item-127') != null) {
+	 $('item-127').setStyle('display', 'none');
+	 }
+	 if ($('item-147') != null) {
+	 $('item-147').setStyle('display', 'none');
+	 }
+	 */
 }
 
 // Слайдшоу
 function slidestart() {
 	/*$$('.hasTip').each(function(el) {
-		var title = el.get('title');
-		if (title) {
-			var parts = title.split('::', 2);
-			el.store('tip:title', parts[0]);
-			el.store('tip:text', parts[1]);
-		}
-	});
-	var JTooltips = new Tips($$('.hasTip'), {
-		fixed : false
-	});*/
+	 var title = el.get('title');
+	 if (title) {
+	 var parts = title.split('::', 2);
+	 el.store('tip:title', parts[0]);
+	 el.store('tip:text', parts[1]);
+	 }
+	 });
+	 var JTooltips = new Tips($$('.hasTip'), {
+	 fixed : false
+	 });*/
 }
 
 // Загрузка новостей на домашней странице.
@@ -237,45 +237,45 @@ function loadBodyPage(pageName, callback) {
 // Загружаем тело страницы index
 function loadHome() {
 	loadBodyPage('home', function() {
-		
+
 		onLoad();
 
 		loadNews();
 
 		makeTwitterWidget();
-		
+
 		// Слайдшоу
 		new SmoothScroll({
 			duration : 800
 		});
 
 		/*// Какой-то левый код
-		window.addEvent('load', function() {
-			new JCaption('img.caption');
-		});
-		window.addEvent('domready', function() {
-			$$('.hasTip').each(function(el) {
-				var title = el.get('title');
-				if (title) {
-					var parts = title.split('::', 2);
-					el.store('tip:title', parts[0]);
-					el.store('tip:text', parts[1]);
-				}
-			});
-			var JTooltips = new Tips($$('.hasTip'), {
-				maxTitleChars : 50,
-				fixed : false
-			});
-		});
-		window.addEvent("load", function() {
-			if ($('item-127') != null)
-				$('item-127').setStyle('display', 'none')
-		});
-		window.addEvent("load", function() {
-			if ($('item-147') != null)
-				$('item-147').setStyle('display', 'none')
-		});
-		// Конец левого кода*/
+		 window.addEvent('load', function() {
+		 new JCaption('img.caption');
+		 });
+		 window.addEvent('domready', function() {
+		 $$('.hasTip').each(function(el) {
+		 var title = el.get('title');
+		 if (title) {
+		 var parts = title.split('::', 2);
+		 el.store('tip:title', parts[0]);
+		 el.store('tip:text', parts[1]);
+		 }
+		 });
+		 var JTooltips = new Tips($$('.hasTip'), {
+		 maxTitleChars : 50,
+		 fixed : false
+		 });
+		 });
+		 window.addEvent("load", function() {
+		 if ($('item-127') != null)
+		 $('item-127').setStyle('display', 'none')
+		 });
+		 window.addEvent("load", function() {
+		 if ($('item-147') != null)
+		 $('item-147').setStyle('display', 'none')
+		 });
+		 // Конец левого кода*/
 
 		var _lofmain = $('iceslideshow157');
 		var object = new IceSlideShow(_lofmain.getElement('.ice-main-wapper'), _lofmain.getElement('.ice-navigator-outer .ice-navigator'), _lofmain.getElement('.ice-navigator-outer'), {
@@ -357,6 +357,48 @@ function loadHome() {
 function loadAbout() {
 	loadBodyPage('about', function() {
 		makeTwitterWidget();
+
+		// Яндекс карта
+		$j.getScript('http://api-maps.yandex.ru/1.1/index.xml?key=AM_v5U8BAAAAZsJwcAIAAoab7ZZQJhphfn_6iYDJiFEaDEIAAAAAAAAAAAAyit4DvKbBInolbKicsXCurbppcg==', function() {
+			var map = new YMaps.Map(document.getElementById("YMapsID"));
+			map.setCenter(new YMaps.GeoPoint(135.064261, 48.478676), 17);
+	
+			// кнопки и шкала масштаба располагаем как хотим
+			map.addControl(new YMaps.Zoom(), new YMaps.ControlPosition(YMaps.ControlPosition.TOP_LEFT, // в какой угол поставить
+			new YMaps.Size(5, 5) // сколько от него отступ в пикселах (x, y)
+			));
+	
+			// Включаем масштабирование скроллингом мыши
+			map.enableScrollZoom();
+	
+			// миникарта
+			map.addControl(new YMaps.MiniMap(), new YMaps.ControlPosition(YMaps.ControlPosition.BOTTOM_RIGHT, new YMaps.Size(5, 5)));
+	
+			// выбор типа карты
+			map.addControl(new YMaps.TypeControl());
+	
+			// линейка с расстоянием
+			map.addControl(new YMaps.ScaleLine(), new YMaps.ControlPosition(YMaps.ControlPosition.BOTTOM_LEFT, new YMaps.Size(5, 20)));
+	
+			// Тулбар
+			/*map.addControl(new YMaps.ToolBar(),
+			new YMaps.ControlPosition(
+			YMaps.ControlPosition.TOP_LEFT,
+			new YMaps.Size(250, 5)
+			)
+			);*/
+	
+			// Создаем метку и добавляем ее на карту
+			var placemark = new YMaps.Placemark(new YMaps.GeoPoint(135.064261, 48.478676));
+			// Установка содержимого значка метки
+			placemark.setIconContent('ООО \"Корея Трэйд\"');
+			placemark.name = 'ООО \"Корея Трэйд\"';
+			placemark.description = '680000, г. Хабаровск, ул. Дзержинского д.65 оф. 1002б.';
+			map.addOverlay(placemark);
+	
+			// Открываем балун
+			//placemark.openBalloon();
+		});
 	});
 }
 
