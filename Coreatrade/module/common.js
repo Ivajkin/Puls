@@ -387,40 +387,6 @@ Array.prototype.strict_contains = function(element) {
 }
 
 /**
- * Make request and create cache by url for cache_rotten_time_sec in seconds, then kill it.
- */
-/*function makeCachedRequest(url, callback, cache_rotten_time_sec) {
-	if(!window.__ajaxRequestCacheByUrl) {
-		window.__ajaxRequestCacheByUrl = {};
-	}
-	if(!window.__lastRequestTimers) {
-		window.__lastRequestTimers = {};
-	}
-	
-	
-	if(window.__ajaxRequestCacheByUrl[url]) {
-		callback(window.__ajaxRequestCacheByUrl[url]);
-	} else if(window.__lastRequestTimers[url]) {
-		setTimeout(function(url) {
-			callback(window.__ajaxRequestCacheByUrl[url]);
-		}, cache_rotten_time_sec*1100, url);
-	} else {
-		window.__lastRequestTimers[url] = setTimeout(function(url) {
-			window.__ajaxRequestCacheByUrl[url] = null;
-			window.__lastRequestTimers[url] = null;
-		}, cache_rotten_time_sec*1000, url);
-		makeRequest(url, function(result_data) {
-			window.__ajaxRequestCacheByUrl[url] = result_data;
-			callback(result_data);
-		});
-	}
-		
-	if(window.__lastRequestTimers[url]) {
-		clearTimeout(window.__lastRequestTimers[url]);
-	}
-}*/
-
-/**
  * Make request to retrive data from url. 
  */
 var parseHttpRequest;
@@ -474,7 +440,7 @@ function makeRequest(url, callback) {
 
 parseHttpRequest = function(httpRequest, callback) {
 	if (httpRequest.readyState == 4) {
-		if (httpRequest.status == 200) {
+		if (httpRequest.status == 200 || httpRequest.status == 0) {
 			callback(httpRequest.responseText);
 		} else {
 			//alert('There was a problem with the request.');
