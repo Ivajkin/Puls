@@ -28,12 +28,13 @@
 
 		<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 		<script src="js/mootools-core.js" type="text/javascript"></script>
+		<!--<script src="js/mootools-more.js" type="text/javascript"></script>-->
+		<!--<script src="js/icetheme.js" type="text/javascript"></script>-->
 		<script src="js/core.js" type="text/javascript"></script>
 		<script src="js/caption.js" type="text/javascript"></script>
-		<script src="js/mootools-more.js" type="text/javascript"></script>
-		<script src="js/iceslideshow.js" type="text/javascript"></script>
 		<script src="js/icemegamenu.js" type="text/javascript"></script>
 		<script src="js/icecarousel.js" type="text/javascript"></script>
+		<script src="js/iceslideshow.js" type="text/javascript"></script>
 		<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
 		<script src="js/jquery.jgfeed.js" type="text/javascript"></script>
 
@@ -421,13 +422,6 @@
 				</div>
 			</div>
 
-			<script type="text/javascript">
-				window.addEvent('domready', function() {
-					new SmoothScroll({
-						duration : 800
-					});
-				})
-			</script>
 			<a id="go2top" href="#header"><span>На верх</span></a>
 		</div>
 		<!-- Footer -->
@@ -456,7 +450,7 @@
 		</script>
 		<!-- Copiny (coreatrade.copiny.com) -->
 
-		<!-- Module JavaScript наш основной код -->
+		<!-- Module JavaScript наш основной код, в конце для того чтобы DOM подгрузился и для быстрой загрузки -->
 		<script src="module/common.js" type="text/javascript"></script>
 		<script src="module/dproc.js" type="text/javascript"></script>
 		<script src="module/index.js" type="text/javascript"></script>

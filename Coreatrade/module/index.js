@@ -1,7 +1,7 @@
-window.addEvent('load', function() {
-	new JCaption('img.caption');
-});
-window.addEvent('domready', function() {
+// Ещё какой-то левый код загрузки
+function onLoad() {
+	/*new JCaption('img.caption');
+
 	$$('.hasTip').each(function(el) {
 		var title = el.get('title');
 		if (title) {
@@ -14,19 +14,19 @@ window.addEvent('domready', function() {
 		maxTitleChars : 50,
 		fixed : false
 	});
-});
-window.addEvent("load", function() {
-	if ($('item-127') != null)
-		$('item-127').setStyle('display', 'none')
-});
-window.addEvent("load", function() {
-	if ($('item-147') != null)
-		$('item-147').setStyle('display', 'none')
-});
+
+	if ($('item-127') != null) {
+		$('item-127').setStyle('display', 'none');
+	}
+	if ($('item-147') != null) {
+		$('item-147').setStyle('display', 'none');
+	}
+*/
+}
 
 // Слайдшоу
 function slidestart() {
-	$$('.hasTip').each(function(el) {
+	/*$$('.hasTip').each(function(el) {
 		var title = el.get('title');
 		if (title) {
 			var parts = title.split('::', 2);
@@ -36,7 +36,7 @@ function slidestart() {
 	});
 	var JTooltips = new Tips($$('.hasTip'), {
 		fixed : false
-	});
+	});*/
 }
 
 // Загрузка новостей на домашней странице.
@@ -225,6 +225,7 @@ function makeTwitterWidget() {
 	}).render().setUser('cometokorea').start();
 }
 
+// Главная функция загрузки всех внутренних элементов
 function loadBodyPage(pageName, callback) {
 	makeRequest(pageName + '.body.html', function(body_html) {
 		$j('#main-window').empty();
@@ -236,12 +237,19 @@ function loadBodyPage(pageName, callback) {
 // Загружаем тело страницы index
 function loadHome() {
 	loadBodyPage('home', function() {
+		
+		onLoad();
 
 		loadNews();
 
 		makeTwitterWidget();
+		
+		// Слайдшоу
+		new SmoothScroll({
+			duration : 800
+		});
 
-		// Какой-то левый код
+		/*// Какой-то левый код
 		window.addEvent('load', function() {
 			new JCaption('img.caption');
 		});
@@ -267,7 +275,7 @@ function loadHome() {
 			if ($('item-147') != null)
 				$('item-147').setStyle('display', 'none')
 		});
-		// Конец левого кода
+		// Конец левого кода*/
 
 		var _lofmain = $('iceslideshow157');
 		var object = new IceSlideShow(_lofmain.getElement('.ice-main-wapper'), _lofmain.getElement('.ice-navigator-outer .ice-navigator'), _lofmain.getElement('.ice-navigator-outer'), {
