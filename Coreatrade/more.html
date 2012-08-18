@@ -4,6 +4,8 @@
 <script src="css/expauto/assets/js/expgooglemap.js" type="text/javascript"></script>
 <!--End Map-->
 
+<script src="js/more.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 	function jooImage(target, fname, title) {
 		document[target].src = fname;
@@ -33,7 +35,11 @@
 
 	/* Left Columns Parameters */
 	#outer-column-container {
-		border-left-width: 260px;
+		border-left-width: 0;
+	}
+	#outer-column-container
+	{
+		border-right-width: 0;
 	}
 	#left-column {
 		margin-left: -260px;
@@ -44,6 +50,18 @@
 	}
 	#promo .inside_effect {
 		background: none
+	}
+	
+	#expautospro table td:last-child {
+		max-width: 150px;
+	}
+	#expautospro table td:first-child {
+		font-weight: 800;
+		text-align: left;
+	}
+	
+	h3 {
+		margin-top: 10px;
 	}
 </style>
 
@@ -110,7 +128,7 @@
 										<div id="expshortlist4" class="expshortlist_detailpage">
 											<span title="Add to Shortlist"> <a href="javascript:expshortlist(1,4,'Saved')">В блокнот</a> </span>
 										</div>
-										<div class="expautos_detail_topname">
+										<div class="expautos_detail_topname placeholder-name">
 											BMW 2010 5 Cерии 528i Седан 155КВт
 										</div>
 										<div class="expautos_detail_left">
@@ -132,142 +150,69 @@
 											<div class="expautospro_clear"></div>
 											<div class="expautospro_clear"></div>
 											<div class="expautos_detail_equipment">
+												<h3>Основная информация</h3>
 												<table class="exp_autos_equiptable">
-													<h3>Equipment</h3>
 													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Тюнинг
-														</div></td>
+														<td>Название</td>
+														<td class="placeholder-name">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Спойлер&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Xenon lights&nbsp;</td>
-													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Безопасность
-														</div></td>
+														<td>Тип</td>
+														<td class="placeholder-type">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Центральная блокировка&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Обездвиживание&nbsp;</td>
+														<td>Марка</td>
+														<td class="placeholder-mark">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Предупреждение&nbsp;</td>
+														<td>Модель</td>
+														<td class="placeholder-model">.</td>
 													</tr>
 													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Дополнительная комплектация
-														</div></td>
+														<td>Цена (р.)</td>
+														<td class="placeholder-price">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Лёгкий литые диски&nbsp;</td>
+														<td>Цвет</td>
+														<td class="placeholder-color">.</td>
 													</tr>
 													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Audio/Video
-														</div></td>
+														<td>Год</td>
+														<td class="placeholder-year">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Встроенный плеер&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Усилитель звука&nbsp;</td>
+														<td>Объём (в литрах)</td>
+														<td class="placeholder-power">.</td>
 													</tr>
 													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Комплектация
-														</div></td>
+														<td>Топливо</td>
+														<td class="placeholder-fuel">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; ABS&nbsp; </td>
-														<td class="exp_autos_equip">&#45; GSM телефонная установка&nbsp;</td>
+														<td>Привод</td>
+														<td class="placeholder-drive">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Передние омыватели&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Воздушная камера&nbsp;</td>
+														<td>Каробка передач</td>
+														<td class="placeholder-vvv">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Електрика окон&nbsp; </td>
-														<td class="exp_autos_equip">&#45; Усилитель регулировки дмижения&nbsp;</td>
+														<td>Мощность (кВт)</td>
+														<td class="placeholder-power">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; Многофункциональный режим управления&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Управление задними окнами&nbsp;</td>
+														<td>Двери (кол-во)</td>
+														<td class="placeholder-door">.</td>
 													</tr>
 													<tr>
-														<td class="exp_autos_equip">&#45; EBD&nbsp;</td>
-														<td class="exp_autos_equip">&#45; ASR&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; ESP&nbsp;</td>
-														<td class="exp_autos_equip">&#45; SRS&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Регулятор дальнего света&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Автоматический&nbsp;</td>
-													</tr>
-													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Кабина
-														</div></td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Деревянная работа&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Коженнная кабина&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Электрическое заднее освещение&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Blind on the rear затемнение&nbsp;</td>
-													</tr>
-													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Электроника
-														</div></td>
-													</tr>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Електронные зеркала&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Система чувствительности расстояния&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Цифровые часы&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Автоматические антенные&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Круиз-контроль&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Наружний температурный сенсор&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Бортовой компьютер&nbsp; </td>
-														<td class="exp_autos_equip">&#45; Покупается отдельно&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Обзор зеркал&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Электронноподстраиваемые с панели управления&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Дополнительные сенсорыr&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Електронная штриховка&nbsp;</td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Елекьронная фиксация кресла&nbsp;</td>
-													</tr>
-													<tr>
-														<td colspan="2">
-														<div class="exp_autos_equipname">
-															Другие особенности
-														</div></td>
-													</tr>
-													<tr>
-														<td class="exp_autos_equip">&#45; Гарантия&nbsp;</td>
-														<td class="exp_autos_equip">&#45; Предусмотрена в сервисной документации&nbsp;</td>
+														<td>Сиденья (кол-во)</td>
+														<td class="placeholder-seat">.</td>
 													</tr>
 												</table>
+											</div>
+											<div class="expautos_detail_equipment">
+												<h3>Комплектация</h3>
+												<pre class="placeholder-complect">.</pre>
 											</div>
 											<div class="expautospro_clear"></div>
 											<h3>Задать вопрос поставщику</h3>
@@ -312,109 +257,7 @@
 											<h3>Карта</h3>
 											<div id="exp_mapdetails_canvas" style="width: 420px; height: 300px;"></div>
 											<div class="expautospro_clear"></div>
-											<div class="expdetail_hits">
-												Посещалась: 3966 раз
-											</div>
 											<div class="expautospro_clear"></div>
-										</div>
-										<div class="expautos_detail_right">
-											<div class="moduletable_menu">
-												<h3>Общая информация</h3>
-												<p>
-													<span>Id: </span>4
-												</p>
-												<p>
-													<span>Год: </span>2&#47;2010
-												</p>
-												<p>
-													<span>Мощность: </span>155&nbsp;КВт
-												</p>
-												<p>
-													<span>Топливо: </span>бензин
-												</p>
-												<p>
-													<span>передача: </span>автоматическая
-												</p>
-												<p>
-													<span>Привод: </span>Заднеприводная
-												</p>
-												<p>
-													<span>Двери: </span>4
-												</p>
-												<p>
-													<span>Сиденья: </span>5
-												</p>
-												<p>
-													<span>Цена: </span>$ 36,500 USD&nbsp;(&euro; 24,930 EUR)
-												</p>
-												<p>
-													<span class="expautos_bprice">Со скидкой: </span>$ 36,000 USD&nbsp;(&euro; 24,588 EUR)
-												</p>
-											</div>
-											<div class="moduletable_menu">
-												<h3>Местоположение автомобиля</h3>
-												<p>
-													<span>Страна: </span>США
-												</p>
-												<p>
-													<span>Регион: </span>Кентуки
-												</p>
-												<p>
-													<span>Город: </span>Малон
-												</p>
-												<p>
-													<span>Почтовый код</span>12953
-												</p>
-											</div>
-											<div class="moduletable_menu">
-												<h3>Информация о поставщике</h3>
-												<p>
-													<a href="http://www.bmw.com/" > <img src='css/expauto/images/45_1312917864.jpg' title="Co Vehtest" /> </a>
-												</p>
-												<p>
-													<span>Имя: </span>Василий Иванович
-												</p>
-												<p>
-													<span>Имя пользователя: </span>Василий
-												</p>
-												<p>
-													<span>Телефон: </span>555555555
-												</p>
-												<p>
-													<span>Рабочий: </span>3333333333
-												</p>
-												<p>
-													<span>Фвкс: </span>4444444444
-												</p>
-												<p>
-													<span>Email: </span>demogold@test.com
-												</p>
-												<p>
-													<span>Компания: </span>ВехТест
-												</p>
-												<p>
-													<span>Страна: </span>Россия
-												</p>
-												<p>
-													<span>Регион: </span>Хабаровский
-												</p>
-												<p>
-													<span>Город: </span>Хабаровск
-												</p>
-												<p>
-													<span>Почтовый индекс: </span>680248
-												</p>
-												<p>
-													<span>Web: </span>
-													<a href="http://www.bmw.com/">www.bmw.com</a>
-												</p>
-												<p>
-													<a href="../../../../list7562.html?userid=45">Показать все авто этого поставщика</a>
-												</p>
-												<p>
-													<a href="../../../../dealerdetail/45.html">Больше информации о поставщике</a>
-												</p>
-											</div>
 										</div>
 									</div>
 								</div>

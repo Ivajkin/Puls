@@ -341,7 +341,7 @@
 
 		<?php
 			if(!isset($_GET["page"])) { $page = "home"; } else { $page = $_GET["page"]; }
-			if($page != "about"  && $page != "list"  && $page != "mark"  && $page != "more") { die("wrong page parameter"); }
+			if($page != "home"  && $page != "about"  && $page != "list"  && $page != "mark"  && $page != "more") { die("wrong page parameter"); }
 			include $page.".html";
 		?>
         <!-- Footer Wrapper -->
