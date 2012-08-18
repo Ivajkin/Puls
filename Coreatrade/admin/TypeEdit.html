@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="../css/template_languages.css" type="text/css" />
         <link rel="stylesheet" href="../css/mod_icemegamenu/css/default_icemegamenu.css" type="text/css" />
      	<link rel="stylesheet" type="text/css" href="uploadify.css" />
+    <link rel="stylesheet" type="text/css" href="tooltip.css" />
         <link rel="stylesheet" href="../css/expauto/assets/css/expautospro.css" type="text/css" />
         <link rel="stylesheet" href="../css/expauto/skins/explist/default/css/default.css" type="text/css" />
         <link rel="stylesheet" href="../css/expauto/mod_expautospro_mortgage.css" type="text/css" />
@@ -86,7 +87,7 @@
             	font-size:1.7em;
                 padding-bottom:10px;
                 padding-top:20px;
-            }            
+            }
             tr:hover 
             {
                 background-color:#171917;
@@ -113,62 +114,108 @@
 		var $j = jQuery.noConflict();
 		$j.post( "AuthFiles/authenticator.php", 
 			function(data) {
-				//alert(data);
 			}
-		).success(function(data) { 
-			//alert(data);
+		).success(function(data) {
 			if(data == 'true')
 				$j(document).ready(function() {
 					updateTable(0);
 				});
 			else
-				location="http://coreatrade.com/admin/";
+				window.location="http://coreatrade.com/admin/";
 		});
-		$j(function() {
-			$j('#file_upload').uploadify({
-			    'swf'      : 'uploadify.swf',
-			    'uploader' : 'uploadify.php'
-			    // Your options here
+		var rowWithContent = -1;
+		function insert(place){
+			place.append(
+			'<tr id="updateDiv" style="width: 100%"><td id = "insertTr" style="width: 100%" colspan="3">'+
+                                '<div style="clear: both"></div>'+
+                                    '<div class="add" style="width:32%">'+
+                                        '<input type="text" name="add" /></div>'+
+                                    '<div class="add" style="float:right; width:28%" id="path" value="DataBaseOps/AddTypeDB.php">'+
+                                        '<button type="submit" name="typeId" value="-1">Добавить</button></div>'+
+                                    '<div style="clear: both"></div>'+
+                            '</td></tr>'
+			);
+			$j(":submit[name = 'typeId']").click(function () {
+				//alert($j(".add#path").attr("value"));
+				$j.post( $j(".add#path").attr("value"), { 
+					add : $j(":text[name = 'add']",$j("tr#updateDiv")).attr("value"), 
+					typeId: $j(this).attr("value") }
+				).success(function(data) {
+						updateTable($j(this).attr("value"));
+						//setTimeout("updateTable("+$j(this).attr("value")+");",100);
+				});
 			});
-		});
-		function insertRow(index, data){
-			var image = '';
-			if(data.img.length){
-				image = '<img width="auto" height="100px" src="../' + data.img[0]+ '" />' +
-				'<div class="expimgcount">' + data.img.length + ' изображений' + '</div>';
-			}
-			else 
-				image = '<div class="expimgcount"> Нет изображений </div>';
-			$j("tbody#Table").append('<tr class="explistrow">' +
-			'<td>' + '<span></span>' + '<div class="photo top">' + image + '</div>' +
-			'</td>' +
-			'<td>' + '&nbsp' + data.name + '&nbsp'+ '</td>' +
-			'<td>' + '&nbsp' + data.year + '&nbsp' + '</td>' + 
-			'<td>' + '&nbsp' + data.price + 'р.' + '</td>' +
-			'<td>' + '<button value="'+index+'" name="delete">Удалить</button>' + 
-			'<form method="GET" action = "edit.html"><button value="'+index+'" name="button">Изменить</button></form>' + '</td>' +
-			'</tr>');	
 		}
-		function updateTable(){
-			var FilterBrand = parseInt($j("#BrandOut").attr("value"));
-			var FilterType = parseInt($j("#TypeOut").attr("value"));
-			//alert(FilterType);
-			$j("tbody#Table").empty();
-			jgetData ( function (car) {
-				for (i = 0; i < car.length; i++){
-					if(FilterType && FilterType-1 != car[i].type)
-						continue;
-					if(FilterBrand && FilterBrand-1 != car[i].mark)
-						continue;
-					insertRow(i,car[i]);
+		function prependInsert(index){
+			rowWithContent = index;
+			if(0 <= index){
+				$j(".add#path").attr("value","DataBaseOps/EditTypeDB.php");
+				$j(":text[name = 'add']",$j("tr#updateDiv")).attr("value",$j("td",$j(".explistrow[value = "+index+"]")).eq(0).html());
+				$j(":submit",$j("tr#updateDiv")).html("Изменить");
+				$j("tr#updateDiv").insertAfter(".explistrow[value = '"+index+"']");
+			}
+			else{
+				$j(".add#path").attr("value","DataBaseOps/AddTypeDB.php");
+				$j(":text[name = 'add']",$j("tr#updateDiv")).attr("value", "");
+				$j(":submit",$j("tr#updateDiv")).html("Добавить");
+				$j("tr#updateDiv").prependTo("tbody#Table");
+			}
+			$j(":submit",$j("tr#updateDiv")).attr("value",index);
+			$j("tr#updateDiv").show("slow");
+		}
+		function ClickFunction(selectedRow){
+			var UpdateDiv = $j("tr#updateDiv");
+			if(selectedRow == rowWithContent ){
+				UpdateDiv.toggle("slow");
+			}
+			else{
+				if(UpdateDiv.css("display") == "none"){
+					prependInsert(selectedRow);
 				}
-				$j("button[name = 'delete']").click(function () {
-					$j.post("DataBaseOps/DelCarDB.php", { 
-						delete : $j(this).attr("value") }, 
-						function(data) {
-							updateTable();
-						}
-					);
+				else{
+					UpdateDiv.hide(400);
+					setTimeout('prependInsert('+selectedRow+');',350);
+				}
+			}
+		}
+		function insertRow(index, data){
+			$j("tbody#Table").append('<tr class="explistrow" value="'+index+'"> ' +
+				'<td>' + data.type + '</td>' +
+				'<td>' + data.model.length + '</td>' +
+				'<td>' + '<button value="'+index+'" name="delete">Удалить</button>' + 
+				'</td></tr>');	
+		}
+		function updateTable(first, end){
+			end = end || first || -1;
+			first = first || 0;
+			jgetType( function (type) {
+				if(first == 0 && end <= -1){
+					$j("tbody#Table").empty();
+					insert($j("tbody#Table"));
+				}
+				//else
+					//$j(":text[name = 'add']").attr("value", "");
+				if(end >= type.length || end <= -1)
+					end = type.length - 1;
+				if(first >= type.length || first <= -1)
+					first = type.length - 1;
+				$j(".explistrow").slice(first,end+1).detach();
+				for (i = first; i <= end; i++){
+					insertRow(i, type[i]);
+				}
+				$j(".explistrow").click(function () {
+					ClickFunction($j(this).attr("value"));
+				});
+				$j("button[name = 'delete']").click(function (event) {
+					event.stopPropagation();
+					$j(".explistrow").eq($j(this).attr("value")).hide("slow");
+					prependInsert(-1);
+					$j.post("DataBaseOps/DelTypeDB.php", { 
+						delete : $j(this).attr("value") }
+					).success(function(data) {
+						//updateTable($j(this).attr("value"));
+						setTimeout("updateTable("+$j(this).attr("value")+", -1);",500);
+					});
 				});
 			});
 		}
@@ -204,49 +251,25 @@
                                     <div class="inside"> 
                                         <div id="system-message-container"></div>
                                         <div class="blog">
-					  <h1>Список всех автомобилей в базе</h1>
-					  
-					    <div class="table left">Марка
-					    <select id = "BrandOut" name="Brand" size=1 onchange='updateTable();'>
-				                    <script type="text/javascript">
-				                    	$j("#BrandOut").append("<option value='0'>Все</option>");
-							$j(document).ready(function() {
-							 // Handler for .ready() called.
-								jgetBrand ( function (data) {
-								for (i = 1; i < data.length+1; i++)
-									$j("#BrandOut").append("<option value='" + i + "'>" + data[i-1].mark  + "</option>");
-								});
-							});
-						    </script>
-				                </select>
-				            <br />Тип
-					    <select id = "TypeOut" name="Type" size=1 onchange='updateTable();'>
-				                    <script type="text/javascript">
-				                    	$j("#TypeOut").append("<option value='0'>Все</option>");
-							$j(document).ready(function() {
-								jgetType ( function (data) {
-								for (i = 1; i < data.length+1; i++)
-									$j("#TypeOut").append("<option value='" + i + "'>" + data[i-1].type + "</option>");
-								});
-							});
-						    </script>
-				                </select>
-				            </div>
+					  <h1>Редактирование марок</h1>
 				            <div class="newrow"></div>
 				            <div id="expskins_module"></div>
 					    <div class="expautospro_clear"></div>
 				            <div align="center" id = "expautospro">
 					    <table class="explist">
-						<thead>
+						<thead id = 'TableHead'>
 							<tr>
-								<th>Изображение</th>
-								<th>Марка/Модель</th>
-								<th>Год</th>
-								<th>Цена</th>
-								<th>Функции</th>
+								<th><a class="tooltip">Наименование<span><strong>Для добавления новой</strong><br />Щёлкните по заголовку таблицы</span></a></th>
+								<th><a class="tooltip">Число автомобилей<span><strong>Для добавления новой</strong><br />Щёлкните по заголовку таблицы</span></a></th>
+								<th><a class="tooltip">Функции<span><strong>Для добавления новой</strong><br />Щёлкните по заголовку таблицы</span></a></th>
 							</tr>
 						</thead>
 						<tbody id = "Table">
+							<script type="text/javascript">
+								$j("thead#TableHead").click(function () {
+									ClickFunction(-1);
+								});
+							</script>
 				               </tbody>
 				          </table>
 				          </div>

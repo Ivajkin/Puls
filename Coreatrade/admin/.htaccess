@@ -4,3 +4,5 @@ deny from all
 </Files>
 
 Options All -Indexes
+AuthName "admin"
+AuthUserFile "/home2/core5429/.htpasswds/public_html/admin/passwd"

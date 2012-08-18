@@ -94,18 +94,16 @@ $data= array(
     "img" => $img,
     "complect" => $complect);
 
-//$value = mb_check_encoding($value, 'UTF-8') ? $value : utf8_encode($value);
 
 //to Ddata
 $inp = file_get_contents('../js/ddata.js');
 $tempArray = json_decode($inp);           
-//---
-//unset($tempArray[$index));
 
 //to DType        
 updateInArray('../js/dtype.js',$carId,$tempArray[$carId]->type,$type);
 //to DBrand
 updateInArray('../js/dbrand.js',$carId,$tempArray[$carId]->mark,$mark);
+
 $tempArray[$carId] = $data;
 $jsonData = json_encode($tempArray);
 file_put_contents('../js/ddata.js', $jsonData);

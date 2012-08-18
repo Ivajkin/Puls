@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="../css/template_languages.css" type="text/css" />
         <link rel="stylesheet" href="../css/mod_icemegamenu/css/default_icemegamenu.css" type="text/css" />
      	<link rel="stylesheet" type="text/css" href="uploadify.css" />
+     	<link rel="stylesheet" type="text/css" href="tooltip.css" />
         <link rel="stylesheet" href="../css/expauto/assets/css/expautospro.css" type="text/css" />
         <link rel="stylesheet" href="../css/expauto/skins/explist/default/css/default.css" type="text/css" />
         <link rel="stylesheet" href="../css/expauto/mod_expautospro_mortgage.css" type="text/css" />
@@ -87,36 +88,169 @@
                 padding-bottom:10px;
                 padding-top:20px;
             }
+            tr:hover 
+            {
+                background-color:#171917;
+            }
+            tr {
+                cursor: pointer;
+            }
+            .add {
+                padding-top: 10px;
+                float: left;
+                display: block;
+            }
+            input[type="text"] {
+                width: 120px;
+            }
+            #insertTr {
+                cursor:default;
+            }
         </style>
         <script src="../js/jquery-1.7.2.js" type="text/javascript"></script>
 	<script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
 	<script src="../js/dproc.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var $j = jQuery.noConflict();
-		$j(function() {
-			$j('#file_upload').uploadify({
-			    'swf'      : 'uploadify.swf',
-			    'uploader' : 'uploadify.php'
-			    // Your options here
-			});
+		$j.post( "AuthFiles/authenticator.php", 
+			function(data) {
+			}
+		).success(function(data) {
+			if(data == 'true')
+				$j(document).ready(function() {
+					updateTable(0);
+				});
+			else
+				window.location="http://coreatrade.com/admin/";
 		});
-		function updateTable(filter){
-			$j("tbody#Table").empty();
-			jgetBrand ( function (brand) {
-				for (i = 0; i < brand.length; i++){
-					if(filter && filter-1 != brand[i].mark)
-						continue;
-					$j("tbody#Table").append('<tr class="explistrow0&#32;top">' +
-					'<td>' + '<span></span>' +
-						'<img width="70px" heigth="auto" src="' + brand[i].img+ '" />' +
-					'</td>' +
-					'<td>' + '&nbsp' + brand[i].mark + '&nbsp'+ '</td>' +
-					'<td>' + '&nbsp' + brand[i].model.length + '&nbsp' + '</td>' +
-					'<td>' + '<form method="POST" action = "delMarkDB.php"><button value="'+i+'" name="delete">Удалить</button></form>' + 
-					'<form method="GET" action = "edit.html"><button value="'+i+'" name="button">Изменить</button></form>' + '</td>' +
-					'</tr>');
-				}
+		var rowWithContent = -1;
+		function insert(place){
+			place.append(
+			'<tr id="updateDiv" style="width: 100%"><td id = "insertTr" style="width: 100%" colspan="4">'+
+                                '<div style="clear: both"></div>'+
+                                    '<div class="add" style="width:30%">'+
+                                        '<span>Или </span><input type="text" placeholder="Введите адрес" name="srcImage"/>'+
+                                        '<p style="overflow: auto; font-size: 0.8em">Например: http://web4php.com/jquery1.png</p>'+
+                                    '</div>'+
+                                    '<div class="add" style="width:21%">'+
+                                        '<input type="text" name="add" /></div>'+
+                                    '<div class="add" style="float:right; width:20%" id = "path" value="DataBaseOps/AddMarkDB.php">'+
+                                        '<button type="submit" name="markId" value="-1">Добавить</button></div>'+
+                                    '<div style="clear: both"></div>'+
+                            '</td></tr>'
+			);
+			$j(":submit[name = 'markId']").click(function () {
+				var value = $j(this).attr("value");
+				$j.post( $j("div#path").attr("value"), { 
+					add : $j(":text[name = 'add']").attr("value"), 
+					markId: value }
+				).complete(function(data) {
+					//alert($j(":submit[name = 'markId']").attr("value"));
+					//updateTable(value);
+					setTimeout("updateTable("+value+",-1);",100);
+					//setTimeout("updateTable();",100);
+				});
 			});
+			insertUploader($j("td#insertTr"));
+		}
+		function insertUploader(place){
+			place.prepend('<div id = "insertUpload"><input type="file" id="file_upload" name="file_upload" style="float:left; width:30%"/>'+
+                               	'<div style="clear: both"></div>'+
+                               '</div>');
+		}
+		function prependInsert(index){
+			rowWithContent = index;
+			if(0 <= index){
+				$j(".add#path").attr("value","DataBaseOps/EditMarkDB.php");
+				$j(":submit",$j("tr#updateDiv")).html("Изменить");
+				$j(":text[name = 'add']",$j("tr#updateDiv")).attr("value",$j("td",$j(".explistrow[value = "+index+"]")).eq(1).html());
+				$j("tr#updateDiv").insertAfter(".explistrow[value = '"+index+"']");
+			}
+			else{
+				$j(".add#path").attr("value","DataBaseOps/AddMarkDB.php");
+				$j(":text[name = 'add']",$j("tr#updateDiv")).attr("value", "");
+				//$j(":submit",$j("tr#updateDiv")).attr("value","-1");
+				$j(":submit",$j("tr#updateDiv")).html("Добавить");
+				$j("tr#updateDiv").prependTo("tbody#Table");
+			}
+			$j(":submit",$j("tr#updateDiv")).attr("value",index);
+			$j("tr#updateDiv").show("slow");
+			
+		}
+		function ClickFunction(selectedRow){
+			var UpdateDiv = $j("tr#updateDiv");
+			if(selectedRow == rowWithContent ){
+				UpdateDiv.show("slow");
+			}
+			else{
+				if(UpdateDiv.css("display") == "none"){
+					prependInsert(selectedRow);
+				}
+				else{
+					UpdateDiv.hide(400);
+					setTimeout('prependInsert('+selectedRow+');',350);
+				}
+			}
+		}
+		function insertRow(index, data){
+			var image = '';
+			if(data.img)
+				image = '<img style="width: 90px; height: 70px" src="' + data.img + '" />';
+			$j("tbody#Table").append('<tr class="explistrow" value="'+index+'"> ' +
+				'<td>' + image + '</td>' +
+				'<td>' + data.mark + '</td>' +
+				'<td>' + data.model.length + '</td>' +
+				'<td>' + '<button value="'+index+'" name="delete">Удалить</button>' + 
+				'</td></tr>');	
+		}
+		function updateTable(first, end){
+			//alert("Erase"+first+' -- '+end);
+			end = end || first || -1;
+			first = first || 0;
+			if(first == 0 && end <= -1){
+				$j("tbody#Table").empty();
+				insert($j("tbody#Table"));
+			}
+			else{
+				prependInsert(-1);
+				$j(":text[name = 'add']").attr("value", "");
+			}
+			jgetBrand ( function (brand) {
+				if(end >= brand.length || end <= -1)
+					end = brand.length;
+				if(first <= -1)
+					first = brand.length - 1;
+				$j(".explistrow").slice(first,end+1).detach();
+				if(first >= brand.length)
+					return;
+				for (i = first; i < end; i++){
+					insertRow(i, brand[i]);
+				}
+				$j(".explistrow").slice(first,end).click(function () {
+					ClickFunction($j(this).attr("value"));
+				});
+				$j("button[name = 'delete']").slice(first,end).click(function (event) {
+					event.stopPropagation();
+					var value = $j(this).attr("value");
+					$j(".explistrow").eq($j(this).attr("value")).hide("slow");
+					$j.post("DataBaseOps/DelMarkDB.php", { 
+						delete : $j(this).attr("value") }
+					).success(function(data) {
+						//setTimeout("updateTable();",50);
+						setTimeout("updateTable("+value+", -1);",100);
+					});
+				});
+				
+			});
+
+			$j(function() {
+				$j('#file_upload').uploadify({
+				    'swf'      : 'uploadify.swf',
+				    'uploader' : 'uploadify.php'
+				    // Your options here
+				});
+			});
+
 		}
 	</script>
 
@@ -151,47 +285,25 @@
                                         <div id="system-message-container"></div>
                                         <div class="blog">
 					  <h1>Редактирование марок</h1>
-					  
-					    <div class="table left">Марка
-					    <select id = "BrandOut" name="Brand" size=1 onchange='updateTable(parseInt($j("#BrandOut").attr("value")));'>
-				                    <script type="text/javascript">
-				                    	$j("#BrandOut").append("<option value='0'>Все</option>");
-							$j(document).ready(function() {
-							 // Handler for .ready() called.
-								jgetBrand ( function (data) {
-								for (i = 1; i < data.length+1; i++)
-									$j("#BrandOut").append("<option value='" + i + "'>" + data[i-1].mark  + "</option>");
-								});
-							});
-						    </script>
-				                </select>
-				            </div>
-				            <div class="table right">
-				                <form action="index.html">
-				                	<button>Добавить новую</button>
-				                </form>
-				            </div>
 				            <div class="newrow"></div>
 				            <div id="expskins_module"></div>
 					    <div class="expautospro_clear"></div>
 				            <div align="center" id = "expautospro">
 					    <table class="explist">
-						<thead>
+						<thead id = 'TableHead'>
 							<tr>
-								<th>Изображение</th>
-								<th>Наименование</th>
-								<th>Число автомобилей</th>
-								<th>Функции</th>
+								<th><a class="tooltip">Изображение<span><strong>Для добавления новой</strong><br />Щёлкните по заголовку таблицы</span></a></th>
+								<th><a class="tooltip">Наименование<span><strong>Для добавления новой</strong><br />Щёлкните по заголовку таблицы</span></a></th>
+								<th><a class="tooltip">Число автомобилей<span><strong>Для добавления новой</strong><br />Щёлкните по заголовку таблицы</span></a></th>
+								<th><a class="tooltip">Функции<span><strong>Для добавления новой</strong><br />Щёлкните по заголовку таблицы</span></a></th>
 							</tr>
 						</thead>
 						<tbody id = "Table">
-							<script type="text/javascript">
-								$j(document).ready(function() {
-								//alert($j("#BrandOut").attr("value"));
-								 // Handler for .ready() called.
-									updateTable(0);
-								});
-							</script>
+						<script type="text/javascript">
+							$j("thead#TableHead").click(function () {
+								ClickFunction(-1);
+							});
+						</script>
 				               </tbody>
 				          </table>
 				          </div>

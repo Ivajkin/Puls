@@ -1,0 +1,80 @@
+[13-Aug-2012 06:12:07 UTC] PHP Warning:  file_get_contents(../js/dbrand.js): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 10
+[13-Aug-2012 06:12:45 UTC] PHP Warning:  file_get_contents(../js/dbrand.js): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 10
+[13-Aug-2012 06:56:20 UTC] PHP Warning:  file_get_contents(pathTojsdbrand.js): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 10
+[13-Aug-2012 06:58:03 UTC] PHP Warning:  file_get_contents(pathTojsdbrand.js): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 10
+[14-Aug-2012 02:43:14 UTC] PHP Fatal error:  Call to undefined function mb_subst() in /home2/core5429/public_html/admin/DataBaseOps/AddMarkDB.php on line 7
+[14-Aug-2012 02:45:10 UTC] PHP Fatal error:  Call to undefined function mb_subst() in /home2/core5429/public_html/admin/DataBaseOps/AddMarkDB.php on line 7
+[14-Aug-2012 03:20:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 26
+[14-Aug-2012 04:56:29 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 30
+[14-Aug-2012 04:56:29 UTC] PHP Warning:  file_put_contents(): Filename cannot be empty in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 36
+[14-Aug-2012 04:57:37 UTC] PHP Warning:  file_get_contents(pathTojsdbrand.js): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 30
+[14-Aug-2012 05:05:29 UTC] PHP Warning:  file_get_contents(img_temp.txt): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 16
+[14-Aug-2012 05:05:29 UTC] PHP Warning:  unlink(img_temp.txt): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 19
+[14-Aug-2012 07:11:37 UTC] PHP Parse error:  syntax error, unexpected '[' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 19
+[14-Aug-2012 07:18:27 UTC] PHP Parse error:  syntax error, unexpected '{' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 33
+[14-Aug-2012 10:04:15 UTC] PHP Warning:  unlink(../images/catalog/2012-08-14/00762ef6d47a63667140cf7241cbf9bb.jpg): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 66
+[14-Aug-2012 10:04:15 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 70
+[14-Aug-2012 10:04:15 UTC] PHP Warning:  rmdir(): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 74
+[14-Aug-2012 10:06:57 UTC] PHP Warning:  unlink(../images/catalog/2012-08-14/27af59884f57348bda1a36664f6602a8.png): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 66
+[14-Aug-2012 10:06:58 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 70
+[14-Aug-2012 10:06:58 UTC] PHP Warning:  rmdir(): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 74
+[14-Aug-2012 10:09:17 UTC] PHP Warning:  unlink(../../images/catalog/2012-08-14/00762ef6d47a63667140cf7241cbf9bb.jpg
+images/catalog/2012-08-14/00762ef6d47a63667140cf7241cbf9bb.jpg): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 67
+[14-Aug-2012 10:09:17 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 71
+[14-Aug-2012 10:09:17 UTC] PHP Warning:  rmdir(): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 75
+[14-Aug-2012 10:19:10 UTC] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting ',' or ';' in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 76
+[14-Aug-2012 11:52:34 UTC] PHP Warning:  opendir(../images/catalog/2012-08-14): failed to open dir: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 70
+[14-Aug-2012 11:52:34 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 72
+[14-Aug-2012 11:52:34 UTC] PHP Warning:  rmdir(../images/catalog/2012-08-14): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 77
+[14-Aug-2012 12:25:33 UTC] PHP Warning:  unlink(../../images/catalog/2012-08-14/27af59884f57348bda1a36664f6602a8.png
+images/catalog/2012-08-14/e97715c99e3cce11d10af0077c86b919.gif): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 69
+[14-Aug-2012 12:25:33 UTC] PHP Warning:  opendir(../images/catalog/2012-08-14/27af59884f57348bda1a36664f6602a8.png
+images/catalog/2012-08-14): failed to open dir: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 70
+[14-Aug-2012 12:25:33 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 72
+[14-Aug-2012 12:25:33 UTC] PHP Warning:  rmdir(../images/catalog/2012-08-14/27af59884f57348bda1a36664f6602a8.png
+images/catalog/2012-08-14): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 77
+[14-Aug-2012 12:29:43 UTC] PHP Warning:  opendir(../images/catalog/2012-08-14): failed to open dir: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 70
+[14-Aug-2012 12:29:43 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 72
+[14-Aug-2012 12:29:43 UTC] PHP Warning:  rmdir(../images/catalog/2012-08-14): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 77
+[14-Aug-2012 12:30:31 UTC] PHP Warning:  opendir(../images/catalog/2012-08-14): failed to open dir: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 70
+[14-Aug-2012 12:30:31 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 72
+[14-Aug-2012 12:30:31 UTC] PHP Warning:  rmdir(../images/catalog/2012-08-14): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 77
+[14-Aug-2012 12:59:50 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 24
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  unlink(../../images/catalog/2012-08-14/8f902b87f5be347f67a13a6dcb69ad4b.jpeg): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 71
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  opendir(../../images/catalog/2012-08-14): failed to open dir: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 72
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 74
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  rmdir(../../images/catalog/2012-08-14): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 79
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  unlink(../../images/catalog/2012-08-14/017d52532759caf2e2bd391cf62bee99.jpeg): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 71
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  opendir(../../images/catalog/2012-08-14): failed to open dir: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 72
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 74
+[14-Aug-2012 13:05:51 UTC] PHP Warning:  rmdir(../../images/catalog/2012-08-14): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 79
+[15-Aug-2012 05:15:47 UTC] PHP Warning:  file_get_contents(passFile): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/PassWriter.php on line 6
+[15-Aug-2012 06:37:38 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditCarDB.php on line 81
+[15-Aug-2012 06:38:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/admin/DataBaseOps/EditCarDB.php on line 87
+[15-Aug-2012 06:50:38 UTC] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home2/core5429/public_html/admin/DataBaseOps/PassWriter.php on line 20
+[15-Aug-2012 06:51:18 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home2/core5429/public_html/admin/DataBaseOps/PassWriter.php on line 23
+[15-Aug-2012 06:51:18 UTC] PHP Warning:  file_put_contents() expects at least 2 parameters, 1 given in /home2/core5429/public_html/admin/DataBaseOps/PassWriter.php on line 25
+[15-Aug-2012 06:51:58 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home2/core5429/public_html/admin/DataBaseOps/PassWriter.php on line 23
+[15-Aug-2012 07:53:55 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home2/core5429/public_html/admin/DataBaseOps/authenticator.php on line 11
+[15-Aug-2012 10:30:37 UTC] PHP Warning:  unlink(../0): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 71
+[15-Aug-2012 10:31:09 UTC] PHP Warning:  unlink(../0): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 71
+[15-Aug-2012 10:31:30 UTC] PHP Warning:  unlink(../0): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 71
+[15-Aug-2012 10:31:33 UTC] PHP Warning:  unlink(../0): No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DataBaseFunctions.php on line 71
+[16-Aug-2012 12:03:29 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:03:29 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:03:29 UTC] PHP Fatal error:  require(): Failed opening required 'authenticator.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:04:32 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:04:32 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:04:32 UTC] PHP Fatal error:  require(): Failed opening required 'authenticator.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:14:04 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:14:04 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:14:04 UTC] PHP Fatal error:  require(): Failed opening required 'authenticator.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:20:56 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:20:56 UTC] PHP Warning:  require(authenticator.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[16-Aug-2012 12:20:56 UTC] PHP Fatal error:  require(): Failed opening required 'authenticator.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/DataBaseOps/DelMarkDB.php on line 2
+[17-Aug-2012 03:40:50 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
+[17-Aug-2012 03:41:58 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
+[17-Aug-2012 03:43:01 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
+[17-Aug-2012 03:44:40 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
+[17-Aug-2012 03:45:22 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
+[17-Aug-2012 03:45:50 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32

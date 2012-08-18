@@ -29,6 +29,8 @@
 	
 	
 	<script src="../js/jquery-1.7.2.js" type="text/javascript"></script>
+        <script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
+	<script src="../js/dproc.js" type="text/javascript"></script>
 	<script type="text/javascript">
              var $j = jQuery.noConflict();
              function parseGetParams() { 
@@ -40,8 +42,15 @@
 		   } 
 		   return $_GET; 
 	     }
+
+			$j(function() {
+				$j('#file_upload').uploadify({
+				    'swf'      : 'uploadify.swf',
+				    'uploader' : 'uploadify.php'
+				    // Your options here
+				});
+			});
         </script>
-	<script src="../js/dproc.js" type="text/javascript"></script>
 	
         <style type="text/css" media="screen">
             /* Select the style */
@@ -105,18 +114,6 @@
             }
         </style>
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        $('#file_upload').uploadify({
-            'swf'      : 'uploadify.swf',
-            'uploader' : 'uploadify.php'
-            // Your options here
-        });
-    });
-    </script>
-
         <!-- Google Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
         <!--[if lte IE 8]>
@@ -151,7 +148,7 @@
       <h1>Форма добавления автомобилей</h1>
       <div class="table middle"></div>
       <div style="display: block; float: left; width:50%">
-        <form action="todb.php" method='post' enctype="multipart/form-data" style="padding-bottom:40px">
+        <form action="DataBaseOps/AddCarDB.php" method='post' enctype="multipart/form-data" style="padding-bottom:40px">
             <h2>Основная информация</h2>
             <div class="table left">Название<br />(для заголовка)</div>
             <div class="table right">
@@ -162,7 +159,7 @@
             <div class="table right">
                 <select id="type" name="type" size=1>
                     <script type="text/javascript">
-				$(document).ready(function() {
+				$j(document).ready(function() {
 				 // Handler for .ready() called.
 					jgetType ( function (data) {
 						for (i = 0; i < data.length; i++){	
@@ -178,7 +175,7 @@
             <div class="table right">
                 <select id="mark" name="mark" size=1>
                     <script type="text/javascript">
-				$(document).ready(function() {
+				$j(document).ready(function() {
 				 // Handler for .ready() called.
 					jgetBrand ( function (data) {
 						for (i = 0; i < data.length; i++){	

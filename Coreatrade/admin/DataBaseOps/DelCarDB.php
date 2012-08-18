@@ -1,10 +1,10 @@
 <?php
-
-	$carId= $_POST["delete"];
-	if(!is_numeric($carId) && $carId< 0){
+	equire_once('DataBaseFunctions.php');
+	$carId = $_POST["delete"];
+	if(!is_numeric($carId) && $carId < 0){
 		return false;
 	}
-	require_once('DataBaseFunctions.php');
+	
 	
 	$inp = file_get_contents($pathTojs.'ddata.js');
 	$carArray = json_decode($inp); 
@@ -16,6 +16,15 @@
 	FileCorrection($pathTojs.'dbrand.js', $carId, $carArray[$carId]->mark);
 	
 	//deleting from ddata.js
+	if(!strcmp($img,'0')){
+		echo 'Old Image<br />';
+		$data["img"] = $carArray[$carId] -> img;
+	}
+	else{
+	foreach($carArray[$carId]->img as $value){
+			deleteImage('../'.$value);
+		}
+	}
 	unset($carArray[$carId]);
 	
 	$jsonData = json_encode(array_values($carArray));
