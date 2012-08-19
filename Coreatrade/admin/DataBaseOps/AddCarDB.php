@@ -46,7 +46,7 @@ if (file_exists('../img_temp.txt')) {
 } 
 else $img = 0;
 $complect = utf8($_POST['complect']);
-;
+
 $data = array(
     "name" => $name,
     "type" => $type,
@@ -92,11 +92,3 @@ $jsonData = json_encode($dbrand);
 file_put_contents($pathTojs.'dbrand.js', $jsonData);
 
 ?>
-
-
-<!--<html>
-<head><title>123></title>
-<script type="javascript"
-</head>
-<body></body>
-</html>-->

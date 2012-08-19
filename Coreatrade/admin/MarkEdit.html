@@ -112,17 +112,16 @@
 	<script src="../js/dproc.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var $j = jQuery.noConflict();
-		$j.post( "AuthFiles/authenticator.php", 
+		/*$j.post( "AuthFiles/authenticator.php",
 			function(data) {
+				if(data == 'true')
+					$j(document).ready(function() {
+						updateTable();
+					});
+				else
+					window.location="http://coreatrade.com/admin/";
 			}
-		).success(function(data) {
-			if(data == 'true')
-				$j(document).ready(function() {
-					updateTable(0);
-				});
-			else
-				window.location="http://coreatrade.com/admin/";
-		});
+		);*/
 		var rowWithContent = -1;
 		function insert(place){
 			place.append(
@@ -144,8 +143,7 @@
 				$j.post( $j("div#path").attr("value"), { 
 					add : $j(":text[name = 'add']").attr("value"), 
 					markId: value }
-				).complete(function(data) {
-					//alert($j(":submit[name = 'markId']").attr("value"));
+				).success(function(data) {
 					//updateTable(value);
 					setTimeout("updateTable("+value+",-1);",100);
 					//setTimeout("updateTable();",100);
@@ -300,6 +298,9 @@
 						</thead>
 						<tbody id = "Table">
 						<script type="text/javascript">
+							$j(document).ready(function() {
+								updateTable();
+							});
 							$j("thead#TableHead").click(function () {
 								ClickFunction(-1);
 							});

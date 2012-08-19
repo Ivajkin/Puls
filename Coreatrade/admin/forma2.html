@@ -32,8 +32,15 @@
         <script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
 	<script src="../js/dproc.js" type="text/javascript"></script>
 	<script type="text/javascript">
-             var $j = jQuery.noConflict();
-             function parseGetParams() { 
+        	var $j = jQuery.noConflict();
+             	$j.post( "AuthFiles/authenticator.php", 
+			function(data) {
+			}
+		).success(function(data) {
+			if(data != 'true')
+				window.location="http://coreatrade.com/admin/";
+		});
+		function parseGetParams() { 
 		   var $_GET = {}; 
 		   var __GET = window.location.search.substring(1).split("&"); 
 		   for(var i=0; i<__GET.length; i++) { 
@@ -41,15 +48,52 @@
 		      $_GET[getVar[0]] = typeof(getVar[1])=="undefined" ? "" : getVar[1]; 
 		   } 
 		   return $_GET; 
-	     }
-
-			$j(function() {
-				$j('#file_upload').uploadify({
-				    'swf'      : 'uploadify.swf',
-				    'uploader' : 'uploadify.php'
-				    // Your options here
+		}
+		$j(function() {
+			$j('#file_upload').uploadify({
+			    'swf'      : 'uploadify.swf',
+			    'uploader' : 'uploadify.php'
+			    // Your options here
+			});
+		});
+		$j(document).ready(function(){
+			$j(":submit").click(function(){
+				$j.post( "DataBaseOps/AddCarDB.php", {
+					name: $j(":text[name='name']").attr("value"),
+					type: $j("select#type").attr("value"),
+					mark: $j("select#mark").attr("value"),
+					model: $j(":text[name='model']").attr("value"),
+					price: $j(":text[name='price']").attr("value"),
+					color: $j(":text[name='color']").attr("value"),
+					year: $j(":text[name='year']").attr("value"),
+					vvv: $j(":text[name='vvv']").attr("value"),
+					fuel: $j(":text[name='fuel']").attr("value"),
+					drive: $j(":text[name='drive']").attr("value"),
+					kpp: $j(":text[name='kpp']").attr("value"),
+					power: $j(":text[name='power']").attr("value") ,
+					door: $j(":text[name='door']").attr("value"),
+					seat: $j(":text[name='seat']").attr("value"),
+					complect: $j("textarea[name='complect']").attr("value")
+				},
+				function(data) {
+					$j(":text[name='name']").attr("value","");
+					$j("select#type").attr("value",0);
+					$j("select#mark").attr("value",0);
+					$j(":text[name='model']").attr("value","");
+					$j(":text[name='price']").attr("value","");
+					$j(":text[name='color']").attr("value","");
+					$j(":text[name='year']").attr("value","");
+					$j(":text[name='vvv']").attr("value","");
+					$j(":text[name='fuel']").attr("value","");
+					$j(":text[name='drive']").attr("value","");
+					$j(":text[name='kpp']").attr("value","");
+					$j(":text[name='power']").attr("value","");
+					$j(":text[name='door']").attr("value","");
+					$j(":text[name='seat']").attr("value","");
+					$j("textarea[name='complect']").attr("value","");
 				});
 			});
+		});
         </script>
 	
         <style type="text/css" media="screen">
@@ -148,7 +192,7 @@
       <h1>Форма добавления автомобилей</h1>
       <div class="table middle"></div>
       <div style="display: block; float: left; width:50%">
-        <form action="DataBaseOps/AddCarDB.php" method='post' enctype="multipart/form-data" style="padding-bottom:40px">
+        <!--form action="DataBaseOps/AddCarDB.php" method='post' enctype="multipart/form-data" style="padding-bottom:40px"-->
             <h2>Основная информация</h2>
             <div class="table left">Название<br />(для заголовка)</div>
             <div class="table right">
@@ -234,12 +278,12 @@
             <div class="newrow"></div>
             <div class="table left">Двери (кол-во)</div>
             <div class="table right">
-               <input type="text" name="door">
+               <input type="text" name="door"/>
             </div>
             <div class="newrow"></div>
             <div class="table left">Сиденья (кол-во)</div>
             <div class="table right">
-                <input type="text" name="seat">
+                <input type="text" name="seat"/>
             </div>
             <div class="newrow"></div>
 
@@ -288,7 +332,7 @@ ESP	Handsfree
             <div style="padding:10px"></div>
             <input type="submit" value="Сохранить данные" />
             &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Очистить форму" />	
-        </form>
+        <!--/form-->
       </div>
         <div style="display: block; float: left; width: 50%">
             <h2>Изображения</h2>

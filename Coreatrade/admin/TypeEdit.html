@@ -112,17 +112,14 @@
 	<script src="../js/dproc.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var $j = jQuery.noConflict();
-		$j.post( "AuthFiles/authenticator.php", 
-			function(data) {
-			}
-		).success(function(data) {
-			if(data == 'true')
+		$j.post( "AuthFiles/authenticator.php"
+		).success(function(data) {if(data == 'true')
 				$j(document).ready(function() {
-					updateTable(0);
+					updateTable();
 				});
 			else
 				window.location="http://coreatrade.com/admin/";
-		});
+			});
 		var rowWithContent = -1;
 		function insert(place){
 			place.append(
@@ -136,11 +133,10 @@
                             '</td></tr>'
 			);
 			$j(":submit[name = 'typeId']").click(function () {
-				//alert($j(".add#path").attr("value"));
 				$j.post( $j(".add#path").attr("value"), { 
 					add : $j(":text[name = 'add']",$j("tr#updateDiv")).attr("value"), 
 					typeId: $j(this).attr("value") }
-				).success(function(data) {
+				).complete(function(data) {
 						updateTable($j(this).attr("value"));
 						//setTimeout("updateTable("+$j(this).attr("value")+");",100);
 				});
@@ -214,7 +210,7 @@
 						delete : $j(this).attr("value") }
 					).success(function(data) {
 						//updateTable($j(this).attr("value"));
-						setTimeout("updateTable("+$j(this).attr("value")+", -1);",500);
+						setTimeout("updateTable("+$j(this).attr("value")+", -1);",300);
 					});
 				});
 			});

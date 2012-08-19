@@ -1,4 +1,5 @@
 <?php
+	header("Content-type: text/html; charset=utf-8");
 	//$action = $_POST["action"];
 	//$action = 'logout';
 	//$login = crypt($login, "$2a$07$SomeSaltWordsMakeItHarder$");
@@ -27,6 +28,7 @@
 	}
 	if($_POST["action"] == 'logout'){
 		session_start();
+		session_unset();
 		session_destroy();
 		echo 'logout';
 		exit;
@@ -37,11 +39,13 @@
 	}
 	if (isset($_SESSION['userKey']) AND $_SESSION['ip'] == $_SERVER['REMOTE_ADDR']){ 
 		echo 'true';
+		if(isset($_GET['address']))
+			header("Location: ".$_GET['address']);
 		return true;
 	}
 	else {
-		//header("Location: http://www.example.com/"); 
 		echo 'Please login';
+		header("Location: http://coreatrade.com/admin/");
 		exit;
 	}
 ?>
