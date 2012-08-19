@@ -1,5 +1,5 @@
 <?php
-	if ( !eregi("MSIE", $_SERVER["HTTP_USER_AGENT"]) ) {
+	if ( !preg_match("/MSIE/i", $_SERVER["HTTP_USER_AGENT"]) ) {
 		header('Content-type: text/html; charset=utf-8');
 	} else {
 		header('Content-type: text/html; charset=windows-1251');
