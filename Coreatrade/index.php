@@ -52,6 +52,12 @@
         <script type="text/javascript">
              var $j = jQuery.noConflict();
         </script>
+        <?php
+        	if(isset($_GET['carID'])) {
+        		$carID = $_GET['carID'];
+				echo "<script type=\"text/javascript\">var carID = $carID;</script>";
+        	}
+        ?>
         <script src="js/jquery.jgfeed.js" type="text/javascript"></script>
         <script src="js/dproc.js" type="text/javascript"></script>
 

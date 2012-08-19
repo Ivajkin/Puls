@@ -1,5 +1,8 @@
 (function($) {
 	$(document).ready(function() {
+		
+		
+		
 		$('.placeholder-name').empty();
 		$('.placeholder-type').empty();
 		$('.placeholder-mark').empty();
@@ -16,11 +19,31 @@
 		$('.placeholder-complect').empty();
 		
 		jgetData(function(cars) {
-			var car = cars[0];
+			var car = cars[carID];
 			
 			for(var item in car) {
 				$('.placeholder-' + item).append(car[item]);
 			}
+			
+			// галерея картинок
+			var img = car['img'];
+			$('#largeimage img').attr('src', img[0]);
+			
+			for(var i = 0; i < img.length; ++i) {
+				
+				$('#image-preview-container').append(
+					'<li class="expautos_detail_li_img">' +
+						'<a href="javascript:jooImage(\'largeimage\',\'' + img[i] + '\',\'\');"> <img src="' + img[i] + '" alt="" title="" /> </a>' +
+					'</li>'
+				);
+			}
+			
+			
+			
 		});
+		
+		
+		
+		
 	});
 })(jQuery);

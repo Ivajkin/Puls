@@ -54,6 +54,7 @@
 	
 	#expautospro table td:last-child {
 		max-width: 150px;
+		text-align: left;
 	}
 	#expautospro table td:first-child {
 		font-weight: 800;
@@ -62,6 +63,23 @@
 	
 	h3 {
 		margin-top: 10px;
+	}
+	
+	#largeimage {
+		max-width: 120px;
+	}
+	#largeimage img {
+		max-width: 400px;
+		max-height: 300px;
+	}
+	
+	.expautos_detail_li_img {
+		max-width: 90px;
+	}
+	
+	.expautos_detail_li_img a img {
+		max-width: 100px;
+		max-height: 75px;
 	}
 </style>
 
@@ -74,7 +92,7 @@
 					<li>
 						<a href="/" class="pathway"><span>Главная</span></a>
 					</li>
-					<li>
+					<!--<li>
 						<a href="?page=list" class="pathway">
 							<span class="placeholder-type">Легковые</span>
 						</a>
@@ -83,15 +101,15 @@
 						<a href="?page=list" class="pathway">
 							<span class="placeholder-mark">BMW</span>
 						</a>
-					</li>
+					</li>-->
 					<li>
 						<a href="#" class="pathway">
 							<span class="placeholder-name">2010 5 Серия</span>
 						</a>
 					</li>
-					<li class="lastitem">
+					<!--<li class="lastitem">
 						Подробно
-					</li>
+					</li>-->
 				</ol>
 			</div>
 		</div>
@@ -120,33 +138,36 @@
 								<div id="expautospro">
 									<h2>Подробное описание</h2>
 									<div id="expautos_detail">
-										<span class="exp_autos_pricon"> <a href="41b83.html?tmpl=component&amp;print=1&amp;layout=default&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"> <img src="images/system/printButton.png" alt="Print"  /> </a> </span>
-										<span class="exp_autos_pricon"> <a href="../../../../../component/mailto/index267e.html?tmpl=component&amp;template=it_motor&amp;link=0f3fb0bf23c81a0995549fdec86ece7ba178802b" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"> <img src="images/system/emailButton.png" alt="Email"  /> </a> </span>
-										<span class="exp_autos_pricon"> <a href="4228c.html?format=show" title="HTML" rel="nofollow" onclick="window.open(this.href,'win2','width=600,height=550,menubar=yes,resizable=yes'); return false;"> <img src="css/expauto/assets/images/html.png" alt="HTML"  /> </a> </span>
-										<span class="exp_autos_pricon"> <a href="45710html.html?format=feed" type="application/atom+xml" title="Atom 1.0" target="_blank"> <img src="images/livemarks.png" alt="RSS"  /> </a> </span>
-										<span> </span>
-										<div id="expshortlist4" class="expshortlist_detailpage">
+										
+										<!--<div id="expshortlist4" class="expshortlist_detailpage">
 											<span title="Add to Shortlist"> <a href="javascript:expshortlist(1,4,'Saved')">В блокнот</a> </span>
-										</div>
+										</div>-->
 										<div class="expautos_detail_topname placeholder-name">
 											BMW 2010 5 Cерии 528i Седан 155КВт
 										</div>
 										<div class="expautos_detail_left">
-											<img name='largeimage' src='css/expauto/images/middle/3_1337347812.jpg' title='' />
-											<ul class="expautos_detail_ul_img">
-												<li class="expautos_detail_li_img">
-													<a href="javascript:jooImage('largeimage','css/expauto/images/middle/3_1337347812.jpg','');"> <img src="css/expauto/images/thumbs/3_1337347812.jpg" alt="" title="" /> </a>
-												</li>
-												<li class="expautos_detail_li_img">
-													<a href="javascript:jooImage('largeimage','css/expauto/images/middle/4_1337348285.jpg','');"> <img src="css/expauto/images/thumbs/4_1337348285.jpg" alt="" title="" /> </a>
-												</li>
-												<li class="expautos_detail_li_img">
-													<a href="javascript:jooImage('largeimage','css/expauto/images/middle/4_1337347812.jpg','');"> <img src="css/expauto/images/thumbs/4_1337347812.jpg" alt="" title="" /> </a>
-												</li>
-												<li class="expautos_detail_li_img">
-													<a href="javascript:jooImage('largeimage','css/expauto/images/middle/5_1337347813.jpg','');"> <img src="css/expauto/images/thumbs/5_1337347813.jpg" alt="" title="" /> </a>
-												</li>
-											</ul>
+											<table>
+												<td id="largeimage">
+													<img name='largeimage' src='css/expauto/images/middle/3_1337347812.jpg' title='' />
+												</td>
+												
+												<td>
+													<ul id="image-preview-container" class="expautos_detail_ul_img">
+														<!--<li class="expautos_detail_li_img">
+															<a href="javascript:jooImage('largeimage','css/expauto/images/middle/3_1337347812.jpg','');"> <img src="css/expauto/images/thumbs/3_1337347812.jpg" alt="" title="" /> </a>
+														</li>
+														<li class="expautos_detail_li_img">
+															<a href="javascript:jooImage('largeimage','css/expauto/images/middle/4_1337348285.jpg','');"> <img src="css/expauto/images/thumbs/4_1337348285.jpg" alt="" title="" /> </a>
+														</li>
+														<li class="expautos_detail_li_img">
+															<a href="javascript:jooImage('largeimage','css/expauto/images/middle/4_1337347812.jpg','');"> <img src="css/expauto/images/thumbs/4_1337347812.jpg" alt="" title="" /> </a>
+														</li>
+														<li class="expautos_detail_li_img">
+															<a href="javascript:jooImage('largeimage','css/expauto/images/middle/5_1337347813.jpg','');"> <img src="css/expauto/images/thumbs/5_1337347813.jpg" alt="" title="" /> </a>
+														</li>-->
+													</ul>
+												</td>
+											</table>
 											<div class="expautospro_clear"></div>
 											<div class="expautospro_clear"></div>
 											<div class="expautos_detail_equipment">
