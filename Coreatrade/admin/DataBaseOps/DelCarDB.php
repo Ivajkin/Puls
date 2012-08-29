@@ -1,5 +1,5 @@
 <?php
-	equire_once('DataBaseFunctions.php');
+	require_once('DataBaseFunctions.php');
 	$carId = $_POST["delete"];
 	if(!is_numeric($carId) && $carId < 0){
 		return false;

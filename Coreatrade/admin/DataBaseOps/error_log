@@ -78,3 +78,13 @@ images/catalog/2012-08-14): No such file or directory in /home2/core5429/public_
 [17-Aug-2012 03:44:40 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
 [17-Aug-2012 03:45:22 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
 [17-Aug-2012 03:45:50 UTC] PHP Parse error:  syntax error, unexpected ')' in /home2/core5429/public_html/admin/DataBaseOps/EditMarkDB.php on line 32
+[19-Aug-2012 11:59:55 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:00:08 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:00:20 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:02:22 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:06:23 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:06:25 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:06:28 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:06:33 UTC] PHP Fatal error:  Call to undefined function equire_once() in /home2/core5429/public_html/admin/DataBaseOps/DelCarDB.php on line 2
+[19-Aug-2012 12:10:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/admin/DataBaseOps/EditCarDB.php on line 87
+[20-Aug-2012 08:29:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/adminOLD/DataBaseOps/EditCarDB.php on line 87

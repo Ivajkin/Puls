@@ -1,6 +1,6 @@
 <?php
 
-$carId= $_POST['edit'];
+$carId = $_POST['edit'];
 if(!is_numeric($carId)){
 	echo $_POST['edit'];
 	echo "false";

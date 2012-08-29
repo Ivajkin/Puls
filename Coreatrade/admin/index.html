@@ -57,9 +57,11 @@
 				login : $j(":text#username").attr("value"), 
 				pass : $j(":password#password").attr("value") }, 
 				function(data) {
-					if(data == 'true')
+				alert(data);
+					if(data == 'true'){
 						$j(".login").hide('slow');
 						setTimeout("$j('.logout').show('slow');",400);
+					}
 				}
 			);
 		     });
@@ -152,6 +154,11 @@
                 padding-bottom:10px;
                 padding-top:20px;
             }
+            button, input.button, a.button, input[type="submit"] {
+		    width: 100px;
+		    margin-top: 5px;
+		    margin-bottom: 5px;
+	    }
         </style>
 
         <script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
