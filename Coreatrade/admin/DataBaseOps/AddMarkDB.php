@@ -8,16 +8,17 @@
 	}
 	$img = trim(utf8($_POST['srcImage']));
 	
-	if(!$img || strcmp(mb_substr($img, 0, 7), "http://")){
-		if (file_exists('../img_temp.txt')) {
-		   $imgstr = utf8(file_get_contents('../img_temp.txt'));
-		   $img = '../'.rtrim($imgstr);
+	if(strlen($img) < 4)
+		$img = 0;
+	else if(strcmp(mb_substr($img, 0, 7), "http://")){
+		if (!file_exists('../'.$img)) {
+		   //$imgstr = utf8(file_get_contents('../img_temp.txt'));
+		   //$img = '../'.rtrim($imgstr);
 		   //$img= '../'.explode( "\r\n" ,$imgstr);
-		   unlink('../img_temp.txt');
+		   //unlink('../img_temp.txt');
+		   $img = 0;
 		}
-		else $img = 0;
 	}
-	echo $img;
 	$models = array();
 	$data= array(
 	    "mark" => $mark,  

@@ -1,0 +1,279 @@
+	<script type="text/javascript">
+		function addImage(filename){
+			ImageList.push(filename);
+			$j("div#imagelist").append('<div class = "outerDiv">'+
+				'<div class = "abs">'+
+					'<img class = "image" src="/' + filename + '" width="100%" height="100%" alt="Картинка" />'+
+					'<img class = "innerImg" src="/images/typo_cross.png" width="100%" height="100%" alt="Удалить" title = "Удалить Изображение" ' +
+					'onclick = "RemoveImage($j(this))"/>'+
+				'</div>'+
+			'</div>');
+			//$j("div#imagelist").append('<div><img width="80px" height="60px" src="/' + filename + '" /></div>');
+		}
+
+		$j(function() {
+			$j('#file_upload').uploadify({
+			    'swf'      : 'uploadify.swf',
+			    'uploader' : 'uploadify.php',
+			    'onUploadSuccess' : function(file, data, response) {
+       				 addImage(data);
+       			    }
+			    // Your options here
+			});
+		});
+		function findInArray(array, value){
+			for (i = 0; i < array.length; ++i) { 
+				if ('/'+array[i] === value)
+					return i;
+			}
+		}		
+		var ImageList = new Array();
+		var ImageDelList = new Array();
+		
+		function RemoveImage(target){
+			imageFile = target.prev('.image').attr('src');
+			ImageDelList.push(imageFile);
+			ImageList.splice(findInArray(ImageList, imageFile),1);
+			parent = target.parent('.abs').parent('.outerDiv');
+			parent.hide('slow');
+			setTimeout('parent.detach();',500);
+		}
+		$j(document).ready(function(){
+			$j(":submit").click(function(){
+				if(!$j(':text[name="model"]').attr("value") || !$j(":text[name='name']").attr("value")){
+					alert('Вы заполнили не все поля!');
+					return;
+				}
+				$j.post( "DataBaseOps/AddCarDB.php", {
+					name: $j(":text[name='name']").attr("value"),
+					type: $j("select#type").attr("value"),
+					mark: $j("select#mark").attr("value"),
+					model: $j(":text[name='model']").attr("value"),
+					price: $j(":text[name='price']").attr("value"),
+					color: $j(":text[name='color']").attr("value"),
+					year: $j(":text[name='year']").attr("value"),
+					vvv: $j(":text[name='vvv']").attr("value"),
+					fuel: $j(":text[name='fuel']").attr("value"),
+					drive: $j(":text[name='drive']").attr("value"),
+					kpp: $j(":text[name='kpp']").attr("value"),
+					power: $j(":text[name='power']").attr("value"),
+					door: $j(":text[name='door']").attr("value"),
+					seat: $j(":text[name='seat']").attr("value"),
+					city: $j(":text[name='city']").attr("value"),
+					complect: $j("textarea[name='complect']").attr("value").replace(/>/g,">****"),
+					images: ImageList,
+					imagesDel: ImageDelList 
+				},
+				function(data) {
+					$j(":text[name='name']").attr("value","");
+					$j("select#type").attr("value",0);
+					$j("select#mark").attr("value",0);
+					$j(":text[name='model']").attr("value","");
+					$j(":text[name='price']").attr("value","");
+					$j(":text[name='color']").attr("value","");
+					$j(":text[name='year']").attr("value","");
+					$j(":text[name='vvv']").attr("value","");
+					$j(":text[name='fuel']").attr("value","");
+					$j(":text[name='drive']").attr("value","");
+					$j(":text[name='kpp']").attr("value","");
+					$j(":text[name='power']").attr("value","");
+					$j(":text[name='door']").attr("value","");
+					$j(":text[name='seat']").attr("value","");
+					$j(":text[name='city']").attr("value","");
+					$j("textarea[name='complect']").attr("value","");
+					$j("div#imagelist").empty();
+					ImageList = new Array();
+					ImageDelList = new Array();
+				});
+			});
+		});
+        </script>
+	
+	    <div id="content">
+           <div class="wrapper">
+                <!-- Columns Container -->    
+                <div id="columns-container">
+                    <div id="outer-column-container">
+                        <div id="inner-column-container" class="clearfix">
+                            <div id="source-order-container">
+                                <!-- Middle Column -->   
+                                <div id="middle-column">                        
+                                    <div class="inside"> 
+                                        <div id="system-message-container">
+                                        </div>
+                                        <div class="blog">
+      <h1>Форма добавления автомобилей</h1>
+      <div class="table middle"></div>
+      <div style="display: block; float: left; width:50%">
+        <!--form action="DataBaseOps/AddCarDB.php" method='post' enctype="multipart/form-data" style="padding-bottom:40px"-->
+            <h2>Основная информация</h2>
+            <div class="table left">Название*<br />(для заголовка)</div>
+            <div class="table right">
+                <input type="text" name="name"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Тип*</div>
+            <div class="table right">
+                <select id="type" name="type" size=1>
+                    <script type="text/javascript">
+				$j(document).ready(function() {
+					jgetType ( function (data) {
+						for (i = 0; i < data.length; i++){	
+							$j("#type").append("<option value=" + i + ">" + data[i].type + "</option>");
+						}
+					});
+				});
+		    </script>
+                </select>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Марка*</div>
+            <div class="table right">
+                <select id="mark" name="mark" size=1>
+                    <script type="text/javascript">
+				$j(document).ready(function() {
+					jgetBrand ( function (data) {
+						for (i = 0; i < data.length; i++){	
+							$j("#mark").append("<option value=" + i + ">" + data[i].mark + "</option>");
+						}
+					});
+				});
+		    </script>
+                </select>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Модель*</div>
+            <div class="table right">
+                <input type="text" name="model"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Цена (р.)</div>
+            <div class="table right">
+                <input type="text" name="price"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Цвет</div>
+            <div class="table right">
+                <input type="text" name="color"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Год</div>
+            <div class="table right">
+                <input type="text" name="year" />
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Объём (в литрах)</div>
+            <div class="table right">
+                <input type="text" name="vvv"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Топливо</div>
+            <div class="table right">
+                <input type="text" name="fuel"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Привод</div>
+            <div class="table right">
+                <input type="text" name="drive"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Каробка передач</div>
+            <div class="table right">
+                <input type="text" name="kpp"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Мощность (кВт)</div>
+            <div class="table right">
+                <input type="text" name="power"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Двери (кол-во)</div>
+            <div class="table right">
+               <input type="text" name="door"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Сиденья (кол-во)</div>
+            <div class="table right">
+                <input type="text" name="seat"/>
+            </div>
+            <div class="newrow"></div>
+            <div class="table left">Город</div>
+            <div class="table right">
+                <input name="city" type="text">
+            </div>
+            <div class="newrow"></div>
+            <div style="padding-bottom: 10px">
+            Поля, помеченные * являются обязательными для заполнения.
+            </div>
+           <!--<h2>Изображения</h2>
+            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне всех автомобилей</div>
+            <div class="table right">
+                <input type="file" name="imgfile" id="file_upload" multiple="multiple" accept="image/*" />
+            </div>
+            <div class="newrow"></div>-->
+
+
+            <h2>Комплектация</h2>
+            <div style="padding-bottom: 10px">
+            Пожалуйста, вводите каждый компонент с новой строчки
+            Для ввода элемента с пояснением используйте конструкцию
+		&lt;p title="Здесь пояснение"&gt;*А здесь то, к чему оно&lt;/p&gt;
+            </div>
+            <textarea name="complect" cols="60" rows="33" style="word-wrap: break-word">
+Пример:
+ABS
+<p title="*Cистема помощи водителю при экстренном торможении">BAS</p>
+Airbag д/водителя
+Airbag д/пассажира
+Бортовой компьютер
+ГУР
+Иммобилайзер
+Климат-контроль
+Круиз-контроль
+Обогрев сидений
+Центральный замок
+Airbag боковые
+Airbag оконные
+ESP	Handsfree
+Датчик дождя
+Камера заднего хода
+Корректор фар
+Ксеноновые фары
+Обогрев зеркал
+Панорамный люк
+Парктроник
+Подлокотник передний
+Противотуманные фары
+Разд. спинка задн. сидений
+Регул. сид. пасс. по высоте
+Электроантенна
+Электрозеркала
+Магнитола: с MP3
+Салон: кожа
+Электростёкла: все
+Регулировка руля: в 2 пл.</textarea>
+            <div style="padding:10px"></div>
+            <input type="submit" value="Сохранить данные" />
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Очистить форму" />	
+        <!--/form-->
+      </div>
+        <div style="display: block; float: left; width: 50%">
+            <h2>Изображения</h2>
+            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне автомобилей</div>
+            <div class="table right" style="width: 50%" >
+                <input type="file" name="file_upload" id="file_upload" />               
+                <!--<input type="file" name="imgfile" id="file_upload" accept="image/*" />-->
+            
+            <div class="newrow"></div>
+       </div>
+       <div class="newrow"></div>
+       <div id = "imagelist" colspan="3"></div>
+                                        </div>
+                                    </div>	
+                                </div><!-- Middle Column -->   
+                            </div><!-- Source Order Container -->
+                            <div class="clear-columns"></div>
+                        </div>
+                    </div>           
+                </div><!-- Columns Container -->         
+            </div><!-- Content Main -->

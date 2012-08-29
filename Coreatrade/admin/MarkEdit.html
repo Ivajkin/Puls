@@ -1,127 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr" >
-
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-        <!--<base href="http://coreatrade.com" />-->
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Корея Трейд - лучшие автобусы из Кореи</title>
-        <link href="images/1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-        <link rel="stylesheet" href="../css/system.css" type="text/css" />
-        <link rel="stylesheet" href="../css/general.css" type="text/css" />
-        <link rel="stylesheet" href="../css/reset.css" type="text/css" />
-        <link rel="stylesheet" href="../css/typography.css" type="text/css" />
-        <link rel="stylesheet" href="../css/forms.css" type="text/css" />
-        <link rel="stylesheet" href="../css/modules.css" type="text/css" />
-        <link rel="stylesheet" href="../css/joomla.css" type="text/css" />
-        <link rel="stylesheet" href="../css/layout.css" type="text/css" />
-        <link rel="stylesheet" href="../css/mod_iceslideshow/default/assets/style.css" type="text/css" />
-        <link rel="stylesheet" href="../css/template_languages.css" type="text/css" />
-        <link rel="stylesheet" href="../css/mod_icemegamenu/css/default_icemegamenu.css" type="text/css" />
-     	<link rel="stylesheet" type="text/css" href="uploadify.css" />
-     	<link rel="stylesheet" type="text/css" href="tooltip.css" />
-        <link rel="stylesheet" href="../css/expauto/assets/css/expautospro.css" type="text/css" />
-        <link rel="stylesheet" href="../css/expauto/skins/explist/default/css/default.css" type="text/css" />
-        <link rel="stylesheet" href="../css/expauto/mod_expautospro_mortgage.css" type="text/css" />
-        <link rel="stylesheet" href="../css/expauto/mod_expautospro_stats.css" type="text/css" />
-        <link rel="stylesheet" href="../css/expauto/mod_expautospro_categories.css" type="text/css" />
-        <link rel="stylesheet" href="../css/expauto/mod_expautospro_listfilter.css" type="text/css" />
-        <link rel="stylesheet" href="../css/expauto/mod_expautospro_keyword.css" type="text/css" />
-     
-        <style type="text/css" media="screen">
-            /* Select the style */
-            /*\*/@import url("../css/style1.css");
-            /**/
-            /* Right Column Parameters */
-            #outer-column-container
-            {
-                border-right-width: 220px;
-            }
-            #right-column
-            {
-                margin-right: -220px;
-                width: 220px;
-            }
-            #middle-column .inside
-            {
-                padding-right: 15px;
-            }
-            .mark_show
-            {
-            	width: 8%;
-            }
-            .mark_show img
-            {
-            	width: 60px;
-            	height: 60px;
-            }
-            .table 
-            {
-                display:block;
-                font-weight:bold;
-            	float:left;
-            }
-            .left 
-            {
-            	width:45%;
-            	font-size:1.2em;
-            }
-            .middle
-            {
-            	width: 10%;
-            }
-            .right 
-            {
-            	width: 50%;
-            }
-            .newrow 
-            {
-            	clear:both;
-            }
-            h1 
-            {
-            	font-size:2em;
-            }
-            h2 
-            {
-            	font-size:1.7em;
-                padding-bottom:10px;
-                padding-top:20px;
-            }
-            tr:hover 
-            {
-                background-color:#171917;
-            }
-            tr {
-                cursor: pointer;
-            }
-            .add {
-                padding-top: 10px;
-                float: left;
-                display: block;
-            }
-            input[type="text"] {
-                width: 120px;
-            }
-            #insertTr {
-                cursor:default;
-            }
-        </style>
-        <script src="../js/jquery-1.7.2.js" type="text/javascript"></script>
-	<script type="text/javascript" src="jquery.uploadify-3.1.min.js"></script>
-	<script src="../js/dproc.js" type="text/javascript"></script>
+     <!-- Content -->
+<div id="content">
 	<script type="text/javascript">
-		var $j = jQuery.noConflict();
-		/*$j.post( "AuthFiles/authenticator.php",
-			function(data) {
-				if(data == 'true')
-					$j(document).ready(function() {
-						updateTable();
-					});
-				else
-					window.location="http://coreatrade.com/admin/";
-			}
-		);*/
 		var rowWithContent = -1;
 		function insert(place){
 			place.append(
@@ -138,15 +17,18 @@
                                     '<div style="clear: both"></div>'+
                             '</td></tr>'
 			);
+			
 			$j(":submit[name = 'markId']").click(function () {
 				var value = $j(this).attr("value");
 				$j.post( $j("div#path").attr("value"), { 
 					add : $j(":text[name = 'add']").attr("value"), 
-					markId: value }
+					markId: value,
+					srcImage: $j('input[name = "srcImage"]').attr('value') }
 				).success(function(data) {
-					//updateTable(value);
-					setTimeout("updateTable("+value+",-1);",100);
+					$j('input[name = "srcImage"]').attr('value', '');
+					setTimeout("updateTable("+value+",-1);",50);
 					//setTimeout("updateTable();",100);
+					
 				});
 			});
 			insertUploader($j("td#insertTr"));
@@ -224,53 +106,40 @@
 				for (i = first; i < end; i++){
 					insertRow(i, brand[i]);
 				}
-				$j(".explistrow").slice(first,end).click(function () {
+				$j(".explistrow").slice(first,end+1).click(function () {
 					ClickFunction($j(this).attr("value"));
 				});
-				$j("button[name = 'delete']").slice(first,end).click(function (event) {
+				$j("button[name = 'delete']").slice(first,end+1).click(function (event) {
 					event.stopPropagation();
 					var value = $j(this).attr("value");
+					//$j("button").prop("disabled",true); 
 					$j(".explistrow").eq($j(this).attr("value")).hide("slow");
 					$j.post("DataBaseOps/DelMarkDB.php", { 
 						delete : $j(this).attr("value") }
 					).success(function(data) {
-						//setTimeout("updateTable();",50);
-						setTimeout("updateTable("+value+", -1);",100);
+						setTimeout("updateTable("+value+", -1);",50);
+						alert("Запись успешно удалена. Может понадобиться обновление страницы");
+						//$j(":submit").attr("disabled",false); 
 					});
 				});
 				
 			});
-
 			$j(function() {
 				$j('#file_upload').uploadify({
-				    'swf'      : 'uploadify.swf',
-				    'uploader' : 'uploadify.php'
+				    'swf'         : 'uploadify.swf',
+				    'uploader'    : 'uploadify.php',
+				    'uploadLimit' : 1,
+				    'onUploadSuccess' : function(file, data, response) {
+				    	data = '../'+data;
+	       				$j('input[name = "srcImage"]').attr('value',data);
+	       				if(rowWithContent >= 0)
+	       					$j('.explistrow').eq(rowWithContent).find('img').attr('src',data);
+	       			    }
 				    // Your options here
 				});
 			});
-
 		}
 	</script>
-
-        <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-        <!--[if lte IE 8]>
-            <link rel="stylesheet" type="text/css" href="css/ie.css" />
-        <![endif]-->
-
-        <!--[if lte IE 9]>
-            <style type="text/css" media="screen">
-                #left-column  .col-module h3.mod-title span:after {
-                border-width: 0.82em;
-            </style>	
-        <![endif]-->
-
-    </head>
-
-    <body class="">
-
-     <!-- Content -->
-	    <div id="content">
            <div class="wrapper">
                 <!-- Columns Container -->    
                 <div id="columns-container">
@@ -320,17 +189,3 @@
                     </div>           
                 </div><!-- Columns Container -->         
             </div><!-- Content Main -->
-            
-            <!-- Bottom -->
-            <div id="bottom" class="clearfix">
-                <div class="wrapper">
-                    <div id="car-logos">
-                        <div class="custom"  >
-                            <img src="../images/car_logos.jpg" border="0" alt="Car Logos" width="960" height="74" />
-                        </div>
-                    </div>                                             
-                </div>                                   
-            </div><!-- Bottom -->      
-        </div>
-    </body>
-</html>

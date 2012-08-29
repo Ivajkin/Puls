@@ -7,15 +7,14 @@
 	if(isset($_POST['login'])){
 		$pass = $_POST["pass"];
 		$login = $_POST["login"];
-		//$pass = 'pass';
-		//$login = 'login';
 		$cpass = crypt($pass, "$2a$07$SomeSaltWordsMakeItHarder$");
 		
-		$passFile = file_get_contents("passFile.php");
+		$passFile = file_get_contents("passFile");
 		$passData = json_decode($passFile);
 		foreach($passData as $key => $value){
-			if(!strcmp($value->login,$login) && !strcmp(crypt($pass, $value->pass),$cpass)){
-				session_start(); 
+			if(!strcmp($value->login,$login) && !strcmp(crypt($pass, $cpass),$value->pass)){
+				session_start();
+				session_name($key);
 				$_SESSION['userKey'] = $key;
 				$_SESSION['time'] = time();
 				$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
@@ -39,13 +38,10 @@
 	}
 	if (isset($_SESSION['userKey']) AND $_SESSION['ip'] == $_SERVER['REMOTE_ADDR']){ 
 		echo 'true';
-		if(isset($_GET['address']))
-			header("Location: ".$_GET['address']);
 		return true;
 	}
 	else {
 		echo 'Please login';
-		header("Location: http://coreatrade.com/admin/");
 		exit;
 	}
 ?>

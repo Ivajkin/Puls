@@ -1036,6 +1036,12 @@ content and menu items.
 	box-shadow: 0 1px 0 #333;
 	margin-top:-10px;}
 
+.navigate {
+	border-bottom:1px solid #000;
+	padding-bottom:15px;
+	margin-bottom:30px;
+	box-shadow: 0 1px 0 #333;
+	margin-top:-10px;}
 	
 .breadcrumbs {
 	padding:0;

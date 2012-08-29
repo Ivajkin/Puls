@@ -25,8 +25,8 @@ $targetFolder = '/upload/img'; // Relative to the root
 
 //Elements
 $name= utf8($_POST['name']);
-$type = $_POST['type'];
-$mark = $_POST['mark'];
+$type = intval($_POST['type']);
+$mark = intval($_POST['mark']);
 $model = utf8($_POST['model']);
 $price = utf8($_POST['price']);
 $color = utf8($_POST['color']);
@@ -38,13 +38,8 @@ $kpp = utf8($_POST['kpp']);
 $drive = utf8($_POST['drive']);
 $door = utf8($_POST['door']); 
 $seat = utf8($_POST['seat']);
-if (file_exists('../img_temp.txt')) {
-   $imgstr = utf8(file_get_contents('../img_temp.txt'));
-   $imgstr = rtrim($imgstr);
-   $img= explode( "\r\n" ,$imgstr);
-   unlink('../img_temp.txt');
-} 
-else $img = 0;
+$city = utf8($_POST['city']);
+$img = 0;
 $complect = utf8($_POST['complect']);
 
 $data = array(
@@ -62,8 +57,9 @@ $data = array(
     "drive" => $drive,
     "door" => $door,
     "seat" => $seat,
+    "city" => $city,
     "img" => $img,
-    "complect" => $complect);
+    "complect" => str_replace(">****",">",$complect));
 
 //$value = mb_check_encoding($value, 'UTF-8') ? $value : utf8_encode($value);
 
@@ -72,6 +68,20 @@ $inp = file_get_contents($pathTojs.'/ddata.js');
 $tempArray = json_decode($inp);
 $car_id = count($tempArray);  
         
+        //some additions
+		$imageList = $_POST['images'];
+		$imageDelList = $_POST['imagesDel'];
+		$data["img"] = $imageList;
+		if(count($imageDelList) > 0){
+			foreach($imageDelList as $value){
+				deleteImage('../'.$value);
+			}
+		}
+		//$data["img"] += $imageList;
+		//$data["img"] = array_merge($data["img"], $imageList);
+		if(count($data["img"]) == 0)
+			$data["img"] = 0;
+	//End of additions    
 $tempArray[]= $data;
 
 $jsonData = json_encode($tempArray);

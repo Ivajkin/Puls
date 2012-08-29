@@ -1,116 +1,100 @@
-[12-Aug-2012 03:55:08 UTC] PHP Parse error:  syntax error, unexpected '}' in /home2/core5429/public_html/admin/delFromDB.php on line 75
-[12-Aug-2012 03:55:54 UTC] PHP Fatal error:  Function name must be a string in /home2/core5429/public_html/admin/delFromDB.php on line 60
-[12-Aug-2012 03:57:13 UTC] PHP Fatal error:  Function name must be a string in /home2/core5429/public_html/admin/delFromDB.php on line 60
-[12-Aug-2012 04:03:26 UTC] PHP Fatal error:  Call to undefined function delFromArray() in /home2/core5429/public_html/admin/delFromDB.php on line 51
-[12-Aug-2012 04:04:48 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home2/core5429/public_html/admin/delFromDB.php on line 21
-[12-Aug-2012 04:26:53 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/core5429/public_html/admin/delFromDB.php on line 27
-[12-Aug-2012 04:26:53 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/core5429/public_html/admin/delFromDB.php on line 27
-[12-Aug-2012 04:28:30 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home2/core5429/public_html/admin/delFromDB.php on line 10
-[12-Aug-2012 04:52:34 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home2/core5429/public_html/admin/delFromDB.php on line 52
-[12-Aug-2012 04:57:05 UTC] PHP Parse error:  syntax error, unexpected '.' in /home2/core5429/public_html/admin/delFromDB.php on line 23
-[12-Aug-2012 05:54:00 UTC] PHP Warning:  file_get_contents(filename): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/editDB.php on line 15
-[12-Aug-2012 05:54:00 UTC] PHP Fatal error:  Call to undefined function counr() in /home2/core5429/public_html/admin/editDB.php on line 17
-[12-Aug-2012 05:55:32 UTC] PHP Fatal error:  Call to undefined function counr() in /home2/core5429/public_html/admin/editDB.php on line 17
-[12-Aug-2012 23:01:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/admin/delMarkDB.php on line 40
-[12-Aug-2012 23:03:08 UTC] PHP Fatal error:  Cannot use string offset as an object in /home2/core5429/public_html/admin/todb.php on line 87
-[13-Aug-2012 07:44:20 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:44:23 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:44:27 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:44:29 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:44:31 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:51:43 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:51:45 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:55:54 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:55:56 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:55:59 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:02 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:04 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:07 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:09 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:12 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:14 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:16 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:18 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:21 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:23 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 07:56:26 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:36:49 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:36:52 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:36:54 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:36:56 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:44:05 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:44:08 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:44:11 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:44:14 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:44:16 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 10:44:18 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 12:35:47 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[13-Aug-2012 12:35:50 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 05:03:57 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 05:04:12 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 05:05:26 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 05:06:48 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 05:09:48 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 05:11:40 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:01:01 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:02:50 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:03:19 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:03:22 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:03:25 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:03:26 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:05:53 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:06:34 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:07:40 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:11:37 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:12:38 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:14:56 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:15:53 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:17:06 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:19:11 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 07:22:09 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:04:09 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:06:40 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:06:56 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:09:13 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:13:51 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:14:26 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:19:04 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 10:19:50 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:25:29 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:26:33 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:35:20 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:41:48 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:41:51 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:41:54 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:41:57 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:42:33 UTC] PHP Warning:  require_once(DataBaseFunctions.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[14-Aug-2012 12:42:33 UTC] PHP Fatal error:  require_once(): Failed opening required 'DataBaseFunctions.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[14-Aug-2012 12:55:52 UTC] PHP Warning:  require_once(DataBaseFunctions.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[14-Aug-2012 12:55:52 UTC] PHP Fatal error:  require_once(): Failed opening required 'DataBaseFunctions.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[14-Aug-2012 12:55:59 UTC] PHP Warning:  require_once(DataBaseFunctions.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[14-Aug-2012 12:55:59 UTC] PHP Fatal error:  require_once(): Failed opening required 'DataBaseFunctions.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[14-Aug-2012 12:57:31 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:57:34 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[14-Aug-2012 12:58:40 UTC] PHP Warning:  require_once(DataBaseFunctions.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[14-Aug-2012 12:58:40 UTC] PHP Fatal error:  require_once(): Failed opening required 'DataBaseFunctions.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/delFromDB.php on line 7
-[15-Aug-2012 06:38:12 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[15-Aug-2012 06:40:54 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:45:43 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:45:46 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:45:49 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:45:51 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:45:53 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:45:55 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:45:57 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[18-Aug-2012 13:46:00 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:03:16 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:03:20 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:03:23 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:03:28 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:10:33 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:10:36 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:10:40 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:10:42 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[19-Aug-2012 12:10:48 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
-[20-Aug-2012 08:29:58 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/adminOLD/uploadify.php on line 45
-[20-Aug-2012 08:36:11 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/adminOLD/uploadify.php on line 45
+[19-Aug-2012 11:22:48 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home2/core5429/public_html/test/index.php on line 351
+[19-Aug-2012 11:23:27 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home2/core5429/public_html/test/index.php on line 351
+[19-Aug-2012 11:23:32 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home2/core5429/public_html/test/index.php on line 351
+[19-Aug-2012 11:23:35 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home2/core5429/public_html/test/index.php on line 351
+[19-Aug-2012 11:33:27 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home2/core5429/public_html/test/index.php on line 352
+[19-Aug-2012 11:33:58 UTC] PHP Parse error:  syntax error, unexpected '=' in /home2/core5429/public_html/test/index.php on line 351
+[19-Aug-2012 11:34:25 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home2/core5429/public_html/test/index.php on line 353
+[19-Aug-2012 11:34:56 UTC] PHP Parse error:  syntax error, unexpected $end in /home2/core5429/public_html/test/index.php on line 383
+[19-Aug-2012 11:35:20 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home2/core5429/public_html/test/index.php:350) in /home2/core5429/public_html/test/index.php on line 352
+[19-Aug-2012 12:36:41 UTC] PHP Warning:  file_get_contents(passFile.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/test.php on line 12
+[19-Aug-2012 12:36:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/test/test.php on line 14
+[20-Aug-2012 06:38:20 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:38:20 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:40:18 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:40:18 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:41:47 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:41:47 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:42:12 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:42:12 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:43:46 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:43:46 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:44:09 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:44:09 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:48:19 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:48:19 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:48:56 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:48:56 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:54:54 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:54:54 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:55:02 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:55:02 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:55:15 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 06:55:15 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 07:05:09 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 07:05:09 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:12:31 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:12:31 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:14:26 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:14:26 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:21:46 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:21:46 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:28:34 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:28:34 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/test/uploadify.php on line 7
+[20-Aug-2012 08:41:47 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/uploadify.php on line 7
+[20-Aug-2012 08:41:47 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/uploadify.php on line 7
+[20-Aug-2012 08:45:15 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/uploadify.php on line 7
+[20-Aug-2012 08:45:15 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/uploadify.php on line 7
+[20-Aug-2012 08:46:14 UTC] PHP Warning:  require_once(SimpleImage.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/uploadify.php on line 7
+[20-Aug-2012 08:46:14 UTC] PHP Fatal error:  require_once(): Failed opening required 'SimpleImage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/core5429/public_html/admin/uploadify.php on line 7
+[20-Aug-2012 08:50:46 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[21-Aug-2012 02:14:38 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[21-Aug-2012 04:35:16 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[21-Aug-2012 11:59:51 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 03:27:17 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 03:30:56 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:32:03 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:43:34 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:50:42 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:51:08 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:51:38 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:54:19 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:54:50 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:55:19 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 04:55:49 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:17 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:20 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:23 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:27 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:32 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:35 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:38 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:04:42 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:12 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:15 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:19 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:23 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:27 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:31 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:34 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:38 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:42 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:47 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 05:23:50 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:04 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:09 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:13 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:16 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:18 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:21 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:24 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:26 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:29 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:31 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:35 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[22-Aug-2012 06:06:40 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[23-Aug-2012 11:33:12 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[23-Aug-2012 12:01:02 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[23-Aug-2012 12:02:50 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[23-Aug-2012 12:03:18 UTC] PHP Warning:  mkdir(): File exists in /home2/core5429/public_html/admin/uploadify.php on line 45
+[24-Aug-2012 13:28:08 UTC] PHP Fatal error:  Call to undefined method SimpleImage::rresizeToWidth() in /home2/core5429/public_html/admin/uploadify.php on line 54

@@ -5,7 +5,7 @@
 	$pass = "pass";
 	$login = "login";
 	//read pass and login from file
-	$passFile = file_get_contents("passFile.php");
+	$passFile = file_get_contents("passFile");
 	$passData = json_decode($passFile);
 	
 	foreach($passData as $value)
@@ -28,6 +28,6 @@
 
 	$passData[] = $data;
 	$json = json_encode($passData);
-	file_put_contents("passFile.php",$json);
+	file_put_contents("passFile",$json);
 	echo 'true';
 ?>

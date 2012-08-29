@@ -1,0 +1,134 @@
+	<script type="text/javascript">
+		$j(function() {
+			$j('#file_upload').uploadify({
+			    'swf'      : 'uploadify.swf',
+			    'uploader' : 'uploadify.php'
+			    // Your options here
+			});
+		});
+		function insertRow(index, data){
+			var image = '';
+			if(data.img.length){
+				image = '<img width="auto" height="100px" src="/' + data.img[0]+ '" />' +
+				'<div class="expimgcount">' + data.img.length + ' изображений' + '</div>';
+			}
+			else 
+				image = '<div class="expimgcount"> Нет изображений </div>';
+			$j("tbody#Table").append('<tr class="explistrow">' +
+			'<td>' + '<span></span>' + '<div class="photo top">' + image + '</div>' +
+			'</td>' +
+			'<td>' + '<a href = "">' + data.name + '</a>'+ '</td>' +
+			'<td>' + '&nbsp' + data.year + '&nbsp' + '</td>' + 
+			'<td>' + '&nbsp' + data.price + 'р.' + '</td>' +
+			'<td>' + '<button value="'+index+'" name="delete">Удалить</button>' + 
+			'<form method="GET" action = "index.php"><button value="'+index+'" name="button">Изменить</button>'+
+			'<input type="hidden" name="page" value="CarEdit" /></form>' + '</td>' +
+			'</tr>');	
+		}
+		function updateTable(first, end){
+			end = end || -1;
+			first = first || 0;
+			
+			var FilterBrand = parseInt($j("#BrandOut").attr("value"));
+			var FilterType = parseInt($j("#TypeOut").attr("value"));
+			
+			jgetDataIndex( function (car) {
+				if(end >= car.length || end <= -1)
+					end = car.length;
+				if(first <= -1)
+					first = car.length - 1;
+				$j(".explistrow").slice(first,end+1).detach();
+				for (i = 0; i < car.length; i++){
+					if(FilterType && FilterType-1 != car[i].type)
+						continue;
+					if(FilterBrand && FilterBrand-1 != car[i].mark)
+						continue;
+					insertRow(i+first,car[i]);
+				}
+				$j("button[name = 'delete']").slice(first,end).click(function () {
+					$j(".explistrow").eq($j(this).attr("value")).hide("slow");
+					$j.post("DataBaseOps/DelCarDB.php", { 
+						delete : $j(this).attr("value") }, 
+						function(data) {
+							updateTable($j(this).attr('value'));
+						}
+					);
+				});
+			},first, end);
+		}
+	</script>
+	    <div id="content">
+           <div class="wrapper">
+                <!-- Columns Container -->    
+                <div id="columns-container">
+                    <div id="outer-column-container">
+                        <div id="inner-column-container" class="clearfix">
+                            <div id="source-order-container">
+                                <!-- Middle Column -->   
+                                <div id="middle-column">                        
+                                    <div class="inside"> 
+                                        <div id="system-message-container"></div>
+                                        <div class="blog">
+					  <h1>Список всех автомобилей в базе</h1>
+					  
+					    <div class="table left">Марка
+					    <select id = "BrandOut" name="Brand" size=1 onchange='updateTable();'>
+				                    <script type="text/javascript">
+				                    	$j("#BrandOut").append("<option value='0'>Все</option>");
+							$j(document).ready(function() {
+							 // Handler for .ready() called.
+								jgetBrand ( function (data) {
+								for (i = 1; i < data.length+1; i++)
+									$j("#BrandOut").append("<option value='" + i + "'>" + data[i-1].mark  + "</option>");
+								});
+							});
+						    </script>
+				                </select>
+				            <br />Тип
+					    <select id = "TypeOut" name="Type" size=1 onchange='updateTable();'>
+				                    <script type="text/javascript">
+				                    	$j("#TypeOut").append("<option value='0'>Все</option>");
+							$j(document).ready(function() {
+								jgetType ( function (data) {
+								for (i = 1; i < data.length+1; i++)
+									$j("#TypeOut").append("<option value='" + i + "'>" + data[i-1].type + "</option>");
+								});
+							});
+						    </script>
+				                </select>
+				            </div>
+				            <div class="newrow"></div>
+				            <div id="expskins_module"></div>
+					    <div class="expautospro_clear"></div>
+				            <div align="center" id = "expautospro">
+					    <table class="explist">
+						<thead>
+							<tr>
+								<th>Изображение</th>
+								<th>Марка/Модель</th>
+								<th>Год</th>
+								<th>Цена</th>
+								<th>Функции</th>
+							</tr>
+						</thead>
+						<tbody id = "Table">
+						<script type="text/javascript">
+							$j(document).ready(function() {
+								updateTable();
+							});
+						</script>
+				                </tbody>
+				          </table>
+				          </div>
+					  <!--table will be here-->
+					  
+					  <div class="newrow"></div>
+                                        </div>
+                                    </div>	
+                                </div><!-- Middle Column -->   
+                            </div><!-- Source Order Container -->
+                            <div class="clear-columns"></div>
+                        </div>
+                    </div>           
+                </div><!-- Columns Container -->         
+            </div><!-- Content Main -->

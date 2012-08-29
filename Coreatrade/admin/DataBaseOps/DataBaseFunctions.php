@@ -1,9 +1,12 @@
 <?php	
-	require "../AuthFiles/authenticator.php";
+	header("Cache-Control: no-cache, must-revalidate"); 
+  	header("Pragma: no-cache");
+  	header("Expires: Sat, 26 Jul 1997 00:00:00 GMT"); 
+	require "../AuthFiles/auth.php";
 	$pathTojs = '../../js/';
 	function utf8($value)
 	{
-		return mb_check_encoding($value, 'UTF-8') ? $value : utf8_encode($value);
+		return stripslashes(mb_check_encoding($value, 'UTF-8') ? $value : utf8_encode($value));
 	}
 	//For car delete
 	function correction($carId, $carArray){
@@ -60,10 +63,12 @@
 		file_put_contents($filename, $jsonData);
 	}
 	function deleteImage($path) {
-		if($path == 0){
+		if($path === 0){
+			echo 'Image: no path:'.$path;
 			return true;
 		}
 		if(!strcmp(mb_substr($path, 0, 7), "http://")) {
+			echo 'Image: url';
 			return true;
 		}
 		$path = '../'.$path;

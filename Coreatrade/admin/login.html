@@ -1,0 +1,62 @@
+	<script type="text/javascript">
+	     function Login(){
+	     	$j.post( "AuthFiles/authenticator.php", { 
+			login : $j(":text#username").attr("value"), 
+			pass : $j(":password#password").attr("value") }, 
+			function(data) {
+				if(data == 'true'){
+					$j(".login").hide('slow');
+					window.location = "http://coreatrade.com/admin/"
+				}
+				else
+					alert('Неправильное имя пользователя или пароль');
+			}
+		);
+	     }
+        </script>
+<div id="content">
+   <div class="wrapper">
+        <!-- Columns Container -->    
+        <div id="columns-container">
+            <div id="outer-column-container">
+                <div id="inner-column-container" class="clearfix">
+                    <div id="source-order-container">
+                        <!-- Middle Column -->   
+                        <div id="middle-column">                        
+                            <div class="inside"> 
+                                <div id="system-message-container">
+                                </div>
+                                <div class="blog">
+                                  <h1>Добро пожаловать!</h1>
+                                  <div class="table middle"></div>
+                                    <div class="login">			
+                                            <!--form action="" method="post"-->
+	                                    <fieldset>
+			                        <div class="login-fields">
+                                                    <label id="username-lbl" for="username" class="">User Name</label>
+                                                    <input type="text" name="username" id="username" value="" class="validate-username" size="25"/>
+			                        </div>
+				                <div class="login-fields">
+                                                    <label id="password-lbl" for="password" class="">Password</label>
+                                                    <input type="password" name="password" id="password" value="" class="validate-password" size="25"/>
+                                                </div>
+						    <button type="submit" class="button" onclick = "Login();">Войти</button>
+						<script type="text/javascript">
+						$j("input").keyup(function(event){
+							if(event.keyCode == 13){
+								Login();
+							}
+						});
+						</script>
+                                            </fieldset>
+                                            <!--/form -->
+                                    </div>
+                                </div>
+                             </div>	
+                        </div><!-- Middle Column -->   
+                    </div><!-- Source Order Container -->
+                    <div class="clear-columns"></div>
+                </div>
+    	</div>           
+    </div><!-- Columns Container -->         
+</div>

@@ -34,8 +34,8 @@ function updateInArray($filename,$carId,$index,$newIndex){
 	
 	//Elements
 	$name= utf8($_POST['name']);
-	$type = $_POST['type'];
-	$mark = $_POST['mark'];
+	$type = intval($_POST['type']);
+	$mark = intval($_POST['mark']);
 	$model = utf8($_POST['model']);
 	$price = utf8($_POST['price']);
 	$color = utf8($_POST['color']);
@@ -47,15 +47,11 @@ function updateInArray($filename,$carId,$index,$newIndex){
 	$drive = utf8($_POST['drive']);
 	$door = utf8($_POST['door']); 
 	$seat = utf8($_POST['seat']);
-	if (file_exists('../img_temp.txt')) {
-	   $imgstr = utf8(file_get_contents('../img_temp.txt'));
-	   $imgstr = rtrim($imgstr);
-	   $img= explode( "\r\n" ,$imgstr);
-	   unlink('../img_temp.txt');
-	} 
-	else $img = 0;
+	$city = utf8($_POST['city']);
+	$img = 0;
 	$complect = utf8($_POST['complect']);
 	
+
 	$data = array(
 	    "name" => $name,
 	    "type" => $type,
@@ -71,14 +67,29 @@ function updateInArray($filename,$carId,$index,$newIndex){
 	    "drive" => $drive,
 	    "door" => $door,
 	    "seat" => $seat,
+	    "city" => $city,
 	    "img" => $img,
-	    "complect" => $complect);
-	
+	    "complect" => str_replace(">****",">",$complect));
 	
 	//to Ddata
 	$inp = file_get_contents($pathTojs.'ddata.js');
-	$carDB = json_decode($inp);           
-	if($img == 0){
+	$carDB = json_decode($inp);    
+	
+	//some additions
+		$imageList = $_POST['images'];
+		$imageDelList = $_POST['imagesDel'];
+		$data["img"] = $imageList;
+		if(count($imageDelList) > 0){
+			foreach($imageDelList as $value){
+				deleteImage('../'.$value);
+			}
+		}
+		//$data["img"] += $imageList;
+		//$data["img"] = array_merge($data["img"], $imageList);
+		if(count($data["img"]) == 0)
+			$data["img"] = 0;
+	//End of additions       
+	/*if($img == 0){
 		echo 'Old Image<br />';
 		$data["img"] = $carDB[$carId] -> img;
 	}
@@ -87,7 +98,7 @@ function updateInArray($filename,$carId,$index,$newIndex){
 		foreach($carDB[$carId] -> img as $value){
 			deleteImage('../'.$value);
 		}
-	}
+	}*/
 	//to DType        
 	updateInArray($pathTojs.'dtype.js',$carId,$carDB[$carId]->type,$type);
 	//to DBrand
@@ -96,4 +107,27 @@ function updateInArray($filename,$carId,$index,$newIndex){
 	$carDB[$carId] = $data;
 	$jsonData = json_encode($carDB);
 	file_put_contents($pathTojs.'ddata.js', $jsonData);
+	/*Delete images part
+	imageList = $_POST['images'];
+	imageDelList = $_POST['imagesDel'];
+	if (file_exists('../img_temp.txt')) {
+		$imgstr = utf8(file_get_contents('../img_temp.txt'));
+		$imgstr = rtrim($imgstr);
+		$img = explode( "\r\n" ,$imgstr);
+		for(i = count(imageList)-1; i >= 0; --i){
+			$id = array_search($imageList[i], $img);
+			if($id !== false)
+				unset($img[id]);
+		}
+		array_values($img);
+		$imgstr = implode( "\r\n" ,$img);
+		file_put_contents('../img_temp.txt',);
+	} 
+
+	$data["img"] = array_diff($carDB[$carId] -> img, imageDelList);
+	foreach($imageDelList as $value){
+		deleteImage('../'.$value);
+	}
+	$data["img"] += imageList;
+	*/
 ?>

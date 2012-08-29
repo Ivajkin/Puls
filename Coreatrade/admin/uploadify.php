@@ -42,7 +42,7 @@ if (!empty($_FILES)) {
 	//$targetFile = rtrim($targetPath,'/') . '/' . $_FILES['Filedata']['name'];
 	
 	if (in_array($ext, $fileTypes)) {
-                mkdir( $targetPath, 0755);  
+                @mkdir( $targetPath, 0755);  
                 //Rename
                 $exportFile = $exportPath . '/' . md5($fileParts['basename']) . '.' . $ext;
                 $targetFile = '../' . $exportFile;
@@ -51,17 +51,15 @@ if (!empty($_FILES)) {
                //Image resize
                $image = new SimpleImage();
                $image->load($tempFile);
-               $image->resize(800,600);
+               $image->resizeToWidth(1024);
                $image->save($targetFile);
 
                //Add image link to temporary file
                file_put_contents('img_temp.txt', $exportFile . "\r\n", FILE_APPEND);                 
 
-               echo '1';
+               echo $exportFile;
 	} else {
 		echo 'Не правильный формат изображения. Загрузите .jpeg, .jpg, .png или .gif изображение';
 	}
 }
 ?>
-
-

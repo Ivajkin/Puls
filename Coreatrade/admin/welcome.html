@@ -1,0 +1,44 @@
+	<script type="text/javascript">
+	     $j(document).ready(function() {
+		     $j("button[name = 'logout']").click( function(){
+		     	$j.post( "AuthFiles/authenticator.php", { 
+				action : "logout"},
+				function(data) {
+					window.location = "http://coreatrade.com/admin/"
+				}
+			);
+		     });
+	     });
+        </script>
+<div id="content">
+   <div class="wrapper">
+        <!-- Columns Container -->    
+        <div id="columns-container">
+            <div id="outer-column-container">
+                <div id="inner-column-container" class="clearfix">
+                    <div id="source-order-container">
+                        <!-- Middle Column -->   
+                        <div id="middle-column">                        
+                            <div class="inside"> 
+                                <div id="system-message-container">
+                                </div>
+                                <div class="blog">
+                                  <h1>Добро пожаловать!</h1>
+                                  <div class="table middle"></div>
+                                    <div class="logout">			
+                                            <!--form action="" method="post"-->
+	                                    <fieldset>
+			                    Вы прошли авторизацию. Выберите пункт меню.
+			                    <button name = "logout" >Выйти</button>
+                                            </fieldset>
+                                            <!--/form -->
+                                    </div>
+                                </div>
+                             </div>	
+                        </div><!-- Middle Column -->   
+                    </div><!-- Source Order Container -->
+                    <div class="clear-columns"></div>
+                </div>
+    	</div>           
+    </div><!-- Columns Container -->         
+</div>
