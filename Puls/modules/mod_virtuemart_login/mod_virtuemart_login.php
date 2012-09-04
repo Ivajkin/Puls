@@ -15,7 +15,6 @@ if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.
 *
 * http://virtuemart.net
 */
-
 // TODO: Joomla! 1.5 compatibility - do these global vars depend on the legacy plugin?
 global $mosConfig_absolute_path, $mosConfig_allowUserRegistration;
 
@@ -138,23 +137,23 @@ $registration_url = $sess->url( SECUREURL.'index.php?option=com_virtuemart&amp;p
 ?>
 <?php if( $type == 'logout' ) : ?>
 <div>
-  <p><h3>Вход</h3></p>
+
 	<form action="<?php echo $action ?>" method="post" name="login" id="login">
 		<?php if( $params->get('greeting') ) : ?>
-		<div><?php echo $VM_LANG->_('HI') . ' ' . $name ?></div>
+		<span><?php echo $VM_LANG->_('HI') . ' ' . $name ?></span>
 		<?php endif; ?>
 		<?php if( $params->get('accountlink') || ENABLE_DOWNLOADS == '1' ) : ?>
-		<ul>
+		
 			<?php if( $params->get('accountlink') ) : ?>
-			<li><a href="<?php echo $sess->url(SECUREURL . "index.php?page=account.index", true);?>"><?php echo $VM_LANG->_('PHPSHOP_ACCOUNT_TITLE') ?></a></li>
+			<span>|</span><span style="margin-left: 0 20px 0 0"><a href="<?php echo $sess->url(SECUREURL . "index.php?page=account.index", true);?>"><?php echo $VM_LANG->_('PHPSHOP_ACCOUNT_TITLE') ?></a></span>
 			<?php endif; ?>
 			<?php if( ENABLE_DOWNLOADS == '1' ) : ?>
-        	<li><a href="<?php $sess->purl(SECUREURL . "index.php?page=shop.downloads", true);?>"><?php echo $VM_LANG->_('PHPSHOP_DOWNLOADS_TITLE') ?></a></li>
+        	<a href="<?php $sess->purl(SECUREURL . "index.php?page=shop.downloads", true);?>"><?php echo $VM_LANG->_('PHPSHOP_DOWNLOADS_TITLE') ?></a>&nbsp|&nbsp
 			<?php endif; ?>
-		</ul>
+		
 		<?php endif; ?>
 		<input type="submit" name="Submit" class="button" value="<?php echo $VM_LANG->_('BUTTON_LOGOUT') ?>" />
-		<br /><br />
+		
 		<input type="hidden" name="op2" value="logout" />
 		<input type="hidden" name="return" value="<?php echo $return_url ?>" />
 		<input type="hidden" name="lang" value="english" />
@@ -163,25 +162,25 @@ $registration_url = $sess->url( SECUREURL.'index.php?option=com_virtuemart&amp;p
 </div>
 <?php else : ?> 
 <div>
-  <p><h3>Вход</h3></p>
 	<form action="<?php echo $action ?>" method="post" name="login" id="login">
 		<?php if( $params->get('pretext') ) : ?>
 		<?php echo $params->get('pretext'); ?>
-		<br />
+		
 		<?php endif; ?>
-		<label for="username_vmlogin">Логин</label>&nbsp&nbsp&nbsp&nbsp&nbsp
-		<input class="inputbox" type="text" id="username_vmlogin" size="12" name="username" />
-    <p>&nbsp</p>
-		<label for="password_vmlogin">Пароль</label>&nbsp&nbsp
-		<input type="password" class="inputbox" id="password_vmlogin" size="12" name="passwd" />
-    <p>&nbsp</p>
+		<span><label for="username_vmlogin">Логин:</label>&nbsp&nbsp
+		<input class="inputbox" type="text" id="username_vmlogin" size="12" name="username" /></span>
+
+		<span><label for="password_vmlogin">Пароль:</label>&nbsp&nbsp
+		<input type="password" class="inputbox" id="password_vmlogin" size="12" name="passwd" /></span>
+
 		<input type="hidden" name="remember" value="yes" />
-		<input type="submit" value="Войти" class="button" name="Login" />
+		<span>|</span><input type="submit" value="Войти" class="button" name="Login" />
 		<input type="hidden" value="login" name="op2" />
 		<input type="hidden" value="<?php echo $return_url ?>" name="return" />
 		<input type="hidden" name="<?php echo $validate; ?>" value="1" />
 		<?php echo $params->get('posttext'); ?>
+                <a href="<?php echo $registration_url ?>">Регистрация</a>
 	</form>
-  <p />&nbsp<p><a href="<?php echo $registration_url ?>">Регистрация</a></p>
+
 </div>
 <?php endif; ?>

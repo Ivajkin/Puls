@@ -32,19 +32,28 @@ EOD;
 <!--</div>-->
 
  <div class="browseProductContainer" style="padding:0; margin:0; border:0;">
-     <a href="javascript:void(0)" title="<?php echo $product_name?>" style="text-align: center; margin-left: 25%" onclick="moreinfoDown(<?php echo $product_id ?>)" >
-           <img src="<?php echo $product_full_image ?>" style="width: auto; height:150px;" />
-     </a>  
-     <h2 style="text-align: center; font-size: 1.5em">
-           <a class="browse_expand" style="word-wrap: break-word;" href="javascript:void(0)" onclick="moreinfoDown(<?php echo $product_id ?>)"> <!--font-size:16px; font-weight:bold; -->
-           <?php echo $product_name ?>
-          </a>
-    </h2>
-    <p class="tm_price"><?php echo $product_price ?></p>
+  <h2 style="text-align: center;">
+    <a class="browse_expand" style="word-wrap: break-word;" href="javascript:void(0)" onclick="moreinfoDown(<?php echo $product_id ?>)"> <!--font-size:16px; font-weight:bold; -->
+      <?php echo $product_name ?>
+    </a>
+  </h2>
+  <p class="tm_price"><?php echo $product_price ?></p>
+  <div style="float:left;width:90%" >
+  	<a class="browse_expand" href="javascript:void(0)" title="<?php echo $product_name ?>" onclick="moreinfoDown(<?php echo $product_id ?>)"> <!--href="<?php echo $product_flypage ?>"-->
+        <?php echo ps_product::image_tag( urldecode($product_thumb_image), 'class="browseProductImage" border="0" title="'.$product_name.'" alt="'.$product_name .'"' ) ?>
+       </a>
+  </div>
+
+  <br style="clear:both;" /> <!--$product_sku-->
+  <div style="float:left;width:90%"><?php echo $product_s_desc ?></div>
 
   <br style="clear:both;" />
+   <div class="tm_std_link" style="padding: 0; border: 0; margin: 0;">
+       <a class="browse_expand more" href="javascript:void(0)" style="font-size: 1.2em;" onclick="moreinfoToggle(<?php echo $product_id ?>)">Подробнее >>></a>
+    </div>   
+  <br style="clear:both;" />
 
-   <div id="moreinfo_<?php echo $product_id ?>" style="display:none; padding: 0; border: 0; margin: 20px 0;">
+   <div id="moreinfo_<?php echo $product_id ?>" style="display:none; padding: 0; border: 0; margin: 0;">
 
      <div>
        <div style="width: 50%; display: block; float: left;">
@@ -53,7 +62,7 @@ EOD;
            <?php echo $edit_link ?>
          </h1>
        </div>
-       <div align="middle" style="width: 40%; display: block; float: left; vertical-align: middle; margin-left: 20px">
+       <div align="middle" style="width: 50%; display: block; float: left; vertical-align: middle">
          <?php echo $form_addtocart ?>
        </div>
      </div>
@@ -101,7 +110,7 @@ EOD;
          echo $output;
         ?>
        </div>
-       <button type="button" class="browse_expand less tm_button_slideup" onclick="moreinfoUp(<?php echo $product_id ?>)">Свернуть <<< </button>
+       <button type="button" class="browse_expand less" style="margin-left: 200px" onclick="moreinfoUp(<?php echo $product_id ?>)">Свернуть <<< </button>
      </div>
    </div>
  </div>

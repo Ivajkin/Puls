@@ -12,7 +12,7 @@ mm_showMyFileName(__FILE__);?>
 </script>
 
 
-<h3><?php echo $browsepage_lbl; ?> 
+<h3 class="componentheading"><?php echo $browsepage_lbl; ?> 
 	<?php 
 	if( $this->get_cfg( 'showFeedIcon', 1 ) && (VM_FEED_ENABLED == 1) ) { ?>
 	<a href="index.php?option=<?php echo VM_COMPONENT_NAME ?>&amp;page=shop.feed&amp;category_id=<?php echo $category_id ?>" title="<?php echo $VM_LANG->_('VM_FEED_SUBSCRIBE_TOCATEGORY_TITLE') ?>">

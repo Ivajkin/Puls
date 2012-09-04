@@ -28,7 +28,7 @@ $cparams = JComponentHelper::getParams ('com_media');
 <?php endif; ?>
 <?php if ( $this->contact->name && $this->contact->params->get( 'show_name' ) ) : ?>
 <tr>
-	<td width="100%" class="contentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+	<td width="100%" class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 		<?php echo $this->escape($this->contact->name); ?>
 	</td>
 </tr>

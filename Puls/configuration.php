@@ -6,7 +6,7 @@ class JConfig {
 	var $helpurl = 'http://help.joomla.org';
 	var $debug = '0';
 	var $debug_lang = '0';
-	var $sef = '0';
+	var $sef = '1';
 	var $sef_rewrite = '0';
 	var $sef_suffix = '0';
 	var $feed_limit = '10';
@@ -36,9 +36,9 @@ class JConfig {
 	var $db = 'core5429_paradigm_pulse';
 	var $dbprefix = 'jos_';
 	var $mailer = 'mail';
-	var $mailfrom = 'serega.khv@gmail.com';
+	var $mailfrom = 'nowert@mail.ru';
 	var $fromname = 'Базис Восток Мед';
-	var $sendmail = '/usr/sbin/sendmail';
+	var $sendmail = '/mail/new';
 	var $smtpauth = '0';
 	var $smtpsecure = 'none';
 	var $smtpport = '25';

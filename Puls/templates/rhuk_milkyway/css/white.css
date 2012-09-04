@@ -1,10 +1,49 @@
 /* white */
-a:link, a:visited {
-	color: #135cae;
+
+.tm_hd_link a:link, .tm_hd_link a:visited{
+       color: #727271;
+       text-shadow: none;
+       font-weight: 500;
+}
+.tm_menutop a:link, .tm_menutop a:visited {
+       color: white;
+       font-weight: 700;
+       text-shadow: 1px 1px 5px #009049; 
+}
+.contentpaneopen a:link, .contentpaneopen a:visited {
+       text-shadow: 1px 1px #009049; 
+}
+.tm_addcart_name a:link, .tm_addcart_name a:visited {
+       text-shadow: none; 
+}
+#footer_r a:link, #footer_r a:visited  {
+	color: white;
+       text-shadow: none;
+       font-weight: 500
+}
+.tm_std_link a:link, .tm_std_link a:visited {
+       color: #009049;
+       text-shadow: none;
+       font-weight: 500;
+}
+a:link {
+       color: #009049;
+       text-shadow: 0px 1px #29AC10;
+}
+a:visited {
+       color: #009049;
+       text-shadow: 0px 1px #29AC10;
 }
 
+.tm_menutop a:hover, #footer a:hover, #tm_top_head a:hover {
+       color:#1D6DC7;
+}
 a:hover {
-	color: #0b3768;
+       color:#43C42E;
+}
+#tm_top_head input[type="submit"]:hover {
+    text-decoration: underline;
+    color: #1D6DC7;
 }
 
 #pillmenu a:hover {
@@ -12,7 +51,7 @@ a:hover {
 }
 
 #pillmenu a#active_menu-nav {
-  background: url(../images/white/mw_menu_active_bg.png) 0 0 repeat-x;
+  background: url(../images/blue/mw_menu_active_bg.png) repeat-x;
   color: #fff;
 }
 
@@ -20,26 +59,22 @@ a:hover {
   color: #fff;
 }
 
-h3, div.module_menu h3, .componentheading, table.moduletable th {
-  color: #135cae;
-}
-
 h3, .componentheading, table.moduletable th {
-  color: #135cae;
+	color: #009049;
 }
 
 div.module_menu {
-	background: url(../images/white/mw_box_br.png) 100% 100% no-repeat;
+	background: url(../images/blue/mw_box_br.png) 100% 100% no-repeat;
 }
 
 div.module_menu div {
-	background: url(../images/white/mw_box_bl.png) 0 100% no-repeat;
+	background: url(../images/blue/mw_box_bl.png) 0 100% no-repeat;
 }
 
 div.module_menu div div {
-	background: url(../images/white/mw_box_tr.png) 100% 0 no-repeat;
+	background: url(../images/blue/mw_box_tr.png ) 100% 0 no-repeat;
 }
 
 div.module_menu div div div {
-	background: url(../images/white/mw_box_tl.png) 0 0 no-repeat;
+	background: url(../images/blue/mw_box_tl.png) 0 0 no-repeat;
 }

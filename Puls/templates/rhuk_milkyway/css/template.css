@@ -16,10 +16,13 @@ body {
 	font-family: Helvetica,Arial,sans-serif;
 	line-height: 1.3em;
 	margin: 0px 0px 0px 0px;
-	font-size: 12px;
+	font-size: 0.75em;
 	color: #333;
 }
 
+* ul {
+        list-style-image:url('/paradigm/Puls/templates/rhuk_milkyway/css/img/list.png');
+}
 a:link, a:visited {
 	text-decoration: none;
 	font-weight: normal;
@@ -71,7 +74,7 @@ div#header_l {
 }
 
 div#header_r {
-	height: 200px;
+	height: 250px;
 	padding-left: 370px;
 	padding-right: 30px;
 	padding-top: 25px;
@@ -82,14 +85,14 @@ div#header_r {
 div#logo {
 	position: absolute;
 	left: 0;
-	top: 20px;
+	top: 0;
 	float: left;
-	width: 270px;
-	height: 190px;
-	background: url(../images/mw_joomla_logo.png) 0 0 no-repeat;
+	width: 294px;
+	height: 166px;
+	background: url(/paradigm/Puls/templates/rhuk_milkyway/css/img/logo.png) 0 0 no-repeat;
 	background-position: center;
-	margin-left: 30px;
-	margin-top: 5px;
+	margin-left: 0px;
+	margin-top: 0px;
 }
 
 div#newsflash {
@@ -127,11 +130,6 @@ div#footer_r div {
 	font-size: .90em;
 	color: #aaa;
 }
-
-div#footer_r a:link, div#footer_r a:visited  {
-	color: #999;
-}
-
 div#footerspacer {
 	height: 10px;
 }
@@ -294,8 +292,7 @@ td.pill_r {
 
 #maincolumn,
 #maincolumn_full {
-	margin-left: 20%;
-	padding-left: 20px;
+        float: left;
 	width: 75%;
 }
 
@@ -347,25 +344,59 @@ div.componentheading {
 h1 {
 	padding: 0;
 	font-family:Helvetica ,Arial,sans-serif;
-	font-size: 1.3em;
+	font-size: 2em;
 	font-weight: bold;
 	vertical-align: bottom;
-	color: #666;
+	color: #009049;
 	text-align: left;
 	width: 100%;
+        line-height: 1em;
+        text-shadow: 0 0 2em;
 }
-
-h2, .contentheading {
+.componentheading {
+	padding: 0;
+        margin-bottom: 15px;
+	font-family:Helvetica ,Arial,sans-serif;
+	font-size: 2.5em;
+	font-weight: bold;
+	vertical-align: bottom;
+	text-align: left;
+	width: 100%;
+        line-height: 1em;
+        text-shadow: 0 0 2em;
+}
+.componentheading:before {
+content: ".........";
+color: transparent;
+background: url('/paradigm/Puls/templates/rhuk_milkyway/css/img/title_deco.png') no-repeat 50%;
+} 
+.contentheading {
 	padding: 0;
 	font-family: Arial, Helvetica,sans-serif;
-	font-size: 1.4em;
-	font-weight: normal;
-	vertical-align: bottom;
-	color: #333;
+	font-size: 1.45em;
+	font-weight: 600;
+	vertical-align: middle;
+	color: #009049;
 	text-align: left;
 	width: 100%;
+	text-shadow: 1px 1px #29AC10;
+        line-height: 1.3em;
 }
-
+h2 {
+	padding: 0;
+	font-family: Arial, Helvetica,sans-serif;
+	font-size: 1.45em;
+	font-weight: 600;
+	vertical-align: middle;
+	color: #009049;
+	text-align: left;
+	width: 100%;
+	text-shadow: 1px 1px #29AC10;
+        line-height: 1.2em;
+}
+/*#vmMainPage h2 {
+	font-size: 2em;
+}*/
 table.contentpaneopen h3 {
 	margin-top: 25px;
 }
@@ -375,7 +406,7 @@ h4 {
 	color: #333;
 }
 
-h3, .componentheading, table.moduletable th, legend {
+h3, table.moduletable th, legend {
   margin: 0;
   font-weight: bold;
   font-family: Helvetica,Arial,sans-serif;
@@ -465,6 +496,94 @@ a.mainlevel:link, a.mainlevel:visited {
 
 a.mainlevel:hover {
 
+}
+
+div.tm_menutop {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      float: left;
+      padding: 0 13px;
+      
+}
+.tm_menutop a {
+     position: absolute;
+     top: 45%;
+     left: 10%;
+     font-size: 1.6em;
+     text-shadow: 0 0 0.5em #1CB04C;
+}
+.tm_menutop img {
+     height: 100%;
+     width: 100%;
+}
+.tm_search {
+     border:4px solid #009049;
+     border-radius:25px;
+     -moz-border-radius:25px; /* Firefox 3.6 and earlier */
+     font-size: 1.3em; 
+     width: 77%; 
+     color:#009049;
+     font-weight: 500;
+}
+#tm_head_contact {
+    float: right;
+    width: 400px;
+    font-family: Arial, Helvetica,sans-serif;  vertical-align: middle;  color: #009049;  
+    text-align: right;    
+    font-size: 1.7em;
+    word-wrap: break-word;
+    line-height: 100%;
+    position: relative;
+    top: -10px;
+    margin-right: 10px;
+}
+.tm_no_button button, .tm_no_button input[type="submit"], .tm_no_button input[type="clear"]{
+    border: 0;
+    background-color: transparent;
+}
+#tm_top_head {
+    font-size: 1.7em;
+    background: url('/paradigm/Puls/templates/rhuk_milkyway/css/img/bg_header.png') repeat-x left top;
+    height: 38px;
+    color: #727271;
+}
+#tm_top_head input[type="text"], #tm_top_head input[type="password"]
+{
+    font-size: 14px;
+    color: black;
+    border: 1px solid #727271;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+#tm_top_head input[type="submit"], #tm_top_head input[type="clear"]
+{
+    font-size: 1.1em;
+    color: #727271;
+}
+#tm_top_head span{
+    margin: 0 5px;
+}
+.tm_price {
+    width: 190px;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #43C42E;
+    padding: 7px 10px;
+    border-radius: 20px;
+    margin-left: 23%;
+}
+.tm_button_slideup {
+    margin-left: 200px; 
+    margin-top: 20px;
+    cursor: pointer; 
+    color: white; 
+    font-size: 1.5em;
+    border: #77DD06 ridge 10px;
+    border-radius: 20px;
+    background-color: #009049;
 }
 
 /* spacers */
@@ -746,6 +865,7 @@ fieldset {
 legend {
 	margin: 0;
 	padding: 0 10px;
+        color: #009049;
 }
 
 td.key {
@@ -842,3 +962,9 @@ div.current {
    padding: 0;
    margin: 0;
  }
+
+/**************************/
+/****Techno*Media*Main*Css*/
+/**************************/
+
+//white.css

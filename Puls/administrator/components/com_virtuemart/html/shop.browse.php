@@ -1,4 +1,77 @@
 <?php
+global $mainframe;
+$comments = $mosConfig_absolute_path . '/components/com_jcomments/jcomments.php';
+if (file_exists($comments)) {
+     require_once($comments);
+}
+?>
+
+<script type="text/javascript" src="/paradigm/Puls/libraries/jquery-1.8.1.min.js"></script>
+<script type="text/javascript">
+            var $j = jQuery.noConflict();
+
+moreinfoDown= function(id) {
+//   alert(id);
+     thisid= '#moreinfo_'+id;
+     $j(thisid).parent('.browseProductContainer').parent().css('width','100%');
+     $j(thisid).slideDown();
+     //$j(thisid).prev().prev().text('Свернуть <<<');
+}
+moreinfoUp= function(id) {
+     thisid= '#moreinfo_'+id;
+     $j(thisid).parent('.browseProductContainer').parent().css('width','48%');
+     $j(thisid).slideUp();
+     //$j(thisid).prev().prev().text('Подробнее >>>');
+}
+moreinfoToggle= function(id, name) {
+     thisid= '#moreinfo_'+id; 
+     cur= $j(thisid).parent('.browseProductContainer').parent();
+     
+     if (cur.width() == 355) {
+          cur.css('width', '100%');
+          $j(thisid).prev().prev().text('Свернуть <<<');
+
+          getcomment(id, name);
+
+     } else {
+          cur.css('width', '48%');
+          $j(thisid).prev().prev().text('Подробнее >>>');
+     }
+    $j(thisid).slideToggle();
+}
+
+getcomment= function(id, name) {
+//          $j(thisid).append('<div id="js"></div>');
+//tu= '<?php echo $product_reviews ?>';
+
+   //var jcomments= new JComments(id, 'com_virtuemart','/paradigm/Puls/index.php?option=com_jcomments&amp;tmpl=component');
+   //jcomments.setList('comments-list');
+}
+
+$j(document).ready(function() {
+    $j('.addtocart_button').attr('title', 'Добавить в корзину')
+                           .attr('value', 'В корзину')
+                           .text('В корзину') 
+                           .css('background', 'url("/paradigm/Puls/components/com_virtuemart/themes/default/images/add-to-cart_blue.gif") no-repeat 50%')
+                           .css('color', 'white')
+                           .mouseenter( function() {
+                                $j(this).css('color', '#1D6DC7');
+                            })
+                            .mouseleave( function() {
+                                $j(this).css('color', 'white');
+                            });
+    $j('.browseProductContainer').parent().css('width','48%');
+    $j('.browseProductContainer td').css('background-color', 'transparent');
+    $j('.browseProductContainer th').css('background-color', 'transparent');
+    $j('.browseProductContainer tr').filter(":odd").css('background-color', 'white');
+    $j('.browseProductContainer tr').filter(":even").css('background-color', '#CCE0D6');
+    $j('.browseProductContainer table').css('border', '#009049 outset 2px');
+
+//    $j('#vmMainPage h3').first().addClass('componentheading');
+});
+</script>
+
+<?php
 if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' );
 /**
 * This is the Main Product Listing File!
@@ -16,6 +89,7 @@ if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.
 *
 * http://virtuemart.net
 */
+
 mm_showMyFileName( __FILE__ );
 
 // load important class files
@@ -294,7 +368,7 @@ else {
 		// If it is item get parent:
 		$product_parent_id = $db_browse->f("product_parent_id");
 		if ($product_parent_id != 0) {
-			$dbp->query("SELECT product_full_image,product_thumb_image,product_name,product_s_desc FROM #__{vm}_product WHERE product_id='$product_parent_id'" );
+			$dbp->query("SELECT product_full_image,product_thumb_image,product_name,product_s_desc,product_desc FROM #__{vm}_product WHERE product_id='$product_parent_id'" );
 			$dbp->next_record();
 		}
 
@@ -402,6 +476,7 @@ $products[$i]['product_description'] = $db_browse->f('product_description');
 			$product_name = $dbp->f("product_name"); // Use product_name from Parent Product
 		}
 		$product_s_desc = $db_browse->f("product_s_desc");
+                $product_desc = $db_browse->f("product_desc");
 		if( empty($product_s_desc) && $product_parent_id!=0 ) {
 			$product_s_desc = $dbp->f("product_s_desc"); // Use product_s_desc from Parent Product
 		}
@@ -446,6 +521,7 @@ $products[$i]['product_description'] = $db_browse->f('product_description');
 
 		$products[$i]['product_name'] = shopMakeHtmlSafe( $product_name );
 		$products[$i]['product_s_desc'] = $product_s_desc;
+		$products[$i]['product_desc'] = $product_desc;
 		$products[$i]['product_details'] = $product_details;
 		$products[$i]['product_rating'] = $product_rating;
 		$products[$i]['product_price'] = $product_price;
@@ -467,6 +543,11 @@ $products[$i]['product_description'] = $db_browse->f('product_description');
 		$products[$i]['product_url'] = $db_browse->f("product_url");
 
 	} // END OF while loop
+
+        /** Ask seller a question **/
+        $product_id = $db_browse->f('product_id');
+        $products[$i]['ask_seller_href'] = $sess->url( $_SERVER ['PHP_SELF'].'?page=shop.ask&amp;product_id='.$product_id );
+        $products[$i]['ask_seller_text'] = $VM_LANG->_('VM_PRODUCT_ENQUIRY_LBL');
 
 	// Need to re-order here, because the browse query doesn't fetch discounts
 	if( $orderby == 'product_price' ) {

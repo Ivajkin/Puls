@@ -1,3 +1,34 @@
+<script src = "/js/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+        var $j = jQuery.noConflict();
+
+	$j(document).ready(function () {
+		$j("#send").click(function(){
+                  	if(!$j("#contact_email").attr("value") || !$j("#contact_text").val()){
+                  		alert('Вы заполнили не все поля');
+                  		return;
+                  	}
+                        if(!$j("#contact_name").attr("value")){
+                  		$j("#contact_name").attr("value", "NoName");
+                  	}
+                        if(!$j("#contact_subject").attr("value")){
+                  		$j("#contact_subject").attr("value", "NoSubject");
+                  	}
+                  	
+			$j.post("/paradigm/Puls/components/com_contact/views/contact/tmpl/sendMail.php",{
+				name: $j("#contact_name").attr("value"),
+				mail: $j("#contact_email").attr("value"),
+				subject: $j("#contact_subject").attr("value"),
+				message: $j("#contact_text").val(),
+				email_copy: $j("#contact_email_copy").attr("checked")
+			     },
+                             function(data){
+                             	alert('Сообщение успешно отправлено!');
+                             });
+                  
+		});
+	});
+	</script>
 <?php
 /** $Id: default_form.php 11917 2009-05-29 19:37:05Z ian $ */
 defined( '_JEXEC' ) or die( 'Restricted access' );
@@ -29,7 +60,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <tr>
 	<td colspan="2">
 	<br /><br /><!--<?php echo JRoute::_( 'index.php' );?>-->
-	<form action="http://coreatrade.com/paradigm/Puls/index.php" method="post" name="emailForm" id="emailForm" class="form-validate">
+	<form action="http://coreatrade.com/paradigm/Puls/components/com_contact/views/contact/tmpl/sendMail.php" method="post" name="emailForm" id="emailForm" class="form-validate">
 		<div class="contact_email<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 			<label for="contact_name">
 				&nbsp;<?php echo JText::_( 'Ваше имя' );?>:
@@ -63,7 +94,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			<?php endif; ?>
 			<br />
 			<br />
-			<button class="button validate" type="submit"><?php echo JText::_('Отправить'); ?></button>
+			
 		</div>
 
 	<input type="hidden" name="option" value="com_contact" />
@@ -71,7 +102,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<input type="hidden" name="id" value="<?php echo $this->contact->id; ?>" />
 	<input type="hidden" name="task" value="submit" />
 	<?php echo JHTML::_( 'form.token' ); ?>
-	</form>
+	</form><button id = "send" class="button validate" type="submit"><?php echo JText::_('Отправить'); ?></button>
 	<br />
 	</td>
 </tr>

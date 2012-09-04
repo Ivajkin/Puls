@@ -94,8 +94,8 @@ define('VM_DOWNLOADABLE_PRODUCTS_KEEP_STOCKLEVEL', '');
 define('_SHOW_PRICES', '1');
 define('ORDER_MAIL_HTML', '1');
 define('HOMEPAGE', 'shop.index');
-define('CATEGORY_TEMPLATE', 'managed');
-define('FLYPAGE', 'flypage.tpl'); // ../browse/browse_3.php
+define('CATEGORY_TEMPLATE', 'browse_3');
+define('FLYPAGE', 'flypage.tpl');
 define('PRODUCTS_PER_ROW', '1');
 define('ERRORPAGE', 'shop.error');
 define('NO_IMAGE', 'noimage.gif');

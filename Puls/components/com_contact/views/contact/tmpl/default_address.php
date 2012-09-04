@@ -42,7 +42,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
         <tr>
           <td rowspan="6" valign="top" width=""
             <?php echo $this->contact->params->get( 'column_width' ); ?>" >
-            Адрес:
+            <b>Адрес:</b>
           </td>
         </tr>
         <?php endif; ?>
@@ -92,9 +92,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <?php if ( $this->contact->email_to && $this->contact->params->get( 'show_email' ) ) : ?>
         <tr>
-          <td width=""
-            <?php echo $this->contact->params->get( 'column_width' ); ?>" >
-            <?php echo $this->contact->params->get( 'marker_email' ); ?>
+          <td width="<?php echo $this->contact->params->get( 'column_width' ); ?>" >
+            <b><?php echo $this->contact->params->get( 'marker_email' ); ?></b>
           </td>
           <td>
             <?php echo $this->contact->email_to; ?>
@@ -105,7 +104,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
         <tr>
           <td width=""
             <?php echo $this->contact->params->get( 'column_width' ); ?>" >
-            Телефон:
+            <b>Телефон:</b>
           </td>
           <td>
             <?php echo nl2br($this->escape($this->contact->telephone)); ?>

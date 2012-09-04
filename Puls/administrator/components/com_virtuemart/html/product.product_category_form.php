@@ -43,7 +43,7 @@ elseif (empty($vars["error"])) {
 $tabs = new vmTabPanel(0, 1, "categoryform");
 $tabs->startPane("category-pane");
 $tabs->startTab( "<img src='". IMAGEURL ."ps_image/edit.png' align='absmiddle' width='16' height='16' border='0' /> ".$VM_LANG->_('PHPSHOP_CATEGORY_FORM_LBL'), "info-page");
-?> 
+?>
 <table class="adminform">
     <tr> 
       <td width="21%" nowrap><div align="right"><?php echo $VM_LANG->_('PHPSHOP_CATEGORY_FORM_PUBLISH') ?>:</div></td>

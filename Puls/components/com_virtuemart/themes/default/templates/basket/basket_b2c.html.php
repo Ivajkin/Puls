@@ -17,6 +17,11 @@ if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.
 * http://virtuemart.net
 */
 ?>
+<style type="text/css">
+h2 {
+   font-size: 2em;
+}
+</style>
 <table width="100%" cellspacing="2" cellpadding="4" border="0">
   <tr align="left" class="sectiontableheader">
         <th><?php echo $VM_LANG->_('PHPSHOP_CART_NAME') ?></th>
@@ -27,7 +32,7 @@ if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.
   </tr>
 <?php foreach( $product_rows as $product ) { ?>
   <tr valign="top" class="<?php echo $product['row_color'] ?>">
-	<td><?php echo $product['product_name'] . $product['product_attributes'] ?></td>
+	<td style="width: 40%; font-size: 1.2em" class="tm_addcart_name" ><?php echo $product['product_name'] . $product['product_attributes'] ?></td>
 	<td><?php echo $product['product_sku'] ?></td>
 	<td align="right"><?php echo $product['product_price'] ?></td>
 	<td><?php echo $product['update_form'] ?>

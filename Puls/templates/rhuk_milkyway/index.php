@@ -14,8 +14,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr" >
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <!--[if IE]>
 <link href="/baseurl?>/templates/template?>/css/ieonly.css" rel="stylesheet" type="text/css" />
 <![endif]-->
@@ -39,18 +40,29 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <div class="center" align="center">
 	<div id="wrapper">
 		<div id="wrapper_r">
-			<div id="header">
+                        <div id="tm_top_head" class="tm_hd_link tm_no_button" >
+                             <div id="login-form" style="padding-top: 1px;">
+                                   <jdoc:include type="modules" name="login-form" />
+                             </div>
+                        </div>
+			<div id="header" style="height: 310px">
 				<div id="header_l">
 					<div id="header_r">
 						<div id="logo" slyle="height: 800px"></div>
-						<div style="width: 200px; position: absolute; left: 850px;" id="login-form"><jdoc:include type="modules" name="login-form" /></div>
-						<div style="width: 500px; height: 80px; position: absolute; left: 310px; top: 70px; font-size: large" id="menu&search">
-							<div style="width: 370px; position: absolute; margin-top: 32px;">
+                                                <div id="tm_head_contact">
+                                                      <p>г.Хабаровск, ул. Хабаровская, д. 25</p>
+                                                      <p>тел.: (4212) 72-87-87, 72-87-88</p>
+                                                </div>
+                                                <div style="clear: both"></div>
+						<div style="font-size: large" id="menu&search">
+							<div>
 								<jdoc:include type="modules" name="main_menu" />
+                                                                <div style="clear: both"></div>
+                                                                <div style="position: absolute; bottom: -40px; width: 70%; left: 300px;">
+                                                                   <jdoc:include type="modules" name="search-form" />
+                                                                </div>
 							</div>
-							<div style="width: 100px; position: absolute; left: 380px; margin-top: 34px;">
-								<jdoc:include type="modules" name="search-form" />
-							</div>
+
 						</div>
 					</div>
 				</div>
@@ -99,14 +111,14 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 					<div id="area">
 									<jdoc:include type="message" />
 
-						<div id="leftcolumn" style="margin-right: 10px;">
+						<div id="leftcolumn">
 						<?php if($this->countModules('left')) : ?>
 							<jdoc:include type="modules" name="left" style="rounded" />
 						<?php endif; ?>
 						</div>
 
 						<?php if($this->countModules('left')) : ?>
-						<div id="maincolumn">
+						<div style="float: left; width: 5%; visibility: hidden">.</div><div id="maincolumn">
 						<?php else: ?>
 						<div id="maincolumn_full">
 						<?php endif; ?>
@@ -162,7 +174,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 			<div id="footerspacer"><br /></div>
 		</div>
-		<div id="footer">
+		<div id="footer" style="background: url('/paradigm/Puls/templates/rhuk_milkyway/css/img/bg_footer.png') repeat-x left top;">
 			<div id="footer_l">
 				<div id="footer_r">
 					<p id="syndicate">

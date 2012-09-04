@@ -5,7 +5,6 @@ if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.
 *
 * @package VirtueMart
 * @subpackage themes
-* @copyright Copyright (C) 2008 soeren - All rights reserved.
 * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
 * VirtueMart is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -23,6 +22,7 @@ showVendorLink=0
 showManufacturerLink=0
 showAvailability=1
 showPathway=0
+product_navigation=1
 useLightBoxImages=1
 useGreyBoxOnCheckout=0
 useAjaxCartActions=1
