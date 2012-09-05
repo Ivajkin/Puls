@@ -21,7 +21,7 @@ body {
 }
 
 * ul {
-        list-style-image:url('/paradigm/Puls/templates/rhuk_milkyway/css/img/list.png');
+        list-style-image:url('../images/list.png');
 }
 a:link, a:visited {
 	text-decoration: none;
@@ -89,7 +89,7 @@ div#logo {
 	float: left;
 	width: 294px;
 	height: 166px;
-	background: url(/paradigm/Puls/templates/rhuk_milkyway/css/img/logo.png) 0 0 no-repeat;
+	background: url(../images/logo.png) 0 0 no-repeat;
 	background-position: center;
 	margin-left: 0px;
 	margin-top: 0px;
@@ -368,7 +368,7 @@ h1 {
 .componentheading:before {
 content: ".........";
 color: transparent;
-background: url('/paradigm/Puls/templates/rhuk_milkyway/css/img/title_deco.png') no-repeat 50%;
+background: url('../images/title_deco.png') no-repeat 50%;
 } 
 .contentheading {
 	padding: 0;
@@ -544,7 +544,7 @@ div.tm_menutop {
 }
 #tm_top_head {
     font-size: 1.7em;
-    background: url('/paradigm/Puls/templates/rhuk_milkyway/css/img/bg_header.png') repeat-x left top;
+    background: url('../images/bg_header.png') repeat-x left top;
     height: 38px;
     color: #727271;
 }

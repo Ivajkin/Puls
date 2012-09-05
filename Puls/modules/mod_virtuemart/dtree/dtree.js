@@ -44,7 +44,7 @@ function dTree(objName,url) {
 		root				: url+"/dtree/img/base.gif",
 		folder			: url+"/dtree/img/folder.gif",
 		folderOpen	: url+"/dtree/img/folderopen.gif",
-		node				: url+"/dtree/img/page.gif",
+		node				: url+"/dtree/img/menu.png",
 		empty				: url+"/dtree/img/empty.gif",
 		line				: url+"/dtree/img/line.gif",
 		join				: url+"/dtree/img/join.gif",

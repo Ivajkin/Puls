@@ -59,8 +59,8 @@ var TREE_TPL = {
 	'icon_24' : '<?php echo $icon_path ?>/folderopen.gif', // node icon opened
 	'icon_28' : '<?php echo $icon_path ?>/folderopen.gif', // node icon selected opened
 
-	'icon_0'  : '<?php echo $icon_path ?>/page.gif', // leaf icon normal
-	'icon_4'  : '<?php echo $icon_path ?>/page.gif', // leaf icon selected
+	'icon_0'  : '<?php echo $icon_path ?>/menu.png', // leaf icon normal
+	'icon_4'  : '<?php echo $icon_path ?>/menu_select.png', // leaf icon selected
 	
 	'icon_2'  : '<?php echo $icon_path ?>/joinbottom.gif', // junction for leaf
 	'icon_3'  : '<?php echo $icon_path ?>/join.gif',       // junction for last leaf

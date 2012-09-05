@@ -174,7 +174,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 			<div id="footerspacer"><br /></div>
 		</div>
-		<div id="footer" style="background: url('/paradigm/Puls/templates/rhuk_milkyway/css/img/bg_footer.png') repeat-x left top;">
+		<div id="footer" style="background: url('images/bg_footer.png') repeat-x left top;">
 			<div id="footer_l">
 				<div id="footer_r">
 					<p id="syndicate">

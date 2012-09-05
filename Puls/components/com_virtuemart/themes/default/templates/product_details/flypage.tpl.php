@@ -9,7 +9,7 @@ mm_showMyFileName(__FILE__);
 
 $j(document).ready(function() {
     $j('div.vmCartContainer input[type="submit"]').attr('value', 'В корзину')
-                           .css('background', 'url("/paradigm/Puls/components/com_virtuemart/themes/default/images/add-to-cart_blue.gif") no-repeat 50%')
+                           .css('background', 'url("../../../images/add-to-cart_green.gif") no-repeat 50%')
                            .css('color', 'white')
                            .css('border', '0')
                            .css('width', '150px')

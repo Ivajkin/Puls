@@ -139,7 +139,7 @@ function mosGetMenuLink($mitem, $level = 0, & $params, $open = null)
 		default : // formerly case 2
 			// open in parent window
 			$txt = '<div class="tm_menutop">' .
-                         '<img src="/paradigm/Puls/templates/rhuk_milkyway/css/img/circle_'.$tm_img_ind.'.png" alt="Восток Базис Мед" />' .
+                         '<img src="images/circle_'.$tm_img_ind.'.png" alt="Восток Базис Мед" />' .
                          '<a href="' . $mitem->url . '" class="' . $menuclass . '" ' . $id . '>' . $mitem->name . '</a></div>';
                         if ($tm_img_ind == 3) $tm_img_ind= 0;
                         $tm_img_ind++;

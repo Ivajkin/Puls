@@ -52,7 +52,7 @@ $j(document).ready(function() {
     $j('.addtocart_button').attr('title', 'Добавить в корзину')
                            .attr('value', 'В корзину')
                            .text('В корзину') 
-                           .css('background', 'url("/paradigm/Puls/components/com_virtuemart/themes/default/images/add-to-cart_blue.gif") no-repeat 50%')
+                           .css('background', 'url("../../add-to-cart_green.gif") no-repeat 50%')
                            .css('color', 'white')
                            .mouseenter( function() {
                                 $j(this).css('color', '#1D6DC7');
