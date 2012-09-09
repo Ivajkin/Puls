@@ -1,4 +1,4 @@
-<script src = "/js/jquery-1.7.2.js"></script>
+<script src = "/libraries/jquery-1.8.1.min.js"></script>
 	<script type="text/javascript">
         var $j = jQuery.noConflict();
 
@@ -15,7 +15,7 @@
                   		$j("#contact_subject").attr("value", "NoSubject");
                   	}
                   	
-			$j.post("/paradigm/Puls/components/com_contact/views/contact/tmpl/sendMail.php",{
+			$j.post("/components/com_contact/views/contact/tmpl/sendMail.php",{
 				name: $j("#contact_name").attr("value"),
 				mail: $j("#contact_email").attr("value"),
 				subject: $j("#contact_subject").attr("value"),
@@ -32,6 +32,9 @@
 <?php
 /** $Id: default_form.php 11917 2009-05-29 19:37:05Z ian $ */
 defined( '_JEXEC' ) or die( 'Restricted access' );
+
+        $fullpath= dirname(__FILE__);
+        $dirpath= explode("bazisvostokmed.ru", $fullpath);
 
 	$script = '<!--
 		function validateForm( frm ) {
@@ -60,7 +63,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <tr>
 	<td colspan="2">
 	<br /><br /><!--<?php echo JRoute::_( 'index.php' );?>-->
-	<form action="http://coreatrade.com/paradigm/Puls/components/com_contact/views/contact/tmpl/sendMail.php" method="post" name="emailForm" id="emailForm" class="form-validate">
+	<form action="<?php echo $dirpath[1] ?>/sendMail.php" method="post" name="emailForm" id="emailForm" class="form-validate">
 		<div class="contact_email<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 			<label for="contact_name">
 				&nbsp;<?php echo JText::_( 'Ваше имя' );?>:

@@ -24,8 +24,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
              ["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"])
         );
         // создает метку в заданной геоточке
-        var placemark  = new ymaps.Placemark(new ymaps.GeoPoint(135.10086478012192, 48.49599184745651));
-        placemark.setIconContent("Название  точки");
+        //var placemark  = new ymaps.Placemark(new ymaps.GeoPoint(135.10086478012192, 48.49599184745651));
+        //placemark.setIconContent("Название  точки");
         // устанавливает содержимое балуна
         //placemark.name =  "Заголовок балуна";
         //placemark.description  = "Описание балуна";
