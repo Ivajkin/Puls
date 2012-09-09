@@ -1,15 +1,17 @@
 <?php if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' );
 mm_showMyFileName(__FILE__);
- //Загрузка картинки
+
+        $fullpath= dirname(__FILE__);
+        $dirpath= explode("bazisvostokmed.ru", $fullpath);
  ?>
 
-<script type="text/javascript" src="/paradigm/Puls/libraries/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/libraries/jquery-1.8.1.min.js"></script>
 <script type="text/javascript">
             var $j = jQuery.noConflict();
 
 $j(document).ready(function() {
     $j('div.vmCartContainer input[type="submit"]').attr('value', 'В корзину')
-                           .css('background', 'url("../../../images/add-to-cart_green.gif") no-repeat 50%')
+                           .css('background', 'url("<?php echo $dirpath[1] ?>/../../images/add-to-cart_green.gif") no-repeat 50%')
                            .css('color', 'white')
                            .css('border', '0')
                            .css('width', '150px')

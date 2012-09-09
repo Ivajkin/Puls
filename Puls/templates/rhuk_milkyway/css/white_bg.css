@@ -24,7 +24,7 @@ div#header_r {
 }*/
 
 div#footer {
-	background: #f7f7f7 0 100% repeat-x; /*url(../images/blue/mw_footer_b.pngg)*/
+	background: #f7f7f7 url('../images/bg_footer.png') 0 100% repeat-x; /*url(../images/blue/mw_footer_b.pngg)*/
 }
 
 /*div#footer_l {

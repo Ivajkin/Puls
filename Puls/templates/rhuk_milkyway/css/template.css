@@ -526,6 +526,10 @@ div.tm_menutop {
      color:#009049;
      font-weight: 500;
 }
+.tm_search_bk {
+     width: 100%; 
+     background: url('../images/find-border-r.png') no-repeat scroll 96% 50% transparent;
+}
 #tm_head_contact {
     float: right;
     width: 400px;

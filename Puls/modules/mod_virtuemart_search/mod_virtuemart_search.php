@@ -25,12 +25,15 @@ if( file_exists(dirname(__FILE__).'/../../components/com_virtuemart/virtuemart_p
 
 global $VM_LANG, $mm_action_url, $sess;
 
+
+        $fullpath= dirname(__FILE__);
+        $dirpath= explode("bazisvostokmed.ru", $fullpath);
 ?>
 <!--BEGIN Search Box --> 
 <form action="<?php $sess->purl( $mm_action_url."index.php?page=shop.browse" ) ?>" method="post">
 
 	<!--<p><label for="keyword"><?php echo $VM_LANG->_('PHPSHOP_SEARCH_LBL') ?></label></p>-->
-	<div style="width: 100%; background: url('images/find-border-r.png') no-repeat scroll 96% 50% transparent;">
+	<div class="tm_search_bk">
 		<span class="contentheading">Поиск:&nbsp;</span>
              <input name="keyword" type="text" class="inputbox tm_search" id="keyword" />
 		<!--<input class="button" type="submit" name="Search" value="<?php echo $VM_LANG->_('PHPSHOP_SEARCH_TITLE') ?>" />-->

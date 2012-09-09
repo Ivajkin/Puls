@@ -118,6 +118,8 @@ function mosGetMenuLink($mitem, $level = 0, & $params, $open = null)
 	// remove slashes from excaped characters
 	$mitem->name = stripslashes(htmlspecialchars($mitem->name));
         static $tm_img_ind= 1;
+        $fullpath= dirname(__FILE__);
+        $dirpath= explode("bazisvostokmed.ru", $fullpath);
 	switch ($mitem->browserNav)
 	{
 		// cases are slightly different
@@ -139,7 +141,7 @@ function mosGetMenuLink($mitem, $level = 0, & $params, $open = null)
 		default : // formerly case 2
 			// open in parent window
 			$txt = '<div class="tm_menutop">' .
-                         '<img src="images/circle_'.$tm_img_ind.'.png" alt="Восток Базис Мед" />' .
+                         '<img src="'.$dirpath[1].'/images/circle_'.$tm_img_ind.'.png" alt="Восток Базис Мед" />' .
                          '<a href="' . $mitem->url . '" class="' . $menuclass . '" ' . $id . '>' . $mitem->name . '</a></div>';
                         if ($tm_img_ind == 3) $tm_img_ind= 0;
                         $tm_img_ind++;

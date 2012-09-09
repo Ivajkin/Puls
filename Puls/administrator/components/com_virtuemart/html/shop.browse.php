@@ -4,9 +4,12 @@ $comments = $mosConfig_absolute_path . '/components/com_jcomments/jcomments.php'
 if (file_exists($comments)) {
      require_once($comments);
 }
+
+        $fullpath= dirname(__FILE__);
+        $dirpath= explode("bazisvostokmed.ru", $fullpath);
 ?>
 
-<script type="text/javascript" src="/paradigm/Puls/libraries/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/libraries/jquery-1.8.1.min.js"></script>
 <script type="text/javascript">
             var $j = jQuery.noConflict();
 
@@ -52,7 +55,7 @@ $j(document).ready(function() {
     $j('.addtocart_button').attr('title', 'Добавить в корзину')
                            .attr('value', 'В корзину')
                            .text('В корзину') 
-                           .css('background', 'url("../../add-to-cart_green.gif") no-repeat 50%')
+                           .css('background', 'url("/components/com_virtuemart/themes/default/images//add-to-cart_green.gif") no-repeat 50%')
                            .css('color', 'white')
                            .mouseenter( function() {
                                 $j(this).css('color', '#1D6DC7');

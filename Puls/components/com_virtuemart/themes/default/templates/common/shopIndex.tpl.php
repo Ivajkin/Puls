@@ -1,6 +1,6 @@
 <?php if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' ); ?>
 
-<script type="text/javascript" src="/paradigm/Puls/libraries/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/libraries/jquery-1.8.1.min.js"></script>
 <script type="text/javascript">
             var $j = jQuery.noConflict();
 

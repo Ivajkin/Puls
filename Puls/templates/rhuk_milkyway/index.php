@@ -174,7 +174,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 			<div id="footerspacer"><br /></div>
 		</div>
-		<div id="footer" style="background: url('images/bg_footer.png') repeat-x left top;">
+		<div id="footer">
 			<div id="footer_l">
 				<div id="footer_r">
 					<p id="syndicate">
