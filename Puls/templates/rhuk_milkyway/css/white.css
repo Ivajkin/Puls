@@ -15,6 +15,7 @@
 }
 .tm_addcart_name a:link, .tm_addcart_name a:visited {
        text-shadow: none; 
+       font-size: 1.2em;
 }
 #footer_r a:link, #footer_r a:visited  {
 	color: white;

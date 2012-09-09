@@ -181,7 +181,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 						<jdoc:include type="modules" name="syndicate" />
 					</p>
 					<p id="power_by">
-<b> Данное оборудование Вы можете приобрести по адресу ул. Хабаровская, д. 25 г.Хабаровск Хабаровский Край. </b><a href="http://coreatrade.com/paradigm/Puls/index.php?option=com_contact&view=contact&id=1&Itemid=3">Найти на карте</a>.<br /><br />
+<b> Данное оборудование Вы можете приобрести по адресу ул. Хабаровская, д. 25 г.Хабаровск Хабаровский Край. </b><a href="/index.php?option=com_contact&view=contact&id=1&Itemid=3">Найти на карте</a>.<br /><br />
 <a href="http://technomedia.copiny.com/">ООО "Техно Медиа"</a> Разработка сайтов и программного обеспечения.
 					</p>
 				</div>

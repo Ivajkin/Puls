@@ -1,3 +1,4 @@
 [09-Sep-2012 02:47:58 UTC] PHP Parse error:  syntax error, unexpected '[' in /home2/core5429/public_html/bazisvostokmed.ru/modules/mod_mainmenu/legacy.php on line 122
 [09-Sep-2012 02:49:05 UTC] PHP Parse error:  syntax error, unexpected '[' in /home2/core5429/public_html/bazisvostokmed.ru/modules/mod_mainmenu/legacy.php on line 122
 [09-Sep-2012 02:49:12 UTC] PHP Parse error:  syntax error, unexpected '[' in /home2/core5429/public_html/bazisvostokmed.ru/modules/mod_mainmenu/legacy.php on line 122
+[09-Sep-2012 04:13:14 UTC] PHP Parse error:  syntax error, unexpected T_ECHO in /home2/core5429/public_html/bazisvostokmed.ru/modules/mod_virtuemart/vm_dtree.php on line 76

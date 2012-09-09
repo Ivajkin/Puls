@@ -15,8 +15,8 @@ class JConfig {
 	var $gzip = '0';
 	var $error_reporting = '-1';
 	var $xmlrpc_server = '0';
-	var $log_path = '/home2/core5429/public_html/paradigm/Puls/logs';
-	var $tmp_path = '/home2/core5429/public_html/paradigm/Puls/tmp';
+	var $log_path = '/home2/core5429/public_html/bazisvostokmed.ru/logs';
+	var $tmp_path = '/home2/core5429/public_html/bazisvostokmed.ru/tmp';
 	var $live_site = '';
 	var $force_ssl = '0';
 	var $offset = '0';

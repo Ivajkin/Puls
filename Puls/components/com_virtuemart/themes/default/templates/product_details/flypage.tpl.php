@@ -43,8 +43,8 @@ $j(document).ready(function() {
             </p>
             <p><?php echo $ask_seller ?></p>
 	<!--<?php echo urldecode( $product_image ) ?>-->
-            <a href="http://coreatrade.com/paradigm/Puls/components/com_virtuemart/shop_image/product/<?php echo $product_full_image ?>" title="Unsigned" rel="lightbox[product22]">
-                <img src="http://coreatrade.com/paradigm/Puls/components/com_virtuemart/shop_image/product/<?php echo $product_full_image ?>" style="width: 180px; height:150px;">
+            <a href="/components/com_virtuemart/shop_image/product/<?php echo $product_full_image ?>" title="Unsigned" rel="lightbox[product22]">
+                <img src="/components/com_virtuemart/shop_image/product/<?php echo $product_full_image ?>" style="width: 180px; height:150px;">
             </a>
             <br />	
             <?php echo $this->vmlistAdditionalImages( $product_id, $images ) ?>

@@ -19,6 +19,9 @@ if( vmIsJoomla('1.5')) {
 } else {
 	$js_src = $mosConfig_live_site.'/modules';
 }
+ /*       $fullpath= dirname(__FILE__);
+        $dirpath= explode("bazisvostokmed.ru", $fullpath);
+$js_src = $dirpath[1];*/
 
 $Itemid = vmRequest::getInt( 'Itemid' );
 if( @get_class( $db ) != 'ps_DB' ) $db = new ps_DB();
@@ -72,7 +75,6 @@ $ps_product_category = new ps_product_category();
 	// create a unique tree identifier, in case multiple dtrees are used 
 	// (max one per module)
 	$tree = "d".uniqid( "tree_" );
-	
 	
 	// start creating the content
 	// create left aligned table, load the CSS stylesheet and dTree code

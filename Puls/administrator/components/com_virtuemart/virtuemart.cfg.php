@@ -31,8 +31,8 @@ else {
 $app = '/';
 }
 // these path and url definitions here are based on the Joomla! Configuration
-define( 'URL', 'http://coreatrade.com/paradigm/Puls/' );
-define( 'SECUREURL', 'http://coreatrade.com/paradigm/Puls/' );
+define( 'URL', 'http://bazisvostokmed.ru/' ); //coreatrade.com/paradigm/Puls/
+define( 'SECUREURL', 'http://bazisvostokmed.ru/' );
 
 if ( (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == '443' ) {
 define( 'IMAGEURL', SECUREURL .'components/com_virtuemart/shop_image/' );
