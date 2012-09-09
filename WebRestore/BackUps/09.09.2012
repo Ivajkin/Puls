@@ -1,0 +1,2646 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" id="vbulletin_html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="http://www.qtcentre.org" />
+<base href="http://www.qtcentre.org/" /><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vBulletin 4.1.9" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qtcentre_search.xml" title="QtCentre" />
+
+	<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=419"></script>
+	<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=419"></script>
+
+<script type="text/javascript">
+<!--
+	var SESSIONURL = "s=ba6af7975269dcedf8a10fff230787ca&";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "419";
+	var BBURL = "http://www.qtcentre.org";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "showthread";
+	var RELPATH = "threads/10661-QByteArray-to-QString";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "http://www.qtcentre.org/";
+// -->
+</script>
+<script type="text/javascript" src="http://www.qtcentre.org/clientscript/vbulletin-core.js?v=419"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="Qt Centre Forum RSS Feed" href="http://www.qtcentre.org/external.php?type=RSS2" />
+	
+		<link rel="alternate" type="application/rss+xml" title="Qt Centre Forum - Newbie - RSS Feed" href="http://www.qtcentre.org/external.php?type=RSS2&amp;forumids=4" />
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/main-rollup.css?d=1343225391" />
+        
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/popupmenu-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/vbulletin-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/vbulletin-chrome-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/vbulletin-formcontrols-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/editor-ie.css?d=1343225391" />
+	<![endif]-->
+
+
+<script type="text/javascript" src="clientscript/post_thanks.js"></script>
+
+<style type="text/css">
+.postbitlegacy .postfoot .textcontrols a.post_thanks_button, .postbit .postfoot .textcontrols a.post_thanks_button  {
+	background: url(images/buttons/post_thanks.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.post_thanks_button:hover, .postbit .postfoot .textcontrols a.post_thanks_button:hover  {
+	background: url(images/buttons/post_thanks-hover.png) no-repeat transparent left;
+</style>
+ 
+	<meta name="keywords" content="qbytearray,qstring,convert" />
+	<meta name="description" content="hi 
+ how to convert QByteArray to QString" />
+
+	<title> QByteArray to QString</title>
+	<link rel="canonical" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+		<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/showthread-rollup.css?d=1343225391" />
+	
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/toolsmenu-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/postlist-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/showthread-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/postbit-ie.css?d=1343225391" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/poll-ie.css?d=1343225391" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00004l/additional.css?d=1343225391" />
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12318426-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+</script>
+</head>
+
+<body>
+
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<a href="/biteme/"></a>
+<div id="header" class="floatcontainer doc_header">
+	<div><a name="top" href="forum.php?s=ba6af7975269dcedf8a10fff230787ca" class="logo-image"><img src="images/qtcentre/QtCentre.png" alt="Qt Centre Forum" /></a></div>
+	<div id="toplinks" class="toplinks">
+		
+			<ul class="nouser">
+			
+				<li><a href="register.php?s=ba6af7975269dcedf8a10fff230787ca" rel="nofollow">Register</a></li>
+			
+				<li><a rel="help" href="faq.php?s=ba6af7975269dcedf8a10fff230787ca">Help</a></li>
+				<li>
+			<script type="text/javascript" src="clientscript/vbulletin_md5.js?v=419"></script>
+			<form id="navbar_loginform" action="login.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+				<fieldset id="logindetails" class="logindetails">
+					<div>
+						<div>
+					<input type="text" class="textbox default-value" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" />
+					<input type="password" class="textbox" tabindex="102" name="vb_login_password" id="navbar_password" size="10" />
+					<input type="text" class="textbox default-value" tabindex="102" name="vb_login_password_hint" id="navbar_password_hint" size="10" value="Password" style="display:none;" />
+					<input type="submit" class="loginbutton" tabindex="104" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" />
+						</div>
+					</div>
+				</fieldset>
+				<div id="remember" class="remember">
+					<label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" id="cb_cookieuser_navbar" class="cb_cookieuser_navbar" accesskey="c" tabindex="103" /> Remember Me?</label>
+				</div>
+
+				<input type="hidden" name="s" value="ba6af7975269dcedf8a10fff230787ca" />
+				<input type="hidden" name="securitytoken" value="guest" />
+				<input type="hidden" name="do" value="login" />
+				<input type="hidden" name="vb_login_md5password" />
+				<input type="hidden" name="vb_login_md5password_utf" />
+			</form>
+			<script type="text/javascript">
+			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+			vB_XHTML_Ready.subscribe(function()
+			{
+			//
+				YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+				YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+				YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+				YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+			});
+			
+			function navbar_username_focus(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == 'User Name')
+				{
+				//
+					textbox.value='';
+					textbox.style.color='#303030';
+				}
+			}
+
+			function navbar_username_blur(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == '')
+				{
+				//
+					textbox.value='User Name';
+					textbox.style.color='#828282';
+				}
+			}
+			
+			function navbar_password_hint(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+				YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+				YAHOO.util.Dom.get('navbar_password').focus();
+			}
+
+			function navbar_password(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				if (textbox.value == '')
+				{
+					YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+					YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+				}
+			}
+			</script>
+				</li>
+				
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		 
+		 
+	</div>
+	<hr />
+</div>
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+	<li>
+	
+		<a class="navtab" href="content.php?s=ba6af7975269dcedf8a10fff230787ca">Home</a>
+	
+	</li>
+
+		
+			<li class="selected"><a class="navtab" href="forum.php?s=ba6af7975269dcedf8a10fff230787ca">Forum</a>
+				<ul class="floatcontainer">
+					
+					
+						
+						<li><a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=getdaily&amp;contenttype=vBForum_Post">Today's Posts</a></li>
+						
+					
+					
+					
+					
+					<li><a rel="help" href="faq.php?s=ba6af7975269dcedf8a10fff230787ca" accesskey="5">FAQ</a></li>
+					
+					
+						<li><a href="calendar.php?s=ba6af7975269dcedf8a10fff230787ca">Calendar</a></li>
+					
+					
+					
+					
+					
+					<li class="popupmenu">
+						<a href="javascript://" class="popupctrl">Forum Actions</a>
+						<ul class="popupbody popuphover">
+							<li>
+								<a href="forumdisplay.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=markread&amp;markreadhash=guest">Mark Forums Read</a>
+							</li>
+                                                        
+						</ul>
+					</li>
+					
+					<li class="popupmenu">
+						<a href="javascript://" class="popupctrl" accesskey="3">Quick Links</a>
+						<ul class="popupbody popuphover">
+							
+							
+							<li><a href="showgroups.php?s=ba6af7975269dcedf8a10fff230787ca" rel="nofollow">
+								
+									View Site Leaders
+								
+							</a></li>
+							
+							
+							
+							
+							
+							
+						</ul>
+					</li>
+					
+				</ul>
+
+			</li>
+		
+		
+
+
+	
+		<li>
+			<a class="navtab" href="/wiki">Wiki</a>
+		</li>
+	
+
+
+		 
+	<li><a class="navtab" href="doc.php?s=ba6af7975269dcedf8a10fff230787ca">Docs</a></li>
+
+
+ <li><a class="navtab" href="content.php?2?s=ba6af7975269dcedf8a10fff230787ca">Contest</a></li>
+
+
+	<li><a class="navtab" href="faq?s=ba6af7975269dcedf8a10fff230787ca">FAQ</a></li>
+ 
+	<li><a class="navtab" href="blog.php?s=ba6af7975269dcedf8a10fff230787ca">Blogs</a></li>
+
+
+<li><a class="navtab" href="local_links.php?s=ba6af7975269dcedf8a10fff230787ca">Links</a></li>
+
+
+		
+			<li><a class="navtab" href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=getdaily&amp;contenttype=vBForum_Post" accesskey="2">What's New?</a></li>
+		
+		
+	</ul>
+
+	
+	<div id="globalsearch" class="globalsearch">
+		<form action="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=process" method="post" id="navbar_search" class="navbar_search">
+			
+			<input type="hidden" name="securitytoken" value="guest" />
+			<input type="hidden" name="do" value="process" />
+			<span class="textboxcontainer"><span><input type="text" value="" name="query" class="textbox" tabindex="99"/></span></span>
+			<span class="buttoncontainer"><span><input type="image" class="searchbutton" src="images/buttons/search.png" name="submit" onclick="document.getElementById('navbar_search').submit;" tabindex="100"/></span></span>
+		</form>
+		<ul class="navbar_advanced_search">
+			<li><a href="search.php?s=ba6af7975269dcedf8a10fff230787ca" accesskey="4">Advanced Search</a></li>
+		</ul>
+	</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="index.php?s=ba6af7975269dcedf8a10fff230787ca" accesskey="1"><img src="images/misc/navbit-home.png" alt="Home" /></a></li>
+		
+	<li class="navbit"><a href="forum.php?s=ba6af7975269dcedf8a10fff230787ca">Forum</a></li>
+
+	<li class="navbit"><a href="forums/1-Qt?s=ba6af7975269dcedf8a10fff230787ca">Qt</a></li>
+
+	<li class="navbit"><a href="forums/4-Newbie?s=ba6af7975269dcedf8a10fff230787ca">Newbie</a></li>
+
+		
+	<li class="navbit lastnavbit"><span> QByteArray to QString</span></li>
+
+	</ul>
+	<hr />
+</div>
+
+ 
+ 
+
+
+	<form action="profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input type="hidden" name="do" value="dismissnotice" />
+		<input type="hidden" name="s" value="s=ba6af7975269dcedf8a10fff230787ca&amp;" />
+		<input type="hidden" name="securitytoken" value="guest" />
+		<input type="hidden" id="dismiss_notice_hidden" name="dismiss_noticeid" value="" />
+		<input type="hidden" name="url" value="" />
+		<ol>
+			<li class="restore" id="navbar_notice_6">
+	
+	If this is your first visit, be sure to
+		check out the <a href="faq.php?s=ba6af7975269dcedf8a10fff230787ca&amp;" target="_blank"><b>FAQ</b></a> by clicking the
+		link above. You may have to <a href="register.php?s=ba6af7975269dcedf8a10fff230787ca&amp;" target="_blank"><b>register</b></a>
+		before you can post: click the register link above to proceed. To start viewing messages,
+		select the forum that you want to visit from the selection below.
+</li><li class="restore" id="navbar_notice_1">
+	
+	<p>Welcome to <strong>Qt Centre</strong>.</p>
+
+<p><a href="http://www.qtcentre.org">Qt Centre</a> is a community site devoted to programming in C++ using the <a href="http://qt.nokia.com/products/qt/index.html">Qt framework</a> developed by Nokia. Over 90 percent of questions asked here gets answered. If you are looking for information about Qt related issue &mdash; <strong><a href="register.php">register</a></strong> and post your question.</p>
+
+<p>You are currently viewing our boards as a guest which gives you limited access to view most discussions and access our other features. By joining our <strong>free</strong> community you will have access to post topics, communicate privately with other members (PM), respond to polls, upload content and access many other special features. Registration is fast, simple and absolutely free so please, <a href="http://www.qtcentre.org/register.php"><strong>join our community today</strong></a>! <br /><br />If you have any problems with the registration process or your account login, please <a href="http://www.qtcentre.org/sendmessage.php">contact us</a>.</p>
+</li>
+		</ol>
+	</form>
+
+
+
+
+	<div id="above_postlist" class="above_postlist">
+		
+			<a href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56408&amp;noquote=1" class="newcontent_textcontrol" id="newreplylink_top"><span>+</span> Reply to Thread</a>
+			<img style="display:none" id="progress_newreplylink_top" src="images/misc/progress.gif" alt="" />
+		
+		<div id="pagination_top" class="pagination_top">
+		
+			<div id="postpagestats_above" class="postpagestats">
+				Results 1 to 8 of 8
+			</div>
+		</div>
+	</div>
+	<div id="pagetitle" class="pagetitle">
+		<h1>
+			Thread: <span class="threadtitle"><a href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca" title="Reload this Page">QByteArray to QString</a></span>
+		</h1>
+		
+	</div>
+	<div id="thread_controls" class="thread_controls toolsmenu">
+		<div>
+		<ul id="postlist_popups" class="postlist_popups popupgroup">
+			
+			
+			<li class="popupmenu" id="threadtools">
+				<h6><a class="popupctrl" href="javascript://">Thread Tools</a></h6>
+				<ul class="popupbody popuphover">
+					<li><a href="printthread.php?s=ba6af7975269dcedf8a10fff230787ca&amp;t=10661&amp;pp=20&amp;page=1" accesskey="3" rel="nofollow">Show Printable Version</a></li>
+					
+					<li>
+						
+							<a href="subscription.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=addsubscription&amp;t=10661" rel="nofollow">Subscribe to this Thread&hellip;</a>
+						
+					</li>
+					
+				</ul>
+			</li>
+
+			
+
+			
+				<li class="popupmenu searchthread menusearch" id="searchthread">
+					<h6><a class="popupctrl" href="javascript://">Search Thread</a></h6>
+					<form action="search.php" method="post">
+						<ul class="popupbody popuphover">
+							<li>
+								<input type="text" name="query" class="searchbox" value="Search..." tabindex="13" />
+								<input type="submit" class="button" value="Search" tabindex="14" />
+							</li>
+							<li class="formsubmit">
+								<div class="submitoptions">&nbsp;</div>
+								<div class="advancedsearchlink"><a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;search_type=1&amp;searchthreadid=10661&amp;contenttype=vBForum_Post">Advanced Search</a></div>
+							</li>
+						</ul>
+						<input type="hidden" name="s" value="ba6af7975269dcedf8a10fff230787ca" />
+						<input type="hidden" name="securitytoken" value="guest" />
+						<input type="hidden" name="do" value="process" />
+						<input type="hidden" name="searchthreadid" value="10661" />
+						<input type="hidden" name="search_type" value="1" />
+						<input type="hidden" name="contenttype" value="vBForum_Post" />
+					</form>
+				</li>
+			
+
+			
+
+			
+				<li class="popupmenu" id="displaymodes">
+					<h6><a class="popupctrl" href="javascript://">Display</a></h6>
+					<ul class="popupbody popuphover">
+						<li><label>Linear Mode</label></li>
+						<li><a href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;mode=hybrid"> Switch to Hybrid Mode</a></li>
+						<li><a href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56400&amp;mode=threaded#post56400"> Switch to Threaded Mode</a></li>
+					</ul>
+				</li>
+			
+
+			
+			</ul>
+		</div>
+	</div>
+
+<div id="postlist" class="postlist restrain">
+	
+
+	
+		<ol id="posts" class="posts" start="1">
+			
+<li class="postbit postbitim postcontainer old" id="post_56400">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">12:14</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56400" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56400#post56400" class="postcounter">#1</a><a id="postcount56400" name="1"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca" title="babu198649 is offline"><strong>babu198649</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=4798&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=4798" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/4798-babu198649" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="babu198649 is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Advanced user
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56400_4798" title="babu198649 is on a distinguished road">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+ 
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Nov 2007</dd>
+						
+						
+						<dt>Posts</dt> <dd>291</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>85</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 1 Time in 1 Post</dd>
+	
+    
+    
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon5.png" alt="Question" /> QByteArray to QString
+		</h2>
+		
+				
+					
+					
+				
+				
+		<div class="content">
+			<div id="post_message_56400">
+				<blockquote class="postcontent restore">
+					hi<br />
+ how to convert QByteArray to QString
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+				 
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56400" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56400" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56400" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56400" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56400" style="display:none">
+	
+</li> 
+<li class="postbit postbitim postcontainer old" id="post_56401">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">12:22</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56401" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56401#post56401" class="postcounter">#2</a><a id="postcount56401" name="2"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/709-jpn?s=ba6af7975269dcedf8a10fff230787ca" title="jpn is offline"><strong>jpn</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/709-jpn?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=709&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=709" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		<li class="left">
+			<img src="images/site_icons/homepage.png" alt="" />
+			<a href="http://jpnurmi.kapsi.fi" rel="nofollow">
+				Visit Homepage
+			</a>
+		</li>
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/709-jpn" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="jpn is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Guru
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56401_709" title="jpn will become famous soon enough">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+
+      <a href="http://qt.nokia.com/developer/learning/certification"><img src="http://www.qtcentre.org/images/qtcentre/qt/Nokia_Certified_Qt_Developer_button.png" alt="Nokia Certified Qt Developer" /></a>
+     
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Feb 2006</dd>
+						<dt>Location</dt> <dd>Tampere, Finland</dd>
+						
+						<dt>Posts</dt> <dd>6,264</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>36</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 1,482 Times in 1,374 Posts</dd>
+	
+    
+ 
+  <dt>Qt products</dt>
+  <dd>
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/qt4.png" title="Qt4" alt="Qt4" />
+    
+    
+    
+    
+    
+  
+  </dd>
+ 
+  <dt>Platforms</dt>
+  <dd>
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/macosx.png" title="MacOS X" alt="MacOS X" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/x11.png" title="Unix/X11" alt="Unix/X11" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/windows.png" title="Windows" alt="Windows" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/s60.png" title="Symbian S60" alt="Symbian S60" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/maemo.png" title="Maemo" alt="Maemo" />
+    
+  </dd>
+  
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon1.png" alt="Default" /> Re: QByteArray to QString
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_56401">
+				<blockquote class="postcontent restore">
+					Search for &quot;QByteArray&quot; in <a class="bbcodeurl" href="http://doc.qt.nokia.com/latest/qstring.html">QString</a> docs.
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+				<blockquote class="signature restore"><div class="signaturecontainer">J-P Nurmi</div></blockquote>
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56401" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56401" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56401" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56401" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56401" style="display:none">
+	
+</li> 
+<li class="postbit postbitim postcontainer old" id="post_56402">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">12:47</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56402" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56402#post56402" class="postcounter">#3</a><a id="postcount56402" name="3"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca" title="babu198649 is offline"><strong>babu198649</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=4798&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=4798" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/4798-babu198649" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="babu198649 is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Advanced user
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56402_4798" title="babu198649 is on a distinguished road">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+ 
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Nov 2007</dd>
+						
+						
+						<dt>Posts</dt> <dd>291</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>85</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 1 Time in 1 Post</dd>
+	
+    
+    
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon1.png" alt="Default" /> Re: QByteArray to QString
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_56402">
+				<blockquote class="postcontent restore">
+					yes it is possible to convert QString to QByteArray <br />
+<br />
+<b>QByteArray block(string.toAscii());</b><br />
+<br />
+but i want QByteArray to QString<br />
+<br />
+ i have searched for QString in QByteArray docs but not found any solution
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56402" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56402" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56402" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56402" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56402" style="display:none">
+	
+</li> 
+<li class="postbit postbitim postcontainer old" id="post_56403">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">12:51</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56403" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56403#post56403" class="postcounter">#4</a><a id="postcount56403" name="4"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/2350-durbrak?s=ba6af7975269dcedf8a10fff230787ca" title="durbrak is offline"><strong>durbrak</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/2350-durbrak?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=2350&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=2350" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/2350-durbrak" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="durbrak is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Intermediate user
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56403_2350" title="durbrak is on a distinguished road">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+ 
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Oct 2006</dd>
+						<dt>Location</dt> <dd>Germany</dd>
+						
+						<dt>Posts</dt> <dd>84</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>5</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 4 Times in 3 Posts</dd>
+	
+    
+ 
+  <dt>Qt products</dt>
+  <dd>
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/qt4.png" title="Qt4" alt="Qt4" />
+    
+    
+    
+    
+    
+  
+  </dd>
+ 
+  <dt>Platforms</dt>
+  <dd>
+    
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/windows.png" title="Windows" alt="Windows" />
+    
+    
+    
+  </dd>
+  
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon1.png" alt="Default" /> Re: QByteArray to QString
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_56403">
+				<blockquote class="postcontent restore">
+					Look closer.<br />
+<br />
+<b>QString myString(myByteArray);</b> constructor QString<font color="#000000">(const QByteArray &amp;ba</font><font color="#000000">)<br />
+<br />
+or you can use QString::fromAscii() etc.<br />
+ </font>
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56403" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56403" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56403" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56403" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56403">
+	<div class="postbody">
+	<div class="postrow">
+	
+	<h2 class="posttitle">
+		
+			The following 2 users say thank you to durbrak for this useful post:
+		
+	</h2>
+	<div class="content">
+		<div id="post_thanks_bit_56403">
+			<blockquote class="postcontent restore">
+				<a href="member.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=4798" rel="nofollow">babu198649</a>&nbsp;(6th December 2007), <a href="member.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=19485" rel="nofollow">tablebubble</a>&nbsp;(21st April 2011) 
+			</blockquote>
+		</div>
+	</div>
+	</div>
+</div>
+<hr /> 
+</li> 
+<li class="postbit postbitim postcontainer old" id="post_56404">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">13:00</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56404" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56404#post56404" class="postcounter">#5</a><a id="postcount56404" name="5"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/709-jpn?s=ba6af7975269dcedf8a10fff230787ca" title="jpn is offline"><strong>jpn</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/709-jpn?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=709&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=709" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		<li class="left">
+			<img src="images/site_icons/homepage.png" alt="" />
+			<a href="http://jpnurmi.kapsi.fi" rel="nofollow">
+				Visit Homepage
+			</a>
+		</li>
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/709-jpn" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="jpn is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Guru
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56404_709" title="jpn will become famous soon enough">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+
+      <a href="http://qt.nokia.com/developer/learning/certification"><img src="http://www.qtcentre.org/images/qtcentre/qt/Nokia_Certified_Qt_Developer_button.png" alt="Nokia Certified Qt Developer" /></a>
+     
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Feb 2006</dd>
+						<dt>Location</dt> <dd>Tampere, Finland</dd>
+						
+						<dt>Posts</dt> <dd>6,264</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>36</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 1,482 Times in 1,374 Posts</dd>
+	
+    
+ 
+  <dt>Qt products</dt>
+  <dd>
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/qt4.png" title="Qt4" alt="Qt4" />
+    
+    
+    
+    
+    
+  
+  </dd>
+ 
+  <dt>Platforms</dt>
+  <dd>
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/macosx.png" title="MacOS X" alt="MacOS X" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/x11.png" title="Unix/X11" alt="Unix/X11" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/windows.png" title="Windows" alt="Windows" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/s60.png" title="Symbian S60" alt="Symbian S60" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/maemo.png" title="Maemo" alt="Maemo" />
+    
+  </dd>
+  
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon1.png" alt="Default" /> Re: QByteArray to QString
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_56404">
+				<blockquote class="postcontent restore">
+					<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="images/misc/quote_icon.png" alt="Quote" /> Originally Posted by <strong>jpn</strong>
+					<a href="showthread.php?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56401#post56401" rel="nofollow"><img class="inlineimg" src="images/buttons/viewpost-right.png" alt="View Post" /></a>
+				</div>
+				<div class="message">Search for &quot;QByteArray&quot; in <a class="bbcodeurl" href="http://doc.qt.nokia.com/latest/qstring.html">QString</a> docs.</div>
+			
+		</div>
+	</div>
+</div><div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="images/misc/quote_icon.png" alt="Quote" /> Originally Posted by <strong>babu198649</strong>
+					<a href="showthread.php?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56402#post56402" rel="nofollow"><img class="inlineimg" src="images/buttons/viewpost-right.png" alt="View Post" /></a>
+				</div>
+				<div class="message">i have searched for QString in QByteArray docs</div>
+			
+		</div>
+	</div>
+</div>I guess I should've used reverse psychology or something... <img src="images/smilies/smile.png" border="0" alt="" title="Smile" class="inlineimg" />
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+				<blockquote class="signature restore"><div class="signaturecontainer">J-P Nurmi</div></blockquote>
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56404" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56404" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56404" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56404" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56404" style="display:none">
+	
+</li> 
+<li class="postbit postbitim postcontainer old" id="post_56405">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">13:01</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56405" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56405#post56405" class="postcounter">#6</a><a id="postcount56405" name="6"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca" title="babu198649 is offline"><strong>babu198649</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=4798&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=4798" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/4798-babu198649" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="babu198649 is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Advanced user
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56405_4798" title="babu198649 is on a distinguished road">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+ 
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Nov 2007</dd>
+						
+						
+						<dt>Posts</dt> <dd>291</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>85</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 1 Time in 1 Post</dd>
+	
+    
+    
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon1.png" alt="Default" /> Re: QByteArray to QString
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_56405">
+				<blockquote class="postcontent restore">
+					thank u durbrak it worked
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56405" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56405" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56405" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56405" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56405" style="display:none">
+	
+</li> 
+<li class="postbit postbitim postcontainer old" id="post_56406">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">13:02</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56406" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56406#post56406" class="postcounter">#7</a><a id="postcount56406" name="7"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca" title="babu198649 is offline"><strong>babu198649</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/4798-babu198649?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=4798&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=4798" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/4798-babu198649" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="babu198649 is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Advanced user
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56406_4798" title="babu198649 is on a distinguished road">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+ 
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Nov 2007</dd>
+						
+						
+						<dt>Posts</dt> <dd>291</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>85</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 1 Time in 1 Post</dd>
+	
+    
+    
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon1.png" alt="Default" /> Re: QByteArray to QString
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_56406">
+				<blockquote class="postcontent restore">
+					ok thanks jpn any have i got solution
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56406" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56406" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56406" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56406" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56406" style="display:none">
+	
+</li> 
+<li class="postbit postbitim postcontainer old" id="post_56408">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">6th December 2007,&nbsp;<span class="time">13:08</span></span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post56408" href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56408#post56408" class="postcounter">#8</a><a id="postcount56408" name="8"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction">
+	<a class="username offline popupctrl" href="members/668-marcel?s=ba6af7975269dcedf8a10fff230787ca" title="marcel is offline"><strong>marcel</strong></a>
+	<ul class="popupbody popuphover memberaction_body">
+		<li class="left">
+			<img src="images/site_icons/profile.png" alt="" />
+			<a href="members/668-marcel?s=ba6af7975269dcedf8a10fff230787ca">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<img src="images/site_icons/forum.png" alt="" />
+			<a href="search.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=finduser&amp;userid=668&amp;contenttype=vBForum_Post&amp;showposts=1" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/blog.png" alt="" />
+			<a href="blog.php?s=ba6af7975269dcedf8a10fff230787ca&amp;u=668" rel="nofollow">
+				View Blog Entries
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="right">
+			<img src="images/site_icons/article.png" alt="" />
+			<a href="list.php/author/668-marcel" rel="nofollow">
+				View Articles
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+
+						<img class="inlineimg onlinestatus" src="images/statusicon/user-offline.png" alt="marcel is offline" border="0" />
+
+					
+					<span class="usertitle">
+						Expert
+					</span>
+					
+
+                                        
+					
+						<span class="postbit_reputation" id="repdisplay_56408_668" title="marcel is on a distinguished road">
+							
+								<img class="repimg" src="images/reputation/reputation_pos.png" alt="" />
+							
+						</span>
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+<div class="username_container" style="margin-left: 5em;">
+ 
+</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Feb 2006</dd>
+						<dt>Location</dt> <dd>Romania</dd>
+						
+						<dt>Posts</dt> <dd>2,744</dd>	
+						
+    
+	<dt>Thanks</dt> <dd>8</dd>
+    
+    
+	
+		<dd style="white-space:nowrap; display:inline; float: right;">Thanked 526 Times in 514 Posts</dd>
+	
+    
+ 
+  <dt>Qt products</dt>
+  <dd>
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/qt4.png" title="Qt4" alt="Qt4" />
+    
+    
+    
+    
+    
+  
+  </dd>
+ 
+  <dt>Platforms</dt>
+  <dd>
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/x11.png" title="Unix/X11" alt="Unix/X11" />
+    
+    
+      <img style="height:12px;" src="images/qtcentre/logo16/windows.png" title="Windows" alt="Windows" />
+    
+    
+    
+  </dd>
+  
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			<img src="images/icons/icon1.png" alt="Default" /> Re: QByteArray to QString
+		</h2>
+		
+				
+				
+					
+				
+		<div class="content">
+			<div id="post_message_56408">
+				<blockquote class="postcontent restore">
+					<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="images/misc/quote_icon.png" alt="Quote" /> Originally Posted by <strong>jpn</strong>
+					<a href="showthread.php?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56404#post56404" rel="nofollow"><img class="inlineimg" src="images/buttons/viewpost-right.png" alt="View Post" /></a>
+				</div>
+				<div class="message">I guess I should've used reverse psychology or something... <img src="images/smilies/smile.png" border="0" alt="" title="Smile" class="inlineimg" /></div>
+			
+		</div>
+	</div>
+</div>Maybe the text in his locale is right to left <img src="images/smilies/smile.png" border="0" alt="" title="Smile" class="inlineimg" />.
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_56408" src="images/misc/progress.gif" alt="" />
+				
+				
+				
+					<a id="qrwq_56408" class="newreply" href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=newreply&amp;p=56408" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56408" src="clear.gif" alt="Reply With Quote" />  Reply With Quote</a> 
+				
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr />
+</li>
+<li class="postbit postbitim" id="post_thanks_box_56408" style="display:none">
+	
+</li> 
+		</ol>
+		<div class="separator"></div>
+		<div class="postlistfoot">
+			
+		</div>
+
+	
+
+</div>
+
+<div id="below_postlist" class="noinlinemod below_postlist">
+	
+		<a href="newreply.php?s=ba6af7975269dcedf8a10fff230787ca&amp;p=56408&amp;noquote=1"class="newcontent_textcontrol" id="newreplylink_bottom"><span>+</span> Reply to Thread</a>
+	
+	<div id="pagination_bottom" class="pagination_bottom">
+	
+		<div class="clear"></div>
+<div class="navpopupmenu popupmenu nohovermenu" id="showthread_navpopup">
+	
+		<span class="shade">Quick Navigation</span>
+		<a href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca" class="popupctrl"><span class="ctrlcontainer">Newbie</span></a>
+		<a href="threads/10661-QByteArray-to-QString#top" class="textcontrol" onclick="document.location.hash='top';return false;">Top</a>
+	
+	<ul class="navpopupbody popupbody popuphover">
+		
+		<li class="optionlabel">Site Areas</li>
+		<li><a href="usercp.php?s=ba6af7975269dcedf8a10fff230787ca">Settings</a></li>
+		<li><a href="private.php?s=ba6af7975269dcedf8a10fff230787ca">Private Messages</a></li>
+		<li><a href="subscription.php?s=ba6af7975269dcedf8a10fff230787ca">Subscriptions</a></li>
+		<li><a href="online.php?s=ba6af7975269dcedf8a10fff230787ca">Who's Online</a></li>
+		<li><a href="search.php?s=ba6af7975269dcedf8a10fff230787ca">Search Forums</a></li>
+		<li><a href="forum.php?s=ba6af7975269dcedf8a10fff230787ca">Forums Home</a></li>
+		
+			<li class="optionlabel">Forums</li>
+			
+		
+			
+				<li><a href="forums/1-Qt?s=ba6af7975269dcedf8a10fff230787ca">Qt</a>
+					<ol class="d1">
+						
+		
+			
+				<li><a href="forums/4-Newbie?s=ba6af7975269dcedf8a10fff230787ca">Newbie</a></li>
+			
+		
+			
+				<li><a href="forums/2-Qt-Programming?s=ba6af7975269dcedf8a10fff230787ca">Qt Programming</a>
+					<ol class="d2">
+						
+		
+			
+				<li><a href="forums/23-Qwt?s=ba6af7975269dcedf8a10fff230787ca">Qwt</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="forums/42-Qt-Quick?s=ba6af7975269dcedf8a10fff230787ca">Qt Quick</a></li>
+			
+		
+			
+				<li><a href="forums/3-Qt-Tools?s=ba6af7975269dcedf8a10fff230787ca">Qt Tools</a></li>
+			
+		
+			
+				<li><a href="forums/16-Qt-based-Software?s=ba6af7975269dcedf8a10fff230787ca">Qt-based Software</a></li>
+			
+		
+			
+				<li><a href="forums/14-Qt-for-Embedded-and-Mobile?s=ba6af7975269dcedf8a10fff230787ca">Qt for Embedded and Mobile</a></li>
+			
+		
+			
+				<li><a href="forums/5-Installation-and-Deployment?s=ba6af7975269dcedf8a10fff230787ca">Installation and Deployment</a></li>
+			
+		
+			
+				<li><a href="forums/41-Wiki?s=ba6af7975269dcedf8a10fff230787ca">Wiki</a></li>
+			
+		
+			
+				<li><a href="forums/7-KDE-Forum?s=ba6af7975269dcedf8a10fff230787ca">KDE Forum</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="forums/8-Other?s=ba6af7975269dcedf8a10fff230787ca">Other</a>
+					<ol class="d1">
+						
+		
+			
+				<li><a href="forums/9-General-Programming?s=ba6af7975269dcedf8a10fff230787ca">General Programming</a></li>
+			
+		
+			
+				<li><a href="forums/25-ICSNetwork?s=ba6af7975269dcedf8a10fff230787ca">ICSNetwork</a>
+					<ol class="d2">
+						
+		
+			
+				<li><a href="forums/26-Introduction-to-Qt?s=ba6af7975269dcedf8a10fff230787ca">Introduction to Qt</a></li>
+			
+		
+			
+				<li><a href="forums/30-An-Introduction-to-QThreads?s=ba6af7975269dcedf8a10fff230787ca">An Introduction to QThreads</a></li>
+			
+		
+			
+				<li><a href="forums/31-The-GraphicsView-Framework?s=ba6af7975269dcedf8a10fff230787ca">The GraphicsView Framework</a></li>
+			
+		
+			
+				<li><a href="forums/32-What-s-New-in-Qt-4-4?s=ba6af7975269dcedf8a10fff230787ca">What's New in Qt 4.4</a></li>
+			
+		
+			
+				<li><a href="forums/33-Design-Patterns-in-Qt?s=ba6af7975269dcedf8a10fff230787ca">Design Patterns in Qt</a></li>
+			
+		
+			
+				<li><a href="forums/34-The-Model-View-Framework?s=ba6af7975269dcedf8a10fff230787ca">The Model-View Framework</a></li>
+			
+		
+			
+				<li><a href="forums/35-Best-Practices-in-Qt-Programming?s=ba6af7975269dcedf8a10fff230787ca">Best Practices in Qt Programming</a></li>
+			
+		
+			
+				<li><a href="forums/36-Qt-Webkit?s=ba6af7975269dcedf8a10fff230787ca">Qt Webkit</a></li>
+			
+		
+			
+				<li><a href="forums/37-Best-Practices-for-Qt-Localization?s=ba6af7975269dcedf8a10fff230787ca">Best Practices for Qt Localization</a></li>
+			
+		
+			
+				<li><a href="forums/38-What-s-New-in-Qt-4-5?s=ba6af7975269dcedf8a10fff230787ca">What's New in Qt 4.5</a></li>
+			
+		
+			
+				<li><a href="forums/40-This-Week-in-Qt?s=ba6af7975269dcedf8a10fff230787ca">This Week in Qt</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="forums/10-General-Discussion?s=ba6af7975269dcedf8a10fff230787ca">General Discussion</a></li>
+			
+		
+			
+				<li><a href="forums/12-Jobs?s=ba6af7975269dcedf8a10fff230787ca">Jobs</a>
+					<ol class="d2">
+						
+		
+			
+				<li><a href="forums/17-Resumes?s=ba6af7975269dcedf8a10fff230787ca">Resumes</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="forums/22-Contests?s=ba6af7975269dcedf8a10fff230787ca">Contests</a>
+					<ol class="d1">
+						
+		
+			
+				<li><a href="forums/28-QtCentre-Programming-Contest-2008?s=ba6af7975269dcedf8a10fff230787ca">QtCentre Programming Contest 2008</a></li>
+			
+		
+			
+				<li><a href="forums/21-QtCentre-Programming-Contest-2007?s=ba6af7975269dcedf8a10fff230787ca">QtCentre Programming Contest 2007</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+		
+	</ul>
+</div>
+<div class="clear"></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+	<!-- next / previous links -->
+	<div class="navlinks">
+		
+			<strong>&laquo;</strong>
+			<a href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="threads/10661-QByteArray-to-QString?s=ba6af7975269dcedf8a10fff230787ca&amp;goto=nextnewest" rel="nofollow">Next Thread</a>
+			<strong>&raquo;</strong>
+		
+	</div>
+	<!-- / next / previous links -->
+
+<div id="thread_info" class="thread_info block">
+	
+	
+	<div id="similar_threads">
+		<h4 class="threadinfohead blockhead">Similar Threads</h4>
+		<div id="similar_threads_list" class="thread_info_block blockbody formcontrols">
+			<ol class="similar_threads">
+			<li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="threads/8897-How-to-get-QByteArray-from-QString-in-Qt3?s=ba6af7975269dcedf8a10fff230787ca" title="Hi, 
+ 
+ 
+How to get QByteArray from QString object in Qt3..?? 
+ 
+ 
+ 
+thanks in advance.">How to get QByteArray from QString in Qt3</a></h6>
+    <div class="starter_forum">
+       By joseph in forum Qt Programming
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Replies:</span> 2
+      <div class="starter_forum">
+        <span class="shade">Last Post:</span> 5th September 2007, <span class="time">09:23</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="threads/6968-QString-static-callback-function-from-CURL?s=ba6af7975269dcedf8a10fff230787ca" title="I am using LibCURL to pull in data from various web sites. I have made the callback function work in the following way (which works properly but has...">QString static callback function from CURL</a></h6>
+    <div class="starter_forum">
+       By tpf80 in forum Qt Programming
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Replies:</span> 12
+      <div class="starter_forum">
+        <span class="shade">Last Post:</span> 16th May 2007, <span class="time">20:47</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="threads/6129-how-to-dump-a-QByteArray-to-A-QString-with-one-sentence?s=ba6af7975269dcedf8a10fff230787ca" title="e.g. 
+ 
+A QByteArray is &quot;0x10, 0x00, 0xFF&quot; 
+ 
+i want to change it into one QString object: 
+1000FF, 
+10 00 FF 
+10,00,FF 
+0x10, 0x00, 0xFF 
+or">how to dump a QByteArray to A QString with one sentence?</a></h6>
+    <div class="starter_forum">
+       By csoapy in forum Qt Programming
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Replies:</span> 5
+      <div class="starter_forum">
+        <span class="shade">Last Post:</span> 16th March 2007, <span class="time">08:18</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="threads/5951-Convert-from-iso-8859-1-to-Something-else-)?s=ba6af7975269dcedf8a10fff230787ca" title="Hello, 
+ 
+I'm having troubles trying to convert a iso-8859-1 QString to something better, like an utf-8 QString. 
+ 
+A QByteArray (data) contains some...">Convert from iso-8859-1 to... Something else :-)</a></h6>
+    <div class="starter_forum">
+       By Nyphel in forum Qt Programming
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Replies:</span> 4
+      <div class="starter_forum">
+        <span class="shade">Last Post:</span> 7th March 2007, <span class="time">17:59</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="threads/394-SOLVED-Widget-plugin-how-to?s=ba6af7975269dcedf8a10fff230787ca" title="Hi, 
+ 
+Here I am once again. 
+ 
+I'm trying to developp my own custom widget. I did it well the old fashion way but when I try to do it as a plugin it...">[SOLVED] Widget plugin ... how to ?</a></h6>
+    <div class="starter_forum">
+       By yellowmat in forum Newbie
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Replies:</span> 10
+      <div class="starter_forum">
+        <span class="shade">Last Post:</span> 29th January 2006, <span class="time">20:41</span>
+      </div>
+  </div>
+</li>
+			</ol>
+		</div>
+	</div>
+
+
+	
+	
+	<div class="options_block_container">
+		
+		<div class="options_block2">
+			<h4 class="blockhead">Bookmarks</h4>
+			<div id="social_bookmarks_list" class="thread_info_block blockbody formcontrols floatcontainer">
+				<h5 class="blocksubhead">Bookmarks</h5>
+				<ul class="icon_list"><li class="smallfont">
+	
+		<a href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark"><img src="images/misc/bookmarksite_digg.gif" alt="Submit to Digg" /></a>
+	
+	<a href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark">Digg</a>
+</li><li class="smallfont">
+	
+		<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark"><img src="images/misc/bookmarksite_delicious.gif" alt="Submit to del.icio.us" /></a>
+	
+	<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark">del.icio.us</a>
+</li><li class="smallfont">
+	
+		<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark"><img src="images/misc/bookmarksite_stumbleupon.gif" alt="Submit to StumbleUpon" /></a>
+	
+	<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark">StumbleUpon</a>
+</li><li class="smallfont">
+	
+		<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark"><img src="images/misc/bookmarksite_google.gif" alt="Submit to Google" /></a>
+	
+	<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.qtcentre.org%2Fshowthread.php%3Ft%3D10661&amp;title=QByteArray+to+QString" target="socialbookmark">Google</a>
+</li></ul>
+			</div>
+		</div>
+		
+		<div class="options_block">
+			<h4 class="collapse blockhead">
+				<a class="collapse" id="collapse_posting_rules" href="threads/10661-QByteArray-to-QString#top"><img src="images/buttons/collapse_40b.png" alt="" /></a>
+				Posting Permissions
+			</h4>
+			<div id="posting_rules" class="thread_info_block blockbody formcontrols floatcontainer">
+				
+<div id="forumrules" class="info_subblock">
+
+	<ul class="youcandoblock">
+		<li>You <strong>may not</strong> post new threads</li>
+		<li>You <strong>may not</strong> post replies</li>
+		<li>You <strong>may not</strong> post attachments</li>
+		<li>You <strong>may not</strong> edit your posts</li>
+	</ul>
+	<div class="bbcodeblock">
+		<ul>
+			<li><a href="misc.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=bbcode" target="_blank">BB code</a> is <strong>On</strong></li>
+			<li><a href="misc.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></li>
+			<li><a href="misc.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></li>
+			<li>HTML code is <strong>Off</strong></li>
+		</ul>
+	</div>
+	<p class="rules_link"><a href="misc.php?s=ba6af7975269dcedf8a10fff230787ca&amp;do=showrules" target="_blank">Forum Rules</a></p>
+
+</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div style="clear: left">
+   
+   
+</div>
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="forum.php" method="get" id="footer_select" class="footer_select">
+
+			
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		<li><a href="sendmessage.php?s=ba6af7975269dcedf8a10fff230787ca" rel="nofollow" accesskey="9">Contact Us</a></li>
+		<li><a href="http://www.qtcentre.org">Qt Centre</a></li>
+		
+		
+		<li><a href="archive/index.php?s=ba6af7975269dcedf8a10fff230787ca">Archive</a></li>
+		
+		
+		
+		<li><a href="threads/10661-QByteArray-to-QString#top" onclick="document.location.hash='top'; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT +1. The time now is <span class="time">09:44</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	Powered by vBulletin Version 4.1.9 Copyright &copy;2000 - 2012, Jelsoft Enterprises Ltd.,
+	<!-- Do not remove this copyright notice -->	
+</div>
+
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	&copy; 2006&ndash;2010 <a style="color: inherit;" href="http://www.qtcentre.org">Qt Centre - The Ultimate Qt Community site</a>
+<div>Nokia, Qt and their respective logos are trademarks of Nokia Corporation in Finland and/or other countries worldwide.
+</div>
+<span style="height: 0pt;width: 0pt;position: absolute;overflow: auto;">
+<a href="http://www.qtcentre.org/download/fate-full-version-freeware.php">Fate full version freeware</a><a href="http://www.qtcentre.org/download/gunner-2-full-version.php">Gunner 2 full version</a><a href="http://www.qtcentre.org/download/powerpoint-full-version-download.php">Powerpoint full version download</a><a href="http://www.qtcentre.org/center/computer-forensics-full-version-software.php">Computer forensics full version software</a><a href="http://www.qtcentre.org/center/bs-zelda-full-version.php">Bs zelda full version</a><a href="http://www.qtcentre.org/center/gold-miner-vegas-full-version-torrent.php">Gold miner vegas full version torrent</a><a href="http://www.qtcentre.org/center/free-avenue-flo-full-version-download.php">Free avenue flo full version download</a><a href="http://www.qtcentre.org/center/full-version-of-wmp11.php">Full version of wmp11</a><a href="http://www.qtcentre.org/center/full-version-paranormal-activity-free-online.php">Full version paranormal activity free online</a><a href="http://www.qtcentre.org/center/digger-download-full-version-free.php">Digger download full version free</a>
+</span>
+ 
+
+</div>
+
+</body>
+</html>
