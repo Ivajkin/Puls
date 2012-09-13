@@ -12,12 +12,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    HttpDownload.cpp
+    HttpDownload.cpp \
+    filemanager.cpp
 
 HEADERS  += mainwindow.h \
-    HttpDownload.h
+    HttpDownload.h \
+    filemanager.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    filemanager.ui
 
 INCLUDEPATH += C:/OpenSSL-Win32/include
 

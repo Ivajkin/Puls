@@ -1,0 +1,1 @@
+sftp/psftp.exe core5429@ftp.coreatrade.com -pw sTXZ1hqe -b sftp/psftp.bat

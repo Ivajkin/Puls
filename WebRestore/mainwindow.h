@@ -5,7 +5,7 @@
 #include "HttpDownload.h"
 #include <QSystemTrayIcon>
 #include <QMap>
-#include <QDate>
+#include <QDateTime>
 #include <QDir>
 namespace Ui {
 class MainWindow;
@@ -15,9 +15,9 @@ struct Configuration{
     Configuration(){
         confs["BackUps Folder"] = "BackUps/";
         confs["Url"] = "somewhere.com/index.php";
-        confs["Port"] = 21;
+        confs["Port"] = "21";
+        confs["Update Period"] = "24";
     }
-
     bool loadFromFile();
     bool saveToFile();
     QString operator[](QString key){
@@ -38,16 +38,23 @@ protected:
     void closeEvent(QCloseEvent *event);
 
 private slots:
+    void onUpdateTable();
+    void removeSelectedFiles();
+    void contextMenuCall(const QPoint &pos);
+    void timerEvent(QTimerEvent *);
     void onFileDownload(QString);
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
     void showMessage(QString title, QString text,int type = QSystemTrayIcon::Information);
     void on_buttonDownload_clicked();
 
 private:
+    void fillFileTable();
     void createActions();
     void createTrayIcon();
     void createFileTable();
-    void fillFileTable();
+    void createTableMenu();
+    QDateTime lastUpdateRecord();
+
 private:
     Ui::MainWindow *ui;
 
@@ -61,6 +68,10 @@ private:
     QMenu *trayIconMenu;
 
     HttpDownload httpDownload;
+
+    QMenu* tableMenu;
+    QAction* actionUpdate;
+    QAction* actionRemove;
 };
 
 #endif // MAINWINDOW_H

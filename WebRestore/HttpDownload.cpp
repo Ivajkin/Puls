@@ -8,6 +8,7 @@ HttpDownload :: HttpDownload(QObject *parent) : QObject(parent)
 
 void HttpDownload :: startRequest(QUrl url)
 {
+    qDebug() << "HTTPDownload: Start Request";
     reply = qnam.get(QNetworkRequest(url));
     connect(reply, SIGNAL(finished()),
             this, SLOT(httpFinished()));
@@ -17,7 +18,21 @@ void HttpDownload :: startRequest(QUrl url)
             this, SLOT(updateDataReadProgress(qint64,qint64)));
 }
 
-void HttpDownload :: downloadFile(QUrl url, QString savename)
+void HttpDownload :: startPostRequest(QUrl url, QUrl postData)
+{
+    qDebug() << "HTTPDownload: Start Post Request";
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::ContentTypeHeader,
+        "application/x-www-form-urlencoded");
+    reply = qnam.post(request,postData.encodedQuery());
+    connect(reply, SIGNAL(finished()),
+            this, SLOT(httpFinished()));
+    connect(reply, SIGNAL(readyRead()),
+            this, SLOT(httpReadyRead()));
+    connect(reply, SIGNAL(downloadProgress(qint64,qint64)),
+            this, SLOT(updateDataReadProgress(qint64,qint64)));
+}
+void HttpDownload :: downloadFile(QUrl url, QString savename, Method method, QUrl postData)
 {
     if(savename.isEmpty()){
         QFileInfo fileInfo(url.path());
@@ -39,7 +54,10 @@ void HttpDownload :: downloadFile(QUrl url, QString savename)
         return;
     }
     httpRequestAborted = false;
-    startRequest(url);
+    if(method == GET)
+        startRequest(url);
+    else
+        startPostRequest(url, postData);
 }
 
 void HttpDownload :: cancelDownload()

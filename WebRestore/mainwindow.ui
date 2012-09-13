@@ -18,15 +18,15 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Tab 1</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
@@ -42,12 +42,34 @@
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
              <widget class="QTextEdit" name="content"/>
             </item>
             <item>
-             <widget class="QTableWidget" name="fileManager"/>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QTableWidget" name="fileManager"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>Last Modified</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDateTimeEdit" name="lineLastModified">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </item>
            </layout>
           </item>
@@ -61,7 +83,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QTreeView" name="treeView"/>
+         <widget class="FileManager" name="widget" native="true"/>
         </item>
        </layout>
       </widget>
@@ -90,6 +112,14 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>FileManager</class>
+   <extends>QWidget</extends>
+   <header>filemanager.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

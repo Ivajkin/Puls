@@ -9,17 +9,23 @@ class QFile;
 class QNetworkReply;
 QT_END_NAMESPACE
 
+enum Method{
+    GET = 0,
+    POST = 1
+};
+
 class HttpDownload : public QObject
 {
     Q_OBJECT
 
 public:
     HttpDownload(QObject *parent = 0);
-    void downloadFile(QUrl url, QString savename = "");
+    void downloadFile(QUrl url, QString savename = "", Method method = GET, QUrl postData = QUrl());
 signals:
     void fileSaved(QString);
 private slots:
     void startRequest(QUrl url);
+    void startPostRequest(QUrl url, QUrl postData);
     void cancelDownload();
     void httpFinished();
     void httpReadyRead();
