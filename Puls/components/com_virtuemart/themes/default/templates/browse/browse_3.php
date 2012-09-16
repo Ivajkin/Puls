@@ -88,13 +88,17 @@ EOD;
          $output .= '<div >'.$product_desc.'</div>'; // выводим в контейнер под вкладкой описание товара из переменной                            $product_description
          $output .= $myTabs->endPanel();
 
-         //2 вкладка
-         $output .= $myTabs->startPanel( '<span>Отзывы</span>', 'tab2' ); // добавляем вкладку с заголовком «отзывы»
-         $output .= '<div >'.$product_reviews.'<br>'.$product_reviewform.'</div>'; 
+         // Создаем 2 вкладку
+         $output .= $myTabs->startPanel( 'Вконтакте', 'tab2' );
+         $output .= '<div id="vk_comments_prod'.$product_id.'"></div>'.
+              '<script type="text/javascript">'.
+                 'VK.Widgets.Comments("vk_comments_prod'.$product_id.'", {limit: 10, width: "500", attach: "*"},'.$product_id.');'.
+              '</script>';
          $output .= $myTabs->endPanel();
-
-         //3 вкладка
-         $output .= $myTabs->startPanel( '<span>Дополнительные изображения</span>', 'tab3' ); 
+       
+         // Создаем 3 вкладку
+         $output .= $myTabs->startPanel( '<span>Facebook</span>', 'facebook_com' );
+         $output .= '<div class="facebook_com"><div class="fb-comments" data-href="http://bazisvostokmed.ru/index.php#pdoduct='.$product_id.'" data-num-posts="10" data-width="500"></div><div id="fb-root"></div></div>';
          $output .= $myTabs->endPanel();
 
          $output .= $myTabs->endPane();

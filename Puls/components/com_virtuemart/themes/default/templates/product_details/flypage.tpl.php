@@ -1,3 +1,11 @@
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <?php if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' );
 mm_showMyFileName(__FILE__);
 
@@ -61,13 +69,17 @@ $j(document).ready(function() {
          $output .= '<div class="prod_desc">'.$product_description.'</div>'; // выводим в контейнер под вкладкой описание товара из переменной                            $product_description
          $output .= $myTabs->endPanel();
 
-         //2 вкладка
-         $output .= $myTabs->startPanel( '<span>Отзывы</span>', 'tab2' ); // добавляем вкладку с заголовком «отзывы»
-         $output .= '<div >'.$product_reviews.'<br>'.$product_reviewform.'</div>'; // выводим в контейнер под вкладкой отзывы о товаре                                                                         из переменной $product_reviews и форму добавления отзывов из переменной $product_reviewform
+         // Создаем 2 вкладку
+         $output .= $myTabs->startPanel( 'Вконтакте', 'tab2' );
+         $output .= '<div id="vk_comments_prod'.$product_id.'"></div>'.
+              '<script type="text/javascript">'.
+                 'VK.Widgets.Comments("vk_comments_prod'.$product_id.'", {limit: 10, width: "500", attach: "*"},'.$product_id.');'.
+              '</script>';
          $output .= $myTabs->endPanel();
 
-         //3 вкладка
-         $output .= $myTabs->startPanel( '<span>Дополнительные изображения</span>', 'tab3' ); 
+         // Создаем 3 вкладку
+         $output .= $myTabs->startPanel( '<span>Facebook</span>', 'facebook_com' );
+         $output .= '<div class="facebook_com"><div class="fb-comments" data-href="http://bazisvostokmed.ru/index.php#pdoduct='.$product_id.'" data-num-posts="10" data-width="500"></div><div id="fb-root"></div></div>';
          $output .= $myTabs->endPanel();
 
          $output .= $myTabs->endPane();

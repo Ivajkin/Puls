@@ -3,6 +3,7 @@ defined('_JEXEC') or die('Restricted access');
 
 $canEdit	= ($this->user->authorize('com_content', 'edit', 'content', 'all') || $this->user->authorize('com_content', 'edit', 'content', 'own'));
 ?>
+ 
 <?php if ($this->params->get('show_page_title', 1) && $this->params->get('page_title') != $this->article->title) : ?>
 	<div class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 		<?php echo $this->escape($this->params->get('page_title')); ?>
@@ -138,6 +139,7 @@ endif; ?>
 <?php echo $this->article->event->afterDisplayContent; ?>
 
 <?php
+$id_news= JRequest::getInt('id');
 //Говорим Joomla, что мы хотим использовать панели
 jimport('joomla.html.pane');
 $myTabs = & JPane::getInstance('tabs', array('startOffset'=>0));
@@ -156,13 +158,16 @@ $output .= JComments::showComments($_GET['id'], 'com_content', $title);
 $output .= $myTabs->endPanel();
 
 // Создаем 2 вкладку
-$output .= $myTabs->startPanel( '<span>Комментарии "Вконтакте"</span>', 'tab2' );
-$output .= '<p>Это вторая вкладка</p>';
+$output .= $myTabs->startPanel( 'Вконтакте', 'tab2' );
+$output .= '<div id="vk_comments"></div>'.
+              '<script type="text/javascript">'.
+                 'VK.Widgets.Comments("vk_comments", {limit: 10, width: "500", attach: "*"},'.$id_news.');'.
+              '</script>';
 $output .= $myTabs->endPanel();
 
 // Создаем 3 вкладку
-$output .= $myTabs->startPanel( '<span>Комментарии "Facebook"</span>', 'tab3' );
-$output .= '<p>Это третья вкладка</p>';
+$output .= $myTabs->startPanel( 'Facebook', 'tab3' );
+$output .= '<div id="fb-root"></div><script src="http://connect.facebook.net/ru_RU/all.js#xfbml=1"></script><fb:comments href="http://bazisvostokmed.ru/index.php'.$id_news.'" num_posts="10" width="500"></fb:comments>';
 $output .= $myTabs->endPanel();
 
 //окончание панели

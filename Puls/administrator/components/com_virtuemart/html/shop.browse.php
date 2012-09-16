@@ -55,14 +55,14 @@ $j(document).ready(function() {
     $j('.addtocart_button').attr('title', 'Добавить в корзину')
                            .attr('value', 'В корзину')
                            .text('В корзину') 
-                           .css('background', 'url("/components/com_virtuemart/themes/default/images//add-to-cart_green.gif") no-repeat 50%')
+                           .css('background', 'url("/components/com_virtuemart/themes/default/images/add-to-cart_green.gif") no-repeat 50%')
                            .css('color', 'white')
-                           .mouseenter( function() {
+                           /*.mouseenter( function() {
                                 $j(this).css('color', '#1D6DC7');
                             })
                             .mouseleave( function() {
                                 $j(this).css('color', 'white');
-                            });
+                            })*/;
     $j('.browseProductContainer').parent().css('width','48%');
     $j('.browseProductContainer td').css('background-color', 'transparent');
     $j('.browseProductContainer th').css('background-color', 'transparent');
@@ -70,9 +70,20 @@ $j(document).ready(function() {
     $j('.browseProductContainer tr').filter(":even").css('background-color', '#CCE0D6');
     $j('.browseProductContainer table').css('border', '#009049 outset 2px');
 
+    /*$j('#facebook_com').click( function() {
+         $j(this).parent('div[id*="moreinfo"]').hide();
+    });*/
+
 //    $j('#vmMainPage h3').first().addClass('componentheading');
 });
 </script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <?php
 if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' );

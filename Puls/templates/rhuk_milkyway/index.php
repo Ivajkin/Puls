@@ -34,6 +34,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<link href="<?php echo $this->baseurl ?>/templates/rhuk_milkyway/css/template_rtl.css" rel="stylesheet" type="text/css" />
 <?php endif; ?>
 
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?52"></script>
+<script type="text/javascript">
+  VK.init({apiId: 3120886, onlyWidgets: false});
+</script>
+
 </head>
 <body id="page_bg" class="color_<?php echo $this->params->get('colorVariation'); ?> bg_<?php echo $this->params->get('backgroundVariation'); ?> width_<?php echo $this->params->get('widthStyle'); ?>">
 <a name="up" id="up"></a>
