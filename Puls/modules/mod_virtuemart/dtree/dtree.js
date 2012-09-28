@@ -41,7 +41,7 @@ function dTree(objName,url) {
 		inOrder					: false
 	}
 	this.icon = {
-		root				: url+"/dtree/img/base.gif",
+		root				: url+"/dtree/img/empty.gif",
 		folder			: url+"/dtree/img/folder.gif",
 		folderOpen	: url+"/dtree/img/folderopen.gif",
 		node				: url+"/dtree/img/menu.png",
@@ -140,6 +140,15 @@ dTree.prototype.node = function(node, nodeId) {
 	}
 	else if ((!this.config.folderLinks || !node.url) && node._hc && node.pid != this.root.id)
 		str += '<a href="javascript: ' + this.obj + '.o(' + nodeId + ');" class="node">';
+
+        if(node.name.length > 19) {
+            spaceIndex = node.name.indexOf(" "); 
+            if(spaceIndex != -1) {
+               namearr=  node.name.split(" ");
+               node.name= namearr[0] + '<p style="text-indent: 40px">' + namearr[1] + '</p>';
+            } else {
+               node.name= node.name.substr(0, 17) + '-' + '<p style="text-indent: 40px">' + node.name.substr(17, node.name.length) + '</p>';
+        }}
 	str += node.name;
 	if (node.url || ((!this.config.folderLinks || !node.url) && node._hc)) str += '</a>';
 	str += '</div>';
