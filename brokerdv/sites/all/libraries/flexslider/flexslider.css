@@ -20,7 +20,8 @@
 *********************************/
 .flexslider {margin: 0; padding: 0;}
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {max-width: 100%; display: block;}
+.flexslider .slides img {max-width: 100%; display: block; margin: auto !important;}
+#header  .flexslider .slides img {width: 1000px; height: 550px;}
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
@@ -49,8 +50,8 @@ html[xmlns] .slides {display: block;}
 /* Direction Nav */
 .flex-direction-nav { height: 0; }
 .flex-direction-nav li a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url(theme/bg_direction_nav.png) no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
-.flex-direction-nav li .next {background-position: -52px 0; right: -21px;}
-.flex-direction-nav li .prev {left: -20px;}
+.flex-direction-nav li .next {background-position: -52px 0; right: 0px;}
+.flex-direction-nav li .prev {/*left: -20px;*/}
 .flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
 
 /* Control Nav */

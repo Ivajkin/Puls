@@ -10,7 +10,7 @@ body#body {
 	min-width:980px;
 	padding:0;
 }
-
+.news_header {margin-bottom: 20px !important;}
 p {margin-bottom:21px;}
 
 a { color:#282828; outline:none;}
@@ -50,9 +50,35 @@ a { color:#282828; outline:none;}
 }
 
 #header #logo {
-  float:left;
-  margin:0 20px 0 0;
+    float:left;
+/*margin:0 20px 0 0;*/
+    margin: auto 20px auto 0;
+    position: absolute;
+    top: 10%;
 }
+#header #menu-201-1 a:after {
+    content: '24-44-40, 400-393';
+    font-size: 1.8em;
+    color: #fff;
+    /*background: url('../images/phone.png') no-repeat 0 50%;*/
+    position: absolute;
+    top: 15px;
+    width: 200px;
+    color: #cca664;
+}
+#header #menu-201-1 a:before {
+    content: '........';
+    color: transparent;
+    background: url('../images/phone2.png') no-repeat 0 50%;
+    position: absolute;
+    top: 12px;
+    width: 40px;
+    height: 27px;
+    left: 30px;
+}
+.section-1 {position: relative}
+#header #logo img {width: 400px; height: auto;}
+
 #header #site-name-slogan {
   float: left;
 }
@@ -535,9 +561,9 @@ article.node { padding-bottom:30px;}
 	background: url(../images/content-bottom.jpg) 0 0 repeat-x #f9f9f9;
 }
 #block-block-7 {
-	float: left;
+	/*float: left;
 	width: 260px;
-	margin-right: 29px;
+	margin-right: 29px;*/
 }
 .view-services-block .views-row {
 	padding-left: 79px;
@@ -1123,11 +1149,16 @@ tr.odd, tr.even {
 ul.contextual-links li a:hover {}
 /*********************/
 
-
+.panel-col-first .field-label:first-of-type {
+color: transparent;
+}
 /*******Slider********/
 .view-slider .skin-default {
 	border-bottom: 5px solid #e9e9e9;
 }
+.views-field .views-field-field-slide-image .field-content img {margin: auto;}
+.panel-2col-stacked .panel-col-last .inside {position: relative;}
+.field.field-name-field-location {position: absolute; top: 380px;}
 #flexslider_views_slideshow_main_slider-block {overflow: hidden;}
 .flexslider {
 	background: none;
@@ -1135,7 +1166,7 @@ ul.contextual-links li a:hover {}
 	border-radius: 0;
 }
 .flexslider .slides {
-	height: 557px;
+	/*height: 557px;*/
 }
 .flexslider .slides .flexslider_views_slideshow_slide {
 	position: relative;	

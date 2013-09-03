@@ -20,6 +20,7 @@ stylesheets[screen][] = css/maintenance-page.css
 
 scripts[] = js/theme775.core.js
 scripts[] = js/jquery.loader.js
+scripts[] = js/jpath.js
 
 ; Regions --------------------------------------------------------------------
 ; these content regions are available for block placement
@@ -61,4 +62,3 @@ version = "7.x-1.0"
 core = "7.x"
 project = "theme775"
 datestamp = "1320946536"
-

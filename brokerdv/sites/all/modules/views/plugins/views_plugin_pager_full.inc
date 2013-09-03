@@ -40,10 +40,10 @@ class views_plugin_pager_full extends views_plugin_pager {
     );
     $options['tags'] = array(
       'contains' => array(
-        'first' => array('default' => '« first', 'translatable' => TRUE),
-        'previous' => array('default' => '‹ previous', 'translatable' => TRUE),
-        'next' => array('default' => 'next ›', 'translatable' => TRUE),
-        'last' => array('default' => 'last »', 'translatable' => TRUE),
+        'first' => array('default' => '« перв', 'translatable' => TRUE),
+        'previous' => array('default' => '‹ пред', 'translatable' => TRUE),
+        'next' => array('default' => 'след ›', 'translatable' => TRUE),
+        'last' => array('default' => 'посл »', 'translatable' => TRUE),
       ),
     );
     return $options;
