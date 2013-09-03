@@ -1,0 +1,41 @@
+#backtotop {
+  border-radius: 5px 5px 5px 5px;
+  bottom: 10px;
+  color: #333333;
+  cursor: pointer;
+  display: none;
+  height: 30px;
+  line-height: 20px;
+  padding: 20px 5px 5px;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  width: 100px;
+  z-index: 1;
+  font-size: 11px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-transition:background 0.1s linear;
+  -webkit-transition:background 0.1s linear;
+}
+
+#backtotop:hover {
+  background: #EEEEEE;
+}
+
+#backtotop .backtotop-wrapper {
+  display: inline-block;
+  font-size: 12px;
+  padding: 70px 5px 0 5px;
+}
+
+<!--[if lte IE 6]>
+html {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+* html #backtotop {
+  position:absolute;
+}
+<![endif]-->

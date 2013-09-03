@@ -1,0 +1,81 @@
+
+a.follow-link {
+	height: 30px;
+	display: block;
+	line-height: 26px;
+	padding-left: 28px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+a.follow-link-facebook {
+	background-image: url(icons/small/icon-facebook.png);
+}
+
+a.follow-link-myspace {
+	background-image: url(icons/small/icon-myspace.png);
+}
+
+a.follow-link-youtube {
+	background-image: url(icons/small/icon-youtube.png);
+}
+
+a.follow-link-twitter {
+	background-image: url(icons/small/icon-twitter.png);
+}
+
+a.follow-link-gplus {
+	background-image: url(icons/small/icon-gplus.png);
+}
+
+a.follow-link-flickr {
+	background-image: url(icons/small/icon-flickr.png);
+}
+
+a.follow-link-vimeo {
+	background-image: url(icons/small/icon-vimeo.png);
+}
+
+a.follow-link-linkedin {
+	background-image: url(icons/small/icon-linkedin.png);
+}
+
+a.follow-link-delicious {
+	background-image: url(icons/small/icon-delicious.png);
+}
+
+a.follow-link-tumblr {
+	background-image: url(icons/small/icon-tumblr.png);
+}
+
+a.follow-link-this-site {
+	background-image: url(icons/small/icon-feed.png);
+}
+
+a.follow-link-technorati {
+	background-image: url(icons/small/icon-technorati.png);
+}
+
+a.follow-link-stumble {
+	background-image: url(icons/small/icon-stumble.png);
+}
+
+a.follow-link-evernote {
+	background-image: url(icons/small/icon-evernote.png);
+}
+
+a.follow-link-freindfeed {
+	background-image: url(icons/small/icon-freindfeed.png);
+}
+
+a.follow-link-dribbble {
+	background-image: url(icons/small/icon-dribbble.png);
+}
+
+a.follow-link-digg {
+	background-image: url(icons/small/icon-digg.png);
+}
+
+a.follow-link-blogger {
+	background-image: url(icons/small/icon-blogger.png);
+}

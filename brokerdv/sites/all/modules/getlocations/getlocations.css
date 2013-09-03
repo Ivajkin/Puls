@@ -1,0 +1,50 @@
+/**
+ * @file
+ * @author Bob Hutchinson http://drupal.org/user/52366
+ * @copyright GNU GPL
+ *
+ * css for getlocations.
+ *
+ * To avoid being overwritten, copy this into your theme
+*/
+
+/**
+ * the map, see theme_getlocations_show().
+ */
+.getlocations_map_canvas {
+}
+/* see issue #1577634 #6 */
+.getlocations_map_canvas img {
+  max-width: none;
+}
+
+.getlocations_map_buttons {
+}
+.getlocations_returnlink {
+}
+
+/* used in getlocations-view-map.tpl */
+.getlocations_map_wrapper {
+}
+
+/**
+ * the infobubble, see function theme_getlocations_info().
+ */
+.vcard {
+}
+.vcard h4 {
+}
+.adr {
+}
+.street-address {
+}
+.locality {
+}
+.region {
+}
+.postal-code {
+}
+.country-name {
+}
+.search-distance {
+}

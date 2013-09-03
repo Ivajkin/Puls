@@ -1,0 +1,12 @@
+name = Demonstration site
+description = Create a pre-setup and pre-configured Drupal site from a snapshot.
+core = 7.x
+dependencies[] = demo
+files[] = demo_profile.profile
+
+; Information added by drupal.org packaging script on 2011-02-25
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "demo_profile"
+datestamp = "1298619105"
+

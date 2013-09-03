@@ -1,0 +1,12 @@
+
+Demo profile x.x-x.x, xxxx-xx-xx
+--------------------------------
+
+
+Demo profile 7.x-1.x, xxxx-xx-xx
+--------------------------------
+#901996 by sun: Updated for removed file_directory_path().
+by sun: Fixed installation finished page not displayed.
+by sun: Fixed fatal error due to non-existent installation task.
+by sun: Updated for new install profile AWESOMENESS.
+

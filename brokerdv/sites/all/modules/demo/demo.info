@@ -1,0 +1,15 @@
+name = Demonstration site
+description = Create snapshots and reset the site for demonstration or testing purposes.
+package = Development
+core = 7.x
+configure = admin/structure/demo
+files[] = demo.module
+files[] = demo.admin.inc
+files[] = database_mysql_dump.inc
+
+; Information added by drupal.org packaging script on 2012-05-26
+version = "7.x-1.0+6-dev"
+core = "7.x"
+project = "demo"
+datestamp = "1338034161"
+
