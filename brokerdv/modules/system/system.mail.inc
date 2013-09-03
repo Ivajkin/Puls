@@ -74,11 +74,15 @@ class DefaultMailSystem implements MailSystemInterface {
         // On most non-Windows systems, the "-f" option to the sendmail command
         // is used to set the Return-Path. There is no space between -f and
         // the value of the return path.
+$headers = "";
+$headers.= "MIME-Version: 1.0\r\n";
+$headers.= "Content-Type: text/plain; charset=\"koi8-r\"\r\n";
+$headers.= "Content-Transfer-Encoding: 8bit";
         $mail_result = @mail(
           $message['to'],
           $mail_subject,
-          $mail_body,
-          $mail_headers,
+          mb_convert_encoding($mail_body, "koi8-r", "UTF-8"),
+          $headers,
           '-f' . $message['Return-Path']
         );
       }
@@ -86,11 +90,15 @@ class DefaultMailSystem implements MailSystemInterface {
         // The optional $additional_parameters argument to mail() is not
         // allowed if safe_mode is enabled. Passing any value throws a PHP
         // warning and makes mail() return FALSE.
+$headers = "";
+$headers.= "MIME-Version: 1.0\r\n";
+$headers.= "Content-Type: text/plain; charset=\"koi8-r\"\r\n";
+$headers.= "Content-Transfer-Encoding: 8bit";
         $mail_result = @mail(
           $message['to'],
           $mail_subject,
-          $mail_body,
-          $mail_headers
+          mb_convert_encoding($mail_body, "koi8-r", "UTF-8"),
+          $headers
         );
       }
      }
@@ -102,7 +110,7 @@ class DefaultMailSystem implements MailSystemInterface {
       $mail_result = @mail(
          $message['to'],
          $mail_subject,
-         $mail_body,
+         mb_convert_encoding($mail_body, "koi8-r", "UTF-8"),
          $mail_headers
        );
       ini_set('sendmail_from', $old_from);
@@ -130,4 +138,3 @@ class TestingMailSystem extends DefaultMailSystem implements MailSystemInterface
     return TRUE;
   }
 }
-

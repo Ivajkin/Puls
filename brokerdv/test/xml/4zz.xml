@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Galina</Author>
+  <LastAuthor>Ymp</LastAuthor>
+  <Created>2013-08-23T06:57:41Z</Created>
+  <LastSaved>2013-08-23T06:57:41Z</LastSaved>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>5430</WindowHeight>
+  <WindowWidth>9660</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>60</WindowTopY>
+  <RefModeR1C1/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s57">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s58">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s59">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s60">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+   <NumberFormat ss:Format="#,##0.00\ "/>
+  </Style>
+  <Style ss:ID="s61">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+   <NumberFormat ss:Format="\ General"/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="67" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="54.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="261.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="87" ss:Span="1"/>
+   <Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="108"/>
+   <Column ss:AutoFitWidth="0" ss:Width="198"/>
+   <Row ss:AutoFitHeight="0" ss:Height="35.25">
+    <Cell ss:StyleID="s57"><Data ss:Type="String"> </Data></Cell>
+    <Cell ss:MergeAcross="4" ss:StyleID="s57"><Data ss:Type="String">Раздел: активные предложения;&#10;Тип объекта: Земельный участок;&#10;Операция: Продажа;</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="27">
+    <Cell ss:MergeAcross="1" ss:StyleID="s58"><Data ss:Type="String">Адрес</Data></Cell>
+    <Cell ss:StyleID="s58"><Data ss:Type="String">Назначение земли</Data></Cell>
+    <Cell ss:StyleID="s58"><Data ss:Type="String">Площадь&#10;участка (кв.м.)</Data></Cell>
+    <Cell ss:StyleID="s58"><Data ss:Type="String">Риэлтор</Data></Cell>
+    <Cell ss:StyleID="s58"><Data ss:Type="String">Район</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Авиагородок</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1500</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Воронежская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">770</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Бобров Р.Г.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Восточное ш.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Горького ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1700</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовая С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Дальняя ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Жасминовая</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Заводская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">900</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Инициативная ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1100</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Корякский пер.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1100</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Индустриальный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Краснодарский пер.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Матвеевское ш.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">4000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовой В.Н.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Матвеевское ш.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под строительство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">600</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовая С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Минометная ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1800</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Мичурина ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Моряков Амурцев ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Моряков Амурцев ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1200</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Невская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">700</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Николаевская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Новая ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под строительство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1700</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Пархоменко пер.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">900</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Таран Е.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Портовая ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">2000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовой В.Н.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Правобережная ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Кировский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Провинциальная</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Проточная ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">2400</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Индустриальный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Родниковая</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Свирская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1200</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Скворечная</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Славянская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Славянская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Совхозная ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под строительство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Суворова ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">2000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Индустриальный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Таймырская ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Трехгорная ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под строительство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Тупиковый пер.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">700</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Кировский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Туристическая</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Железнодорожный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Уборевича ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">700</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Кировский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Яблоневая ул.</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1200</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Индустриальный</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Березовка, Тепличная</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под строительство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Березовка, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1250</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовая С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Березовка, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1500</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Краснофлотский</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Виноградовка с., Аверьяновская</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1500</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Северное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Виноградовка с., Центральная</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1400</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовая С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Северное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Виноградовка с., неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">145000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовой В.Н.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Северное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Виноградовка с., неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">200000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовой В.Н.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Северное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Гаровка-1, Целинная</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1500</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Гаровка-1, зеленая</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">900</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Геологов, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">800</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Плетнев Г.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Ильинка, с/т &quot;Ветеран&quot;</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">800</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Збрицкий Д.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Калинка, Зеленая</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">7300</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Столбовая С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Комсомольское направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Краснореченское с., неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">3000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Переяславка, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">290000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Смирновка, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">33000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Комсомольское направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Сосновка, Заречная</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Комсомольское направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Федоровка, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">26000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Северное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Федоровка, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">800</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Северное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, бычиха, уссурийская</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1200</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, корсаково-1, Набережная</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">2500</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, корсаково-1, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1100</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, корсаково-2, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">600</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, корсаково-2, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">все</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, корсаково-2, неизвестно</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">под садоводство</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="Number">4000</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Пригород (Южное направление)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125" ss:Span="3"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <FitWidth>0</FitWidth>
+    <FitHeight>0</FitHeight>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>0</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+    <Gridlines/>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>1</ActiveRow>
+     <ActiveCol>5</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

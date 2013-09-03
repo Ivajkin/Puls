@@ -64,21 +64,21 @@ function contact_site_form($form, &$form_state) {
   $form['#attributes']['class'][] = 'contact-form';
   $form['name'] = array(
     '#type' => 'textfield',
-    '#title' => t('Your name'),
+    '#title' => t('Ваше имя'),
     '#maxlength' => 255,
     '#default_value' => $user->uid ? format_username($user) : '',
     '#required' => TRUE,
   );
   $form['mail'] = array(
     '#type' => 'textfield',
-    '#title' => t('Your e-mail address'),
+    '#title' => t('Ваш e-mail'),
     '#maxlength' => 255,
     '#default_value' => $user->uid ? $user->mail : '',
     '#required' => TRUE,
   );
   $form['subject'] = array(
     '#type' => 'textfield',
-    '#title' => t('Subject'),
+    '#title' => t('Тема'),
     '#maxlength' => 255,
     '#required' => TRUE,
   );
@@ -92,20 +92,20 @@ function contact_site_form($form, &$form_state) {
   );
   $form['message'] = array(
     '#type' => 'textarea',
-    '#title' => t('Message'),
+    '#title' => t('Сообщение'),
     '#required' => TRUE,
   );
   // We do not allow anonymous users to send themselves a copy
   // because it can be abused to spam people.
   $form['copy'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Send yourself a copy.'),
+    '#title' => t('Отправить себе копию'),
     '#access' => $user->uid,
   );
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Send message'),
+    '#value' => t('Отправить'),
   );
 
   return $form;
@@ -166,7 +166,7 @@ function contact_site_form_submit($form, &$form_state) {
 
   // Jump to home page rather than back to contact page to avoid
   // contradictory messages if flood control has been activated.
-  drupal_set_message(t('Your message has been sent.'));
+  drupal_set_message(t('Ваше сообщение было отправлено'));
   $form_state['redirect'] = '';
 }
 
@@ -206,14 +206,14 @@ function contact_personal_form($form, &$form_state, $recipient) {
   );
   $form['name'] = array(
     '#type' => 'textfield',
-    '#title' => t('Your name'),
+    '#title' => t('Ваше имя'),
     '#maxlength' => 255,
     '#default_value' => $user->uid ? format_username($user) : '',
     '#required' => TRUE,
   );
   $form['mail'] = array(
     '#type' => 'textfield',
-    '#title' => t('Your e-mail address'),
+    '#title' => t('Ваш e-mail'),
     '#maxlength' => 255,
     '#default_value' => $user->uid ? $user->mail : '',
     '#required' => TRUE,
@@ -225,13 +225,13 @@ function contact_personal_form($form, &$form_state, $recipient) {
   );
   $form['subject'] = array(
     '#type' => 'textfield',
-    '#title' => t('Subject'),
+    '#title' => t('Тема'),
     '#maxlength' => 50,
     '#required' => TRUE,
   );
   $form['message'] = array(
     '#type' => 'textarea',
-    '#title' => t('Message'),
+    '#title' => t('Сообщение'),
     '#rows' => 15,
     '#required' => TRUE,
   );
@@ -239,13 +239,13 @@ function contact_personal_form($form, &$form_state, $recipient) {
   // because it can be abused to spam people.
   $form['copy'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Send yourself a copy.'),
+    '#title' => t('Отправить себе копию'),
     '#access' => $user->uid,
   );
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Send message'),
+    '#value' => t('Отправить'),
   );
   return $form;
 }
@@ -295,6 +295,6 @@ function contact_personal_form_submit($form, &$form_state) {
   watchdog('mail', '%sender-name (@sender-from) sent %recipient-name an e-mail.', array('%sender-name' => $values['name'], '@sender-from' => $from, '%recipient-name' => $values['recipient']->name));
 
   // Jump to the contacted user's profile page.
-  drupal_set_message(t('Your message has been sent.'));
+  drupal_set_message(t('Ваше сообщение отправлено'));
   $form_state['redirect'] = user_access('access user profiles') ? 'user/' . $values['recipient']->uid : '';
 }

@@ -25,7 +25,7 @@ function blog_user_view($account) {
   if (user_access('create blog content', $account)) {
     $account->content['summary']['blog'] =  array(
       '#type' => 'user_profile_item',
-      '#title' => t('Blog'),
+      '#title' => t('Новости'),
       // l() escapes the attributes, so we should not escape !username here.
       '#markup' => l(t('View recent blog entries'), "blog/$account->uid", array('attributes' => array('title' => t("Read !username's latest blog entries.", array('!username' => format_username($account)))))),
       '#attributes' => array('class' => array('blog')),
@@ -48,7 +48,7 @@ function blog_help($path, $arg) {
       $output .= '<dt>' . t('Multi-user blogs') . '</dt>';
       $output .= '<dd>' . t("Blog entries from each single-user blog are also aggregated into one central multi-user blog, which displays the blog content of all users in a single listing.") . '</dd>';
       $output .= '<dt>' . t('Navigation') . '</dt>';
-      $output .= '<dd>' . t("There is an optional <em>Blogs</em> menu item added to the Navigation menu, which displays all blogs available on your site, and a <em>My blog</em> item displaying the current user's blog entries.") . '</dd>';
+      $output .= '<dd>' . t("There is an optional <em>Новости</em> menu item added to the Navigation menu, which displays all blogs available on your site, and a <em>My blog</em> item displaying the current user's blog entries.") . '</dd>';
       $output .= '<dt>' . t('Blocks') . '</dt>';
       $output .= '<dd>' . t('The Blog module also creates a default <em>Recent blog posts</em> block that may be enabled at the <a href="@blocks">blocks administration page</a>.', array('@blocks' => url('admin/structure/block'))) . '</dd>';
       $output .= '</dl>';
@@ -100,7 +100,7 @@ function blog_node_view($node, $view_mode) {
  */
 function blog_menu() {
   $items['blog'] = array(
-    'title' => 'Blogs',
+    'title' => 'Новости',
     'page callback' => 'blog_page_last',
     'access arguments' => array('access content'),
     'type' => MENU_SUGGESTED_ITEM,
@@ -115,7 +115,7 @@ function blog_menu() {
     'file' => 'blog.pages.inc',
   );
   $items['blog/%user/feed'] = array(
-    'title' => 'Blogs',
+    'title' => 'Новости',
     'page callback' => 'blog_feed_user',
     'page arguments' => array(1),
     'access callback' => 'blog_page_user_access',
@@ -124,7 +124,7 @@ function blog_menu() {
     'file' => 'blog.pages.inc',
   );
   $items['blog/feed'] = array(
-    'title' => 'Blogs',
+    'title' => 'Новости',
     'page callback' => 'blog_feed_last',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,

@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Galina</Author>
+  <LastAuthor>Ymp</LastAuthor>
+  <Created>2013-08-23T07:18:25Z</Created>
+  <LastSaved>2013-08-25T05:06:22Z</LastSaved>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>5430</WindowHeight>
+  <WindowWidth>9660</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>60</WindowTopY>
+  <RefModeR1C1/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s57">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s58">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000" ss:Bold="1" ss:Underline="Single"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s59">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s60">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+   <NumberFormat ss:Format="\ General"/>
+  </Style>
+  <Style ss:ID="s61">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+   <NumberFormat ss:Format="#,##0.00\ "/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000"/>
+   <NumberFormat ss:Format="#,##0"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"
+    ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="16" ss:ExpandedRowCount="27" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="85.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="43.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="26.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="151.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="87" ss:Span="1"/>
+   <Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="151.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="87"/>
+   <Column ss:AutoFitWidth="0" ss:Width="47.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="87.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="87"/>
+   <Column ss:AutoFitWidth="0" ss:Width="73.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="87"/>
+   <Column ss:AutoFitWidth="0" ss:Width="108"/>
+   <Column ss:AutoFitWidth="0" ss:Width="312.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="38.25"/>
+   <Row ss:AutoFitHeight="0" ss:Height="35.25">
+    <Cell ss:MergeAcross="1" ss:StyleID="s66"><Data ss:Type="String"> </Data></Cell>
+    <Cell ss:MergeAcross="13" ss:StyleID="s66"><Data ss:Type="String">Раздел: активные предложения;&#10;Тип объекта: жилой дом;&#10;Операция: Продажа;</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="27">
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Кол-во&#10;комнат</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s57"><Data ss:Type="String">Цена (РУБ)</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Район</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Тип дома</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Планировка комнат</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Общее состояние объекта</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Балкон</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Санузел</Data></Cell>
+    <Cell ss:StyleID="s58"><Data ss:Type="String">Общая&#10;площадь (кв.м)</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Жилая&#10;площадь (кв.м)</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Этаж</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Площадь&#10;кухни (кв.м)</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Риэлтор</Data></Cell>
+    <Cell ss:StyleID="s57"><Data ss:Type="String">Адрес</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">1</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">60000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Индустриальный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Объединенная ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">80000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">индивидуальная</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">32</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Столбовой В.Н.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Северная ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">2</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">3500000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Выборгская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">265000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">35.700000000000003</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Магнитная ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">2</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">290000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">требуется ремонт</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">36.700000000000003</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">2760</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">700</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Бобров Р.Г.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Садовая ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">320000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Индустриальный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">37</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Фомина С.Г.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Фестивальный пер.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">400000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Индустриальный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">индивидуальная</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Двинская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">65000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (ЕАО)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Николаевка, Первомайская</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">2</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">90000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (Комсомольский район)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">40.200000000000003</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Столбовая С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Князеволконское, Молодежная</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">1</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">165000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Индустриальный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">43.3</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">2900</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">600</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Алеутская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">4</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">350000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">45.2</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">3930</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">590</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Минометная ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">2</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">200000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Индустриальный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">требуется ремонт</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">48</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">3700</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">800</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Барнаульская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">180000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (Южный район)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">51.1</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">3470</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">1640</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Бобров Р.Г.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, Переяславка, Красноармейский пер.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">4500000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">60</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">3000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">600</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Мурманская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">110000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (Комсомольский район)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">после ремонта</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">72</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Юст М.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, смидовичи, карла маркса</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">2</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">30000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">индивидуальная</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">82</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Деповская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">5</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">435000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">индивидуальная</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">100</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">8000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">800</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Деповская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">2</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">770000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (Южный район)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">150</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, корсаково-1, союзная ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">2</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">510000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (Южный район)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">индивидуальная</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">170</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, бычиха, Строительная</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">6</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">650000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Краснофлотский</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">175.6</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Коновалов Н.В.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Пояркова ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">4</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">650000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Железнодорожный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">180</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Бобров Р.Г.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Казбекская ул.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">6</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">1980000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (Южный район)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">200</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Кондакова С.А.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, корсаково-1, Набережная</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">3</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">430000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Пригород (Южный район)</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">200</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Васенин С.В.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровский район, бычиха, уссурийская</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">5</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s65"><Data ss:Type="Number">1390000</Data></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Индустриальный</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">индивидуальная</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">не задано</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">214.6</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">18000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s61"><Data ss:Type="Number">900</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Балтинас Р.Р.</Data></Cell>
+    <Cell ss:StyleID="s60"><Data ss:Type="String">Россия, Хабаровский край, Хабаровск, Хабаровск, Яхонтовый пер.</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="11.8125"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <FitWidth>0</FitWidth>
+    <FitHeight>0</FitHeight>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>0</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+    <Gridlines/>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>20</ActiveRow>
+     <ActiveCol>6</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
