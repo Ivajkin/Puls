@@ -5,6 +5,8 @@ require_once 'namespace.php';
     $main_block .= 'tpl/article.html';
     $more_block .= 'tpl/article.html';
     $script_block .= '';
+    $css_lib = '';
+    $script_lib = '';
 
     include $sitedir.'tpl/tpl.php';
 ?>

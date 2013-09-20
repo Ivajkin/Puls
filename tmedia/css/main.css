@@ -10,6 +10,7 @@
     font-weight: bold;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Segoe UI Semibold';
     src: local('Segoe UI Semibold');
@@ -76,15 +77,18 @@ textarea {
     padding: 0.2em 0;
 }
 
-
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
-html {overflow-x: hidden;}
+html {
+    overflow-x: hidden;
+}
+
 body {
     font: 16px/26px 'Segoe UI', sans-serif;
     font-weight: normal;
 }
+
 /*.wrapper {
     width: 58.22916666666667%;
     margin: 0 20.88541666666667%;
@@ -95,16 +99,19 @@ body {
     float: left;
     width: 2%;
 }
+
 .central-area {
     /*display:table-cell;*/
     float: left;
     width: 96%;
     position: relative;
 }
+
 .root-container {
     position: relative;
-    display: table-row;
+    /*display: table-row;*/
 }
+
 /*.img-border {
     position: relative;
     z-index: 150;
@@ -122,26 +129,27 @@ body {
 /* ===================
     ALL: Orange Theme
    =================== */
-.west-side  {
+.west-side {
     background: #580068;
     background: -moz-linear-gradient(right, #500060, #210027);
-    background: -webkit-gradient(linear, right top, left top, color-stop(0%,#500060), color-stop(100%,#210027));
+    background: -webkit-gradient(linear, right top, left top, color-stop(0%, #500060), color-stop(100%, #210027));
     background: -webkit-linear-gradient(right, #500060, #210027);
     background: -o-linear-gradient(right, #500060, #210027);
     background: -ms-linear-gradient(right, #500060, #210027);
     background: linear-gradient(right, #500060, #210027);
 }
+
 .east-side {
     background: #580068;
     background: -moz-linear-gradient(left, #500060, #210027);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#500060), color-stop(100%,#210027));
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #500060), color-stop(100%, #210027));
     background: -webkit-linear-gradient(left, #500060, #210027);
     background: -o-linear-gradient(left, #500060, #210027);
     background: -ms-linear-gradient(left, #500060, #210027);
     background: linear-gradient(left, #500060, #210027);
 }
 
-nav{
+nav {
     /*border-bottom: 1px solid #ddf;*/
     font-family: 'Segoe UI Semibold';
     /*height: 100%;*/
@@ -151,13 +159,19 @@ nav{
     border-bottom: 1px ridge #580068;
 }
 
-.head {position: relative;}
+.head {
+    position: relative;
+}
+
 .main {
     background-color: #580068;
     min-height: 302px;
     position: relative;
 }
-.main * {color: #efcfff;}
+
+.main * {
+    color: #efcfff;
+}
 
 .head:before {
     content: '' !important;
@@ -173,6 +187,7 @@ nav{
     right: 100%;
     top: 0;
 }
+
 .main:before {
     content: '' !important;
     line-height: 0;
@@ -187,10 +202,10 @@ nav{
     right: 100%;
     top: 100%;
 }
+
 /* {
     border-top-width: 395px;
 } */
-
 
 .head:after {
     content: '' !important;
@@ -206,6 +221,7 @@ nav{
     left: 100%;
     top: 0;
 }
+
 .main:after {
     content: '' !important;
     line-height: 0;
@@ -220,18 +236,21 @@ nav{
     left: 100%;
     top: 100%;
 }
-<!--[if IE ]>
+
+<!--[if IE]>
 .main:after, .main:before {
     top: 0;
 }
 <![endif]-->
+
 .title {
     color: white;
 }
 
-.allend *{
+.allend * {
     color: #440e62;
 }
+
 /* ==============
     MOBILE: Menu
    ============== */
@@ -251,9 +270,11 @@ nav a {
     color: #1d1d1d;
     /*height: 22.037037037037045%;*/
 }
+
 nav a:nth-child(3) {
     width: 30%;
 }
+
 nav a:nth-child(3) img {
     width: 100%;
     height: auto;
@@ -264,6 +285,7 @@ nav a:visited {
     color: #2d2d2d;
     background-color: #580068;
 }
+
 nav a:nth-child(3):hover,
 nav a:nth-child(3):visited {
     color: #2d2d2d;
@@ -278,7 +300,10 @@ nav a:hover {
 /* ==============
     MOBILE: Title
    ============== */
-.head h1 a {text-decoration: none;}
+.head h1 a {
+    text-decoration: none;
+}
+
 .head h1 a:hover,
 .head h1 a:visited {
     text-decoration: none;
@@ -288,13 +313,22 @@ nav a:hover {
     text-decoration: underline;
     outline-color: #000066;
 }
-.head h1 {float: left; margin-bottom: 0.5em;}
-.head a.simplelink {float: right;}
+
+.head h1 {
+    float: left;
+    margin-bottom: 0.5em;
+}
+
+.head a.simplelink {
+    float: right;
+}
+
 .head a.simplelink:before {
     content: '......';
     color: transparent;
     background: url('../img/phone.png') no-repeat 0 50%;
 }
+
 /* ==============
     MOBILE: Main
    ============== */
@@ -323,27 +357,28 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     color: #111111;
 }
+
 /*@media screen and (-webkit-min-device-pixel-ratio:0) {
    h1, h2, h3, h4, h5, h6 {
        font-weight: 600 !important;
    }
 }*/
-.tcolor {color: #f26522;}
-.mcolor {color: #92278f;}
+.tcolor {
+    color: #f26522;
+}
+
+.mcolor {
+    color: #92278f;
+}
 
 a.simplelink {
     color: #2d2d2d;
     text-decoration: none;
 }
+
 a.simplelink:hover {
     text-decoration: underline;
 }
-
-
-
-
-
-
 
 /* ==========================================================================
    Media Queries
@@ -351,15 +386,30 @@ a.simplelink:hover {
 
 @media only screen and (min-width: 480px) {
 
-    .west-side, .east-side   { width: 5%; }
-    .central-area { width: 90%; }
-    .main {padding: 5px 10px;}
+    .west-side, .east-side {
+        width: 5%;
+    }
+
+    .central-area {
+        width: 90%;
+    }
+
+    .main {
+        padding: 1em 0.75em;
+    }
+
     /* ====================
         INTERMEDIATE: Menu
        ==================== */
 
-    nav {font-size: 0.8em;}
-    .head h1 {font-size: 1.7em;}
+    nav {
+        font-size: 0.8em;
+    }
+
+    .head h1 {
+        font-size: 1.7em;
+    }
+
     nav a:not(:nth-child(3)) {
         /*float: left;
         width: 27%;
@@ -368,9 +418,11 @@ a.simplelink:hover {
         padding-bottom: 3.5%;
         margin-bottom: 0;
     }
+
     nav a:nth-child(3) {
         padding-top: 6.5%;
     }
+
     nav a:first-child {
         margin-left: 0;
     }
@@ -389,8 +441,13 @@ a.simplelink:hover {
 }
 
 @media only screen and (min-width: 768px) {
-    .west-side, .east-side   { width: 20.88541666666667%; }
-    .central-area { width: 58.22916666666667%; }
+    .west-side, .east-side {
+        width: 20.88541666666667%;
+    }
+
+    .central-area {
+        width: 58.22916666666667%;
+    }
 
     /* ====================
         WIDE: CSS3 Effects
@@ -402,14 +459,21 @@ a.simplelink:hover {
        ============ */
 
 
-    nav {font-size: 1em;}
-    .head h1  {font-size: 2em;}
-    nav a:not(:nth-child(3)) {
-        padding-bottom: 6%;
-        padding-top: 20%;
+    nav {
+        font-size: 1em;
     }
+
+    .head h1 {
+        font-size: 2em;
+    }
+
+    nav a:not(:nth-child(3)) {
+        padding-bottom: 4.5%;
+        padding-top: 15%;
+    }
+
     nav a:nth-child(3) {
-        padding-top: 14.5%;
+        padding-top: 10.875%;
     }
 
     /* ============

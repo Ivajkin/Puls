@@ -6,6 +6,8 @@
     $main_block= $sitedir;
     $more_block = $sitedir;
     $script_block = $sitedir;
+    $css_lib = '';
+    $script_lib = '';
 
     error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 ?>
