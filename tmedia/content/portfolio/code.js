@@ -7,4 +7,8 @@
  */
 $(document).ready(function(){
     $('.amazingslider-watermark-0').remove();
+        /*fix_resize();
+    $(window).resize(function () {
+        fix_resize();
+    });*/
 });

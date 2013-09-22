@@ -1,10 +1,10 @@
 
 .ams-container {
-    margin:30px auto;
+    margin:auto;
     max-width:640px;
 }
 #amazingslider-1 {
     display:block;
     position:relative;
-    margin:16px auto 32px;
+    /*margin:16px auto 32px;*/
 }
