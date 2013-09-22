@@ -1,0 +1,53 @@
+.main>div {
+    /*float: left;*/
+    width: 37%;
+    max-width: 300px;
+    text-align: left;
+    padding-right: 1em;
+    display: table-cell;
+    height: 100%;
+}
+
+.main>div>div {
+    background: #800098;
+    height: 30%;
+    max-height: 200px;
+    /*padding: 30% 0;*/
+}
+.main>div>div:not(:last-child) {
+    margin-bottom: 1.5%;
+}
+.main>div>div:hover {
+    cursor: pointer;
+}
+.main .hovered {    background: #9900ad;}
+.main>div>div>div {
+    height: 100%;
+    width: 20%;
+    display: inline-block;
+    margin: 1em;
+}
+.main>div>div img {
+    width: 100%;
+    height: auto;
+    max-height: 90px;
+    max-width: 100px !important;
+}
+.main>div h3 {
+    margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+.main article {
+    /*float: right;*/
+    width: 63%;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+.main article>section {
+    display: table-cell;
+}

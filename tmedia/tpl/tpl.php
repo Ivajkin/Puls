@@ -72,9 +72,9 @@
     </div>
     <!-- #main-container -->
     <div class="east-side">
-        <div class="invisible">...</div>
-        <!--<div class="br-up"></div>
-        <div class="br-down"></div>-->
+        <!--<div class="invisible">...</div>-->
+        <div class="br-up"></div>
+        <div class="br-down"></div>
     </div>
 </div>
 
