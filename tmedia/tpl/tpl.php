@@ -36,9 +36,9 @@
 
 <div class="root-container">
     <div class="west-side">
-        <div class="invisible">...</div>
-        <!--<div class="br-up"></div>
-        <div class="br-down"></div>-->
+        <!--<div class="invisible">...</div>-->
+        <div class="br-up"></div>
+        <div class="br-down"></div>
     </div>
     <div class="central-area">
         <header class="head clearfix" role="header">
@@ -98,18 +98,48 @@
 </script>
 <script>
     //Dynamic border
-    var br_top_h, main_h;
+    var br_top_h, main_h, wside_w, eside_w;
     var fix_resize = function () {
         br_top_h = $('header.head').height();
-        main_h = $('div.main').height();
+        main_h = $('div.main').height()+
+            parseFloat($('div.main').css('padding-top'))+ parseFloat($('div.main').css('padding-bottom'))+
+            parseFloat($('div.main').css('margin-top'))+ parseFloat($('div.main').css('margin-bottom'));
+        wside_w = $('.west-side').width();
+        eside_w = $('.east-side').width();
+        b_angle= 0.6;
 
-        $('style.before-after').empty();
+        /*$('style.before-after').empty();
         $('style.before-after').append('.head:before, .head:after {border-top-width: ' + br_top_h + 'px;}' +
             '.main:before, .main:after {border-bottom-width: ' + br_top_h + 'px;}'
-        );
+        );*/
         /*$('header.head:before, header.head:before').css('border-top-width') ;*/
 
         $('.west-side, .east-side').css('height', main_h + 2 * br_top_h + 'px');
+        $('.east-side [class|="br"], .west-side [class|="br"]').css('height', br_top_h + 'px');
+        $('.east-side .br-down, .west-side .br-down').css('top', main_h + 'px');
+
+        $('.east-side [class|="br"], .west-side [class|="br"]').empty();
+        $('.east-side .br-up').append(
+            '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">'+
+                '<polygon points="0,0 0,'+br_top_h+' '+eside_w+','+(b_angle*br_top_h)+' '+eside_w+',0" />'+
+                //'<path d="M0 0 L0 '+br_top_h+' L'+eside_w+' '+(0.4*br_top_h)+' L'+eside_w+' 0 Z" stroke-width="0" fill="#fff" />'+
+             '</svg>'
+        );
+        $('.east-side .br-down').append(
+            '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">'+
+                '<polygon points="0,0 0,'+br_top_h+' '+eside_w+','+br_top_h+' '+eside_w+','+((1-b_angle)*br_top_h)+'" />'+
+            '</svg>'
+        );
+        $('.west-side .br-up').append(
+            '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">'+
+                '<polygon points="0,0 '+wside_w+',0 '+wside_w+','+br_top_h+' 0,'+(b_angle*br_top_h)+'" />'+
+            '</svg>'
+        );
+        $('.west-side .br-down').append(
+            '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">'+
+                '<polygon points="0,'+((1-b_angle)*br_top_h)+' '+0+','+br_top_h+' '+wside_w+','+br_top_h+' '+wside_w+',0" />'+
+            '</svg>'
+        );
     }
 
     $(document).ready(function () {

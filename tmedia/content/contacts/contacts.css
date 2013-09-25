@@ -1,0 +1,159 @@
+.main .c-map {
+    display: block;
+    width: 50%;
+    float: left;
+    height: 100%;
+    min-height: 250px;
+    max-height: 300px;
+}
+.main .c-info{
+    display: block;
+    width: 47%;
+    float: left;
+}
+
+.main .c-info {
+    padding-left: 3%;
+    vertical-align: top;
+}
+.main .c-info p {float: right; margin: 0; width: 50%; font-size: 1.1em;}
+.main .c-info h3 {float: left; margin: 0; font-style: normal; width: 48%; padding-right: 2%;}
+.c-info .address {font-style: italic; margin-bottom: 1em;}
+.c-info address {margin-bottom: 1em;}
+/*.main .c-info p>a {display: block;}*/
+
+
+
+.allend .feedback-form {
+    width: 100%;
+    height: 100%;
+}
+
+/*.feedback-form *:not(input) {padding: 0 !important;}*/
+.allend .feedback-form>div {
+    float: left;
+    /*display: table-cell;*/
+    width: 5%;
+}
+
+.allend .feedback-form>div:first-child {
+    width: 25%;
+ }
+.allend .feedback-form>div:first-child>* {
+    display: block;
+    width: 88%;
+    margin: 0;
+}
+.allend .feedback-form>div:first-child>*:not(:last-child) {margin-bottom: 0.6em;}
+.allend .feedback-form>div:first-child input {
+    padding: 0.75em;
+}
+.allend .feedback-form>div:first-child .LBD_CaptchaDiv {
+    max-height: 80px;
+    width: 100%;
+}
+.allend .feedback-form .LBD_CaptchaDiv a {width: 100%; height: 100%;}
+.allend .feedback-form .LBD_CaptchaDiv img {
+    height: auto;
+    max-height: 80px;
+    width: 100%;
+}
+
+.allend .feedback-form div:last-child {
+    width: 70%;
+    float: right;
+    position: relative;
+}
+.allend .feedback-form textarea {
+    width: 95%;
+    height: 83%;
+    padding: 0.75em;
+}
+.allend .feedback-form button {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    top: 89%;
+    left: -1px;
+    padding: 0;
+}
+
+
+
+.allend>header {color: #440e62;}
+
+
+.allend .feedback-form .LBD_CaptchaDiv,
+.allend .feedback-form input,
+.allend .feedback-form textarea,
+.allend .feedback-form button{
+    border: 1px solid #c8c8c8;
+    -webkit-border-radius: 55px 10px;
+    -moz-border-radius: 55px 10px;
+    border-radius: 55px 10px;
+}
+
+.allend .feedback-form .LBD_CaptchaDiv,
+.allend .feedback-form input {
+    color: #c8c8c8;
+    font-style: italic;
+    text-align: center;
+}
+.feedback-form textarea:focus,
+.feedback-form input:focus {
+    outline: none;
+}
+.allend .feedback-form input[name="captchacode"] {
+    text-transform: uppercase;
+}
+.allend .feedback-form .LBD_CaptchaDiv:hover,
+.allend .feedback-form input:hover{
+    color: #630460;
+    border-color: #9b9b9b;
+}
+
+.allend .feedback-form textarea {
+    color: #252525;
+    border-radius: 10px 10px 0px 0px;
+    resize: none;
+
+}
+.allend .feedback-form button {
+    border-radius: 0px 0px 10px 10px;
+    background-color: #580068;
+    color: #fff;
+}
+
+.allend .feedback-form .LBD_CaptchaDiv {
+    position: relative;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+.allend .feedback-form .LBD_CaptchaImageDiv img {
+    -webkit-border-radius: 9px 7px 7px 9px;
+    -moz-border-radius: 9px 7px 7px 9px;
+    border-radius: 9px 7px 7px 9px;
+}
+.allend .feedback-form .LBD_CaptchaImageDiv {
+    width: 88%;
+    margin-right: 1%;
+}
+.allend .feedback-form .LBD_CaptchaIconsDiv {
+    width: 11%;
+    margin: 0;
+    position: relative;
+    left: 1%;
+}
+/*.allend .feedback-form .LBD_CaptchaIconsDiv .LBD_SoundIcon{
+    position: absolute;
+    bottom: 0;
+    top: 78%;
+    right: 0;
+}*/
+
+.allend .feedback-form .LBD_CaptchaIconsDiv a:link,
+.allend .feedback-form .LBD_CaptchaIconsDiv a:visited,
+.allend .feedback-form .LBD_CaptchaIconsDiv a:focus,
+.allend .feedback-form .LBD_CaptchaIconsDiv a:hover,
+.allend .feedback-form .LBD_CaptchaIconsDiv a:active {margin: 0;}

@@ -80,13 +80,13 @@ textarea {
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
-html {
+/*html {
     overflow-x: hidden;
-}
+}*/
 /*html * {zoom: 1;}*/
 
 body {
-    font: 16px/26px 'Segoe UI', sans-serif;
+    font: 1em/1.625em 'Segoe UI', sans-serif;
     font-weight: normal;
 }
 
@@ -99,6 +99,27 @@ body {
     /*display:table-cell;*/
     float: left;
     width: 2%;
+    position: relative;
+}
+.east-side [class|='br'], .west-side [class|='br'] {
+    position: relative;
+    width: 100%;
+    /*color: #fff;
+    background: #785;
+    left: 50px;*/
+}
+.east-side .br-up, .west-side .br-up {
+     top: 0;
+ }
+.east-side .br-down, .west-side .br-down {
+    top: 100%;
+}
+.west-side svg, .east-side svg {
+    height: 100%;
+    width: 100%;
+    fill:#fff;
+    stroke:#fff;
+    stroke-width: 2px;
 }
 
 .central-area {
@@ -174,7 +195,7 @@ nav {
     color: #efcfff;
 }
 
-.head:before {
+/*.head:before {
     content: '' !important;
     line-height: 0;
     font-size: 0;
@@ -202,13 +223,13 @@ nav {
     position: absolute;
     right: 100%;
     top: 100%;
-}
+}*/
 
 /* {
     border-top-width: 395px;
 } */
 
-.head:after {
+/*.head:after {
     content: '' !important;
     line-height: 0;
     font-size: 0;
@@ -243,7 +264,7 @@ nav {
     top: 0;
 }
 <![endif]-->
-
+*/
 .title {
     color: white;
 }
@@ -336,6 +357,9 @@ nav a:hover {
 
 .main {
     padding: 30px 0;
+}
+.allend {
+    padding: 1em 0.75em;
 }
 
 .main article h1 {
@@ -634,3 +658,4 @@ a.simplelink:hover {
     h3 {
         page-break-after: avoid;
     }
+}
