@@ -1,4 +1,8 @@
 <?php
+
+    mb_internal_encoding("utf-8");
+    header('Content-Type: text/html; charset=utf-8');
+    setlocale(LC_ALL, 'ru_RU');
     $sitedir= '';
 
     //Toggle invisible class for showing header.

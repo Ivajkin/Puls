@@ -10,25 +10,36 @@
     $headers.= "X-Mailer: PHP/" . phpversion();
     return mail($to, $s, $body, $headers);
 }*/
-
+function mail_utf8($to, $subject = '(No subject)', $message = '', $from) {
+    $header = 'MIME-Version: 1.0' . "\n" . 'Content-type: text/plain; charset=UTF-8'
+        . "\n" . 'From: Yourname <' . $from . ">\n";
+    mail($to, '=?UTF-8?B?'.base64_encode($subject).'?=', $message, $header);
+}
 // we are processing a valid submited form
 function sendMessage($name, $email, $message) {
     // TODO: send email only after configuring your email server settings
 
-    $to = "nowert@mail.ru";
+    $to = "info@tmedia.pro";
+    //$res= preg_match('/(?=@).*/i',$to);
+    /*$cod_page= '';
+    if ($res[0] == '@mail.ru' || $res[0] == '@inbox.ru' || $res[0] == '@list.ru' || $res[0] == '@bk.ru') {
+        $cod_page= 'windows-1251';
+    } else {
+        $cod_page= 'utf-8';
+    }*/
     $subject = "=?utf-8?b?".base64_encode("Новое сообщение от tmedia.pro")."?=";
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers.= "From: =?utf-8?b?".base64_encode($name)."?= <".$email.">\r\n";
-    $headers.= "Content-Type: text/plain;charset=utf-8\r\n";
+    $headers.= "Content-Type: text/plain;charset=windows-1251\r\n";
     //$headers.= "Reply-To: $reply\r\n";
     $headers.= "X-Mailer: PHP/" . phpversion();
 
     // создаем наше сообщение
-    $body = 'Имя отправителя: '.$name.'\r\nКонтактный email: '.$email.'\r\n\r\n\r\n'.$message;
+    $body = 'Имя отправителя: '.$name."\n\r".'Контактный email: '.$email."\n\r\n\r\n\r".$message;
     //$body = wordwrap($body, 70);
 
-    return mail($to, $subject, $body, $headers);
+    return mail($to, $subject, iconv('utf-8', 'windows-1251//IGNORE', $body), $headers);
 
 }
 

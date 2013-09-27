@@ -130,8 +130,8 @@ gopost= function(){
 }
 
 function postValidation(data, status){
-    /*console.log(status);
-    console.log(data);*/
+    console.log(status);
+    console.log(data);
     if (data[captchaUserInputId]){
 
         // Get the Captcha instance, as per client side API
@@ -156,6 +156,7 @@ function postValidation(data, status){
     if (data["Form"] && data["Form"]["isValid"]){
         //$("#SubmitButton").attr("disabled", "disabled");
         alert('Сообщение успешно отправлено!');
+        captcha.ReloadImage();
     } else {
         delete data["Form"];
         //console.log(data);

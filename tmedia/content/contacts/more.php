@@ -10,8 +10,8 @@
 </header>
 <div class="feedback-form">
     <div>
-        <input type="text" name="name" value="ФИО" autocomplete="on" data-def="ФИО"/>
-        <input type="text" name="email" value="E-MAIL" autocomplete="on" data-def="E-MAIL"/>
+        <input type="text" name="Name" value="ФИО" autocomplete="on" data-def="ФИО"/>
+        <input type="text" name="Email" value="E-MAIL" autocomplete="on" data-def="E-MAIL"/>
         <!--<div class="captcha">
             <img src="add/amslider/img/the-battle.jpg" alt="Tecno Media | Техно Медиа" />
         </div>-->
