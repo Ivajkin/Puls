@@ -8,3 +8,14 @@
     position:relative;
     /*margin:16px auto 32px;*/
 }
+.ams-container [class|='amazingslider-title'] {
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #565498, 0 0 10px #565498, 0 0 10px #565498;
+    color: #EAECF6;
+}
+ .ams-container [class|='amazingslider-description'] {
+     font-weight: 500;
+ }
+/*.ams-container [class|='amazingslider-arrow-right'], .ams-container [class|='amazingslider-arrow-left'] {
+    margin: 50px 0;
+}*/

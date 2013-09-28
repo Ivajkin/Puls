@@ -46,7 +46,7 @@
             <nav class="clearfix" role="navigation">
                 <a href="about.php">О нас</a>
                 <a href="portfolio.php">Портфолио</a>
-                <a href="index.php" role="banner"><img src="img/logo.png"
+                <a href="/" role="banner"><img src="img/logo.png"
                                                        alt="Техно Медиа -- разработка сайтов и програмного обеспечения"
                                                        title="Техно Медиа -- разработка сайтов и програмного обеспечения"/>
                 </a>
@@ -144,6 +144,8 @@
 
     $(document).ready(function () {
         fix_resize();
+        setTimeout(fix_resize,250);
+        //setTimeout(fix_resize,3000);
     });
     $(window).resize(function () {
         fix_resize();
