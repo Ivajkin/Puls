@@ -21,5 +21,8 @@ $(document).ready(function () {
             $('.main section').eq(idnext).fadeIn(hidetime*0.7);
         });
     });
+    $(document).ready(function () {
+        setTimeout(fix_resize,1000);
+    });
 })
 ;

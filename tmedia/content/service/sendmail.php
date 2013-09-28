@@ -16,7 +16,7 @@ function mail_utf8($to, $subject = '(No subject)', $message = '', $from) {
     mail($to, '=?UTF-8?B?'.base64_encode($subject).'?=', $message, $header);
 }
 // we are processing a valid submited form
-function sendMessage($name, $email, $message) {
+function sendMessage($name, $email, $phone, $ckbox, $message) {
     // TODO: send email only after configuring your email server settings
 
     $to = "info@tmedia.pro";
@@ -27,7 +27,7 @@ function sendMessage($name, $email, $message) {
     } else {
         $cod_page= 'utf-8';
     }*/
-    $subject = "=?utf-8?b?".base64_encode("Новое сообщение от tmedia.pro")."?=";
+    $subject = "=?utf-8?b?".base64_encode("Новая заявка от tmedia.pro")."?=";
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers.= "From: =?utf-8?b?".base64_encode($name)."?= <".$email.">\r\n";
@@ -36,7 +36,13 @@ function sendMessage($name, $email, $message) {
     $headers.= "X-Mailer: PHP/" . phpversion();
 
     // создаем наше сообщение
-    $body = 'Имя отправителя: '.$name."\n\r".'Контактный email: '.$email."\n\r\n\r\n\r".$message;
+    $body = 'Имя отправителя: '.$name."\n\r".
+        'Контактный email: '.$email."\n\r".
+        'Контактный телефон: '.$phone."\n\r".
+        'Интересующие услуги:'."\n\r";
+    $i=0;
+    while ($ckbox[$i]) $body.= "\t\t*  ".$ckbox[$i++]."\n\r";
+    $body.= "\n\r\n\r\n\r".$message;
     //$body = wordwrap($body, 70);
 
     return mail($to, $subject, iconv('utf-8', 'windows-1251//IGNORE', $body), $headers);
@@ -67,11 +73,11 @@ function ValidateCaptchacode($code) {
     global $request;
     $instanceId = $request["CaptchaInstanceId"];
     // We want to check if the user already solved the Captcha for this message
+    $isHuman = $ContactCaptcha->IsSolved;
 
-/*=====================$isHuman = false for prevent chrome cookie policy=========================
+    /*=====================$isHuman = false for prevent chrome cookie policy=========================
 =======================================================================
 */
-    $isHuman = $ContactCaptcha->IsSolved;
     if (!$isHuman) {
         // Validate the captcha
         // Both the user entered $code and $instanceId are used.
@@ -94,7 +100,7 @@ function ValidateName($name) {
     };
 }
 
-// email validation
+// email validaton
 function ValidateEmail($email) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $email= substr(htmlspecialchars(trim($email)), 0, 50);
@@ -104,11 +110,23 @@ function ValidateEmail($email) {
     }
 }
 
+// email Phone
+function ValidatePhone($phone) {
+    $phone = htmlspecialchars(trim($phone));
+    $lenstd= strlen("+7 4212-456-789");
+    $len= strlen($phone);
+    if ($len > $lenstd || preg_match("/[^+0-9 -]+/i",$phone))
+        return setElementValidationResult(false, $phone, "Please enter your name.");
+    else
+        return setElementValidationResult(true, $phone);
+}
+
 // message validation
 function ValidateMessage($message) {
     $message = substr(htmlspecialchars(trim($message)), 0, 1000000);
     $headerInjection = preg_match("/(bcc:|cc:|content\-type:)/i", $message);
-    if (strlen($message) > 2 && !$headerInjection) {
+    if (!strlen($message))  return setElementValidationResult(false, $message, "Please renter your message.");
+    if (!$headerInjection) {
         return setElementValidationResult(true, $message);
     } else {
         return setElementValidationResult(false, $message, "Please renter your message.");
@@ -190,7 +208,7 @@ if (count($request)) {
     } else {
         // We send the message with content from the validator
         // Additional sanitization should be implemented along with the validation
-        $isSent = sendMessage($validationResult['Name']['validContent'], $validationResult['Email']['validContent'], $validationResult['Message']['validContent']);
+        $isSent = sendMessage($validationResult['Name']['validContent'], $validationResult['Email']['validContent'],  $validationResult['Phone']['validContent'], $request['ckbox'], $validationResult['Message']['validContent']);
         if ($isSent === true) {
             // each message requires a new Captcha challenge
             $ContactCaptcha->Reset();

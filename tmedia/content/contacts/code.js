@@ -57,13 +57,13 @@ $('.feedback-form button').click(function(index){
         return;
     }
 
-    msg= $('.feedback-form input[type="text"]').eq(1).val().match(/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i);
+    msg= $('.feedback-form input[name="Email"]').val().match(/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i);
     if (!msg) {
-        $('.feedback-form input[type="text"]').eq(1).css('border-color', 'red');
+        $('.feedback-form input[name="Email"]').css('border-color', 'red');
         alert('Указанный e-mail не соответствует формату.\n\rПожалуйста введите его снова.');
         return;
     } else
-        $('.feedback-form input[type="text"]').eq(1).css('border-color', '#C8C8C8');
+        $('.feedback-form input[name="Email"]').css('border-color', '#C8C8C8');
 
     gopost();
 });
@@ -81,8 +81,8 @@ $(window).resize(function () {
 // Define the name of the Captcha field.
 // It serves to access BotDetect Captcha client-side API later.
 // http://captcha.com/doc/php/api/captcha-client-side-reference.html
-var captchaname = '.feedback-form input[name="captchacode"]';
-var captchaUserInputId = 'captchacode';
+var captchaname = '.feedback-form input[name="Captchacode"]';
+var captchaUserInputId = 'Captchacode';
 
 // AJAX argument is added to differentiate from regular POST.
 var validationUrl = "contacts.php?AJAX=1";
@@ -115,7 +115,7 @@ var formElements = $('.feedback-form input, .feedback-form textarea');
 );*/
 
 gopost= function(){
-        var postData = {}
+        var postData = {};
         formElements.each( function(){
                 if(this.id == captchaUserInputId){
                     // In case of our Captcha field, we also send the InstanceId
@@ -139,12 +139,12 @@ function postValidation(data, status){
 
 
         if(data[captchaUserInputId]["isValid"]){
-            $('.feedback-form input[type="text"]').eq(2).css('border-color', '#C8C8C8');
+            $(captchaname).css('border-color', '#C8C8C8');
             // We disable the Captcha entry if the user already solved it
             //$("#" + captchaUserInputId).attr("disabled", "disabled");
             //$("#" + captchaUserInputId).parent().remove();
         }else{
-            $('.feedback-form input[type="text"]').eq(2).css('border-color', 'red');
+            $(captchaname).css('border-color', 'red');
             // We want to get another image if the Captcha validation failed.
             // User gets one try per image.
             captcha.ReloadImage();
@@ -200,7 +200,7 @@ function postValidation(data, status){
 $(document).ready(function () {
     $('.feedback-form .LBD_CaptchaDiv, .feedback-form .LBD_CaptchaImageDiv, .feedback-form .LBD_CaptchaIconsDiv').removeAttr('style');
 
-    $('.feedback-form .LBD_CaptchaImageDiv a').attr({'href': 'javascript:void(0)', 'target': '_self'})
+    $('.feedback-form .LBD_CaptchaImageDiv a').attr({'href': 'javascript:void(0)', 'target': '_self', 'title': 'Нажмите для обновления картинки'})
         .click(function(){
             ContactCaptcha.ReloadImage();
             return false;

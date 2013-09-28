@@ -21,7 +21,7 @@ $script_lib = '';
 
   // create & configure the Captcha object
   $ContactCaptcha = new Captcha("ContactCaptcha");
-  $ContactCaptcha->UserInputID = "captchacode";
+  $ContactCaptcha->UserInputID = "Captchacode";
     $ContactCaptcha->CodeLength = 6;
     $ContactCaptcha->ImageWidth = 150;
     $ContactCaptcha->ImageStyle = ImageStyle::CaughtInTheNet2;

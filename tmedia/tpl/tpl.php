@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, user-scalable=false; initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width"> <!--, user-scalable=false; initial-scale=1, maximum-scale=1-->
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -44,7 +44,7 @@
         <header class="head clearfix" role="header">
             <!--<h1 class="title">h1.title</h1>-->
             <nav class="clearfix" role="navigation">
-                <a href="about.php">О нас</a>
+                <a href="/">О нас</a>
                 <a href="portfolio.php">Портфолио</a>
                 <a href="/" role="banner"><img src="img/logo.png"
                                                        alt="Техно Медиа -- разработка сайтов и програмного обеспечения"

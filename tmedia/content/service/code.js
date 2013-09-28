@@ -1,188 +1,223 @@
-$(document).ready(function () {
-    mw = $('.main').width();
-    slmargin = 0.05
-    slwidth = 1-slmargin;
+textarea_resize= function(){
+    true_h= 0.975103734439834;
+    true_w= 2-0.9928678676888749;
+    tw= $('.allend .feedback-form textarea').width()+
+        parseFloat($('.allend .feedback-form textarea').css('padding-right'))+
+        parseFloat($('.allend .feedback-form textarea').css('padding-left'));
 
-    /*// This function runs before the slide transition starts
-     var switchIndicator = function ($c, $n, currIndex, nextIndex) {
+    $('.allend .feedback-form>div').eq(2).css('height',
+        $('.allend .feedback-form>div').eq(0).height()*true_h+'px');
+    $('.allend .feedback-form button').css('width', (tw*true_w+1)+'px');
+    console.log(tw*true_w);
+}
 
-     $('.time-indicator').stop().css('width', 0);  // kills the timeline by setting it's width to zero
-     };
+jQuery(function($){
+    $('.feedback-form input[name="Phone"]').mask("+7 9999-999-999");
+});
 
-     // This function runs after the slide transition finishes
-     var startTimeIndicator = function () {
+$('.feedback-form input[type="text"], .feedback-form textarea').focus(function(){
+    if ($(this).val() == $(this).data('def'))
+        $(this).val('');
+});
+$('.feedback-form input[type="text"], .feedback-form textarea').focusout(function(){
+    if (!$(this).val()) {
+        $(this).val($(this).data('def'));
+    }
+});
 
-     $timeIndicator.animate({width: '100%'}, 10000);          // start the timeline animation
-     };*/
-
-    setting = {
-        /****************
-         * General
-         ****************/
-        //mode: 'horizontal', /**/
-        //speed: 500, /**/
-        slideMargin: slmargin * mw / 3.0,
-        //startSlide: 0, /**/
-        /*slideSelector*/
-        //infiniteLoop: true, /**/
-        //responsive: true, /**/
-        //useCSS: true, /**/
-        //preloadImages: 'visible', /**/
-        //touchEnabled: true, /**/
-        //swipeThreshold: 50, /**/
-        //oneToOneTouch: true, /**/
-        //preventDefaultSwipeX: true, /****/
-        /********************
-         * Pager
-         ********************/
-        pager: false,
-        /*******************
-         * Controls
-         *******************/
-        //controls: true, /**/
-        /*nextText: 'Next',
-         prevText: 'Prev'*/
-        /*nextSelector:
-         prevSelector:
-         */
-        /******************
-         * Auto
-         ******************/
-        auto: true,
-        pause: 10000,
-        //autoStart: true, /**/
-        /*autoDirection: 'next'*/
-        autoHover: true,
-        /**********************
-         * Carousel
-         **********************/
-        minSlides: 1,
-        maxSlides: 3,
-        moveSlides: 1,
-        slideWidth: slwidth * mw / 3.0,
-        /**********************
-         * Callbacks
-         ******************/
-        onSliderLoad: function (curIndex) {
-            $('.bx-controls-direction').toggleClass('invisible');
-            $('.slider-viewport')
-                .mouseenter(function () {
-                    $('.bx-controls-direction').toggleClass('invisible');
-                })
-                .mouseleave(function () {
-                    $('.bx-controls-direction').toggleClass('invisible');
-                });
-        }/*,
-         onSlideBefore: switchIndicator,
-         onSlideAfter: startTimeIndicator*/
-
-    };
-    var slider = $('#bxslider-0').bxSlider(setting);
-
-    //startTimeIndicator(); // start the time line for the first slide
-
-    $(window).resize(function () {
-        mw = $('.main').width();
-        tmp= $('body').width();
-        if (tmp >= mediawidthmin && tmp < mediawidthmax) {
-            setting.slideMargin = slmargin * mw / 3.0;
-            setting.slideWidth = slwidth * mw / 3.0;
-            slider.reloadSlider(setting);
-        }
+$('.feedback-form button').mouseenter(function(){
+    $(this).css('background-color', '#620C72');
+});
+$('.feedback-form button').mouseleave(function(){
+    $(this).css('background-color', '#580068');
+});
+$('.feedback-form button').mousedown(function(){
+    $(this).css({
+        'background-color': '#74038A',
+        '-webkit-box-shadow': '0px 0px 40px rgba(133, 33, 112, 0.75)',
+        '-moz-box-shadow':    '0px 0px 40px rgba(133, 33, 112, 0.75)',
+        'box-shadow':         '0px 0px 40px rgba(133, 33, 112, 0.75)'
     });
+});
+$('.feedback-form button').mouseup(function(){
+    $(this).css({
+        'background-color': '#580068',
+        '-webkit-box-shadow': 'none',
+        '-moz-box-shadow':    'none',
+        'box-shadow':         'none'
+    });
+});
+$('.feedback-form button').click(function(index){
+    msg= '';
+    $('.feedback-form input[type="text"]').each(function(){
+        if( $(this).val() == $(this).data('def')) {
+            msg+= '*  '+$(this).data('def')+'\n\r';
+            $(this).css('border-color', 'red');
+        } else
+            $(this).css('border-color', '#C8C8C8');
+    });
+    if (msg.length) {
+        alert('Пожалуйста заполните следующие поля:\n\r'+msg);
+        return;
+    }
 
-    fix_resize();
+    msg= $('.feedback-form input[name="Email"]').val().match(/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i);
+    if (!msg) {
+        $('.feedback-form input[name="Email"]').css('border-color', 'red');
+        alert('Указанный e-mail не соответствует формату.\n\rПожалуйста введите его снова.');
+        return;
+    } else
+        $('.feedback-form input[name="Email"]').css('border-color', '#C8C8C8');
+
+    gopost();
+});
+
+$(document).ready(function () {
+    textarea_resize();
+});
+$(window).resize(function () {
+    textarea_resize();
 });
 
 
-/*
- ;(function (w, $, undefined) {
 
- var $box = $('#content-box')
- , $indicators = $('.goto-slide')
- , $timeIndicator = $('.time-indicator')
- , $slides = $('#content-box figure')
- , slideInterval = 3000
- , effectOptions = {
- 'blindLeft': {blindCount: 15}
- , 'blindDown': {blindCount: 15}
- , 'tile3d': {tileRows: 6, rowOffset: 80}
- , 'tile': {tileRows: 6, rowOffset: 80}
- , 'perspective': 1000
- };
- // initialize the plugin with the desired settings
- settings= {
- speed: 1000
- , autoScroll: true
- , timeout: slideInterval
- , pauseOnHover: true
- , next: '.next'
- , prev: '.prev'
- , onbefore: switchIndicator
- , onafter: startTimeIndicator
- };
- $box.boxSlider(settings);
+// Define the name of the Captcha field.
+// It serves to access BotDetect Captcha client-side API later.
+// http://captcha.com/doc/php/api/captcha-client-side-reference.html
+var captchaname = '.feedback-form input[name="captchacode"]';
+var captchaUserInputId = 'captchacode';
 
- w.jqBoxSlider.registerAnimator('3dfix', (function () {
+// AJAX argument is added to differentiate from regular POST.
+var validationUrl = "contacts.php?AJAX=1";
 
- var adaptor = {};
+// Collect form elements we want to handle.
+var formElements = $('.feedback-form input, .feedback-form textarea');
+//var form = $('#contactForm');
 
- // setup slide and box css
- adaptor.initialize = function ($box, $slides, settings) {
- // cache the original css for reset or destroy
- adaptor._cacheOriginalCSS($box, 'box', settings);
- adaptor._cacheOriginalCSS($slides, 'slides', settings);
-
- if ('static auto'.indexOf($box.css('position')) !== -1) {
- $box.css('position', 'relative');
+/*formElements.blur(
+ function(){
+ var postData = {};
+ // Additional check to skip over empty fields
+ // This igores non-relevant triggering of onBlur
+ if (this.value != ''){
+ postData[this.id] = this.value;
  }
 
- $slides
- .css({ position: 'relative', top: 0, left: 0, width: '200px', height: '120px' })
- .filter(':gt(0)').hide();
- $box.css({height: $slides.eq(0).height()});
- };
+ if(this.id == captchaUserInputId){
+ // In case of our Captcha field, we also send the InstanceId
+ captchaUserInputField = $('#' + captchaUserInputId).get(0);
+ postData["CaptchaInstanceId"] = captchaUserInputField.Captcha.InstanceId;
+ }
 
- // fade current out and next in
- adaptor.transition = function (settings) {
- settings.$nextSlide.fadeIn(settings.speed);
- settings.$currSlide.fadeOut(settings.speed);
- };
+ if(this.id == "SubmitButton"){
+ return false;
+ }
 
- // reset the original css
- adaptor.destroy = function ($box, settings) {
- $box.children().css(settings.origCSS.slides);
- $box.css(settings.origCSS.box);
- };
+ $.post(validationUrl, postData, postValidation);
+ }
+ );*/
 
- return adaptor;
+gopost= function(){
+    var postData = {};
+    formElements.each( function(){
+        if(this.id == captchaUserInputId){
+            // In case of our Captcha field, we also send the InstanceId
+            captchaUserInputField = $('#' + captchaUserInputId).get(0);
+            postData["CaptchaInstanceId"] = captchaUserInputField.Captcha.InstanceId;
+        }
+        postData[$(this).attr('name')] = $(this).val();
+    });
+    postData['ckbox']= [];
+    $('.feedback-form .chk-box input[type="checkbox"]:checked').parent().each(function(){
+        postData['ckbox'].push($(this).text());
+    });
 
- }()));
+    $.post(validationUrl, postData, postValidation);
+    return false;
+}
 
- $box.boxSlider('option', 'effect', '3dfix');
- $box.boxSlider('option', 'effect', 'scrollHorz3d');
+function postValidation(data, status){
+    console.log(status);
+    console.log(data);
+    if (data[captchaUserInputId]){
 
- // This function runs before the slide transition starts
- var switchIndicator = function ($c, $n, currIndex, nextIndex) {
- // kills the timeline by setting it's width to zero
- $timeIndicator.stop().css('width', 0);
- // Highlights the next slide pagination control
- $indicators.removeClass('current').eq(nextIndex).addClass('current');
- };
+        // Get the Captcha instance, as per client side API
+        captcha = $('#' + captchaUserInputId).get(0).Captcha;
 
- // This function runs after the slide transition finishes
- var startTimeIndicator = function () {
- // start the timeline animation
- $timeIndicator.animate({width: '300px'}, slideInterval);
- };
 
- startTimeIndicator(); // start the time line for the first slide
+        if(data[captchaUserInputId]["isValid"]){
+            $(captchaname).css('border-color', '#C8C8C8');
+            // We disable the Captcha entry if the user already solved it
+            //$("#" + captchaUserInputId).attr("disabled", "disabled");
+            //$("#" + captchaUserInputId).parent().remove();
+        }else{
+            $(captchaname).css('border-color', 'red');
+            // We want to get another image if the Captcha validation failed.
+            // User gets one try per image.
+            captcha.ReloadImage();
+            alert('Код с картинки введён неверно. Пожалуйста, попробуйте ещё раз.');
+            return;
+        }
+    }
 
- // Paginate the slides using the indicator controls
- /*$('.controls').on('click', '.goto-slide', function (ev) {
- $box.boxSlider('showSlide', $(this).data('slideindex'));
- ev.preventDefault();
- });
+    if (data["Form"] && data["Form"]["isValid"]){
+        //$("#SubmitButton").attr("disabled", "disabled");
+        alert('Сообщение успешно отправлено!');
+        captcha.ReloadImage();
+    } else {
+        delete data["Form"];
+        //console.log(data);
+        for (val in data)
+            if (!data[val]['isValid']) {
+                alert('Введённые данные слишком большие или не соответствуют допустимому формату.Попробуйте:'+
+                    '\n\r* указать другой e-mail' +
+                    '\n\r* уменьшить сообщение,'+
+                    '\n\r* вместо имени и отчества использовать инициалы'
+                );
+                return;
+            }
+        alert('Указанный адрес электроной почты недоступен или не существует. Пожалуйста попробуйте снова или укажите другой e-mail.')
+    }
+    //updateValidatorMessages(data);
+}
 
- }(window, jQuery || Zepto));
- $('#content-box').boxSlider( /* options */ /*);*/
+// Handling the display of validation messages
+/*function updateValidatorMessages(data){
+ for(var elementKey in data){
+ validatedElement = data[elementKey];
+
+ var elementValidatorMessage = $("#" + elementKey + "ValidatorMessage");
+
+ if(validatedElement.hasOwnProperty("validationMessage")){
+ elementValidatorMessage.text(validatedElement["validationMessage"]);
+ }else{
+ elementValidatorMessage.empty();
+ }
+
+ if(validatedElement["isValid"]){
+ elementValidatorMessage.toggleClass("correct", true);
+ elementValidatorMessage.toggleClass("incorrect", false);
+ }else{
+ elementValidatorMessage.toggleClass("correct", false);
+ elementValidatorMessage.toggleClass("incorrect", true);
+ }
+ }
+ }*/
+
+$(document).ready(function () {
+    $('.feedback-form .LBD_CaptchaDiv, .feedback-form .LBD_CaptchaImageDiv, .feedback-form .LBD_CaptchaIconsDiv').removeAttr('style');
+
+    $('.feedback-form .LBD_CaptchaImageDiv a').attr({'href': 'javascript:void(0)', 'target': '_self', 'title': 'Нажмите для обновления картинки'})
+        .click(function(){
+            ContactCaptcha.ReloadImage();
+            return false;
+        });
+    /*tmpfunc= ContactCaptcha.ReloadImage;
+     ContactCaptcha.ReloadImage= function(){
+     $('.feedback-form .LBD_CaptchaImageDiv img').appendTo('.feedback-form .LBD_CaptchaImageDiv a');
+     tmpfunc();
+     }
+     $('.feedback-form .LBD_CaptchaImageDiv').ready(function () {
+     $('.feedback-form .LBD_CaptchaImageDiv img').appendTo('.feedback-form .LBD_CaptchaImageDiv');
+     });*/
+});

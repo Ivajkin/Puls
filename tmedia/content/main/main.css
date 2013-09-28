@@ -1,6 +1,6 @@
 .main>div {
     float: left;
-    width: 37%;
+    width: 38%;
     max-width: 300px;
     text-align: left;
     /*padding-right: 1em;*/
@@ -43,7 +43,7 @@
 
 .main article {
     float: right;
-    width: 63%;
+    width: 60%;
     text-align: center;
     vertical-align: middle;
     /*display: table-cell;*/
