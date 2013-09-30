@@ -93,10 +93,13 @@ if (file_exists('2zz.xml')) {
             $rr= intval($br_room[$j]['room']);
             if ($ll < 5 && $ll == $rr) {
                 $rows[$i][0] = $br_room[$j]['id'];
+                break;
             } else if ($ll > 4) {
                 $rows[$i][0]= 6;
+                break;
             } else if ($ll == 0) {
                 $rows[$i][0]= 7;
+                break;
             }
         }
     }

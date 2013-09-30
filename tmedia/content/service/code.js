@@ -88,10 +88,10 @@ var captchaname = '.feedback-form input[name="captchacode"]';
 var captchaUserInputId = 'captchacode';
 
 // AJAX argument is added to differentiate from regular POST.
-var validationUrl = "contacts.php?AJAX=1";
+var validationUrl = "service.php?AJAX=1";
 
 // Collect form elements we want to handle.
-var formElements = $('.feedback-form input, .feedback-form textarea');
+var formElements = $('.feedback-form input[type="text"], .feedback-form textarea');
 //var form = $('#contactForm');
 
 /*formElements.blur(
@@ -131,7 +131,8 @@ gopost= function(){
     $('.feedback-form .chk-box input[type="checkbox"]:checked').parent().each(function(){
         postData['ckbox'].push($(this).text());
     });
-
+console.log('BEFORE');
+    console.log(postData);
     $.post(validationUrl, postData, postValidation);
     return false;
 }

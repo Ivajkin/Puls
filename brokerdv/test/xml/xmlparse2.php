@@ -93,10 +93,13 @@ if (file_exists('2zz.xml')) {
             $rr= intval($br_room[$j]['room']);
             if ($ll < 5 && $ll == $rr) {
                 $rows[$i][0] = $br_room[$j]['id'];
+                break;
             } else if ($ll > 4) {
                 $rows[$i][0]= 6;
+                break;
             } else if ($ll == 0) {
                 $rows[$i][0]= 7;
+                break;
             }
         }
     }
@@ -106,7 +109,7 @@ if (file_exists('2zz.xml')) {
     }*/
     $query = "INSERT INTO br_homeinfo VALUES <br/>";
     for ($i=0; $i<count($rows)-1; $i++){
-        $query.="('".($i+1)."', '0', '0', '0', '".$rows[$i][13]."', '0', '".$rows[$i][1]."', '".$rows[$i][8]."', '".$rows[$i][9]."', '".$rows[$i][11]."', '".$rows[$i][10]."', '".$br_ptype."', '".$rows[$i][12]."', '".$rows[$i][0]."', '".$rows[$i][2]."', '".$rows[$i][3]."', '".$rows[$i][4]."', '".$rows[$i][5]."', '".$rows[$i][6]."', '".$rows[$i][7]."'),<br/>";
+        $query.="('', '0', '0', '0', '".$rows[$i][13]."', '0', '".$rows[$i][1]."', '".$rows[$i][8]."', '".$rows[$i][9]."', '".$rows[$i][11]."', '".$rows[$i][10]."', '".$br_ptype."', '".$rows[$i][12]."', '".$rows[$i][0]."', '".$rows[$i][2]."', '".$rows[$i][3]."', '".$rows[$i][4]."', '".$rows[$i][5]."', '".$rows[$i][6]."', '".$rows[$i][7]."'),<br/>";
     }
     echo $query;
             /*'".$qdata['name']."',

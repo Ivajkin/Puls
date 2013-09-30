@@ -116,7 +116,7 @@ function ValidatePhone($phone) {
     $lenstd= strlen("+7 4212-456-789");
     $len= strlen($phone);
     if ($len > $lenstd || preg_match("/[^+0-9 -]+/i",$phone))
-        return setElementValidationResult(false, $phone, "Please enter your name.");
+        return setElementValidationResult(false, $phone, "Please enter your phone.");
     else
         return setElementValidationResult(true, $phone);
 }
