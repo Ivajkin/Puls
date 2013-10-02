@@ -1,7 +1,7 @@
 <?php
 require_once 'namespace.php';
 
-$header_h1 = '<h1 role="heading"><a href="callto:7890"><span class="tcolor">techno</span><span class="mcolor">media</span></a></h1>';
+$header_h1 = '<h1 role="heading">как с <a href="callto:+79242005039"><span class="mcolor">нами</span></a> связаться</h1>';
 $main_block .= 'content/contacts/main.html';
 $more_block .= 'content/contacts/more.php';
 $script_block .= 'content/contacts/code.js';

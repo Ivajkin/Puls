@@ -8,6 +8,10 @@
  $(document).ready(function(){fix_mh();    fix_resize();});
  $(window).resize(function(){fix_mh();    fix_resize();});*/
 
+function animateScroll(name) {
+    $(name).animate({"scrollTop":(Math.floor(Math.random()*3000))},400);
+}
+
 $(document).ready(function () {
     $('.main>div>div').mouseenter( function(){
         idprev= parseInt($('.main div.hovered').data('id'));
@@ -23,5 +27,19 @@ $(document).ready(function () {
             });
         });
     });
+
+    $(".allend").niceScroll(".allend article",{
+        cursorcolor:"#800098",
+        cursoropacitymin: 0,
+        cursoropacitymax: 0.8,
+        cursorborderradius: 0,
+        touchbehavior: true,
+        hwacceleration: true,
+        autohidemode: true
+    });
+    /*(".allend article").scroll(function(e) {
+        $(".allend").html($(".allend article").scrollTop());
+    });*/
+
 })
 ;

@@ -54,3 +54,83 @@
 .main article>section {
     display: table-cell;
 }
+
+
+/**********
+****
+**************/
+
+
+
+.allend h2 a {
+    text-decoration: none;
+}
+
+.allend h2 a:hover,
+.allend h2 a:visited {
+    text-decoration: none;
+}
+
+.allend h2 a:hover {
+    text-decoration: underline;
+    outline-color: #000066;
+}
+
+.allend>article {
+    width: 100%;
+    /*text-align: left;*/
+}
+.allend>article>div {}
+.allend>article>div:not(:last-child) {
+    margin-bottom: 1.5%;
+}
+.allend>article .img-cont {
+    height: 100%;
+    width: 30%;
+    margin: 1em;
+}
+.allend>article .img-cont>img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    max-width: 300px !important;
+}
+
+.allend>article .text-cont {
+    width: 60%;
+    vertical-align: middle;
+    position: relative;
+    padding: 0 0.3em;
+    /*display: table-cell;*/
+}
+.allend>article .text-cont h4{
+    margin-bottom: 0;
+}
+
+.allend>article>div:nth-child(2n-1) .img-cont {float: right;margin-left:0.1em;}
+.allend>article>div:nth-child(2n-1) .text-cont {float: left;margin-left:1em;}
+.allend>article>div:nth-child(2n) .img-cont {float: left;margin-right:0.1em;}
+.allend>article>div:nth-child(2n) .text-cont {float: right;margin-right:1.5em;}
+
+.allend>article .text-cont:before {
+    content: "«";
+    font-size: 3.5em;
+    position: absolute;
+    color: #800098;
+    top: 5%;
+    right: 100%;
+}
+.allend>article .text-cont:after {
+    content: "»";
+    font-size: 3.5em;
+    position: absolute;
+    color: #800098;
+    top: 80%;
+    left: 100%;
+}
+
+.allend {
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

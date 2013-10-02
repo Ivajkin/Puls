@@ -234,3 +234,23 @@ $('.main section .site-ext>div').mouseenter( function(){
         });
     });
 });
+
+/*function animateScroll(name) {
+    $(name).animate({"scrollTop":(Math.floor(Math.random()*3000))},400);
+}
+$(document).ready(function () {
+    $(".main section .site-data").niceScroll(".main section .site-data",{
+        cursorcolor:"#800098",
+        cursoropacitymin: 0,
+        cursoropacitymax: 0.8,
+        cursorborderradius: 0,
+        touchbehavior: true,
+        hwacceleration: true,
+        autohidemode: true,
+        oneaxismousemode: 'vertical'
+    });*/
+    /*(".allend article").scroll(function(e) {
+     $(".allend").html($(".allend article").scrollTop());
+     });*/
+
+/*})*/
