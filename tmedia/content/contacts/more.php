@@ -1,13 +1,13 @@
 <!--<link type="text/css" rel="Stylesheet" href="stylesheet.css" />-->
 <!-- include the captcha stylesheet -->
 <!--<link type="text/css" rel="Stylesheet" href="<?php echo CaptchaUrls::LayoutStylesheetUrl() ?>" />-->
-<header>
+<!--<header>
     <h2>article section h2</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel
         vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta
         velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit
         suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-</header>
+</header>-->
 <div class="feedback-form">
     <div>
         <input type="text" name="Name" value="ФИО" autocomplete="on" data-def="ФИО"/>

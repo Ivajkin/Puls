@@ -2,7 +2,7 @@
     width: 100%;
     text-align: center;
 }
-.main article div {
+.main article>div {
     margin-left: 6.5%;
     max-width: 1200px;
 }
@@ -12,29 +12,144 @@
     margin: 0 1.5% 1.5% 0;
     padding-bottom: 1em;
     background: #800098;
+    /*word-wrap: break-word;*/
 }
 .main article section:hover{
     background: #9900ad;
+    /*box-shadow: 0 0 15px 3px #9900ad;*/
     cursor: pointer;
 }
 /*.main article section:nth-child(3n-2){
-    margin-left: 3%;
+    margin-left: 3%;wassssssssss
 }*/
 .main article section:nth-child(3n){
     margin-right: 0;
 }
-.main article section img {
-    width: 100px;
-    max-width: 300px;
+.main article section>img {
+    width: 100%;
+    max-width: 200px;
     height: auto;
 }
-.main article section h3 {
+.main article section>h3 {
     width: 90%;
     margin: auto;
     padding: 0;
     padding-bottom: 0.3em;
     border-bottom: 2px solid #EAECF6;
+    white-space: nowrap;
 }
+.main article section>div {
+    /*white-space: pre-line;*/
+    display: none;
+
+}
+.main article section.sect-more {
+    float: none;
+    clear: both;
+    width: 100%;
+    text-align: left;
+    background: transparent;/* url('img/close_bk.png') 100% 0 no-repeat;*/
+}
+.main article section.sect-more>h3 {
+    border: none;
+    margin-top: 7%;
+    color: #fff;
+    width: 70%;
+    font: 1.5em 'Segoe UI';
+    padding: 0;
+    background-color: #800098;
+
+    position: relative; /*Animate*/
+    left: 100%;
+    /*transform: skew(270deg);
+    -ms-transform: skew(270deg);*/ /* IE 9 */
+    /*-webkit-transform: skew(270deg);*/ /* Safari and Chrome */
+    /*-o-transform: skew(270deg);*/ /* Opera */
+}
+.main article section.sect-more>h3:before {
+    content: '.......' !important;
+    color: transparent;
+    background: #800098 url('img/h_back.png') 0 50% no-repeat;
+    background-size: 100%;
+    margin-right: 1em;
+}
+.main article section.sect-more>h3,
+.main article section.sect-more>img {
+    float: left;
+}
+.main article section.sect-more>h3>br {display: none;}
+.main article section.sect-more>img {width: 30%;}
+.main article section.sect-more>div {
+    clear: both;
+    width: 90%;
+    cursor: default;
+}
+.main article section.sect-more>div p {text-indent: 1.3em;}
+.main article section.sect-more>div ul,
+.main article section.sect-more>div ol {text-indent: 0;}
+
+/************
+***Site Extention**
+**************/
+.main section .site-ext {
+    float: left;
+    width: 35%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.main section .site-ext>div {
+    background: #800098;
+    max-height: 200px;
+    padding: 1em;
+}
+.main section .site-ext>div:not(:last-child) {
+    margin-bottom: 1.5%;
+}
+.main section .site-ext>div:hover {
+    cursor: pointer;
+}
+.main section .site-ext .hovered {
+    background: #9900ad;
+    /*box-shadow: 0 0 15px 3px #9900ad;*/
+}
+/**Image Block*/
+/*.main>div>div>div {
+    height: 100%;
+    width: 20%;
+    display: inline-block;
+    margin: 1em;
+}
+.main>div>div img {
+    width: 100%;
+    height: auto;
+    max-height: 90px;
+    max-width: 100px !important;
+}*/
+.main section .site-ext h3 {
+    margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+.main section .site-data {
+    float: right;
+    width: 63%;
+    text-align: left;
+    vertical-align: top;
+    /*display: table-cell;*/
+}
+.main section .site-data div {
+    display: table-cell;
+}
+
+
+/****************
+****FEEDBACK AREA
+*****************/
+
 
 .allend .feedback-form {
     width: 100%;

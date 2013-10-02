@@ -18,11 +18,10 @@ $(document).ready(function () {
         $(this).toggleClass('hovered');
 
         $('.main section').eq(idprev).fadeOut(hidetime, function(){
-            $('.main section').eq(idnext).fadeIn(hidetime*0.7);
+            $('.main section').eq(idnext).fadeIn(hidetime*0.7, function(){
+                fix_resize();
+            });
         });
-    });
-    $(document).ready(function () {
-        setTimeout(fix_resize,1000);
     });
 })
 ;

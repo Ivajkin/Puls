@@ -20,7 +20,10 @@
 .main>div>div:hover {
     cursor: pointer;
 }
-.main .hovered {    background: #9900ad;}
+.main .hovered {
+    background: #9900ad;
+    /*box-shadow: 0 0 15px 3px #9900ad;*/
+}
 .main>div>div>div {
     height: 100%;
     width: 20%;

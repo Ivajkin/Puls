@@ -1,8 +1,11 @@
 
 .ams-container {
     margin:auto;
-    max-width:640px;
+    max-width:1280px;
 }
+/*.ams-container * {
+    background-color: transparent !important;
+}*/
 #amazingslider-1 {
     display:block;
     position:relative;
@@ -16,6 +19,10 @@
  .ams-container [class|='amazingslider-description'] {
      font-weight: 500;
  }
+
+/*.ams-container .amazingslider-nav-0 {
+    margin-top: 40px !important;
+}*/
 /*.ams-container [class|='amazingslider-arrow-right'], .ams-container [class|='amazingslider-arrow-left'] {
     margin: 50px 0;
 }*/

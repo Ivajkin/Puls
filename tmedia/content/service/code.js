@@ -86,36 +86,11 @@ $(window).resize(function () {
 // http://captcha.com/doc/php/api/captcha-client-side-reference.html
 var captchaname = '.feedback-form input[name="captchacode"]';
 var captchaUserInputId = 'captchacode';
-
 // AJAX argument is added to differentiate from regular POST.
 var validationUrl = "service.php?AJAX=1";
-
 // Collect form elements we want to handle.
 var formElements = $('.feedback-form input[type="text"], .feedback-form textarea');
 //var form = $('#contactForm');
-
-/*formElements.blur(
- function(){
- var postData = {};
- // Additional check to skip over empty fields
- // This igores non-relevant triggering of onBlur
- if (this.value != ''){
- postData[this.id] = this.value;
- }
-
- if(this.id == captchaUserInputId){
- // In case of our Captcha field, we also send the InstanceId
- captchaUserInputField = $('#' + captchaUserInputId).get(0);
- postData["CaptchaInstanceId"] = captchaUserInputField.Captcha.InstanceId;
- }
-
- if(this.id == "SubmitButton"){
- return false;
- }
-
- $.post(validationUrl, postData, postValidation);
- }
- );*/
 
 gopost= function(){
     var postData = {};
@@ -136,7 +111,6 @@ console.log('BEFORE');
     $.post(validationUrl, postData, postValidation);
     return false;
 }
-
 function postValidation(data, status){
     console.log(status);
     console.log(data);
@@ -182,28 +156,6 @@ function postValidation(data, status){
     //updateValidatorMessages(data);
 }
 
-// Handling the display of validation messages
-/*function updateValidatorMessages(data){
- for(var elementKey in data){
- validatedElement = data[elementKey];
-
- var elementValidatorMessage = $("#" + elementKey + "ValidatorMessage");
-
- if(validatedElement.hasOwnProperty("validationMessage")){
- elementValidatorMessage.text(validatedElement["validationMessage"]);
- }else{
- elementValidatorMessage.empty();
- }
-
- if(validatedElement["isValid"]){
- elementValidatorMessage.toggleClass("correct", true);
- elementValidatorMessage.toggleClass("incorrect", false);
- }else{
- elementValidatorMessage.toggleClass("correct", false);
- elementValidatorMessage.toggleClass("incorrect", true);
- }
- }
- }*/
 
 $(document).ready(function () {
     $('.feedback-form .LBD_CaptchaDiv, .feedback-form .LBD_CaptchaImageDiv, .feedback-form .LBD_CaptchaIconsDiv').removeAttr('style');
@@ -221,4 +173,64 @@ $(document).ready(function () {
      $('.feedback-form .LBD_CaptchaImageDiv').ready(function () {
      $('.feedback-form .LBD_CaptchaImageDiv img').appendTo('.feedback-form .LBD_CaptchaImageDiv');
      });*/
+});
+
+/*******************
+ *********MAIN PART CODE************
+ **************************/
+
+infostatus= true;
+infoclick= function(event){
+    i= 0;
+    fxtime= 800;
+    sectcount=7;
+    if (infostatus) {
+        $('.main article section').not($(this)).slideToggle('slow', function(){
+            if (i++ == sectcount) {
+                $(event.currentTarget).toggleClass('sect-more')
+                    .toggleClass('clearfix')
+                    .children('div').fadeToggle('slow', function(){
+                        infostatus= !infostatus;
+                        fix_resize();
+                        $(event.currentTarget).children('h3').transition ({
+                            'left': '0%'
+                        }, 800,
+                            'cubic-bezier(0,0.9,0.3,1)',
+                           function(){$(this).css('position', 'static');}
+                        );
+                    });
+            }
+        });
+    } else {
+        $(this).children('div').fadeToggle('slow', function(){
+            $(event.currentTarget).toggleClass('sect-more')
+                .toggleClass('clearfix');
+            $('.main article section').not($(event.currentTarget)).slideToggle('slow', function(){
+                if (i++ == sectcount) {
+                    infostatus= !infostatus;
+                    fix_resize();
+                }
+            });
+        });
+    }
+}
+    $('.main article section').on('click', infoclick);
+    $('.main article section>div').on('click', function(event){
+        event.stopImmediatePropagation();
+        //9$(this).css('background', '#fff');
+    });
+
+$('.main section .site-ext>div').mouseenter( function(){
+    idprev= parseInt($('.main section .site-ext>div.hovered').data('id'));
+    idnext= parseInt($(this).data('id'));
+    hidetime= 600;
+
+    $('.main section .site-ext>div.hovered').toggleClass('hovered');
+    $(this).toggleClass('hovered');
+
+    $('.main section .site-data>div').eq(idprev).fadeOut(hidetime, function(){
+        $('.main section .site-data>div').eq(idnext).fadeIn(hidetime*0.7, function(){
+            fix_resize();
+        });
+    });
 });

@@ -9,7 +9,10 @@ require_once 'namespace.php';
                 <link href="content/service/serv.css" rel="stylesheet" />
                 <link href="add/botdetect/lib/botdetect/public/lbd_layout.css" rel="stylesheet" />
 EOT;
-    $script_lib = '<script src="js/jquery.maskedinput.min.js"></script>';
+    $script_lib = <<<EOT
+                <script src="js/jquery.maskedinput.min.js"></script>
+                <script src="js/jquery.transit.min.js"></script>
+EOT;
 
 // PHP v5.2.0+ required
 session_start();

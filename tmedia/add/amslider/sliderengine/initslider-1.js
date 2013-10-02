@@ -8,8 +8,8 @@ jQuery(document).ready(function(){
     }
     jQuery("#amazingslider-1").amazingslider({
         jsfolder:jsFolder,
-        width:640,
-        height:480,
+        width:1280,
+        height:600,
         skinsfoldername:"",
         loadimageondemand:true,
         isresponsive:true,
