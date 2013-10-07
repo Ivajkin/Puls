@@ -355,7 +355,7 @@
     this.FocusInput();
   };
 
-  BotDetect.prototype.PostReloadImage = function() {
+  BotDetect.prototype.PostReloadImage = function(ext_call) {
     this.ValidationUrl = this.Image.src.replace('get=image', 'get=validationResult');
     if (this.AutoReloadExpiredImage) {
       if (this.AutoReloadTimer) { clearTimeout(this.AutoReloadTimer); }
@@ -373,6 +373,8 @@
         self.AutoReloadPeriod
       );
     }
+      captcha_resize();
+      textarea_resize();
   };
 
   BotDetect.prototype.PrePlaySound = function() {

@@ -3,7 +3,6 @@
     text-align: center;
 }
 .main article>div {
-    margin-left: 6.5%;
     max-width: 1200px;
 }
 .main article section{
@@ -55,7 +54,7 @@
     margin-top: 7%;
     color: #fff;
     width: 70%;
-    font: 1.5em 'Segoe UI';
+    font-family: 'Segoe UI';
     padding: 0;
     background-color: #800098;
 
@@ -81,7 +80,6 @@
 .main article section.sect-more>img {width: 30%;}
 .main article section.sect-more>div {
     clear: both;
-    width: 90%;
     cursor: default;
 }
 .main article section.sect-more>div p {text-indent: 1.3em;}
@@ -93,7 +91,6 @@
 **************/
 .main section .site-ext {
     float: left;
-    width: 35%;
     max-width: 300px;
     text-align: center;
 }
@@ -101,7 +98,7 @@
 .main section .site-ext>div {
     background: #800098;
     max-height: 200px;
-    padding: 1em;
+    padding: 1em 0.1em;
 }
 .main section .site-ext>div:not(:last-child) {
     margin-bottom: 1.5%;
@@ -136,7 +133,6 @@
 
 .main section .site-data {
     float: right;
-    width: 63%;
     text-align: left;
     vertical-align: top;
     /*display: table-cell;*/
@@ -205,15 +201,20 @@
 .allend .feedback-form>div:last-child .bk-site:hover {background-color: #deffcf;}
 .allend .feedback-form>div:last-child .bk-soft:hover {background-color: #e6e5ff;}
 
+.allend .feedback-form .chk-wrapper {margin-bottom: 0.5em;}
 .allend .feedback-form .chk-box {
     width: 100%;
     line-height: 120%;
+    word-wrap: break-word;
+}
+.allend .feedback-form .chk-box *{
+    word-wrap: break-word;
 }
 .allend .feedback-form .chk-box:first-of-type {
     margin-bottom: 0.25em;
 }
 .allend .feedback-form .chk-box:last-of-type {
-    margin-bottom: 0.5em;
+    /*margin-bottom: 0.5em;*/
 }
 .allend .feedback-form .cl-right,
 .allend .feedback-form .cl-left {
@@ -324,3 +325,133 @@
 .allend .feedback-form .LBD_CaptchaIconsDiv a:focus,
 .allend .feedback-form .LBD_CaptchaIconsDiv a:hover,
 .allend .feedback-form .LBD_CaptchaIconsDiv a:active {margin: 0;}
+
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+/**************
+*******Font Fixes***
+*************/
+.main article section>h3 {
+    font-size: 0.6em;
+    line-height: 1.4;
+}
+.main article section.sect-more>h3 {
+    font-size: 0.8em;
+    white-space: normal;
+}
+.main section .site-ext h3 {
+    font-size: 0.7em;
+    line-height: 1.4;
+}
+
+
+/* ==============
+MOBILE: Main
+============== */
+.main article>div {
+     margin-left: 6.5%;
+ }
+.main article>div.sect-more-wrapper {
+     margin-left: 0;
+ }
+.main article section.sect-more>div {
+    width: 100%;
+}
+
+.main section .site-ext {
+    width: 29.6%;
+}
+.main section .site-data {
+    width: 68.4%;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/*@media only screen and (max-width: 530px) {
+}*/
+
+@media only screen and (min-width: 480px) {
+
+    /**************
+*******Font Fixes***
+*************/
+    .main article section>h3 {
+        font-size: 0.7em;
+    }
+    .main article section.sect-more>h3 {
+        font-size: 0.95em;
+        white-space: nowrap;
+    }
+    .main section .site-ext h3 {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 624px) {
+    /**************
+*******Font Fixes***
+*************/
+    .main article section>h3 {
+        font-size: 0.9em;
+    }
+    .main article section.sect-more>h3 {
+        font-size: 1.25em;
+    }
+    .main section .site-ext h3 {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /**************
+    *******Font Fixes***
+    *************/
+    .main article section>h3 {
+        font-size: 1em;
+    }
+    .main article section.sect-more>h3 {
+        font-size: 1.35em;
+    }
+    .main section .site-ext h3 {
+        font-size: 1.1em;
+    }
+
+}
+
+/*@media only screen and (min-width: 870px) {
+}*/
+
+@media only screen and (min-width: 1140px) {
+
+    .main article>div.sect-more-wrapper {
+    margin-left: 6.5%;
+    }
+    .main article section.sect-more>div {
+        width: 90%;
+    }
+
+    .main section .site-ext {
+        width: 35%;
+    }
+    .main section .site-data {
+        width: 63%;
+    }
+
+    /*************
+        *****Font Fixes****
+        ******************/
+    .main article section>h3 {
+        font-size: 1.17em;
+    }
+    .main article section.sect-more>h3 {
+        font-size: 1.45em;
+    }
+    .main section .site-ext h3 {
+        font-size: 1.17em;
+    }
+}

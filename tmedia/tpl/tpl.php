@@ -24,6 +24,21 @@
     <style media="screen" class="before-after">
             /*body {display: none;}*/
     </style>
+    <!--[if IE]>
+    <style type="text/css">
+        .main article section.sect-more>h3:before {
+            background: #800098 url('content/service/img/h_back.png') 0 50% no-repeat;
+            font-family: 'Segoe UI, Segoe UI Semibold' !important;
+        }
+    </style>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
 
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
@@ -44,14 +59,14 @@
         <header class="head clearfix" role="header">
             <!--<h1 class="title">h1.title</h1>-->
             <nav class="clearfix" role="navigation">
-                <a href="/">О нас</a>
-                <a href="portfolio.php">Портфолио</a>
+                <a href="/"><img class="simplehide" src="img/ico/about.png" alt="Techno Media Техно Медиа О нас" title="О нас" /><span>О нас</span></a>
+                <a href="portfolio.php"><img class="simplehide" src="img/ico/port.png" alt="Techno Media Техно Медиа Портфолио" title="Портфолио" /><span>Портфолио</span></a>
                 <a href="/" role="banner"><img src="img/logo.png"
                                                        alt="Техно Медиа -- разработка сайтов и програмного обеспечения"
                                                        title="Техно Медиа -- разработка сайтов и програмного обеспечения"/>
                 </a>
-                <a href="service.php">Услуги</a>
-                <a href="contacts.php">Контакты</a>
+                <a href="service.php"><img class="simplehide" src="img/ico/serv.png" alt="Techno Media Техно Медиа Услуги" title="Услуги" /><span>Услуги</span></a>
+                <a href="contacts.php"><img class="simplehide" src="img/ico/cont.png" alt="Techno Media Техно Медиа Контакты" title="Контакты" /><span>Контакты</span></a>
             </nav>
             <div class="clearfix" role="telephone">
                 <a class="simplelink" style="font-family: 'Segoe UI Semibold';" href="tel: +74212757854">+7(4212) 75-78-54</a>
@@ -81,6 +96,7 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
 <script src="js/plugins.js"></script>
+<script src="js/isMobile.min.js"></script>
 <script src="add/nicescroll/jquery.nicescroll.min.js"></script>
 <script src="js/main.js"></script>
 <!--Additional JS Libs-->
@@ -101,16 +117,35 @@
 </script>
 <!-- /Google Analytics counter -->
 <script>
+    /*******************
+     *
+     * GLOBAL VARS
+     *
+     ******************/
+    var mediaq= 0;
+    var mediawidthmobile = 480;
+    var mediawidthmin = 768;
+    var mediawidth1 = 870;
+    var mediawidthmax = 1140;
     //Dynamic border
-    var br_top_h, main_h, wside_w, eside_w;
+    var br_top_h, main_h, wside_w, eside_w
+
     var fix_resize = function () {
+        mediaq= $(document).width();
         br_top_h = $('header.head').height();
         main_h = $('div.main').height()+
             parseFloat($('div.main').css('padding-top'))+ parseFloat($('div.main').css('padding-bottom'))+
             parseFloat($('div.main').css('margin-top'))+ parseFloat($('div.main').css('margin-bottom'));
         wside_w = $('.west-side').width();
         eside_w = $('.east-side').width();
-        b_angle= 0.6;
+
+        b_angle= 0.95;
+        if (mediaq > mediawidthmobile)
+            b_angle= 0.88;
+        if (mediaq > mediawidthmin)
+            b_angle= 0.76;
+        if (mediaq > mediawidth1)
+            b_angle= 0.6;
 
         /*$('style.before-after').empty();
         $('style.before-after').append('.head:before, .head:after {border-top-width: ' + br_top_h + 'px;}' +
@@ -156,14 +191,6 @@
         fix_resize();
     });
 
-    /*******************
-     *
-     * GLOBAL VARS
-     *
-     */
-
-    var mediawidthmin = 768;
-    var mediawidthmax = 1140;
 </script>
 <!--Additional Script-->
 <script>

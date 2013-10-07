@@ -23,23 +23,25 @@
     </div>
     <div class="invisible">...</div>
     <div>
-        <div class="chk-box clearfix">
-            <div class="cl-left bk-adv">
-                <div><input type="checkbox" name="seo" /><span>Поисковое продвижение</span></div>
-                <div><input type="checkbox" name="context" /><span>Контекстная реклама</span></div>
-                <div><input type="checkbox" name="media" /><span>Медийная реклама</span></div>
+        <div class="chk-wrapper">
+            <div class="chk-box clearfix">
+                <div class="cl-left bk-adv">
+                    <div><input type="checkbox" name="seo" /><span>Поисковое продвижение</span></div>
+                    <div><input type="checkbox" name="context" /><span>Контекстная реклама</span></div>
+                    <div><input type="checkbox" name="media" /><span>Медийная реклама</span></div>
+                </div>
+                <div class="cl-right bk-site" style="vertical-align: bottom;">
+                    <div><input type="checkbox" name="site" /><span>Создание сайтов</span></div>
+                    <div><input type="checkbox" name="support" /><span>Сопровождение сайтов</span></div>
+                </div>
             </div>
-            <div class="cl-right bk-site" style="vertical-align: bottom;">
-                <div><input type="checkbox" name="site" /><span>Создание сайтов</span></div>
-                <div><input type="checkbox" name="support" /><span>Сопровождение сайтов</span></div>
-            </div>
-        </div>
-        <div class="chk-box bk-soft clearfix" style="width: 99%;">
-            <div class="cl-left">
-                <div><input type="checkbox" name="apps" /><span>Разработка мобильных приложений</span></div>
-            </div>
-            <div class="cl-right">
-                <div><input type="checkbox" name="soft" /><span>Разработка сложных программных комплексов</span></div>
+            <div class="chk-box bk-soft clearfix" style="width: 99%;">
+                <div class="cl-left">
+                    <div><input type="checkbox" name="apps" /><span>Разработка мобильных приложений</span></div>
+                </div>
+                <div class="cl-right">
+                    <div><input type="checkbox" name="soft" /><span>Разработка сложных программных комплексов</span></div>
+                </div>
             </div>
         </div>
         <textarea name="Message" data-def="НАЗВАНИЕ САЙТА, ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ ИЛИ ВАШИ КОММЕНТАРИИ">НАЗВАНИЕ САЙТА, ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ ИЛИ ВАШИ КОММЕНТАРИИ</textarea>

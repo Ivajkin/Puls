@@ -28,7 +28,7 @@
     height: 100%;
     width: 20%;
     display: inline-block;
-    margin: 1em;
+    margin: 3%;
 }
 .main>div>div img {
     width: 100%;
@@ -40,6 +40,7 @@
     margin: auto;
     display: inline-block;
     vertical-align: middle;
+    word-wrap: break-word;
 }
 
 
@@ -47,10 +48,11 @@
 .main article {
     float: right;
     width: 60%;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
     /*display: table-cell;*/
 }
+.main article h3 {text-align: center;}
 .main article>section {
     display: table-cell;
 }
@@ -60,7 +62,7 @@
 ****
 **************/
 
-
+.allend{margin-bottom: 1em;}
 
 .allend h2 a {
     text-decoration: none;
@@ -87,7 +89,7 @@
 .allend>article .img-cont {
     height: 100%;
     width: 30%;
-    margin: 1em;
+    margin: 1.5%;
 }
 .allend>article .img-cont>img {
     width: 100%;
@@ -108,16 +110,15 @@
 }
 
 .allend>article>div:nth-child(2n-1) .img-cont {float: right;margin-left:0.1em;}
-.allend>article>div:nth-child(2n-1) .text-cont {float: left;margin-left:1em;}
+.allend>article>div:nth-child(2n-1) .text-cont {float: left; margin-left:1em;}
 .allend>article>div:nth-child(2n) .img-cont {float: left;margin-right:0.1em;}
-.allend>article>div:nth-child(2n) .text-cont {float: right;margin-right:1.5em;}
+.allend>article>div:nth-child(2n) .text-cont {float: right; margin-right:1.5em;}
 
 .allend>article .text-cont:before {
     content: "«";
     font-size: 3.5em;
     position: absolute;
     color: #800098;
-    top: 5%;
     right: 100%;
 }
 .allend>article .text-cont:after {
@@ -129,8 +130,106 @@
     left: 100%;
 }
 
-.allend {
+.allend.scroll {
     max-height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+/**************
+*******Font Fixes***
+*************/
+    .main>div h3 {
+        font-size: 0.819em;
+    }
+    .allend article h2 {
+        font-size: 1.4em
+    }
+
+/* ==============
+MOBILE: Main
+============== */
+.main>div {width: 38%;}
+.main article {width: 60%;}
+
+.allend>article .img-cont {width: 13%; margin-top: 1em;}
+.allend>article .text-cont {width: 73%;}
+.allend>article .img-cont img {margin-top: 20%;}
+
+.allend>article .text-cont:before,
+.allend>article .text-cont:after   {font-size: 2em;}
+.allend>article .text-cont:before {top: 10%;}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/*@media only screen and (max-width: 530px) {
+}*/
+
+@media only screen and (min-width: 480px) {
+
+    .main>div {width: 38%;}
+    .main article {width: 60%;}
+
+    .allend>article .img-cont img {margin-top: 0}
+
+    .allend>article .text-cont:before,
+    .allend>article .text-cont:after   {font-size: 2.5em;}
+
+    /**************
+*******Font Fixes***
+*************/
+    .main>div h3 {
+        font-size: 0.936em;
+    }
+    .allend article h2 {
+        font-size: 1.5em
+    }
+}
+
+@media only screen and (min-width: 530px) {
+    .main>div {width: 34%;}
+    .main article {width: 64%;}
+
+    .allend>article .img-cont {width: 25%;}
+    .allend>article .text-cont {width: 65%;}
+    .allend>article .text-cont:before {top: 20%;}
+}
+
+@media only screen and (min-width: 768px) {
+
+    .main>div {width: 30%;}
+    .main article {width: 68%;}
+
+    .allend>article .img-cont {width: 29%;}
+    .allend>article .text-cont {width: 59%;}
+
+    .allend>article .text-cont:before,
+    .allend>article .text-cont:after   {font-size: 3.5em;}
+    .allend>article .text-cont:before {top: 5%;}
+
+    /**************
+    *******Font Fixes***
+    *************/
+
+}
+
+/*@media only screen and (min-width: 870px) {
+}*/
+
+@media only screen and (min-width: 1140px) {
+
+    .allend>article .img-cont {width: 29%;}
+    .allend>article .text-cont {width: 60%;}
+
+    /*************
+        *****Font Fixes****
+        ******************/
+    .main>div h3 {
+        font-size: 1.17em;
+    }
 }

@@ -177,10 +177,10 @@ nav {
     /*border-bottom: 1px solid #ddf;*/
     font-family: 'Segoe UI Semibold';
     /*height: 100%;*/
-    -webkit-box-shadow: 0 5px 10px -6px #92278f;
+    /*-webkit-box-shadow: 0 5px 10px -6px #92278f;
     -moz-box-shadow: 0 5px -10px #92278f;
-    box-shadow: 0 10px 10px -6px #92278f;
-    border-bottom: 1px ridge #580068;
+    box-shadow: 0 10px 10px -6px #92278f;*/
+    border-bottom: 1px solid #edd9db;
 }
 
 .head {
@@ -188,9 +188,20 @@ nav {
 }
 
 .main {
-    background-color: #580068;
+    /*background-color: #580068;*/
     min-height: 302px;
     position: relative;
+
+    background: #5a046a; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVhMDQ2YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2YzFmN2EiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #5a046a 0%, #6c1f7a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5a046a), color-stop(100%,#6c1f7a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #5a046a 0%,#6c1f7a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #5a046a 0%,#6c1f7a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #5a046a 0%,#6c1f7a 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #5a046a 0%,#6c1f7a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a046a', endColorstr='#6c1f7a',GradientType=0 ); /* IE6-8 */
 }
 
 .main * {
@@ -275,9 +286,33 @@ nav {
     color: #440e62;
 }
 
+/**************
+*******Font Fixes***
+*************/
+nav {
+    font-size: 0.7em;
+}
+.head h1 {
+    font-size: 1.6em;
+}
+
 /* ==============
     MOBILE: Menu
    ============== */
+nav a img{padding-top: 0.3em;}
+
+nav a:not(:nth-child(3)) {
+    padding-top: 3%;
+    padding-bottom: 2%;
+    margin-bottom: 0;
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
+nav a:last-child {
+    margin-right: 0;
+}
 
 nav a {
     /*display: inline-block;*/
@@ -300,7 +335,7 @@ nav a:nth-child(3) {
 }
 
 nav a:nth-child(3) img {
-    width: 100%;
+    width: 89%;
     height: auto;
 }
 
@@ -324,9 +359,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
+
 /* ==============
     MOBILE: Title
    ============== */
+.head h1 {margin-top: 0.1em;}
 .head h1 a {
     text-decoration: none;
 }
@@ -365,10 +402,6 @@ nav a:hover {
 }
 .allend {
     padding: 1em 0.75em;
-}
-
-.main article h1 {
-    font-size: 2em;
 }
 
 /* ===============
@@ -415,6 +448,24 @@ a.simplelink:hover {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+@media only screen and (max-width: 530px) {
+    nav a:not(:nth-child(3)) {
+        padding: 0;
+    }
+    nav a:not(:nth-child(3)) span{
+        display: none;
+    }
+    nav a:not(:nth-child(3)) img{
+        max-width: 40px;
+        width: 50%;
+        height: auto;
+        display: inline;
+        vertical-align: middle;
+    }
+    /*.head nav a:nth-child(3) {
+        padding-top: 8%;
+    }*/
+}
 
 @media only screen and (min-width: 480px) {
 
@@ -430,17 +481,18 @@ a.simplelink:hover {
         padding: 1em 0.75em;
     }
 
-    /* ====================
-        INTERMEDIATE: Menu
-       ==================== */
+    nav a img{padding-top: 0;}
 
+    /**************
+*******Font Fixes***
+*************/
     nav {
         font-size: 0.8em;
     }
 
-    .head h1 {
-        font-size: 1.7em;
-    }
+    /* ====================
+        INTERMEDIATE: Menu
+       ==================== */
 
     nav a:not(:nth-child(3)) {
         /*float: left;
@@ -448,19 +500,10 @@ a.simplelink:hover {
         margin: 0 1.7%;*/
         padding-top: 10%;
         padding-bottom: 3.5%;
-        margin-bottom: 0;
     }
 
     nav a:nth-child(3) {
-        padding-top: 6.5%;
-    }
-
-    nav a:first-child {
-        margin-left: 0;
-    }
-
-    nav a:last-child {
-        margin-right: 0;
+        padding-top: 6.7%;
     }
 
     /* ========================
@@ -474,30 +517,30 @@ a.simplelink:hover {
 
 @media only screen and (min-width: 768px) {
     .west-side, .east-side {
-        width: 20.88541666666667%;
+        width: 10%;
     }
-
     .central-area {
-        width: 58.22916666666667%;
+        width: 80%;
     }
 
     /* ====================
         WIDE: CSS3 Effects
        ==================== */
 
+    /**************
+    *******Font Fixes***
+    *************/
+    nav {
+        font-size: 0.9em;
+    }
+    .head h1 {
+        font-size: 1.8em;
+    }
 
     /* ============
         WIDE: Menu
        ============ */
-
-
-    nav {
-        font-size: 1em;
-    }
-
-    .head h1 {
-        font-size: 2em;
-    }
+    .head h1 {margin-top: 0.67em;}
 
     nav a:not(:nth-child(3)) {
         padding-bottom: 4.5%;
@@ -505,9 +548,11 @@ a.simplelink:hover {
     }
 
     nav a:nth-child(3) {
-        padding-top: 10.875%;
+        padding-top: 10.2%;
     }
-
+    nav a:nth-child(3) img{
+        width: 100%;
+    }
     /* ============
         WIDE: Main
        ============ */
@@ -523,12 +568,37 @@ a.simplelink:hover {
     }
 }
 
+@media only screen and (min-width: 870px) {
+    .west-side, .east-side {
+        width: 15%;
+    }
+    .central-area {
+        width: 70%;
+    }
+}
+
 @media only screen and (min-width: 1140px) {
 
     /* ===============
         Maximal Width
        =============== */
 
+    .west-side, .east-side {
+        width: 20.88541666666667%;
+    }
+    .central-area {
+        width: 58.22916666666667%;
+    }
+
+/*************
+    *****Font Fixes****
+    ******************/
+    .main article h1 {
+        font-size: 2em;
+    }
+    nav {
+        font-size: 1em;
+    }
     /*nav a {
         max-height: 238px;
     }*/
@@ -537,6 +607,8 @@ a.simplelink:hover {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.nowrap {white-space: nowrap;}
 
 .ir {
     background-color: transparent;
@@ -556,6 +628,7 @@ a.simplelink:hover {
     display: none !important;
     visibility: hidden;
 }
+.simplehide {display: none;}
 
 .visuallyhidden {
     border: 0;

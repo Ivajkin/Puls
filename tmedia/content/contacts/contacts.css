@@ -1,29 +1,9 @@
-.main .c-map {
-    display: block;
-    width: 50%;
-    float: left;
-    height: 100%;
-    min-height: 250px;
-    max-height: 300px;
-}
-.main .c-map iframe{
-    width: 100%;
-    height: 100%;
-    min-height: 250px;
-    max-height: 300px;
-}
-.main .c-info{
-    display: block;
-    width: 47%;
-    float: left;
-}
-
 .main .c-info {
     padding-left: 3%;
     vertical-align: top;
 }
-.main .c-info p {float: right; margin: 0; width: 50%; font-size: 1.1em;}
-.main .c-info h3 {float: left; margin: 0; font-style: normal; width: 48%; padding-right: 2%;}
+.main .c-info p {margin: 0;}
+.main .c-info h3 {margin: 0; font-style: normal; font-size: 1.1em;}
 .c-info .address {font-style: italic; margin-bottom: 1em;}
 .c-info address {margin-bottom: 1em;}
 /*.main .c-info p>a {display: block;}*/
@@ -163,3 +143,105 @@
 .allend .feedback-form .LBD_CaptchaIconsDiv a:focus,
 .allend .feedback-form .LBD_CaptchaIconsDiv a:hover,
 .allend .feedback-form .LBD_CaptchaIconsDiv a:active {margin: 0;}
+
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+/**************
+*******Font Fixes***
+*************/
+
+
+/* ==============
+MOBILE: Main
+============== */
+.main .c-map {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 270px;
+    max-height: 300px;
+}
+.main .c-map iframe{
+    width: 100%;
+    height: 100%;
+    min-height: 270px;
+    max-height: 300px;
+}
+.main .c-info{
+    display: block;
+    width: 100%;
+}
+
+.main .c-info h3, .main .c-info p {
+    float: left;
+}
+.main .c-info h3 {margin-right: 3%; width: 40%;}
+.main .c-info p {width: 55%;}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/*@media only screen and (max-width: 530px) {
+}*/
+
+@media only screen and (min-width: 520px) {
+
+    .main .c-map {
+        width: 60%;
+        float: left;
+    }
+    .main .c-info{
+        width: 37%;
+        float: left;
+    }
+
+    .main .c-info h3, .main .c-info p {
+        float: none;
+        width: 100%;
+    }
+    /**************
+*******Font Fixes***
+*************/
+
+}
+
+/*@media only screen and (min-width: 530px) {}*/
+
+@media only screen and (min-width: 768px) {
+
+    .main .c-map {
+        width: 50%;
+        min-height: 250px;
+    }
+    .main .c-map iframe{
+        min-height: 250px;
+    }
+    .main .c-info{
+        width: 47%;
+    }
+
+    .main .c-info h3, .main .c-info p {
+        float: left;
+    }
+    .main .c-info h3 {margin-right: 3%; width: 40%;}
+    .main .c-info p {width: 55%;}
+
+    /**************
+    *******Font Fixes***
+    *************/
+
+}
+
+/*@media only screen and (min-width: 870px) {
+}*/
+
+@media only screen and (min-width: 1140px) {
+
+    /*************
+        *****Font Fixes****
+        ******************/
+
+}

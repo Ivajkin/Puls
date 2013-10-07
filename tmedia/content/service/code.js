@@ -7,8 +7,22 @@ textarea_resize= function(){
 
     $('.allend .feedback-form>div').eq(2).css('height',
         $('.allend .feedback-form>div').eq(0).height()*true_h+'px');
+
+    $('.allend .feedback-form textarea').css('height', (
+        $('.allend .feedback-form>div').eq(2).height()- ( $('.allend .feedback-form .chk-wrapper').height() + parseInt($('.allend .feedback-form .chk-wrapper').css('margin-bottom')) +
+                                                            $('.allend .feedback-form button').height() +
+                                                            parseInt($('.allend .feedback-form textarea').css('padding-top')) )
+    )+'px');
     $('.allend .feedback-form button').css('width', (tw*true_w+1)+'px');
+
     console.log(tw*true_w);
+}
+captcha_resize= function(){
+    coef= 2-50/52;
+    obj= $('.LBD_CaptchaImageDiv img');
+
+    baseh= obj.parents('.LBD_CaptchaDiv').height();
+    obj.css('height', (coef*baseh)+'px');
 }
 
 jQuery(function($){
@@ -74,9 +88,11 @@ $('.feedback-form button').click(function(index){
 
 $(document).ready(function () {
     textarea_resize();
+    captcha_resize();
 });
 $(window).resize(function () {
     textarea_resize();
+    captcha_resize();
 });
 
 
@@ -158,6 +174,14 @@ function postValidation(data, status){
 
 
 $(document).ready(function () {
+
+    /*tmp= captcha.PostReloadImage;
+    captcha.PostReloadImage= function() {
+        tmp();
+        captcha_resize();
+
+    }*/
+
     $('.feedback-form .LBD_CaptchaDiv, .feedback-form .LBD_CaptchaImageDiv, .feedback-form .LBD_CaptchaIconsDiv').removeAttr('style');
 
     $('.feedback-form .LBD_CaptchaImageDiv a').attr({'href': 'javascript:void(0)', 'target': '_self', 'title': 'Нажмите для обновления картинки'})
@@ -184,6 +208,8 @@ infoclick= function(event){
     i= 0;
     fxtime= 800;
     sectcount=7;
+
+    $('.main article>div').toggleClass('sect-more-wrapper');
     if (infostatus) {
         $('.main article section').not($(this)).slideToggle('slow', function(){
             if (i++ == sectcount) {

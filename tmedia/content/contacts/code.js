@@ -10,6 +10,13 @@ textarea_resize= function(){
     $('.allend .feedback-form button').css('width', (tw*true_w+1)+'px');
     console.log(tw*true_w);
 }
+captcha_resize= function(){
+    coef= 2-50/52;
+    obj= $('.LBD_CaptchaImageDiv img');
+
+    baseh= obj.parents('.LBD_CaptchaDiv').height();
+    obj.css('height', (coef*baseh)+'px');
+}
 
 $('.feedback-form input[type="text"], .feedback-form textarea').focus(function(){
     if ($(this).val() == $(this).data('def'))
@@ -71,11 +78,12 @@ $('.feedback-form button').click(function(index){
 
 $(document).ready(function () {
     textarea_resize();
+    captcha_resize();
 });
 $(window).resize(function () {
     textarea_resize();
+    captcha_resize();
 });
-
 
 
 // Define the name of the Captcha field.
@@ -136,6 +144,7 @@ function postValidation(data, status){
 
         // Get the Captcha instance, as per client side API
         captcha = $('#' + captchaUserInputId).get(0).Captcha;
+        //captcha.PostReloadImage(captcha_resize);
 
 
         if(data[captchaUserInputId]["isValid"]){
@@ -205,6 +214,7 @@ $(document).ready(function () {
             ContactCaptcha.ReloadImage();
             return false;
         });
+
     /*tmpfunc= ContactCaptcha.ReloadImage;
     ContactCaptcha.ReloadImage= function(){
         $('.feedback-form .LBD_CaptchaImageDiv img').appendTo('.feedback-form .LBD_CaptchaImageDiv a');

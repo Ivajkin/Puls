@@ -27,16 +27,20 @@ $(document).ready(function () {
             });
         });
     });
+    //console.log(mediaq+' '+mediawidthmobile);
 
-    $(".allend").niceScroll(".allend article",{
-        cursorcolor:"#800098",
-        cursoropacitymin: 0,
-        cursoropacitymax: 0.8,
-        cursorborderradius: 0,
-        touchbehavior: true,
-        hwacceleration: true,
-        autohidemode: true
-    });
+    if (!isMobile.phone && !isMobile.apple.ipod) {
+        $('.allend').toggleClass('scroll');
+        $(".allend").niceScroll(".allend article",{
+            cursorcolor:"#800098",
+            cursoropacitymin: 0,
+            cursoropacitymax: 0.8,
+            cursorborderradius: 0,
+            touchbehavior: true,
+            hwacceleration: true,
+            autohidemode: true
+        });
+    }
     /*(".allend article").scroll(function(e) {
         $(".allend").html($(".allend article").scrollTop());
     });*/
