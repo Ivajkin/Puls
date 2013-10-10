@@ -207,6 +207,9 @@ nav {
 .main * {
     color: #efcfff;
 }
+.main strong {
+	color: #fff;
+}
 
 /*.head:before {
     content: '' !important;
