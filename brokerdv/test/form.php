@@ -530,15 +530,22 @@
         inds= [];
         tbody= '';
         tmp2= '';
+        dstmax= 9;
         switch (ptype) {
             case 0:
-                jQuery('.prod_table .table_hcolumn').eq(0).text('Адрес');
+                jQuery('.prod_table .table_hcolumn').eq(0).text('Район');
                 jQuery('.prod_table .table_hcolumn').eq(1).text('Количество комнат');
                 jQuery('.prod_table .table_hcolumn').eq(2).text('Этаж');
                 jQuery('.prod_table .table_hcolumn').eq(3).text('Цена');
-                inds.push('address', 'fid_room', 'storey', 'cost');
+                inds.push('fid_district', 'fid_room', 'storey', 'cost');
                 for (i=0; i<data.length && i<tbrow; i++) {
-                    tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                    tmp= parseInt(data[i][inds[0]]) % dstmax;
+                    tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                    if (tmp)
+                        tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                    else
+                        tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                    tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                     tmp= jQuery('.prod_filter select.ft_'+inds[1].split('_')[1]);
                     tmp2= undefined;
@@ -558,13 +565,19 @@
                 }
                 break;
             case 1:
-                jQuery('.prod_table .table_hcolumn').eq(0).text('Адрес');
+                jQuery('.prod_table .table_hcolumn').eq(0).text('Район');
                 jQuery('.prod_table .table_hcolumn').eq(1).text('Материал стен');
                 jQuery('.prod_table .table_hcolumn').eq(2).text('Площадь');
                 jQuery('.prod_table .table_hcolumn').eq(3).text('Цена');
-                inds.push('address', 'fid_hometype', 'totalarea', 'cost');
+                inds.push('fid_district', 'fid_hometype', 'totalarea', 'cost');
                 for (i=0; i<data.length && i<tbrow; i++) {
-                    tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                    tmp= parseInt(data[i][inds[0]]) % dstmax;
+                    tmp2=  jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                    if (tmp)
+                        tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                    else
+                        tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                    tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                     tmp= jQuery('.prod_filter select.ft_'+inds[1].split('_')[1]);
                     tmp2= undefined;
@@ -584,24 +597,38 @@
                 }
                 break;
             case 2:
-                jQuery('.prod_table .table_hcolumn').eq(0).text('Адрес');
-                jQuery('.prod_table .table_hcolumn').eq(1).text('Площадь');
-                jQuery('.prod_table .table_hcolumn').eq(2).text('Этаж');
-                jQuery('.prod_table .table_hcolumn').eq(3).text('Цена');
-                inds.push('address', 'totalarea', 'storey', 'cost');
-                tbody+= '<div class="table_column">'+data[i][inds[0]]+'</div>';
-                tbody+= '<div class="table_column">'+data[i][inds[1]]+'</div>';
-                tbody+= '<div class="table_column">'+data[i][inds[2]]+'</div>';
-                tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
+                for (i=0; i<data.length && i<tbrow; i++) {
+                    jQuery('.prod_table .table_hcolumn').eq(0).text('Район');
+                    jQuery('.prod_table .table_hcolumn').eq(1).text('Площадь');
+                    jQuery('.prod_table .table_hcolumn').eq(2).text('Этаж');
+                    jQuery('.prod_table .table_hcolumn').eq(3).text('Цена');
+                    inds.push('fid_district', 'totalarea', 'storey', 'cost');
+                    tmp= parseInt(data[i][inds[0]]) % dstmax;
+                    tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                    if (tmp)
+                        tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                    else
+                        tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                    tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
+                    tbody+= '<div class="table_column">'+data[i][inds[1]]+'</div>';
+                    tbody+= '<div class="table_column">'+data[i][inds[2]]+'</div>';
+                    tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
+                }
                 break;
             case 3:
-                jQuery('.prod_table .table_hcolumn').eq(0).text('Адрес');
+                jQuery('.prod_table .table_hcolumn').eq(0).text('Район');
                 jQuery('.prod_table .table_hcolumn').eq(1).text('Площадь');
                 jQuery('.prod_table .table_hcolumn').eq(2).text('Назначение земли');
                 jQuery('.prod_table .table_hcolumn').eq(3).text('Цена');
-                inds.push('address', 'totalarea', 'fid_acreusage', 'cost');
+                inds.push('fid_district', 'totalarea', 'fid_acreusage', 'cost');
                 for (i=0; i<data.length && i<tbrow; i++) {
-                    tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                    tmp= parseInt(data[i][inds[0]]) % dstmax;
+                    tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                    if (tmp)
+                        tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                    else
+                        tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                    tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                     tmp= jQuery('.prod_filter select.ft_'+inds[2].split('_')[1]);
                     tmp2= undefined;
@@ -634,7 +661,12 @@
         //if (tblcol*30 % 4) tbody+= '</div>';
         jQuery('.prod_table .table_body').append(tbody);
         jQuery('.prod_table').append('<a href="/?q=node/87" style="padding: 10px 17px 11px 20px; font-size: 14px; float: none;">Вся недвижимость</a>');
-        jQuery('.prod_table .table_row').click(function(){document.location="/?q=node/88";});
+        jQuery('.prod_table .table_row').click(function(){
+            if (isNaN ( parseInt(jQuery(this).data('location')) ))
+                document.location= jQuery(this).data('location');
+            else
+                document.location="/?q=node/"+jQuery(this).data('location');
+        });
 
         jQuery('.prod_aright').click({out: data},function(e){
             data= e.data.out;
@@ -647,8 +679,14 @@
             for (i= tbcur*tbrow; i<tbrow*(tbcur+1) && i<data.length; i++) {
                 switch (ptype) {
                     case 0:
-                            inds.push('address', 'fid_room', 'storey', 'cost');
-                            tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                            inds.push('fid_district', 'fid_room', 'storey', 'cost');
+                            tmp= parseInt(data[i][inds[0]]) % dstmax;
+                            tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                            if (tmp)
+                                tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                            else
+                                tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                            tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                             tmp= jQuery('.prod_filter select.ft_'+inds[1].split('_')[1]);
                             tmp2= undefined;
@@ -667,8 +705,14 @@
                             tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
                         break;
                     case 1:
-                        inds.push('address', 'fid_hometype', 'totalarea', 'cost');
-                            tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                        inds.push('fid_district', 'fid_hometype', 'totalarea', 'cost');
+                            tmp= parseInt(data[i][inds[0]]) % dstmax;
+                            tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                            if (tmp)
+                                tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                            else
+                                tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                            tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                             tmp= jQuery('.prod_filter select.ft_'+inds[1].split('_')[1]);
                             tmp2= undefined;
@@ -687,15 +731,27 @@
                             tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
                         break;
                     case 2:
-                        inds.push('address', 'totalarea', 'storey', 'cost');
-                        tbody+= '<div class="table_column">'+data[i][inds[0]]+'</div>';
+                        inds.push('fid_district', 'totalarea', 'storey', 'cost');
+                        tmp= parseInt(data[i][inds[0]]) % dstmax;
+                        tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                        if (tmp)
+                            tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                        else
+                            tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                        tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
                         tbody+= '<div class="table_column">'+data[i][inds[1]]+'</div>';
                         tbody+= '<div class="table_column">'+data[i][inds[2]]+'</div>';
                         tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
                         break;
                     case 3:
-                        inds.push('address', 'totalarea', 'fid_acreusage', 'cost');
-                            tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                        inds.push('fid_district', 'totalarea', 'fid_acreusage', 'cost');
+                            tmp= parseInt(data[i][inds[0]]) % dstmax;
+                            tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                            if (tmp)
+                                tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                            else
+                                tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                            tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                             tmp= jQuery('.prod_filter select.ft_'+inds[2].split('_')[1]);
                             tmp2= undefined;
@@ -737,8 +793,14 @@
             for (i= tbrow*(tbcur-2); i<tbrow*(tbcur-1) && i>=0; i++) {
                 switch (ptype) {
                     case 0:
-                        inds.push('address', 'fid_room', 'storey', 'cost');
-                        tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                        inds.push('fid_district', 'fid_room', 'storey', 'cost');
+                        tmp= parseInt(data[i][inds[0]]) % dstmax;
+                        tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                        if (tmp)
+                            tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                        else
+                            tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                        tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                         tmp= jQuery('.prod_filter select.ft_'+inds[1].split('_')[1]);
                         tmp2= undefined;
@@ -757,8 +819,14 @@
                         tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
                         break;
                     case 1:
-                        inds.push('address', 'fid_hometype', 'totalarea', 'cost');
-                        tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i]['address']+'</div>';
+                        inds.push('fid_district', 'fid_hometype', 'totalarea', 'cost');
+                        tmp= parseInt(data[i][inds[0]]) % dstmax;
+                        tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                        if (tmp)
+                            tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                        else
+                            tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                        tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                         tmp= jQuery('.prod_filter select.ft_'+inds[1].split('_')[1]);
                         tmp2= undefined;
@@ -777,15 +845,27 @@
                         tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
                         break;
                     case 2:
-                        inds.push('address', 'totalarea', 'storey', 'cost');
-                        tbody+= '<div class="table_column">'+data[i][inds[0]]+'</div>';
+                        inds.push('fid_district', 'totalarea', 'storey', 'cost');
+                        tmp= parseInt(data[i][inds[0]]) % dstmax;
+                        tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                        if (tmp)
+                            tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                        else
+                            tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                        tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
                         tbody+= '<div class="table_column">'+data[i][inds[1]]+'</div>';
                         tbody+= '<div class="table_column">'+data[i][inds[2]]+'</div>';
                         tbody+= '<div class="table_column">'+data[i][inds[3]]+'</div></div>';
                         break;
                     case 3:
-                        inds.push('address', 'totalarea', 'fid_acreusage', 'cost');
-                        tbody+= '<div class="table_row clearfix"><div class="table_column">'+data[i][inds[0]]+'</div>';
+                        inds.push('fid_district', 'totalarea', 'fid_acreusage', 'cost');
+                        tmp= parseInt(data[i][inds[0]]) % dstmax;
+                        tmp2= jQuery('.prod_filter select.ft_district').eq(ptype).children('option');
+                        if (tmp)
+                            tmp= tmp2.eq(tmp-1).val().split(' ')[2];
+                        else
+                            tmp= tmp2.eq(dstmax-1).val().split(' ')[2];
+                        tbody+= '<div class="table_row clearfix" data-location="'+data[i]['location']+'"><div class="table_column">'+tmp+'</div>';
 
                         tmp= jQuery('.prod_filter select.ft_'+inds[2].split('_')[1]);
                         tmp2= undefined;

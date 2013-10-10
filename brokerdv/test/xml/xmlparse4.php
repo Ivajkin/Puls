@@ -35,18 +35,24 @@ if (file_exists('4zz.xml')) {
     //[0]=> string(109) "Россия, Хабаровский край, Хабаровск, Хабаровск, Авиагородок" [1]=> string(29) "под садоводство" [2]=> string(4) "1500" [3]=> string(23) "Балтинас Р.Р." [4]=> string(30) "Железнодорожный" }
     for ($i=0; $i<count($rows); $i++){
         for ($j=0; $j<count($br_realtor); $j++){
+            $rows[$i][3] = mb_convert_case($rows[$i][3], MB_CASE_LOWER, "UTF-8");
+            $br_realtor[$j]['realtor'] = mb_convert_case($br_realtor[$j]['realtor'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][3], $br_realtor[$j]['realtor']) !== false) {
                 $rows[$i][3] = $br_realtor[$j]['id'];
                 break;
             }
         }
         for ($j=34; $j<count($br_district); $j++){
+            $rows[$i][4] = mb_convert_case($rows[$i][4], MB_CASE_LOWER, "UTF-8");
+            $br_district[$j]['district'] = mb_convert_case($br_district[$j]['district'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][4], $br_district[$j]['district']) !== false) {
                 $rows[$i][4] = $br_district[$j]['id'];
                 break;
             }
         }
         for ($j=0; $j<count($br_acreusage); $j++){
+            $rows[$i][1] = mb_convert_case($rows[$i][1], MB_CASE_LOWER, "UTF-8");
+            $br_acreusage[$j]['acreusage'] = mb_convert_case($br_acreusage[$j]['acreusage'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][1], $br_acreusage[$j]['acreusage']) !== false) {
                 $rows[$i][1] = $br_acreusage[$j]['id'];
                 break;

@@ -7,7 +7,8 @@ $totalarea = array(intval($_POST['totalarea'][0]), intval($_POST['totalarea'][1]
 
 $tmp= intval(explode(' ', $_POST['district'])[1]);
 $tmp2= intval(explode(' ', $_POST['district'])[0]);
-$district = ($tmp-(--$tmp2*11) == 1) ? array(1, 999) : array($tmp, $tmp);
+//local (in select) index managing
+$district = ($tmp-(--$tmp2*9) == 1) ? array(1, 999) : array($tmp, $tmp);
 //1-3
 $tmp= intval($_POST['room']);
 $room= ($tmp == 1) ? array(1, 999) : array($tmp, $tmp);

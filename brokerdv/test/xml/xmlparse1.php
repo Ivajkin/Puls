@@ -20,10 +20,11 @@ $br_lavatory= gettbl($link, 'br_lavatory');
 $br_realtor= gettbl($link, 'br_realtor');
 //var_dump($br_realtor);
 
+//broker-dv.com/?q=node/124
 //Файл test.xml содержит XML-документ с корневым элементом
 //и, по крайней мере, элемент /[root]/title.
 //$qwe= intval($_POST['qwe']);
-if (file_exists('2zz.xml')) {
+if (file_exists('main.xml')) {
     $xml = simplexml_load_file('2zz.xml');
     $json = json_encode($xml);
     //echo $json;
@@ -42,6 +43,8 @@ if (file_exists('2zz.xml')) {
     //{ [0]=> array(14) { [0]=> string(1) "1" [1]=> string(5) "60000" [2]=> string(28) "Индустриальный" [3]=> string(17) "не задано" [4]=> string(17) "не задано" [5]=> string(17) "не задано" [6]=> string(17) "не задано" [7]=> string(17) "не задано" [8]=> string(2) "15" [9]=> string(17) "не задано" [10]=> string(17) "не задано" [11]=> string(17) "не задано" [12]=> string(25) "Кондакова С.А." [13]=> string(117) "Россия, Хабаровский край, Хабаровск, Хабаровск, Объединенная ул." }
     for ($i=0; $i<count($rows); $i++){
         for ($j=0; $j<count($br_realtor); $j++){
+            $rows[$i][12] = mb_convert_case($rows[$i][12], MB_CASE_LOWER, "UTF-8");
+            $br_realtor[$j]['realtor'] = mb_convert_case($br_realtor[$j]['realtor'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][12], $br_realtor[$j]['realtor']) !== false) {
                 $rows[$i][12] = $br_realtor[$j]['id'];
                 break;
@@ -53,36 +56,48 @@ if (file_exists('2zz.xml')) {
             var_dump($br_district[$j]['district']);
             echo '<br />';
             echo '<br />';*/
+            $rows[$i][2] = mb_convert_case($rows[$i][2], MB_CASE_LOWER, "UTF-8");
+            $br_district[$j]['district'] = mb_convert_case($br_district[$j]['district'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][2], substr($br_district[$j]['district'], 0, strlen($br_district[$j]['district'])/2)) !== false) {
                 $rows[$i][2] = $br_district[$j]['id'];
                 break;
             }
         }
         for ($j=0; $j<count($br_hometype); $j++){
+            $rows[$i][3] = mb_convert_case($rows[$i][3], MB_CASE_LOWER, "UTF-8");
+            $br_hometype[$j]['hometype'] = mb_convert_case($br_hometype[$j]['hometype'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][3], $br_hometype[$j]['hometype']) !== false) {
                 $rows[$i][3] = $br_hometype[$j]['id'];
                 break;
             }
         }
         for ($j=0; $j<count($br_planning); $j++){
+            $rows[$i][4] = mb_convert_case($rows[$i][4], MB_CASE_LOWER, "UTF-8");
+            $br_planning[$j]['planning'] = mb_convert_case($br_planning[$j]['planning'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][4], $br_planning[$j]['planning']) !== false) {
                 $rows[$i][4] = $br_planning[$j]['id'];
                 break;
             }
         }
         for ($j=0; $j<count($br_state); $j++){
+            $rows[$i][5] = mb_convert_case($rows[$i][5], MB_CASE_LOWER, "UTF-8");
+            $br_state[$j]['state'] = mb_convert_case($br_state[$j]['state'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][5], $br_state[$j]['state']) !== false) {
                 $rows[$i][5] = $br_state[$j]['id'];
                 break;
             }
         }
         for ($j=0; $j<count($br_balcony); $j++){
+            $rows[$i][6] = mb_convert_case($rows[$i][6], MB_CASE_LOWER, "UTF-8");
+            $br_balcony[$j]['balcony'] = mb_convert_case($br_balcony[$j]['balcony'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][6], $br_balcony[$j]['balcony']) !== false) {
                 $rows[$i][6] = $br_balcony[$j]['id'];
                 break;
             }
         }
         for ($j=0; $j<count($br_lavatory); $j++){
+            $rows[$i][7] = mb_convert_case($rows[$i][7], MB_CASE_LOWER, "UTF-8");
+            $br_lavatory[$j]['lavatory'] = mb_convert_case($br_lavatory[$j]['lavatory'], MB_CASE_LOWER, "UTF-8");
             if (stripos($rows[$i][7], $br_lavatory[$j]['lavatory']) !== false) {
                 $rows[$i][7] = $br_lavatory[$j]['id'];
                 break;
@@ -98,7 +113,12 @@ if (file_exists('2zz.xml')) {
                 $rows[$i][0]= 6;
                 break;
             } else if ($ll == 0) {
-                $rows[$i][0]= 7;
+                $rows[$i][0] = mb_convert_case($rows[$i][0], MB_CASE_LOWER, "UTF-8");
+                $br_room[$j]['room'] = mb_convert_case($br_room[$j]['room'], MB_CASE_LOWER, "UTF-8");
+                if (stripos($rows[$i][0], $br_room[$j]['room']) !== false) {
+                    $rows[$i][0] = $br_room[$j]['id'];
+                } else
+                    $rows[$i][0]= 7;
                 break;
             }
         }
