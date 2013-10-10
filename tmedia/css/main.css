@@ -81,7 +81,7 @@ textarea {
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 html {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 /*html * {zoom: 1;}*/
 
