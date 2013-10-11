@@ -233,6 +233,7 @@
 			border: 0;
 			margin: 2%;
 			padding: 2%;
+			max-width: 80%;
 		" name="EMAIL" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'E-mail':this.value;" class="required email" id="mce-EMAIL">
 		<input type="submit" value="Хочу узнать об этом первым" style="
 																background: #992BAD;
@@ -242,6 +243,7 @@
 																color: white;
 																box-shadow: 0 0 1px rgba(0,0,0,0.5);
 																font-size: 1.075em;
+																max-width: 80%;
 															" name="subscribe" id="mc-embedded-subscribe" class="button">
 	</div>
 	</form>
