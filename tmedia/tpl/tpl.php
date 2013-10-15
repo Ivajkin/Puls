@@ -43,6 +43,7 @@
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
+<div style="-webkit-filter: blur(4px);">
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
@@ -194,7 +195,61 @@
 </script>
 <!--Additional Script-->
 <script>
-    <?php include $script_block ?>
+	<?php include $script_block ?>
 </script>
+
+	<!-- blur для email -->
+	<div class="blur" style="
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	background: black;
+	opacity: 0.2;
+"></div>
+</div>
+<div style="
+	width:30%;
+	background: #A7228E;
+	position: absolute;
+	left: 35%;
+	top: 30%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	color: white;
+	text-align: center;
+	font-family: 'Segoe UI Semibold';
+">
+	<!-- Begin MailChimp Signup Form -->
+	<div id="mc_embed_signup">
+	<form action="http://live.us7.list-manage.com/subscribe/post?u=763f9ff74a892add4de7f7d54&amp;id=630f1b11d8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		<h2 style="
+				margin: 10% 10% 10% 10%;
+				font-size: 1.6em;
+				text-transform: none;
+				color: white;
+		">Уже скоро мы раскроем все секреты своим любимым клиентам.</h2>
+	<div class="mc-field-group">
+		<input type="email" value="E-mail" style="
+			color: grey;
+			border: 0;
+			margin: 2%;
+			padding: 2%;
+			max-width: 80%;
+		" name="EMAIL" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'E-mail':this.value;" class="required email" id="mce-EMAIL">
+		<input type="submit" value="Хочу узнать об этом первым" style="
+																background: #992BAD;
+																border: 0;
+																margin: 2%;
+																padding: 2%;
+																color: white;
+																box-shadow: 0 0 1px rgba(0,0,0,0.5);
+																font-size: 1.075em;
+																max-width: 80%;
+															" name="subscribe" id="mc-embedded-subscribe" class="button">
+	</div>
+	</form>
+	</div>
+	<!--End mc_embed_signup-->
+	</div>
+	<!-- !blur для email -->
 </body>
 </html>
