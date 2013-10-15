@@ -1,0 +1,39 @@
+<!-- INCLUDE simple_header.html -->
+<div id="pageheader">
+	<h2><a class="titles" href="{U_USER}">{USERNAME}</a></h2>
+
+	<p>{L_RP_TOTAL_POINTS}: {TOTAL_POINTS}</p>
+</div>
+
+<br clear="all" /><br />
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+		<tr>
+			<th>&nbsp;</th>
+			<th>{L_FROM}</th>
+			<th>{L_RP_COMMENT}</th>
+			<th>{L_POSTS}</th>
+			<!-- IF S_MODERATE --><th>&nbsp;</th><!-- ENDIF -->
+		</tr>
+	<!-- IF .reputation -->
+	<!-- BEGIN reputation -->
+		<!-- IF reputation.S_ROW_COUNT is even --><tr class="row2"><!-- ELSE -->	<tr class="row1"><!-- ENDIF -->
+			<td class="genmed" align="center">{reputation.POINT_IMG}</td>
+			<td class="genmed">{reputation.FROM}<br /><strong>on</strong> {reputation.TIME}</td>
+			<td class="genmed">{reputation.COMMENT}</td>
+			<td class="genmed"><a href="{reputation.U_POST}">{reputation.POST_SUBJECT}</a></td>
+			<!-- IF S_MODERATE --><td><a href="{reputation.U_DELETE}"><img src="{T_IMAGES_PATH}reputation/icon_delete.gif"></a></td><!-- ENDIF -->
+		</tr>
+	<!-- END reputation -->
+	<!-- ELSE -->
+		<tr class="row2" align="center">
+			<td class="genmed" align="center" colspan="<!-- IF S_MODERATE -->5<!-- ELSE -->4<!-- ENDIF -->">{L_RP_EMPTY_DATA}</td>
+		</tr>
+	<!-- ENDIF -->
+</table>
+
+
+
+<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a> &bull; <span>{PAGINATION}<!-- ENDIF -->
+<br /><br />
+<!-- INCLUDE simple_footer.html -->

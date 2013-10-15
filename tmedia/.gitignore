@@ -17,5 +17,6 @@
 tmp/*
 site/*
 add/adapter/*
+add/BotDetect/samples/*
 *.md
 *.psd

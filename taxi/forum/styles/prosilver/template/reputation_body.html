@@ -1,0 +1,36 @@
+<!-- INCLUDE overall_header.html -->
+<div class="post bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="postbody">
+		<br />
+		<form name ="reputation" method="post" action="{U_POST_ACTION}">
+		<fieldset>
+		<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+		<dl>
+			<dt><label for="comment">{L_RP_COMMENT}:</label></dt>
+			<dd><textarea id="comment" name="message" rows="5" cols="30">{COMMENT}</textarea></dd>
+		</dl>
+		<!-- IF S_GIVE_NEGATIVE -->
+		<dl>
+			<dt></dt>
+			<dd><input type="radio" class="radio" name="mode" value="positive"<!-- IF POSITIVE --> checked="checked"<!-- ENDIF --> />{L_RP_POSITIVE} &nbsp; <input type="radio" class="radio" name="mode" value="negative"<!-- IF not POSITIVE --> checked="checked"<!-- ENDIF --> />{L_RP_NEGATIVE}</dd>
+		</dl>
+		<!-- ELSE -->
+		<input type="hidden" name="mode" value="positive" />
+		<!-- ENDIF -->
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd>
+				<input type="submit" class="button2" name="submit" value="{L_SUBMIT}" /> <input class="button2" type="submit" name="cancel" value="{L_CANCEL}" /></dd>
+			</dd>
+				
+		</dl>
+		{S_FORM_TOKEN} 
+		</fieldset>
+		</form>
+		<br />
+	
+		</div>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,46 @@
+<!-- INCLUDE simple_header.html -->
+<h2><a href="{U_USER}">{USERNAME}</a></h2>
+<p>{L_RP_TOTAL_POINTS}: {TOTAL_POINTS}</p>
+<div class="forumbg forumbg-table">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+	<table class="table1" cellspacing="1">
+		<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>{L_FROM}</th>
+			<th>{L_RP_COMMENT}</th>
+			<th>{L_POSTS}</th>
+			<!-- IF S_MODERATE --><th>&nbsp;</th><!-- ENDIF -->
+		</tr>
+		</thead>
+		<tbody>
+	<!-- IF .reputation_row -->
+	<!-- BEGIN reputation_row -->
+		<tr class="<!-- IF reputation_row.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+			<td><span>{reputation_row.POINT_IMG}</span></td>
+			<td><span>{reputation_row.FROM}<br /><strong>on</strong> {reputation_row.TIME}</span></td>
+			<td><span>{reputation_row.COMMENT}</span></td>
+			<td><span><!-- IF reputation_row.POST_SUBJECT --><a href="{reputation_row.U_POST}">{reputation_row.POST_SUBJECT}</a><!-- ELSE -->{L_RP_NA}<!-- ENDIF --></span></td>
+			<!-- IF S_MODERATE --><td><a href="{reputation_row.U_DELETE}"><img src="{T_IMAGES_PATH}reputation/icon_delete.gif"></a></td><!-- ENDIF -->
+		</tr>
+	<!-- END reputation_row -->
+	<!-- ELSE -->
+		<tr class="bg1" align="center">
+			<td colspan="<!-- IF S_MODERATE -->5<!-- ELSE -->4<!-- ENDIF -->">{L_RP_EMPTY_DATA}</td>
+		</tr>
+	<!-- ENDIF -->
+	
+		</tbody>
+	</table>
+
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+
+<!-- IF PAGINATION -->
+		<div class="pagination">
+		<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a> &bull; <span>{PAGINATION}</span>
+		</div>
+<!-- ENDIF -->
+<br /><br />
+<!-- INCLUDE simple_footer.html -->

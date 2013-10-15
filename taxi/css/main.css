@@ -1,0 +1,641 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 1em/1.4 Helvetica, Helvetica Neue, sans-serif;
+    overflow: visible;
+}
+
+.head {
+    /*margin: 0 auto;*/
+    position: relative;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+.footer-container {
+    border-bottom: 20px solid #F3CC4E;
+    background: rgb(254,252,234); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmNlYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmM2NjNGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(254,252,234,1) 0%, rgba(243,204,78,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,252,234,1)), color-stop(100%,rgba(243,204,78,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(243,204,78,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(243,204,78,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(243,204,78,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(254,252,234,1) 0%,rgba(243,204,78,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f3cc4e',GradientType=0 ); /* IE6-8 */
+
+}
+.header-container>div {
+    /*background-color: #f16529;*/
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YzY2M0ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(243,204,78,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,204,78,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(243,204,78,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(243,204,78,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(243,204,78,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(243,204,78,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3cc4e', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0 0 100px 18px white;
+    -webkit-box-shadow: 0 0 100px 18px white;
+    box-shadow: 0 0 100px 18px white;
+
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    /*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuNzUiLz4KICAgIDxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuNzUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg,  rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.75) 90%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+   /* background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,0.75)), color-stop(90%,rgba(255,255,255,0.75)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+   /* background: -webkit-linear-gradient(45deg,  rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.75) 90%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+   /* background: -o-linear-gradient(45deg,  rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.75) 90%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+   /* background: -ms-linear-gradient(45deg,  rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.75) 90%,rgba(255,255,255,0) 100%); /* IE10+ */
+   /* background: linear-gradient(45deg,  rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.75) 90%,rgba(255,255,255,0) 100%); /* W3C */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+}
+
+.header-container {
+    /*border-bottom: 20px solid #e44d26;*/
+    background: transparent url('../img/v1.png') 13px 63% repeat-x;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/v1.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/v1.png', sizingMethod='scale')";
+    background-size: 30%;
+}
+
+/* ===================
+    ALL: Header
+   =================== */
+
+.head h1{
+    /*float: left;
+    display: block;*/
+    display: inline-block;
+    vertical-align: middle;
+    word-wrap: break-word;
+    white-space: normal;
+    position: relative;
+}
+.head .img-container{
+    /*float: left;
+    display: block;*/
+    display: inline-block;
+    height: 100%;
+    width: 22%;
+}
+.head .img-container img{
+    width: 100%;
+    height: auto;
+    max-height: 279px;
+    max-width: 295px;
+    /*background-color: #fff;*/
+    padding: 0 1%;
+}
+
+/* ==============
+    MOBILE: Wrapper
+   ============== */
+
+html {
+    background: #fff url('../img/body_bk.png') 0 40px no-repeat;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/body_bk.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/body_bk.png', sizingMethod='scale')";
+    background-size: 100%;
+}
+.wrapper {
+    width: 96%;
+    margin: 0 2%;
+}
+
+/* ==============
+    MOBILE: Header
+   ============== */
+
+.head h1{
+    bottom: 15px;
+    width: 76%;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+/*nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+    background: #e44d26;
+}*/
+
+nav li {
+    float: left;
+    width: 30%;
+    margin-right: 1.5%;
+}
+nav li:nth-child(3n){margin: 0;}
+
+
+nav a {text-decoration: none;}
+nav li>a,
+nav li>dl {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+    text-align: center;
+    color: #4D4C47;
+    background: rgba(245, 202, 0, 0.44);
+    border-radius: 15px;
+}
+nav li:nth-child(10n-7)>a {background: rgba(255, 254, 102, 0.44);}
+
+nav li.menu-separator {margin-top: 0;}
+
+nav li dd {
+    margin: 0;
+    padding: 0.3em 0;
+}
+nav li dd:hover {background: #f3f6d8;}
+
+nav h3,
+nav h4 {
+    margin: 0;
+}
+nav h3 {color: inherit;}
+nav h4 {margin-top: 0.5em; line-height: 1;}
+
+nav li>a:hover,
+nav li>dl:hover {
+    color: #fff7b2;/*#FFFCC0;*/
+    background: rgba(245, 202, 0, 1);
+}
+
+nav li>dl a:hover {
+    text-decoration: underline;
+    outline-color: #fff;
+}
+
+nav li>a:visited,
+nav li>dl a:visited {
+    color: black;
+}
+
+nav li>dl a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+
+}
+.main>aside {
+    padding: 0 0 10px 0;
+}
+
+.footer-container footer {
+    padding: 20px 0;
+}
+.footer-container footer img {
+    vertical-align: middle;
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+}
+.footer-container footer img:hover {
+    opacity: 0.55;
+    filter: alpha(opacity=55);
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/**************
+*******Font Fixes***
+*************/
+nav {
+    font-size: 0.7em;
+}
+.head h1 {
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    color: #111111;
+}
+
+a.simplelink {
+    color: #2d2d2d;
+    text-decoration: none;
+}
+a.simplelink:hover {
+    text-decoration: underline;
+}
+
+p {
+    text-indent: 1.3em;
+    text-shadow: 0px 1px 0px;
+}
+a {text-shadow: none;}
+
+.star {vertical-align: text-top; text-indent: 1; color: red;}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media only screen and (min-width: 400px) {
+
+    html {background-position: 0 50px;}
+}
+
+@media only screen and (min-width: 480px) {
+
+    html {background-position: 0 65px;}
+
+    .head h1 {
+        bottom: 20px;
+    }
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    /*nav ul li {
+        display: inline;
+    }*/
+
+    /*.oldie nav a {
+        margin: 0 0.7%;
+    }*/
+
+    /**************
+*******Font Fixes***
+*************/
+    nav {
+        font-size: 0.8em;
+    }
+    .head h1 {
+        font-size: 1.4em;
+    }
+}
+
+@media only screen and (min-width: 630px) {
+
+    html {background-position: 0 80px;}
+    .wrapper {
+        width: 90%;
+        margin: 0 5%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    /*.header-container,
+    .main>aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+    }*/
+
+    html {background-position: 0 100px;}
+    .main {
+        padding: 0;
+
+    }
+
+/* ============
+    WIDE: Menu
+   ============ */
+
+    .title {
+        float: left;
+    }
+
+    nav li.menu-separator {margin-top: 2em;}
+    nav li {
+        float: none;
+        clear: both;
+        width: 100%;
+        margin: 0;
+    }
+    li:nth-child(10n-7) {display: none;}
+
+
+    /*nav {
+        float: right;
+        width: 38%;
+    }*/
+
+ /* ============
+    INTERMEDIATE: Main
+    ============ */
+
+    .main>div {
+        float: right;
+        width: 71%;
+        padding-left: 2%;
+
+    }
+
+    .main>aside {
+        float: left;
+        width: 26%;
+        padding-right: 1%;
+        margin-top: 5.6em;
+    }
+
+    /**************
+*******Font Fixes***
+*************/
+    nav {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width: 930px) {
+    html {background-position: 0 120px;}
+
+    .head h1 {
+        bottom: 10px;
+    }
+
+    /**************
+*******Font Fixes***
+*************/
+    .head h1 {
+        font-size: 1.6em;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+
+    /**************
+*******Font Fixes***
+*************/
+    .head h1 {
+        font-size: 2em;
+    }
+    nav {
+        font-size: 1em;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+.s-hide {display: none;}
+.s-clearfix {clear: both;}
+.s-nowrap {white-space: nowrap;}
+.s-wrap {white-space: normal;}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

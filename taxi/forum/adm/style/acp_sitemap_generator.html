@@ -1,0 +1,86 @@
+<!-- INCLUDE overall_header.html -->
+
+<a name="maincontent"></a>
+
+<h1>{L_ACP_SITEMAP_GENERATOR}</h1>
+<p>{L_SITEMAP_GEN_DETAILS}</p>
+<!-- IF T_SHOW_TEHSTAT -->
+<table cellspacing="1">
+		<caption>
+		{L_SM_STATS}
+		</caption>
+		<col class="col1" /><col class="col2" /><col class="col1" /><col class="col2" />
+	<thead>
+	<tr>
+		<th>{L_STATISTIC}</th>
+		<th>{L_VALUE}</th>
+		<th>{L_STATISTIC}</th>
+		<th>{L_VALUE}</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	  <td>{L_SM_TOPIC_LINK}: </td>
+	  <td><strong>{TOPIC_LINKNO}</strong></td>
+		<td>{L_SM_TOPIC_SIZE}: </td>
+		<td><strong>{TOPIC_SIZE}</strong></td>
+	</tr>
+	<tr>
+	  <td>{L_SM_FORUM_LINK}: </td>
+	  <td><strong>{FORUM_LINKNO}</strong></td>
+		<td>{L_SM_FORUM_SIZE}: </td>
+		<td><strong>{FORUM_SIZE}</strong></td>
+	</tr>
+	<tr>
+	  <td>{L_SM_VERSION}: </td>
+	  <td><strong>{SM_VERSION}</strong></td>
+	  <td>{L_LAST_UPDATED}: </td>
+		<td><strong>{SM_LAST_RUN}</strong></td>
+	</tr>
+	</tbody>
+	</table>
+<!-- ENDIF -->
+<form id="acp_generate" method="post" action="{U_ACTION}">
+<fieldset>
+		<legend>{L_GENERATE}</legend>
+		<dl>
+			<dt><label for="hello">{L_RUN_NOW}</label><br /><span>{L_RUN_DESC}</span></dt>
+			<dd>
+            	<input type="hidden" value="yes" name="generate" />
+				<input class="button1" type="submit" id="submit" name="submit" value="Run Now" />
+			</dd>
+		</dl>
+											
+	</fieldset>
+
+</form>
+<form id="acp_sm_settings" method="post" action="{U_ACTION}">
+
+<!-- BEGIN options -->
+	<!-- IF options.S_LEGEND -->
+		<fieldset>
+			<legend>{options.LEGEND}</legend>
+	<!-- ELSE -->
+
+		<dl>
+			<dt><label for="{options.KEY}">{options.TITLE}:</label><!-- IF options.S_EXPLAIN --><br /><span>{options.TITLE_EXPLAIN}</span><!-- ENDIF --></dt>
+			<dd>{options.CONTENT}</dd>
+		</dl>
+
+	<!-- ENDIF -->
+<!-- END options -->
+<p class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+	</p>
+    </fieldset>
+</form>
+<fieldset>
+		<legend>{L_NOTE}</legend>
+		<dl>
+			{L_THE_NOTE}
+		</dl>								
+	</fieldset>
+                
+<p> </p><div style="text-align: center; font-size:8pxj">SiteMap Generator &copy; 2007 <a href="http://www.commexcomputers.com">Joshua2100</a></div>
+<!-- INCLUDE overall_footer.html -->

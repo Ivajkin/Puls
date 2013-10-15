@@ -1,0 +1,27 @@
+<!-- INCLUDE overall_header.html -->
+
+<form name="reputation" method="post" action="{U_POST_ACTION}">
+<table class="tablebg" width="100%" cellspacing="1" border="0" align="center">
+<tr>
+	<th>{L_RP_TITLE}</th>
+</tr>
+<tr>
+	<td class="row1" align="center">
+	<b class="genmed">{L_RP_COMMENT}:</b><br />
+	<textarea id="comment" name="message" rows="5" cols="50"></textarea>
+	<!-- IF S_GIVE_NEGATIVE -->
+	<br />
+	<span class="genmed"><input type="radio" class="radio" name="point" value="1"<!-- IF POSITIVE --> checked="checked"<!-- ENDIF --> checked="checked" />{L_RP_POSITIVE} &nbsp; <input type="radio" class="radio" name="point" value="-1"<!-- IF not POSITIVE --> checked="checked"<!-- ENDIF --> />{L_RP_NEGATIVE}</span>
+	<!-- ELSE -->
+	<input type="hidden" name="mode" value="positive" />
+	<!-- ENDIF -->
+	</td>
+</tr>
+<tr>
+	<td class="cat" align="center"><input type="submit" class="btnmain" name="submit" value="{L_SUBMIT}" /></td>
+</tr>
+</table>
+{S_FORM_TOKEN}
+</form>
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,32 @@
+<!-- INCLUDE overall_header.html -->
+
+<a name="maincontent"></a>
+
+
+
+<h1>{L_ACP_RP_POINTS}</h1>
+
+<form id="acp_change_point" method="post" action="{U_ACTION}">
+
+<fieldset>
+<dl>
+	<dt><label for="usernames">{L_USERNAMES}:</label></dt>
+	<dd><textarea name="usernames" cols="40" rows="3" id="usernames"></textarea></dd>
+	<dd>[ <a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a> ]</dd>
+	
+</dl>
+
+	<dt></dt>
+	<dd><select id="action" name="action"><option value="add">{L_RP_ADD}</option><option value="subtract">{L_RP_SUBTRACT}</option><option value="alter">{L_RP_CHANGE}</option></select> <input name="point" type="text" class="text small" maxlength="100" id="point" /> {L_RP_POINTS}</dd>
+</dl>
+
+
+<p class="submit-buttons">
+	<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+	<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+</p>
+{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<!-- INCLUDE overall_footer.html -->
