@@ -12,7 +12,7 @@
         <div class="left"><span>Улица</span><span class="star">*</span></div>
         <div class="right"><input type="text" autocomplete="on"/></div>
         <div class="s-clearfix"></div>
-        <div class="left"><span>Дом</span></div>
+        <div class="left"><span>Дом</span><span class="star">*</span></div>
         <div class="right line-input">
             <input type="text" autocomplete="on"/><span class="s-nowrap"><span>Корпус</span><input type="text" autocomplete="on"/></span><span class="s-nowrap"><span>Подъезд</span><input type="text" autocomplete="on"/></span>
         </div>
@@ -23,7 +23,7 @@
         <div class="left"><span>Улица</span><span class="star">*</span></div>
         <div class="right"><input type="text" autocomplete="on"/></div>
         <div class="s-clearfix"></div>
-        <div class="left"><span>Дом</span></div>
+        <div class="left"><span>Дом</span><span class="star">*</span></div>
         <div class="right line-input">
             <input type="text" autocomplete="on"/><span class="s-nowrap"><span>Корпус</span><input type="text" autocomplete="on"/></span><span class="s-nowrap"><span>Подъезд</span><input type="text" autocomplete="on"/></span>
         </div>
@@ -35,13 +35,15 @@
         <div class="right"><input type="text" autocomplete="on" /></div>
         <div class="s-clearfix"></div>
         <div class="left"><span>Телефон</span><span class="star">*</span></div>
-        <div class="right smallfield"><input name="Phone" type="text" autocomplete="on" /></div>
+        <div class="right smallfield"><input name="Phone" type="text" autocomplete="on" style="text-align: center;" /></div>
         <div class="s-clearfix"></div>
         <div class="left"><span>Класс авто</span></div>
         <div class="right">
             <select>
-                <option value="1 Премиум">Эконом</option>
-                <option value="2 Люкс">Комфорт</option>
+                <option value="1 Комфорт">легковой, «Комфорт»</option>
+                <option value="2 Эконом">легковой, «Эконом»</option>
+                <option value="3 Микроавтобус">микроавтобус</option>
+                <option value="4 Грузовой">грузовой</option>
             </select>
         </div>
         <div class="s-clearfix"></div>
@@ -49,8 +51,7 @@
         <div class="right verysmallfield rad-time">
             <input type="radio" name="rad-time" value='0' checked /><span> На ближайшее время</span><br />
             <input type="radio" name="rad-time" value='1' /><span> На указанную дату/время</span>
-            <input type="text" autocomplete="on" class="hidden" />
-            <input type="text" autocomplete="on" class="hidden" />
+            <span class="s-nowrap" ><input type="text" autocomplete="on" class="hidden" style="margin-right: 0.3em"/><input type="text" autocomplete="on" class="hidden" /></span>
         </div>
         <div class="s-clearfix"></div>
     </section>

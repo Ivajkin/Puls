@@ -59,7 +59,7 @@
                             <li><a href="#"><h3>Услуги</h3></a></li>
                             <li><a href="#"><h3>Контакты</h3></a></li>
                             <li><a href="#"><h3>Заказать такси</h3></a></li>
-                            <li class="menu-separator"><a href="#"><h3>Форум</h3></a></li>
+                            <li class="menu-separator"><a href="http://tforum.coreatrade.com"><h3>Форум</h3></a></li>
                             <li class="menu-separator">
                                 <dl>
                                     <dt><h3>Расписание</h3></dt>
@@ -88,19 +88,19 @@
             </footer>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
         <script src="js/vendor/jquery-migrate-1.2.1.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <script>
+        <!--<script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        </script>-->
 
         <script src="js/jquery.textshadow.js"></script>
         <!--Additional JS Libs-->

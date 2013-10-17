@@ -19,7 +19,7 @@
 .main .form-doit .right {
     float: left;
     width: 35%;
-    min-width: 120px;
+    min-width: 173px;
 }
 
 .main .form-doit .right.rad-time{
@@ -39,10 +39,10 @@
     border: 1px solid #949493;
 }
 .main .form-doit .right:not(.line-input) input[type="text"]
-.main .form-doit .right:not(.verysmallfield) input[type="text"] {min-width: 138px;}
+.main .form-doit .right:not(.verysmallfield) input[type="text"] {min-width: 173px;}
 .main .form-doit .right select {
     border-radius: 5px;
-    max-width: 150px;
+    max-width: 185px;
 }
 .main .form-doit .right input[type="text"]:focus,
 .main .form-doit .right select:focus {
@@ -53,7 +53,7 @@
 }
 
 .main .form-doit .right.smallfield input{
-     max-width: 138px;
+     max-width: 173px;
  }
 .main .form-doit .right.verysmallfield input{
     max-width: 85px;

@@ -161,14 +161,14 @@ body {
    ============== */
 
 html {
-    background: #fff url('../img/body_bk.png') 0 40px no-repeat;
+    background: #fff url('../img/body_bk.png') no-repeat fixed 0 40px ;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/body_bk.png', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/body_bk.png', sizingMethod='scale')";
     background-size: 100%;
 }
 .wrapper {
-    width: 96%;
-    margin: 0 2%;
+    width: 98%;
+    margin: 0 1%;
 }
 
 /* ==============
@@ -414,6 +414,7 @@ a {text-shadow: none;}
     html {background-position: 0 100px;}
     .main {
         padding: 0;
+        margin-top: -3%;
 
     }
 
@@ -489,7 +490,7 @@ a {text-shadow: none;}
 
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
+        /*margin: 0 auto;*/
     }
 
     /**************
@@ -500,6 +501,17 @@ a {text-shadow: none;}
     }
     nav {
         font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 1380px) {
+
+    /* ===============
+        Maximal Width
+       =============== */
+
+    .wrapper {
+        margin: 0 auto;
     }
 }
 

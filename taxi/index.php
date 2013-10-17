@@ -17,6 +17,7 @@ require_once 'namespace.php';
 EOT;
     $script_lib = <<<EOT
                 <script src="js/jquery.maskedinput.min.js"></script>
+                <script src="js/date.format.js"></script>
                 <script src="add/jqueryui/js/jquery-ui-1.10.3.custom.min.js"></script>
                 <script src="add/jqueryui/js/ru/jquery.ui.datepicker-ru.min.js"></script>
                 <script src="add/chosen/chosen.jquery.min.js"></script>
