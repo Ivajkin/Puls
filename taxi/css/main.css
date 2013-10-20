@@ -63,6 +63,7 @@ textarea {
 body {
     font: 1em/1.4 Helvetica, Helvetica Neue, sans-serif;
     overflow: visible;
+    min-width: 400px;
 }
 
 .head {
