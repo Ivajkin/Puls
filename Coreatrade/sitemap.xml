@@ -7,8 +7,273 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://www.coreatrade.com/</loc>
-  <lastmod>2012-08-28T14:22:49+00:00</lastmod>
-  <changefreq>daily</changefreq>
+  <loc>http://coreatrade.com/</loc>
+  <lastmod>2013-05-03T04:37:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/base.html</loc>
+  <lastmod>2013-05-03T15:36:48+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/aboutpg.html</loc>
+  <lastmod>2013-05-03T15:36:48+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/allavto.html</loc>
+  <lastmod>2013-05-11T15:16:49+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/kia.html</loc>
+  <lastmod>2013-05-11T15:16:50+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/hyundai.html</loc>
+  <lastmod>2013-05-11T15:16:50+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/toyota.html</loc>
+  <lastmod>2013-05-11T15:16:51+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/honda.html</loc>
+  <lastmod>2013-05-11T15:16:52+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/malogruznaya.html</loc>
+  <lastmod>2013-05-11T15:16:53+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/bol'shegruznaya.html</loc>
+  <lastmod>2013-05-11T15:16:53+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/mikroavtobus.html</loc>
+  <lastmod>2013-05-11T15:16:54+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/avtobus.html</loc>
+  <lastmod>2013-05-11T15:16:55+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/sel'khoztekhnika.html</loc>
+  <lastmod>2013-05-11T15:16:55+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/spetstekhnika.html</loc>
+  <lastmod>2013-05-11T15:16:56+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/chevrolet.html</loc>
+  <lastmod>2013-05-11T15:16:57+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/daewoo.html</loc>
+  <lastmod>2013-05-11T15:16:57+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/ssangyong.html</loc>
+  <lastmod>2013-05-11T15:16:58+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/grand%20starex.html</loc>
+  <lastmod>2013-05-11T15:16:59+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/veloster.html</loc>
+  <lastmod>2013-05-11T15:17:00+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/cr-v%20%20ex-l.html</loc>
+  <lastmod>2013-05-11T15:17:00+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/camry%20xle.html</loc>
+  <lastmod>2013-05-11T15:17:01+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/tucson%20ix.html</loc>
+  <lastmod>2013-05-11T15:17:02+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/veracruz.html</loc>
+  <lastmod>2013-05-11T15:17:02+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/rav4.html</loc>
+  <lastmod>2013-05-11T15:17:03+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/korando%20sport.html</loc>
+  <lastmod>2013-05-11T15:17:04+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/rodius.html</loc>
+  <lastmod>2013-05-11T15:17:05+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/santa%20fe%20new.html</loc>
+  <lastmod>2013-05-11T15:17:05+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/bort+kmu.html</loc>
+  <lastmod>2013-05-11T15:17:06+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/refrizherator.html</loc>
+  <lastmod>2013-05-11T15:17:07+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/4wd%20refrizherator.html</loc>
+  <lastmod>2013-05-11T15:17:07+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/avtovyshka%2028m.html</loc>
+  <lastmod>2013-05-11T15:17:08+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/avtovyshka%2018m.html</loc>
+  <lastmod>2013-05-11T15:17:09+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/4kh4%20bongo2.html</loc>
+  <lastmod>2013-05-11T15:17:09+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/4kh4%20bongo%202-kabinnik.html</loc>
+  <lastmod>2013-05-11T15:17:10+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/bongo%201500kg.html</loc>
+  <lastmod>2013-05-11T15:17:11+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/refrizherator%202700kg.html</loc>
+  <lastmod>2013-05-11T15:17:11+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/promtovarnaya%202700kg.html</loc>
+  <lastmod>2013-05-11T15:17:12+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/refrizherator%205000kg.html</loc>
+  <lastmod>2013-05-11T15:17:13+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/samosval%2017tonn.html</loc>
+  <lastmod>2013-05-11T15:17:14+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/mikser%206kubov.html</loc>
+  <lastmod>2013-05-11T15:17:14+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/benzovoz%2032kuba.html</loc>
+  <lastmod>2013-05-11T15:17:15+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/novus%20kran.html</loc>
+  <lastmod>2013-05-11T15:17:16+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/novus+kmu.html</loc>
+  <lastmod>2013-05-11T15:17:16+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/novus%20avtovyshka.html</loc>
+  <lastmod>2013-05-11T15:17:17+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://coreatrade.com/pages/avtobus%2045%20mest.html</loc>
+  <lastmod>2013-05-11T15:17:18+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 </urlset>

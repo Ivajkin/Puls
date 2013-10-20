@@ -1,9 +1,11 @@
 //
 // get *.json into var
 //
+var sitelocation = "/";
+
 jgetBrand = function (callback) {
     $j.ajax({
-        url: "/js/dbrand.js",
+        url: sitelocation+"js/dbrand.js",
         dataType: 'text',
         success: function (data) { tmp = eval('(' + data + ')'); callback(tmp); }
     });
@@ -11,14 +13,14 @@ jgetBrand = function (callback) {
 
 jgetType = function (callback) {
     $j.ajax({
-        url: "/js/dtype.js",
+        url: sitelocation + "js/dtype.js",
         dataType: 'text',
         success: function (data) { tmp = eval('(' + data + ')'); callback(tmp); }
     });
 }
 jgetData = function (callback) {
     $j.ajax({
-        url: "/js/ddata.js",
+        url: sitelocation + "js/ddata.js",
         dataType: 'text',
         success: function (data) { tmp = eval('(' + data + ')'); callback(tmp); }
     });
@@ -27,17 +29,22 @@ jgetData = function (callback) {
 jgetDataIndexT = function (first, end, callback) {
     $j.ajax({
         type: "GET",
-        url: "/admin/DataBaseOps/getOperations.php",
+        url: sitelocation + "admin/DataBaseOps/getOperations.php",
         data: { fisrt: first, end: end, operation: 'car' },
         dataType: 'text',
         success: function (data) { tmp = eval('(' + data + ')'); callback(tmp); }
     });
 }
 jgetDataIndex = function (callback, first, end) {
-    $j.ajax({
+    /*$j.ajax({
         type: "GET",
-        url: "/admin/DataBaseOps/getOperations.php",
+        url: sitelocation + "admin/DataBaseOps/getOperations.php",
         data: { first: first, end: end, operation: 'car' },
+        dataType: 'text',
+        success: function (data) { tmp = eval('(' + data + ')'); callback(tmp); }
+    });*/
+    $j.ajax({
+        url: sitelocation + "js/ddata.js",
         dataType: 'text',
         success: function (data) { tmp = eval('(' + data + ')'); callback(tmp); }
     });

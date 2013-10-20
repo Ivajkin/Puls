@@ -8,6 +8,28 @@
 	height: 60px;
 }
 
+.rssimg
+{
+    z-index: 10;
+    height: 15px;
+    background: transparent url('../images/gvl3-icons-0-2.png') no-repeat;
+    display: block;
+    margin: 0 8px 5px 0;
+    font-size: 1px;
+    line-height: 1px;
+    text-indent: -5000px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: .85;
+    -webkit-user-select: none;
+    background-position: -797px 0;
+    width: 13px;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    margin-right: -17px;
+}
+
 /************************/
 /*For hide/show Control*/
 /************************/
@@ -162,6 +184,14 @@ div.complect:hover
 /************************/
 /*List*/
 /************************/
+.explistrow0 h6
+{
+    color: #BFBFBF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    line-height: 1.8em;
+    font-weight: bold;
+}
 
 .h2list 
 {
@@ -177,6 +207,164 @@ tr:hover
 {
     background-color:#171917;
 }
+.link, a.link
+{
+    position: absolute;
+    top: 2.5em;
+    color:#fff;
+    cursor: pointer;
+    font-style:italic;
+    border-radius: 10px;
+    border: solid 2px rgb(218, 224, 247);
+    padding: 0 5px;
+}
+.link:hover
+{
+    color: rgb(143, 183, 235);
+    text-decoration: underline;
+}
+
+.compare_lc:hover:after
+{
+    content: " выбранные автомобили";
+}
+.compare_clean:hover:after
+{
+    content: " список выбранных авто";
+}
+.compare_add:hover:after
+{
+    content: " в список для сравнения";
+}
+.compare_del:hover:after
+{
+    content: " из списка";
+}
+.compare_lc:hover
+{
+    z-index: 1;
+    background-color: #303438;
+}
+.compare_clean:hover
+{
+    z-index: 1;
+    background-color: #303438;
+}
+.compare_hlout
+{
+    padding: 0.5%;
+    background: #353535;
+    margin-right: 1%;
+    position:relative;
+    top: 13em;
+}
+.compare_hlin
+{
+    background-color: #191919;
+    padding: 5px;
+    border: 1px solid #3D3D3D;
+    border-top-color: #444;
+}
+.compare_hlin .compare_lc_head
+{
+    border-bottom: 1px dashed #555;
+    margin-bottom: 5px;
+}
+.compare_hlin .compare_lc_content
+{
+    text-align: left;
+    font-weight: normal;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #353535;
+    padding: 2px;
+}
+
+/************************/
+/*Compare Page*/
+/************************/
+
+.cmp_head
+{
+    display: block; 
+    float: left; 
+    width: 12em;
+    position: relative;
+}
+.cmp_maintb
+{
+    display: block; 
+    float: left; 
+    width: 29em;
+    margin-left: 20px;
+}
+.cmp_mainimg
+{
+    height: auto;
+    width: 100%;
+    max-width: 180px;
+    margin-top: 20px;
+}
+
+/************************/
+/*Find Page*/
+/************************/
+
+.numberhead
+{
+    position: relative;
+    clear: both;
+}
+    .numberhead .numberinput
+    {
+        float: left;
+        display: block;
+        width: 45px;
+        padding: 2px 25px 2px 5px;
+        margin: 0;
+    }
+    .numberhead .label
+    {
+        float: left;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .numberhead .numbtnbase
+    {
+        position: relative;
+        display: block;
+        float: left;
+        height: 20px;
+        right: 20px;
+        margin-right: -30px;
+    }
+        .numberhead .numbtnbase .numberbtn
+        {
+            position: relative;
+            width: 20px;
+            height: 40%;
+            padding: 0;
+            margin: 0;
+            font-size: 8px;
+        }
+        .numberhead .numbtnbase .btnup
+        {
+            right: 2px;
+            top: 2px;
+        }
+        .numberhead .numbtnbase .btndown
+        {
+            right: 22px;
+            top: 12px;
+        }
+.h5note
+{
+    float: left;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
 /*tbody tr {
     cursor: pointer;
 }

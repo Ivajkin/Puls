@@ -32,14 +32,14 @@
 		padding:0px;
 		margin:0px; 
 		height:100%;
-		background:#fff;
+		/*background:#fff;*/
 		width:100%;
 		position:absolute;}
 		
 		.ice-slideshow-default .ice-main-wapper .ice-main-item .ice-description {
 			position:absolute;
 			z-index:10;
-			bottom:43%;
+			bottom:5%;
 			width:936px;
 			left:50%;
 			margin-left:-480px;
@@ -86,11 +86,20 @@
 				
 				
 				#iceslideshow .ice-main-item img {
-					width:100%!important;
-					height:100%!important;}
+					/*width:100%!important;*/
+					height:100%!important;
+					max-width: 1024px;}
 				
-				
-			
+				@media (min-width: 1100px) {
+                                        #iceslideshow .ice-main-item img {
+				        	left: 13% !important;
+                                        }
+				}			
+				@media (min-width: 1367px) {
+                                        #iceslideshow .ice-main-item img {
+				        	left: 19% !important;
+                                        }
+				}
 			
 /* Navigator 
 the small rentangles that tells how many slides are */

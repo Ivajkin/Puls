@@ -162,3 +162,17 @@ a img.calendar {
 	cursor: pointer;
 	vertical-align: middle;
 }
+
+.main_menu_item {
+	font-weight: 700;
+        /*background-image: url('../images/gradient.png');*/
+        text-shadow: 1px 1px 2px black, 0 0 1em blue;
+}
+
+#mainmenu {
+        margin-right: -20px !important;
+}
+
+#ymapid {
+	margin: 10px 10px 0px 0px;
+}

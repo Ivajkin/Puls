@@ -13,7 +13,8 @@ html { font-size:100.01%; width:100%; margin:0 auto; }
 
 body {
 	color: #BFBFBF;
-	background: #1f1f1f;
+	/*background: #1f1f1f; !!! */
+	background: rgb(48, 52, 56);
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:80%;
 	line-height:1.8em;}

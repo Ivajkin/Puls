@@ -12,7 +12,7 @@
     <body class="">
     
         <!-- Ice SlideShow -->
-        <div id="iceslideshow">
+        <div id="iceslideshow" style="min-width: 1000px">
             <style type="text/css">
 
                 .ice-slideshow-default,
@@ -42,66 +42,80 @@
             <div class="ice-main-wapper" style="height: 480px;">
                 <div class="ice-proccessbar">
                 </div>
+
+                <!-- KIA Sportage -->
                 <div id="slide_0" class="ice-main-item" style="display: block;">
-                    <img src="images/slideshow/image1.jpg" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника"
-                        title="" class="image-slide" />
+                    <img src="images/slideshow/kia_sportage[1].jpg" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника KIA Sportage"
+                        title="" class="image-slide" /> <!--  images/slideshow/image1.jpg --> <!-- images/catalog/2012-08-27/c3e50bf293c8e62a891830da2b059c3b.jpg -->
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            
+                            KIA Sportage
                         </h3>
                         <p>
-                            
+                            Делает погоду
                         </p>
-                        <a href="javascript:void(0)" class="button">Подробнее</a>
+                        <a onclick="showInfo('brand', 'KIA'); return false;" href="pages/kia.html" class="linkcheckflag button">Подробнее</a>
                     </div>
                 </div>
+
+                <!-- Toyota Camry -->
                 <div  id="slide_1" class="ice-main-item">
-                    <img src="images/slideshow/image2.jpg"
-                        title="" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника" class="image-slide" />
+                    <img src="images/slideshow/toyota_camry[2].jpg"
+                        title="" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника" class="image-slide" /> <!-- image2.jpg -->
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            
+                            Toyota Camry
                         </h3>
                         <p>
-                            </p>
-                        <a href="javascript:void(0)" class="button">Подробнее</a>
+                            Комфортный седан - просто хорошая машина
+                        </p>
+                        <a onclick="showInfo('brand', 'Toyota'); return false;" href="pages/toyota.html" class="linkcheckflag button">Подробнее</a>
                     </div>
                 </div>
+
+                <!-- Honda CRV EXL -->
                 <div id="slide_2" class="ice-main-item">
-                    <img src="images/slideshow/image3.jpg"
+                    <img src="images/slideshow/honda_crv_exl[3].jpg"
                         title="" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника" class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            
+                            Honda CR-V EX-L
                         </h3>
                         <p>
-                            </p>
-                        <a href="javascript:void(0)" class="button">Подробнее</a>
+                            Новый автомобиль под заказ
+                        </p>
+                        <a onclick="showInfo('brand', 'Honda'); return false;" href="pages/honda.html" class="linkcheckflag button">Подробнее</a>
                     </div>
                 </div>
+
+                <!-- Hyundai Santa Fe -->
                 <div id="slide_3" class="ice-main-item">
-                    <img src="images/slideshow/image4.jpg"
+                    <img src="images/slideshow/hyundai_santa_fe[4].jpg"
                         title="" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника" class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            
+                            Hyundai Santa Fe
                         </h3>
                         <p>
-                            </p>
-                        <a href="javascript:void(0)" class="button">Подробнее</a>
+                            Безупречный дизайн, современные технологии и усовершенствованные системы безопасности.
+                        </p>
+                        <a onclick="showInfo('type', 'Hyundai'); return false;" href="pages/hyundai.html" class="linkcheckflag button">Подробнее</a>
                     </div>
                 </div>
+
+                <!-- KIA Sorento -->
                 <div id="slide_4" class="ice-main-item">
-                    <img src="images/slideshow/image5.jpg"
+                    <img src="images/slideshow/kia_sorento[5].jpg"
                         title="" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника"
                         class="image-slide" />
                     <div class="ice-description">
                         <h3 class="ice-title">
-                            
+                            KIA Sorento
                         </h3>
                         <p>
-                            </p>
-                        <a href="javascript:void(0)" class="button">Подробнее</a>
+                            Мужской подход
+                        </p>
+                        <a onclick="showInfo('brand', 'KIA'); return false;" href="pages/kia.html" class="linkcheckflag button">Подробнее</a>
                     </div>
                 </div>
                 <div class="ice-buttons-control">
@@ -161,7 +175,7 @@
         </div><!-- Ice SlideShow -->
 	    
          <!-- Promo -->
-        <div id="promo">
+        <div id="promo"  style="min-width: 1000px">
             <div class="inside_effect" align="center">
                 <div class="wrapper" align="center">
                     <div class="modules-wrap clearfix" id="mark_table" align="center"; style="width:100%; padding: 0px; margin: 0px">
@@ -179,9 +193,8 @@
                                        '</div>' +
                                      '</div>' +*/
                                     '<div class="moduletable_content clearfix">' +
-                                            '<a href="javascript:void(0)" title="' + dbrand[td].mark + ' (' + dbrand[td].model.length
-                                               + ' авто)" onclick="showInfo(\'brand\', \'' + dbrand[td].mark + '\')">' +
-                                                   '<img src="' + dbrand[td].img + '" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника" />' +
+                                            '<a onclick="showInfo(\'brand\', \'' + dbrand[td].mark + '\'); return false;" href="pages/' + dbrand[td].mark.toLowerCase() + '.html" class="linkcheckflag" title="' + dbrand[td].mark + ' (' + dbrand[td].model.length + ' авто)" >' +
+                                                   '<img src="' + 'images/' + dbrand[td].img + '" alt="' + dbrand[td].mark + ' КореяТрэйд CoreaTrade Автомобили Автобусы Техника" />' +
                                             '</a>' +
                                     '</div>' +
                             '</div>' +
@@ -214,9 +227,8 @@
                                        '</div>' +
                                      '</div>' +*/
                                     '<div class="moduletable_content clearfix">' +
-                                            '<a href="javascript:void(0)" title="' + dbrand[td].mark + ' (' + dbrand[td].model.length
-                                               + ' авто)" onclick="showInfo(\'brand\', \'' + dbrand[td].mark + '\')">' +
-                                                   '<img src="'+ dbrand[td].img +'" alt="КореяТрэйд CoreaTrade Автомобили Автобусы Техника" />' +
+                                            '<a onclick="showInfo(\'brand\', \'' + dbrand[td].mark + '\'); return false;" href="pages/' + dbrand[td].mark.toLowerCase() + '.html" class="linkcheckflag" title="' + dbrand[td].mark + ' (' + dbrand[td].model.length + ' авто)" >' +
+                                                   '<img src="' + dbrand[td].img + '" alt="' + dbrand[td].mark + ' КореяТрэйд CoreaTrade Автомобили Автобусы Техника" />' +
                                             '</a>' +
                                     '</div>' +
                             '</div>' 
@@ -306,17 +318,12 @@
                     '</div>'
                 );
             // Fill SlideShow
-            if (i < 5) {
+            /*if (i < 5) {
                 $j('li#slide_' + i).attr('title', entry.title);
                 $j('li#slide_' + i + ' span').html(entry.title);
 
                 $j('div#slide_' + i +' img').attr('title', entry.title)
                                             .attr('alt', entry.title) ;
-                /*$j.ajax({
-                    url: "image/t.op",
-                    dataType: 'text',
-                    error: function () { $j('div#slide_' + i + ' img').attr('src', $j('div#news_id_' + i + ' img').attr('src')); }
-                });*/
                 
 
                 $j('div#slide_' + i + ' h3').html(entry.title);
@@ -334,7 +341,7 @@
                         $j('.news_class_' + index).click();
                         window.location = '#jumpnew_4';
                 } .bind(this, i));
-            }
+            }*/
             // entry.title, entry.link, entry.author,
             // entry.publishedDate, entry.contentSnippet, entry.content
         }
@@ -424,6 +431,7 @@
         slidestart();
     }
 
+    // Загрузка всех новостей.
     $j.jGFeed('http://www.k-window.com/category/economics/auto/feed/',
 		function (feeds) {
 		    // Проверяем ошибки
@@ -512,8 +520,10 @@
 							                        <h3 class="mod-title">Свежие твиты</h3>
 						                        </div>    
 										    	<div class="col-module-content clearfix" id="twit_widget">
-<!--twit-here-->
+
 					                            </div>
+
+
 				                            </div>   
                 
                                         </div>   
@@ -525,6 +535,7 @@
 							                        <h3 class="mod-title">Метрики</h3>
 						                        </div>    
 						                        <div class="col-module-content clearfix">
+<div>
                                             		<!-- Yandex.Metrika informer -->
 <a href="http://metrika.yandex.ru/stat/?id=15676798&amp;from=informer"
 target="_blank" rel="nofollow"><img src="//bs.yandex.ru/
@@ -549,9 +560,27 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/15676798" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+</div>
+<div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+</div>
+
+
+
 					                            </div>
-                                			</div>   
-                                        </div>             
+
+
+
+
+
+                                			</div>  
+
+
+
+                                        </div> 
+
+        
                                     </div>
                                 </div>
                             </div><!-- Right Column -->
@@ -563,7 +592,7 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
             </div><!-- Content Main -->
             
             <!-- Bottom -->
-            <div id="bottom" class="clearfix">
+            <!--<div id="bottom" class="clearfix">
                 <div class="wrapper">
                     <div id="car-logos">
                         <div class="custom"  >
@@ -571,15 +600,13 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
                         </div>
                     </div>                                             
                 </div>                                   
-            </div><!-- Bottom -->      
+            </div>--> <!-- Bottom -->      
         </div>
         
         <!-- Footer Wrapper -->
     
         <!-- Footer -->	
 
-    <!-- javascript code to make J! tooltips -->
-    
-    </body>
-</html>
+ </body>
 
+</html>

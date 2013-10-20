@@ -75,25 +75,25 @@
 					    <select id = "BrandOut" name="Brand" size=1 onchange='updateTable();'>
 				                    <script type="text/javascript">
 				                    	$j("#BrandOut").append("<option value='0'>Все</option>");
-							$j(document).ready(function() {
+							//$j(document).ready(function() {
 							 // Handler for .ready() called.
 								jgetBrand ( function (data) {
 								for (i = 1; i < data.length+1; i++)
 									$j("#BrandOut").append("<option value='" + i + "'>" + data[i-1].mark  + "</option>");
 								});
-							});
+							//});
 						    </script>
 				                </select>
 				            <br />Тип
 					    <select id = "TypeOut" name="Type" size=1 onchange='updateTable();'>
 				                    <script type="text/javascript">
 				                    	$j("#TypeOut").append("<option value='0'>Все</option>");
-							$j(document).ready(function() {
+							//$j(document).ready(function() {
 								jgetType ( function (data) {
 								for (i = 1; i < data.length+1; i++)
 									$j("#TypeOut").append("<option value='" + i + "'>" + data[i-1].type + "</option>");
 								});
-							});
+							//});
 						    </script>
 				                </select>
 				            </div>

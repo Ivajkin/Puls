@@ -1,7 +1,11 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /bazisvostokmed.ru/
 Disallow: /paradigm/
 Disallow: /main.html
 Disallow: /about.html
-
 Sitemap: http://www.coreatrade.com/sitemap.xml
+Disallow: /bo/
+Disallow: /tmp/
+Disallow: /level/7/
+Disallow: /query/

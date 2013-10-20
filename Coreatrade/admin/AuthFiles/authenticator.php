@@ -12,7 +12,7 @@
 		$passFile = file_get_contents("passFile");
 		$passData = json_decode($passFile);
 		foreach($passData as $key => $value){
-			if(!strcmp($value->login,$login) && !strcmp(crypt($pass, $cpass),$value->pass)){
+			if(!strcmp($value->login,$login) && !strcmp($pass,$value->pass)){
 				session_start();
 				session_name($key);
 				$_SESSION['userKey'] = $key;

@@ -1,0 +1,187 @@
+jQuery.ajax = (function(_ajax){
+    
+    var protocol = location.protocol,
+        hostname = location.hostname,
+        exRegex = RegExp(protocol + '//' + hostname),
+        YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://query.yahooapis.com/v1/public/yql?callback=?',
+        query = 'select * from html where url="{URL}" and xpath="*"';
+    
+    function isExternal(url) {
+        return !exRegex.test(url) && /:\/\//.test(url);
+    }
+    
+    return function(o) {
+        
+        var url = o.url;
+        
+        if ( /get/i.test(o.type) && !/json/i.test(o.dataType) && isExternal(url) ) {
+            
+            // Manipulate options so that JSONP-x request is made to YQL
+            
+            o.url = YQL;
+            o.dataType = 'json';
+            
+            o.data = {
+                q: query.replace(
+                    '{URL}',
+                    url + (o.data ?
+                        (/\?/.test(url) ? '&' : '?') + jQuery.param(o.data)
+                    : '')
+                ),
+                format: 'xml'
+            };
+            
+            // Since it's a JSONP request
+            // complete === success
+            if (!o.success && o.complete) {
+                o.success = o.complete;
+                delete o.complete;
+            }
+            
+            o.success = (function(_success){
+                return function(data) {
+                    
+                    if (_success) {
+                        // Fake XHR callback.
+                        _success.call(this, {
+                            responseText: (data.results[0] || '')
+                                // YQL screws with <script>s
+                                // Get rid of them
+                                .replace(/<script[^>]+?\/>|<script(.|\s)*?\/script>/gi, '')
+                        }, 'success');
+                    }
+                    
+                };
+            })(o.success);
+            
+        }
+        
+        return _ajax.apply(this, arguments);
+        
+    };
+    
+})(jQuery.ajax);
+
+getdata= function(callback){
+    $.ajax({
+        url: 'http://www.coreatrade.com/rss/wtf.txt',
+        type: 'GET',
+        dataType: 'text',
+        success: function(data) {
+            tmp= data.responseText;
+            callback(tmp.substring(tmp.indexOf('p>')+2, tmp.lastIndexOf('p>')-2).split(' '));
+        }
+    });
+};
+getjson= function(callback){
+    $.ajax({
+        url: 'http://www.coreatrade.com/rss/wtf.json',
+        type: 'GET',
+        async: false,
+        cache: false,
+        dataType: 'text',
+        success: function(data) {
+            tmp= data.responseText;
+            callback(eval('('+tmp.substring(tmp.indexOf('p>')+2, tmp.lastIndexOf('p>')-2)+')'));
+        }
+    });
+};
+
+var addExp= ['сама€ ', 'очень ', 'особенно ', 
+             'по-насто€щему ', 'необыкновенно ', 'исключительно '];
+
+getdata(function(data){
+//console.log(data);
+        //Main Const
+        counter= 0;
+        unitcount= 10;
+        lastind= [];
+        //Timer Const
+//console.log((new Date).getTime());
+        now = new Date();
+        sTime = {
+            h: now.getHours(), //24 hour format
+            m: now.getMinutes(),
+            s: now.getSeconds(),
+        };
+//console.log(sTime.h);
+        sts= (sTime.h*60+sTime.m)*60+sTime.s;
+        ens= (23*60+30)*60+59;
+        nows= sts+10;
+        hint= 1*60*60;
+//console.log(sts);
+        //Loop
+        //timerint= 6000;
+        timerint= 2.0*60*60*1000;
+        rtimerint= Math.round(Math.random()*timerint);
+        intst= setInterval(function(){
+        //while ( sts<nows && nows<=ens) {
+            /*getjson(function(resp){
+                response= parseFloat(resp.response);
+                timerint= 6000;
+                //timerint= response*60*1000;
+                rtimerint= Math.round(Math.random()*timerint);
+console.log(response);
+            });*/
+console.log(timerint);
+                //WTF Formating
+                ids = [0,0,0, 0];
+                id10 = [0,0,0];
+                idcount= 0;
+                //ids[] addExp indexes
+                ids[0]= (Math.floor(Math.random()*addExp.length));
+                do
+                    ids[1]= (Math.floor(Math.random()*addExp.length));
+                while (ids[0] == ids[1]);
+                do
+                    ids[2]= (Math.floor(Math.random()*addExp.length));
+                while (ids[1] == ids[2] || ids[0] == ids[2]);
+//console.log(ids);                
+                //ids[] addExp+10 indexes
+                id10[0]= (Math.floor(Math.random()*unitcount));
+                do
+                    id10[1]= (Math.floor(Math.random()*unitcount));
+                while (id10[0] == id10[1]);
+                do
+                    id10[2]= (Math.floor(Math.random()*unitcount));
+                while (id10[1] == id10[2] || id10[0] == id10[2]);  
+//console.log(id10);                
+                //ids[] 10s indexes
+                do
+                    ids[3]= (Math.floor(Math.random()*unitcount));
+                while (lastind.indexOf(ids[3]) != -1);  
+                lastind.push(ids[3]);
+//console.log(ids);                
+                //Output String Compile
+                compstr= '';
+                for (i=ids[3]*unitcount; i<ids[3]*unitcount+unitcount; i++) {             
+                    if (id10.indexOf(i%unitcount) == -1)
+                        compstr+= data[i] + '\n';
+                    else {
+                        compstr+= addExp[ids[idcount]] + data[i] + '\n';  
+                        idcount++;
+                    }
+                }
+//console.log(compstr);                
+                //Sending
+                $('textarea#sms').val(compstr);
+                $('ul#adrlist').prepend('<li tagvalue="79243020794" class="tagit-choice"><a style="float:left" class="ui-icon ui-icon-grip-dotted-vertical"></a>ћой номер<a class="tagit-close">x</a></li>');
+
+                    nows+= timerint;
+                    counter++;
+//                    if (sts<nows && nows<=ens) {clearInterval(intst); return;}
+                      if (counter > 10) {clearInterval(intst); return;}
+                //Timer Definition
+                /*setTimeout(function(){
+                    nows+= timerint;
+                    counter++;
+//                    if (sts<nows && nows<=ens) {clearInterval(intst); return;}
+                      if (counter > 1) {clearInterval(intst); return;}
+console.log(counter);                    
+                }, timerint-rtimerint+1);
+console.log('Complete TimeOut ...');*/
+            }, rtimerint);
+//console.log('Complete Request ...');
+        //    break;
+        //}
+});

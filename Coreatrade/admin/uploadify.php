@@ -55,7 +55,7 @@ if (!empty($_FILES)) {
                $image->save($targetFile);
 
                //Add image link to temporary file
-               file_put_contents('img_temp.txt', $exportFile . "\r\n", FILE_APPEND);                 
+               //file_put_contents('img_temp.txt', $exportFile . "\r\n", FILE_APPEND);                 
 
                echo $exportFile;
 	} else {

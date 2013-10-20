@@ -72,3 +72,4 @@
 [25-Aug-2012 10:29:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/admin/AuthFiles/authenticator.php on line 14
 [25-Aug-2012 10:29:32 UTC] PHP Warning:  file_get_contents(passFile.php): failed to open stream: No such file or directory in /home2/core5429/public_html/admin/AuthFiles/authenticator.php on line 12
 [25-Aug-2012 10:29:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/core5429/public_html/admin/AuthFiles/authenticator.php on line 14
+[08-Nov-2012 22:46:25 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home2/core5429/public_html/admin/AuthFiles/mailtest.php on line 5

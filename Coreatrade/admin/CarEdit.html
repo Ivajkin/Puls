@@ -1,5 +1,5 @@
 	<script type="text/javascript">
-    		var $j = jQuery.noConflict();
+			var $j = jQuery.noConflict();
 
 		function parseGetParams() { 
 			var $_GET = {}; 
@@ -24,7 +24,7 @@
 		
 		var ImageList = new Array();
 		var ImageDelList = new Array();
-    		function RemoveImage(target){
+			function RemoveImage(target){
 			imageFile = target.prev('.image').attr('src');
 			ImageDelList.push(imageFile);
 			ImageList.splice(findInArray(ImageList, imageFile),1);
@@ -45,12 +45,12 @@
 		}
 		$j(function() {
 			$j('#file_upload').uploadify({
-			    'swf'      : 'uploadify.swf',
-			    'uploader' : 'uploadify.php',
-			    'onUploadSuccess' : function(file, data, response) {
-       				addImage(data);
-       			    }
-			    // Your options here
+				'swf'      : 'uploadify.swf',
+				'uploader' : 'uploadify.php',
+				'onUploadSuccess' : function(file, data, response) {
+					addImage(data);
+					}
+				// Your options here
 			});
 		});
 		jgetDataIndex ( function (car) {
@@ -87,7 +87,7 @@
 					alert('Вы заполнили не все поля!');
 					return;
 				}
-				$j.post( "DataBaseOps/EditCarDB.php", {
+				$j.post( "/admin/DataBaseOps/EditCarDB.php", {
 					edit: index,
 					name: $j(":text[name='name']").attr("value"),
 					type: $j("select#type").attr("value"),
@@ -109,7 +109,7 @@
 					imagesDel: ImageDelList 
 				},
 				function(data) {
-					window.location = "http://coreatrade.com/admin/index.php?page=CarTable";
+					window.location = "http://127.0.0.1/admin/index.php?page=CarTable";
 				});
 			});
 		});
@@ -117,162 +117,162 @@
 			$j("button[name = 'edit']").attr('value', index);
 		});
 	</script>
-	    <div id="content">
-           <div class="wrapper">
-                <!-- Columns Container -->    
-                <div id="columns-container">
-                    <div id="outer-column-container">
-                        <div id="inner-column-container" class="clearfix">
-                            <div id="source-order-container">
-                                <!-- Middle Column -->   
-                                <div id="middle-column">                        
-                                    <div class="inside"> 
-                                        <div id="system-message-container">
-                                        </div>
-                                        <div class="blog">
-      <h1>Форма редактирования автомобилей</h1>
-      
-      <div class="table middle"></div>
-      <div style="display: block; float: left; width:50%">
-            <h2>Основная информация</h2>
-            <div class="table left">Название*<br />(для заголовка)</div>
-            <div class="table right">
-                <input type="text" name="name"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Тип*</div>
-            <div class="table right">
-                <select id="type" name="type" size=1>
-	                <script type="text/javascript">
+		<div id="content">
+		   <div class="wrapper">
+				<!-- Columns Container -->    
+				<div id="columns-container">
+					<div id="outer-column-container">
+						<div id="inner-column-container" class="clearfix">
+							<div id="source-order-container">
+								<!-- Middle Column -->   
+								<div id="middle-column">                        
+									<div class="inside"> 
+										<div id="system-message-container">
+										</div>
+										<div class="blog">
+	  <h1>Форма редактирования автомобилей</h1>
+	  
+	  <div class="table middle"></div>
+	  <div style="display: block; float: left; width:50%">
+			<h2>Основная информация</h2>
+			<div class="table left">Название*<br />(для заголовка)</div>
+			<div class="table right">
+				<input type="text" name="name"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Тип*</div>
+			<div class="table right">
+				<select id="type" name="type" size=1>
+					<script type="text/javascript">
 				jgetType ( function (data) {
 					for (i = 0; i < data.length; i++){	
 						$j("#type").append("<option value=" + i + ">" + data[i].type + "</option>");
 					}
 					//$j("#type option[value="+type+"]").attr("selected", true);
 				});
-		    	</script>
-                </select>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Марка*</div>
-            <div class="table right">
-                <select id="mark" name="mark" size=1>
-	                <script type="text/javascript">
+				</script>
+				</select>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Марка*</div>
+			<div class="table right">
+				<select id="mark" name="mark" size=1>
+					<script type="text/javascript">
 				jgetBrand ( function (data) {
 					for (i = 0; i < data.length; i++){	
 						$j("#mark").append("<option value=" + i + ">" + data[i].mark + "</option>");
 					}
 					//$j("#mark option[value="+brand+"]").attr("selected", true);
 				});
-		    	</script>
-                </select>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Модель*</div>
-            <div class="table right">
-                <input type="text" name="model"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Цена (р.)</div>
-            <div class="table right">
-                <input type="text" name="price"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Цвет</div>
-            <div class="table right">
-                <input type="text" name="color"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Год</div>
-            <div class="table right">
-                <input type="text" name="year" />
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Объём (в литрах)</div>
-            <div class="table right">
-                <input type="text" name="vvv"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Топливо</div>
-            <div class="table right">
-                <input type="text" name="fuel"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Привод</div>
-            <div class="table right">
-                <input type="text" name="drive"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Каробка передач</div>
-            <div class="table right">
-                <input type="text" name="kpp"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Мощность (кВт)</div>
-            <div class="table right">
-                <input type="text" name="power"/>
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Двери (кол-во)</div>
-            <div class="table right">
-                <input name="door" type="text">
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Сиденья (кол-во)</div>
-            <div class="table right">
-                <input name="seat" type="text">
-            </div>
-            <div class="newrow"></div>
-            <div class="table left">Город</div>
-            <div class="table right">
-                <input name="city" type="text">
-            </div>
-            <div class="newrow"></div>
+				</script>
+				</select>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Модель*</div>
+			<div class="table right">
+				<input type="text" name="model"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Цена (р.)</div>
+			<div class="table right">
+				<input type="text" name="price"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Цвет</div>
+			<div class="table right">
+				<input type="text" name="color"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Год</div>
+			<div class="table right">
+				<input type="text" name="year" />
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Объём (в литрах)</div>
+			<div class="table right">
+				<input type="text" name="vvv"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Топливо</div>
+			<div class="table right">
+				<input type="text" name="fuel"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Привод</div>
+			<div class="table right">
+				<input type="text" name="drive"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Каробка передач</div>
+			<div class="table right">
+				<input type="text" name="kpp"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Мощность (л.с.)</div>
+			<div class="table right">
+				<input type="text" name="power"/>
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Двери (кол-во)</div>
+			<div class="table right">
+				<input name="door" type="text">
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Сиденья (кол-во)</div>
+			<div class="table right">
+				<input name="seat" type="text">
+			</div>
+			<div class="newrow"></div>
+			<div class="table left">Город</div>
+			<div class="table right">
+				<input name="city" type="text">
+			</div>
+			<div class="newrow"></div>
 
-	    <div style="padding-bottom: 10px">
-            Поля, помеченные * являются обязательными для заполнения.
-            </div>
-           <!--<h2>Изображения</h2>
-            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне всех автомобилей</div>
-            <div class="table right">
-                <input type="file" name="imgfile" id="file_upload" multiple="multiple" accept="image/*" />
-            </div>
-            <div class="newrow"></div>-->
+		<div style="padding-bottom: 10px">
+			Поля, помеченные * являются обязательными для заполнения.
+			</div>
+		   <!--<h2>Изображения</h2>
+			<div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне всех автомобилей</div>
+			<div class="table right">
+				<input type="file" name="imgfile" id="file_upload" multiple="multiple" accept="image/*" />
+			</div>
+			<div class="newrow"></div>-->
 
 
-            <h2>Комплектация</h2>
-            <div style="padding-bottom: 10px">
-            Пожалуйста, вводите каждый компонент с новой строчки
-            Для ввода элемента с пояснением используйте конструкцию
+			<h2>Комплектация</h2>
+			<div style="padding-bottom: 10px">
+			Пожалуйста, вводите каждый компонент с новой строчки
+			Для ввода элемента с пояснением используйте конструкцию
 		&lt;p title="Здесь пояснение"&gt;*А здесь то, к чему оно&lt;/p&gt;
-            </div>
-            <textarea name="complect" cols="60" rows="33" style="word-wrap: break-word">
-            </textarea>
-            <div style="padding:10px"></div>
-            <button id = 'edit' name = 'edit'>Изменить данные</button>
-            &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Очистить форму" />	
-      </div>
-        <div style="display: block; float: left; width: 50%">
-            <h2>Изображения</h2>
-            <div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне автомобилей</div>
-            <div class="table right" style="width: 50%" >
-                <input type="file" name="file_upload" id="file_upload" />               
-                <!--<input type="file" name="imgfile" id="file_upload" accept="image/*" />-->
-            <div class="newrow"></div>
-            
-       </div>
-       <div class="newrow"></div>
-       <div id = "imagelist"></div>
-      
-                                        </div>
-                                    </div>	
-                                </div><!-- Middle Column -->   
-                            </div><!-- Source Order Container -->
-                            <div class="clear-columns"></div>
-                        </div>
-                    </div>           
-                </div><!-- Columns Container -->         
-            </div><!-- Content Main -->
-            <script type="text/javascript">
+			</div>
+			<textarea name="complect" cols="60" rows="33" style="word-wrap: break-word">
+			</textarea>
+			<div style="padding:10px"></div>
+			<button id = 'edit' name = 'edit'>Изменить данные</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Очистить форму" />	
+	  </div>
+		<div style="display: block; float: left; width: 50%">
+			<h2>Изображения</h2>
+			<div class="table left" style="font-size: 0.9em; font-weight:normal">Первое изображение в списке отображается в перечне автомобилей</div>
+			<div class="table right" style="width: 50%" >
+				<input type="file" name="file_upload" id="file_upload" />               
+				<!--<input type="file" name="imgfile" id="file_upload" accept="image/*" />-->
+			<div class="newrow"></div>
+			
+	   </div>
+	   <div class="newrow"></div>
+	   <div id = "imagelist"></div>
+	  
+										</div>
+									</div>	
+								</div><!-- Middle Column -->   
+							</div><!-- Source Order Container -->
+							<div class="clear-columns"></div>
+						</div>
+					</div>           
+				</div><!-- Columns Container -->         
+			</div><!-- Content Main -->
+			<script type="text/javascript">
 
-	    </script>
+		</script>

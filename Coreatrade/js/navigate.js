@@ -3,6 +3,10 @@ var itPage = 0; //Id's current page
 var ifr_h = 0; //Const for correct iframe height
 var navid = "#Navigate";
 var link_count = 5; //Links Count in #navid
+var pageLoaded = undefined;
+var sitename = "http://coreatrade.com";
+var hwsitename = "http://127.0.0.1";
+var sitelocation = "/";
 /*function showInfo(id) {
   	$j(itPage).css('display', "none");
   	$j('#Page_' + id).css('display', "inline");
@@ -192,52 +196,309 @@ show = function (id) { nav.show(id);}
 
 nav = new Navigation();
 
-function showInfo(obj, name, call) {
 
-    //$j('#right-column').clone().appendTo('.view_ok #inner-column-container');
+/***********Seo Solution***********/
+
+var linkck = ".linkcheckflag";
+
+function fileExist(file){
+    return $j.ajax({
+        url: file,
+        async: false,
+        type:'HEAD'
+    });
+}
+linkControl = function () {
+    return;
+    var obj= undefined;
+    var name = undefined;
+    var link = undefined;
+    var hd = undefined;
+    var count = 0;
+    var countlimit = 50;
+
+    if (window.opener) {
+            setTimeout(function waitload() {
+                if (pageLoaded) {
+                    uri = parseUri(location.href);
+                    obj = uri.queryKey.showobjvar;
+                    name = uri.queryKey.shownamevar;
+                    link = decodeURIComponent(uri.queryKey.nvar);
+
+                    htmlstaff =
+        '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
+        '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr" >' +
+        $j('html').clone(true).html() + '</html>';
+
+                    hlst = htmlstaff.search('MARKSTART');
+                    hlnd = htmlstaff.search('MARKEND');
+                    htmlstaff = htmlstaff.replace(htmlstaff.substring(hlst, hlnd + 1), "");
+
+                    htmlstaff = htmlstaff.replace(/"css/gi, '"/css');
+                    htmlstaff = htmlstaff.replace(/"js/gi, '"/js');
+                    htmlstaff = htmlstaff.replace(/"images/gi, '"/images');
+                    htmlstaff = htmlstaff.replace(/"pages/gi, '"/pages');
+
+                    htmlstaff = htmlstaff.replace('//ARKEND', 'setTimeout(function(){' +
+                            'window.open("'+sitename+'?showobjvar=' + obj + '&shownamevar=' + name + '", "_top");'
+                            + '},5000);');
+//console.log('link: ' + link);
+
+                    $j.ajax({
+                        type: "POST",
+                        url: sitelocation + 'pages/load.php',
+                        async: false,
+                        data: {
+                            htmldata: htmlstaff,
+                            htmlname: link
+                        },
+                        success: function (data) {
+//console.log('result_name   ' + data + "\n\rwindow.close();");
+                            window.close();
+                            //alert(decodeURIComponent(data));
+                            //window.open('http://127.0.0.1/coreatrade?showobjvar='+ov+'&shownamevar='+nv+', '_top');
+                            //showInfo('all', 'Автомобили')
+                        }
+                    });
+                } 
+                else if ((typeof pageLoaded) == 'undefined') {
+                    $j(window).load(function () {
+                        link = 'base';
+
+                        htmlstaff =
+            '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
+            '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr" >' +
+            $j('html').clone(true).html() + '</html>';
+
+                        hlst = htmlstaff.search('MARKSTART');
+                        hlnd = htmlstaff.search('MARKEND');
+                        htmlstaff = htmlstaff.replace(htmlstaff.substring(hlst, hlnd + 1), "");
+
+                        htmlstaff = htmlstaff.replace(/"css/gi, '"/css');
+                        htmlstaff = htmlstaff.replace(/"js/gi, '"/js');
+                        htmlstaff = htmlstaff.replace(/"images/gi, '"/images');
+                        htmlstaff = htmlstaff.replace(/"pages/gi, '"/pages');
+
+                        htmlstaff = htmlstaff.replace('//ARKEND', 'setTimeout(function(){' +
+                                'window.open("'+sitename+'", "_top");'
+                                + '},5000);');
+//console.log('link: ' + link);
+
+                        $j.ajax({
+                            type: "POST",
+                            url: sitelocation + 'pages/load.php',
+                            async: false,
+                            data: {
+                                htmldata: htmlstaff,
+                                htmlname: link
+                            },
+                            success: function (data) {
+//console.log('result_name   ' + data + "\n\rwindow.close();");
+                                window.close();
+                                //alert(decodeURIComponent(data));
+                                //window.open('http://127.0.0.1/coreatrade?showobjvar='+ov+'&shownamevar='+nv+', '_top');
+                                //showInfo('all', 'Автомобили')
+                            }
+                        });
+                    });
+                }
+                else
+                    setTimeout(waitload, 500);
+            }, 500);
+        return;
+    }
+    if ($j(linkck).length) {
+        var antid = [];
+        antid[0] = { o: '1q1', n: '2q2' };
+
+        setTimeout(function waitlck() {
+            if (pageLoaded || (typeof pageLoaded) == "undefined") {
+                for (i = 0; i < $j(linkck).length && count < countlimit; i++) {
+                    link = $j(linkck).eq(i).attr('href');
+//console.log('\n\r i  ' + i + '\n\r');
+
+                    fileExist(link).fail(function () {
+                        count++
+
+                        lo = $j(linkck).eq(i).parent().clone(true).html();
+                        st = lo.indexOf('showInfo');
+                        nd = lo.indexOf(';', st);
+                        lo = lo.substring(st, nd);
+                        los = lo.split("'");
+                        if (los.length == 5) {
+                            obj = los[1];
+                            name = los[3];
+                        }
+                        else if (los.length == 3) {
+                            obj = parseInt(los[0].substr(los[0].lastIndexOf('(') + 1));
+                            name = los[1];
+                        }
+                        var antic = false;
+                        for (j = 0; j < antid.length; j++)
+                            if (antid[j].o == obj && antid[j].n == name) { antic = true; break; }
+                        if (!antic) {
+                            antid.push({ o: obj, n: name });
+
+                            link = link.slice(link.indexOf('/') + 1, link.indexOf('.html'));
+                            if (link.search(/[А-я]/) != -1) link = link.translit(); //encodeURIComponent(htname);
+console.log(i + "  " + obj + "  " + name + "  " + link);
+                            if ((typeof name) == 'string' &&
+                                name.search(/[А-я]/) != -1) name = encodeURIComponent(name);
+
+                            if ((typeof obj) != 'undefined' && (typeof name) != 'undefined') {
+                                hw = window.open(hwsitename+'?showobjvar=' + obj + '&shownamevar=' + name + '&nvar=' + link, '_blank', 'width=200,height=100');
+                            } else
+                                hw = window.open(hwsitename, '_blank', 'width=200,height=100');
+                        }
+                        /*$j(hw).load(function () {
+        console.log('link2: ' + link);
+                            htmlstaff =
+        '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
+        '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr" >' +
+        $j(hw.document).find('html').clone(true).html() + '</html>';
+        
+                            hlst = htmlstaff.search('MARKSTART');
+                            hlnd = htmlstaff.search('MARKEND');
+                            htmlstaff = htmlstaff.replace(htmlstaff.substring(hlst, hlnd + 1), "");
+        
+                            htmlstaff = htmlstaff.replace(/"css/gi, '"../css');
+                            htmlstaff = htmlstaff.replace(/"js/gi, '"../js');
+                            htmlstaff = htmlstaff.replace(/"images/gi, '"../images');
+        
+                            if ((typeof obj) != 'undefined' && (typeof name) != 'undefined')
+                                htmlstaff = htmlstaff.replace('//ARKEND', 'setTimeout(function(){' +
+                                    'window.open("http://127.0.0.1/coreatrade?showobjvar=' + obj + '&shownamevar=' + name + '", "_top");'
+                                    + '},3000);');
+                            else
+                                htmlstaff = htmlstaff.replace('//ARKEND', 'setTimeout(function(){' +
+                                    'window.open("http://127.0.0.1/coreatrade", "_top");'
+                                    + '},3000);');
+        
+        console.log('link: ' + link);
+                            $j.ajax({
+                                type: "POST",
+                                url: sitelocation + 'pages/load.php',
+                                async: false,
+                                data: {
+                                    htmldata: htmlstaff,
+                                    htmlname: link
+                                },
+                                success: function (data) {
+                                    console.log('result_name   ' + data);
+                                    hw.close();
+                                    setTimeout(function waitforclose() {
+                                        if (hw.closed == true) {
+        console.log('wait   exit');
+                                            return;
+                                        }
+                                        else {
+        console.log('wait   ' + 100);
+                                            setTimeout(waitforclose, 100);
+                                        }
+                                    }, 100);
+                                    //alert(decodeURIComponent(data));
+                                    //window.open('http://127.0.0.1/coreatrade?showobjvar='+ov+'&shownamevar='+nv+', '_top');
+                                    //showInfo('all', 'Автомобили')
+                                }
+                            });
+                        });*/
+                        //$j(linkck).eq(i).removeClass(linkck);
+                    });
+                }
+            } else
+                setTimeout(waitlck, 200);
+        }, 200);
+    }
+}
+
+//$j('#right-column').clone().appendTo('.view_ok #inner-column-container');
+/***********Ignition***********/
+function showInfo(obj, name, call) {
+    if ( obj == 'search_advance' && (typeof name) == 'string') {
+        if (nav.add(name)) {
+            pageLoaded = false;
+            $j('#ContentInsert').append('<div class="view navarray navcur" style="display: none;"></div>');
+            tableSearch('.navcur');
+
+            nav.fadein(nav.cur() - 1, function () {
+                linkControl(obj, name);
+            });
+        }
+        return 7;
+    }
+
+    if ((typeof obj) == 'undefined' && (typeof name) == 'undefined') {
+        window.open(sitename, "_top");
+        return 6;
+    }
+    if ( (typeof obj) == 'object' && name == 'compare') {
+        if (nav.add(name)) {
+            pageLoaded = false;
+            $j('#ContentInsert').append('<div class="view navarray navcur" style="display: none;"></div>');
+            carCompareBase('.navcur', obj);
+
+            nav.fadein(nav.cur() - 1, function () {
+                linkControl(obj, name);
+            });
+        }
+        return 5;
+    }
     if ((typeof obj) == 'number' && (typeof name) == 'string') {
         if (nav.add(name)) {
+            pageLoaded = false;
             $j('#ContentInsert').append('<div class="view navarray navcur" style="display: none;"></div>');
             carMoreInfo('.navcur', obj);
 
-            nav.fadein(nav.cur() - 1);
+            nav.fadein(nav.cur() - 1, function () {
+                linkControl(obj, name);
+            });
         }
         return 4;
     }
     if (obj == 'type' && (typeof name) == 'string') {
         if (nav.add(name)) {
+            pageLoaded = false;
             $j('#ContentInsert').append('<div class="view navarray navcur" style="display: none;"></div>');
             getTypeId(name, function (id) {
                 tableBase('.navcur', -1, id);
             });
 
-            nav.fadein(nav.cur() - 1);
+            nav.fadein(nav.cur() - 1, function () {
+                linkControl(obj, name);
+            });
         }
         return 3;
     }
     if (obj == 'brand' && (typeof name) == 'string') {
         if (nav.add(name)) {
+            pageLoaded = false;
             $j('#ContentInsert').append('<div class="view navarray navcur" style="display: none;"></div>');
             getMarkId(name, function (id) {
                 tableBase('.navcur', id, -1);
             });
 
-            nav.fadein(nav.cur() - 1);
+            nav.fadein(nav.cur() - 1, function () {
+                linkControl(obj, name);
+            });
         }
         return 2;
     }
     if (obj == 'all' && (typeof name) == 'string') {
         if (nav.add(name)) {
+            pageLoaded = false;
             $j('#ContentInsert').append('<div class="view navarray navcur" style="display: none;"></div>');
             tableBase('.navcur', -1, -1);
 
-            nav.fadein(nav.cur() - 1);
+            nav.fadein(nav.cur() - 1, function () {
+                linkControl(obj, name);
+            });
         }
         return 1;
     }
     if ((typeof obj) == 'string' && (typeof name) == 'string') {
         //nav.fadeout();
         if (nav.add(name)) {
+            pageLoaded = false;
             /*$j('body').append('<div class="view navarray" style="display: none;"><iframe src="' + obj + '" ></iframe></div>');
             $j('iframe').css('height', $j(window).attr('innerHeight') - ifr_h);
             $j('body').css('height', $j(window).attr('innerHeight'));*/
@@ -248,7 +509,9 @@ function showInfo(obj, name, call) {
                 eval(obj + "Func();");
             });
             
-            nav.fadein(nav.cur() - 1);
+            nav.fadein(nav.cur() - 1, function () {
+                linkControl(obj, name);
+            });
         }
         return 0;
     }

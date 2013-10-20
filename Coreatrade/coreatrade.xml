@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+	<channel>
+		<title>Coreatrade.com updates</title>
+		<link>http://www.coreatrade.com</link>
+		<description>Последние новости и обновления от Корея Трейд.</description>
+		<pubDate>Mon, 29 Apr 2013 07:17:39 +1100</pubDate>
+		<image>
+			<title>Coreatrade.com updates</title>
+			<link>http://www.coreatrade.com</link>
+			<url>images/best_cars.jpg</url>
+		</image>
+		<item>
+			<title>Veloster "Корея трэйд"</title>
+			<description><![CDATA[<P style="CLEAR: both"><IMG style="WIDTH: auto; HEIGHT: 100px" border=0 hspace=0 alt="" align=left src="http://coreatrade.com/images/best_cars.jpg" width=auto height=100 />Марка: Hyundai, Модель: Veloster, Год: 2012, Объём: 1.6, Мощность: 140 л.с., Топливо: бен., Передача: АКПП, Привод: передний, Двери: 3-дверн, Сиденья: 4, Цвет: Изумруд, Город: Москва</P>]]></description>
+			<link>http://www.MyWebsite.com/item.htm</link>
+			<pubDate>Mon, 29 Apr 2013 07:23:20 +1100</pubDate>
+		</item>
+		<item>
+			<title>Veloster "Корея трэйд"</title>
+			<description><![CDATA[<P style="CLEAR: both"><IMG style="WIDTH: auto; HEIGHT: 100px" border=0 hspace=0 alt="" align=left src="http://coreatrade.com/images/best_cars.jpg" width=auto height=100 />Марка: Hyundai, Модель: Veloster, Год: 2012, Объём: 1.6, Мощность: 140 л.с., Топливо: бен., Передача: АКПП, Привод: передний, Двери: 3-дверн, Сиденья: 4, Цвет: Изумруд, Город: Москва</P>]]></description>
+			<link>http://www.MyWebsite.com/item.htm</link>
+			<pubDate>Mon, 29 Apr 2013 07:23:20 +1100</pubDate>
+		</item>
+	</channel>
+</rss>

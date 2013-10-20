@@ -76,7 +76,7 @@ PLEASE BE CAREFUL WHEN WORKING WITH THE .wrapper property.
 ------------*/	
 #logo{
 	float:left;
-	padding:21px 0 20px;
+	/*padding:21px 0 20px;*/
 	position:relative}
 
 
@@ -100,7 +100,7 @@ contain the CSS for the promo module positions
 /* Bottom
 contain the CSS for the bottom module positions
 ------------*/	
-#bottom {}
+#bottom {min-width: 1000px}
 	
 	#bottom .wrapper {
 		margin-top:0;
@@ -128,6 +128,7 @@ contain the CSS for the bottom module positions
 Contain the CSS for the main and important part of the template
 ------------*/
 #content {
+    min-width: 1000px;
 	background:url(../images/content.png) repeat-x top;
 	border-bottom:10px solid #881F22;
 	padding:40px 0;
