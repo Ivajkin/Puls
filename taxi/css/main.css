@@ -63,7 +63,7 @@ textarea {
 body {
     font: 1em/1.4 Helvetica, Helvetica Neue, sans-serif;
     overflow: visible;
-    min-width: 400px;
+    min-width: 380px;
 }
 
 .head {
@@ -222,7 +222,7 @@ nav li>dl {
     background: rgba(245, 202, 0, 0.44);
     border-radius: 15px;
 }
-nav li:nth-child(10n-7)>a {background: rgba(255, 254, 102, 0.44);}
+nav li:nth-child(10n-7)>a {background: /*rgba(255, 254, 102, 0.44)*/rgba(225, 255, 0, 0.44);}
 
 nav li.menu-separator {margin-top: 0;}
 

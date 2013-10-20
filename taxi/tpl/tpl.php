@@ -58,7 +58,7 @@
                         <ul>
                             <li><a href="#"><h3>Услуги</h3></a></li>
                             <li><a href="#"><h3>Контакты</h3></a></li>
-                            <li><a href="#"><h3>Заказать такси</h3></a></li>
+                            <li><a href="#form-doit"><h3>Заказать такси</h3></a></li>
                             <li class="menu-separator"><a href="http://tforum.coreatrade.com"><h3>Форум</h3></a></li>
                             <li class="menu-separator">
                                 <dl>
