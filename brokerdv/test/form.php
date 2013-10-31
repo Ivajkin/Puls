@@ -518,7 +518,7 @@
         }
         fullview+=  '</div></div>';
         //console.log(fullview);
-        jQuery('.prod_out').replaceWith(fullview);
+        jQuery('.prod_out').replaceWith('<div class="prod_out"><div class="prod_view">');
 
         jQuery('.prod_out').append('<br /><br />'+
             '<div class="prod_aleft"><img src="'+thispath+'arrow_left.png" alt="" /></div>'+
@@ -778,7 +778,12 @@
                 jQuery('.prod_table .table_body').append(tbody);
             });
             jQuery('.prod_table .table_body').show(400, function(){
-                jQuery('.prod_table .table_row').click(function(){document.location="/?q=node/88";});
+                jQuery('.prod_table .table_row').click(function(){
+                    if (isNaN ( parseInt(jQuery(this).data('location')) ))
+                        document.location= jQuery(this).data('location');
+                    else
+                        document.location="/?q=node/"+jQuery(this).data('location');
+                });
             });
         });
         jQuery('.prod_aleft').click({out: data},function(e){
@@ -892,7 +897,12 @@
                 jQuery('.prod_table .table_body').append(tbody);
             });
             jQuery('.prod_table .table_body').show(400, function(){
-                jQuery('.prod_table .table_row').click(function(){document.location="/?q=node/88";});
+                jQuery('.prod_table .table_row').click(function(){
+                    if (isNaN ( parseInt(jQuery(this).data('location')) ))
+                        document.location= jQuery(this).data('location');
+                    else
+                        document.location="/?q=node/"+jQuery(this).data('location');
+                });
             });
         });
     }
