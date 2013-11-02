@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="300647263">
-    <data-source source="LOCAL" name="local_brdv" product="MySQL" version="5.6.12-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )" uuid="ac5f844a-140e-4a55-87eb-02a04dca89ce">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/brokbase</jdbc-url>
-      <user-name>brokuser</user-name>
-      <user-password>dfc8dfd8dfc5dfc1dfdadfcbdfd9dfd9df98df99df93</user-password>
-      <schema-pattern>brokbase.*</schema-pattern>
-      <default-dialect>MySQL</default-dialect>
-      <libraries>
-        <library>
-          <url>file://$PROJECT_DIR$/brokerdv/test/mysql-connector-license_2.txt</url>
-        </library>
-        <library>
-          <url>jar://$PROJECT_DIR$/brokerdv/test/mysql-connector-java-5.1.26-bin.jar!/</url>
-        </library>
-      </libraries>
-    </data-source>
+  <component name="DataSourceManagerImpl" format="xml" hash="1770940634">
     <data-source source="LOCAL" name="whp_brdv" product="MySQL" version="5.1.70-cll" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )" uuid="eb6af9ca-1926-423a-bc55-c774b09c3ae4">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -32,6 +13,22 @@
       <libraries>
         <library>
           <url>file://$PROJECT_DIR$/brokerdv/test/mysql-connector-license_3.txt</url>
+        </library>
+        <library>
+          <url>jar://$PROJECT_DIR$/brokerdv/test/mysql-connector-java-5.1.26-bin.jar!/</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="local" product="MySQL" version="5.6.12-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )" uuid="18f0a5ca-374b-4baa-8bb4-86caaad07c0b">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.gjt.mm.mysql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost/brokdata</jdbc-url>
+      <user-name>root</user-name>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/brokerdv/test/mysql-connector-license_2.txt</url>
         </library>
         <library>
           <url>jar://$PROJECT_DIR$/brokerdv/test/mysql-connector-java-5.1.26-bin.jar!/</url>
