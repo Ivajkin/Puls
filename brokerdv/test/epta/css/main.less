@@ -1,0 +1,40 @@
+/******************
+*Define Global Vars
+*******************/
+
+//@base-url: "http://assets.fnord.com";
+//background-image: url("@{base-url}/images/bg.png");
+
+@this-abs: '/test/epta/css/';
+@this-local: '';
+@root-abs: '/test/epta/';
+@root-local: '../';
+@path-sys: @root-local;
+
+@img-root: '@{path-sys}img/';
+@font-root: '@{path-sys}fonts/';
+@css-root: @this-local;
+
+//.test {background: #333 url("@{img-root}890.png") 50% fixed;}
+
+@import "namespace";
+
+@import "@{path-sys}add/bootstrap-3.0.0/less/bootstrap";
+@import "@{path-sys}add/bootstrap-3.0.0/less/navbar";
+
+/*******************
+********************
+*******************/
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+header {
+  &.preset {
+    .navbar;
+    .navbar-inverse;
+    .navbar-fixed-top;
+  }
+}

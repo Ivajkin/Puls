@@ -1,0 +1,3 @@
+[submodule "tmedia"]
+	path = tmedia
+	url = git@github.com:Ivajkin/tmedia

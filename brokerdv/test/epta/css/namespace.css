@@ -1,0 +1,46 @@
+/******************
+*Define Global Vars
+*******************/
+/************
+*Helper Class
+*************/
+.simple {
+  /**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+  /**
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+}
+.simple .hide {
+  display: none;
+}
+.simple .clearfix {
+  clear: both;
+}
+.simple .nowrap {
+  white-space: nowrap;
+}
+.simple .wrap {
+  white-space: normal;
+}
+.simple .cf:before,
+.simple .cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.simple .cf:after {
+  clear: both;
+}
+.simple .cf {
+  *zoom: 1;
+}

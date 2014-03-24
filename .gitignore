@@ -1,4 +1,4 @@
-# Include your project-specific ignores in this file
+ # Include your project-specific ignores in this file
 # Read about how to use .gitignore:
 
 Puls/administrator/cache/*
@@ -8,6 +8,14 @@ Puls/installation/*
 Puls/logs/*
 Puls/tmp/*
 Puls/tmedia/*
+
+**/font/*.css
+**/fonts/*.css
+/**/tmp/*
+/**/temp/*
+*.tmp
+*.temp
+*.directory
 
 # Packages #
 ############
