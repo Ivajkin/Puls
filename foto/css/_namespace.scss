@@ -1,0 +1,115 @@
+/******************
+*Define Global Vars
+*******************/
+
+//@base-url: "http://assets.fnord.com";
+//background-image: url("@{base-url}/images/bg.png");
+
+$this-abs: '/css/';
+$this-local: '';
+$root-abs: '/';
+$root-local: '../';
+$path-sys: $root-local;
+
+$img-root: '#{$path-sys}img/';
+$font-root: 'fonts/';
+$css-root: $this-local;
+
+//.test {background: #333 url("@{img-root}890.png") 50% fixed;}
+
+/************
+*Helper Class
+*************/
+.simple {
+  &.hide {display: none;}
+  &.clearfix {clear: both;}
+  &.nowrap {white-space: nowrap;}
+  &.wrap {white-space: normal;}
+  &.upper {text-transform: uppercase;}
+  //.simple > .hide;
+
+  /**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+  &.cf {
+    &:before,
+    &:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+      *zoom: 1;
+  }
+}
+
+
+/* ======================================
+        Font Load
+        ====================================*/
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri');
+  src: url('font/calibri.eot');
+  src: url('font/calibri.eot') format('embedded-opentype'), url('font/calibri.woff') format('woff'), url('font/calibri.ttf') format('truetype'), url('font/calibri.svg#CalibriRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Arial';
+  src: local('Arial');
+  src: url('font/arial.eot');
+  src: url('font/arial.eot') format('embedded-opentype'), url('font/arial.woff') format('woff'), url('font/arial.ttf') format('truetype'), url('font/arial.svg#ArialRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold';
+  src: local('Segoe UI Semibold');
+  src: url('font/seguisb.eot');
+  src: url('font/seguisb.eot') format('embedded-opentype'), url('font/seguisb.woff') format('woff'), url('font/seguisb.ttf') format('truetype'), url('font/seguisb.svg#SegoeUIRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: local('Segoe UI');
+  src: url('font/segoeui.eot');
+  src: url('font/segoeui.eot') format('embedded-opentype'), url('font/segoeui.woff') format('woff'), url('font/segoeui.ttf') format('truetype'), url('font/segoeui.svg#SegoeUIRegular') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cuprum Bold';
+  src: local('Cuprum Bold');
+  src: url('font/cuprum-bold.eot');
+  src: url('font/cuprum-bold.eot') format('embedded-opentype'), url('font/cuprum-bold.woff') format('woff'), url('font/cuprum-bold.ttf') format('cuprum-bold'), url('font/cuprum-bold.svg#CuprumBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cuprum';
+  src: local('Cuprum');
+  src: url('font/cuprum.eot');
+  src: url('font/cuprum.eot') format('embedded-opentype'), url('font/cuprum.woff') format('woff'), url('font/cuprum.ttf') format('cuprum-bold'), url('font/cuprum.svg#CuprumRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
