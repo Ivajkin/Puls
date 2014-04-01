@@ -1,0 +1,84 @@
+/*
+Syntax error: Undefined variable: "$orange".
+        on line 10 of _block-user-menu.scss
+
+5:   .menu {
+6:     @extend %hlist;
+7:   }
+8:   a {
+9:     padding: 0 0.6em;
+10:     border-right: 1px solid $orange;
+11:   }
+12:   li:first-child a {
+13:     padding-left: 0;
+14:   }
+15:   li:last-child a {
+
+Backtrace:
+_block-user-menu.scss:10
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/script/tree/variable.rb:49:in `_perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/script/tree/node.rb:50:in `perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/script/tree/list_literal.rb:62:in `block in _perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/script/tree/list_literal.rb:62:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/script/tree/list_literal.rb:62:in `_perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/script/tree/node.rb:50:in `perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:366:in `visit_prop'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:121:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:121:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:121:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/engine.rb:274:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:186:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/plugin.rb:82:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/exec.rb:489:in `watch_or_update'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/exec.rb:346:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/exec.rb:43:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/exec.rb:22:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.3.4/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined variable: \"$orange\".\A         on line 10 of _block-user-menu.scss\A \A 5:   .menu {\A 6:     @extend %hlist;\A 7:   }\A 8:   a {\A 9:     padding: 0 0.6em;\A 10:     border-right: 1px solid $orange;\A 11:   }\A 12:   li:first-child a {\A 13:     padding-left: 0;\A 14:   }\A 15:   li:last-child a {"; }
