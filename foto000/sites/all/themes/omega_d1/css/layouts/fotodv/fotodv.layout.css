@@ -28,6 +28,15 @@ body {
   clear: both;
 }
 
+.l-header {
+  padding-top: 20px;
+}
+
+.l-footer {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
 .l-branding {
   width: 100%;
 }
@@ -44,6 +53,11 @@ body {
   .l-main,
   .l-footer {
     max-width: 1230px;
+  }
+
+  .l-page {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .l-region--header {
@@ -134,5 +148,11 @@ body {
     float: right;
     margin-right: 0;
     clear: none;
+  }
+}
+@media (min-width: 80em) {
+  .l-page {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }

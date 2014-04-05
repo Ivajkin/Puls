@@ -106,7 +106,18 @@ p { @include sexy-border(blue); }*/
   -webkit-box-shadow: $shadows;
   box-shadow: $shadows;
 }
+@mixin hr-line ($top: 100%, $left: 0){
+  &:after {
+    content: ' ';
+    width: 100%;
+    background: url('#{$img-root}hr_top.png')  repeat-x;
+    height: 1em;
 
+    position: absolute;
+    top: $top;
+    left: $left;
+  }
+}
 
 /* ============
     Colors
@@ -118,6 +129,9 @@ $color_t_nav: #bbbbbb;
 $color_t_std: #363636;
 $color_t_cd: #707070;
 $color_t_pop: #494949;
+$color_t_faq: white;
+$color_t_link: #2A54B4;
+$color_t_link_faq: #0B77A2;
 
 $color_line_head: #3d3d3d;
 $color_line_foot: #555555;
@@ -146,12 +160,15 @@ $color_back_cat_head: #464646;
 $color_balloon_up: #ef7f1a;
 $color_balloon_down: #fdf9f6;
 
+/*FAQ*/
+$color_back_faq: #fea04c;
+
 /* ============
     Fonts
     =========== */
 $font_head: 'Calibri';
 $font_h: 'Cuprum';
-$font_text: 'Arial';
+$font_text: 'Arial', Helvetica, sans-serif;
 $font_atgallery: 'Segoe UI';
 
 $font_size_14: (14/16);
@@ -209,7 +226,7 @@ textarea {
    ====== */
 
 html {
-  /*background: url('../img/main_back_origin.jpg') no-repeat fixed 0 0 ;
+  /*background: url('#{$img-root}main_back_origin.jpg') no-repeat fixed 0 0 ;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_back_origin.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_back_origin.jpg', sizingMethod='scale')";
   background-size: 100%;*/
@@ -259,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: $color_t_std;
+  color: $color_t_link;
   text-decoration: none;
   text-shadow: none;
 
@@ -306,14 +323,16 @@ input.invalid {
 /* ==================
    Magic Happens Here
    ================== */
-.l-main {min-height: 600px}
+.l-main {min-height: 600px;}
 .l-header {
   font-family: $font_head;
 
   .site-name {
     letter-spacing: 10px;
     margin-bottom: 0;
-    color: $color_t_logo;
+    margin-top: 0;
+
+    a {color: $color_t_logo;}
   }
   .site-slogan {
     display: block;
@@ -483,6 +502,46 @@ input.invalid {
     }
   //}
 //}
+
+.page-faq-page {
+background: url('#{$img-root}main_back_origin.jpg') no-repeat fixed 0 0 ;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_back_origin.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_back_origin.jpg', sizingMethod='scale')";
+background-size: 100%;
+
+  .l-page {
+    background-color: rgba(255, 255, 255, 0.93);
+
+  //.l-content {
+    .breadcrumb {display: none;}
+    .l-content h1 {
+      position: relative;
+
+      @include hr-line;
+    }
+
+    .faq-question-answer .active { color: $color_t_link_faq; font-weight: 700;}
+    .faq-answer.collapsible {
+      margin: 1em 0;
+      padding-bottom: 50px;
+      background: url('#{$img-root}faq_tail.png') no-repeat 99% 91.5%;
+      position: relative;
+
+      @include hr-line(97%, 3.2%);
+
+      .field--body {
+        color: $color_t_faq;
+        padding: 1.2em 1em 1em 1.8em;
+        font-weight: 700;
+        background: $color_back_faq;
+
+        p:first-child {margin-top: 0;}
+        p:last-child {margin-bottom: 0;}
+      }
+    }
+  //}
+  }
+}
 
 /* ===============
     Block custom

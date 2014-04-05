@@ -25,6 +25,7 @@ $container-min-width: 800px;
 // Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
 $tab: 36em 12; // At 44em use 12 columns.
 $desk: 70em 16; // At 70em use 16 columns.
+$dmax: 80em 16; // At 70em use 16 columns.
 
 body {min-width: $container-min-width;}
 
@@ -34,6 +35,9 @@ body {min-width: $container-min-width;}
   @include container; // Define these elements as the grid containers.
   margin-bottom: $vert-spacing-unit;
 }
+
+.l-header {padding-top: 20px;}
+.l-footer {margin-bottom: 0; padding-bottom: 20px;}
 .l-branding {
   width: 100%;
 }
@@ -51,6 +55,7 @@ body {min-width: $container-min-width;}
   .l-footer {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
   }
+  .l-page {padding-left: 10px; padding-right: 10px;}
 
 //  .l-branding {
 //   @include span-columns(4, 12); // Span 4 out of 12 columns.
@@ -84,7 +89,6 @@ body {min-width: $container-min-width;}
   .l-footer {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
   }
-
 //  .l-branding {
 //    @include span-columns(6, 16); // Span 6 out of 16 columns.
 //  }
@@ -127,4 +131,8 @@ body {min-width: $container-min-width;}
       clear: none;
     }
   }
+}
+
+@include at-breakpoint($dmax) {
+  .l-page {margin-left: 0px; margin-right: 0px;}
 }
