@@ -187,12 +187,12 @@ var mediawidthmax = 1140;
             });
         }
     };
-  Drupal.behaviors.omegaD1Transition = {
+  Drupal.behaviors.omegaD1MenuEffect = {
       attach: function(c, s) {
-          $('.l-header', c).once('tranc', function(){
+          $('#block-system-main-menu', c).once('tranc', function(){
               if (!$.support.transition)
                   $.fn.transition = $.fn.animate;
-              $(".head li>a").mouseenter(function(){
+              $(this).find("li>a").mouseenter(function(){
                   $(this).stop(true,true);
                   $(this).transition({
                       scale: 1.3,
@@ -202,7 +202,7 @@ var mediawidthmax = 1140;
                       complete: function() { /* ... */ }
                   });
               });
-              $(".head li>a").mouseleave(function(){
+              $(this).find("li>a").mouseleave(function(){
                   $(this).stop(true,true);
                   $(this).transition({
                       scale: 1,

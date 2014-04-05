@@ -184,7 +184,7 @@ img {
   vertical-align: middle;
   width: 100%;
   height: auto;
-  max-width: 300px;
+  /*max-width: 300px;*/
 }
 
 fieldset {
@@ -289,7 +289,10 @@ table {
 
 .star {vertical-align: text-top; text-indent: 1; color: red;}
 
-.hr-line {height: 1.5em; margin: 0em 0em 1.5em 5em; width: 200px; border-bottom: 1px solid #b1b1b1;}
+.hr-line {
+  background: url('#{$img-root}hr_top.png')  repeat-x;
+  height: 1em;
+}
 /*hr {margin: 0em 0em 1.5em 5em; width: 200px; background: #b1b1b1;}*/
 
 input.invalid {
@@ -304,6 +307,72 @@ input.invalid {
    Magic Happens Here
    ================== */
 .l-main {min-height: 600px}
+.l-header {
+  font-family: $font_head;
+
+  .site-name {
+    letter-spacing: 10px;
+    margin-bottom: 0;
+    color: $color_t_logo;
+  }
+  .site-slogan {
+    display: block;
+    text-transform: uppercase;
+    margin: 0 0 1.5em 0;
+    font-size: (14em/16);
+    color: $color_t_logo;
+  }
+}
+//.l-region--navigation {
+  #block-system-main-menu {
+    width: 100%;
+    margin: 0 auto (10em/16);
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      float: left;
+      width: (100%/5 - 4/5);
+      margin: 0 0.5%;
+      padding: 0.3em 0;
+
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1em;
+      color: $color_t_nav;
+
+
+      &:hover
+      {
+        color: $color_t_nav_active;
+      }
+      /*&:visited {
+        color: darken($color_t_nav, 10%);
+      }*/
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    li {
+      &:first-child a {
+        margin-left: 0;
+      }
+      &:last-child a {
+        margin-right: 0;
+      }
+    }
+    li.leaf {
+      list-style: none;
+      list-style-image: none;
+    }
+  }
+//}
 .l-footer {
 
   & > .copyright {
@@ -326,6 +395,94 @@ input.invalid {
     Page custom
     ============= */
 
+//.page-fpp {
+  //.node--front-page--full {
+    .main.index {
+      h4 {margin-top: 0; margin-bottom: 0.5em;}
+      p { font-size: (14em/16);  margin: 0;}
+
+      & > article {
+
+        h1 {
+          text-align: center;
+        }
+        & > section {
+          display: table-cell;
+          vertical-align: top;
+          width: 48.5%;
+
+          .separator {
+            margin-bottom: 1em;
+
+            &.bottom {margin-bottom: 0;}
+
+            div {
+              /*margin: 1%;*/
+              vertical-align: top;
+
+              &.left {float: left;}
+              &.right {float: right;}
+
+              &.right:first-child {width: 35%;}
+              &.right:last-child {width: 62%; text-align: left;}
+              &.left:first-child {width: 35%;}
+              &.left:last-child {width: 62%; text-align: right;}
+
+              p {
+                /*font-weight: 600;*/
+                text-indent: 1.8em;
+              }
+
+              img {
+                vertical-align: top;
+                max-width: 300px;
+                /*min-height: 157px;*/
+                /*min-width: 207px;*/
+              }
+            }
+          }
+        }
+        & > section.left {
+        }
+        & > section.right {
+        }
+
+        & > div {
+          display: table-cell;
+          width: 3%;
+          background: url('#{$img-root}vr_cd.png')  repeat-y 49% 0;
+        }
+      }
+      & > div.cd {
+        margin: 4% 0;
+
+        div {vertical-align: middle;}
+
+        div:first-child {
+          display: table-cell;
+          width: 40%;
+          text-align: right;
+
+          img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            margin-right: 1.5em;
+          }
+        }
+        div:last-child {
+          display: table-cell;
+          width: 60%;
+          text-align: left;
+
+          h2 {margin: 0;}
+          h3 {margin-top: 0; text-transform: none;}
+          p {color: $color_t_cd;}
+        }
+      }
+    }
+  //}
+//}
 
 /* ===============
     Block custom

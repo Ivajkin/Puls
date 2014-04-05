@@ -5,7 +5,7 @@
  * and building mobile first layouts.
  ******************************************************************************/
 body {
-  min-width: 768px;
+  min-width: 800px;
 }
 
 .l-header,
@@ -28,6 +28,10 @@ body {
   clear: both;
 }
 
+.l-branding {
+  width: 100%;
+}
+
 .l-region--highlighted,
 .l-region--help,
 .l-region--sidebar-first,
@@ -40,12 +44,6 @@ body {
   .l-main,
   .l-footer {
     max-width: 1230px;
-  }
-
-  .l-branding {
-    width: 32.20339%;
-    float: left;
-    margin-right: 1.69492%;
   }
 
   .l-region--header {
@@ -86,12 +84,6 @@ body {
   .l-main,
   .l-footer {
     max-width: 1230px;
-  }
-
-  .l-branding {
-    width: 36.70886%;
-    float: left;
-    margin-right: 1.26582%;
   }
 
   .l-region--header {
