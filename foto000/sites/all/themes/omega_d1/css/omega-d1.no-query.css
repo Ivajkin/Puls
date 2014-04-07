@@ -357,6 +357,9 @@ input.invalid {
 #block-system-main-menu a:hover {
   text-decoration: underline;
 }
+#block-system-main-menu li {
+  min-height: 30px;
+}
 #block-system-main-menu li:first-child a {
   margin-left: 0;
 }

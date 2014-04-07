@@ -379,6 +379,8 @@ input.invalid {
     }
 
     li {
+      min-height: 30px;
+
       &:first-child a {
         margin-left: 0;
       }
@@ -546,6 +548,14 @@ background-size: 100%;
 /* ===============
     Block custom
     ============= */
+
+// Crop field module:
+//fixes: height and width for output image
+//place into modules/system/system.theme.css
+//.imagefield-crop-widget {
+//  .jcrop-preview-wrapper { width: auto !important; height: auto !important;}
+//  .jcrop-preview {max-width: 500px !important; height: auto !important;}
+//}
 
 .pager-container {
 
