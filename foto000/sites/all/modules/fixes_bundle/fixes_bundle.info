@@ -1,0 +1,5 @@
+name = Fixes Bundle
+description = Fixes Fotodv sprcific for Drupal
+package = Custom
+core = 7.x
+dependencies[] = views

@@ -1,0 +1,5 @@
+name = Custom Views Injections
+description = TODO: Description of module
+dependencies[] = views
+package = Custom
+core = 7.x
