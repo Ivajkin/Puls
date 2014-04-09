@@ -42,3 +42,7 @@ nav ol {
   list-style: none;
   list-style-image: none;
 }
+
+:focus {
+  outline: none;
+}

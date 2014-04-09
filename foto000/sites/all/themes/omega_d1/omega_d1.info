@@ -16,8 +16,7 @@ stylesheets[all][] = css/omega-d1.no-query.css
 ; ========================================
 ; Scripts
 ; ========================================
-scripts[] = js/vendor/jquery.transit.min.js
-scripts[] = js/omega-d1.behaviors.js
+;Load in preprocess instead due to low load priority
 
 ; ========================================
 ; Regions

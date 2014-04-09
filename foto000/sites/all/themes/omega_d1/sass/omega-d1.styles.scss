@@ -63,7 +63,80 @@ p { @include sexy-border(blue); }*/
   -webkit-box-shadow: $shadows;
   box-shadow: $shadows;
 }
+@mixin hoverbox_table($target: '.field--image', $expression: '&:last-child',
+                $max_width: 470px,
+                $container_width: 228px, $container_height: 160px) {
+  #{$target}:hover img {
+    position: absolute;
+    z-index: 50;
+    width: $max_width;
+    height: auto;
+    max-width: $max_width;
+    padding: 2px;
+    background: #fefefe;
+  }
+  #{$target}:hover {
+    display:block;
+    padding-top: 80px;
+    padding-left: 100px;
+    width: 100%;
+    height: $container_height;
+    //width: $container_width;
+    border:1px solid #454649;
+  }
+  #{$target}:nth-child(5n):hover {padding-right: 100px; padding-left: 0;}
+  //Hand Last sting in the bottom of the page
+  #{$expression} #{$target}:hover {
+    padding-top: 15px;
+  }
+}
+@mixin hoverbox_div($target: '.field--image', $expression: '&:last-child',
+                    $max_width: 470px,
+                    $container_width: 228px, $container_height: 160px) {
+  #{$target}:hover img {
+    position: absolute;
+    z-index: 50;
+    width: $max_width;
+    height: auto;
+    max-width: $max_width;
+    padding: 2px;
+    background: #fefefe;
+  }
+  #{$target}:hover {
+    display:block;
+    padding-top: 80px;
+    width: $container_width;
+    border:1px solid #454649;
+  }
+  #{$target}:nth-child(5n):hover {padding-right: 100px; padding-left: 0;}
 
+  //Hand Last sting in the bottom of the page
+  #{$expression} #{$target}:hover {
+    padding-top: 15px;
+  }
+}
+@mixin hoverbox($target: '.field--image', $max_width: 470px,
+                $container_width: 228px, $container_height: 160px) {
+  #{$target}:hover img {
+    position: absolute;
+    z-index: 50;
+    width: $max_width;
+    height: auto;
+    max-width: $max_width;
+    padding: 2px;
+    background: #fefefe;
+  }
+  #{$target}:hover {
+    display:block;
+    padding-top: 80px;
+    padding-left: 100px;
+    //width: 100%;
+    height: $container_height;
+    width: $container_width;
+    border:1px solid #454649;
+  }
+  #{$target}:nth-child(5n):hover {padding-right: 100px; padding-left: 0;}
+}
 
 /* =======
    Units
@@ -285,6 +358,10 @@ a {
   }
 }
 
+/*h2 a {color: #139919;}*/
+h2 a {color: #495E4A;}
+h3 a {color: #279270;}
+
 ul, ol {text-indent: 0;}
 p {
   text-indent: 1.3em;
@@ -379,6 +456,7 @@ input.invalid {
     }
 
     li {
+      display: inline;
       min-height: 30px;
 
       &:first-child a {
@@ -545,6 +623,158 @@ background-size: 100%;
   }
 }
 
+.page-gallery {
+  .l-content {
+
+    .breadcrumb {display: none;}
+
+    h1 {
+      position: relative;
+      margin-bottom: 1.5em;
+
+      @include hr-line;
+    }
+
+    .view-content {
+      h2 {margin-bottom:0}
+      h3 {margin-top:0.5em}
+      tr {width: 100%;}
+
+      table {
+        margin-left: 1em;
+        position: relative;
+
+        @include hr-line;
+      }
+      table {@include hoverbox_table();}
+      td {width: (100%/5 - 8*0.5); padding: 0 0.5%;}
+
+      //.field--image {width: (100%/5 - 8*0.5); padding: 0 0.5%;}
+      .field--image {
+        position: relative;
+      }
+      img {
+        max-width: 235px;
+      }
+
+      .views-field-add-to-cart-form {
+        display: inline-block;
+        margin-top: 5px;
+      }
+      /*field--commerce-price*/
+      .views-field-add-to-cart-form + div {
+        display: inline-block;
+        position: relative;
+
+        .field--commerce-price {
+          position: relative;
+          bottom: 3px;
+        }
+      }
+    }
+  }
+}
+.node-type-product-display.section-albums {
+  .l-content {
+
+    h1 {
+      position: relative;
+      margin-bottom: 1.5em;
+
+      @include hr-line;
+    }
+
+    .view-content {
+      .views-view-grid > div {
+        width: 100%;
+        position: relative;
+
+        @include hr-line;
+      }
+      //.views-view-grid > div{@include hoverbox_div();}
+
+      .views-field-field-image {
+        margin-left: 1em;
+
+        @include clearfix;
+      }
+      .field--image {
+        float: left;
+        //width: (100%/5 - 2*0.5);
+        width: 18.75%;
+        margin: 0 0.5% 10px;
+
+        img {max-width: 235px;}
+      }
+
+      .views-field-add-to-cart-form {
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 2em;
+      }
+      /*field--commerce-price*/
+      .views-field-add-to-cart-form + div {
+        display: inline-block;
+        position: relative;
+
+        .field--commerce-price {
+          position: relative;
+          bottom: 3px;
+        }
+      }
+    }
+  }
+}
+.page-albums.section-albums {
+  .l-content {
+
+    h1 {
+      position: relative;
+      margin-bottom: 1.5em;
+
+      @include hr-line;
+    }
+
+    .view-content {
+      .views-view-grid > div {
+        width: 100%;
+        margin-left: 1em;
+      }
+
+      .views-field-field-image {
+        position: relative;
+
+        @include clearfix;
+      }
+      .field--image {
+        float: left;
+        //width: (100%/5 - 2*0.5);
+        width: 18.5%;
+        margin: 0 0.5% 10px;
+
+        img {max-width: 235px;}
+      }
+
+
+      .views-field-add-to-cart-form {
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 2em;
+      }
+      /*field--commerce-price*/
+      .views-field-add-to-cart-form + div {
+        display: inline-block;
+        position: relative;
+
+        .field--commerce-price {
+          position: relative;
+          bottom: 3px;
+        }
+      }
+    }
+  }
+}
+
 /* ===============
     Block custom
     ============= */
@@ -556,6 +786,14 @@ background-size: 100%;
 //  .jcrop-preview-wrapper { width: auto !important; height: auto !important;}
 //  .jcrop-preview {max-width: 500px !important; height: auto !important;}
 //}
+
+.breadcrumb {
+  list-style: none;
+  list-style-image: none;
+  text-transform: capitalize;
+
+  li {display: inline;}
+}
 
 .pager-container {
 
@@ -614,6 +852,17 @@ background-size: 100%;
         }
       }
     }
+  }
+}
+
+.commerce-add-to-cart {
+
+  input[type='submit'] {
+    border: none;
+    color: transparent;
+    background: transparent url('#{$img-root}basket_mini.png') no-repeat;
+    width:41px;
+    height: 48px;
   }
 }
 

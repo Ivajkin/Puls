@@ -1,0 +1,27 @@
+<?php
+/**
+ * Implements of hook_views_api().
+ */
+function fixes_bundle_views_api() {
+  return array('api' => 3);
+}
+/**
+ * Implements hook_node_view().
+ */
+//function fixes_bundle_node_view($node, $view_mode, $langcode) {
+//
+//    // Add content type specific JS on full page node view
+//    if($view_mode == 'full'){
+//        //dvm(libraries_detect('jquery.bxslider'));
+//        $thp= drupal_get_path('theme', 'omega_d1');
+//        switch($node->type){
+//            case 'product-display':
+//                //$node->content['#attached']['libraries_load'][] = array('jquery.bxslider');
+//                $node->content['#attached']['js'][] = array('data' => '/sites/all/libraries/prettyPhoto/old/jquery.prettyPhoto.js');
+//                $node->content['#attached']['css'][] = array('data' => 'sites/all/libraries/prettyPhoto/old/prettyPhoto.css');
+//                $node->content['#attached']['js'][] = array('data' => "/".$thp."/js/img.gallery.js");
+//                break;
+//        }
+//    }
+//
+//}

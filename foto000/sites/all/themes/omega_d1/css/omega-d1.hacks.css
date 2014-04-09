@@ -8,3 +8,6 @@
     margin-top: 0 !important;
   }
 }
+div.pp_gallery {
+  display: none !important;
+}
