@@ -21,7 +21,9 @@ function view_adds_views_post_execute(&$view) {
                 }
             }
             $view->result[$i]->field_field_image[0]['rendered']= $img_styled;
+            $tt=0;
         }
+        $tt=0;
         //drupal_add_js('(function ($) { Drupal.settings })(jQuery);', 'inline');
         //drupal_add_js(array('gallery' => $img), 'setting');
     }

@@ -51,6 +51,7 @@
                  * @func
                  */
                 $empty_col= 5 - count($columns)%5;
+                if ($empty_col < 5)
                     for ($i=0; $i<$empty_col; $i++)
                         echo '<td></td>';
                 ?>

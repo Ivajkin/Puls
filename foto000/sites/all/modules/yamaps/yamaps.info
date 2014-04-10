@@ -1,0 +1,14 @@
+name = Yandex.Maps
+description = Provides Yandex map field for display map on your pages
+core = 7.x
+package = Yandex
+dependencies[] = field
+
+configure = admin/config/services/yamaps
+
+; Information added by Drupal.org packaging script on 2014-03-06
+version = "7.x-1.3"
+core = "7.x"
+project = "yamaps"
+datestamp = "1394091505"
+
