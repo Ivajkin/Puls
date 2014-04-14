@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="http://foto000.su/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>http://foto000.su/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://foto000.su/catalog</loc></url>
 <url><loc>http://foto000.su/faq-page</loc></url>
 <url><loc>http://foto000.su/gallery</loc></url>
 <url><loc>http://foto000.su/routes</loc></url>

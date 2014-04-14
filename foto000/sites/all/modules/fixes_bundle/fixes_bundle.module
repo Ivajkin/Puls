@@ -25,3 +25,10 @@ function fixes_bundle_views_api() {
 //    }
 //
 //}
+
+function fixes_bundle_page_alter(&$page) {
+    if (arg(0) == 'catalog' && arg(1)) {
+        $my_content = views_embed_view('catalog_full', 'catalog_block');
+        $page['sidebar_second']['my_special_insert']['content']['#markup'] = $my_content;
+    }
+}

@@ -23,6 +23,21 @@ function omega_d1_preprocess_page(&$variables) {
         drupal_add_js("/".$thp."/js/img.gallery.js");
         return;
     }
+    if ( arg(0) == 'catalog' && arg(1) === null ) {
+        drupal_add_js('//api-maps.yandex.ru/2.1-dev/?lang=ru-RU&load=package.full', 'external');
+        drupal_add_js("/".$thp."/js/catalog.js");
+        return;
+    }
+    if ( arg(0) == 'catalog' && arg(1) !== null ) {
+        drupal_add_js("/sites/all/libraries/prettyPhoto/old/jquery.prettyPhoto.js");
+        drupal_add_css("sites/all/libraries/prettyPhoto/old/prettyPhoto.css");
+        drupal_add_js("/".$thp."/js/img.screenlist.js");
+
+        drupal_add_css('sites/all/libraries/bxslider/jquery.bxslider.css');
+        drupal_add_js('/sites/all/libraries/bxslider/jquery.bxslider.min.js');
+        drupal_add_js("/".$thp."/js/slcool.js");
+        return;
+    }
 
     //Alias specific for node
     $n_alias= drupal_lookup_path('alias', $_GET['q']);

@@ -35,24 +35,10 @@
      */
   Drupal.behaviors.omegaD1ImageEffect = {
       attach: function(c, s) {
-          $('.view-content', c).once('img-hp', function(){
-            $('.field--image img').addClass('hoverBox')
-                //old
-                .before('<a href="#" rel="prettyPhoto466[gallery]"></a>')
-                //.before('<a href="#" rel="prettyPhoto[pp_gal]"></a>')
-                .each(function(){
-                    $(this).appendTo($(this).prev());
-                    //get id
-                    //tmp= s.gallery[ $('.view-content table').index($(this).parents('table')) ][0];
-                    tmp= $(this).parents('.field--image');
-
-                    if (location.href.match('album')) {
-                        $(this).parent().attr('href', tmp.data('full'));
-                        tmp.removeAttr('data-full');
-                    } else if (location.href.match('catalog')) {
-                        $(this).parent().attr('href', $(this).attr('src'));
-                    }
-                });
+          $('.view-content', c).once('scr-hp', function(){
+            if ($('.field--screen-list img').length) {
+                $('.field--screen-list a').attr('href', $('.field--screen-list img').attr('src'))
+            }
             Drupal.theme('omegaD1ApplyGE');
           });
       }
