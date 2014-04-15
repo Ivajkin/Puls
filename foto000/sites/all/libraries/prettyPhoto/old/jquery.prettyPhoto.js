@@ -304,6 +304,8 @@
                 pp_open = true;
             });
             _insert_gallery();
+            if (typeof settings.showen == 'function')
+                setTimeout(settings.showen, 400);
         };
         function _hideContent(callback) {
             $pp_pic_holder.find('#pp_full_res object,#pp_full_res embed').css('visibility', 'hidden');

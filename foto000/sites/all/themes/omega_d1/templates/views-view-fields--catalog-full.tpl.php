@@ -65,7 +65,7 @@
                 print $fields['field_text']->content;
                 ?>
                 <div class="p-small field--screen-list">
-                    <a href="#" rel="prettyPhoto466">Посмотреть содержимое
+                    <a href="#">Посмотреть содержимое
                         <?php
                         if (isset($fields['field_screen_list']->content) && !empty($fields['field_screen_list']->content)) {
                             $tmp= '<' . explode('<', $fields['field_screen_list']->content)[2];

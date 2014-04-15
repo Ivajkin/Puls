@@ -1106,7 +1106,7 @@ body[class*="page-catalog-"] .view-display-id-catalog_block .view-content {
   background-color: #efefef;
   padding-right: 10px;
   padding-top: 10px;
-  min-height: 634px;
+  min-height: 685px;
 }
 body[class*="page-catalog-"] .view-display-id-catalog_block .view-content div {
   vertical-align: middle;
@@ -1164,17 +1164,90 @@ body[class*="page-catalog-"] .view-display-id-catalog_block .view-content sectio
 /* ===============
     Block custom
     ============= */
+.popular-container .popular header > div {
+  background: url("../images/hr_bottom.png") repeat-x;
+  height: 1em;
+}
+.popular-container .popular div.content {
+  background-color: #e2e2e2;
+}
+.popular-container .popular div.content article section {
+  padding: 0.5em;
+  display: table-cell;
+  background: url("../images//cd_grey.png") no-repeat 5% 50%;
+  cursor: pointer;
+  width: 20%;
+}
+.popular-container .popular div.content article section h4, .popular-container .popular div.content article section .field--text {
+  margin-left: 21%;
+}
+.popular-container .popular div.content article section .field--text {
+  color: #494949;
+}
+.popular-container .popular div.content article section .field--text * {
+  font-weight: 500;
+}
+.popular-container .popular div.content article section.five-element {
+  display: none;
+}
+.popular-container .popular div.content article section:nth-child(2n) {
+  background-color: #efefef;
+}
+.popular-container .popular div.content article section:nth-child(2n):hover {
+  background-color: #fbfbfb;
+}
+.popular-container .popular div.content article section:nth-child(2n-1) {
+  background-color: #e2e2e2;
+}
+.popular-container .popular div.content article section:nth-child(2n-1):hover {
+  background-color: #d5d5d5;
+}
+.popular-container .popular div.content article footer {
+  position: relative;
+  height: 0.5em;
+  background-color: #363636;
+}
+.popular-container .popular div.content article footer img {
+  width: 32px;
+  height: 17px;
+  position: absolute;
+  bottom: 50%;
+  left: 3%;
+}
+
+.goto-product {
+  float: left;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #feccb1;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FFFECCB1', endColorstr='#FFC72200');
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #feccb1), color-stop(50%, #f17432), color-stop(51%, #ea5507), color-stop(75%, #ff6600), color-stop(100%, #c72200));
+  background-image: -webkit-linear-gradient(left top, #feccb1 0%, #f17432 50%, #ea5507 51%, #ff6600 75%, #c72200 100%);
+  background-image: -moz-linear-gradient(left top, #feccb1 0%, #f17432 50%, #ea5507 51%, #ff6600 75%, #c72200 100%);
+  background-image: -o-linear-gradient(left top, #feccb1 0%, #f17432 50%, #ea5507 51%, #ff6600 75%, #c72200 100%);
+  background-image: linear-gradient(left top, #feccb1 0%, #f17432 50%, #ea5507 51%, #ff6600 75%, #c72200 100%);
+}
+.goto-product a {
+  padding: 5px;
+}
+.goto-product a:hover {
+  outline: none;
+  text-decoration: none;
+}
+.goto-product a span:first-child {
+  color: #792A2A;
+}
+.goto-product a span:last-child {
+  color: #f8e5e5;
+}
+
 div.slider {
   background-color: #363636;
 }
 div.slider .field--image, div.slider li {
   max-width: 230px;
-}
-div.slider .field--image img, div.slider li img {
-  /*max-width: 225px;*/
-  min-height: 150px;
-  max-height: 150px;
-  height: auto;
 }
 
 .breadcrumb {

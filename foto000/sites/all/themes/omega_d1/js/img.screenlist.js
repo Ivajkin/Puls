@@ -1,6 +1,6 @@
 (function ($) {
 
-    Drupal.theme.prototype.omegaD1ApplyGE = function (path, title) {
+    Drupal.theme.prototype.omegaD1ApplySE = function (path, title) {
         // Create an anchor element with jQuery.
         if($('.hoverBox').length){
             //prettyPhoto old
@@ -33,13 +33,14 @@
      * Image Gallery behaviors
      * @type {{attach: attach}}
      */
-  Drupal.behaviors.omegaD1ImageEffect = {
+  Drupal.behaviors.omegaD1ImageScreen = {
       attach: function(c, s) {
           $('.view-content', c).once('scr-hp', function(){
             if ($('.field--screen-list img').length) {
                 $('.field--screen-list a').attr('href', $('.field--screen-list img').attr('src'))
+                    .attr('rel', 'prettyPhoto466');
+                Drupal.theme('omegaD1ApplySE');
             }
-            Drupal.theme('omegaD1ApplyGE');
           });
       }
   }

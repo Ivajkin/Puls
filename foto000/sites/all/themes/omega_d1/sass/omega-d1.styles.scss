@@ -1063,7 +1063,7 @@ body[class*="page-catalog-"] {
     background-color: $color_back_aside;
     padding-right: 10px;
     padding-top: 10px;
-    min-height: 634px;
+    min-height: 685px;
 
     div {vertical-align: middle;}
     & > div {
@@ -1128,18 +1128,98 @@ body[class*="page-catalog-"] {
 //  .jcrop-preview {max-width: 500px !important; height: auto !important;}
 //}
 
+.popular-container{
+
+  .popular {
+
+    header {
+
+      & > div {
+        background: url('#{$img-root}hr_bottom.png')  repeat-x;
+        height: 1em;
+      }
+    }
+
+    div.content {
+      background-color: $color_pop_even;
+
+      article{
+
+        section{
+          padding: 0.5em;
+          display: table-cell;
+          background: url('#{$img-root}/cd_grey.png')  no-repeat 5% 50%;
+          cursor: pointer;
+          width: 20%;
+
+          h4, .field--text{margin-left: 21%;}
+          .field--text {
+            color: $color_t_pop;
+
+            * {font-weight: 500;}
+          }
+
+          &.five-element {
+            display: none;
+          }
+          &:nth-child(2n) {
+            background-color: $color_pop_odd;
+
+            &:hover {background-color: lighten($color_pop_even, 10%);}
+          }
+          &:nth-child(2n-1) {
+            background-color: $color_pop_even;
+
+            &:hover {background-color: darken($color_pop_odd, 10%);}
+          }
+        }
+
+        footer {
+          position: relative;
+          height: 0.5em;
+          background-color: $color_sl_back;
+
+          img {
+            width: 32px;
+            height: 17px;
+
+            position: absolute;
+            bottom: 50%;
+            left: 3%;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.goto-product {
+  float: left;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  // needs latest Compass, add '@import "compass"' to your scss
+  background-color: rgb(254,204,177); // Old browsers
+  @include filter-gradient(#feccb1, #c72200, horizontal); // IE6-9 fallback on horizontal gradient
+  @include background-image(linear-gradient(left top,  rgba(254,204,177,1) 0%,rgba(241,116,50,1) 50%,rgba(234,85,7,1) 51%,rgba(255,102,0,1) 75%,rgba(199,34,0,1) 100%));
+
+  a {
+    padding: 5px;
+    &:hover {outline: none; text-decoration: none;}
+
+    span{
+      &:first-child {color: #792A2A;}
+      &:last-child {color: rgb(248, 229, 229);}
+    }
+  }
+}
+
 div.slider {
   background-color: $color_sl_back;
 
   .field--image, li {
     max-width: 230px;
-
-    img {
-      /*max-width: 225px;*/
-      min-height: 150px;
-      max-height: 150px;
-      height: auto;
-    }
   }
 }
 

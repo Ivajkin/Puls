@@ -75,6 +75,22 @@ function view_adds_views_post_execute(&$view) {
         $view->result= array();
         $view->result []= $tmp;
         $view->result[0]->commerce_product_field_data_field_route_ref_title= implode('+++' ,$targ);
+
+        return;
+    }
+    if ($view->name == "top_product" && $view->current_display == "top_pane") {
+        $view->result[0]->_field_data['custom']= array();
+        $tmp= &$view->result[0]->_field_data['custom'];
+        foreach($view->result as $i => $data) {
+            if (!$i) {$tmp[]= ''; continue;}
+            $tmp[]= $data;
+        }
+        $tmp2= $view->result[0];
+        $view->result= '';
+        $view->result= array();
+        $view->result []= $tmp2;
+
+        drupal_add_js(array('ismain' => '.view-display-id-top_pane .field--image'), 'setting');
         return;
     }
 }

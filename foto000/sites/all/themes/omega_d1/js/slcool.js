@@ -1,6 +1,9 @@
 /**
- * Created by storm on 4/13/14.
+ * Created by storm on 4/13/14. Riverside / Sound Couture /One Ok Rock / Foreground Eclipse / Flaming June -- Muteki no Soldier / coldrain // Aikawa Nanase / Kokia / Afilia Saga
  */
+var slider= undefined;
+var sets= undefined;
+
 (function ($) {
     Drupal.behaviors.omegaD1BxSlider = {
     attach: function (c, s) {
@@ -12,7 +15,8 @@
 
             if (location.href.match(/catalog/)) {
                 $('.l-content .field--image').unwrap();
-            }
+            } else if ($(s.ismain).parent().hasClass('field-content'))
+                $(s.ismain).unwrap();
 
             /**
              *
@@ -33,7 +37,7 @@
              * @param nextIndex
              */
 
-            setting = {
+            sets = {
                 /****************
                  * General
                  ****************/
@@ -82,13 +86,18 @@
                  * Callbacks
                  ******************/
                 onSliderLoad: function (curIndex) {
-                    $('.bx-controls-direction').toggleClass('invisible');
+                    if (!$('.bx-controls-direction').hasClass('invisible'))
+                        $('.bx-controls-direction').toggleClass('invisible');
                     $('.slider-viewport')
-                        .mouseenter(function () {
-                            $('.bx-controls-direction').toggleClass('invisible');
+                        .mouseenter(function (e) {
+                            e.preventDefault();
+                            if ($('.bx-controls-direction').hasClass('invisible'))
+                                $('.bx-controls-direction').toggleClass('invisible');
                         })
-                        .mouseleave(function () {
-                            $('.bx-controls-direction').toggleClass('invisible');
+                        .mouseleave(function (e) {
+                            e.preventDefault();
+                            if (!$('.bx-controls-direction').hasClass('invisible'))
+                                $('.bx-controls-direction').toggleClass('invisible');
                         });
                 }/*,
                  onSlideBefore: switchIndicator,
@@ -96,7 +105,7 @@
 
             };
             if ($('.bxslider').length) {
-                var slider = $('.bxslider').bxSlider(setting);
+                slider = $('.bxslider').bxSlider(sets);
 
                 //startTimeIndicator(); // start the time line for the first slide
 
@@ -104,9 +113,9 @@
                     mw = $('.slider').width();
                     tmp= $('body').width();
                     //if (tmp >= mediawidthmin && tmp < mediawidthmax) {
-                    setting.slideMargin = slmargin * mw / 5.0;
-                    setting.slideWidth = slwidth * mw / 5.0;
-                    slider.reloadSlider(setting);
+                    sets.slideMargin = slmargin * mw / 5.0;
+                    sets.slideWidth = slwidth * mw / 5.0;
+                    slider.reloadSlider(sets);
                     //}
                 });
 
