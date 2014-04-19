@@ -20,7 +20,7 @@
     Drupal.behaviors.omegaD1CartHandle = {
         attach:function (context, settings) {
             $('.l-content h1').text('Ваши покупки');
-            settings.sended= 1;
+            settings.sended= 0;
 
             $('.views-field-edit-quantity input[type="text"]').change(function () {
                 $('#edit-submit').trigger('click');
@@ -86,7 +86,10 @@
                             $('#thanks').modal()
                                 .on('shown.bs.modal', function () {
                                     setTimeout(function () {
-                                        $('#thanks').modal('hide');
+                                        $('#thanks').modal('hide')
+                                            .on('hidden.bs.modal', function (e) {
+                                                location.reload();
+                                            });
                                     }, 5000);
                                 });
                         else
@@ -96,8 +99,8 @@
                     }
                 });
             });
-            $('#cartinfo .btn-default').click(function(){settings.sended= 0;});
             $('#cartinfo .btn-primary').click(function(){
+                settings.sended= 1;
 
                 $('#cartinfo input[type="text"]').each(function(){
                     if ($(this).css('color') == "rgb(185, 74, 72)") {
