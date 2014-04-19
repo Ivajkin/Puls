@@ -112,7 +112,10 @@ function simple_page_title_preprocess_html(&$vars) {
 //    $vars['head_title'] = t('@page_title', array('@page_title' => $page_title_object->page_title));
 //  }
     if ( arg(0) == 'catalog' && arg(1) !== null ) {
-        $vars['head_title'] = t('@page_title', array('@page_title' => mb_ucfirst(arg(2)) . ' | dvphoto.ru'));
+        $vars['head_title'] = t('@page_title', array('@page_title' => mb_ucfirst(arg(2)) . ' | photo-dv.com'));
+    }
+    if ( arg(0) == 'fpp' ) {
+        $vars['head_title'] = t('@page_title', array('@page_title' => 'ФОТО-ДВ.РФ' . ' | Фотограф-путешественник Валерий Сидорин'));
     }
 }
 

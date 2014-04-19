@@ -14,11 +14,6 @@ stylesheets[all][] = css/omega-d1.styles.css
 stylesheets[all][] = css/omega-d1.no-query.css
 
 ; ========================================
-; Scripts
-; ========================================
-;Load in preprocess instead due to low load priority
-
-; ========================================
 ; Regions
 ; ========================================
 regions[branding] = Branding
@@ -56,7 +51,7 @@ settings[omega_libraries][selectivizr][status] = 1
 settings[omega_libraries][respond][status] = 1
 settings[omega_libraries][pie][status] = 1
 settings[omega_libraries][html5shiv][status] = 1
-settings[omega_toggle_extension_development] = 1
+settings[omega_toggle_extension_development] = 0
 settings[omega_rebuild_theme_registry] = 1
 settings[omega_rebuild_aggregates] = 1
 settings[omega_browser_width_indicator] = 1

@@ -69,30 +69,30 @@ var mediawidthmax = 1140;
      */
   Drupal.behaviors.omegaD1MenuEffect = {
       attach: function(c, s) {
-          $('#block-system-main-menu', c).once('tranc', function(){
-              if (!$.support.transition)
-                  $.fn.transition = $.fn.animate;
-              $(this).find("li>a").mouseenter(function(){
-                  $(this).stop(true,true);
-                  $(this).transition({
-                      scale: 1.3,
-                      rotate: 12,
-                      duration: 500,
-                      easing: 'cubic-bezier(0,0.9, 0.001,2)',
-                      complete: function() { /* ... */ }
-                  });
-              });
-              $(this).find("li>a").mouseleave(function(){
-                  $(this).stop(true,true);
-                  $(this).transition({
-                      scale: 1,
-                      rotate: 0,
-                      duration: 500,
-                      easing: 'out',
-                      complete: function() { /* ... */ }
-                  });
-              });
-          });
+//          $('#block-system-main-menu', c).once('tranc', function(){
+//              if (!$.support.transition)
+//                  $.fn.transition = $.fn.animate;
+//              $(this).find("li>a").mouseenter(function(){
+//                  $(this).stop(true,true);
+//                  $(this).transition({
+//                      scale: 1.3,
+//                      rotate: 12,
+//                      duration: 500,
+//                      easing: 'cubic-bezier(0,0.9, 0.001,2)',
+//                      complete: function() { /* ... */ }
+//                  });
+//              });
+//              $(this).find("li>a").mouseleave(function(){
+//                  $(this).stop(true,true);
+//                  $(this).transition({
+//                      scale: 1,
+//                      rotate: 0,
+//                      duration: 500,
+//                      easing: 'out',
+//                      complete: function() { /* ... */ }
+//                  });
+//              });
+//          });
       }
   }
   Drupal.behaviors.omegaD1Footer = {
@@ -119,4 +119,9 @@ var mediawidthmax = 1140;
       }
   }
 
+//    Drupal.behaviors.omegaD1HFix = {
+//        attach: function(c, s){
+//            $('.l-page').height($('body').height());
+//        }
+//    }
 })(jQuery);

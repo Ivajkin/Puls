@@ -248,3 +248,5 @@ tr.admin-menu-tweak-permissions-processed {
 tr.admin-menu-tweak-permissions-processed td.module {
   border-top: 0;
 }
+
+#admin-menu .dropdown .admin-menu-icon img {width:32px !important; height: auto !important;}

@@ -40,7 +40,23 @@ var itwas = false;
 //                left: (id>pid ? "+=" : "-=") + (id>pid ? id-pid : pid-id)*ww
 //            }, 500);
 //            pid= id;
-
+/*
+* $databases = array (
+ 'default' =>
+ array (
+ 'default' =>
+ array (
+ 'database' => 'core5429_foto001',
+ 'username' => 'core5429_foto001',
+ 'password' => '01remoute92',
+ 'host' => 'localhost',
+ 'port' => '',
+ 'driver' => 'mysql',
+ 'prefix' => '',
+ ),
+ ),
+ );
+* */
 //            Drupal.behaviors.omegaD1ImageEffect.attach(function(){
 //                setTimeout(function tmr(){
 //                    if ($('.bxslider img').length == count)
@@ -48,7 +64,7 @@ var itwas = false;
 //                    else setTimeout(tmr, 1000);
 //                }, 10);
 //            });
-            //$('body').animate({scrollTop: $('.popular-container').position().top},500);
+            $('body').animate({scrollTop: $('.popular-container').position().top},500);
         });
     };
 

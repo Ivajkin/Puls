@@ -1,11 +1,11 @@
 /*
 Syntax error: File to import not found or unreadable: susy.
-              Load path: /home/storm/Projects/git/Stuff/Puls/foto000/sites/all/themes/omega_d1/sass/layouts/simple (DEPRECATED)
-        on line 7 of simple.layout.scss
+              Load path: /home/storm/Projects/git/Stuff/Puls/foto000/sites/all/themes/omega_d1/sass/layouts/fotodv (DEPRECATED)
+        on line 7 of fotodv.layout.scss
 
-2:  * simple.layout.scss
+2:  * Fotodv.layout.scss
 3:  *
-4:  * Styling of the "simple" layout demonstrating the Compass grid extension Susy
+4:  * Styling of the "Fotodv" layout demonstrating the Compass grid extension Susy
 5:  * and building mobile first layouts.
 6:  ******************************************************************************\/
 7: @import "susy";
@@ -16,7 +16,7 @@ Syntax error: File to import not found or unreadable: susy.
 12: $vert-spacing-unit: 20px;
 
 Backtrace:
-simple.layout.scss:7
+fotodv.layout.scss:7
 /var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/import_node.rb:66:in `rescue in import'
 /var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/import_node.rb:45:in `import'
 /var/lib/gems/1.9.1/gems/sass-3.3.4/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -58,4 +58,4 @@ simple.layout.scss:7
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: susy.\A               Load path: /home/storm/Projects/git/Stuff/Puls/foto000/sites/all/themes/omega_d1/sass/layouts/simple (DEPRECATED)\A         on line 7 of simple.layout.scss\A \A 2:  * simple.layout.scss\A 3:  *\A 4:  * Styling of the \"simple\" layout demonstrating the Compass grid extension Susy\A 5:  * and building mobile first layouts.\A 6:  ******************************************************************************/\A 7: @import \"susy\";\A 8: \A 9: // Susy Variables\A 10: \A 11: // Set consistent vertical and horizontal spacing units.\A 12: $vert-spacing-unit: 20px;"; }
+  content: "Syntax error: File to import not found or unreadable: susy.\A               Load path: /home/storm/Projects/git/Stuff/Puls/foto000/sites/all/themes/omega_d1/sass/layouts/fotodv (DEPRECATED)\A         on line 7 of fotodv.layout.scss\A \A 2:  * Fotodv.layout.scss\A 3:  *\A 4:  * Styling of the \"Fotodv\" layout demonstrating the Compass grid extension Susy\A 5:  * and building mobile first layouts.\A 6:  ******************************************************************************/\A 7: @import \"susy\";\A 8: \A 9: // Susy Variables\A 10: \A 11: // Set consistent vertical and horizontal spacing units.\A 12: $vert-spacing-unit: 20px;"; }

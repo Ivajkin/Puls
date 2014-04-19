@@ -140,12 +140,12 @@ p { @include sexy-border(blue); }*/
 
 
 @mixin backimg() {
-  background: url('#{$img-root}main_back_origin.jpg') no-repeat fixed 0 0 ;
+  background: url('#{$img-root}main_back_origin.jpg') repeat-y fixed 0 0 ;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$img-root}main_back_origin.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$img-root}main_back_origin.jpg', sizingMethod='scale')";
   background-size: 100%;
 
-  .l-page {background-color: rgba(255, 255, 255, 0.93);}
+  .l-page {background-color: rgba(255, 255, 255, 0.93); height: 100%;}
 }
 /* =======
    Units
@@ -319,6 +319,7 @@ body {
   font: 100%/1.4 $font_text;
   min-width: 480px;
   color: $color_t_std;
+  height: 100%;
 
   background-color: $color_page_back;
   /*background-color: transparentize($color_page_back, 0.1);*/
@@ -784,8 +785,7 @@ input.invalid {
   @include backimg();
 
   .l-content {
-
-    .breadcrumb {display: none;}
+    .breadcrumb {display: none !important;}
 
     h1 {
       position: relative;
@@ -927,10 +927,10 @@ body[class*="page-catalog-"] {
   background: white;
 
   //Layout
-  .l-main {
+/*  .l-main {
     margin-right: 0;
     max-width: 1280px;
-  }
+  }*/
   .l-region--sidebar-second{
     position: relative;
 
@@ -1063,7 +1063,7 @@ body[class*="page-catalog-"] {
     background-color: $color_back_aside;
     padding-right: 10px;
     padding-top: 10px;
-    min-height: 685px;
+    min-height: 710px;
 
     div {vertical-align: middle;}
     & > div {
@@ -1103,9 +1103,16 @@ body[class*="page-catalog-"] {
       }
 
       .p-middle, .add-to-cart {display: inline-block;}
-      .buy {
-        width: 200px;
-        margin: 10px 0 0 29px;
+      .add-to-cart {height: 48px;}
+      .commerce-add-to-cart {
+
+        input[type='submit'] {
+          background: transparent url('#{$img-root}basket_mini_block.png') no-repeat;
+        }
+        .buy {
+          width: 200px;
+          margin: 10px 0 0 29px;
+        }
       }
 
       &:first-child {
@@ -1115,7 +1122,77 @@ body[class*="page-catalog-"] {
   }
 }
 
+.page-cart {
 
+  .breadcrumb {display: none;}
+  .l-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h1 {
+      position: relative;
+      margin-bottom: 1.5em;
+
+      @include hr-line;
+    }
+
+    table.to-mail {
+      img {display: none;}
+      .views-field-edit-delete {display: none;}
+    }
+    #edit-submit {display: none;}
+
+    .views-form-commerce-cart-form-default>div>table {
+      width: 100%;
+
+      td {padding-left: 5px;}
+      input[type="text"] {width: 50px;}
+    }
+
+    #cartinfo {
+      &.modal {
+        width: 330px;
+        left: 60%;
+        padding-top: 26px;
+
+        .modal-header {
+          border: none;
+
+          button {margin-top: 0; margin-right: 7px;}
+        }
+        input[type="text"] {width: 220px;}
+        input.invalid {
+          border-color: #E9322D;
+          -webkit-box-shadow: 0 0 6px #F8B9B7;
+          -moz-box-shadow: 0 0 6px #f8b9b7;
+          box-shadow: 0 0 6px #F8B9B7;
+          color: #B94A48;
+        }
+
+        .modal-footer {
+          background: none;
+          box-shadow: none;
+          border: none;
+          border-radius: 0;
+          text-align: center;
+        }
+      }
+    }
+    #thanks {
+      &.modal {
+        width: 350px;
+        height: 160px;
+        color: #191818;
+        left: 60%;
+        border: none;
+        border-radius: 0;
+
+        p {margin: 40px 40px 0 20px;}
+      }
+    }
+  }
+}
 /* ===============
     Block custom
     ============= */
@@ -1127,6 +1204,41 @@ body[class*="page-catalog-"] {
 //  .jcrop-preview-wrapper { width: auto !important; height: auto !important;}
 //  .jcrop-preview {max-width: 500px !important; height: auto !important;}
 //}
+
+#userinfo {
+  width: 500px;
+
+  .modal-header {padding-bottom: 0;}
+}
+.messages--commerce-add-to-cart-confirmation {
+  margin: 0;
+  padding: 0;
+  background-position: 0;
+  background: transparent;
+  border: none;
+
+.added-product-title,
+.button-wrapper {display: none;}
+
+  .commerce-product-title {
+    font-size: 1.5em;
+    display: inline-block;
+
+   .commerce-product-title-label {display: none;}
+  }
+  .field--image {
+    display: inline-block;
+    max-width: 80px;
+    float: none !important;
+
+    img {border-radius: 20px; max-width: 80px !important;}
+  }
+  .views-field-commerce-total {
+    margin: 15px 0 0 20px;
+
+    .views-label-commerce-total {front-weight: 700; font-size: 1.2em;}
+  }
+}
 
 .popular-container{
 

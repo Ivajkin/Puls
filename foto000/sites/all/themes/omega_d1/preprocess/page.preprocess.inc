@@ -28,6 +28,8 @@ function omega_d1_preprocess_page(&$variables) {
         drupal_add_css("sites/all/libraries/prettyPhoto/old/prettyPhoto.css");
         //drupal_add_js("/sites/all/libraries/prettyPhoto/js/jquery.prettyPhoto.js");
         //drupal_add_css("sites/all/libraries/prettyPhoto/css/jquery.prettyPhoto.css");
+        drupal_add_css('sites/all/libraries/bootstrap/css/bootstrap.min.css');
+        drupal_add_js('sites/all/libraries/bootstrap/js/bootstrap.min.js');
 
         drupal_add_js("/".$thp."/js/img.gallery.js");
         return;
@@ -43,6 +45,9 @@ function omega_d1_preprocess_page(&$variables) {
         drupal_add_js("/".$thp."/js/img.screenlist.js");
         drupal_add_js("/".$thp."/js/img.gallery.js");
 
+        drupal_add_css('sites/all/libraries/bootstrap/css/bootstrap.min.css');
+        drupal_add_js('sites/all/libraries/bootstrap/js/bootstrap.min.js');
+
         drupal_add_css('sites/all/libraries/bxslider/jquery.bxslider.css');
         drupal_add_js('/sites/all/libraries/bxslider/jquery.bxslider.min.js');
         drupal_add_js("/".$thp."/js/slcool.js");
@@ -52,6 +57,11 @@ function omega_d1_preprocess_page(&$variables) {
         //Use vars array for proper manipulation
         return;
     }
+    if ( arg(0) == 'cart') {
+        drupal_add_css('sites/all/libraries/bootstrap/css/bootstrap.min.css');
+        drupal_add_js('sites/all/libraries/bootstrap/js/bootstrap.min.js');
+        drupal_add_js("/".$thp."/js/cart.js");
+    }
 
     //Alias specific for node
     $n_alias= drupal_lookup_path('alias', $_GET['q']);
@@ -59,6 +69,9 @@ function omega_d1_preprocess_page(&$variables) {
         drupal_add_js("/sites/all/libraries/prettyPhoto/old/jquery.prettyPhoto.js");
         drupal_add_css("sites/all/libraries/prettyPhoto/old/prettyPhoto.css");
         drupal_add_js("/".$thp."/js/img.gallery.js");
+
+        drupal_add_css('sites/all/libraries/bootstrap/css/bootstrap.min.css');
+        drupal_add_js('sites/all/libraries/bootstrap/js/bootstrap.min.js');
         return;
     }
 }
