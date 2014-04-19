@@ -40,24 +40,26 @@
                 .on('hidden.bs.modal', function (e) {
                     if (settings.sended) {
                         //console.log(899);
-                        $('table.views-table img, .views-field-edit-delete').css('display', 'none');
-                        $('table.views-table img').attr('height', 0);
-                        $('table.views-table img').attr('width', 0);
-                        $('.views-field-edit-quantity input[type="text"]').prop('readonly', 'true');
+                        //Copy table
+                        $('.view-commerce-cart-form').before('<div id="print-table"></div>');
+                        $('.view-commerce-cart-form .views-table').clone().appendTo('#print-table');
+                        $('#print-table .views-field-edit-delete').remove();
+                        $('#print-table .views-field-edit-quantity input[type="text"]').prop('readonly', 'true');
+                        $('#print-table').append('<p><strong>' + $('.commerce-price-formatted-components, .line-item-total').clone().text() + '</strong></p>');
+                        $('#print-table .views-field-line-item-title a').each(function(){
+                            tmp= $(this).attr('href');
+                            if (!tmp.match('http'))
+                                $(this).attr('href', location.origin + tmp);
+                        });
 
                         datamail= {
                             name: $('#cartinfo input.text').val(),
                             phone: $('#cartinfo input.phone').val(),
                             email: $('#cartinfo input.email').val(),
-                            staff: Drupal.theme('escape','<table class="views-table cols-5">'+ $('table.views-table').html() +'</table><p>'+ $('.commerce-price-formatted-components, .line-item-total').text() +'</p>')
+                            staff: Drupal.theme('escape', $('#print-table').html())
                         };
 
-                        $('table.views-table img').css('display', 'inline');
-                        $('.views-field-edit-delete').css('display', 'inline-block');
-                        $('th.views-field-edit-delete').css('display', 'table-cell');
-                        $('.views-field-edit-quantity input[type="text"]').removeProp('readonly');
-                        $('table.views-table img').attr('height', '130');
-                        $('table.views-table img').attr('width', '150');
+                        $('#print-table').remove();
 
                         //console.log('before post');
                         $('.wait-load').css('display', 'block');

@@ -119,9 +119,4 @@ var mediawidthmax = 1140;
       }
   }
 
-//    Drupal.behaviors.omegaD1HFix = {
-//        attach: function(c, s){
-//            $('.l-page').height($('body').height());
-//        }
-//    }
 })(jQuery);
