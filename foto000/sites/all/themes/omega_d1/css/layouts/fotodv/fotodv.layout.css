@@ -4,8 +4,37 @@
  * Styling of the "Fotodv" layout demonstrating the Compass grid extension Susy
  * and building mobile first layouts.
  ******************************************************************************/
+html {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
   min-width: 800px;
+}
+
+/*H-Fix*/
+.l-page {
+  height: 100%;
+}
+
+.h-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+.h-wrapper {
+  padding-bottom: 90px;
+}
+
+.l-footer {
+  height: 90px;
+  margin-top: -90px;
 }
 
 .l-header,

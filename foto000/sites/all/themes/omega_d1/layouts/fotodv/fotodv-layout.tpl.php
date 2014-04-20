@@ -1,5 +1,7 @@
 <div<?php print $attributes; ?>>
-  <header class="l-header" role="banner">
+    <div class="h-container">
+        <div class="h-wrapper">
+            <header class="l-header" role="banner">
     <div class="l-branding">
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Главная'); ?>" rel="home" class="site-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
@@ -24,7 +26,7 @@
     <?php print render($page['navigation']); ?>
   </header>
 
-  <div class="l-main">
+            <div class="l-main">
     <div class="l-content" role="main">
       <?php print render($page['highlighted']); ?>
       <?php print $breadcrumb; ?>
@@ -47,7 +49,8 @@
     <?php print render($page['sidebar_first']); ?>
     <?php print render($page['sidebar_second']); ?>
   </div>
-
+        </div>
+    </div>
   <footer class="l-footer" role="contentinfo">
       <?php print render($page['footer']); ?>
       <div class="copyright">Разработано <a href="http://www.tmedia.pro/"><img src="/<?php echo drupal_get_path('theme', 'omega_d1'); ?>/images/copyright.png" alt="Техно Медиа Techno Media"></a> <span class="s-nowrap">© ООО «Техно Медиа»</span>

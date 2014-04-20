@@ -319,7 +319,6 @@ body {
   font: 100%/1.4 $font_text;
   min-width: 480px;
   color: $color_t_std;
-  height: 100%;
 
   background-color: $color_page_back;
   /*background-color: transparentize($color_page_back, 0.1);*/
@@ -411,7 +410,7 @@ input.invalid {
 /* ==================
    Magic Happens Here
    ================== */
-.l-main {min-height: 600px;}
+
 .l-header {
   font-family: $font_head;
 

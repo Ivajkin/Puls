@@ -27,7 +27,33 @@ $tab: 36em 12; // At 44em use 12 columns.
 $desk: 70em 16; // At 70em use 16 columns.
 $dmax: 80em 16; // At 70em use 16 columns.
 
-body {min-width: $container-min-width;}
+html {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  min-width: $container-min-width;
+}
+/*H-Fix*/
+.l-page {height: 100%;}
+.h-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+.h-wrapper {
+  padding-bottom: 90px;
+}
+.l-footer {
+  height: 90px;
+  margin-top: -90px;
+}
+
+//.l-main {min-height: 600px;}
 
 .l-header,
 .l-main,
