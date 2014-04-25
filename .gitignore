@@ -16,7 +16,7 @@ Puls/tmedia/*
 *.tmp
 *.temp
 *.directory
-**/sites/default/files/css/*
+**/files/css/*.css
 
 # Packages #
 ############
