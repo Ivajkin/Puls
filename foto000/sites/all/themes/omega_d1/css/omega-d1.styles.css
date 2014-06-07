@@ -717,15 +717,68 @@ input.invalid {
 }
 .page-albums.section-albums .l-content .view-content .views-field-field-image {
   position: relative;
-  overflow: hidden;
+}
+.page-albums.section-albums .l-content .view-content .views-field-field-image .field-content {
   *zoom: 1;
 }
-.page-albums.section-albums .l-content .view-content .field--image {
+.page-albums.section-albums .l-content .view-content .views-field-field-image .field-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.page-albums.section-albums .l-content .view-content .views-field-field-image
+.field--image {
   float: left;
   width: 18.5%;
   margin: 0 0.5% 10px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  /*&:first-child:hover {margin-left:100px;}*/
 }
-.page-albums.section-albums .l-content .view-content .field--image img {
+.page-albums.section-albums .l-content .view-content .views-field-field-image
+.field--image:hover {
+  transform: scale(2);
+  -ms-transform: scale(2);
+  /* IE 9 */
+  -moz-transform: scale(2);
+  /* Firefox */
+  -webkit-transform: scale(2);
+  /* Safari and Chrome */
+  -o-transform: scale(2);
+  /* Opera */
+  box-shadow: 0 10px 30px black;
+}
+.page-albums.section-albums .l-content .view-content .views-field-field-image
+.field--image:first-child:hover {
+  width: 226px;
+  height: 157px;
+  box-shadow: none;
+}
+.page-albums.section-albums .l-content .view-content .views-field-field-image
+.field--image:first-child:hover img {
+  position: absolute;
+  left: 50px;
+  z-index: 50;
+  box-shadow: 0 10px 30px black;
+}
+.page-albums.section-albums .l-content .view-content .views-field-field-image
+.field--image:nth-child(5n):hover {
+  width: 226px;
+  height: 157px;
+  box-shadow: none;
+}
+.page-albums.section-albums .l-content .view-content .views-field-field-image
+.field--image:nth-child(5n):hover img {
+  position: absolute;
+  right: 50px;
+  z-index: 50;
+  box-shadow: 0 10px 30px black;
+}
+.page-albums.section-albums .l-content .view-content .views-field-field-image
+.field--image img {
   max-width: 235px;
 }
 .page-albums.section-albums .l-content .view-content .views-field-add-to-cart-form {

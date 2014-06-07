@@ -1,0 +1,183 @@
+/*******************************************************************************
+ * Std.layout.scss
+ *
+ * Styling of the "Fotodv" layout demonstrating the Compass grid extension Susy
+ * and building mobile first layouts.
+ ******************************************************************************/
+html {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  min-width: 480px;
+}
+
+/*H-Fix*/
+#container {
+  height: 100%;
+}
+
+.h-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+.h-wrapper {
+  padding-bottom: 90px;
+}
+
+footer.footer {
+  height: 90px;
+  margin-top: -90px;
+}
+
+header.header,
+#content,
+footer.footer {
+  *zoom: 1;
+  max-width: 1230px;
+  _width: 1230px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+header.header:after,
+#content:after,
+footer.footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header.header {
+  padding-top: 20px;
+}
+
+footer.footer {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+.l-region--highlighted,
+.l-region--help,
+.sidebar-left,
+.sidebar-right {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 36em) {
+  header.header,
+  #content,
+  footer.footer {
+    max-width: 1230px;
+  }
+
+  #container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .l-region--header {
+    width: 66.35514%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .l-region--navigation {
+    clear: both;
+  }
+
+  .has-sidebar-first #main,
+  .has-sidebar-second #main,
+  .has-two-sidebars #main {
+    width: 66.35514%;
+    float: left;
+    margin-right: 0.93458%;
+  }
+  .has-sidebar-first .sidebar-left,
+  .has-sidebar-first .sidebar-right,
+  .has-sidebar-second .sidebar-left,
+  .has-sidebar-second .sidebar-right,
+  .has-two-sidebars .sidebar-left,
+  .has-two-sidebars .sidebar-right {
+    width: 32.71028%;
+    float: right;
+    margin-right: 0;
+  }
+  .has-sidebar-first .sidebar-right,
+  .has-sidebar-second .sidebar-right,
+  .has-two-sidebars .sidebar-right {
+    clear: right;
+  }
+}
+@media (min-width: 70em) {
+  header.header,
+  #content,
+  footer.footer {
+    max-width: 1230px;
+  }
+
+  .l-region--header {
+    width: 62.23776%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .has-sidebar-first #main {
+    width: 74.82517%;
+    float: right;
+    margin-right: 0;
+  }
+  .has-sidebar-first .sidebar-left {
+    width: 24.47552%;
+    float: left;
+    margin-right: 0.6993%;
+  }
+
+  .has-sidebar-second #main {
+    width: 74.82517%;
+    float: left;
+    margin-right: 0.6993%;
+  }
+  .has-sidebar-second .sidebar-right {
+    width: 24.47552%;
+    float: right;
+    margin-right: 0;
+    clear: none;
+  }
+
+  .has-two-sidebars #main {
+    width: 49.65035%;
+    float: left;
+    margin-right: 0.6993%;
+    margin-left: 25.17483%;
+  }
+  .has-two-sidebars .sidebar-left,
+  .has-two-sidebars .sidebar-right {
+    width: 24.47552%;
+    float: left;
+    margin-right: 0.6993%;
+  }
+  .has-two-sidebars .sidebar-left {
+    margin-left: -75.52448%;
+  }
+  .has-two-sidebars .sidebar-right {
+    float: right;
+    margin-right: 0;
+    clear: none;
+  }
+}
+@media (min-width: 80em) {
+  #container {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

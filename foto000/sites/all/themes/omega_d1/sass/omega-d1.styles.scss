@@ -749,13 +749,56 @@ input.invalid {
       .views-field-field-image {
         position: relative;
 
-        @include clearfix;
+        .field-content{
+          @include pie-clearfix;
+        }
       }
+      .views-field-field-image
       .field--image {
         float: left;
         //width: (100%/5 - 2*0.5);
         width: 18.5%;
         margin: 0 0.5% 10px;
+
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+
+        &:hover {
+          transform:scale(2);
+          -ms-transform:scale(2); /* IE 9 */
+          -moz-transform:scale(2); /* Firefox */
+          -webkit-transform:scale(2); /* Safari and Chrome */
+          -o-transform:scale(2); /* Opera */
+          box-shadow: 0 10px 30px black;
+        }
+        /*&:first-child:hover {margin-left:100px;}*/
+        &:first-child:hover {
+          width: 226px;
+          height: 157px;
+          box-shadow: none;
+
+          img{
+            position: absolute;
+            left: 50px;
+            z-index: 50;
+            box-shadow: 0 10px 30px black;
+          }
+        }
+        &:nth-child(5n):hover {
+          width: 226px;
+          height: 157px;
+          box-shadow: none;
+
+          img{
+            position: absolute;
+            right: 50px;
+            z-index: 50;
+            box-shadow: 0 10px 30px black;
+          }
+        }
 
         img {max-width: 235px;}
       }

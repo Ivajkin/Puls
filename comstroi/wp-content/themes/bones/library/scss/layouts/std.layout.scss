@@ -1,0 +1,158 @@
+/*******************************************************************************
+ * Std.layout.scss
+ *
+ * Styling of the "Fotodv" layout demonstrating the Compass grid extension Susy
+ * and building mobile first layouts.
+ ******************************************************************************/
+@import "susy";
+
+// Susy Variables
+
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 20px;
+$horz-spacing-unit: 0.5em;
+
+// Define Susy grid variables mobile first.
+$total-columns: 4;
+$column-width: 4em;
+$gutter-width: $horz-spacing-unit;
+$grid-padding: 5px;
+
+$container-style: magic;
+$container-width: 1240px;
+$container-min-width: 480px;
+
+// Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
+$tab: 36em 12; // At 44em use 12 columns.
+$desk: 70em 16; // At 70em use 16 columns.
+$dmax: 80em 16; // At 70em use 16 columns.
+
+html {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  min-width: $container-min-width;
+}
+/*H-Fix*/
+#container {height: 100%;}
+.h-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+.h-wrapper {
+  padding-bottom: 90px;
+}
+footer.footer {
+  height: 90px;
+  margin-top: -90px;
+}
+
+//#content {min-height: 600px;}
+
+header.header,
+#content,
+footer.footer {
+  @include container; // Define these elements as the grid containers.
+  margin-bottom: $vert-spacing-unit;
+}
+
+header.header {padding-top: 20px;}
+footer.footer {margin-bottom: 0; padding-bottom: 20px;}
+
+.l-region--highlighted,
+.l-region--help,
+.sidebar-left,
+.sidebar-right {
+  margin-bottom: $vert-spacing-unit;
+}
+
+@include at-breakpoint($tab) { // At a given Susy Media Layout, use a given amount of columns.
+  header.header,
+  #content,
+  footer.footer {
+    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+  }
+  #container {padding-left: 10px; padding-right: 10px;}
+
+  .l-region--header{
+    @include span-columns(8 omega, 12); // Span the last (omega) 8 columns of 12.
+  }
+  .l-region--navigation {
+    clear: both;
+  }
+
+  .has-sidebar-first,
+  .has-sidebar-second,
+  .has-two-sidebars {
+    #main {
+      @include span-columns(8, 12); // Span 8 out of 12 columns.
+    }
+    .sidebar-left,
+    .sidebar-right {
+      @include span-columns(4 omega, 12); // Span the last (omega) 4 columns of 12.
+    }
+    .sidebar-right {
+      clear: right;
+    }
+  }
+}
+
+@include at-breakpoint($desk) {
+  header.header,
+  #content,
+  footer.footer {
+    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+  }
+//  .l-branding {
+//    @include span-columns(6, 16); // Span 6 out of 16 columns.
+//  }
+  .l-region--header{
+    @include span-columns(10 omega, 16); // Span the last (omega) 10 columns of 16.
+  }
+
+  .has-sidebar-first {
+    #main {
+      @include span-columns(12 omega, 16); // Span the last (omega) 12 columns of 16.
+    }
+    .sidebar-left {
+      @include span-columns(4, 16); // Span 4 out of 16 columns.
+    }
+  }
+  .has-sidebar-second {
+    #main {
+      @include span-columns(12, 16); // Span 12 out of 16 columns.
+    }
+    .sidebar-right {
+      @include span-columns(4 omega, 16); // Span the last (omega) 4 columns of 16.
+      clear: none;
+    }
+  }
+
+  .has-two-sidebars {
+    #main {
+      @include span-columns(8, 16); // Span 8 out of 16 columns.
+      @include push(4, 16);  // Push element by adding 4 out of 16 columns of left margin.
+    }
+    .sidebar-left,
+    .sidebar-right {
+      @include span-columns(4, 16); // Span 4 out of 16 columns.
+    }
+    .sidebar-left {
+      @include pull(12, 16); // Pull element by adding 12 out of 16 columns of negative left margin.
+    }
+    .sidebar-right {
+      @include omega; // This element spans the last (omega) column.
+      clear: none;
+    }
+  }
+}
+
+@include at-breakpoint($dmax) {
+  #container {margin-left: 0px; margin-right: 0px;}
+}

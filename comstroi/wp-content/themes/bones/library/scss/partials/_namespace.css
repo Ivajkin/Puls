@@ -1,0 +1,109 @@
+/******************
+*Define Global Vars
+*******************/
+/************
+*Helper Class
+*************/
+.simple {
+ /**
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    contenteditable attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that are clearfixed.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/ }
+  .simple.hide {
+    display: none; }
+  .simple.invisible {
+    visibility: hidden; }
+  .simple.clearfix {
+    clear: both; }
+  .simple.nowrap {
+    white-space: nowrap; }
+  .simple.wrap {
+    white-space: normal; }
+  .simple.upper {
+    text-transform: uppercase; }
+  .simple.cf {
+    /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+    *zoom: 1; }
+    .simple.cf:before, .simple.cf:after {
+      content: " ";
+      /* 1 */
+      display: table;
+      /* 2 */ }
+    .simple.cf:after {
+      clear: both; }
+
+.image-replacement,
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.clearfix, .cf {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after, .cf:before, .cf:after {
+    content: "";
+    display: table; }
+  .clearfix:after, .cf:after {
+    clear: both; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+/* ======================================
+        Font Load
+        ====================================*/
+@font-face {
+  font-family: 'Calibri';
+  src: local("Calibri");
+  src: url("font/calibri.eot");
+  src: url("font/calibri.eot") format("embedded-opentype"), url("font/calibri.woff") format("woff"), url("font/calibri.ttf") format("truetype"), url("font/calibri.svg#CalibriRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Arial';
+  src: local("Arial");
+  src: url("font/arial.eot");
+  src: url("font/arial.eot") format("embedded-opentype"), url("font/arial.woff") format("woff"), url("font/arial.ttf") format("truetype"), url("font/arial.svg#ArialRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Segoe UI Semibold';
+  src: local("Segoe UI Semibold");
+  src: url("font/seguisb.eot");
+  src: url("font/seguisb.eot") format("embedded-opentype"), url("font/seguisb.woff") format("woff"), url("font/seguisb.ttf") format("truetype"), url("font/seguisb.svg#SegoeUIRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Segoe UI';
+  src: local("Segoe UI");
+  src: url("font/segoeui.eot");
+  src: url("font/segoeui.eot") format("embedded-opentype"), url("font/segoeui.woff") format("woff"), url("font/segoeui.ttf") format("truetype"), url("font/segoeui.svg#SegoeUIRegular") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Cuprum Bold';
+  src: local("Cuprum Bold");
+  src: url("font/cuprum-bold.eot");
+  src: url("font/cuprum-bold.eot") format("embedded-opentype"), url("font/cuprum-bold.woff") format("woff"), url("font/cuprum-bold.ttf") format("cuprum-bold"), url("font/cuprum-bold.svg#CuprumBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Cuprum';
+  src: local("Cuprum");
+  src: url("font/cuprum.eot");
+  src: url("font/cuprum.eot") format("embedded-opentype"), url("font/cuprum.woff") format("woff"), url("font/cuprum.ttf") format("cuprum-bold"), url("font/cuprum.svg#CuprumRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }

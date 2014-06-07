@@ -298,7 +298,7 @@
 			// if "vertical" mode, always use adaptiveHeight to prevent odd behavior
 			if (slider.settings.mode == 'vertical') slider.settings.adaptiveHeight = true;
 			// set the viewport height
-			slider.viewport.height(getViewportHeight());
+			slider.viewport.height(plugin());
 			// make sure everything is positioned just right (same as a window resize)
 			el.redrawSlider();
 			// onSliderLoad callback
