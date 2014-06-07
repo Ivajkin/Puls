@@ -159,11 +159,52 @@ probably best not to use it. I mean, were you going to anyway? */
   clear: both;
 }
 
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .image-replacement,
 .ir {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.ir2 {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+}
+.ir2:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
 }
 
 .clearfix, .cf, .comment-respond {
@@ -190,517 +231,23 @@ span.amp {
         Font Load
         ====================================*/
 @font-face {
-  font-family: 'Calibri';
-  src: local("Calibri");
-  src: url("font/calibri.eot");
-  src: url("font/calibri.eot") format("embedded-opentype"), url("font/calibri.woff") format("woff"), url("font/calibri.ttf") format("truetype"), url("font/calibri.svg#CalibriRegular") format("svg");
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Bender-Bold';
+  src: url("fonts/Bender-Bold.eot?") format("eot"), url("fonts/Bender-Bold.otf") format("opentype"), url("fonts/Bender-Bold.woff") format("woff"), url("fonts/Bender-Bold.ttf") format("truetype"), url("fonts/Bender-Bold.svg#Bender-Bold") format("svg");
 }
 
 @font-face {
-  font-family: 'Arial';
-  src: local("Arial");
-  src: url("font/arial.eot");
-  src: url("font/arial.eot") format("embedded-opentype"), url("font/arial.woff") format("woff"), url("font/arial.ttf") format("truetype"), url("font/arial.svg#ArialRegular") format("svg");
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'OpenSans-Semibold';
+  src: url("fonts/OpenSans-Semibold.eot?") format("eot"), url("fonts/OpenSans-Semibold.woff") format("woff"), url("fonts/OpenSans-Semibold.ttf") format("truetype"), url("fonts/OpenSans-Semibold.svg#OpenSans-Semibold") format("svg");
 }
 
 @font-face {
-  font-family: 'Segoe UI Semibold';
-  src: local("Segoe UI Semibold");
-  src: url("font/seguisb.eot");
-  src: url("font/seguisb.eot") format("embedded-opentype"), url("font/seguisb.woff") format("woff"), url("font/seguisb.ttf") format("truetype"), url("font/seguisb.svg#SegoeUIRegular") format("svg");
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'OpenSans';
+  src: url("fonts/OpenSans.eot?") format("eot"), url("fonts/OpenSans.woff") format("woff"), url("fonts/OpenSans.ttf") format("truetype"), url("fonts/OpenSans.svg#OpenSans") format("svg");
 }
 
 @font-face {
-  font-family: 'Segoe UI';
-  src: local("Segoe UI");
-  src: url("font/segoeui.eot");
-  src: url("font/segoeui.eot") format("embedded-opentype"), url("font/segoeui.woff") format("woff"), url("font/segoeui.ttf") format("truetype"), url("font/segoeui.svg#SegoeUIRegular") format("svg");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cuprum Bold';
-  src: local("Cuprum Bold");
-  src: url("font/cuprum-bold.eot");
-  src: url("font/cuprum-bold.eot") format("embedded-opentype"), url("font/cuprum-bold.woff") format("woff"), url("font/cuprum-bold.ttf") format("cuprum-bold"), url("font/cuprum-bold.svg#CuprumBold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cuprum';
-  src: local("Cuprum");
-  src: url("font/cuprum.eot");
-  src: url("font/cuprum.eot") format("embedded-opentype"), url("font/cuprum.woff") format("woff"), url("font/cuprum.ttf") format("cuprum-bold"), url("font/cuprum.svg#CuprumRegular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined in IE 8/9.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block;
-}
-
-/**
- * Correct `inline-block` display not defined in IE 8/9.
- */
-audio,
-canvas,
-video {
-  display: inline-block;
-}
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address `[hidden]` styling not present in IE 8/9.
- * Hide the `template` element in IE, Safari, and Firefox < 22.
- */
-[hidden],
-template {
-  display: none;
-}
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/**
- * Remove default margin.
- */
-body {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Links
-   ========================================================================== */
-/**
- * Remove the gray background color from active links in IE 10.
- */
-a {
-  background: transparent;
-}
-
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
- */
-a:focus {
-  outline: thin dotted;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin: 0.83em 0;
-}
-
-h3 {
-  font-size: 1.17em;
-  margin: 1em 0;
-}
-
-h4 {
-  font-size: 1em;
-  margin: 1.33em 0;
-}
-
-h5 {
-  font-size: 0.83em;
-  margin: 1.67em 0;
-}
-
-h6 {
-  font-size: 0.67em;
-  margin: 2.33em 0;
-}
-
-/**
- * Address styling not present in IE 8/9, Safari 5, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
-b,
-strong,
-.strong {
-  font-weight: bold;
-}
-
-/**
- * Address styling not present in Safari 5 and Chrome.
- */
-dfn,
-em,
-.em {
-  font-style: italic;
-}
-
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/*
- * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
-*/
-p {
-  -webkit-hyphens: auto;
-  -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-
-/*
- * Addresses margins set differently in IE6/7.
- */
-pre {
-  margin: 0;
-}
-
-/**
- * Correct font family set oddly in Safari 5 and Chrome.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-/**
- * Improve readability of pre-formatted text in all browsers.
- */
-pre {
-  white-space: pre-wrap;
-}
-
-/**
- * Set consistent quote types.
- */
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-
-small, .small {
-  font-size: 75%;
-}
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-/* ==========================================================================
-  Lists
-========================================================================== */
-/*
- * Addresses margins set differently in IE6/7.
- */
-dl,
-menu,
-ol,
-ul {
-  margin: 1em 0;
-}
-
-dd {
-  margin: 0;
-}
-
-/*
- * Addresses paddings set differently in IE6/7.
- */
-menu {
-  padding: 0 0 0 40px;
-}
-
-ol,
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-/*
- * Corrects list images handled incorrectly in IE7.
- */
-nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none;
-}
-
-/* ==========================================================================
-  Embedded content
-========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9.
- */
-img {
-  border: 0;
-}
-
-/**
- * Correct overflow displayed oddly in IE 9.
- */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-figure {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-/**
- * Define consistent border, margin, and padding.
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/**
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- */
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 2 */
-  margin: 0;
-  /* 3 */
-}
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-button,
-input {
-  line-height: normal;
-}
-
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
-button,
-select {
-  text-transform: none;
-}
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-}
-
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box;
-}
-
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/**
- * 1. Remove default vertical scrollbar in IE 8/9.
- * 2. Improve readability and alignment in all browsers.
- */
-textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */
-}
-
-/* ==========================================================================
-   Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  font-family: 'OpenSans-Light';
+  src: url("fonts/OpenSans-Light.eot?") format("eot"), url("fonts/OpenSans-Light.woff") format("woff"), url("fonts/OpenSans-Light.ttf") format("truetype"), url("fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
 }
 
 /******************************************************************
@@ -793,6 +340,21 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+/* =======
+   Units
+   ======= */
+/* ========
+   Mixin
+   ======== */
+/* =======
+   Units
+   ======= */
+/* ============
+    Colors
+    =========== */
+/* ============
+    Fonts
+    =========== */
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1210,62 +772,18 @@ and will be used across all viewports.
 
 ******************************************************************/
 /*********************
-GENERAL STYLES
+GENERAL/Wrapper STYLES
 *********************/
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
-  color: #5c6b80;
-  background-color: #eaedf2;
-  -webkit-font-smoothing: antialiased;
+  font: 100%/1.4 "Arial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #888888;
+  background-color: transparent;
+  /*background-color: transparentize($color_page_back, 0.1);*/
 }
 
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-/* for sites that are read right to left (i.e. hebrew) */
-/* home page */
-/* blog template page */
-/* archive page */
-/* date archive page */
-/* replace the number to the corresponding page number */
-/* search page */
-/* search result page */
-/* no results search page */
-/* individual paged search (i.e. body.search-paged-3) */
-/* 404 page */
-/* single post page */
-/* individual post page by id (i.e. body.postid-73) */
-/* individual paged single (i.e. body.single-paged-3) */
-/* attatchment page */
-/* individual attatchment page (i.e. body.attachmentid-763) */
-/* style mime type pages */
-/* author page */
-/* user nicename (i.e. body.author-samueladams) */
-/* paged author archives (i.e. body.author-paged-4) for page 4 */
-/* category page */
-/* individual category page (i.e. body.category-6) */
-/* replace the number to the corresponding page number */
-/* tag page */
-/* individual tag page (i.e. body.tag-news) */
-/* replace the number to the corresponding page number */
-/* custom page template page */
-/* individual page template (i.e. body.page-template-contact-php */
-/* replace the number to the corresponding page number */
-/* parent page template */
-/* child page template */
-/* replace the number to the corresponding page number */
-/* if user is logged in */
-/* paged items like search results or archives */
-/* individual paged (i.e. body.paged-3) */
-/*********************
-LAYOUT & GRID STYLES
-*********************/
-/*********************
-LINK STYLES
-*********************/
+/******************************************************************
+Element STYLES
+******************************************************************/
 a, a:visited {
   color: #f01d4f;
   /* on hover */
@@ -1284,12 +802,37 @@ a:link, a:visited:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
 
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
+a {
+  color: #888888;
+  text-decoration: none;
+  text-shadow: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  color: #888888;
+}
+
+ul, ol {
+  text-indent: 0;
+}
+
+p {
+  text-indent: 1.3em;
+  word-break: break-all;
+  /*text-shadow: 0px 1px 0px;*/
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
-  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Cuprum";
+  line-height: 1;
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
@@ -1298,33 +841,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
-}
-
-h1, .h1 {
-  font-size: 2.5em;
-  line-height: 1.333em;
-}
-
-h2, .h2 {
-  font-size: 1.75em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em;
-}
-
-h3, .h3 {
-  font-size: 1.125em;
-}
-
-h4, .h4 {
-  font-size: 1.1em;
-  font-weight: 700;
-}
-
-h5, .h5 {
-  font-size: 0.846em;
-  line-height: 2.09em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 /*********************
@@ -1345,96 +861,6 @@ HEADER STYLES
   width: 100%;
 }
 
-/*********************
-NAVIGATION STYLES
-*********************/
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-.nav {
-  border: 0;
-  margin: 0;
-  /* end .menu li */
-  /* showing sub-menus */
-}
-.nav ul {
-  margin-top: 0;
-}
-.nav li {
-  float: left;
-  position: relative;
-  /*
-  so you really have to rethink your dropdowns for mobile.
-  you don't want to have it expand too much because the
-  screen is so small. How you manage your menu should
-  depend on the project. Here's some great info on it:
-  http://www.alistapart.com/articles/organizing-mobile/
-  */
-}
-.nav li a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 0.75em;
-  border-bottom: 0;
-  /*
-  remember this is for mobile ONLY, so there's no need
-  to even declare hover styles here, you can do it in
-  the style.scss file where it's relevant. We want to
-  keep this file as small as possible!
-  */
-}
-.nav li a:hover, .nav li a:focus {
-  text-decoration: underline;
-  background-color: #eeeeee;
-  color: #262b3a;
-}
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
-  padding-left: 30px;
-}
-.nav ul.sub-menu,
-.nav ul.children {
-  margin-top: 0;
-  border: 1px solid #ccc;
-  border-top: 0;
-  position: absolute;
-  overflow: hidden;
-  visibility: hidden;
-  z-index: 8999;
-  /* highlight sub-menu current page */
-}
-.nav ul.sub-menu li,
-.nav ul.children li {
-  /*
-  if you need to go deeper, go nuts
-  just remember deeper menus suck
-  for usability. k, bai.
-  */
-}
-.nav ul.sub-menu li a,
-.nav ul.children li a {
-  padding-left: 10px;
-  border-right: 0;
-  display: block;
-  width: 180px;
-  border-bottom: 1px solid #ccc;
-}
-.nav ul.sub-menu li:last-child a,
-.nav ul.children li:last-child a {
-  border-bottom: 0;
-}
-.nav:hover ul {
-  top: auto;
-  overflow: visible;
-  visibility: visible;
-}
-
-/* end .nav */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -1467,15 +893,6 @@ POSTS & CONTENT STYLES
   margin: 0;
 }
 
-/* want to style individual post classes? Booya! */
-/* post by id (i.e. post-3) */
-/* general post style */
-/* general article on a page style */
-/* general style on an attatchment */
-/* sticky post style */
-/* hentry class */
-/* style by category (i.e. category-videos) */
-/* style by tag (i.e. tag-news) */
 /* post meta */
 .byline {
   color: #9fa6b4;
@@ -1583,86 +1000,119 @@ POSTS & CONTENT STYLES
 }
 
 /* end .wp-caption */
-/* image gallery styles */
-/* end .gallery */
-/* gallery caption styles */
 .tags {
   margin: 0;
 }
 
-#metaslider_67 .img {
-  width: 50%;
-  display: inline-block;
-  font-size: 1vw;
-}
-#metaslider_67 .img a {
-  width: 100%;
-}
-#metaslider_67 .img img {
-  width: 100%;
-  height: auto;
-  max-width: 480px;
-}
-#metaslider_67 .caption {
-  width: 50%;
-  display: inline-block;
-  word-wrap: break-word;
-  word-break: break-all;
-  vertical-align: top;
-  font-size: 1.2vw;
-}
-#metaslider_67 .caption h1 {
-  font-size: 3vw;
-}
-#metaslider_67 .caption h2 {
-  font-size: 2.1vw;
-}
-#metaslider_67 .caption h3 {
-  font-size: 1.5vw;
-}
-#metaslider_67 .caption h4 {
-  font-size: 1.3vw;
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+  clear: both;
+  background-color: #323944;
+  color: #f8f9fa;
 }
 
-.woocommerce table.cart img,
-.woocommerce-page table.cart img,
-.woocommerce #content table.cart img,
-.woocommerce-page #content table.cart img {
-  width: 90px;
-  height: auto;
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav
+a bit more in-depth. Remember to keep
+it simple because you'll have to
+override these styles for the desktop
+view.
+*/
+/* end .footer-links */
+/*********************
+Block STYLES
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+.nav {
+  border: 0;
   margin: 0;
+  /* end .menu li */
+  /* showing sub-menus */
 }
-
-.woocommerce ul.products li.product a img,
-.woocommerce-page ul.products li.product a img {
+.nav ul {
+  margin-top: 0;
+}
+.nav li {
+  float: left;
+  position: relative;
+  /*
+  so you really have to rethink your dropdowns for mobile.
+  you don't want to have it expand too much because the
+  screen is so small. How you manage your menu should
+  depend on the project. Here's some great info on it:
+  http://www.alistapart.com/articles/organizing-mobile/
+  */
+}
+.nav li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.75em;
+  border-bottom: 0;
+  /*
+  remember this is for mobile ONLY, so there's no need
+  to even declare hover styles here, you can do it in
+  the style.scss file where it's relevant. We want to
+  keep this file as small as possible!
+  */
+}
+.nav li a:hover, .nav li a:focus {
+  text-decoration: underline;
+  background-color: #eeeeee;
+  color: #262b3a;
+}
+.nav li ul.sub-menu li a,
+.nav li ul.children li a {
+  padding-left: 30px;
+}
+.nav ul.sub-menu,
+.nav ul.children {
+  margin-top: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  position: absolute;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 8999;
+  /* highlight sub-menu current page */
+}
+.nav ul.sub-menu li,
+.nav ul.children li {
+  /*
+  if you need to go deeper, go nuts
+  just remember deeper menus suck
+  for usability. k, bai.
+  */
+}
+.nav ul.sub-menu li a,
+.nav ul.children li a {
+  padding-left: 10px;
+  border-right: 0;
+  display: block;
   width: 180px;
-  height: auto;
+  border-bottom: 1px solid #ccc;
 }
-.woocommerce ul.products li.product a:hover img,
-.woocommerce-page ul.products li.product a:hover img {
-  width: 220px;
-  height: auto;
+.nav ul.sub-menu li:last-child a,
+.nav ul.children li:last-child a {
+  border-bottom: 0;
 }
-
-ul.products, .woocommerce-page ul.products {
-  margin: 0;
-}
-
-.woocommerce ul.product-caregory-top li.product,
-.woocommerce-page ul.product-caregory-top li.product {
-  margin: 0 1% 1em 0;
+.nav:hover ul {
+  top: auto;
+  overflow: visible;
+  visibility: visible;
 }
 
-#product-view {
-  width: 100%;
-  min-width: 400px;
-  max-width: 800px;
-  left: 40%;
-}
-
-/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/
+/* end .nav */
 .pagination,
 .wp-prev-next {
   margin: 1.5em 0;
@@ -1923,25 +1373,9 @@ SIDEBARS & ASIDES
   background: #EFF8FA;
 }
 
-/*********************
-FOOTER STYLES
-*********************/
-.footer {
-  clear: both;
-  background-color: #323944;
-  color: #f8f9fa;
-}
-
-/*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/
-/* end .footer-links */
+/* ===============
+    Querys
+    ============= */
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

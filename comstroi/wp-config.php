@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '^X1|o gBw])`QM98RA!y9;5Ck|gXBS+;7mpv3qtz.>x]6@),qDUf~rBf>y/v]fm=');
-define('SECURE_AUTH_KEY',  'Yto%@hExS[|+p$9PvjPQRFJf!ayJuy5y :E+~Cj#tpgjj?[1O1L^ mA|3K*(r[c,');
-define('LOGGED_IN_KEY',    ';OT!gIPcS%hTL6[4>eIW&u21<7<ggdC8C/n=<27#Jz2&Z~1Ja$oDoXk(z:AD61/+');
-define('NONCE_KEY',        ',k.-!7^Fj3<*+8;&Uy :lowc|W8B}iVDyMm5UvJfq.VRtG.J.IrSG?-eigJx#a5?');
-define('AUTH_SALT',        'p(Sl[29J~;B{-U*>1 -Ur)NW//2dz|@A;~eih>.ZKYc,:R1D-n-PHim[h|bD [!N');
-define('SECURE_AUTH_SALT', 'IOvtg$^}kE|= L7;6 u;e.T|ep>4d}mD-E*R{PUvT`Kx(@L;HpCS6NDu+8;sX0.v');
-define('LOGGED_IN_SALT',   ' B`x]UvDwXuR`lu|}qde0yC=1q=`xOi-b<~.+EUi)qX*Z+}#+%STv|(]+i]Qg2{S');
-define('NONCE_SALT',       ')&?V<LIIfiC.=,(nS@EJ+9PK2vS*/]]KtC<m7MeA8u|ogzbkueAJ[9(*rekMp]Gw');
+define('AUTH_KEY',         '|(6J4/Hr+)#W_xV.{oN{u!i|G!~{S@JvB@Nn8b|^&- G}dpOHYDFs.{}{|2+_iQr');
+define('SECURE_AUTH_KEY',  'Nli*+l1TJM1>GmyjX>KrVUr%]>Ch.rZGVSJVK4T=bB`LhdyZv=JsQa^-6CN!bMr8');
+define('LOGGED_IN_KEY',    'iy$rLU=s:OJ{pKV //<Di|Mb7pntG*ckuMnST[q,_^H}=>vcEF{ZDMuwFc[W+?kI');
+define('NONCE_KEY',        'l4LoB41|SLv4-U?$4Xj^9+^lnAY7(^4GXy=oM/.x4,25q nt5TJ6Qe/lZvY1tjtI');
+define('AUTH_SALT',        'H_PTp7-<<A/7*u^d{HN{.N6Z9-CwfkGORvq6F#;R:Tt-/9LePn1jt|]5B+R)?;hE');
+define('SECURE_AUTH_SALT', '&I# x*I<+rLqU_@+h&6vJDLv7*k|V}=@BVC+E5 EFJ|=MT(C!ai%FXz/]3+&)CAS');
+define('LOGGED_IN_SALT',   'A4H9xYh4H.!Z}-kZ}OPQn>6A0t|Er[lnP?fBXTf#zQNpC=RdhMu{S+U~,sr(l#2|');
+define('NONCE_SALT',       'aN{ZUhLg1ZH;OxwkWg&>b=/n(n4*+5LHAwjQ.[12X_f-Um0& wAkN/_|_.dj@/=$');
 
 /**#@-*/
 
@@ -70,6 +70,9 @@ $table_prefix  = 'wp_';
  * и присвойте WPLANG значение 'ru_RU'.
  */
 define('WPLANG', 'ru_RU');
+//define('WPLANG', '');
+
+define( 'WP_MEMORY_LIMIT', '96M' );
 
 /**
  * Для разработчиков: Режим отладки WordPress.

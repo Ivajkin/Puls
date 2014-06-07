@@ -1,38 +1,70 @@
 // normalize: http://necolas.github.io/normalize.css/
-@import "partials/normalize";
+@import "partials/add/normalize";
 
 // Use 'border-box' for the box model.
 @import "toolkit/border-box";
 
-//h1 {
-//  font-size: 2em;
-//  margin: 0.67em 0;
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1, .h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2, .h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3, .h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4, .h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5, .h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6, .h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0;
+}
+
+//h1, .h1 {
+//  font-size: 2.5em;
+//  line-height: 1.333em;
+//}
+//h2, .h2 {
+//  font-size: 1.75em;
+//  line-height: 1.4em;
+//  margin-bottom: 0.375em;
 //}
 //
-//h2 {
-//  font-size: 1.5em;
-//  margin: 0.83em 0;
+//h3, .h3 {
+//  font-size: 1.125em;
 //}
 //
-//h3 {
-//  font-size: 1.17em;
-//  margin: 1em 0;
+//h4, .h4 {
+//  font-size: 1.1em;
+//  font-weight: 700;
 //}
 //
-//h4 {
-//  font-size: 1em;
-//  margin: 1.33em 0;
+//h5, .h5 {
+//  font-size: 0.846em;
+//  line-height: 2.09em;
+//  text-transform: uppercase;
+//  letter-spacing: 2px;
 //}
-//
-//h5 {
-//  font-size: 0.83em;
-//  margin: 1.67em 0;
-//}
-//
-//h6 {
-//  font-size: 0.67em;
-//  margin: 2.33em 0;
-//}
+
 //
 //nav ul,
 //nav ol {
@@ -40,6 +72,63 @@
 //  list-style-image: none;
 //}
 //
-//:focus {
-//  outline: none;
-//}
+:focus {
+  outline: #00a0da;
+}
+
+html {font-size: 100%; color: #222;}
+body {
+  font-size: 100%;
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}*/
+
+img {
+  vertical-align: middle;
+  /*width: 100%;*/
+  height: auto;
+  /*max-width: 300px;*/
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+input.invalid {
+  border-color: #E9322D;
+  -webkit-box-shadow: 0 0 6px #F8B9B7;
+  -moz-box-shadow: 0 0 6px #f8b9b7;
+  box-shadow: 0 0 6px #F8B9B7;
+  color: #B94A48;
+}

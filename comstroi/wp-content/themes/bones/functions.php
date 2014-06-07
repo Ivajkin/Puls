@@ -227,23 +227,6 @@ add_action('wp_print_styles', 'bones_fonts');
  * My Custom Code
  */
 
-function create_my_taxonomies() {
-
-    register_taxonomy('actors', 'post', array(
-
-        'hierarchical' => false, 'label' => 'Actors',
-
-        'query_var' => true, 'rewrite' => true));
-
-    register_taxonomy('producers', 'post', array(
-
-        'hierarchical' => false, 'label' => 'Producers',
-
-        'query_var' => true, 'rewrite' => true));
-}
-add_action('init', 'create_my_taxonomies', 0);
-
-
 /**
  * WooCommerce Intergation
  */
@@ -258,49 +241,11 @@ function bones_start() {
 				'<div id="inner-content" class="wrap cf">'.
 						'<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">';
 }
-
 function bones_end() {
     echo '</div></div></div></div></div>';
 }
 
 add_theme_support( 'woocommerce' );
-
-/**
- * Add field to admin setting menu
- */
-
-add_action('admin_menu', 'add_gcf_interface');
-function add_gcf_interface() {
-
-    add_options_page('Global Custom Fields', 'Global Custom Fields', '8', 'functions',
-        'editglobalcustomfields');
-}
-function editglobalcustomfields() { ?>
-
-    <div class="wrap">
-
-        <h2>Global Custom Fields</h2>
-
-        <form method="post" action="options.php">
-
-            <?php wp_nonce_field('update-options') ?>
-
-            <p><strong>Amazon ID:</strong><br />
-
-                <input type="text" name="amazonid" size="45"
-
-                       value="<?php echo get_option('amazonid'); ?>" />
-            </p>
-
-            <p><input type="submit" name="Submit" value="Update Options" /></p>
-
-            <input type="hidden" name="action" value="update" />
-
-            <input type="hidden" name="page_options" value="amazonid" />
-
-        </form>
-    </div>
-<?php }
 
 /**
  * On Page load
