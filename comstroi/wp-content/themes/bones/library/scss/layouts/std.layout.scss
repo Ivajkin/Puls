@@ -16,11 +16,14 @@ $horz-spacing-unit: 0.5em;
 $total-columns: 4;
 $column-width: 4em;
 $gutter-width: $horz-spacing-unit;
-$grid-padding: 5px;
+$grid-padding: 0;
 
 $container-style: magic;
 $container-width: 1240px;
-$container-min-width: 480px;
+
+$container-min-width: 700px;
+$container-mo-padding: (10em/16); //padding for low resolution displays, makes minimal text spacing from browser window
+$header-height-full: 557px;
 
 // Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
 $tab: 36em 12; // At 44em use 12 columns.
@@ -60,9 +63,15 @@ header.header,
 footer.footer {
   @include container; // Define these elements as the grid containers.
   margin-bottom: $vert-spacing-unit;
+  position: relative;
+
+  & > div {padding-left: $container-mo-padding; padding-right: $container-mo-padding;}
 }
 
-header.header {padding-top: 20px;}
+header.header > div {
+  padding-top: 30px;
+  padding-left: 35px;
+}
 footer.footer {margin-bottom: 0; padding-bottom: 20px;}
 
 .l-region--highlighted,
@@ -78,7 +87,7 @@ footer.footer {margin-bottom: 0; padding-bottom: 20px;}
   footer.footer {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
   }
-  #container {padding-left: 10px; padding-right: 10px;}
+  header.header {height: ($header-height-full - 30/80*$header-height-full);}
 
   .l-region--header{
     @include span-columns(8 omega, 12); // Span the last (omega) 8 columns of 12.
@@ -103,12 +112,24 @@ footer.footer {margin-bottom: 0; padding-bottom: 20px;}
   }
 }
 
+@media only screen and (max-width: 745px) {
+  header.header {margin-bottom: 0;}
+}
 @include at-breakpoint($desk) {
   header.header,
   #content,
   footer.footer {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
   }
+  header.header {
+    height: ($header-height-full - 5/80*$header-height-full);
+
+    & > div {
+      padding-top: 70px;
+      padding-left: 75px;
+    }
+  }
+
 //  .l-branding {
 //    @include span-columns(6, 16); // Span 6 out of 16 columns.
 //  }
@@ -154,5 +175,9 @@ footer.footer {margin-bottom: 0; padding-bottom: 20px;}
 }
 
 @include at-breakpoint($dmax) {
-  #container {margin-left: 0px; margin-right: 0px;}
+  #content,
+  footer.footer {
+    & > div {padding-left: 0; padding-right: 0;}
+  }
+  header.header {height: $header-height-full}
 }

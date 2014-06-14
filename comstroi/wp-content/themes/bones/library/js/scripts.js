@@ -115,8 +115,9 @@ function loadGravatars() {
   */
   loadGravatars();
 
-    $('ul.product-categories').addClass('sf-menu sf-vertical');
-    $('ul.sf-menu').superfish();
+        //Header Title effects.
+        $('#menu-glavnoe').parent().append('<h1 class="page-title-menu">' +$('h1.page-title').text().trim() +'</h1>');
+
 }); /* end of as page load scripts */
 
 })(jQuery);

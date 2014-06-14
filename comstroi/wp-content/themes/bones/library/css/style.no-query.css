@@ -231,23 +231,12 @@ span.amp {
         Font Load
         ====================================*/
 @font-face {
-  font-family: 'Bender-Bold';
-  src: url("fonts/Bender-Bold.eot?") format("eot"), url("fonts/Bender-Bold.otf") format("opentype"), url("fonts/Bender-Bold.woff") format("woff"), url("fonts/Bender-Bold.ttf") format("truetype"), url("fonts/Bender-Bold.svg#Bender-Bold") format("svg");
-}
-
-@font-face {
-  font-family: 'OpenSans-Semibold';
-  src: url("fonts/OpenSans-Semibold.eot?") format("eot"), url("fonts/OpenSans-Semibold.woff") format("woff"), url("fonts/OpenSans-Semibold.ttf") format("truetype"), url("fonts/OpenSans-Semibold.svg#OpenSans-Semibold") format("svg");
-}
-
-@font-face {
-  font-family: 'OpenSans';
-  src: url("fonts/OpenSans.eot?") format("eot"), url("fonts/OpenSans.woff") format("woff"), url("fonts/OpenSans.ttf") format("truetype"), url("fonts/OpenSans.svg#OpenSans") format("svg");
-}
-
-@font-face {
-  font-family: 'OpenSans-Light';
-  src: url("fonts/OpenSans-Light.eot?") format("eot"), url("fonts/OpenSans-Light.woff") format("woff"), url("fonts/OpenSans-Light.ttf") format("truetype"), url("fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
+  font-family: 'Bender Bold';
+  src: local("Bender Bold");
+  src: url("font/bender_bold.eot");
+  src: url("font/bender_bold.eot") format("embedded-opentype"), url("font/bender_bold.woff") format("woff"), url("font/bender_bold.ttf") format("truetype"), url("font/bender_bold.svg#BenderBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /******************************************************************
@@ -775,9 +764,10 @@ and will be used across all viewports.
 GENERAL/Wrapper STYLES
 *********************/
 body {
-  font: 100%/1.4 "Arial", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #888888;
-  background-color: transparent;
+  font: 100%/1.4 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #3a6087;
+  font-weight: 500;
+  background: whitesmoke;
   /*background-color: transparentize($color_page_back, 0.1);*/
 }
 
@@ -791,7 +781,7 @@ a, a:visited {
   /* mobile tap color */
 }
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #d10e3c;
+  color: #6a78ff;
 }
 a:link, a:visited:link {
   /*
@@ -803,7 +793,7 @@ a:link, a:visited:link {
 }
 
 a {
-  color: #888888;
+  color: #1400ff;
   text-decoration: none;
   text-shadow: none;
 }
@@ -815,7 +805,7 @@ button,
 input,
 select,
 textarea {
-  color: #888888;
+  color: #3a6087;
 }
 
 ul, ol {
@@ -831,7 +821,7 @@ p {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   text-transform: uppercase;
-  font-family: "Cuprum";
+  font-family: "Bender Bold";
   line-height: 1;
   /*
   if you're going to use webfonts, be sure to check your weights
@@ -843,47 +833,108 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }
 
+.hr {
+  width: 100%;
+  height: 8px;
+  background: url("../images/hr_footer.png") repeat-x 0 0;
+}
+
 /*********************
 HEADER STYLES
 *********************/
-.header {
-  background-color: #323944;
+header.header {
+  background: url("../images/bk_header.png") no-repeat 0 0;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$img, sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/bk_header.png, sizingMethod='scale')";
+  background-size: 100%;
 }
-
-#logo {
-  margin: 0.75em 0;
-}
-#logo a {
+header.header .branding {
   color: white;
 }
+header.header .branding a, header.header .branding p, header.header .branding h1, header.header .branding h2 {
+  margin: 0;
+}
+header.header .branding a {
+  color: white;
+}
+header.header .branding a:hover {
+  color: white;
+}
+header.header .branding p {
+  text-indent: 0;
+  text-transform: uppercase;
+}
+header.header .branding h1 {
+  font-size: 3em;
+}
+header.header .branding .phone {
+  font-weight: 700;
+}
+header.header #menu-glavnoe li:first-child {
+  margin: 0;
+  padding: 0;
+}
+header.header .branding + nav {
+  position: relative;
+  z-index: 1;
+}
+header.header .page-title-menu {
+  position: absolute;
+  top: -33px;
+  right: 0;
+  z-index: 2;
+  font-size: 7em;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.1);
+  font-family: 'Open Sans';
+  font-weight: 500;
+  white-space: nowrap;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
+}
 
-.sf-menu.sf-vertical {
-  width: 100%;
+#inner-header {
+  background: url("../images/bk_inner_header_short.png") no-repeat 0 0;
+  height: 220px;
+  position: relative;
+}
+
+#inner-header ~ h2 {
+  margin: 1% 0 0 20px;
+  font-size: 2em;
+}
+#inner-header ~ h2 span {
+  display: inline;
+  background: #ff6600;
+  font-family: 'Open Sans';
+  font-weight: 500;
+  color: white;
+  padding: 0 20px 0 10px;
+  line-height: 1.2;
+}
+#inner-header ~ h2 span ~ span {
+  padding-right: 15px;
 }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#content {
-  margin-top: 1.5em;
-}
-
-.hentry {
-  background-color: white;
-  border-radius: 3px;
-  margin-bottom: 1.5em;
-  border: 1px solid #cccccc;
-}
 .hentry header {
-  border-bottom: 1px solid #f8f9fa;
-  padding: 1.5em;
+  padding: 0;
+  margin: 0.5em 0;
 }
 .hentry footer {
-  padding: 1.5em;
-  border-top: 1px solid #f8f9fa;
+  margin: 1em 0 1.5em;
+  padding-left: 1.5em;
 }
-.hentry footer p {
+.hentry p.orange {
+  color: #ff6600;
+}
+.hentry p {
   margin: 0;
+  text-indent: 0;
 }
 
 /* end .hentry */
@@ -902,7 +953,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
+  padding-left: 1.5em;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -910,8 +961,46 @@ POSTS & CONTENT STYLES
   but it's up to you. Feel free to change it up.
   */
 }
-.entry-content p {
-  margin: 0 0 1.5em;
+.entry-content dl, .entry-content table, .entry-content ul, .entry-content ol {
+  padding-bottom: 0.7em;
+  position: relative;
+}
+.entry-content dl:after, .entry-content table:after, .entry-content ul:after, .entry-content ol:after {
+  content: ' ';
+  width: 100%;
+  background: url("../images/hr-line.png") repeat-x;
+  height: 8px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.entry-content p + p {
+  padding-top: 0.75em;
+  position: relative;
+}
+.entry-content p + p:after {
+  content: ' ';
+  width: 100%;
+  background: url("../images/hr-line.png") repeat-x;
+  height: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.entry-content p ~ p {
+  margin: 0.7em 0 0 0;
+}
+.entry-content p > img {
+  margin: 0.5em;
+  text-align: center;
+}
+.entry-content ul, .entry-content ol {
+  margin: 0;
+  padding-left: 20px;
+  color: #ff6600;
+}
+.entry-content ul li:before {
+  content: '- ';
 }
 .entry-content table {
   width: 100%;
@@ -960,7 +1049,6 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.5em;
 }
 .entry-content img {
-  margin: 0 0 1.5em 0;
   max-width: 100%;
   height: auto;
 }
@@ -1009,8 +1097,37 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #323944;
-  color: #f8f9fa;
+  background-color: #363636;
+  color: #fefefe;
+}
+.footer a {
+  color: #fefefe;
+}
+.footer .copyright {
+  margin: 1.25em 0 0 20px;
+  text-align: left;
+  float: left;
+}
+.footer .tm-copyright {
+  float: right;
+}
+.footer .tm-copyright {
+  margin: 1.25em 20px 0 0;
+  text-align: right;
+  *zoom: 1;
+}
+.footer .tm-copyright:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer .tm-copyright img {
+  vertical-align: middle;
+  max-width: 120px;
+}
+.footer .tm-copyright img:hover {
+  opacity: 0.55;
+  filter: alpha(opacity=55);
 }
 
 /*
@@ -1023,6 +1140,205 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+#post-55 > footer {
+  width: 100%;
+  background-color: #f3f3f3;
+  margin-top: 0;
+  padding-top: 1em;
+}
+#post-55 > footer .home-select {
+  background-color: #ff6600;
+  color: white;
+  width: 40%;
+  padding: 13px 0 13px 13px;
+  margin-bottom: 17px;
+}
+#post-55 > footer .home-type {
+  width: 100%;
+  text-align: center;
+}
+#post-55 > footer .home-type > div {
+  display: inline-block;
+  width: 24%;
+  position: relative;
+}
+#post-55 > footer .home-type > div img {
+  width: 85%;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+#post-55 > footer .home-type > div p {
+  position: absolute;
+  z-index: 3;
+  text-align: right;
+  padding: 5px 13px 5px 0;
+  color: white;
+  bottom: 5%;
+  width: 70%;
+  right: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 0, 0, 0.68)), color-stop(100%, rgba(254, 158, 0, 0.68)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  -pie-background: linear-gradient(to right, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  /* W3C */
+  /*PIE*/
+  behavior: url(/pie/PIE.htc);
+}
+#post-55 > footer .home-type p.hr {
+  margin-bottom: 1em;
+  margin-top: 3em;
+}
+#post-55 > footer .modal {
+  width: 90%;
+  left: 33%;
+  background-color: #f3f3f3;
+  top: 5%;
+}
+#post-55 > footer .modal .hint {
+  margin-top: 1em;
+  font-size: 18px;
+  font-weight: 700;
+}
+#post-55 > footer .modal .label {
+  padding: 5px;
+  margin: 10px 0;
+}
+#post-55 > footer .modal input[type="text"] {
+  width: 50px;
+  font-size: 0.875em;
+}
+#post-55 > footer .modal p.button {
+  margin: 10px 15px 15px;
+  text-align: right;
+}
+
+#m-100 .modal-body {
+  text-align: center;
+  vertical-align: top;
+}
+#m-100 .modal-body .preview {
+  display: inline-block;
+  width: 7%;
+  margin-right: 3%;
+  text-align: center;
+  vertical-align: top;
+}
+#m-100 .modal-body .preview img {
+  width: 100%;
+}
+#m-100 .modal-body .preview p {
+  padding: 5px;
+  color: white;
+  font-size: 0.75em;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 0, 0, 0.68)), color-stop(100%, rgba(254, 158, 0, 0.68)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  -pie-background: linear-gradient(to right, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  /* W3C */
+  /*PIE*/
+  behavior: url(/pie/PIE.htc);
+}
+#m-100 .modal-body .content {
+  display: inline-block;
+  text-align: center;
+  width: 88%;
+  vertical-align: top;
+}
+#m-100 .modal-body .content > div {
+  display: inline-block;
+  width: 19%;
+  position: relative;
+}
+#m-100 .modal-body .content > div img {
+  width: 85%;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+#m-100 .modal-body .content > div p {
+  position: absolute;
+  z-index: 3;
+  text-align: right;
+  padding: 5px 13px 5px 0;
+  color: white;
+  bottom: 5%;
+  width: 70%;
+  right: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 0, 0, 0.68)), color-stop(100%, rgba(254, 158, 0, 0.68)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  background-image: linear-gradient(left, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  -pie-background: linear-gradient(to right, rgba(255, 0, 0, 0.68) 0%, rgba(254, 158, 0, 0.68) 100%);
+  /* W3C */
+  /*PIE*/
+  behavior: url(/pie/PIE.htc);
+}
+
+#m-110 .modal-body {
+  text-align: center;
+  vertical-align: top;
+}
+#m-110 .modal-body > div {
+  display: inline-block;
+  width: 29%;
+  position: relative;
+}
+#m-110 .modal-body > div img {
+  width: 70%;
+}
+
+#m-120 .modal-body {
+  text-align: center;
+  vertical-align: top;
+}
+#m-120 .modal-body > div {
+  display: inline-block;
+  width: 24%;
+  position: relative;
+}
+#m-120 .modal-body > div img {
+  width: 90%;
+  cursor: pointer;
+}
+
+#m-121 .modal-body {
+  text-align: left;
+  vertical-align: top;
+}
+#m-121 .modal-body .wrap > div {
+  display: inline-block;
+  width: 29%;
+  position: relative;
+  text-align: center;
+}
+#m-121 .modal-body .wrap > div img {
+  width: 70%;
+}
+
+#m-100000 .modal-body h4 {
+  text-align: left;
+}
+#m-100000 .modal-body table {
+  width: 100%;
+}
+#m-100000 .modal-body td {
+  padding: 0 10px;
+  vertical-align: middle;
+}
+#m-100000 .modal-body td:first-child {
+  width: 30%;
+}
+
 /*********************
 Block STYLES
 *********************/
@@ -1036,15 +1352,22 @@ and more scalable.
 .nav {
   border: 0;
   margin: 0;
+  width: 100%;
+  position: relative;
+  border-top: 2px solid white;
+  margin-top: 20px;
+  max-width: 820px;
+  z-index: 5;
   /* end .menu li */
   /* showing sub-menus */
 }
-.nav ul {
-  margin-top: 0;
-}
 .nav li {
-  float: left;
+  display: table-cell;
   position: relative;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
   /*
   so you really have to rethink your dropdowns for mobile.
   you don't want to have it expand too much because the
@@ -1054,10 +1377,9 @@ and more scalable.
   */
 }
 .nav li a {
-  display: block;
+  padding: 0.75em;
   color: white;
   text-decoration: none;
-  padding: 0.75em;
   border-bottom: 0;
   /*
   remember this is for mobile ONLY, so there's no need
@@ -1068,8 +1390,24 @@ and more scalable.
 }
 .nav li a:hover, .nav li a:focus {
   text-decoration: underline;
-  background-color: #eeeeee;
-  color: #262b3a;
+  color: white;
+}
+.nav li:first-child a {
+  padding-left: 0;
+  white-space: nowrap;
+}
+.nav li.current_page_item {
+  font-weight: 700;
+  position: relative;
+}
+.nav li.current_page_item:after {
+  content: ' ';
+  position: absolute;
+  height: 9px;
+  width: 17px;
+  left: 42%;
+  top: -1px;
+  background: transparent url("../images/menu_arrow.png") no-repeat 0 0;
 }
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
@@ -1373,6 +1711,45 @@ SIDEBARS & ASIDES
   background: #EFF8FA;
 }
 
+/*********************
+MEDIA
+*********************/
+@media only screen and (max-width: 870px) {
+  header.header {
+    margin-bottom: 0;
+  }
+
+  .nav li:nth-child(4), .nav li:nth-child(5) {
+    width: 23%;
+  }
+
+  #post-55 > footer .home-type > div p {
+    width: 80%;
+  }
+
+  #post-55 > footer .modal {
+    left: 41%;
+  }
+}
+@media only screen and (min-width: 70em) {
+  #inner-header {
+    height: 265px;
+    background: url("../images/bk_inner_header_wide.png") no-repeat 0 0;
+  }
+
+  #inner-header ~ h2 {
+    margin: 7% 0 0 45px;
+  }
+
+  #post-55 > footer .modal {
+    left: 25%;
+  }
+}
+@media only screen and (max-height: 560px) {
+  #post-55 > footer .modal-body {
+    max-height: 300px;
+  }
+}
 /* ===============
     Querys
     ============= */

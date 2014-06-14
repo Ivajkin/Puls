@@ -164,11 +164,13 @@ $container_width: 228px, $container_height: 160px) {
   box-shadow: $shadows;
 }
 @mixin hr-line ($top: 100%, $left: 0){
+  position: relative;
+
   &:after {
     content: ' ';
     width: 100%;
-    background: url('#{$img-root}hr_top.png')  repeat-x;
-    height: 1em;
+    background: url('#{$img-root}hr-line.png')  repeat-x;
+    height: 8px;
 
     position: absolute;
     top: $top;
@@ -185,8 +187,6 @@ $u_em: 1;
 $u_px: 16;
 $u_percentage: 100%;
 
-$h_header: 96px;
-
 @function ptem($pt, $basept: $u_pt){
   @return ($pt/$basept*$u_px)+0px;
 }
@@ -198,17 +198,18 @@ $h_header: 96px;
     Colors
     =========== */
 
-$color_t_std: #888;
-$color_t_link: #888;
+$color_t_std: #3a6087;
+$color_t_link: #1400FF;
+$color_t_link_hover: #6a78ff;
 
-$color_bk_body: transparent;
+$color_bk_body: #f5f5f5;
 
 /* ============
     Fonts
     =========== */
 $font_head: 'Calibri';
-$font_h: 'Cuprum';
-$font_text: 'Arial', $sans-serif;
+$font_h: 'Bender Bold';
+$font_text: 'Open Sans', $sans-serif;
 
 $font_size_14: (14/16);
 

@@ -70,8 +70,10 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'bones-thumb-1280', 1280, 1024, true );
+add_image_size( 'bones-thumb-600', 600, 400, true );
+add_image_size( 'bones-thumb-300', 300, 200, true );
+add_image_size( 'bones-thumb-150', 150, 150, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -97,8 +99,8 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
+        'bones-thumb-1280' => __('1280px на 1024px'),
+        'bones-thumb-600' => __('600px на 400px'),
     ) );
 }
 
@@ -217,7 +219,9 @@ and be up and running in seconds.
 */
 function bones_fonts() {
   wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  wp_register_style('googleOS', 'http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700');
   wp_enqueue_style( 'googleFonts');
+  wp_enqueue_style( 'googleOS');
 }
 
 add_action('wp_print_styles', 'bones_fonts');
@@ -279,19 +283,14 @@ $libs= <<<EOT
     <script src="$tdir/library/js/libs/selectivizr/respond.min.js"></script>
     <![endif]-->
 
-    <link rel='stylesheet' href="$pdir/superfish/dist/css/superfish.css" type='text/css' media='all' />
-    <link rel='stylesheet' href="$pdir/superfish/dist/css/superfish-vertical.css" type='text/css' media='all' />
-    <script src="$pdir/superfish/dist/js/hoverIntent.js"></script>
-    <script src="$pdir/superfish/dist/js/superfish.js"></script>
-
     <link rel='stylesheet' href="$pdir/bootstrap/css/bootstrap.nocf.css" media='all' />
     <script src="$pdir/bootstrap/js/bootstrap.min.js"></script>
 EOT;
         echo $libs;
 
         //to footer
-        wp_register_script( 'width-indicator', get_stylesheet_directory_uri() . '/library/js/libs/indicator/omega.indicator.js', array(  ), '', true );
-        wp_enqueue_script( 'width-indicator' );
+//        wp_register_script( 'width-indicator', get_stylesheet_directory_uri() . '/library/js/libs/indicator/omega.indicator.js', array(  ), '', true );
+//        wp_enqueue_script( 'width-indicator' );
 
 //    wp_register_script( 'no-js', get_stylesheet_directory_uri() . '/library/js/no-js.js', array( 'jquery' ), '');
 //    //adding scripts file in the footer
@@ -304,18 +303,11 @@ EOT;
         $vars['b_popup']= false;
 
         if (is_home()) {
-            $vars['condition']= 'left';
             return;
         }
-        if (trim($_SERVER['REQUEST_URI'], '/') == 'store') {
-            $vars['condition']= 'left';
+        if (trim($_SERVER['REQUEST_URI'], '/') == 'kal-kulyator') {
 
-            wp_register_script( 'product-popup', get_stylesheet_directory_uri() . '/library/js/product.popup.js', array( 'jquery' ), '', true );
-            wp_enqueue_script('product-popup');
-            return;
-        }
-        if (mb_strpos($_SERVER['REQUEST_URI'], 'product-category') !== false) {
-            wp_register_script( 'product-popup', get_stylesheet_directory_uri() . '/library/js/product.popup.js', array( 'jquery' ), '', true );
+            wp_register_script( 'product-popup', get_stylesheet_directory_uri() . '/library/js/kalkulyator.js', array( 'jquery' ), '', true );
             wp_enqueue_script('product-popup');
             return;
         }

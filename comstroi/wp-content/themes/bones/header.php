@@ -57,8 +57,11 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-
+					<div class="branding">
+                        <p class="phone"><a href="tel:+74212640033">Телефон: 64-00-33</a></p>
+                        <a href="<?php echo home_url(); ?>" rel="nofollow"><h1><?php bloginfo('name'); ?></h1></a>
+                        <h2>Слоган Компании</h2>
+                    </div>
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
 
@@ -81,5 +84,5 @@
 					</nav>
 
 				</div>
-
+                <h2><span>Строительство сооружений</span><br /><span>любой сложности</span></h2>
 			</header>
