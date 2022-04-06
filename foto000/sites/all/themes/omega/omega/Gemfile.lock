@@ -88,7 +88,7 @@ GEM
       compass (>= 0.12.2)
       sassy-strings (>= 0.1)
       singularitygs (>= 1.0.7)
-    yajl-ruby (1.1.0)
+    yajl-ruby (1.4.2)
 
 PLATFORMS
   ruby
@@ -113,4 +113,7 @@ DEPENDENCIES
   singularitygs
   susy
   toolkit
-  yajl-ruby
+  yajl-ruby (>= 1.4.2)
+
+BUNDLED WITH
+   2.1.4
