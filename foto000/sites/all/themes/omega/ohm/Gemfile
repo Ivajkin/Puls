@@ -20,7 +20,7 @@ group :development do
   gem 'guard'                   # Guard event handler.
   gem 'guard-compass'           # Compile on sass/scss change.
   gem 'guard-shell'             # Run shell commands.
-  gem 'guard-livereload'        # Browser reload.
+  gem 'guard-livereload'        , '>= 2.0.0' # Browser reload.
   gem 'yajl-ruby'               # Faster JSON with LiveReload in the browser.
 
   # Dependency to prevent polling. Setup for multiple OS environments.
