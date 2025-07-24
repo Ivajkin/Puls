@@ -17,10 +17,10 @@ group :development do
   gem 'css_parser'              # Helps `compass stats` output statistics.
 
   # Guard
-  gem 'guard'                   # Guard event handler.
-  gem 'guard-compass'           # Compile on sass/scss change.
-  gem 'guard-shell'             # Run shell commands.
-  gem 'guard-livereload'        # Browser reload.
+  gem 'guard'                   , '>= 1.8.1' # Guard event handler.
+  gem 'guard-compass'           , '>= 0.0.8' # Compile on sass/scss change.
+  gem 'guard-shell'             , '>= 0.5.2' # Run shell commands.
+  gem 'guard-livereload'        , '>= 2.0.0' # Browser reload.
   gem 'yajl-ruby'               # Faster JSON with LiveReload in the browser.
 
   # Dependency to prevent polling. Setup for multiple OS environments.
